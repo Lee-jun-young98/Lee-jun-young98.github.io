@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Lee Jun Young AI Portfolio",
+    pageTitle: "Junyoung AI Study Notes",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -17,7 +17,16 @@ const config: QuartzConfig = {
     },
     locale: "ko-KR",
     baseUrl: "lee-jun-young98.github.io",
-    ignorePatterns: ["private", ".obsidian", "00_inbox", "50_blog_drafts", "99_templates"],
+    ignorePatterns: [
+      "private",
+      ".obsidian",
+      "00_inbox",
+      "10_projects",
+      "40_portfolio",
+      "50_blog_drafts",
+      "60_publish",
+      "99_templates",
+    ],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

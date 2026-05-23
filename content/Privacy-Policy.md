@@ -4,7 +4,7 @@ title: Privacy Policy
 
 # Privacy Policy
 
-이 사이트는 개인 기술 블로그 및 포트폴리오 목적으로 운영됩니다.
+이 사이트는 개인 기술 블로그 목적으로 운영됩니다.
 
 ## Analytics and Ads
 
