@@ -1,17 +1,16 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
-const hiddenExplorerSlugs = new Set([
-  "papers/ddpm-study-note",
-  "papers/latent-diffusion-models-study-note",
-  "papers/medical-sam-adapter-study-note",
-  "papers/react-synergizing-reasoning-and-acting",
-])
-
 const paperExplorerOptions = {
   filterFn: (node: any) => {
+    const hidden = new Set([
+      "papers/ddpm-study-note",
+      "papers/latent-diffusion-models-study-note",
+      "papers/medical-sam-adapter-study-note",
+      "papers/react-synergizing-reasoning-and-acting",
+    ])
     const slug = String(node.data?.slug ?? "")
-    return node.slugSegment !== "tags" && !hiddenExplorerSlugs.has(slug)
+    return node.slugSegment !== "tags" && !hidden.has(slug)
   },
 }
 
