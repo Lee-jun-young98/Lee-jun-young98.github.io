@@ -25,4 +25,4 @@ It reads every page in the Notion database, converts blocks to Markdown, and wri
 - `Skill` -> `content/papers/skill/`
 - `Metrics` -> `content/papers/metrics/`
 
-When the workflow commits changed Markdown files, the existing deploy workflow publishes the updated GitHub Pages site.
+After syncing, the same workflow commits the generated Markdown, builds Quartz, and deploys GitHub Pages. That means a manual run immediately republishes the blog from the current Notion content.
