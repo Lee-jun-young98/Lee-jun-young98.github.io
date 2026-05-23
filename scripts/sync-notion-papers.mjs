@@ -1,0 +1,380 @@
+import fs from "node:fs/promises"
+import path from "node:path"
+
+const notionToken = process.env.NOTION_TOKEN
+const databaseId = process.env.NOTION_PAPERS_DATABASE_ID || "df3a2db6a13749c5b70eac452622298a"
+const notionVersion = process.env.NOTION_VERSION || "2022-06-28"
+const contentRoot = process.env.PAPERS_CONTENT_ROOT || "content/papers"
+
+if (!notionToken) {
+  throw new Error("NOTION_TOKEN is required. Share the paper review database with the integration first.")
+}
+
+const categoryFolders = {
+  "Generative AI": "generative-ai",
+  LLM: "llm",
+  Vision: "vision",
+  MultiModal: "multimodal",
+  "3D": "3d",
+  Skill: "skill",
+  Metrics: "metrics",
+}
+
+const categoryTitles = {
+  "generative-ai": "Generative AI 논문 리뷰",
+  llm: "LLM 논문 리뷰",
+  vision: "Vision 논문 리뷰",
+  multimodal: "MultiModal 논문 리뷰",
+  "3d": "3D 논문 리뷰",
+  skill: "Skill 논문 리뷰",
+  metrics: "Metrics 논문 리뷰",
+}
+
+const categoryPriority = ["LLM", "Generative AI", "Vision", "MultiModal", "3D", "Skill", "Metrics"]
+
+const knownPages = {
+  "3698d6e1cee581fb9147c9108f141560": {
+    slug: "react-synergizing-reasoning-and-acting",
+    folder: "llm",
+    aliases: ["/papers/react-synergizing-reasoning-and-acting"],
+  },
+  "1738d6e1cee580e2ab24c3260c5d314c": {
+    slug: "ddpm-study-note",
+    folder: "generative-ai",
+    aliases: ["/papers/ddpm-study-note"],
+  },
+  "1778d6e1cee580cd8b78f9b185daf3b1": {
+    slug: "latent-diffusion-models-study-note",
+    folder: "generative-ai",
+    aliases: ["/papers/latent-diffusion-models-study-note"],
+  },
+  "41d767916da746b3b58c8d28f16a65df": {
+    slug: "medical-sam-adapter-study-note",
+    folder: "vision",
+    aliases: ["/papers/medical-sam-adapter-study-note"],
+  },
+}
+
+async function notion(pathname, init = {}) {
+  const response = await fetch(`https://api.notion.com/v1${pathname}`, {
+    ...init,
+    headers: {
+      Authorization: `Bearer ${notionToken}`,
+      "Notion-Version": notionVersion,
+      "Content-Type": "application/json",
+      ...(init.headers || {}),
+    },
+  })
+
+  if (!response.ok) {
+    const text = await response.text()
+    throw new Error(`Notion API ${response.status} ${response.statusText}: ${text}`)
+  }
+
+  return response.json()
+}
+
+async function queryDatabase() {
+  const pages = []
+  let start_cursor
+
+  do {
+    const body = { page_size: 100 }
+    if (start_cursor) body.start_cursor = start_cursor
+
+    const data = await notion(`/databases/${databaseId}/query`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    })
+
+    pages.push(...data.results)
+    start_cursor = data.has_more ? data.next_cursor : undefined
+  } while (start_cursor)
+
+  return pages
+}
+
+async function getChildren(blockId) {
+  const blocks = []
+  let start_cursor
+
+  do {
+    const query = new URLSearchParams({ page_size: "100" })
+    if (start_cursor) query.set("start_cursor", start_cursor)
+
+    const data = await notion(`/blocks/${blockId}/children?${query.toString()}`)
+    blocks.push(...data.results)
+    start_cursor = data.has_more ? data.next_cursor : undefined
+  } while (start_cursor)
+
+  return blocks
+}
+
+function pageKey(pageId) {
+  return pageId.replaceAll("-", "")
+}
+
+function escapeYaml(value = "") {
+  return String(value).replaceAll("\\", "\\\\").replaceAll('"', '\\"')
+}
+
+function richTextToMarkdown(parts = []) {
+  return parts
+    .map((part) => {
+      let text = part.plain_text || ""
+      const href = part.href
+      const annotations = part.annotations || {}
+
+      if (annotations.code) text = `\`${text}\``
+      if (annotations.bold) text = `**${text}**`
+      if (annotations.italic) text = `_${text}_`
+      if (annotations.strikethrough) text = `~~${text}~~`
+      if (href) text = `[${text}](${href})`
+
+      return text
+    })
+    .join("")
+}
+
+function getTitle(properties) {
+  for (const property of Object.values(properties)) {
+    if (property.type === "title") {
+      return richTextToPlain(property.title).trim()
+    }
+  }
+  return "Untitled"
+}
+
+function richTextToPlain(parts = []) {
+  return parts.map((part) => part.plain_text || "").join("")
+}
+
+function getProperty(properties, name) {
+  return properties[name]
+}
+
+function getMultiSelect(properties, name) {
+  const property = getProperty(properties, name)
+  return property?.type === "multi_select" ? property.multi_select.map((item) => item.name) : []
+}
+
+function getTextProperty(properties, name) {
+  const property = getProperty(properties, name)
+  if (!property) return ""
+
+  if (property.type === "rich_text") return richTextToPlain(property.rich_text).trim()
+  if (property.type === "select") return property.select?.name || ""
+  if (property.type === "url") return property.url || ""
+  if (property.type === "date") return property.date?.start || ""
+  if (property.type === "people") return property.people.map((person) => person.name).filter(Boolean).join(", ")
+  if (property.type === "multi_select") return property.multi_select.map((item) => item.name).join(", ")
+
+  return ""
+}
+
+function slugify(title) {
+  const ascii = title
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9가-힣]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+
+  return ascii || "untitled"
+}
+
+function chooseFolder(tableTags, override) {
+  if (override?.folder) return override.folder
+
+  const primary = categoryPriority.find((category) => tableTags.includes(category))
+  return categoryFolders[primary] || "uncategorized"
+}
+
+function markdownList(values) {
+  return values.map((value) => `  - "${escapeYaml(value)}"`).join("\n")
+}
+
+function buildFrontmatter(page, metadata, body) {
+  const lines = ["---"]
+  lines.push(`title: "${escapeYaml(metadata.title)}"`)
+  if (metadata.date) lines.push(`date: ${metadata.date}`)
+  lines.push("tags:")
+  lines.push(markdownList(["paper-review", ...metadata.tableTags, ...metadata.tasks]))
+  if (metadata.author) lines.push(`author: "${escapeYaml(metadata.author)}"`)
+  if (metadata.journal) lines.push(`journal: "${escapeYaml(metadata.journal)}"`)
+  lines.push(`notion_id: "${page.id}"`)
+  lines.push(`notion_url: "${page.url}"`)
+  lines.push("notion_synced: true")
+  if (metadata.aliases.length > 0) {
+    lines.push("aliases:")
+    lines.push(markdownList(metadata.aliases))
+  }
+  lines.push("---")
+
+  return `${lines.join("\n")}\n\n${body.trim()}\n`
+}
+
+async function blockToMarkdown(block, depth = 0) {
+  const type = block.type
+  const value = block[type]
+  const children = block.has_children ? await blocksToMarkdown(await getChildren(block.id), depth + 1) : ""
+  const indent = "  ".repeat(depth)
+
+  switch (type) {
+    case "paragraph": {
+      const text = richTextToMarkdown(value.rich_text)
+      return [text, children].filter(Boolean).join("\n\n")
+    }
+    case "heading_1":
+      return `# ${richTextToMarkdown(value.rich_text)}`
+    case "heading_2":
+      return `## ${richTextToMarkdown(value.rich_text)}`
+    case "heading_3":
+      return `### ${richTextToMarkdown(value.rich_text)}`
+    case "bulleted_list_item": {
+      const text = `${indent}- ${richTextToMarkdown(value.rich_text)}`
+      return [text, children].filter(Boolean).join("\n")
+    }
+    case "numbered_list_item": {
+      const text = `${indent}1. ${richTextToMarkdown(value.rich_text)}`
+      return [text, children].filter(Boolean).join("\n")
+    }
+    case "to_do": {
+      const checked = value.checked ? "x" : " "
+      const text = `${indent}- [${checked}] ${richTextToMarkdown(value.rich_text)}`
+      return [text, children].filter(Boolean).join("\n")
+    }
+    case "toggle": {
+      const summary = richTextToMarkdown(value.rich_text) || "Details"
+      return `<details>\n<summary>${summary}</summary>\n\n${children}\n\n</details>`
+    }
+    case "quote": {
+      const text = richTextToMarkdown(value.rich_text)
+      return [text, children]
+        .filter(Boolean)
+        .join("\n\n")
+        .split("\n")
+        .map((line) => `> ${line}`)
+        .join("\n")
+    }
+    case "callout": {
+      const text = richTextToMarkdown(value.rich_text)
+      return ["> [!note]", text ? `> ${text}` : "", children ? children.split("\n").map((line) => `> ${line}`).join("\n") : ""]
+        .filter(Boolean)
+        .join("\n")
+    }
+    case "code": {
+      const language = value.language === "plain text" ? "" : value.language
+      return `\`\`\`${language}\n${richTextToPlain(value.rich_text)}\n\`\`\``
+    }
+    case "equation":
+      return `$$\n${value.expression}\n$$`
+    case "divider":
+      return "---"
+    case "image": {
+      const url = value.type === "external" ? value.external.url : value.file.url
+      const caption = richTextToPlain(value.caption)
+      return `![${caption}](${url})`
+    }
+    case "file":
+    case "pdf":
+    case "video": {
+      const url = value.type === "external" ? value.external.url : value.file.url
+      const caption = richTextToPlain(value.caption) || url
+      return `[${caption}](${url})`
+    }
+    case "bookmark":
+    case "embed":
+    case "link_preview":
+      return `[${value.url}](${value.url})`
+    case "table_of_contents":
+      return ""
+    case "child_page":
+      return `## ${value.title}`
+    case "unsupported":
+      return ""
+    default:
+      return children
+  }
+}
+
+async function blocksToMarkdown(blocks, depth = 0) {
+  const chunks = []
+
+  for (const block of blocks) {
+    const markdown = await blockToMarkdown(block, depth)
+    if (markdown.trim()) chunks.push(markdown)
+  }
+
+  return chunks.join("\n\n")
+}
+
+function pageMetadata(page) {
+  const properties = page.properties
+  const title = getTitle(properties)
+  const tableTags = getMultiSelect(properties, "Table tag")
+  const tasks = getMultiSelect(properties, "Task")
+  const override = knownPages[pageKey(page.id)]
+  const folder = chooseFolder(tableTags, override)
+  const slug = override?.slug || slugify(title)
+
+  return {
+    title,
+    tableTags,
+    tasks,
+    folder,
+    slug,
+    aliases: override?.aliases || [],
+    author: getTextProperty(properties, "Author"),
+    journal: getTextProperty(properties, "Jurnel") || getTextProperty(properties, "Journal"),
+    date: getTextProperty(properties, "Date"),
+  }
+}
+
+function indexBody(title, papers) {
+  const links = papers
+    .sort((a, b) => a.title.localeCompare(b.title, "ko"))
+    .map((paper) => `- [[${paper.folder}/${paper.slug}|${paper.title}]]`)
+    .join("\n")
+
+  return `---\ntitle: "${escapeYaml(title)}"\n---\n\n${links}\n`
+}
+
+async function main() {
+  const pages = await queryDatabase()
+  const synced = []
+
+  await fs.mkdir(contentRoot, { recursive: true })
+
+  for (const page of pages) {
+    const metadata = pageMetadata(page)
+    const blocks = await getChildren(page.id)
+    const body = await blocksToMarkdown(blocks)
+    const filePath = path.join(contentRoot, metadata.folder, `${metadata.slug}.md`)
+
+    await fs.mkdir(path.dirname(filePath), { recursive: true })
+    await fs.writeFile(filePath, buildFrontmatter(page, metadata, body), "utf8")
+
+    synced.push(metadata)
+    console.log(`synced ${metadata.folder}/${metadata.slug}.md`)
+  }
+
+  const byFolder = Map.groupBy(synced, (paper) => paper.folder)
+
+  await fs.writeFile(path.join(contentRoot, "index.md"), indexBody("논문 리뷰 노트", synced), "utf8")
+
+  for (const [folder, papers] of byFolder.entries()) {
+    const title = categoryTitles[folder] || `${folder} 논문 리뷰`
+    const indexPath = path.join(contentRoot, folder, "index.md")
+    await fs.mkdir(path.dirname(indexPath), { recursive: true })
+    await fs.writeFile(indexPath, indexBody(title, papers), "utf8")
+  }
+
+  console.log(`synced ${synced.length} Notion paper pages`)
+}
+
+main().catch((error) => {
+  console.error(error)
+  process.exit(1)
+})
