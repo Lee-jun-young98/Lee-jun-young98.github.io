@@ -9,3 +9,7 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+content/.obsidian/
+content/00_inbox/
+content/50_blog_drafts/
+content/99_templates/
