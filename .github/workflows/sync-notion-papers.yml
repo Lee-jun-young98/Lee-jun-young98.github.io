@@ -43,7 +43,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Sync Notion paper reviews
-          file_pattern: content/papers/index.md content/papers/**/*.md
+          file_pattern: content/papers/index.md content/papers/**/*.md content/papers/assets/notion/**/*
 
       - name: Build
         run: npx quartz build

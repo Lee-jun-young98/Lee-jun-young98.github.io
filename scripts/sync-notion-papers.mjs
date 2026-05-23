@@ -5,6 +5,8 @@ const notionToken = process.env.NOTION_TOKEN
 const databaseId = process.env.NOTION_PAPERS_DATABASE_ID || "df3a2db6a13749c5b70eac452622298a"
 const notionVersion = process.env.NOTION_VERSION || "2022-06-28"
 const contentRoot = process.env.PAPERS_CONTENT_ROOT || "content/papers"
+const assetRoot = path.join(contentRoot, "assets", "notion")
+const assetPublicRoot = "/assets/notion"
 
 if (!notionToken) {
   throw new Error("NOTION_TOKEN is required. Share the paper review database with the integration first.")
@@ -21,13 +23,13 @@ const categoryFolders = {
 }
 
 const categoryTitles = {
-  "generative-ai": "Generative AI 논문 리뷰",
-  llm: "LLM 논문 리뷰",
-  vision: "Vision 논문 리뷰",
-  multimodal: "MultiModal 논문 리뷰",
-  "3d": "3D 논문 리뷰",
-  skill: "Skill 논문 리뷰",
-  metrics: "Metrics 논문 리뷰",
+  "generative-ai": "Generative AI \uB17C\uBB38 \uB9AC\uBDF0",
+  llm: "LLM \uB17C\uBB38 \uB9AC\uBDF0",
+  vision: "Vision \uB17C\uBB38 \uB9AC\uBDF0",
+  multimodal: "MultiModal \uB17C\uBB38 \uB9AC\uBDF0",
+  "3d": "3D \uB17C\uBB38 \uB9AC\uBDF0",
+  skill: "Skill \uB17C\uBB38 \uB9AC\uBDF0",
+  metrics: "Metrics \uB17C\uBB38 \uB9AC\uBDF0",
 }
 
 const categoryPriority = ["LLM", "Generative AI", "Vision", "MultiModal", "3D", "Skill", "Metrics"]
@@ -195,6 +197,29 @@ function markdownList(values) {
   return values.map((value) => `  - "${escapeYaml(value)}"`).join("\n")
 }
 
+function assetExtension(url) {
+  const parsed = new URL(url)
+  const extension = path.extname(decodeURIComponent(parsed.pathname)).toLowerCase()
+
+  return extension && extension.length <= 12 ? extension : ".bin"
+}
+
+async function downloadNotionAsset(url, block, context) {
+  await fs.mkdir(assetRoot, { recursive: true })
+
+  const filename = `${context.slug}-${pageKey(block.id).slice(0, 12)}${assetExtension(url)}`
+  const filePath = path.join(assetRoot, filename)
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`Failed to download Notion asset ${response.status} ${response.statusText}: ${url}`)
+  }
+
+  await fs.writeFile(filePath, Buffer.from(await response.arrayBuffer()))
+
+  return `${assetPublicRoot}/${filename}`
+}
+
 function buildFrontmatter(page, metadata, body) {
   const lines = ["---"]
   lines.push(`title: "${escapeYaml(metadata.title)}"`)
@@ -215,10 +240,10 @@ function buildFrontmatter(page, metadata, body) {
   return `${lines.join("\n")}\n\n${body.trim()}\n`
 }
 
-async function blockToMarkdown(block, depth = 0) {
+async function blockToMarkdown(block, context, depth = 0) {
   const type = block.type
   const value = block[type]
-  const children = block.has_children ? await blocksToMarkdown(await getChildren(block.id), depth + 1) : ""
+  const children = block.has_children ? await blocksToMarkdown(await getChildren(block.id), context, depth + 1) : ""
   const indent = "  ".repeat(depth)
 
   switch (type) {
@@ -273,14 +298,16 @@ async function blockToMarkdown(block, depth = 0) {
     case "divider":
       return "---"
     case "image": {
-      const url = value.type === "external" ? value.external.url : value.file.url
+      const sourceUrl = value.type === "external" ? value.external.url : value.file.url
+      const url = value.type === "external" ? sourceUrl : await downloadNotionAsset(sourceUrl, block, context)
       const caption = richTextToPlain(value.caption)
       return `![${caption}](${url})`
     }
     case "file":
     case "pdf":
     case "video": {
-      const url = value.type === "external" ? value.external.url : value.file.url
+      const sourceUrl = value.type === "external" ? value.external.url : value.file.url
+      const url = value.type === "external" ? sourceUrl : await downloadNotionAsset(sourceUrl, block, context)
       const caption = richTextToPlain(value.caption) || url
       return `[${caption}](${url})`
     }
@@ -299,11 +326,11 @@ async function blockToMarkdown(block, depth = 0) {
   }
 }
 
-async function blocksToMarkdown(blocks, depth = 0) {
+async function blocksToMarkdown(blocks, context, depth = 0) {
   const chunks = []
 
   for (const block of blocks) {
-    const markdown = await blockToMarkdown(block, depth)
+    const markdown = await blockToMarkdown(block, context, depth)
     if (markdown.trim()) chunks.push(markdown)
   }
 
@@ -350,7 +377,8 @@ async function main() {
   for (const page of pages) {
     const metadata = pageMetadata(page)
     const blocks = await getChildren(page.id)
-    const body = await blocksToMarkdown(blocks)
+    const context = { slug: metadata.slug }
+    const body = await blocksToMarkdown(blocks, context)
     const filePath = path.join(contentRoot, metadata.folder, `${metadata.slug}.md`)
 
     await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -360,12 +388,17 @@ async function main() {
     console.log(`synced ${metadata.folder}/${metadata.slug}.md`)
   }
 
-  const byFolder = Map.groupBy(synced, (paper) => paper.folder)
+  const byFolder = new Map()
+  for (const paper of synced) {
+    const papers = byFolder.get(paper.folder) || []
+    papers.push(paper)
+    byFolder.set(paper.folder, papers)
+  }
 
-  await fs.writeFile(path.join(contentRoot, "index.md"), indexBody("논문 리뷰 노트", synced), "utf8")
+  await fs.writeFile(path.join(contentRoot, "index.md"), indexBody("\uB17C\uBB38 \uB9AC\uBDF0 \uB178\uD2B8", synced), "utf8")
 
   for (const [folder, papers] of byFolder.entries()) {
-    const title = categoryTitles[folder] || `${folder} 논문 리뷰`
+    const title = categoryTitles[folder] || `${folder} \uB17C\uBB38 \uB9AC\uBDF0`
     const indexPath = path.join(contentRoot, folder, "index.md")
     await fs.mkdir(path.dirname(indexPath), { recursive: true })
     await fs.writeFile(indexPath, indexBody(title, papers), "utf8")

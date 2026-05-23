@@ -26,3 +26,5 @@ It reads every page in the Notion database, converts blocks to Markdown, and wri
 - `Metrics` -> `content/papers/metrics/`
 
 After syncing, the same workflow commits the generated Markdown, builds Quartz, and deploys GitHub Pages. That means a manual run immediately republishes the blog from the current Notion content.
+
+Notion-hosted file and image blocks are downloaded into `content/papers/assets/notion/` during sync, so the published blog does not depend on temporary Notion file URLs.
