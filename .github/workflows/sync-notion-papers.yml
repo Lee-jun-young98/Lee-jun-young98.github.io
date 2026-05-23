@@ -1,0 +1,33 @@
+name: Sync Notion papers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 20 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Sync Notion database to Quartz content
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PAPERS_DATABASE_ID: ${{ secrets.NOTION_PAPERS_DATABASE_ID }}
+        run: node scripts/sync-notion-papers.mjs
+
+      - name: Commit synced content
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Sync Notion paper reviews
+          file_pattern: content/papers/**/*.md
