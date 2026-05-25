@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - scripts/sync-notion-papers.mjs
+      - .github/workflows/sync-notion-papers.yml
+      - docs/notion-sync.md
   workflow_dispatch:
 
 permissions:
