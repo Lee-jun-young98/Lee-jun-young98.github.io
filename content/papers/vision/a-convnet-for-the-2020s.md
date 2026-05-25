@@ -1,6 +1,8 @@
 ---
 title: "A ConvNet for the 2020s"
 date: 2023-12-29
+thumbnail: "/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png"
+socialImage: "/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png"
 paper_sync: true
 tags:
   - "paper-review"

@@ -1,6 +1,8 @@
 ---
 title: "Auto-Encoding Variational Bayes"
 date: 2025-01-06
+thumbnail: "/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png"
+socialImage: "/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"

@@ -1,6 +1,8 @@
 ---
 title: "Solving ImageNet: a Unified Scheme for Training any Backbone to Top Results"
 date: 2023-12-21
+thumbnail: "/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png"
+socialImage: "/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png"
 paper_sync: true
 tags:
   - "paper-review"

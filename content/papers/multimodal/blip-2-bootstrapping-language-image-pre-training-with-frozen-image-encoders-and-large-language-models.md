@@ -2,6 +2,8 @@
 title: "BLIP-2: Bootstrapping Language-Image Pre-training
 with Frozen Image Encoders and Large Language Models"
 date: 2025-06-10
+thumbnail: "/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png"
+socialImage: "/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"

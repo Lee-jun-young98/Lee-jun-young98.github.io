@@ -1,6 +1,8 @@
 ---
 title: "Segment-anything"
 date: 2023-12-21
+thumbnail: "/assets/notion/segment-anything-af6709116fa4.png"
+socialImage: "/assets/notion/segment-anything-af6709116fa4.png"
 paper_sync: true
 tags:
   - "paper-review"

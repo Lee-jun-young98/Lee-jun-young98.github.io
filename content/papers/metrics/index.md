@@ -1,5 +1,5 @@
 ---
-title: "Metrics 논문 리뷰"
+title: "Metrics"
 paper_sync: true
 ---
 

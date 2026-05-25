@@ -1,6 +1,8 @@
 ---
 title: "DINOv2 Learning Robust Visual Features without Supervision"
 date: 2024-12-19
+thumbnail: "/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png"
+socialImage: "/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"

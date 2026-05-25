@@ -2,6 +2,8 @@
 title: "ViT(AN IMAGE IS WORTH 16X16 WORDS:
 TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE)"
 date: 2023-12-21
+thumbnail: "/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png"
+socialImage: "/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png"
 paper_sync: true
 tags:
   - "paper-review"

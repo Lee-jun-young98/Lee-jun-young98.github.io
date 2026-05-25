@@ -1,6 +1,8 @@
 ---
 title: "Spatial Transformer Networks"
 date: 2023-12-21
+thumbnail: "/assets/notion/spatial-transformer-networks-18783572332d.png"
+socialImage: "/assets/notion/spatial-transformer-networks-18783572332d.png"
 paper_sync: true
 tags:
   - "paper-review"

@@ -1,6 +1,8 @@
 ---
 title: "Learning Transferable Visual Models From Natural Language Supervision"
 date: 2024-10-31
+thumbnail: "/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png"
+socialImage: "/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"

@@ -1,6 +1,8 @@
 ---
 title: "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"
 date: 2024-02-07
+thumbnail: "/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png"
+socialImage: "/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png"
 paper_sync: true
 tags:
   - "paper-review"
