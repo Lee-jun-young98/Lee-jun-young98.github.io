@@ -465,6 +465,8 @@ async function main() {
 
   for (const folder of Object.values(categoryFolders)) {
     const papers = byFolder.get(folder) || []
+    if (papers.length === 0) continue
+
     const title = categoryTitles[folder] || folder
     const indexPath = path.join(contentRoot, folder, "index.md")
     await fs.mkdir(path.dirname(indexPath), { recursive: true })
