@@ -1,5 +1,5 @@
 ---
-title: "논문 리뷰 노트"
+title: "?? ?? ??"
 paper_sync: true
 ---
 
@@ -28,10 +28,6 @@ paper_sync: true
 ![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
 
 ## [LLM](/papers/llm/)
-
-### [Attention Is All You Need(작성중)](/papers/llm/attention-is-all-you-need)
-
-![](/papers/assets/notion/attention-is-all-you-need-cf15928e50df.png)
 
 ### [LLM 동작원리](/papers/llm/llm)
 
@@ -68,8 +64,6 @@ paper_sync: true
 ### [Big Transfer(BiT): General Visual Representation Leanring](/papers/vision/big-transfer-bit-general-visual-representation-leanring)
 
 ![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png)
-
-### [ConvNeXt V2: Co-designing and Scaling ConvNets with Masked Autoencoders](/papers/vision/convnext-v2-co-designing-and-scaling-convnets-with-masked-autoencoders)
 
 ### [DINOv2 Learning Robust Visual Features without Supervision](/papers/vision/dinov2-learning-robust-visual-features-without-supervision)
 

@@ -40,12 +40,33 @@ const categoryPriority = ["Agent", "3D", "MultiModal", "LLM", "Generative AI", "
 
 const manualPaperReviews = [
   {
+    title: "ReAct: Synergizing Reasoning and Acting in Language Models",
+    folder: "llm",
+    slug: "react-synergizing-reasoning-and-acting",
+  },
+  {
+    title: "GLIP: Grounded Language-Image Pre-training",
+    folder: "multimodal",
+    slug: "glip-grounded-language-image-pre-training",
+  },
+  {
+    title: "No time to train! Training-Free Reference-Based Instance Segmentation",
+    folder: "vision",
+    slug: "no-time-to-train-training-free-reference-based-instance-segmentation",
+  },
+  {
     title: "Voyager: An Open-Ended Embodied Agent with Large Language Models",
     folder: "agent",
     slug: "voyager-open-ended-embodied-agent-with-large-language-models",
     thumbnail: "/papers/assets/agent/voyager-components.png",
   },
 ]
+
+const manualOverridePageIds = new Set([
+  "3698d6e1cee581fb9147c9108f141560",
+  "1268d6e1cee58034ad34f957dc1e2b7d",
+  "2298d6e1cee580af837dd872a256c2bb",
+])
 
 const knownPages = {
   "3698d6e1cee581fb9147c9108f141560": {
@@ -387,6 +408,7 @@ function pageMetadata(page) {
   const title = getTitle(properties)
   const tableTags = getMultiSelect(properties, "Table tag")
   const tasks = getMultiSelect(properties, "Task")
+  const progress = getMultiSelect(properties, "Progress")
   const override = knownPages[pageKey(page.id)]
   const folder = chooseFolder(tableTags, override)
   const slug = override?.slug || slugify(title)
@@ -395,6 +417,7 @@ function pageMetadata(page) {
     title,
     tableTags,
     tasks,
+    progress,
     folder,
     slug,
     aliases: override?.aliases || [],
@@ -402,6 +425,12 @@ function pageMetadata(page) {
     journal: getTextProperty(properties, "Jurnel") || getTextProperty(properties, "Journal"),
     date: getTextProperty(properties, "Date"),
   }
+}
+
+function shouldSyncPaper(metadata) {
+  if (metadata.title.includes("작성중") || metadata.title.includes("진행중")) return false
+  if (metadata.progress.length === 0) return true
+  return metadata.progress.includes("Done")
 }
 
 function indexBody(title, papers) {
@@ -471,6 +500,16 @@ async function main() {
 
   for (const page of pages) {
     const metadata = pageMetadata(page)
+    if (manualOverridePageIds.has(pageKey(page.id))) {
+      console.log(`skipped ${metadata.title} (manual blog override)`)
+      continue
+    }
+
+    if (!shouldSyncPaper(metadata)) {
+      console.log(`skipped ${metadata.title} (${metadata.progress.join(", ") || "no progress"})`)
+      continue
+    }
+
     const blocks = await getChildren(page.id)
     const context = { slug: metadata.slug, thumbnail: "" }
     const body = await blocksToMarkdown(blocks, context)

@@ -15,8 +15,6 @@ paper_sync: true
 
 ![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png)
 
-## [ConvNeXt V2: Co-designing and Scaling ConvNets with Masked Autoencoders](/papers/vision/convnext-v2-co-designing-and-scaling-convnets-with-masked-autoencoders)
-
 ## [DINOv2 Learning Robust Visual Features without Supervision](/papers/vision/dinov2-learning-robust-visual-features-without-supervision)
 
 ![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png)
