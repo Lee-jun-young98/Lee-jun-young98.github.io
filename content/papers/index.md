@@ -1,5 +1,5 @@
 ---
-title: "?? ?? ??"
+title: "논문 리뷰 노트"
 paper_sync: true
 ---
 
@@ -28,8 +28,6 @@ paper_sync: true
 ![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
 
 ## [LLM](/papers/llm/)
-
-### [LLM 동작원리](/papers/llm/llm)
 
 ### [ReAct: Synergizing Reasoning and Acting in Language Models](/papers/llm/react-synergizing-reasoning-and-acting)
 
