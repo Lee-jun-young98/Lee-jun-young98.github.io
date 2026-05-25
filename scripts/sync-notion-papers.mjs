@@ -226,6 +226,15 @@ async function downloadNotionAsset(url, block, context) {
 
   const filename = `${context.slug}-${pageKey(block.id).slice(0, 12)}${assetExtension(url)}`
   const filePath = path.join(assetRoot, filename)
+  const publicPath = `${assetPublicRoot}/${filename}`
+
+  try {
+    await fs.access(filePath)
+    return publicPath
+  } catch {
+    // Download the asset when it is not already committed in the repository.
+  }
+
   const response = await fetch(url)
 
   if (!response.ok) {
@@ -234,7 +243,7 @@ async function downloadNotionAsset(url, block, context) {
 
   await fs.writeFile(filePath, Buffer.from(await response.arrayBuffer()))
 
-  return `${assetPublicRoot}/${filename}`
+  return publicPath
 }
 
 function buildFrontmatter(page, metadata, body) {
