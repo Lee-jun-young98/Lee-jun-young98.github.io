@@ -1,7 +1,7 @@
 import fs from "node:fs/promises"
 import path from "node:path"
 
-// Keep the GitHub Pages copy as generated Markdown, not as Notion page links.
+// Keep the GitHub Pages copy as generated Markdown text, not as Notion page links.
 const notionToken = process.env.NOTION_TOKEN
 const databaseId = process.env.NOTION_PAPERS_DATABASE_ID || "df3a2db6a13749c5b70eac452622298a"
 const notionVersion = process.env.NOTION_VERSION || "2022-06-28"
