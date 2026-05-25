@@ -57,7 +57,11 @@ const knownPages = {
   },
 }
 
-async function notion(pathname, init = {}) {
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+async function notion(pathname, init = {}, attempt = 1) {
   const response = await fetch(`https://api.notion.com/v1${pathname}`, {
     ...init,
     headers: {
@@ -70,6 +74,14 @@ async function notion(pathname, init = {}) {
 
   if (!response.ok) {
     const text = await response.text()
+    if ((response.status === 429 || response.status >= 500) && attempt < 5) {
+      const retryAfter = Number(response.headers.get("retry-after"))
+      const delay = Number.isFinite(retryAfter) ? retryAfter * 1000 : attempt * 2500
+      console.warn(`Notion API ${response.status}; retrying ${pathname} in ${delay}ms`)
+      await sleep(delay)
+      return notion(pathname, init, attempt + 1)
+    }
+
     throw new Error(`Notion API ${response.status} ${response.statusText}: ${text}`)
   }
 
