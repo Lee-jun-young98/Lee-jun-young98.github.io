@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Generative AI"
 paper_sync: true
 ---

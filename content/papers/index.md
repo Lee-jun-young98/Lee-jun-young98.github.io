@@ -1,4 +1,4 @@
-﻿---
+---
 title: "논문 리뷰 노트"
 paper_sync: true
 ---

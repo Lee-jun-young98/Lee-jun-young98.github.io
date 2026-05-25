@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Medical SAM Adapter: Adapting Segment Anything Model for Medical Image Segmentation"
 date: 2024-01-02
 thumbnail: "/papers/assets/notion/medical-sam-adapter-study-note-a7ac9d87808f.png"

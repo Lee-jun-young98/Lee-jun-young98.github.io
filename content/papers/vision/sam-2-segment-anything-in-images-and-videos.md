@@ -1,4 +1,4 @@
-﻿---
+---
 title: "SAM 2: Segment Anything in Images and Videos"
 date: 2024-11-26
 thumbnail: "/papers/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png"

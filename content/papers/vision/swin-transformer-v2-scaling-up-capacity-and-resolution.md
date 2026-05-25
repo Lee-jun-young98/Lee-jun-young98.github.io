@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Swin Transformer V2: Scaling Up Capacity and Resolution"
 date: 2024-02-01
 thumbnail: "/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4e258f22f905.png"

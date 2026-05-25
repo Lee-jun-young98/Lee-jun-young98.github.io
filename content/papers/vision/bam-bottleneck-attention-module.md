@@ -1,4 +1,4 @@
-﻿---
+---
 title: "BAM : Bottleneck Attention Module"
 date: 2023-12-21
 thumbnail: "/papers/assets/notion/bam-bottleneck-attention-module-eb682a2bc0e6.png"

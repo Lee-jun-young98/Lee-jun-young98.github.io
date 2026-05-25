@@ -1,4 +1,4 @@
-﻿---
+---
 title: "A ConvNet for the 2020s"
 date: 2023-12-29
 thumbnail: "/papers/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png"

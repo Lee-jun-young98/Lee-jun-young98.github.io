@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Attention Is All You Need(작성중)"
 date: 2023-12-21
 thumbnail: "/papers/assets/notion/attention-is-all-you-need-cf15928e50df.png"

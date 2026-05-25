@@ -1,4 +1,4 @@
-﻿---
+---
 title: "MultiModal"
 paper_sync: true
 ---

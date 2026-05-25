@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Emerging Properties in Self-Supervised Vision Transformers"
 date: 2024-12-18
 thumbnail: "/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png"

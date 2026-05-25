@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Skill"
 paper_sync: true
 ---

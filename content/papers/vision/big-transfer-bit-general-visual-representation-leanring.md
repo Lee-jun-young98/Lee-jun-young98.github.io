@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Big Transfer(BiT): General Visual Representation Leanring"
 date: 2023-12-21
 thumbnail: "/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png"

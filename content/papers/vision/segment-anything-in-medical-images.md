@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Segment Anything in Medical Images"
 date: 2024-01-04
 thumbnail: "/papers/assets/notion/segment-anything-in-medical-images-00b44896fa44.png"

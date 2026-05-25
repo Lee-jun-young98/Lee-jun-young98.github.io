@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Structured 3D Latents for Scalable and Versatile 3D Generation"
 date: 2024-12-13
 thumbnail: "/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-15b8d6e1cee5.png"

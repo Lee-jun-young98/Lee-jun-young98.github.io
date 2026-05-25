@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Spatial Transformer Networks"
 date: 2023-12-21
 thumbnail: "/papers/assets/notion/spatial-transformer-networks-18783572332d.png"

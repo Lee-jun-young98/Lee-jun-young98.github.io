@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Denoising Diffusion Probabilistic Models"
 date: 2025-01-10
 thumbnail: "/papers/assets/notion/ddpm-study-note-1758d6e1cee5.png"

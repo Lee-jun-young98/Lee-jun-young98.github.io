@@ -1,4 +1,4 @@
-﻿---
+---
 title: "High-Resolution Image Synthesis with Latent Diffusion Models"
 date: 2025-01-13
 thumbnail: "/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png"

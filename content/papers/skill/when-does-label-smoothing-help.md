@@ -1,4 +1,4 @@
-﻿---
+---
 title: "When Does Label Smoothing Help?"
 date: 2024-04-03
 thumbnail: "/papers/assets/notion/when-does-label-smoothing-help-592b8ded30be.png"

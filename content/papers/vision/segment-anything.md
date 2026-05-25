@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Segment-anything"
 date: 2023-12-21
 thumbnail: "/papers/assets/notion/segment-anything-af6709116fa4.png"

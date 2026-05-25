@@ -1,4 +1,4 @@
-﻿---
+---
 title: "3D"
 paper_sync: true
 ---
