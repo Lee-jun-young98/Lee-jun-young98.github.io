@@ -32,7 +32,7 @@ const categoryTitles = {
   metrics: "Metrics \uB17C\uBB38 \uB9AC\uBDF0",
 }
 
-const categoryPriority = ["LLM", "Generative AI", "Vision", "MultiModal", "3D", "Skill", "Metrics"]
+const categoryPriority = ["3D", "MultiModal", "LLM", "Generative AI", "Vision", "Skill", "Metrics"]
 
 const knownPages = {
   "3698d6e1cee581fb9147c9108f141560": {
@@ -180,7 +180,7 @@ function slugify(title) {
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/&/g, " and ")
-    .replace(/[^a-z0-9가-힣]+/g, "-")
+    .replace(/[^a-z0-9\uac00-\ud7a3]+/g, "-")
     .replace(/^-+|-+$/g, "")
 
   return ascii || "untitled"
@@ -224,13 +224,11 @@ function buildFrontmatter(page, metadata, body) {
   const lines = ["---"]
   lines.push(`title: "${escapeYaml(metadata.title)}"`)
   if (metadata.date) lines.push(`date: ${metadata.date}`)
+  lines.push("paper_sync: true")
   lines.push("tags:")
   lines.push(markdownList(["paper-review", ...metadata.tableTags, ...metadata.tasks]))
   if (metadata.author) lines.push(`author: "${escapeYaml(metadata.author)}"`)
   if (metadata.journal) lines.push(`journal: "${escapeYaml(metadata.journal)}"`)
-  lines.push(`notion_id: "${page.id}"`)
-  lines.push(`notion_url: "${page.url}"`)
-  lines.push("notion_synced: true")
   if (metadata.aliases.length > 0) {
     lines.push("aliases:")
     lines.push(markdownList(metadata.aliases))
@@ -365,7 +363,32 @@ function indexBody(title, papers) {
     .map((paper) => `- [[${paper.folder}/${paper.slug}|${paper.title}]]`)
     .join("\n")
 
-  return `---\ntitle: "${escapeYaml(title)}"\n---\n\n${links}\n`
+  return `---\ntitle: "${escapeYaml(title)}"\npaper_sync: true\n---\n\n${links}\n`
+}
+
+async function removePreviouslySyncedMarkdown(directory) {
+  let entries = []
+  try {
+    entries = await fs.readdir(directory, { withFileTypes: true })
+  } catch (error) {
+    if (error.code === "ENOENT") return
+    throw error
+  }
+
+  for (const entry of entries) {
+    const entryPath = path.join(directory, entry.name)
+    if (entry.isDirectory()) {
+      if (entry.name !== "assets") await removePreviouslySyncedMarkdown(entryPath)
+      continue
+    }
+
+    if (!entry.name.endsWith(".md")) continue
+
+    const content = await fs.readFile(entryPath, "utf8")
+    if (content.includes("paper_sync: true") || content.includes("notion_synced: true")) {
+      await fs.rm(entryPath)
+    }
+  }
 }
 
 async function main() {
@@ -373,6 +396,7 @@ async function main() {
   const synced = []
 
   await fs.mkdir(contentRoot, { recursive: true })
+  await removePreviouslySyncedMarkdown(contentRoot)
 
   for (const page of pages) {
     const metadata = pageMetadata(page)
@@ -397,7 +421,8 @@ async function main() {
 
   await fs.writeFile(path.join(contentRoot, "index.md"), indexBody("\uB17C\uBB38 \uB9AC\uBDF0 \uB178\uD2B8", synced), "utf8")
 
-  for (const [folder, papers] of byFolder.entries()) {
+  for (const folder of Object.values(categoryFolders)) {
+    const papers = byFolder.get(folder) || []
     const title = categoryTitles[folder] || `${folder} \uB17C\uBB38 \uB9AC\uBDF0`
     const indexPath = path.join(contentRoot, folder, "index.md")
     await fs.mkdir(path.dirname(indexPath), { recursive: true })
