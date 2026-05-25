@@ -1,13 +1,11 @@
 ---
 title: "Swin Transformer V2: Scaling Up Capacity and Resolution"
 date: 2024-02-01
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Classification"
-notion_id: "33cb03b3-2f1a-413f-b1ae-e34ccef33763"
-notion_url: "https://www.notion.so/Swin-Transformer-V2-Scaling-Up-Capacity-and-Resolution-33cb03b32f1a413fb1aee34ccef33763"
-notion_synced: true
 ---
 
 ---

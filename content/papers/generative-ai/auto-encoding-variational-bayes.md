@@ -1,6 +1,7 @@
 ---
 title: "Auto-Encoding Variational Bayes"
 date: 2025-01-06
+paper_sync: true
 tags:
   - "paper-review"
   - "Generative AI"
@@ -8,9 +9,6 @@ tags:
   - "Reconstruction"
 author: "Diederik P Kingma, Max Welling"
 journal: "arXiv 2013"
-notion_id: "1738d6e1-cee5-8017-b174-d84b12955be5"
-notion_url: "https://www.notion.so/Auto-Encoding-Variational-Bayes-1738d6e1cee58017b174d84b12955be5"
-notion_synced: true
 ---
 
 ---

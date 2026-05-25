@@ -1,6 +1,7 @@
 ---
 title: "Learning Transferable Visual Models From Natural Language Supervision"
 date: 2024-10-31
+paper_sync: true
 tags:
   - "paper-review"
   - "MultiModal"
@@ -8,9 +9,6 @@ tags:
 author: "Alec Radford, JongWook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal,
 Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever"
 journal: "In CVPR 02.26"
-notion_id: "7ce2e4e7-f296-4451-8b7b-33001a9239fe"
-notion_url: "https://www.notion.so/Learning-Transferable-Visual-Models-From-Natural-Language-Supervision-7ce2e4e7f29644518b7b33001a9239fe"
-notion_synced: true
 ---
 
 ---

@@ -1,13 +1,11 @@
 ---
 title: "Solving ImageNet: a Unified Scheme for Training any Backbone to Top Results"
 date: 2023-12-21
+paper_sync: true
 tags:
   - "paper-review"
   - "Skill"
   - "Classification"
-notion_id: "ecca52c5-7f68-46ef-97c7-f404d79ecbf8"
-notion_url: "https://www.notion.so/Solving-ImageNet-a-Unified-Scheme-for-Training-any-Backbone-to-Top-Results-ecca52c57f6846ef97c7f404d79ecbf8"
-notion_synced: true
 ---
 
 [https://arxiv.org/pdf/2204.03475.pdf](https://arxiv.org/pdf/2204.03475.pdf)

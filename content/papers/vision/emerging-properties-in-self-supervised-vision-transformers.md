@@ -1,15 +1,13 @@
 ---
 title: "Emerging Properties in Self-Supervised Vision Transformers"
 date: 2024-12-18
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Self-supervised-Learning"
 author: "Mathilde Caron, Hugo Touvron, Ishan Misra, Hervé Jégou, Julien Mairal, Piotr Bojanowski, Armand Joulin"
 journal: "ICCV 2021.04.29"
-notion_id: "1608d6e1-cee5-806f-bee4-d14fd26c0c29"
-notion_url: "https://www.notion.so/Emerging-Properties-in-Self-Supervised-Vision-Transformers-1608d6e1cee5806fbee4d14fd26c0c29"
-notion_synced: true
 ---
 
 ---

@@ -1,14 +1,12 @@
 ---
 title: "A ConvNet for the 2020s"
 date: 2023-12-29
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Classification"
   - "Module"
-notion_id: "6a662b32-26d0-4996-9287-7f572b5d02d6"
-notion_url: "https://www.notion.so/A-ConvNet-for-the-2020s-6a662b3226d0499692877f572b5d02d6"
-notion_synced: true
 ---
 
 ---

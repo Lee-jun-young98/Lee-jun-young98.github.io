@@ -2,6 +2,7 @@
 title: "BLIP-2: Bootstrapping Language-Image Pre-training
 with Frozen Image Encoders and Large Language Models"
 date: 2025-06-10
+paper_sync: true
 tags:
   - "paper-review"
   - "MultiModal"
@@ -10,9 +11,6 @@ tags:
   - "LLM"
 author: "Junnan Li Dongxu Li Silvio Savarese Steven Hoi"
 journal: "In PMLR 2023"
-notion_id: "20e8d6e1-cee5-80e3-b8ea-c908ee9687c8"
-notion_url: "https://www.notion.so/BLIP-2-Bootstrapping-Language-Image-Pre-training-with-Frozen-Image-Encoders-and-Large-Language-Mode-20e8d6e1cee580e3b8eac908ee9687c8"
-notion_synced: true
 ---
 
 ---

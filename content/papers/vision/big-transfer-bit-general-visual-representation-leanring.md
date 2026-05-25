@@ -1,13 +1,11 @@
 ---
 title: "Big Transfer(BiT): General Visual Representation Leanring"
 date: 2023-12-21
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Classification"
-notion_id: "dc9db0e8-5657-4718-a76f-9e049037db16"
-notion_url: "https://www.notion.so/Big-Transfer-BiT-General-Visual-Representation-Leanring-dc9db0e856574718a76f9e049037db16"
-notion_synced: true
 ---
 
 ---

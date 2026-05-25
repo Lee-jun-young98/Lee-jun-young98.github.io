@@ -1,13 +1,11 @@
 ---
 title: "Segment-anything"
 date: 2023-12-21
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Segmentation"
-notion_id: "4f1ab265-94b8-436e-a46b-ad1a0ee72c42"
-notion_url: "https://www.notion.so/Segment-anything-4f1ab26594b8436ea46bad1a0ee72c42"
-notion_synced: true
 ---
 
 ---

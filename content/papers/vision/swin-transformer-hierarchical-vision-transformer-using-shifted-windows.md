@@ -1,13 +1,11 @@
 ---
 title: "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"
 date: 2024-02-07
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Classification"
-notion_id: "2ae41bf1-1817-49c4-b925-0c9008e85e84"
-notion_url: "https://www.notion.so/Swin-Transformer-Hierarchical-Vision-Transformer-using-Shifted-Windows-2ae41bf1181749c4b9250c9008e85e84"
-notion_synced: true
 ---
 
 ---

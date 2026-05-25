@@ -1,15 +1,13 @@
 ---
 title: "DINOv2 Learning Robust Visual Features without Supervision"
 date: 2024-12-19
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Self-supervised-Learning"
 author: "Maxime Oquab, Timothée Darcet, Théo Moutakanni, Huy Vo, Marc Szafraniec, Vasil Khalidov, Pierre Fernandez, Daniel Haziza, Francisco Massa, Alaaeldin El-Nouby, Mahmoud Assran, Nicolas Ballas, Wojciech Galuba, Russell Howes, Po-Yao Huang, Shang-Wen Li, Ishan Misra, Michael Rabbat, Vasu Sharma, Gabriel Synnaeve, Hu Xu, Hervé Jegou, Julien Mairal, Patrick Labatut, Armand Joulin, Piotr Bojanowski"
 journal: "Meta AI Research Inria 2023. 04. 14"
-notion_id: "1618d6e1-cee5-8059-916f-d8d1c6ab7af3"
-notion_url: "https://www.notion.so/DINOv2-Learning-Robust-Visual-Features-without-Supervision-1618d6e1cee58059916fd8d1c6ab7af3"
-notion_synced: true
 ---
 
 ---

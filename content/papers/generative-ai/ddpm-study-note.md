@@ -1,15 +1,13 @@
 ---
 title: "Denoising Diffusion Probabilistic Models"
 date: 2025-01-10
+paper_sync: true
 tags:
   - "paper-review"
   - "Generative AI"
   - "Generative"
 author: "Jonathan Ho, Ajay Jain, Pieter Abbeel"
 journal: "NEURIPS 2020"
-notion_id: "1738d6e1-cee5-80e2-ab24-c3260c5d314c"
-notion_url: "https://www.notion.so/Denoising-Diffusion-Probabilistic-Models-1738d6e1cee580e2ab24c3260c5d314c"
-notion_synced: true
 aliases:
   - "/papers/ddpm-study-note"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Structured 3D Latents for Scalable and Versatile 3D Generation"
 date: 2024-12-13
+paper_sync: true
 tags:
   - "paper-review"
   - "3D"
@@ -10,9 +11,6 @@ tags:
 author: "Jianfeng Xiang1,3⋆ Zelong Lv2,3⋆ Sicheng Xu3 Yu Deng3 Ruicheng Wang2,3⋆
 Bowen Zhang2,3⋆ Dong Chen3 Xin Tong3 Jiaolong Yang3†"
 journal: "arXiv 2024"
-notion_id: "15b8d6e1-cee5-8094-8cad-ef66c51f35ef"
-notion_url: "https://www.notion.so/Structured-3D-Latents-for-Scalable-and-Versatile-3D-Generation-15b8d6e1cee580948cadef66c51f35ef"
-notion_synced: true
 ---
 
 ---

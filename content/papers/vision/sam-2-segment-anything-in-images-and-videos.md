@@ -1,6 +1,7 @@
 ---
 title: "SAM 2: Segment Anything in Images and Videos"
 date: 2024-11-26
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
@@ -9,9 +10,6 @@ author: "Nikhila Ravi∗,†, Valentin Gabeur∗, Yuan-Ting Hu∗, Ronghang Hu�
 Haitham Khedr∗, Roman Rädle∗, Chloe Rolland, Laura Gustafson, Eric Mintun, Junting Pan, Kalyan
 Vasudev Alwala, Nicolas Carion, Chao-YuanWu, Ross Girshick, Piotr Dollár†, Christoph Feichtenhofer∗,†"
 journal: "Meta FAIR 2024.07.29"
-notion_id: "14a8d6e1-cee5-80c7-b91e-ce8d0921ea93"
-notion_url: "https://www.notion.so/SAM-2-Segment-Anything-in-Images-and-Videos-14a8d6e1cee580c7b91ece8d0921ea93"
-notion_synced: true
 ---
 
 ---

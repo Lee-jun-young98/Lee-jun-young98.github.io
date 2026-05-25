@@ -1,5 +1,6 @@
 ---
 title: "논문 리뷰 노트"
+paper_sync: true
 ---
 
 - [[vision/a-convnet-for-the-2020s|A ConvNet for the 2020s]]
@@ -7,7 +8,7 @@ title: "논문 리뷰 노트"
 - [[generative-ai/auto-encoding-variational-bayes|Auto-Encoding Variational Bayes]]
 - [[vision/bam-bottleneck-attention-module|BAM : Bottleneck Attention Module]]
 - [[vision/big-transfer-bit-general-visual-representation-leanring|Big Transfer(BiT): General Visual Representation Leanring]]
-- [[llm/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models|BLIP-2: Bootstrapping Language-Image Pre-training
+- [[multimodal/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models|BLIP-2: Bootstrapping Language-Image Pre-training
 with Frozen Image Encoders and Large Language Models]]
 - [[vision/convnext-v2-co-designing-and-scaling-convnets-with-masked-autoencoders|ConvNeXt V2: Co-designing and Scaling ConvNets with Masked Autoencoders]]
 - [[generative-ai/deep-unsupervised-learning-using-nonequilibrium-thermodynamics|Deep Unsupervised Learning using Nonequilibrium Thermodynamics]]
@@ -26,7 +27,7 @@ with Frozen Image Encoders and Large Language Models]]
 - [[vision/segment-anything|Segment-anything]]
 - [[skill/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results|Solving ImageNet: a Unified Scheme for Training any Backbone to Top Results]]
 - [[skill/spatial-transformer-networks|Spatial Transformer Networks]]
-- [[generative-ai/structured-3d-latents-for-scalable-and-versatile-3d-generation|Structured 3D Latents for Scalable and Versatile 3D Generation]]
+- [[3d/structured-3d-latents-for-scalable-and-versatile-3d-generation|Structured 3D Latents for Scalable and Versatile 3D Generation]]
 - [[vision/swin-transformer-v2-scaling-up-capacity-and-resolution|Swin Transformer V2: Scaling Up Capacity and Resolution]]
 - [[vision/swin-transformer-hierarchical-vision-transformer-using-shifted-windows|Swin Transformer: Hierarchical Vision Transformer using Shifted Windows]]
 - [[vision/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale|ViT(AN IMAGE IS WORTH 16X16 WORDS:

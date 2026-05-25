@@ -1,5 +1,6 @@
 ---
 title: "Vision 논문 리뷰"
+paper_sync: true
 ---
 
 - [[vision/a-convnet-for-the-2020s|A ConvNet for the 2020s]]

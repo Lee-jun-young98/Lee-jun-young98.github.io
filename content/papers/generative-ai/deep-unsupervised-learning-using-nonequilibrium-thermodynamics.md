@@ -1,15 +1,13 @@
 ---
 title: "Deep Unsupervised Learning using Nonequilibrium Thermodynamics"
 date: 2025-01-08
+paper_sync: true
 tags:
   - "paper-review"
   - "Generative AI"
   - "Generative"
 author: "Jascha Sohl-Dickstein, Eric A. Weiss, Niru Maheswaranathan, Surya Ganguli"
 journal: "ICML 2015"
-notion_id: "1738d6e1-cee5-8066-9375-f756365b168b"
-notion_url: "https://www.notion.so/Deep-Unsupervised-Learning-using-Nonequilibrium-Thermodynamics-1738d6e1cee580669375f756365b168b"
-notion_synced: true
 ---
 
 ---

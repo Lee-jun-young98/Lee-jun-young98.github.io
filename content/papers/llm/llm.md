@@ -1,13 +1,11 @@
 ---
 title: "LLM 동작원리"
 date: 2026-01-19
+paper_sync: true
 tags:
   - "paper-review"
   - "LLM"
   - "LLM"
-notion_id: "2ed8d6e1-cee5-806c-8836-f3993413aa2a"
-notion_url: "https://www.notion.so/LLM-2ed8d6e1cee5806c8836f3993413aa2a"
-notion_synced: true
 ---
 
 # 1. LLM 추론방식(KV cache)

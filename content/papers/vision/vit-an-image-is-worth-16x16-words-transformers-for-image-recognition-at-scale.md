@@ -2,13 +2,11 @@
 title: "ViT(AN IMAGE IS WORTH 16X16 WORDS:
 TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE)"
 date: 2023-12-21
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Classification"
-notion_id: "8aab61b4-7ebe-4bb5-922e-a0625984fd3a"
-notion_url: "https://www.notion.so/ViT-AN-IMAGE-IS-WORTH-16X16-WORDS-TRANSFORMERS-FOR-IMAGE-RECOGNITION-AT-SCALE-8aab61b47ebe4bb5922ea0625984fd3a"
-notion_synced: true
 ---
 
 ---

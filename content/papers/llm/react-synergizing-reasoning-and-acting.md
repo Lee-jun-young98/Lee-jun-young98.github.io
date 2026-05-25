@@ -1,15 +1,13 @@
 ---
 title: "ReAct: Synergizing Reasoning and Acting in Language Models"
 date: 2026-05-23
+paper_sync: true
 tags:
   - "paper-review"
   - "LLM"
   - "LLM"
 author: "Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao"
 journal: "ICLR 2023"
-notion_id: "3698d6e1-cee5-81fb-9147-c9108f141560"
-notion_url: "https://www.notion.so/ReAct-Synergizing-Reasoning-and-Acting-in-Language-Models-3698d6e1cee581fb9147c9108f141560"
-notion_synced: true
 aliases:
   - "/papers/react-synergizing-reasoning-and-acting"
 ---

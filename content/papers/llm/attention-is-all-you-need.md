@@ -1,13 +1,11 @@
 ---
 title: "Attention Is All You Need(작성중)"
 date: 2023-12-21
+paper_sync: true
 tags:
   - "paper-review"
   - "LLM"
   - "LLM"
-notion_id: "b71cfb06-0d06-484a-82c3-846e48b54554"
-notion_url: "https://www.notion.so/Attention-Is-All-You-Need-b71cfb060d06484a82c3846e48b54554"
-notion_synced: true
 ---
 
 ---

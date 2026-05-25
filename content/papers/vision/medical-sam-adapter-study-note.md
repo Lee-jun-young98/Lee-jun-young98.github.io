@@ -1,13 +1,11 @@
 ---
 title: "Medical SAM Adapter: Adapting Segment Anything Model for Medical Image Segmentation"
 date: 2024-01-02
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Segmentation"
-notion_id: "41d76791-6da7-46b3-b58c-8d28f16a65df"
-notion_url: "https://www.notion.so/Medical-SAM-Adapter-Adapting-Segment-Anything-Model-for-Medical-Image-Segmentation-41d767916da746b3b58c8d28f16a65df"
-notion_synced: true
 aliases:
   - "/papers/medical-sam-adapter-study-note"
 ---

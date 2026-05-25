@@ -1,13 +1,11 @@
 ---
 title: "When Does Label Smoothing Help?"
 date: 2024-04-03
+paper_sync: true
 tags:
   - "paper-review"
   - "Skill"
   - "Classification"
-notion_id: "60398924-e650-4cad-ac52-2e54886464c8"
-notion_url: "https://www.notion.so/When-Does-Label-Smoothing-Help-60398924e6504cadac522e54886464c8"
-notion_synced: true
 ---
 
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Skill 논문 리뷰"
+paper_sync: true
 ---
 
 - [[skill/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results|Solving ImageNet: a Unified Scheme for Training any Backbone to Top Results]]

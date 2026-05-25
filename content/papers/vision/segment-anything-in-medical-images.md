@@ -1,13 +1,11 @@
 ---
 title: "Segment Anything in Medical Images"
 date: 2024-01-04
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Segmentation"
-notion_id: "d6008756-365f-4a75-a7cd-16caef356d4f"
-notion_url: "https://www.notion.so/Segment-Anything-in-Medical-Images-d6008756365f4a75a7cd16caef356d4f"
-notion_synced: true
 ---
 
 ---

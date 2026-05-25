@@ -1,15 +1,13 @@
 ---
 title: "High-Resolution Image Synthesis with Latent Diffusion Models"
 date: 2025-01-13
+paper_sync: true
 tags:
   - "paper-review"
   - "Generative AI"
   - "Generative"
 author: "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer"
 journal: "CVPR 2022"
-notion_id: "1778d6e1-cee5-80cd-8b78-f9b185daf3b1"
-notion_url: "https://www.notion.so/High-Resolution-Image-Synthesis-with-Latent-Diffusion-Models-1778d6e1cee580cd8b78f9b185daf3b1"
-notion_synced: true
 aliases:
   - "/papers/latent-diffusion-models-study-note"
 ---

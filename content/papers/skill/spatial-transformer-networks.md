@@ -1,13 +1,11 @@
 ---
 title: "Spatial Transformer Networks"
 date: 2023-12-21
+paper_sync: true
 tags:
   - "paper-review"
   - "Skill"
   - "Module"
-notion_id: "a201f287-9ee2-4bba-a702-88ff3558b04a"
-notion_url: "https://www.notion.so/Spatial-Transformer-Networks-a201f2879ee24bbaa70288ff3558b04a"
-notion_synced: true
 ---
 
 ---

@@ -1,13 +1,11 @@
 ---
 title: "BAM : Bottleneck Attention Module"
 date: 2023-12-21
+paper_sync: true
 tags:
   - "paper-review"
   - "Vision"
   - "Module"
-notion_id: "384f2905-3832-47a6-b31e-1ad5bd5fb895"
-notion_url: "https://www.notion.so/BAM-Bottleneck-Attention-Module-384f2905383247a6b31e1ad5bd5fb895"
-notion_synced: true
 ---
 
 [https://arxiv.org/abs/1807.06514](https://arxiv.org/abs/1807.06514)
