@@ -4,6 +4,12 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 20 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/sync-notion-papers.mjs
+      - .github/workflows/sync-notion-papers.yml
 
 permissions:
   contents: write
@@ -40,10 +46,16 @@ jobs:
         run: node scripts/sync-notion-papers.mjs
 
       - name: Commit synced content
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Sync Notion paper reviews
-          file_pattern: content/papers/index.md content/papers/**/*.md content/papers/assets/notion/**/*
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/papers
+          if git diff --cached --quiet; then
+            echo "No Notion paper changes to commit."
+          else
+            git commit -m "Sync Notion paper reviews"
+            git push
+          fi
 
       - name: Build
         run: npx quartz build
