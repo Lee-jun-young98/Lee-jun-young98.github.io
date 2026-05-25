@@ -1,8 +1,8 @@
----
+﻿---
 title: "High-Resolution Image Synthesis with Latent Diffusion Models"
 date: 2025-01-13
-thumbnail: "/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png"
-socialImage: "/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png"
+thumbnail: "/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -22,7 +22,7 @@ aliases:
 
 [https://github.com/CompVis/latent-diffusion](https://github.com/CompVis/latent-diffusion)
 
-[/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.pdf](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.pdf)
+[/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.pdf](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.pdf)
 
 # Abstract
 
@@ -81,7 +81,7 @@ aliases:
 
 > [!note]
 > **Departure to Latent Space**
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >   - Two stages로 나눔
 >     1. Perceptual Compression
@@ -167,17 +167,17 @@ aliases:
 > **Auto Encoder 작동방식**
 >   - 주어진 이미지 x∈RH×W×3은 RGB 공간에 위치함
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >   - **인코더(Encoder)** E는 이미지를 입력받아 잠재 표현 z로 변환함
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >     - z는 다운샘플링된 이미지이며, h와 w는 다운샘플링된 크기이며 c는 채널수임
 > 
 >   - **디코더(Decoder)** D는 잠재 표현 z를 받아 원래 이미지를 복원하여 x~를 생성함
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >   - 중요한 점은 **인코더**가 이미지를 다운샘플링하여 크기를 줄이는 과정인데, 이때 **다운샘플링 비율** f=H/h=W/w이며 f=2^m와 같은 다양한 다운샘플링 인자 m∈N를 실험
 
@@ -193,7 +193,7 @@ aliases:
 > 
 >   - 이로 인해 더 정확한 재구성이 가능함
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 
 ## 3.2. Latent Diffusion Models
 
@@ -206,7 +206,7 @@ aliases:
 >   - 이미지 합성에서 가장 성공적인 모델은 variational lower bound를 사용하여 noise 제거 방식 모델과 denoising score가 유사함
 > 
 >   - 목표 함수는 noise가 제거된 결과와 실제 결과 간의 차이를 최소화하는 방식으로 정의됨
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >   - ϵ: 노이즈
 > 
@@ -225,7 +225,7 @@ aliases:
 >   - 데이터의 중요한 의미적 정보를 집중하고 낮은 차원에서 훨씬 효율적인 계산을 통해 학습함
 > 
 >   - Latent Diffusion Models
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >     - Unet이 제공하는 Inductive bias를 이용할 수 있으며 이는 기본 Unet을 주로 2D 합성곱 계층으로 구축할 수 있는 능력과 rewieght된 bound를 사용하여 목표를 지각적으로 가장 중요한 비트에 집중시킬 수 있음
 > 
@@ -247,17 +247,17 @@ aliases:
 > **LDM with Unet**
 >   - 다양한 모달리티로 부터 전처리된 y를 입력하기 위해 인코더를 도입함
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >   - 도입된 입코더 값을 cross attention layer에 맵핑을 진행함
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
 >   - 이미지 조건쌍으로 학습하는 LDM은 다음과 같음
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17a8d6e1cee5.png)
 
 ---
 
@@ -269,17 +269,17 @@ aliases:
 
 > [!note]
 >   - VQ-regularized latent spaces에서 학습된 LDM 모델이 더 좋은 sample quality를 보여줬으며, VQ-reqularized 1단계 모델의 재구성 능력은 continuous counterparts에 비해 뒤처짐
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 
 > [!note]
 >   - 해상도를 > 256^2로 해야 시각화 능력이 상승
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 
 > [!note]
 > **학습 및 추론 아키텍처 디테일(논문 E절에 기술)**
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 
 ## 4.1. On Perceptual Compression Tradeoffs
 
@@ -289,13 +289,13 @@ aliases:
 > Down Sampling factors {1,2,4,8,16,32}에 따른 품질 변화
 >   - 2백만 step동안 훈련했으며 DownSampling Factor(f)가 낮으면(1, 2) 학습이 느리게 되고 f가 너무 높으면(32) 전반적인 sample quality에 제한이 생김 → {4, 16}이 적당함
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >   - downsampling을 4로 한 후 다른 모델과 비교한 결과
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >   - CelebA-HQ와 ImageNet에서 DDIM Sampler를 이용한 FID, throughput 비교
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >     - LDM {4, 8} 모델은 다른 모델에 비해 뛰어난 성능을 보여줌
 > 
@@ -307,7 +307,7 @@ aliases:
 
 > [!note]
 > **Sample quality 평가, FID, Precision-and-Recall**
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 
 ## 4.3. Conditional Latent Diffusion
 
@@ -334,7 +334,7 @@ aliases:
 - Latent space의 PSNR이 결과 품질에 중요한 영향을 미침
 
 > [!note]
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 
 ## 4.4. Super-Resolution with Latent Diffusion
 
@@ -343,26 +343,26 @@ aliases:
 > [!note]
 > **LDM을 활용한 Super Resolution과 SR3 비교**
 >   1. 그림
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >     - 저해상도 이미지를 직접 조건화하여 초해상도 모델로 훈련 가능
 > 
 >   1. 표
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >     - SR3와 비교해 FID에서 우수한 성능을 보이며, IS는 SR3가 더 우수함
 > 
 >     - 단순 이미지 회귀 모델은 PSNR 및 SSIM에서 최고 성과를 기록했지만, 인간 지각과는 잘 일치하지 않음. 이는 흐릿한 이미지를 선호하는 경향 때문임
 > 
 >   1. 사용자 연구
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >     - PSNR 및 SSIM 개선, BSR
 >       - 사후 가이딩(post-hoc guiding): PSNR 및 SSIM 점수를 개선하기 위한 메커니즘
 > 
 >       - 구현 방식: 이미지 기반 가이더(image-based guider)를 지각 손실(percepptual loss)로 구현
 > 
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >       - bicubic 다운샘플링으로만 학습되었기 때문에, 실제 세계 이미지에 일반화 x
 > 
@@ -386,7 +386,7 @@ aliases:
 > [!note]
 > **Inpainting 모델 비교**
 >   - 모델 실험 결과
-> ![](/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
+> ![](/papers/assets/notion/latent-diffusion-models-study-note-17b8d6e1cee5.png)
 > 
 >     - 모델 구성
 >       - VQ-regularized 첫 번째 단계의 latent space에서 큰 Diffusion 모델을 학습

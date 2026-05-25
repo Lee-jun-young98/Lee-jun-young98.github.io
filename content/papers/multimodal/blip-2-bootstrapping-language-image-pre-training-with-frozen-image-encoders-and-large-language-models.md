@@ -1,9 +1,9 @@
----
+﻿---
 title: "BLIP-2: Bootstrapping Language-Image Pre-training
 with Frozen Image Encoders and Large Language Models"
 date: 2025-06-10
-thumbnail: "/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png"
-socialImage: "/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png"
+thumbnail: "/papers/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -21,7 +21,7 @@ journal: "In PMLR 2023"
 
 [https://arxiv.org/pdf/2301.12597v3](https://arxiv.org/pdf/2301.12597v3)
 
-![](/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png)
+![](/papers/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png)
 
 # 0. Abstract
 
@@ -97,7 +97,7 @@ journal: "In PMLR 2023"
 
 ---
 
-![](/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png)
+![](/papers/assets/notion/blip-2-bootstrapping-language-image-pre-training-with-frozen-image-encoders-and-large-language-models-20e8d6e1cee5.png)
 
 - Image Encoder는 입력 해상도와 무관하게 고정된 수의 image feature를 출력함
 

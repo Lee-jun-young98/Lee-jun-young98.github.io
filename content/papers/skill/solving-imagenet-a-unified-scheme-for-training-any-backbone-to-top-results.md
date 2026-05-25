@@ -1,8 +1,8 @@
----
+﻿---
 title: "Solving ImageNet: a Unified Scheme for Training any Backbone to Top Results"
 date: 2023-12-21
-thumbnail: "/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png"
-socialImage: "/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png"
+thumbnail: "/papers/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -62,7 +62,7 @@ tags:
 
 일반적으로 컴퓨터 비전 범주는 ResNet 백본, 모바일 지향, Transformer 및 MLP 네 가지 범주가 있음
 
-![](/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png)
+![](/papers/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-893915037c47.png)
 
 - ResNet
   - RMSProp optimizer
@@ -90,7 +90,7 @@ tags:
 
 - 설정 가능한 배치 사이즈보다 0.8, 0.9 정도 작은 크기를 설정하는 게 좋음
 
-![](/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-1a33196d1dec.png)
+![](/papers/assets/notion/solving-imagenet-a-unified-scheme-for-training-any-backbone-to-top-results-1a33196d1dec.png)
 
 - 모델 훈련 비교
 

@@ -1,8 +1,8 @@
----
+﻿---
 title: "BAM : Bottleneck Attention Module"
 date: 2023-12-21
-thumbnail: "/assets/notion/bam-bottleneck-attention-module-eb682a2bc0e6.png"
-socialImage: "/assets/notion/bam-bottleneck-attention-module-eb682a2bc0e6.png"
+thumbnail: "/papers/assets/notion/bam-bottleneck-attention-module-eb682a2bc0e6.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/bam-bottleneck-attention-module-eb682a2bc0e6.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -46,7 +46,7 @@ tags:
 
 - 3D attetion map을 추론하는 프로세스를 두 개의 스트림으로 분해하여, 계산 및 매개 변수 오버헤드(계산하는 시간)를 크게 감소시킴
 
-![](/assets/notion/bam-bottleneck-attention-module-eb682a2bc0e6.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-eb682a2bc0e6.png)
 
 - 모델을 가볍게 설계하여 매개 변수 및 오버헤드를 무시해도 될 정도
 
@@ -112,7 +112,7 @@ tags:
 
 ---
 
-![](/assets/notion/bam-bottleneck-attention-module-b8d58542a2c7.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-b8d58542a2c7.png)
 
 ---
 
@@ -128,7 +128,7 @@ tags:
 
 - 매개 변수의 부담을 줄이기 위해 은닉층 활성화 크기는 RC/rx1x1로 설정 됨 이후에는 Batch Normalization을 추가하여 공간 분기 출력과의 스케일을 조절함
 
-![](/assets/notion/bam-bottleneck-attention-module-1096d8b20eba.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-1096d8b20eba.png)
 
 ## Spatial attention branch
 
@@ -144,7 +144,7 @@ tags:
 
 - scale 조절을 위해 공간 분기 끝에 Batch Normalization layer가 적용 
 
-![](/assets/notion/bam-bottleneck-attention-module-3b1322055342.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-3b1322055342.png)
 
 - f는 Convolution 연산을 나타내고, BN은 배치 정규화 연산을 나타냄, 각 위의 첨자는 Convolution 크기 필터를 나타내며 채널 축소를 위한 두 개의 1x1 Convolution이 존재 중간 3x3 Convolution은 더 큰 receptive field를 집계하기 위해 적용됨
 
@@ -166,7 +166,7 @@ tags:
 
 ---
 
-![](/assets/notion/bam-bottleneck-attention-module-2e2df3922fcd.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-2e2df3922fcd.png)
 
 - (a) : Dilation value가 4, Reduction ratio가 16일 때 가장 낮은 에러율을 보였음(d=4, r=16)
 
@@ -176,7 +176,7 @@ tags:
 
 ---
 
-![](/assets/notion/bam-bottleneck-attention-module-0c35b898bffd.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-0c35b898bffd.png)
 
 - PreResNet을 제외하고 대부분의 경우에서 BAM을 추가하는 것이 더 좋은 정확도를 제공하면서 훨씬 적은 오버헤드를 유발
 
@@ -184,13 +184,13 @@ tags:
 
 ## Classification Results on CIFAR-100, ImageNet-1K
 
-![](/assets/notion/bam-bottleneck-attention-module-78c00b2483b3.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-78c00b2483b3.png)
 
 - BAM을 더 하는 것은 오버헤드 감소 및 더 좋은 정확도 성능을 보임
 
 - Squeeze and Excitation과 비교할 경우 더 적은 매개 변수로 SE보다 우수한 성능을 보임 하지만 SE보다 훨씬 많은 GFLOPS(초당 GPU 부동 소수점 연산)이 필요함
 
-![](/assets/notion/bam-bottleneck-attention-module-327fa652c785.png)
+![](/papers/assets/notion/bam-bottleneck-attention-module-327fa652c785.png)
 
 # 정리를 염두해 두고 읽자 
 

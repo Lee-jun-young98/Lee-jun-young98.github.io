@@ -1,8 +1,8 @@
----
+﻿---
 title: "SAM 2: Segment Anything in Images and Videos"
 date: 2024-11-26
-thumbnail: "/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png"
-socialImage: "/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png"
+thumbnail: "/papers/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -75,7 +75,7 @@ pass
 
 > [!note]
 > 사용자 상호작용을 하는 SAM2
-> ![](/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png)
+> ![](/papers/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png)
 > 
 >   - 파란색은 positive prompt, 빨간색은 negative prompt
 > 

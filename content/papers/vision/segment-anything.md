@@ -1,8 +1,8 @@
----
+﻿---
 title: "Segment-anything"
 date: 2023-12-21
-thumbnail: "/assets/notion/segment-anything-af6709116fa4.png"
-socialImage: "/assets/notion/segment-anything-af6709116fa4.png"
+thumbnail: "/papers/assets/notion/segment-anything-af6709116fa4.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/segment-anything-af6709116fa4.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -49,7 +49,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ---
 
-![](/assets/notion/segment-anything-af6709116fa4.png)
+![](/papers/assets/notion/segment-anything-af6709116fa4.png)
 
 - 10억개 이상의 마스크 데이터셋을 통해 SA-1B 데이터 엔진을 구축
 
@@ -113,7 +113,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ---
 
-![](/assets/notion/segment-anything-9985b6069b22.png)
+![](/papers/assets/notion/segment-anything-9985b6069b22.png)
 
 - Task
   - 프롬프트가 주어질 경우 반환하는 마스크가 유효한 분할 마스크인지 확인해야 함
@@ -149,7 +149,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ---
 
-![](/assets/notion/segment-anything-ed1a39161446.png)
+![](/papers/assets/notion/segment-anything-ed1a39161446.png)
 
 1. Image encoder
   - 고해상도 입력을 처리하기 위해 ViT로 pre-trained된 모델(MAE 기준)을 사용
@@ -209,7 +209,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ## Zero-shot Single Point Valid Mask Evaluation Task
 
-![](/assets/notion/segment-anything-008ed6f19263.png)
+![](/papers/assets/notion/segment-anything-008ed6f19263.png)
 
 - result : 현재 좋은 모델인 RITM 모델보다 훨씬 더 높게 지속적으로 평가를 하는 것을 관찰 함
 
@@ -219,7 +219,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ## Zero-shot Edge Detection
 
-![](/assets/notion/segment-anything-8241ddf18661.png)
+![](/papers/assets/notion/segment-anything-8241ddf18661.png)
 
 - result : SAM은 edge를 학습하지 않아도 빠르게 edge detection을 수행할 수 있음 
 
@@ -227,7 +227,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ## Zero-shot Object Proposals
 
-![](/assets/notion/segment-anything-c5d093c54c8a.png)
+![](/papers/assets/notion/segment-anything-c5d093c54c8a.png)
 
 - result : medium, large object, rare, common object에 관해 SAM이 ViTDet-H보다 높은 성능을 보인다. SAM은 작은 개체와 빈번한 객체에 관해 ViT보다 성능이 낮다. VitDet-H는 학습을 해서 추론을 했으므로 학습하지 않은 SAM 데이터의 지표가 좋은 것으로 볼 수 있다.
 
@@ -235,7 +235,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ## Zero-shot Instance segmentation
 
-![](/assets/notion/segment-anything-6f6a9cc6c774.png)
+![](/papers/assets/notion/segment-anything-6f6a9cc6c774.png)
 
 - result : SAM은 ViTDet보다 뒤떨어져 있지만 실제 시각화 했을 경우 ViTDet보다 마스크의 경계가 더 명확하고 좋은 품질을 가지고 있다는 것을 관찰함. 
 
@@ -243,7 +243,7 @@ Voss, Alec Radford, Mark Chen, and Ilya Sutskever. Zero-shot textto-image genera
 
 ## Zero-shot Text-to-mask
 
-![](/assets/notion/segment-anything-b9f8b394cf7d.png)
+![](/papers/assets/notion/segment-anything-b9f8b394cf7d.png)
 
 - result : “wheel”과 “beaver tooth grille”과 같은 문구를 기반으로 객체를 분할할 수 있음
 

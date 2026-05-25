@@ -1,8 +1,8 @@
----
+﻿---
 title: "Big Transfer(BiT): General Visual Representation Leanring"
 date: 2023-12-21
-thumbnail: "/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png"
-socialImage: "/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png"
+thumbnail: "/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -123,7 +123,7 @@ tags:
 
 ## Standard Computer Vision Benchmarks
 
-![](/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png)
+![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-9d1ecb834ea1.png)
 
 - 왼쪽 사진은 무작위 하위 샘플 5개의 훈련 후의 결과
 
@@ -131,7 +131,7 @@ tags:
 
 ## ObjectNet: Recognition on a “Real-World” Test Set
 
-![](/assets/notion/big-transfer-bit-general-visual-representation-leanring-f9d2f6f812d4.png)
+![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-f9d2f6f812d4.png)
 
 - BiT를 새로운 테스트 전용 ObjectNet 데이터세트에서 평가함
 
@@ -155,13 +155,13 @@ tags:
 
 - 데이터 셋 : ILSVRC-2012, ImageNet-21k, JFT-300M
 
-![](/assets/notion/big-transfer-bit-general-visual-representation-leanring-d8f87c42b003.png)
+![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-d8f87c42b003.png)
 
 - 낮은 데이터 환경에서의 BiT 모델 성능 x축은 아키텍처, R은 Resnet의 약자
 
-![](/assets/notion/big-transfer-bit-general-visual-representation-leanring-34d5827a1210.png)
+![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-34d5827a1210.png)
 
-![](/assets/notion/big-transfer-bit-general-visual-representation-leanring-f9bf7953bda1.png)
+![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-f9bf7953bda1.png)
 
 - 맨 오른쪽 사진에서 낮은 가중치 감쇠로 초기 수렴이 빠를 경우, 최적이 아닌 값을 선택할 수 있음
 
@@ -169,7 +169,7 @@ tags:
 
 ## Large Batches, Group Normalization, Weight Standardization
 
-![](/assets/notion/big-transfer-bit-general-visual-representation-leanring-eef1e907db95.png)
+![](/papers/assets/notion/big-transfer-bit-general-visual-representation-leanring-eef1e907db95.png)
 
 - Batch normalization은 각 하드웨어 가속기에 있는 이미지 수가 너무 적을 때 성능이 저하됨
 

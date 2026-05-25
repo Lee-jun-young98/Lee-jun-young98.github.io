@@ -1,8 +1,8 @@
----
+﻿---
 title: "Deep Unsupervised Learning using Nonequilibrium Thermodynamics"
 date: 2025-01-08
-thumbnail: "/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png"
-socialImage: "/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png"
+thumbnail: "/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -18,7 +18,7 @@ journal: "ICML 2015"
 
 [https://arxiv.org/abs/1503.03585](https://arxiv.org/abs/1503.03585)
 
-[/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.pdf](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.pdf)
+[/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.pdf](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.pdf)
 
 # Abstract
 
@@ -66,7 +66,7 @@ journal: "ICML 2015"
 
 - 제한 시간에 diffusion process가 모델 분포를 학습하는 것이 목표
 
-![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png)
+![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png)
 
 - 첫줄은 forward trajectory
 
@@ -117,7 +117,7 @@ journal: "ICML 2015"
 
 > [!note]
 > **Reverse Trajectory**
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - p(x^(T))=π(x^(T))
 >     - p(x^(T))
@@ -171,7 +171,7 @@ journal: "ICML 2015"
 
 ---
 
-![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png)
+![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1748d6e1cee5.png)
 
 - p(x^(0))
   - 생성 모델이 데이터 x^(0)에 할당하는 확률
@@ -185,7 +185,7 @@ journal: "ICML 2015"
 
 > [!note]
 > **위의 문제를 해결하기 위한 식**
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - 분포 p(x^(0))을 계산하는 데 사용 됨
 > 
@@ -253,7 +253,7 @@ journal: "ICML 2015"
 
 > [!note]
 >   - 엔트로피 H항
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-76aea1100ca6.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-76aea1100ca6.png)
 > 
 >     - Hq(X^(T)∣X^(0)): 순방향 경로에서 마지막 단계 T의 조건부 엔트로피
 > 
@@ -303,7 +303,7 @@ journal: "ICML 2015"
 > 
 >   - p~(x^(0)): 위의 두 분포를 곱하여 새로운 분포  생성
 > 
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - 많은 기법에서는 분포를 곱하는 작업이 비용이 많이 들고 복잡함
 >     - Variational Autoencoders (VAEs)
@@ -319,9 +319,9 @@ journal: "ICML 2015"
 
 - Diffusion Model을 활용한 Denoising 및 Inpainting 결과를 보여줌
 
-![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 
-![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 
 ### 2.5.1. MODIFIED MARGINAL DISTRIBUTIONS
 
@@ -334,10 +334,10 @@ journal: "ICML 2015"
 > 
 >   - 수정된 역 경로 시작점은 다음과 같이 정의됨
 > 
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - 수정된 중간 분포는 다음과 같이 계산
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 
 > [!note]
 > **수정된 확산 단계**
@@ -345,14 +345,14 @@ journal: "ICML 2015"
 > 
 >   - p(x^(t)|x^(t+1))은 역확산 과정에서 다음 평형 조건을 만족
 > 
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - p(x^(t)): 시간 t 단계의 분포
 > 
 >   - p(x^(t+1)): 시간 t+1 단계의 분포
 > 
 >   - 수정된 Markov kernel
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 
 ### 2.5.2. MODIFIED DIFFUSION STEPS
 
@@ -360,35 +360,35 @@ journal: "ICML 2015"
 > **수정된 확산 단계**
 >   - 역확산 과정의 기본 Markov kernel
 >     - p^(x^(t)|x^(t+1))은 역확산 과정에서 다음 평형 조건을 만족
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - 수정된 Markov kernel
 >     - 수정된 Markov kernel p~(x^(t)∣x^(t+1))는 수정된 분포 p~(x^(t))에 대해 아래 평형 조건을 만족해야 함
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - 수식 유도
 >     - 수정된 분포 정의
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >     - r(x^(t)): t-단계에서 분포를 수정하는 함수
 > 
 >     - Z~t: 정규화 상수
 > 
 >     - t+1 - 단계의 분포 p~(x^(t+1))를 대입
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >     - 수정된 Markov 커널 p~(x^(t)|x^(t+1))의 평형 조건
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >     - 위의 수식을 만족시키기 위해 다음과 같이 정의
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >     - 위의 수식을 정규화시키기 위해 다음과 같이 정의
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >     - 정규화된 것을 다음과 같이 표현
 > 
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 
 ### 2.5.3. APPLYING r(x^(t))
 
@@ -424,7 +424,7 @@ journal: "ICML 2015"
 > 
 >   - reverse process에서 조건부 엔트로피에 대해 상한과 하한을 정의할 수 있으며 이를 통해 log likelihood의 경계도 도출이 가능함
 > 
-> ![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+> ![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 > 
 >   - Hq(X^(t)∣X^(t−1)): t-번째 단계에서의 조건부 엔트로피 (정방향 과정)
 > 
@@ -463,7 +463,7 @@ journal: "ICML 2015"
 
 - 3.1. Toy Problems ~ 3.2.1 DATASETS 생략
 
-![](/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
+![](/papers/assets/notion/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-1758d6e1cee5.png)
 
 - Table1
   - 오른쪽 열은 isotropic Gaussian 또는 독립적인 binomial 분포에 비해 개선된 정도를 나타냄

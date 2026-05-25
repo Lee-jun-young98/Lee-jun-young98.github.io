@@ -1,8 +1,8 @@
----
+﻿---
 title: "Medical SAM Adapter: Adapting Segment Anything Model for Medical Image Segmentation"
 date: 2024-01-02
-thumbnail: "/assets/notion/medical-sam-adapter-study-note-a7ac9d87808f.png"
-socialImage: "/assets/notion/medical-sam-adapter-study-note-a7ac9d87808f.png"
+thumbnail: "/papers/assets/notion/medical-sam-adapter-study-note-a7ac9d87808f.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/medical-sam-adapter-study-note-a7ac9d87808f.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -103,7 +103,7 @@ aliases:
 
 ---
 
-![](/assets/notion/medical-sam-adapter-study-note-a7ac9d87808f.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-a7ac9d87808f.png)
 
 ## 1. Preliminary : SAM architecture
 
@@ -167,7 +167,7 @@ aliases:
   - 깊이 분기에서 얻은 결과를 원래 모양으로 전치 후 공간 분기와 더해 깊이 정보를 통합함
 
 - HyP-Adpt
-![](/assets/notion/medical-sam-adapter-study-note-e7126528f85d.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-e7126528f85d.png)
 
 - 지식 조건을 위한 다른 네트워크에 대한 가중치를 생성
 
@@ -179,7 +179,7 @@ aliases:
 
 - 동시에 Prompt 정보(click location, click attribution, bounding box location)는 연결되고 축소된 상태로 prompt embedding e_down을 e_prompt로 만듦, e_prompt를 사용하여 weight sequence를 생성함
 
-![](/assets/notion/medical-sam-adapter-study-note-b2fdef6fd762.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-b2fdef6fd762.png)
 
 - Re : reshape
 
@@ -195,9 +195,9 @@ aliases:
 
 - HyP-Adpt는 prompt 정보에 조건을 걸어 매개변수를 조절하며 다양한 modality와 하위 작업에 유연하게 대응할 수 있도록 해줌
 
-![](/assets/notion/medical-sam-adapter-study-note-759de4ed7be0.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-759de4ed7be0.png)
 
-![](/assets/notion/medical-sam-adapter-study-note-3b9a3fee9f68.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-3b9a3fee9f68.png)
 
 - Training Strategy
   - 대화형 분할에 대해서는 클릭 혹은 바운딩 박스 prompt를 사용
@@ -272,9 +272,9 @@ aliases:
 
 - nnUNet, UNetr, Swin-UNetr, EnsDiff, SegDiff, 및 Vanilla SAM과 fully fine-tuned SAM이 포함됨 Dice 점수를 이용하여 segmentation 성능 평가
 
-![](/assets/notion/medical-sam-adapter-study-note-5cafc5eb741f.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-5cafc5eb741f.png)
 
-![](/assets/notion/medical-sam-adapter-study-note-2606aa970ee8.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-2606aa970ee8.png)
 
 - BTCV 데이터셋에서는 1-point Med-SA가 모든 12개의 기관에 대해 최고의 SOTA 성능을 달성함
 
@@ -295,7 +295,7 @@ aliases:
 
   - 일반적인 세분화를 위해 의료이미지에 대해 세부 조정하여 최적의 성능을 달성하는 것이 꼭 필요함
 
-![](/assets/notion/medical-sam-adapter-study-note-55fd3d8a58bb.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-55fd3d8a58bb.png)
 
 ---
 
@@ -303,7 +303,7 @@ aliases:
 
 ---
 
-![](/assets/notion/medical-sam-adapter-study-note-c71bd17640ed.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-c71bd17640ed.png)
 
 - Dice 점수와 IoU Metric을 사용함
 
@@ -327,7 +327,7 @@ aliases:
 
 ---
 
-![](/assets/notion/medical-sam-adapter-study-note-dc86e8d8703e.png)
+![](/papers/assets/notion/medical-sam-adapter-study-note-dc86e8d8703e.png)
 
 - SD-Trans를 사용하지 않을 때보다 사용했을 때 성능이 향상되었으며, prompt 조건부 adaption에서는 add, concat, HyP-Adpt를 사용했을 때 가장 좋은 성능 개선이 보였음
 

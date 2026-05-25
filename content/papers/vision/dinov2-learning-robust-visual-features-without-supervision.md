@@ -1,8 +1,8 @@
----
+﻿---
 title: "DINOv2 Learning Robust Visual Features without Supervision"
 date: 2024-12-19
-thumbnail: "/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png"
-socialImage: "/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png"
+thumbnail: "/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -20,7 +20,7 @@ journal: "Meta AI Research Inria 2023. 04. 14"
 
 [https://github.com/facebookresearch/dinov2](https://github.com/facebookresearch/dinov2)
 
-[/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.pdf](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.pdf)
+[/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.pdf](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.pdf)
 
 **다음과 같은 정리를 염두해 두고 읽자
 1. 저자가 뭘 해내고 싶어했는가?**
@@ -105,7 +105,7 @@ journal: "Meta AI Research Inria 2023. 04. 14"
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1618d6e1cee5.png)
 
 - 이 연구에서, 우리는 정제된 많은 양의 데이터로 사전 학습할 경우 범용 시각적(general-purpose) feature를 학습하는 것이 self-supervised learning에서 잠재력을 갖는지 살펴봄
 
@@ -143,13 +143,13 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
 
 - 우리는 방대한 비선별 데이터 중에서 몇몇의 선별된 데이터세트와 유사한 이미지를 검색해 선별된 LVD-142M 데이터세트를 조립함
 
 - 우리는 데이터 파이프 라인의 주요 구성요소를 아래에서 설명하며, 이것은 선별된/비선별된 데이터 소스를 포함하며, 이미지 중복제거와 검색 시스템이 포함됨
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
 
 ## Deduplication
 
@@ -210,7 +210,7 @@ pass
 
 - 그 다음에는 다음과 같은 loss term을 구함
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
 
 - student network의 parameter는 학습하고, teacher head는 과거 반복의 EMA을 사용하여 구축함
 
@@ -228,7 +228,7 @@ pass
 
 - 그 후, softmax와 centering 단계를 위에서 설명한 대로 적용하여 iBOT Loss term을 얻음
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
 
 - i는 마스크된 토큰에 해당하는 패치의 인덱스
 
@@ -264,7 +264,7 @@ pass
 
 - Kozachenko-Leonenko differential entropy estimator에서 유래한 정규화 기법
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1628d6e1cee5.png)
 
 - 특징들이 배치 내에서 균일하게 분포되도록하여, 모델이 특징들의 다양성을 잘 포착할 수 있게 함
 
@@ -360,7 +360,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - linear 지표는 knn 지표의 하한선을 나타내는 것으로 사용
 
@@ -375,7 +375,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - iBOT에서 사용된 INET-22k 데이터 세트와 LVD-142M 데이터 세트를 비교함
 
@@ -387,7 +387,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - 모델 크기가 커질 수록 LVD-142M에서 학습하는 것이 유리함
 
@@ -395,7 +395,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - KoLEO loss는 다른 평가지표에 부정적인 영향을 끼치지 않고 Oxford-M에서 8퍼 상승
 
@@ -405,7 +405,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - 소형 모델이 대형 모델에서 distill을 사용할 경우 성능 향상이 좋음
 
@@ -413,7 +413,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - 사전학습에서 해상도 변경이 영향을 미치는 것을 보기 위해 진행
 
@@ -435,7 +435,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - weakly supervised 모델인 OpenCLIP ViT-G/14, EVA-CLIP ViT-g/14보다 DINOv2 ViT-g/14 모델이 성능이 좋음
 
@@ -445,7 +445,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - DINOv2는 linear와 finetuning setting에서 둘 다 강력한 특징을 이끎
 
@@ -455,7 +455,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - Imagenet 1k에서 선형 분류 헤드를 사용해 학습된 모델을 도메인 일반화 벤치파크에서 평가함
 
@@ -469,11 +469,11 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - iNat에서 OpenCLIP보다 우수한 성능을 보였고, 특히 비디오 classification 데이터 세트에서 Self-supervised 학습 방법으로 뛰어난 성능을 기록함
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 ---
 
@@ -481,7 +481,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 ---
 
@@ -489,7 +489,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - Linear: 낮은 해상도의 logit map을 생성한 후 이것을 upsampling하여 전체 해상도 (512x512)로 변환하여 segmentation map을 얻음 → 고해상도 segmentation을 쉽게 생성할 수 없음
 
@@ -497,7 +497,7 @@ pass
 
 - MAE(Upernet decoder)를 사용한 모델과 성능이 비슷했으며, Pascal VOC의 sota 모델과 거의 맞먹는 성능을 보임
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - Fronzen 된 Transformer의 마지막 layer에서 feature를 추출하고, 각 patch token에 CLS 토큰을 결합
 
@@ -517,7 +517,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - DINOv2 backbone을 사용한 linear segmentation model은 Open CLIP backbone 모델에 비해 훨씬 더 나은 결과를 보여줌
 
@@ -525,13 +525,13 @@ pass
 
 - 깊이 추정 정성적 결과는 DINOv2와 OpenCLIP 간의 정량적 성능 차이를 명확히 보여주며, 두 모델 모두 깊이와 같은 복잡한 정보를 선형적으로 분리할 수 있지만, DINOv2의 특징은 OpenCLIP보다 훨씬 더 매끄러운 깊이 추정 결과를 제공함
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - 동물 사진이나 그림과 같은 out-of-distribution examples에 대해 DINOv2의 선형 분류기가 생성한 깊이와 segmentation 예측 결과가 매우 우수함
 
 - 훈련되지 않은 새로운 도메인에서도 높은 수준의 성능을 유지할 수 있음을 보여줌
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - Patch features에 PCA를 적용하고, 첫 번째 주성분의 값을 기준으로 임계값을 설정함
 
@@ -541,7 +541,7 @@ pass
 
 - 세가지 주성분을 다른 색으로 표현
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - 이전 실험에서 사용된 PCA 기반 방법으로 이미지의 전경 객체를 탐지
 
@@ -573,7 +573,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - 모델이 Europe 중심적이고 고소득 가구에 유리한 성능을 보임
 
@@ -585,7 +585,7 @@ pass
 
 ---
 
-![](/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
+![](/papers/assets/notion/dinov2-learning-robust-visual-features-without-supervision-1668d6e1cee5.png)
 
 - SEER 모델 대비 성별, 피부색, 연령에 더 균등한 분류 성능을 보임
 

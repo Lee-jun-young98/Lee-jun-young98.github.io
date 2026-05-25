@@ -7,7 +7,8 @@ const databaseId = process.env.NOTION_PAPERS_DATABASE_ID || "df3a2db6a13749c5b70
 const notionVersion = process.env.NOTION_VERSION || "2022-06-28"
 const contentRoot = process.env.PAPERS_CONTENT_ROOT || "content/papers"
 const assetRoot = path.join(contentRoot, "assets", "notion")
-const assetPublicRoot = "/assets/notion"
+const assetPublicRoot = "/papers/assets/notion"
+const siteUrl = (process.env.SITE_URL || "https://lee-jun-young98.github.io").replace(/\/$/, "")
 
 if (!notionToken) {
   throw new Error("NOTION_TOKEN is required. Share the paper review database with the integration first.")
@@ -18,6 +19,7 @@ const categoryFolders = {
   LLM: "llm",
   Vision: "vision",
   MultiModal: "multimodal",
+  Agent: "agent",
   "3D": "3d",
   Skill: "skill",
   Metrics: "metrics",
@@ -28,12 +30,13 @@ const categoryTitles = {
   llm: "LLM",
   vision: "Vision",
   multimodal: "MultiModal",
+  agent: "Agent",
   "3d": "3D",
   skill: "Skill",
   metrics: "Metrics",
 }
 
-const categoryPriority = ["3D", "MultiModal", "LLM", "Generative AI", "Vision", "Skill", "Metrics"]
+const categoryPriority = ["Agent", "3D", "MultiModal", "LLM", "Generative AI", "Vision", "Skill", "Metrics"]
 
 const knownPages = {
   "3698d6e1cee581fb9147c9108f141560": {
@@ -214,6 +217,10 @@ function markdownList(values) {
   return values.map((value) => `  - "${escapeYaml(value)}"`).join("\n")
 }
 
+function absoluteUrl(url) {
+  return /^https?:\/\//.test(url) ? url : `${siteUrl}${url.startsWith("/") ? "" : "/"}${url}`
+}
+
 function assetExtension(url) {
   const parsed = new URL(url)
   const extension = path.extname(decodeURIComponent(parsed.pathname)).toLowerCase()
@@ -252,7 +259,7 @@ function buildFrontmatter(page, metadata, body) {
   if (metadata.date) lines.push(`date: ${metadata.date}`)
   if (metadata.thumbnail) {
     lines.push(`thumbnail: "${escapeYaml(metadata.thumbnail)}"`)
-    lines.push(`socialImage: "${escapeYaml(metadata.thumbnail)}"`)
+    lines.push(`socialImage: "${escapeYaml(absoluteUrl(metadata.thumbnail))}"`)
   }
   lines.push("paper_sync: true")
   lines.push("tags:")

@@ -1,8 +1,8 @@
----
+﻿---
 title: "A ConvNet for the 2020s"
 date: 2023-12-29
-thumbnail: "/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png"
-socialImage: "/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png"
+thumbnail: "/papers/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -90,7 +90,7 @@ tags:
 
   - various layer-wise micro design
 
-![](/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-9634f1932e86.png)
 
 - attention 기반 모듈을 도입하지 않고 표준 ConvNet(ResNet)을 hierarchical vision Transformer(Swin)으로 현대화 함
 
@@ -155,13 +155,13 @@ tags:
 
 ---
 
-![](/assets/notion/a-convnet-for-the-2020s-cb5b078fa066.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-cb5b078fa066.png)
 
 - Transformer의 중요한 디자인 중 하나는 Inverted Bottleneck을 형성한다는 것
 
 - MLP 블록의 숨겨진 차원은 입력 차원의 4배가 넓음
 
-![](/assets/notion/a-convnet-for-the-2020s-1d5e8e6298cb.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-1d5e8e6298cb.png)
 
 - a는 ResNeXt block이며, b에서는 Inverted Bottleneck block이고, c에서는 spatial depthwise block을 conv layer위로 올렸음
 
@@ -348,9 +348,9 @@ tags:
 
 ---
 
-![](/assets/notion/a-convnet-for-the-2020s-b9afd7bf4a6e.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-b9afd7bf4a6e.png)
 
-![](/assets/notion/a-convnet-for-the-2020s-7895b3f5bb1e.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-7895b3f5bb1e.png)
 
 - ConvNeXt는 정확성-연산 Trade off 및 추론 처리량 측면에서 두 강력한 ConvNet 베이스라인과 유리한 이점을 지님
 
@@ -376,7 +376,7 @@ tags:
 
 - 깊이는 매개변수 및 FLOP 수를 일치시키기 위해 18/18/36으로 설정
 
-![](/assets/notion/a-convnet-for-the-2020s-968fb1fcd75f.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-968fb1fcd75f.png)
 
 - ViT와 유사한 성능을 보임
 
@@ -386,7 +386,7 @@ tags:
 
 ---
 
-![](/assets/notion/a-convnet-for-the-2020s-749631c9c041.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-749631c9c041.png)
 
 - Object detection and segmentation on COCO
   - COCO 데이터셋에서 ConvNeXt 백본을 사용하여 Mask R-CNN 및 Cascade Mask R-CNN을 fine-tune 진행
@@ -399,7 +399,7 @@ tags:
 
 ---
 
-![](/assets/notion/a-convnet-for-the-2020s-bba3577916ea.png)
+![](/papers/assets/notion/a-convnet-for-the-2020s-bba3577916ea.png)
 
 - Semantic segmentation ADE20K
   - UperNet을 사용하여 ADE20K Semantic segmentation ConvNeXt에서 백본을 평가함

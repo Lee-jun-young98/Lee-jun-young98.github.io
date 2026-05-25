@@ -1,9 +1,9 @@
----
+﻿---
 title: "ViT(AN IMAGE IS WORTH 16X16 WORDS:
 TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE)"
 date: 2023-12-21
-thumbnail: "/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png"
-socialImage: "/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png"
+thumbnail: "/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -19,7 +19,7 @@ tags:
 
 ---
 
-[/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-deb7640ec552.pptx](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-deb7640ec552.pptx)
+[/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-deb7640ec552.pptx](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-deb7640ec552.pptx)
 
 [https://arxiv.org/abs/2010.11929](https://arxiv.org/abs/2010.11929)
 
@@ -37,7 +37,7 @@ tags:
 
 - Image patch를 분할 후 선형 임베딩 시퀀스를 Transformer에 대한 입력으로 제공
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-658363d35320.png)
 
 - 이미지를 고정 크기의 patch로 분할하고 각 patch를 선형으로 포함한 위치 임베딩을 추가한 다음 결과 벡터 시퀀스를 표준 transformer 인코더에 공급, 분류를 수행하기 위해 시퀀스에 추가 학습 가능한 “분류 토큰”을 추가하는 표준 접근 방식 사용
 
@@ -87,19 +87,19 @@ tags:
 - 데이터셋
   - Imagenet, ImageNet-21k, JFT 데이터세트
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-67a58e784960.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-67a58e784960.png)
 
 - Train : Adam 사용, 배치 크기 4096, learning_decay 0.1
 
 - Fine tuning : SGD, Momentum 사용 배치 크기 512
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-68a12573c396.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-68a12573c396.png)
 
 - JFT-300M에서 사전 훈련된 작은 ViT-L/16 모델은 모든 작업에서 BiT-L보다 우수한 성능을 보이며, 훈련에 필요한 계산 자원은 훨씬 적다.
 
 - ViT-H/14는 더 어려운 데이터 세트인 ImageNet, CIFAR-100 및 VTAB에서 성능이 더 좋게 나온다옴
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-d7da87743799.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-d7da87743799.png)
 
 - ViT-H/14는 Natural 및 Structured된 방법에서 BiT를 능가함
 
@@ -109,7 +109,7 @@ tags:
 
 - learning_rate decay, dropout, label smoothing 사용
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-5eaa330621f8.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-5eaa330621f8.png)
 
     - 작은 데이터세트에서는 BiT가 유리함
 
@@ -121,7 +121,7 @@ tags:
 
 ## Scaling Study
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-a2cfc2247602.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-a2cfc2247602.png)
 
 - ViT는 성능/계산 trade off에서 Resnet보다 좋은 성능을 보임
 
@@ -131,7 +131,7 @@ tags:
 
 ## Inspecting Vision Transformer
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-2b8e1a37cb58.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-2b8e1a37cb58.png)
 
 - 왼쪽 사진은 나눠진 patch들을 낮은 차원의 공간으로 선형으로 투영, 학습된 임베딩 필터의 상위 주성분이며 이러한 주성분들은 각 패치 내의 미세한 구조를 낮은 차원의 표현을 위한 타당한 기저 함수와 유사하게 보임
 
@@ -153,7 +153,7 @@ tags:
 
 ---
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-9a0be779cd03.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-9a0be779cd03.png)
 
 - 배치 크기 4096, 10000 단계의 warm up 훈련 사용
 
@@ -173,7 +173,7 @@ tags:
 
   - learning_rate에 관해서는 grid search를 실행함
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-8ba7fd73d426.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-8ba7fd73d426.png)
 
 - 모든 모델은 cosine learning rate decay를 배치 512에서 사용함 fine tuning된 모델의 크기는 384임
 
@@ -181,9 +181,9 @@ tags:
 
 - 모든 파인튜닝 실험은 384에서 실행됨 Vision Transformer는 384 x 384에서 가장 많은 이익을 얻는다는 것이 발견 됨
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-fc3a05b64e71.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-fc3a05b64e71.png)
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-94aacb504b43.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-94aacb504b43.png)
 
 ---
 
@@ -194,7 +194,7 @@ tags:
 ---
 
 - SGD vs Adam
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-10310ede356b.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-10310ede356b.png)
 
   - 일반적으로 resent은 SGD로 훈련되며 Adam을 사용하는 것은 상당히 일반적이지 않음
 
@@ -204,16 +204,16 @@ tags:
   - 패치 크기를 감소시키고 효과적인 시퀀스 길이를 증가시키는 것이 매개변수를 도입하지 않고도 안정적인 개선을 보임
 
 - HEAD TYPE AND CLASS TOKEN
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-1fb0a3ae6df4.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-1fb0a3ae6df4.png)
 
 - Positional Embedding
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-a1cae5e6e9bf.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-a1cae5e6e9bf.png)
 
 - 위치 임베딩이 있는 모델과 없는 모델은 큰 차이가 있지만 공간 정보를 인코딩 하는 방법(1-dimensional, 2-dimensional, Relative positional embeddings)에는 차이가 없음
 
 - Transformer 인코더가 패치 수준 입력에서 작동하기 때문에 공간 정보를 어떻게 인코딩하는지의 차이가 덜 중요하다고 추측함
 
-![](/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-aec7a85f3858.png)
+![](/papers/assets/notion/vit-an-image-is-worth-16x16-words-transformers-for-image-recognition-at-scale-aec7a85f3858.png)
 
 # 정리
 

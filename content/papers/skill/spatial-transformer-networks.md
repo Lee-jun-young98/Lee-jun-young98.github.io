@@ -1,8 +1,8 @@
----
+﻿---
 title: "Spatial Transformer Networks"
 date: 2023-12-21
-thumbnail: "/assets/notion/spatial-transformer-networks-18783572332d.png"
-socialImage: "/assets/notion/spatial-transformer-networks-18783572332d.png"
+thumbnail: "/papers/assets/notion/spatial-transformer-networks-18783572332d.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/spatial-transformer-networks-18783572332d.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -56,7 +56,7 @@ tags:
 
 - Figure2
 
-![](/assets/notion/spatial-transformer-networks-18783572332d.png)
+![](/papers/assets/notion/spatial-transformer-networks-18783572332d.png)
 
 - 공간 변형기 모듈의 아키텍처, 위치 결정 네트워크가 전달되어 변환 매개 변수 θ를 회귀
 
@@ -112,7 +112,7 @@ tags:
 
 ## Sect.4.1 MNIST
 
-![](/assets/notion/spatial-transformer-networks-ef8b785f199f.png)
+![](/papers/assets/notion/spatial-transformer-networks-ef8b785f199f.png)
 
 - R : Rotation
 
@@ -130,11 +130,11 @@ tags:
 
 ## Sect.4.2 Street View House Numebers
 
-![](/assets/notion/spatial-transformer-networks-17fe63e461a5.png)
+![](/papers/assets/notion/spatial-transformer-networks-17fe63e461a5.png)
 
 ## Sect.4.3 Fine-Grained Classificaiton
 
-![](/assets/notion/spatial-transformer-networks-142f152ac951.png)
+![](/papers/assets/notion/spatial-transformer-networks-142f152ac951.png)
 
 ---
 

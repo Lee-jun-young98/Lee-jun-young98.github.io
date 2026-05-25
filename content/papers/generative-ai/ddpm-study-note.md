@@ -1,8 +1,8 @@
----
+﻿---
 title: "Denoising Diffusion Probabilistic Models"
 date: 2025-01-10
-thumbnail: "/assets/notion/ddpm-study-note-1758d6e1cee5.png"
-socialImage: "/assets/notion/ddpm-study-note-1758d6e1cee5.png"
+thumbnail: "/papers/assets/notion/ddpm-study-note-1758d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/ddpm-study-note-1758d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -20,7 +20,7 @@ aliases:
 
 [https://arxiv.org/abs/2006.11239](https://arxiv.org/abs/2006.11239)
 
-[/assets/notion/ddpm-study-note-1778d6e1cee5.pdf](/assets/notion/ddpm-study-note-1778d6e1cee5.pdf)
+[/papers/assets/notion/ddpm-study-note-1778d6e1cee5.pdf](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.pdf)
 
 # Abstarct
 
@@ -40,7 +40,7 @@ aliases:
 
 ---
 
-![](/assets/notion/ddpm-study-note-1758d6e1cee5.png)
+![](/papers/assets/notion/ddpm-study-note-1758d6e1cee5.png)
 
 - Diffusion probabilistic model은 variational inference를 사용하여 샘플을 데이터와 일치시키는 매개변수화 된 Markov chain임
 
@@ -70,31 +70,31 @@ aliases:
 > **확산 모델 개념**
 >   - 잠재 변수 모델로, 데이터 x0와 동일한 차원을 가진 잠재 변수 x1:T를 포함함
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - 역방향 과정: pθ(x0:T)
 >     - 학습된 가우시안 전이를 가진 마르코프 체인으로 정의됨
 > 
 >     - 초기 상태
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >     - 전이 확률
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - 정방향 과정
 >     - 근사 사후 확률 q(x1:T|x0)로, 마르코프 체인을 사용하여 데이터에 점진적으로 가우시안 노이즈를 추가함
 > 
 >     - 전이 확률
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - 학습 목표
 >     - 데이터 x0의 음의 로그 우도를 최소화하는 Variational bound 최적화`
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 
 > [!note]
 > **Forward Process의 분산(βt)**
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - 평균(mean): 이는 x0의 신호가 시간이 지나면서 감소하는 효과를 나타냄
 > 
@@ -106,9 +106,9 @@ aliases:
 
 > [!note]
 > **효율적인 학습을 위한 training 수식 재정의**
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - **LT:** DKL(q(xT∣x0)∣∣p(xT))
 >     - Forward Process의 마지막 단계에서 q(xT∣x0)와 p(xT) 간의 차이를 측정
@@ -145,23 +145,23 @@ aliases:
 
 > [!note]
 > **Reverse process and L1:T-1**
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - 1<t≤T, 뒤의 시그마 항은 학습하지 않음
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 
 > [!note]
 > **Training and Sampling**
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - Equation(12)는 다양한 noise scale t에 걸쳐 denoising score matching과 유사한 형태를 가짐 → 모델은 노이즈를 제거하면서 **데이터 분포를 학습하도록 최적화됨**
 > 
@@ -185,7 +185,7 @@ aliases:
 
 > [!note]
 > **Data scaling, reverse process decoder**
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - 이미지 데이터 스케일링
 >     - {0,1, … , 255}로 구성되며, [-1, 1] 범위로 선형 스케일링함 → reverse process이 항상 일정한 범위의 입력을 처리하도록 보장함
@@ -197,7 +197,7 @@ aliases:
 > 
 >     - 이산 데이터의 특성을 고려하여 x0의 값에 따라 구간을 정의함
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - D는 데이터 차원을 나타내며, i는 특정 좌표를 나타냄
 > 
@@ -214,12 +214,12 @@ aliases:
 > [!note]
 > **Simplified training objective**
 >   - 12번과 13번에서 variational bound가 정의되며, 모델 파라미터 θ에 대해 미분 가능하여 학습에 사용할 수 있음
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - 그러나 Sample의 품질 향상 및 구현의 간소화를 위해, 손실함수를 변경함
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >     - ϵ는 가우시안 노이즈 샘플 N(0, 1)
 > 
@@ -262,7 +262,7 @@ aliases:
 > 
 > → Foward process와 reverse process를 비슷한 함수 형태를 가지게 하고, 최종 노이즈 상태 xT에서 신호 대 잡음비(SNR)를 가능한 낮게 유지함
 > 
-> ![](/assets/notion/ddpm-study-note-1768d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1768d6e1cee5.png)
 > 
 >   - U-Net 구조를 사용하며, 이는 Pixel CNN++의 Unmasked 버전과 유사함
 > 
@@ -274,33 +274,33 @@ aliases:
 
 > [!note]
 > **Sample quality**
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >   - IS(Inception Score)
 > [https://wikidocs.net/231773](https://wikidocs.net/231773)
 > 
 >     - 정확도(Sharpness)
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >     - 다양성(Diversity)
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >     - Inception Score
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >   - FID(Frechet Inception Distance)
 > [https://wikidocs.net/231774](https://wikidocs.net/231774)
 > 
 >     - 생성 모델과 생성한 데이터와 실제 데이터 간의 차이를 중점으로 측정하는 평가지표로 FID 지표가 낮을 수록 생성 모델의 생성 능력이 높다는 것
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 
-![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 
-![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 
 ## 4.2 Reverse process parameterization and training objective ablation
 
@@ -309,7 +309,7 @@ aliases:
 > [!note]
 > Reverse process parameterization과 학습 목표에 대한 실험
 >   - 파라미터 실험 결과
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >     - ϵ 예측 방식은 특히 단순화된 목표로 학습할 때 우수한 샘플 품질을 제공함
 > 
@@ -333,29 +333,29 @@ aliases:
 > **Progressive lossy compression**
 >   - 모델의 Rate-Distortion 행동을 더 깊이 분석하기 위해 progressive lossy compression을 도입함
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >   - x0는 다음과 같은 식을 통해 추정함
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 
 > [!note]
 > **Progressive generation**
 >   - ^x0의 진행된 생성에 따른 변화
 > 
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >   - stochastic predictions x0 ~ pθ(x0|xt) 시각화(xt 고정 후 t에 대해 확률 적 예측)
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >     - t가 작을 때는 세부사항을 제외한 특징들이 보존되고, t가 클 때는 대규모 특징만 보존됨
 
 > [!note]
 > **Connection to autoregressive decoding**
 >   - Variational bound를 재정의
-> ![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+> ![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 > 
 >     - DKL은 Kullback-Leibler 발산을 나타내며, H(x0)는 엔트로피 항임
 > 
@@ -380,7 +380,7 @@ aliases:
 
 - xt, x’t ~ q(xt|x0)로 소스 이미지를 잠재 표현으로 변환하고, 선형 보간된 잠재 표현 밑의 식을 사용하여 역방향 과정 p(x0|x~t)로 복원해 이미지 공간에 디코딩
 
-![](/assets/notion/ddpm-study-note-1778d6e1cee5.png)
+![](/papers/assets/notion/ddpm-study-note-1778d6e1cee5.png)
 
 - 이는 손상된 이미지의 선형 보간에서 발생하는 아티팩트를 제거하고 CelebA-HQ 256 x 256 데이터 세트 실험에서는 역방향 과정이 고품질 복원을 생성하며, 포즈, 피부색, 헤어스타일, 표정, 배경 등 속성을 부드럽게 변화시키는 보간 결과를 보여줌
 

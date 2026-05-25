@@ -1,8 +1,8 @@
----
+﻿---
 title: "Swin Transformer V2: Scaling Up Capacity and Resolution"
 date: 2024-02-01
-thumbnail: "/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4e258f22f905.png"
-socialImage: "/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4e258f22f905.png"
+thumbnail: "/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4e258f22f905.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4e258f22f905.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -43,7 +43,7 @@ tags:
 
 - B ∈ RM2×M2
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4e258f22f905.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4e258f22f905.png)
 
 - Q, K, V ∈ RM2×d
 
@@ -55,13 +55,13 @@ tags:
 
 - Swin - T의 position bias를 적용했을 때(Log-Spaced CPB의 성능이 가장 우수)
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-00a3e157e7f8.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-00a3e157e7f8.png)
 
 ## Issures in scaling up model capacity and window resolution
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-02398878f964.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-02398878f964.png)
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-fa75d0b69596.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-fa75d0b69596.png)
 
 - 모델 용량을 작은 크기에서 큰 크기로 확장할 때 문제가 발생
 
@@ -75,19 +75,19 @@ tags:
 
 - 깊은 레이어에서 커지는 진폭이 훈련의 불안정성을 유발함
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-022c6b5ac458.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-022c6b5ac458.png)
 
 - SwinV2에서는 Layernormalization을 main branch 뒤에 배치함
 
 - 기존 self-attention의 qurery, keyT의 dot product를 scaled cosine attention으로 접근하여 대체
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-937a5e2e73c0.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-937a5e2e73c0.png)
 
 - Bij는 픽셀 i와 j사이의 상대적인 위치 편향을 나타내며 τ는 학습 가능한 스칼라이며, 각 헤드와 레이어간에 공유되지 않으며 0.01보다 큰 값을 가짐 → 더 자연스러운 attention이 되어 강건한 값을 가짐
 
 ## Scaling Up Window Resolution
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-36a6383a69ef.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-36a6383a69ef.png)
 
 - ReLU 활성화 함수를 사용하는 2개의 레이어로 이루어진 작은 네트워크로 대체
 
@@ -95,7 +95,7 @@ tags:
 
 ## Log-spaced coordinates
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-44bb2ce9f60e.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-44bb2ce9f60e.png)
 
 - 크기가 다른 window에 전송할 때, 상대적으로 크기가 큰 부분은 외삽 돼야 한다.
 
@@ -151,7 +151,7 @@ tags:
   - 2가지의 단계로 접근하였으며, 첫 번째는 Imagenet 22K에서 self-supervised 방법을 통해 20 epoch로 학습 두 번째는 image classification task에서 30 epoch로 더 학습
 
 - ImageNet-1K image classification result
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-6ec1a96e63e4.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-6ec1a96e63e4.png)
 
   - ImageNet-1K V2 Swin-V2-G가 ViT-G보다 0.7% 높은 성능을 보임
 
@@ -160,19 +160,19 @@ tags:
   - 기존 SwinV1-B, SwinV1-L보다 SwinV2-B, SwinV2-L이 0.7, 0.4 높음
 
 - CoCo Object detection results
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-903d5bb8e916.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-903d5bb8e916.png)
 
   - SwinV2-G model이 COCO object detection과 instance segmentation에서 좋은 결과를 보임
 
   - SwinV2-G model이 object detection에서도 좋은 효과를 보임
 
 - ADE20K semantic segmentation results
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-43809e90f022.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-43809e90f022.png)
 
   - 최고 Sota model보다 1.5 높은 mIoU를 보이며, window size를 크게 할수록 추가적인 성능 향상을 얻음
 
 - Kinetics-400 video action classification results
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-35266d2081dd.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-35266d2081dd.png)
 
   - 기존 Top 1- accuracy보다 0.14 성능이 높음
 
@@ -180,7 +180,7 @@ tags:
 
 ### Ablation on res-post-norm and scaled cosine attention
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-7e145c6bffe2.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-7e145c6bffe2.png)
 
 - res-post-norm와, scaled cosine attention은 Tiny, Small, Base에서 성능 향상이 일어났으며 ViT-B에서도 성능 향상이 일어남
 
@@ -188,7 +188,7 @@ tags:
 
 ### Scaling up window resolution by different approaches
 
-![](/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4880f18ebc23.png)
+![](/papers/assets/notion/swin-transformer-v2-scaling-up-capacity-and-resolution-4880f18ebc23.png)
 
 - window size scaling을 256x256 size의 pre-trained된 모델에서 3개의 larger size의 다운 스트림 task를 적용할 때 성능표
 

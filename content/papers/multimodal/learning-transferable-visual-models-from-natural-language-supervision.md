@@ -1,8 +1,8 @@
----
+﻿---
 title: "Learning Transferable Visual Models From Natural Language Supervision"
 date: 2024-10-31
-thumbnail: "/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png"
-socialImage: "/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png"
+thumbnail: "/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -21,7 +21,7 @@ journal: "In CVPR 02.26"
 
 [https://github.com/openai/CLIP?tab=readme-ov-file](https://github.com/openai/CLIP?tab=readme-ov-file)
 
-[/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.pdf](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.pdf)
+[/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.pdf](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.pdf)
 
 ---
 
@@ -43,7 +43,7 @@ journal: "In CVPR 02.26"
 
 ---
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
 
 # 1. Introduction and Motivating Work
 
@@ -87,7 +87,7 @@ pass
 - SOTA 컴퓨터 비전 모델은 많은 양의 컴퓨터 자원이 필요함
   - ex) ResNext101-32x48d
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
 
 - 처음에 VirTex와 비슷하게 접근했지만 CLIP보다 훨씬 느렸음
 
@@ -97,7 +97,7 @@ pass
 
 - Softmax의 temperature parameter는 하이퍼 파라미터가 되는 것을 피하기 위해 스칼라 곱을 진행함
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1308d6e1cee5.png)
 
 ## 2.4. Choosing and Scaling a Model
 
@@ -160,11 +160,11 @@ pass
 
 ### 3.1.3. INITIAL COMPARISON TO VISUAL N-GRAMS
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1318d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1318d6e1cee5.png)
 
 ### 3.1.4. PROMPT ENGINEERING AND ENSEMBLING
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1318d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1318d6e1cee5.png)
 
 - 단일 단어와 다의어에 대해서 문제가 생김
 
@@ -186,13 +186,13 @@ pass
 
 ### 3.1.5. ANALYSIS OF ZERO-SHOT CLIP PERFORMANCE
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - Zero-shot CLIP이 fully supervised linear classifier 모델보다 16개의 데이터 세트에서 성능이 앞섬
 
 - natural alnguage가 동사를 표현한 시각 개념에서 더 넓은 supervision을 제공한다 생각함
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - Few-shot 분류기와 Zero-shot 분류기의 성능적 차이를 줄이기 위해 CLIP의 가중치를 few-shot으로 초기화 하는 방법을 사용하고 L2 페널티를 추가해 생성된 가중치가 제로샷 분류기의 가중치에 가깝도록 유도함
 
@@ -200,11 +200,11 @@ pass
 
 - CLIP의 Zero-shot 능력은 BiT의 16 shot 능력하고 비슷함을 보임
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - Flowers102와 EuroSAT 같은 경우에는 소수의 예제로도 좋은 성능을 보이지만 FER2013 같은 경우에는 184장 정도가 있어야 좋은 성능을 보임
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - CLIP의 Zeroshot 성능은 완전 지도학습 모델보다는 낮으며, 완전 지도학습 모델의 성능이 CLIP의 상한선이 된다 생각함
 
@@ -214,7 +214,7 @@ pass
 
 - 고품질 표현을 가진 작업에서 특히 효과적일 가능성이 높음
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - CLIP에서 학습량이 44배 증가할 때 log-log linear 경향으로 에러율이 감소하는 것을 알 수 있음
 
@@ -226,23 +226,23 @@ pass
 
 ---
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - CLIP 모델에서 vision transformer 기반의 모델이 일반 resnet 모델보다 3배 이상 좋았음
 
 - ViT-L/14 모델 336 resolution에서 가장 좋은 성능을 보임
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - Logstic regression을 도입한 CLIP이 Efficientnet l2 noisy student를 도입한 것 보다 성능이 좋음
 
 ### 3.3 Robustness to Natural Distribution Shift
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - zero-shot 모델은 훈련 받지 않았기 때문에 특정 데이터 세트에 영향을 받지 않아야 함
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - 왼쪽은 이상적인 CLIP의 성능 사진
 
@@ -256,11 +256,11 @@ pass
 
 ---
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-1348d6e1cee5.png)
 
 - 데이터세트에 adaption을 적용하면 비슷한 데이터 세트에서는 정확성을 높일 수 있지만 다른 분포의 데이터 세트에서는 정확도가 낮아짐
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
 - 16-shot logistic regression CLIP의 경우 zero-shot CLIP과 이미지 넷에서 동일하게 매치가 되지만 shift datasets에서는 떨어지는 것을 볼 수 있음
 
@@ -272,7 +272,7 @@ pass
 
 ---
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
 - 데이터 overlapping 비율에 따라 최소, 최대 20퍼까지 차이가 나지만 35개의 데이터 중 5개만 유효하며, 성능이 떨어진 데이터도 존재 따라서 overlapping이 데이터에 유효한 차이가 없다는 것을 알 수 있음
 
@@ -300,19 +300,19 @@ pass
 
 ---
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
 - 사회적 편향을 줄이려는 노력을 많이 함
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
-![](/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
+![](/papers/assets/notion/learning-transferable-visual-models-from-natural-language-supervision-13b8d6e1cee5.png)
 
 ---
 

@@ -1,8 +1,8 @@
----
+﻿---
 title: "Emerging Properties in Self-Supervised Vision Transformers"
 date: 2024-12-18
-thumbnail: "/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png"
-socialImage: "/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png"
+thumbnail: "/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -76,7 +76,7 @@ journal: "ICCV 2021.04.29"
 
 - 일반적으로 유사한 구조를 가지지만 solution 붕괴를 피하거나 성능 향상을 위해 다른 구성요소를 가지고 있음
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
 - Self-supervised ViT features는 명백한 장면의 layout과 object boundaries를 가지고 있음
 
@@ -110,9 +110,9 @@ journal: "ICCV 2021.04.29"
 
 ---
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
 - student network와 teacher network에서 나온 s1, s2, t1, y2를 temperatrue scaling이 들어간 softmax 함수에 넣어 loss 함수인 H를 최소화 시키게 학습을 함
 
@@ -123,7 +123,7 @@ journal: "ICCV 2021.04.29"
 - 과거의 student network를 활용
 
 - EMA를 사용한 Momentum Encoder가 적합했으며, 다음과 같은 룰을 따름
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-ceca7c40b2d1.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-ceca7c40b2d1.png)
 
 - 람다는 cosine schedule 0.996부터 1을 따름
 
@@ -162,9 +162,9 @@ journal: "ICCV 2021.04.29"
 
 - Momentum Teacher와 함께 사용될 때 안정적으로 작동됨
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
 - 다른 Batch size에서도 잘 작동됨
 
@@ -178,7 +178,7 @@ journal: "ICCV 2021.04.29"
 
 ---
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
 - Dino에서는 DeiT를 참고하여 ViT를 구현하였으며, CLS 토근은 시퀀스의 정보를 집계하며, DINO에서는 이를 projection head와 연결해 사용함
 
@@ -203,7 +203,7 @@ journal: "ICCV 2021.04.29"
 
   - Base Learning Rate는 다음 공식을 사용해 결정:
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
   - 이후, **Cosine Decay**를 통해 lr 감소
 
@@ -281,7 +281,7 @@ journal: "ICCV 2021.04.29"
 
 ### Comparing with the same architecture
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
 - Resnet-50과 ViT-S를 비교함
 
@@ -317,7 +317,7 @@ journal: "ICCV 2021.04.29"
 
   - split 강도에 따라 Medium(M)과 Hard(H)로 나눔
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
   - GLDv2(Google Landmarks v2)를 학습한 DINO가 가장 우수한 성능을 보여줬음
 
@@ -326,7 +326,7 @@ journal: "ICCV 2021.04.29"
 - Copy detection
   - “strong” subset의 INRIA Copydays dataset 사용
 
-![](/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
+![](/papers/assets/notion/emerging-properties-in-self-supervised-vision-transformers-1608d6e1cee5.png)
 
   - Task는 blur, insertions, print, scan 등등 왜곡된 이미지를 인식하는 것
 

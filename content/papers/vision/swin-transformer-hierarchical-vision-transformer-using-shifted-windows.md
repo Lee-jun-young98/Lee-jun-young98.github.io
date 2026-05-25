@@ -1,8 +1,8 @@
----
+﻿---
 title: "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"
 date: 2024-02-07
-thumbnail: "/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png"
-socialImage: "/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png"
+thumbnail: "/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -34,13 +34,13 @@ tags:
 
 ---
 
-![](/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png)
+![](/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png)
 
 - Swin Transformer는 작은 size의 patch부터 구성되며 Transformer의 layer가 깊어질수록 merging 함
 
 - hierarchical feature map을 사용함으로써, FPN 또는 U-Net과 같은 밀도 예측을 위한 고급 기술을 편리하게 사용함
 
-![](/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-222012629a6d.png)
+![](/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-222012629a6d.png)
 
 - Swin Transformer의 핵심 설계 요소 중 하나는 연속적인 self-attention에서의 창 분할 이동이다
 
@@ -56,7 +56,7 @@ tags:
 
 ---
 
-![](/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-d0469d50b4ba.png)
+![](/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-d0469d50b4ba.png)
 
 ## Overall architecture
 
@@ -75,12 +75,12 @@ tags:
 
 - Self-attention in non-overlapped windows
 
-![](/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-a3898e3595f0.png)
+![](/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-a3898e3595f0.png)
 
 - Window Multi head Self attention과 Multi head Self attention의 수식 차이
 
 - MxM의 patch로 나눔(M은 거의 7로 고정)
 
-![](/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-5d10ac34c25d.png)
+![](/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-5d10ac34c25d.png)
 
-![](/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-5e6ef20f2a47.png)
+![](/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-5e6ef20f2a47.png)

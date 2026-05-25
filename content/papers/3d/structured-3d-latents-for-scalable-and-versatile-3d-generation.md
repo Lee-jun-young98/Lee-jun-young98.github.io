@@ -1,8 +1,8 @@
----
+﻿---
 title: "Structured 3D Latents for Scalable and Versatile 3D Generation"
 date: 2024-12-13
-thumbnail: "/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-15b8d6e1cee5.png"
-socialImage: "/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-15b8d6e1cee5.png"
+thumbnail: "/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-15b8d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-15b8d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -27,7 +27,7 @@ journal: "arXiv 2024"
 
 ---
 
-![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-15b8d6e1cee5.png)
+![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-15b8d6e1cee5.png)
 
 # 1. Abstarct
 
@@ -53,7 +53,7 @@ pass
 
 ---
 
-![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17c8d6e1cee5.png)
+![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17c8d6e1cee5.png)
 
 ## 3.1. Structured Latent Representation
 
@@ -61,7 +61,7 @@ pass
 
 > [!note]
 > **Latent Representation 표현(3D 자산 표현 O라고 함)**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17c8d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17c8d6e1cee5.png)
 > 
 >   - geometry와 appearance information을 이용한 통합된 구조 표현 z를 인코딩함
 > 
@@ -96,7 +96,7 @@ pass
 > [!note]
 > **Visual feature aggregation**
 >   1. 3D asset O를 voxelized feature f = {(fi, pi)}^Li=1로 변환
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17c8d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17c8d6e1cee5.png)
 > 
 >   1. 각 active voxel의 시각적 특징 fi를 계산하기 위해 다중 시점이미지로부터 특징을 추출하고 이를 집계함
 > 
@@ -121,7 +121,7 @@ pass
 >   - 네트워크 구조
 > 
 > ![(b): GS
-> (c): GL](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
+> (c): GL](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
 > 
 >   - Encoder와 Decoder는 동일한 transformer 구조를 공유함
 > 
@@ -161,7 +161,7 @@ pass
 
 > [!note]
 > **3D Gaussian 디코딩 과정**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
 > 
 >   - 입력: (zi, pi) → 구조화된 잠재 표현 (zi)와 active voxel의 위치(pi)
 > 
@@ -181,7 +181,7 @@ pass
 >   - 잠재 표현 zi의 지역성(locality)을 유지하기 위해, 가우시안의 최종 위치 xi^k를 활성 복셀 pi 근처로 제한함
 > 
 >   - 계산 방식
-> ![위치 오프셋을 제한됨 범위 tanh로 맵핑](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-58b5b525f9eb.png)
+> ![위치 오프셋을 제한됨 범위 tanh로 맵핑](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-58b5b525f9eb.png)
 > 
 >   - 가우시안 렌더링 이미지와 실제 데이터 간의 차이를 줄이기 위해 사용한 loss
 >     - L1: 픽셀 단위의 절대 차이 손실
@@ -192,7 +192,7 @@ pass
 
 > [!note]
 > **Radiance Fields 디코딩 과정**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
 > 
 >   - 변수 정의
 >     - vxi,vyi,vzi: R16×8 크기의 행렬로, 로컬 광도 볼륨(local radiance volume)의 CP 분해 결과
@@ -209,7 +209,7 @@ pass
 
 > [!note]
 > **Mesh 디코딩 과정**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
 > 
 >   - DM: 메쉬(mesh) 표현으로 디코딩하는 함수
 > 
@@ -256,7 +256,7 @@ pass
 
 > [!note]
 > **Rectified flow models**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-17e8d6e1cee5.png)
 > 
 >   - Foward process
 >     - Linear Interpolation
@@ -274,15 +274,15 @@ pass
 > **Sparse structure generation**
 >   - 첫번째 단계에서 Sparse structure {pi}^Li=1을 생성
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >   - sparse active voxels to dense binary 3D grid
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >     - 텐서화된 신경망을 사용하기 위해 active voxel를 dense binary 3D grid로 변경 활성은 1, 비활성은 0으로 설정
 > 
 >   - 3D 합성곱 블록을 사용하는 간단한 VAE를 도입 dense grid O를 low resolution feature grid S로 압축함
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >   - O의 이산값을 연속적인 특징으로 변환하여 Rectified Flow 훈련에 적합하게 만듦
 > 
@@ -300,12 +300,12 @@ pass
 > 
 >   - denoised feature grid S를 이산 그리드 O로 디코딩한 후, 이를 다시 활성 복셀로 변환하여 최종 sparse structure를 생성함
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 
 > [!note]
 > **Structured latents generation**
 >   - 두 번째 단계에서는 Figure3에 있는 (c)에 나타난 Sparse Structured용 Transformer GL을 사용하여 구조를 기반으로 잠재 변수를 생성함
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >   - Sparse VAE Encoder처럼 입력 noise latent를 잠재 변수로 직렬화하는 대신, 직렬화 전에 짧은 sequence로 패킹하여 효율성을 개선함 → DiT 방식과 유사
 > 
@@ -393,7 +393,7 @@ pass
 > 
 >       - LPIPS
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 
 ## 4.2. Generation Results
 
@@ -401,7 +401,7 @@ pass
 
 > [!note]
 > **생성 결과**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >   - 텍스트와 이미지를 기반으로 3D asset 생성
 > 
@@ -411,13 +411,13 @@ pass
 
 > [!note]
 > **질적 비교**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >   - 이전 방법보다 우수하며, 더 생동감 있고 외관과 정교한 기하학을 제공함
 
 > [!note]
 > **정량적 비교**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >   - Frechat distance(FD)와 kernel distance(KD)를 다양한 특성 추출기를 이용해 출력의 전반적인 품질을 평가
 > 
@@ -432,21 +432,21 @@ pass
 >   - SLAT의 크기를 결정하기 위해, 다양한 latent resolution와 channel을 갖는 sparse VAE 모델을 학습시킴
 > 
 >   - Resolution과 Channel별 성능
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >     - 32^3 설정에서 성능은 좋지만, latent channel 수가 증가함에 따라 성능 향상이 둔화된다고 설명
 > 
 >     - 그래서 64^3 설정으로 변경하면 성능이 크게 향상되며 품질이 좋았음 
 > 
 >   - Rectified Flows vs Diffusion
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >     - 실험에서 각 단계의 생성 방법만 변경하고, 나머지 단계는 XL 모델을 그대로 두어 비교함
 > 
 >     - diffusion model을 rectified flow 모델로 대체 생성하면 생성 품질과 프롬프트 정렬이 모두 개선됨
 > 
 >   - Model Size
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >     - Model 크기를 키울수록 성능이 향상됨
 
@@ -456,7 +456,7 @@ pass
 
 > [!note]
 > **3D Asset Variations**
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 > 
 >   - 3D asset을 다양하게 변경할 수 있으며, 텍스트 및 이미지 프롬프트에 따라 지역별 상세 편집을 가능하게 함
 
@@ -488,7 +488,7 @@ pass
 > **Network Architectures**
 >   - Transfomrer 기반 네트워크를 사용
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1818d6e1cee5.png)
 
 > [!note]
 > **3D Convolutional U-net**
@@ -566,14 +566,14 @@ pass
 >     - Gaussian 신경망에 의해 예측될 경우 기존 밀도 제어 방식이 적용되지 않으므로, 가우시안 크기와 불투명도를 정규화하여 지나치게 커지거나 투명해지는 퇴화를 방지
 > 
 >     - Training object
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
 > 
 >   - Radiance Fields
 >     - 각 active voxel에 대해 vx, vy, vzi, vci 4개의 직교 벡터를 예측함
 > 
 >     - 이 벡터들은 8^3 radiance volume V∈R^8×8×8×4의 [CP 분해(CP-Decomposition)](https://arxiv.org/abs/2203.09517)을 나타냄
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
 > 
 >     - V의 마지막 차원(크기 4)은 색상과 밀도 정보를 포함함
 > 
@@ -585,7 +585,7 @@ pass
 > 
 >     - Training object
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
 > 
 >   - Meshes
 >     - Transformer backbone 뒤에 sparse convolution upsampler 2개를 추가하여 sparse structures의 공간 크기를 64^3에서 256^3으로 증가시킴
@@ -593,14 +593,14 @@ pass
 >     - DM에서는 형상(geometry)에 맞춰져 있지만, mesh의 색상과 normal map도 예측함
 > 
 >     - active voxel
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
 > 
 >     - [FlexiCubes](https://games-1312234642.cos.ap-guangzhou.myqcloud.com/pdf/Games2023289%E6%B2%88%E5%A4%A9%E7%95%85.pdf)에서 정의한 매개 변수
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1838d6e1cee5.png)
 > 
 >     - 각 정점은 여러 복셀에 연결되어 있으므로, 연결된 모든 복셀의 예측값을 평균내어 최종 정점 속성(δ,d,c,n)을 도출함
 > 
@@ -615,12 +615,12 @@ pass
 >     - Nvdiffrast를 사용해 추출된 메쉬와 속성을 렌더링하여 전경 마스크(M), 깊이 맵(D), 메쉬로부터 직접 얻은 법선(Nm), RGB 이미지(C), 그리고 예측된 법선으로 생성한 법선맵(N)을 생성함
 > 
 >     - Training object
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >       - 총 손실 함수 LM은 기하학적 손실 Lgeo, 색상 손실 Lcolor, 정규화 손실 Lreg의 합으로 정의됨
 > 
 >       - Lgeo와 Lreg는 다음과 같이 정의됨
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >         - Lgeo
 >           - L1(M): 전경 마스크 M에 대한 L1 손실
@@ -632,13 +632,13 @@ pass
 >         - Lcolor
 >           - Lrecon 식은 (7)과 동일함
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >           - Lrecon(C): RGB 이미지 C의 재구성 손실
 > 
 >           - Lrecon(N): 예측된 법선 N의 재구성 손실
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >           - Lconsist: 같은 voxel 꼭짓점에 연관된 속성의 분산을 최소화
 > 
@@ -662,7 +662,7 @@ pass
 > 
 >   - 학습 요약
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 
 # B. Data Preparation Details
 
@@ -732,9 +732,9 @@ pass
 >   - 각 데이터 세트에서 aesthetic score를 계산하고 낮은 점수는 제거함
 > 
 >   - score 분포는 다음과 같음
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >     - Objaverse-XL은 5.5 다른 데이터 세트는 4.5 밑에는 필터링하여 고품질 3D 객체만 남김 → 약 50만개 남음
 
@@ -786,12 +786,12 @@ pass
 >     - F-score: 포인트 클라우드 간의 일치율(precision, recall)을 종합적으로 평가
 > 
 >     - 렌더링된 normal map의 품질 평가를 위해 PSNR-N과 LPIPS-N을 사용
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >       - 두 포인트 클라우드 X와 Y 사이의 평균 거리 계산
 > 
 >       - X와 Y의 기하학적 차이를 정량화하며 값이 작을수록 포인트 클라우드가 유사함
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >       - False Negatives(FN): X의 포인트 중, Y의 어느 포인트와도 거리가 반경 r 이상인 포인트 개수
 > 
@@ -866,9 +866,9 @@ pass
 > 
 >   - 실험 절차: 각 참가자는 50회의 실험을 수행하며 선택은 분석을 위해 저장
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
-> ![](/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
+> ![](/papers/assets/notion/structured-3d-latents-for-scalable-and-versatile-3d-generation-1858d6e1cee5.png)
 > 
 >   - 다양한 평가 방식으로 이루어짐
 > 

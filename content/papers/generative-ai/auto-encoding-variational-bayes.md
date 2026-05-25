@@ -1,8 +1,8 @@
----
+﻿---
 title: "Auto-Encoding Variational Bayes"
 date: 2025-01-06
-thumbnail: "/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png"
-socialImage: "/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png"
+thumbnail: "/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -19,7 +19,7 @@ journal: "arXiv 2013"
 
 [https://arxiv.org/abs/1312.6114](https://arxiv.org/abs/1312.6114)
 
-[/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.pdf](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.pdf)
+[/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.pdf](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.pdf)
 
 # Abstarct
 
@@ -59,7 +59,7 @@ journal: "arXiv 2013"
 
 - 전체 파라미터에 대해 Maximum likelihood(MLE) or Maximum a posteriori(MAP) 추론을 수행하고, latent variabels에 대해 variational inference를 수행하는 경우를 다룸
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 - 생성 모델
   - **pθ(z)**: 잠재 변수 z에 대한 사전 분포이며, θ로 파라미터화됨
@@ -107,11 +107,11 @@ journal: "arXiv 2013"
 
 - Marginal Likelihood
   - 전체 데이터의 marginal likelihood는 개별 데이터 포인트들의 margin likelihood의 합으로 표현
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
   - 이것은 다음과 같이 재정의 될 수 있음
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
   - KL 다이버전스는 근사 후방 분포 qϕ(z∣x)와 실제 후방 분포 pθ(z∣x) 사이의 차이를 측정하며. 이 값은 항상 음이 아닌 값을 가짐
 
@@ -122,16 +122,16 @@ journal: "arXiv 2013"
 
   - 이 식을
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
   - 이 식으로 재정의 할 수 있음
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 - Gradient optimize
   - L(θ,ϕ;x(i))을 최적화하려고 하지만 기울기를 계산하는 데 어려움이 있음
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 - 위의 방법들은 KL Divergence와 Lower Bound를 위한 Margin Likelihood를 근사하지만, 기울기 추정 문제에서 분산 문제를 해결해야 하는 어려움이 있음
 
@@ -145,17 +145,17 @@ journal: "arXiv 2013"
 
 - 특정한 조건 하에, 미분 가능한 변환을 사용하여 재매개화 함
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 - qϕ(z∣x)에 대한 기대값을 추정하기 위해 **미분 가능한 변환** gϕ(ϵ,x)을 사용하여 **노이즈 변수** ϵ로부터 샘플링된 값 ϵ(l)을 변환함
 
 - 이는 z~qϕ(z∣x)에 대해, f(z)의 기대값을 다음과 같이 근사할 수 있게 해줌:
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 - SGVB 추정기
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 ```python
 import numpy as np
@@ -235,7 +235,7 @@ print("Final parameters:", theta, phi)
 - **SGVB 추정기 (두 번째 버전)**:
   - 두 번째 버전의 SGVB 추정기는 다음과 같음:
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
   - **KL-divergence 항**은 이제 분석적으로 계산되어 제거됨
 
@@ -249,10 +249,10 @@ print("Final parameters:", theta, phi)
 
   - **추정기**는 다음과 같이 정의됨:
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
   - N은 데이터셋의 총 데이터 포인트 수, M은 미니배치의 크기
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
   - 는 개별 데이터 포인트에 대한 추정기
 
@@ -270,7 +270,7 @@ print("Final parameters:", theta, phi)
   - 두 번째 항은 **재구성 오류**로, 이는 오토인코더에서의 **음의 재구성 오차**와 동일함. 이 항은 주어진 코드 z(i,l)가 해당 데이터 포인트 x(i)를 얼마나 잘 재구성하는지를 나타냄
 
   - *함수 gϕ(⋅)**는 데이터 포인트 x(i)와 랜덤 노이즈 벡터 ϵ(l)를 결합하여 근사 후방 분포로부터 샘플을 생성함:
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
   - 그런 다음, 샘플 z(i,l)는 생성 모델을 통해 **재구성 확률** logpθ(x(i)∣z(i,l))을 계산하는 데 사용됨.
 
@@ -284,7 +284,7 @@ print("Final parameters:", theta, phi)
 
 - 다음과 같이 표현함
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 - ϵ은 p(ϵ)라는 독립적인 주변 분포를 가진 보조 변수임
 
@@ -298,13 +298,13 @@ print("Final parameters:", theta, phi)
 
 1. 그러므로, 원래의 기댓값 ∫qϕ(z∣x)f(z)dz는 다음과 같이 변환됨:
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 이 과정에서, gϕ(ϵ,x)는 z를 다시 ϵ과 x를 이용해 결정할 수 있도록 해줌
 
 - 재매개변수화 기법을 사용하여 미분 가능한 추정기를 구축함
 
-![](/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
+![](/papers/assets/notion/auto-encoding-variational-bayes-1738d6e1cee5.png)
 
 - qϕ(z∣x): 우리가 샘플을 생성하려는 조건부 분포
 

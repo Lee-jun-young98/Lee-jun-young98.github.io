@@ -1,8 +1,8 @@
----
+﻿---
 title: "Segment Anything in Medical Images"
 date: 2024-01-04
-thumbnail: "/assets/notion/segment-anything-in-medical-images-00b44896fa44.png"
-socialImage: "/assets/notion/segment-anything-in-medical-images-00b44896fa44.png"
+thumbnail: "/papers/assets/notion/segment-anything-in-medical-images-00b44896fa44.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/segment-anything-in-medical-images-00b44896fa44.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -44,7 +44,7 @@ tags:
 
 - SAM에 영감을 받아 의료 영상의 foundation model인 med-sam을 만듦
 
-![](/assets/notion/segment-anything-in-medical-images-00b44896fa44.png)
+![](/papers/assets/notion/segment-anything-in-medical-images-00b44896fa44.png)
 
 ---
 
@@ -76,7 +76,7 @@ tags:
 
 - MedSAM을 내부 및 외부 검증을 통해 평가하고, Segmentation SOTA 모델인 SAM 및 전문 U-Net 모델과 비교함(Dice Similarity Coefficient 사용)
 
-![](/assets/notion/segment-anything-in-medical-images-5fdf368c9519.png)
+![](/papers/assets/notion/segment-anything-in-medical-images-5fdf368c9519.png)
 
 - Fig a
   - SAM은 CT, MR 및 회색 이미지 분할 작업에서 낮은 성능을 보여줌
@@ -96,7 +96,7 @@ tags:
 
   - Med SAM은 다양한 이미지 조건에서 다양한 대상을 정확하게 분류하며 경계가 약하거나 없는 대상도 적용 가능
 
-![](/assets/notion/segment-anything-in-medical-images-4ee52e2a0dc4.png)
+![](/papers/assets/notion/segment-anything-in-medical-images-4ee52e2a0dc4.png)
 
 - Fig c
   - 외부 검증 혹시 새로운 데이터세트에 대한 적용
@@ -107,7 +107,7 @@ tags:
 
   - Med-SAM은 CT 이미지의 간암이나 MR 이미지의 자궁경부암과 같은 어려운 대상을 분할하는데 더 좋은 성능을 보여줌
 
-![](/assets/notion/segment-anything-in-medical-images-0bb2ad5810ce.png)
+![](/papers/assets/notion/segment-anything-in-medical-images-0bb2ad5810ce.png)
 
 - Fig e
   - 신창, 대장, 간 및 췌장암의 종양 부피를 계산하고 전문가가 계산한 부피와 비교함

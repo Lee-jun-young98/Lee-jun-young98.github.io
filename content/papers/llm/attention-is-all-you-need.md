@@ -1,8 +1,8 @@
----
+﻿---
 title: "Attention Is All You Need(작성중)"
 date: 2023-12-21
-thumbnail: "/assets/notion/attention-is-all-you-need-cf15928e50df.png"
-socialImage: "/assets/notion/attention-is-all-you-need-cf15928e50df.png"
+thumbnail: "/papers/assets/notion/attention-is-all-you-need-cf15928e50df.png"
+socialImage: "https://lee-jun-young98.github.io/papers/assets/notion/attention-is-all-you-need-cf15928e50df.png"
 paper_sync: true
 tags:
   - "paper-review"
@@ -50,7 +50,7 @@ alamar : 딥러닝 정보 Visualize 된 것이 많음
 
 ---
 
-![](/assets/notion/attention-is-all-you-need-cf15928e50df.png)
+![](/papers/assets/notion/attention-is-all-you-need-cf15928e50df.png)
 
 - Linear Layer : 선형 변환을 만드는 것에 관해 근거가 있어야 함, 원래 없던 정보를 훈련시키기 위해 Weight를 변환
 
@@ -75,9 +75,9 @@ alamar : 딥러닝 정보 Visualize 된 것이 많음
 
 1. Attention
 
-![](/assets/notion/attention-is-all-you-need-2e14b55255f8.png)
+![](/papers/assets/notion/attention-is-all-you-need-2e14b55255f8.png)
 
-![](/assets/notion/attention-is-all-you-need-4047d5ef239e.png)
+![](/papers/assets/notion/attention-is-all-you-need-4047d5ef239e.png)
 
 - 쿼리와 키-값 쌍을 출력에 매핑되며 출력은 각 값에 가중합으로 계산되며, 쿼리와 해당 키 간의 호환성 함수에 의해 계산 
 
