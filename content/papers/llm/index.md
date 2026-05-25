@@ -3,10 +3,10 @@ title: "LLM"
 paper_sync: true
 ---
 
-## [[llm/attention-is-all-you-need|Attention Is All You Need(작성중)]]
+## [Attention Is All You Need(작성중)](/papers/llm/attention-is-all-you-need)
 
 ![](/papers/assets/notion/attention-is-all-you-need-cf15928e50df.png)
 
-## [[llm/llm|LLM 동작원리]]
+## [LLM 동작원리](/papers/llm/llm)
 
-## [[llm/react-synergizing-reasoning-and-acting|ReAct: Synergizing Reasoning and Acting in Language Models]]
+## [ReAct: Synergizing Reasoning and Acting in Language Models](/papers/llm/react-synergizing-reasoning-and-acting)

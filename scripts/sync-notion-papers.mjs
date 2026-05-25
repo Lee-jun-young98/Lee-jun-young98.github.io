@@ -38,6 +38,15 @@ const categoryTitles = {
 
 const categoryPriority = ["Agent", "3D", "MultiModal", "LLM", "Generative AI", "Vision", "Skill", "Metrics"]
 
+const manualPaperReviews = [
+  {
+    title: "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+    folder: "agent",
+    slug: "voyager-open-ended-embodied-agent-with-large-language-models",
+    thumbnail: "/papers/assets/agent/voyager-components.png",
+  },
+]
+
 const knownPages = {
   "3698d6e1cee581fb9147c9108f141560": {
     slug: "react-synergizing-reasoning-and-acting",
@@ -400,11 +409,32 @@ function indexBody(title, papers) {
     .sort((a, b) => a.title.localeCompare(b.title, "ko"))
     .map((paper) => {
       const image = paper.thumbnail ? `\n\n![](${paper.thumbnail})` : ""
-      return `## [[${paper.folder}/${paper.slug}|${displayTitle(paper.title)}]]${image}`
+      return `## [${displayTitle(paper.title)}](/papers/${paper.folder}/${paper.slug})${image}`
     })
     .join("\n\n")
 
   return `---\ntitle: "${escapeYaml(title)}"\npaper_sync: true\n---\n\n${entries}\n`
+}
+
+function paperEntry(paper, level = "##") {
+  const image = paper.thumbnail ? `\n\n![](${paper.thumbnail})` : ""
+  return `${level} [${displayTitle(paper.title)}](/papers/${paper.folder}/${paper.slug})${image}`
+}
+
+function groupedIndexBody(title, papers, byFolder) {
+  const sections = []
+
+  for (const category of categoryPriority) {
+    const folder = categoryFolders[category]
+    const folderPapers = [...(byFolder.get(folder) || [])].sort((a, b) => a.title.localeCompare(b.title, "ko"))
+    if (folderPapers.length === 0) continue
+
+    const sectionTitle = categoryTitles[folder] || category
+    const entries = folderPapers.map((paper) => paperEntry(paper, "###")).join("\n\n")
+    sections.push(`## [${sectionTitle}](/papers/${folder}/)\n\n${entries}`)
+  }
+
+  return `---\ntitle: "${escapeYaml(title)}"\npaper_sync: true\n---\n\n${sections.join("\n\n")}\n`
 }
 
 async function removePreviouslySyncedMarkdown(directory) {
@@ -454,14 +484,19 @@ async function main() {
     console.log(`synced ${metadata.folder}/${metadata.slug}.md`)
   }
 
+  const allPapers = [...synced, ...manualPaperReviews]
   const byFolder = new Map()
-  for (const paper of synced) {
+  for (const paper of allPapers) {
     const papers = byFolder.get(paper.folder) || []
     papers.push(paper)
     byFolder.set(paper.folder, papers)
   }
 
-  await fs.writeFile(path.join(contentRoot, "index.md"), indexBody("\uB17C\uBB38 \uB9AC\uBDF0 \uB178\uD2B8", synced), "utf8")
+  await fs.writeFile(
+    path.join(contentRoot, "index.md"),
+    groupedIndexBody("\uB17C\uBB38 \uB9AC\uBDF0 \uB178\uD2B8", allPapers, byFolder),
+    "utf8",
+  )
 
   for (const folder of Object.values(categoryFolders)) {
     const papers = byFolder.get(folder) || []
