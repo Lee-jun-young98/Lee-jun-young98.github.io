@@ -24,13 +24,13 @@ const categoryFolders = {
 }
 
 const categoryTitles = {
-  "generative-ai": "Generative AI \uB17C\uBB38 \uB9AC\uBDF0",
-  llm: "LLM \uB17C\uBB38 \uB9AC\uBDF0",
-  vision: "Vision \uB17C\uBB38 \uB9AC\uBDF0",
-  multimodal: "MultiModal \uB17C\uBB38 \uB9AC\uBDF0",
-  "3d": "3D \uB17C\uBB38 \uB9AC\uBDF0",
-  skill: "Skill \uB17C\uBB38 \uB9AC\uBDF0",
-  metrics: "Metrics \uB17C\uBB38 \uB9AC\uBDF0",
+  "generative-ai": "Generative AI",
+  llm: "LLM",
+  vision: "Vision",
+  multimodal: "MultiModal",
+  "3d": "3D",
+  skill: "Skill",
+  metrics: "Metrics",
 }
 
 const categoryPriority = ["3D", "MultiModal", "LLM", "Generative AI", "Vision", "Skill", "Metrics"]
@@ -164,6 +164,10 @@ function richTextToPlain(parts = []) {
   return parts.map((part) => part.plain_text || "").join("")
 }
 
+function displayTitle(title) {
+  return title.replace(/\s+/g, " ").trim()
+}
+
 function getProperty(properties, name) {
   return properties[name]
 }
@@ -237,6 +241,10 @@ function buildFrontmatter(page, metadata, body) {
   const lines = ["---"]
   lines.push(`title: "${escapeYaml(metadata.title)}"`)
   if (metadata.date) lines.push(`date: ${metadata.date}`)
+  if (metadata.thumbnail) {
+    lines.push(`thumbnail: "${escapeYaml(metadata.thumbnail)}"`)
+    lines.push(`socialImage: "${escapeYaml(metadata.thumbnail)}"`)
+  }
   lines.push("paper_sync: true")
   lines.push("tags:")
   lines.push(markdownList(["paper-review", ...metadata.tableTags, ...metadata.tasks]))
@@ -312,6 +320,7 @@ async function blockToMarkdown(block, context, depth = 0) {
       const sourceUrl = value.type === "external" ? value.external.url : value.file.url
       const url = value.type === "external" ? sourceUrl : await downloadNotionAsset(sourceUrl, block, context)
       const caption = richTextToPlain(value.caption)
+      if (!context.thumbnail) context.thumbnail = url
       return `![${caption}](${url})`
     }
     case "file":
@@ -371,12 +380,15 @@ function pageMetadata(page) {
 }
 
 function indexBody(title, papers) {
-  const links = papers
+  const entries = papers
     .sort((a, b) => a.title.localeCompare(b.title, "ko"))
-    .map((paper) => `- [[${paper.folder}/${paper.slug}|${paper.title}]]`)
-    .join("\n")
+    .map((paper) => {
+      const image = paper.thumbnail ? `\n\n![](${paper.thumbnail})` : ""
+      return `## [[${paper.folder}/${paper.slug}|${displayTitle(paper.title)}]]${image}`
+    })
+    .join("\n\n")
 
-  return `---\ntitle: "${escapeYaml(title)}"\npaper_sync: true\n---\n\n${links}\n`
+  return `---\ntitle: "${escapeYaml(title)}"\npaper_sync: true\n---\n\n${entries}\n`
 }
 
 async function removePreviouslySyncedMarkdown(directory) {
@@ -414,8 +426,9 @@ async function main() {
   for (const page of pages) {
     const metadata = pageMetadata(page)
     const blocks = await getChildren(page.id)
-    const context = { slug: metadata.slug }
+    const context = { slug: metadata.slug, thumbnail: "" }
     const body = await blocksToMarkdown(blocks, context)
+    metadata.thumbnail = context.thumbnail
     const filePath = path.join(contentRoot, metadata.folder, `${metadata.slug}.md`)
 
     await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -436,7 +449,7 @@ async function main() {
 
   for (const folder of Object.values(categoryFolders)) {
     const papers = byFolder.get(folder) || []
-    const title = categoryTitles[folder] || `${folder} \uB17C\uBB38 \uB9AC\uBDF0`
+    const title = categoryTitles[folder] || folder
     const indexPath = path.join(contentRoot, folder, "index.md")
     await fs.mkdir(path.dirname(indexPath), { recursive: true })
     await fs.writeFile(indexPath, indexBody(title, papers), "utf8")
