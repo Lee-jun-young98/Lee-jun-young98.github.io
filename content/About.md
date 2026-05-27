@@ -30,3 +30,5 @@ title: About
 
 - GitHub: [Lee-jun-young98](https://github.com/Lee-jun-young98)
 - Paper Reviews: [[papers/index|논문 리뷰 노트]]
+- Library Study Notes: [[libraries/index|Library Study Notes]]
+- Privacy Policy: [[blog/privacy-policy|Privacy Policy]]

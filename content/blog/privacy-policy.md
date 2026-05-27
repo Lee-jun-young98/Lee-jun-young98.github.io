@@ -1,5 +1,11 @@
 ---
 title: Privacy Policy
+date: 2026-05-27
+tags:
+  - policy
+  - blog
+aliases:
+  - "/Privacy-Policy"
 ---
 
 # Privacy Policy

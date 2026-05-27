@@ -34,6 +34,17 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[blog/hydra-llm-sft-training-pipeline|Hydra로 LLM SFT 실험 설정 정리하기]]  
   LLM 학습 프로젝트에서 설정을 구조화하며 배운 점을 정리한 글입니다.
 
+- [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  
+  LangChain v1의 create_agent를 기준으로 tool calling agent를 시작하는 방법을 정리한 글입니다.
+
+- [[libraries/index|Library Study Notes]]  
+  LangChain 같은 라이브러리를 주제별로 공부하고, 앞으로 RAG 형식으로 쌓아갈 노트 모음입니다.
+
 ## Direction
 
 저는 모델 자체를 이해하는 것에서 멈추지 않고, 데이터를 준비하고 실험을 재현하며 결과물을 운영 가능한 형태로 정리하는 AI engineer 방향을 목표로 공부하고 있습니다.
+
+## Site
+
+- [[About|About]]
+- [[blog/privacy-policy|Privacy Policy]]
