@@ -12,3 +12,4 @@ AI 모델과 학습 파이프라인을 공부하면서 정리한 내용을 모�
 
 - GitHub: https://github.com/Lee-jun-young98
 - 논문 리뷰: [[papers/index|논문 리뷰 노트]]
+- 개인정보 처리방침: [[blog/privacy-policy|Privacy Policy]]

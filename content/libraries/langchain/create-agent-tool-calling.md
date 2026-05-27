@@ -7,6 +7,8 @@ tags:
   - llm
   - agent
   - python
+aliases:
+  - "/blog/langchain-create-agent-tool-calling"
 ---
 
 # LangChain create_agent로 도구 호출 에이전트 시작하기
