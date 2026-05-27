@@ -1,7 +1,6 @@
 ---
 title: LLM SFT Training Platform
 type: project
-status: draft
 tags: [llm, sft, hydra, mlops, portfolio]
 source:
   - https://github.com/Lee-jun-young98/ai-train-code-main
@@ -9,36 +8,26 @@ source:
 
 # LLM SFT Training Platform
 
-## 한 줄 요약
+Hydra 설정을 기반으로 QA CSV 데이터 전처리, LLM SFT 학습, 평가, 산출물 업로드까지 이어지는 학습 파이프라인을 구성한 프로젝트입니다.
 
-Hydra 기반 설정으로 QA CSV 데이터를 전처리하고, `gpt`, `gemma3`, `hyperclovax` 계열 LLM의 SFT 학습/평가/산출물 업로드까지 실행하는 학습 파이프라인.
+## Problem
 
-## 문제
+LLM 학습 프로젝트에서는 모델마다 프롬프트 형식, tokenizer 처리, LoRA 설정, 평가 방식, 산출물 저장 경로가 달라집니다. 이를 코드 안에 흩어두면 실험을 반복하거나 비교하기 어려워지고, 나중에 같은 조건으로 재현하기도 힘들어집니다.
 
-LLM 학습 프로젝트에서는 모델별 프롬프트 형식, 전처리 방식, LoRA 설정, 평가 방식, 산출물 저장 경로가 자주 달라집니다. 이를 매번 수동으로 관리하면 재현성과 운영성이 떨어집니다.
+## What I Built
 
-## 접근
+- Hydra 기반 설정 구조로 모델, 데이터, 학습 옵션, 프롬프트를 분리
+- GPT, Gemma3, HyperCLOVAX 계열 모델별 trainer 구조 정리
+- QA CSV 데이터의 질문/답변 스키마 전처리 흐름 구성
+- ROUGE 기반 평가 로직과 결과 저장 흐름 구성
+- S3/MinIO 업로드를 고려한 학습 산출물 관리 구조 설계
 
-- Hydra 설정 파일로 모델/학습/데이터/프롬프트 설정 분리
-- 모델별 trainer를 분리해 확장 가능한 구조 구성
-- QA CSV의 질문/답변 스키마 정규화
-- ROUGE 기반 평가 로직 구성
-- S3/MinIO로 학습 산출물 업로드
+## What I Learned
 
-## PPT에 넣을 자료
+- 학습 코드는 모델 성능뿐 아니라 재현성과 설정 관리가 중요하다는 점
+- 모델별 차이를 trainer 계층으로 분리하면 확장성이 좋아진다는 점
+- 실험 결과를 남기려면 config, checkpoint, metric, output 경로가 함께 관리되어야 한다는 점
 
-- 전체 학습 파이프라인 다이어그램
-- `configs/`, `trainer/`, `preprocessing/`, `metrics/`, `utils/` 구조 캡처
-- trainer 추가 흐름
-- 산출물 업로드 경로 설명
+## Direction
 
-## 블로그 글 방향
-
-- Hydra로 LLM SFT 학습 파이프라인을 재현 가능하게 만들기
-- GPT/Gemma/HyperCLOVAX trainer를 하나의 구조로 관리하기
-
-## 공개 전 점검
-
-- S3/API 설정 제거
-- 내부 모델 경로 제거
-- 공개 가능한 샘플 데이터만 사용
+다음 단계에서는 공개 가능한 샘플 데이터와 실행 예시를 정리해, 처음 보는 사람도 파이프라인 구조를 이해할 수 있도록 문서화할 예정입니다.

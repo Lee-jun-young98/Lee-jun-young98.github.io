@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Junyoung AI Study Notes",
+    pageTitle: "Junyoung AI Lab",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -21,11 +21,14 @@ const config: QuartzConfig = {
       "private",
       ".obsidian",
       "00_inbox",
-      "10_projects",
       "40_portfolio",
       "50_blog_drafts",
       "60_publish",
       "99_templates",
+      "README",
+      "README.md",
+      "Privacy-Policy",
+      "Privacy-Policy.md",
     ],
     defaultDateType: "modified",
     theme: {

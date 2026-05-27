@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy
+draft: true
 ---
 
 # Privacy Policy
