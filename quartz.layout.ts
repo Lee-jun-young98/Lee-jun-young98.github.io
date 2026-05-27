@@ -4,6 +4,8 @@ import * as Component from "./quartz/components"
 const paperExplorerOptions = {
   filterFn: (node: any) => {
     const hidden = new Set([
+      "README",
+      "Privacy-Policy",
       "papers/ddpm-study-note",
       "papers/latent-diffusion-models-study-note",
       "papers/medical-sam-adapter-study-note",
@@ -21,8 +23,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/Lee-jun-young98",
+      About: "/About",
+      Privacy: "/Privacy-Policy",
     },
   }),
 }
