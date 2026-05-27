@@ -11,3 +11,5 @@ LangChain을 실전에서 쓰기 전에 API 구조와 자주 쓰는 패턴을 �
 ## 글 목록
 
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
+- [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 승인 단계 넣기]]
+- [[libraries/langchain/subagents-supervisor-pattern|subagents로 역할 분리된 에이전트 만들기]]

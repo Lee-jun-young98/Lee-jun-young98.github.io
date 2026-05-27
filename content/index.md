@@ -37,6 +37,12 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  
   LangChain v1의 create_agent를 기준으로 tool calling agent를 시작하는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 승인 단계 넣기]]  
+  위험한 도구 호출 전에 사람 승인을 넣는 흐름을 정리한 글입니다.
+
+- [[libraries/langchain/subagents-supervisor-pattern|LangChain subagents로 역할 분리된 에이전트 만들기]]  
+  supervisor와 subagent로 agent 책임을 나누는 패턴을 정리한 글입니다.
+
 - [[libraries/index|Library Study Notes]]  
   LangChain 같은 라이브러리를 주제별로 공부하고, 앞으로 RAG 형식으로 쌓아갈 노트 모음입니다.
 
