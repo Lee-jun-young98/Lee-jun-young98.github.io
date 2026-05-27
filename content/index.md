@@ -43,6 +43,9 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[libraries/langchain/subagents-supervisor-pattern|LangChain subagents로 역할 분리된 에이전트 만들기]]  
   supervisor와 subagent로 agent 책임을 나누는 패턴을 정리한 글입니다.
 
+- [[libraries/langchain/supervisor-subagent-call-flow|LangChain supervisor가 subagent를 호출할 때 내부 로직은 어떻게 흐를까]]  
+  supervisor의 tool call이 subagent invoke로 이어지는 내부 흐름을 정리한 글입니다.
+
 - [[libraries/index|Library Study Notes]]  
   LangChain 같은 라이브러리를 주제별로 공부하고, 앞으로 RAG 형식으로 쌓아갈 노트 모음입니다.
 
