@@ -55,6 +55,24 @@ const manualPaperReviews = [
     slug: "no-time-to-train-training-free-reference-based-instance-segmentation",
   },
   {
+    title: "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows",
+    folder: "vision",
+    slug: "swin-transformer-hierarchical-vision-transformer-using-shifted-windows",
+    thumbnail: "/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png",
+  },
+  {
+    title: "SAM 2: Segment Anything in Images and Videos",
+    folder: "vision",
+    slug: "sam-2-segment-anything-in-images-and-videos",
+    thumbnail: "/papers/assets/notion/sam-2-segment-anything-in-images-and-videos-2348d6e1cee5.png",
+  },
+  {
+    title: "When Does Label Smoothing Help?",
+    folder: "skill",
+    slug: "when-does-label-smoothing-help",
+    thumbnail: "/papers/assets/notion/when-does-label-smoothing-help-592b8ded30be.png",
+  },
+  {
     title: "Voyager: An Open-Ended Embodied Agent with Large Language Models",
     folder: "agent",
     slug: "voyager-open-ended-embodied-agent-with-large-language-models",
@@ -66,6 +84,9 @@ const manualOverridePageIds = new Set([
   "3698d6e1cee581fb9147c9108f141560",
   "1268d6e1cee58034ad34f957dc1e2b7d",
   "2298d6e1cee580af837dd872a256c2bb",
+  "2ae41bf1181749c4b9250c9008e85e84",
+  "14a8d6e1cee580c7b91ece8d0921ea93",
+  "60398924e6504cadac522e54886464c8",
 ])
 
 const knownPages = {
