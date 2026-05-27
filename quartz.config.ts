@@ -27,8 +27,6 @@ const config: QuartzConfig = {
       "99_templates",
       "README",
       "README.md",
-      "Privacy-Policy",
-      "Privacy-Policy.md",
     ],
     defaultDateType: "modified",
     theme: {
