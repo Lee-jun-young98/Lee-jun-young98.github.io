@@ -8,8 +8,6 @@ tags:
   - agent
   - memory
   - python
-aliases:
-  - "/blog/langchain-short-term-memory"
 ---
 
 # LangChain short-term memory로 대화 맥락 유지하기
