@@ -34,7 +34,7 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[blog/hydra-llm-sft-training-pipeline|Hydra로 LLM SFT 실험 설정 정리하기]]  
   LLM 학습 프로젝트에서 설정을 구조화하며 배운 점을 정리한 글입니다.
 
-- [[blog/langchain-short-term-memory|LangChain short-term memory로 대화 맥락 유지하기]]  
+- [[libraries/langchain/short-term-memory|LangChain short-term memory로 대화 맥락 유지하기]]  
   LangChain agent에서 checkpointer와 thread_id로 대화 맥락을 유지하는 방법을 정리한 글입니다.
 
 - [[blog/index|Blog]]  
