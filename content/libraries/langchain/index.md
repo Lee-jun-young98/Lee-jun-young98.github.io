@@ -15,3 +15,4 @@ LangChain을 실전에서 쓰기 전에 API 구조와 자주 쓰는 패턴을 �
 - [[libraries/langchain/subagents-supervisor-pattern|subagents로 역할 분리된 에이전트 만들기]]
 - [[libraries/langchain/supervisor-subagent-call-flow|supervisor가 subagent를 호출할 때 내부 로직은 어떻게 흐를까]]
 - [[libraries/langchain/supervisor-subagent-router-pattern|supervisor는 subagent를 어떤 식으로 고를까]]
+- [[blog/langchain-short-term-memory-checkpointer|short-term memory로 대화 문맥 유지하기]]
