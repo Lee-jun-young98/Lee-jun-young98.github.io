@@ -49,6 +49,9 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[libraries/langchain/supervisor-subagent-router-pattern|LangChain supervisor는 subagent를 어떤 식으로 고를까]]  
   supervisor가 router처럼 어떤 subagent를 선택하는지와 라우팅 기준을 정리한 글입니다.
 
+- [[blog/langchain-short-term-memory-checkpointer|LangChain short-term memory로 대화 문맥 유지하기]]  
+  checkpointer와 thread_id로 agent가 같은 대화 문맥을 이어가게 만드는 방법을 정리한 글입니다.
+
 - [[libraries/index|Library Study Notes]]  
   LangChain 같은 라이브러리를 주제별로 공부하고, 앞으로 RAG 형식으로 쌓아갈 노트 모음입니다.
 
