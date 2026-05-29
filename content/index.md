@@ -68,4 +68,3 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 ## Site
 
 - [[About|About]]
-- [[blog/privacy-policy|Privacy Policy]]
