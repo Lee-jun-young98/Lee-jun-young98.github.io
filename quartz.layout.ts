@@ -25,7 +25,6 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/Lee-jun-young98",
       About: "/About",
-      Privacy: "/Privacy-Policy",
     },
   }),
 }
