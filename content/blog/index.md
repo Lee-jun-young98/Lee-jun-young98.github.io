@@ -24,7 +24,3 @@ hideAutoFolderListing: true
 ## Training / MLOps
 
 - [[blog/hydra-llm-sft-training-pipeline|Hydra로 LLM SFT 실험 설정 정리하기]]
-
-## Policy
-
-- [[blog/privacy-policy|Privacy Policy]]
