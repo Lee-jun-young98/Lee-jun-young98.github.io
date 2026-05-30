@@ -31,23 +31,29 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[papers/index|Paper Reviews]]  
   vision, generative AI, multimodal, agent, LLM 논문을 읽고 핵심 아이디어와 구현 관점을 정리합니다.
 
+### Training / MLOps
+
 - [[blog/hydra-llm-sft-training-pipeline|Hydra로 LLM SFT 실험 설정 정리하기]]  
   LLM 학습 프로젝트에서 설정을 구조화하며 배운 점을 정리한 글입니다.
 
-- [[libraries/langchain/short-term-memory|LangChain short-term memory로 대화 맥락 유지하기]]  
-  LangChain agent에서 checkpointer와 thread_id로 대화 맥락을 유지하는 방법을 정리한 글입니다.
-
-- [[blog/index|Blog]]  
-  공부 노트 형식의 블로그 글 모음입니다.
+### Library / Agent Foundations
 
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  
   LangChain v1의 create_agent를 기준으로 tool calling agent를 시작하는 방법을 정리한 글입니다.
 
-- [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 승인 단계 넣기]]  
-  위험한 도구 호출 전에 사람 승인을 넣는 흐름을 정리한 글입니다.
+- [[libraries/langchain/short-term-memory|LangChain short-term memory로 대화 맥락 유지하기]]  
+  LangChain agent에서 checkpointer와 thread_id로 대화 맥락을 유지하는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/structured-output-response-format|LangChain structured output으로 에이전트 응답 스키마 고정하기]]  
   `response_format`, `ProviderStrategy`, `ToolStrategy`로 안정적인 구조화 응답을 받는 방법을 정리한 글입니다.
+
+- [[libraries/langchain/runtime-context-toolruntime|LangChain runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]  
+  사용자 정보, 권한, 팀 설정 같은 런타임 의존성을 agent와 tool에 안전하게 주입하는 방법을 정리한 글입니다.
+
+- [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 승인 단계 넣기]]  
+  위험한 도구 호출 전에 사람 승인을 넣는 흐름을 정리한 글입니다.
+
+### Library / Multi-Agent Patterns
 
 - [[libraries/langchain/subagents-supervisor-pattern|LangChain subagents로 역할 분리된 에이전트 만들기]]  
   supervisor와 subagent로 agent 책임을 나누는 패턴을 정리한 글입니다.
@@ -57,6 +63,11 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 
 - [[libraries/langchain/supervisor-subagent-router-pattern|LangChain supervisor는 subagent를 어떤 식으로 고를까]]  
   supervisor가 router처럼 어떤 subagent를 선택하는지와 라우팅 기준을 정리한 글입니다.
+
+### Collections
+
+- [[blog/index|Blog]]  
+  공부 노트 형식의 블로그 글 모음입니다.
 
 - [[libraries/index|Library Study Notes]]  
   LangChain 같은 라이브러리를 주제별로 공부하고, 앞으로 RAG 형식으로 쌓아갈 노트 모음입니다.
