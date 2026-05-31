@@ -53,6 +53,9 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[libraries/langchain/dynamic-model-selection-middleware|LangChain middleware로 동적 모델 선택과 도구 노출 제어하기]]  
   `wrap_model_call`로 비용 최적화와 권한별 도구 제어를 구현하는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/user-interaction-patterns|LangChain 에이전트는 사용자와 어떻게 상호작용할까]]  
+  메시지, 스트리밍, 도구 호출, 승인 단계, UI 연결 구조까지 포함해 사용자 상호작용 흐름을 정리한 글입니다.
+
 - [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 승인 단계 넣기]]  
   위험한 도구 호출 전에 사람 승인을 넣는 흐름을 정리한 글입니다.
 
