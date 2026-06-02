@@ -28,13 +28,10 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 
 ## Study Notes
 
-- [[papers/index|Paper Reviews]]  
-  vision, generative AI, multimodal, agent, LLM 논문을 읽고 핵심 아이디어와 구현 관점을 정리합니다.
+### Library Study Notes
 
-### Training / MLOps
-
-- [[blog/hydra-llm-sft-training-pipeline|Hydra로 LLM SFT 실험 설정 정리하기]]  
-  LLM 학습 프로젝트에서 설정을 구조화하며 배운 점을 정리한 글입니다.
+- [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]  
+  LangSmith에서 OpenAI 앱 실행 로그를 남기기 위한 최소 tracing 설정과 흔한 실수들을 정리한 글입니다.
 
 ### Library / Agent Foundations
 
@@ -85,7 +82,17 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
   공부 노트 형식의 블로그 글 모음입니다.
 
 - [[libraries/index|Library Study Notes]]  
-  LangChain 같은 라이브러리를 주제별로 공부하고, 앞으로 RAG 형식으로 쌓아갈 노트 모음입니다.
+  LangSmith, LangChain 같은 라이브러리를 주제별로 묶어 정리한 모음 페이지입니다.
+
+### Training / MLOps
+
+- [[blog/hydra-llm-sft-training-pipeline|Hydra로 LLM SFT 실험 설정 정리하기]]  
+  LLM 학습 프로젝트에서 설정을 구조화하며 배운 점을 정리한 글입니다.
+
+### Paper Reviews
+
+- [[papers/index|Paper Reviews]]  
+  vision, generative AI, multimodal, agent, LLM 논문을 읽고 핵심 아이디어와 구현 관점을 정리합니다.
 
 ## Direction
 
