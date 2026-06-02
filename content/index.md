@@ -44,6 +44,9 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[libraries/langchain/short-term-memory|LangChain short-term memory로 대화 맥락 유지하기]]  
   LangChain agent에서 checkpointer와 thread_id로 대화 맥락을 유지하는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/summarization-middleware|LangChain SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]  
+  오래된 대화를 자동 요약해 state에 반영하고, 최근 메시지만 원문으로 유지하는 운영 패턴을 정리한 글입니다.
+
 - [[libraries/langchain/structured-output-response-format|LangChain structured output으로 에이전트 응답 스키마 고정하기]]  
   `response_format`, `ProviderStrategy`, `ToolStrategy`로 안정적인 구조화 응답을 받는 방법을 정리한 글입니다.
 
