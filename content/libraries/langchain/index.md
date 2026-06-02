@@ -13,6 +13,7 @@ LangChain을 실전에서 쓰기 전에 API 구조와 자주 쓰는 패턴을 �
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 승인 단계 넣기]]
 - [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 유지하기]]
+- [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]
 - [[libraries/langchain/structured-output-response-format|structured output으로 에이전트 응답 스키마 고정하기]]
 - [[libraries/langchain/runtime-context-toolruntime|runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]
 - [[libraries/langchain/dynamic-model-selection-middleware|middleware로 동적 모델 선택과 도구 노출 제어하기]]
