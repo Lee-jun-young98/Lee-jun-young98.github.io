@@ -1,6 +1,6 @@
 ---
-title: LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제
-description: LangSmith에서 OpenAI 기반 Python 앱의 trace를 남기기 위해 LANGSMITH_TRACING, project, endpoint, traceable, wrap_openai를 어떻게 붙이는지 정리한 실전 입문 노트
+title: "LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제"
+description: "LangSmith에서 OpenAI 기반 Python 앱의 trace를 남기기 위해 LANGSMITH_TRACING, project, endpoint, traceable, wrap_openai를 어떻게 붙이는지 정리한 실전 입문 노트"
 date: 2026-06-02
 tags:
   - langsmith
