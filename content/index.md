@@ -65,6 +65,11 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
 - [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 승인 단계 넣기]]  
   위험한 도구 호출 전에 사람 승인을 넣는 흐름을 정리한 글입니다.
 
+### Library / LangGraph Foundations
+
+- [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
+  상태 갱신과 다음 노드 분기를 한 노드 안에서 함께 처리하는 Graph API 패턴을 정리한 글입니다.
+
 ### Library / Multi-Agent Patterns
 
 - [[libraries/langchain/subagents-supervisor-pattern|LangChain subagents로 역할 분리된 에이전트 만들기]]  
@@ -82,7 +87,7 @@ AI 모델을 공부하고, 학습 파이프라인과 프로젝트로 검증하�
   공부 노트 형식의 블로그 글 모음입니다.
 
 - [[libraries/index|Library Study Notes]]  
-  LangSmith, LangChain 같은 라이브러리를 주제별로 묶어 정리한 모음 페이지입니다.
+  LangSmith, LangChain, LangGraph 같은 라이브러리를 주제별로 묶어 정리한 모음 페이지입니다.
 
 ### Training / MLOps
 

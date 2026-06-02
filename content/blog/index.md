@@ -24,6 +24,10 @@ hideAutoFolderListing: true
 - [[libraries/langchain/user-interaction-patterns|에이전트는 사용자와 어떻게 상호작용할까]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 승인 단계 넣기]]
 
+## Library / LangGraph Foundations
+
+- [[libraries/langgraph/command-routing-state-updates|Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
+
 ## Library / Multi-Agent Patterns
 
 - [[libraries/langchain/subagents-supervisor-pattern|subagents로 역할 분리된 에이전트 만들기]]
