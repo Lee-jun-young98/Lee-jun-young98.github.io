@@ -4,9 +4,9 @@ title: LangChain
 
 # LangChain
 
-LangChain을 실전에서 쓰기 전에 API 구조와 자주 쓰는 패턴을 정리하는 공간입니다.
+LangChain을 실전에서 쓰면서 자주 부딪히는 에이전트, 메모리, 미들웨어 패턴을 정리하는 공간입니다.
 
-처음에는 기본 사용법 위주로 정리하고, 이후에는 RAG 파이프라인, retriever 설계, agent workflow, evaluation 같은 주제로 확장할 예정입니다.
+기본 `create_agent` 사용법부터 시작해서 runtime context, dynamic prompt, model/tool middleware, multi-agent 흐름까지 한 단계씩 이어서 정리합니다.
 
 ## 글 목록
 
@@ -16,6 +16,7 @@ LangChain을 실전에서 쓰기 전에 API 구조와 자주 쓰는 패턴을 �
 - [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]
 - [[libraries/langchain/structured-output-response-format|structured output으로 에이전트 응답 스키마 고정하기]]
 - [[libraries/langchain/runtime-context-toolruntime|runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]
+- [[libraries/langchain/dynamic-prompt-system-instructions|dynamic_prompt로 상황별 system prompt 주입하기]]
 - [[libraries/langchain/dynamic-model-selection-middleware|middleware로 동적 모델 선택과 도구 노출 제어하기]]
 - [[libraries/langchain/context-editing-clear-tool-outputs|ContextEditingMiddleware로 오래된 tool output 정리하기]]
 - [[libraries/langchain/tool-retry-middleware|ToolRetryMiddleware로 실패하는 도구 호출 재시도하기]]
