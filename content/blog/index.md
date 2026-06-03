@@ -5,11 +5,9 @@ hideAutoFolderListing: true
 
 # Blog
 
-공부하면서 직접 써보고 정리한 글을 모아두는 공간입니다.
+공부하면서 직접 확인하고 정리한 글을 역할별로 묶어 두는 공간입니다.
 
-완성된 결론만 적기보다, 실전에서 막혔던 지점과 다시 이해한 흐름을 중심으로 정리합니다.
-
-글을 올릴 때는 단순 날짜순 나열보다, 어떤 역할의 글인지에 맞춰 섹션별로 함께 묶어 둡니다.
+단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
 ## Library / Agent Foundations
 
@@ -18,6 +16,7 @@ hideAutoFolderListing: true
 - [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]
 - [[libraries/langchain/structured-output-response-format|structured output으로 에이전트 응답 스키마 고정하기]]
 - [[libraries/langchain/runtime-context-toolruntime|runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]
+- [[libraries/langchain/dynamic-prompt-system-instructions|dynamic_prompt로 상황별 system prompt 주입하기]]
 - [[libraries/langchain/dynamic-model-selection-middleware|middleware로 동적 모델 선택과 도구 노출 제어하기]]
 - [[libraries/langchain/context-editing-clear-tool-outputs|ContextEditingMiddleware로 오래된 tool output 정리하기]]
 - [[libraries/langchain/tool-retry-middleware|ToolRetryMiddleware로 실패하는 도구 호출 재시도하기]]
