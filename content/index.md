@@ -50,7 +50,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/runtime-context-toolruntime|LangChain runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]  
   사용자 정보, 권한, 앱 설정 같은 런타임 데이터를 agent와 tool에 주입하는 방법을 정리한 글입니다.
 
-- [[libraries/langchain/dynamic-prompt-system-instructions|LangChain dynamic_prompt로 상황별 system prompt 주입하기]]  
+- [[libraries/langchain/dynamic-prompt-system-instructions|LangChain dynamic_prompt로 상황별 system prompt 주입하기]]
   `dynamic_prompt`로 사용자 역할, 대화 길이, 저장된 선호도에 따라 system prompt를 매 호출마다 조립하는 패턴을 정리한 글입니다.
 
 - [[libraries/langchain/dynamic-model-selection-middleware|LangChain middleware로 동적 모델 선택과 도구 노출 제어하기]]  
@@ -70,7 +70,10 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library / LangGraph Foundations
 
-- [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]  
+- [[libraries/langgraph/interrupt-human-approval-resume|LangGraph interrupt()로 사람 승인 대기 후 Command(resume=...)로 재개하기]]
+  사람 승인 단계가 필요한 workflow에서 checkpointer, `thread_id`, resume 흐름을 어떻게 연결하는지 정리한 글입니다.
+
+- [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
   Graph API에서 상태 갱신과 다음 노드 분기를 함께 처리하는 패턴을 정리한 글입니다.
 
 ### Library / Multi-Agent Patterns

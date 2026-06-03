@@ -25,6 +25,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Foundations
 
+- [[libraries/langgraph/interrupt-human-approval-resume|interrupt()로 사람 승인 대기 후 Command(resume=...)로 재개하기]]
 - [[libraries/langgraph/command-routing-state-updates|Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
 
 ## Library / Multi-Agent Patterns
