@@ -33,6 +33,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]  
   LangSmith에서 OpenAI 호출을 추적하기 위한 최소 tracing 설정과 흔한 실수를 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue로 사람 검토 흐름 만들기]]  
+  review rubric과 feedback config를 고정하고 실패 run을 queue로 모아 사람 검토를 운영하는 방법을 정리한 글입니다.
+
 ### Library / Agent Foundations
 
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  

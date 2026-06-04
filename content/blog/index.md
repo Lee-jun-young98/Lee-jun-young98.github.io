@@ -9,6 +9,11 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Observability & Evaluation
+
+- [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]
+- [[libraries/langsmith/langsmith-annotation-queues-sdk|annotation queue로 사람 검토 흐름 만들기]]
+
 ## Library / Agent Foundations
 
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
