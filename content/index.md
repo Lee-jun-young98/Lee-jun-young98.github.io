@@ -6,13 +6,13 @@ title: Junyoung AI Study Notes
 
 AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록합니다.
 
-완성된 결과만 모으기보다 실제로 막혔던 지점, 다시 확인한 개념, 구현에 바로 쓰는 패턴을 남기는 데 초점을 둡니다.
+완성된 결과만 모으기보다 실제로 막혔던 지점, 다시 확인할 개념, 구현에 바로 연결되는 패턴을 중심으로 정리합니다.
 
 ## Focus
 
 - LLM fine-tuning과 SFT 학습 파이프라인
 - Computer vision과 medical image AI
-- Diffusion model, multimodal model, AI agent 논문 및 구현
+- Diffusion model, multimodal model, AI agent 설계 및 구현
 - Docker, Hydra, GPU 서버, S3/MinIO 기반 실험 관리
 
 ## Projects
@@ -21,7 +21,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   Hydra 설정 기반으로 QA 데이터 전처리부터 모델별 trainer, 평가, 결과물 업로드까지 이어지는 학습 파이프라인을 정리한 프로젝트입니다.
 
 - [[10_projects/Pressure-Ulcer-AI|Pressure Ulcer AI]]  
-  욕창 임상 이미지를 기반으로 단계 분류 모델을 설계하고, 의료 이미지 분류와 설명 가능성을 함께 검토한 프로젝트입니다.
+  욕창 환부 이미지를 기반으로 단계 분류 모델을 설계하고, 의료 이미지 분류와 설명 가능성을 함께 검토한 프로젝트입니다.
 
 - [[10_projects/Fire-Detection-Robot|Fire Detection Robot]]  
   YOLO 기반 객체 탐지 모델을 학습하고 Jetson/OpenCV 연동까지 고려한 edge AI 프로젝트입니다.
@@ -51,13 +51,13 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   `response_format`, `ProviderStrategy`, `ToolStrategy`로 안정적인 구조화 응답을 받는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/runtime-context-toolruntime|LangChain runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]  
-  사용자 정보, 권한, 앱 설정 같은 런타임 데이터를 agent와 tool에 주입하는 방법을 정리한 글입니다.
+  사용자 정보, 권한, 기타 설정값을 agent와 tool에 주입하는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/dynamic-prompt-system-instructions|LangChain dynamic_prompt로 상황별 system prompt 주입하기]]
-  `dynamic_prompt`로 사용자 역할, 대화 길이, 저장된 선호도에 따라 system prompt를 매 호출마다 조립하는 패턴을 정리한 글입니다.
+  `dynamic_prompt`로 사용자 역할, 대화 길이, 선호도에 따라 system prompt를 호출마다 조립하는 패턴을 정리한 글입니다.
 
-- [[libraries/langchain/dynamic-model-selection-middleware|LangChain middleware로 동적 모델 선택과 도구 노출 제어하기]]  
-  `wrap_model_call`로 비용 최적화와 권한별 도구 제어를 구현하는 방법을 정리한 글입니다.
+- [[libraries/langchain/dynamic-model-selection-middleware|LangChain middleware로 동적 모델 선택과 도구 호출 제어하기]]
+  `wrap_model_call`로 비용 최적화와 권한별 도구 호출 제어를 구현하는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/context-editing-clear-tool-outputs|LangChain ContextEditingMiddleware로 오래된 tool output 정리하기]]  
   긴 agent 대화에서 오래된 도구 출력만 정리해 컨텍스트 비용을 줄이는 방법을 정리한 글입니다.
@@ -69,18 +69,21 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   `run_limit`, `thread_limit`, `tool_name`, `exit_behavior`로 검색·조회 도구 사용량을 제한해 비용 폭주와 루프를 막는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/user-interaction-patterns|LangChain 에이전트는 사용자와 어떻게 상호작용할까]]  
-  메시지, 스트리밍, 도구 호출, 승인 단계, UI 연결 구조까지 포함한 사용자 상호작용 패턴을 정리한 글입니다.
+  메시지, 스트리밍, 도구 호출, 확인 단계, UI 연결 구조까지 포함한 사용자 상호작용 패턴을 정리한 글입니다.
 
 - [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 승인 단계 넣기]]  
-  위험한 도구 호출 전에 사람 승인을 넣는 흐름을 정리한 글입니다.
+  위험한 도구 호출 전에 사람 승인을 두는 흐름을 정리한 글입니다.
 
 ### Library / LangGraph Foundations
+
+- [[libraries/langgraph/send-dynamic-parallelism|LangGraph Send로 동적 병렬 fan-out/map-reduce 처리하기]]
+  `Send`와 reducer를 함께 써서 입력 개수에 따라 병렬 작업을 펼치고 결과를 안전하게 모으는 패턴을 정리한 글입니다.
 
 - [[libraries/langgraph/interrupt-human-approval-resume|LangGraph interrupt()로 사람 승인 대기 후 Command(resume=...)로 재개하기]]
   사람 승인 단계가 필요한 workflow에서 checkpointer, `thread_id`, resume 흐름을 어떻게 연결하는지 정리한 글입니다.
 
 - [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
-  Graph API에서 상태 갱신과 다음 노드 분기를 함께 처리하는 패턴을 정리한 글입니다.
+  Graph API에서 상태 갱신과 다음 노드 분기를 한 번에 처리하는 패턴을 정리한 글입니다.
 
 ### Library / Multi-Agent Patterns
 
@@ -90,7 +93,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/supervisor-subagent-call-flow|LangChain supervisor가 subagent를 호출할 때 내부 로직은 어떻게 흐를까]]  
   supervisor의 tool call이 subagent invoke로 이어지는 내부 호출 흐름을 정리한 글입니다.
 
-- [[libraries/langchain/supervisor-subagent-router-pattern|LangChain supervisor는 subagent를 어떤 식으로 고를까]]  
+- [[libraries/langchain/supervisor-subagent-router-pattern|LangChain supervisor는 subagent를 어떤 방식으로 고를까]]
   supervisor가 router처럼 어떤 subagent를 선택하는지 기준을 정리한 글입니다.
 
 ### Collections
@@ -99,7 +102,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   공부 노트를 성격별로 묶어 둔 글 모음입니다.
 
 - [[libraries/index|Library Study Notes]]  
-  LangSmith, LangChain, LangGraph 같은 라이브러리별 노트를 모아 둔 페이지입니다.
+  LangSmith, LangChain, LangGraph 같은 라이브러리계 노트를 모아 둔 페이지입니다.
 
 ### Training / MLOps
 
@@ -113,7 +116,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ## Direction
 
-모델 자체를 이해하는 데서 멈추지 않고, 데이터를 준비하고 실험을 재현하고 결과물을 운영 가능한 형태로 정리하는 AI engineer 방향을 목표로 공부하고 있습니다.
+모델 자체를 이해하는 데서 멈추지 않고, 데이터를 준비하고 실험을 재현하며 결과물을 운영 가능한 형태로 정리하는 AI engineer 방향을 목표로 공부하고 있습니다.
 
 ## Site
 
