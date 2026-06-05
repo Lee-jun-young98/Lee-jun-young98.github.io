@@ -68,6 +68,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/tool-call-limit-middleware|LangChain ToolCallLimitMiddleware로 agent tool 호출 한도 걸기]]  
   `run_limit`, `thread_limit`, `tool_name`, `exit_behavior`로 검색·조회 도구 사용량을 제한해 비용 폭주와 루프를 막는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/pii-middleware-redaction-guardrails|LangChain PIIMiddleware로 입력과 출력의 민감정보 가드레일 두기]]  
+  `redact`, `mask`, `block`, custom detector와 `apply_to_input`/`apply_to_tool_results`/`apply_to_output`를 조합해 민감정보 경계를 두는 방법을 정리한 글입니다.
+
 - [[libraries/langchain/user-interaction-patterns|LangChain 에이전트는 사용자와 어떻게 상호작용할까]]  
   메시지, 스트리밍, 도구 호출, 확인 단계, UI 연결 구조까지 포함한 사용자 상호작용 패턴을 정리한 글입니다.
 
