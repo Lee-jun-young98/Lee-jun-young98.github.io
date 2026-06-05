@@ -82,6 +82,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library / LangGraph Foundations
 
+- [[libraries/langgraph/subgraph-parent-handoff|LangGraph subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]
+  `StateGraph`를 계층화하고 subgraph 내부 판단 결과를 부모 graph의 다음 단계로 넘기는 패턴을 정리한 글입니다.
+
 - [[libraries/langgraph/send-dynamic-parallelism|LangGraph Send로 동적 병렬 fan-out/map-reduce 처리하기]]
   `Send`와 reducer를 함께 써서 입력 개수에 따라 병렬 작업을 펼치고 결과를 안전하게 모으는 패턴을 정리한 글입니다.
 
