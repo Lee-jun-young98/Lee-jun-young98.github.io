@@ -85,6 +85,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library / LangGraph Foundations
 
+- [[libraries/langgraph/time-travel-replay-fork|LangGraph time travel로 체크포인트 replay와 fork 디버깅하기]]
+  `get_state_history`, `update_state`, `as_node`를 기준으로 과거 체크포인트를 재실행하거나 새 분기로 실험하는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/subgraph-parent-handoff|LangGraph subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]
   `StateGraph`를 계층화하고 subgraph 내부 판단 결과를 부모 graph의 다음 단계로 넘기는 패턴을 정리한 글입니다.
 

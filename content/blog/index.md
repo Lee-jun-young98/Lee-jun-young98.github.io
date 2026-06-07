@@ -37,6 +37,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Foundations
 
+- [[libraries/langgraph/time-travel-replay-fork|time travel로 체크포인트 replay와 fork 디버깅하기]]
 - [[libraries/langgraph/subgraph-parent-handoff|subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]
 - [[libraries/langgraph/send-dynamic-parallelism|Send로 동적 병렬 fan-out/map-reduce 처리하기]]
 - [[libraries/langgraph/interrupt-human-approval-resume|interrupt()로 사람 승인 대기 후 Command(resume=...)로 재개하기]]
