@@ -6,7 +6,7 @@ title: Junyoung AI Study Notes
 
 AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록합니다.
 
-완성된 결과만 모으기보다 실제로 막혔던 지점, 다시 확인할 개념, 구현에 바로 연결되는 패턴을 중심으로 정리합니다.
+완성된 결과만 모으기보다 실제로 막혔던 지점, 다시 확인한 개념, 구현에 바로 연결되는 패턴을 중심으로 정리합니다.
 
 ## Focus
 
@@ -59,44 +59,47 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/dynamic-prompt-system-instructions|LangChain dynamic_prompt로 상황별 system prompt 주입하기]]
   `dynamic_prompt`로 사용자 역할, 대화 길이, 선호도에 따라 system prompt를 호출마다 조립하는 패턴을 정리한 글입니다.
 
-- [[libraries/langchain/dynamic-model-selection-middleware|LangChain middleware로 동적 모델 선택과 도구 호출 제어하기]]
-  `wrap_model_call`로 비용 최적화와 권한별 도구 호출 제어를 구현하는 방법을 정리한 글입니다.
+- [[libraries/langchain/dynamic-model-selection-middleware|LangChain middleware로 동적 모델 선택과 도구 노출 제어하기]]
+  `wrap_model_call`로 비용 최적화와 권한별 도구 노출 제어를 구현하는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/context-editing-clear-tool-outputs|LangChain ContextEditingMiddleware로 오래된 tool output 정리하기]]  
-  긴 agent 대화에서 오래된 도구 출력만 정리해 컨텍스트 비용을 줄이는 방법을 정리한 글입니다.
+  긴 agent 대화에서 오래된 도구 출력만 정리해 컨텍스트 비용과 집중도를 함께 관리하는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/tool-retry-middleware|LangChain ToolRetryMiddleware로 실패하는 도구 호출 재시도하기]]  
   외부 API나 검색 도구의 일시적 실패를 재시도하고 최종 실패 UX까지 설계하는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/tool-call-limit-middleware|LangChain ToolCallLimitMiddleware로 agent tool 호출 한도 걸기]]  
-  `run_limit`, `thread_limit`, `tool_name`, `exit_behavior`로 검색·조회 도구 사용량을 제한해 비용 폭주와 루프를 막는 방법을 정리한 글입니다.
+  `run_limit`, `thread_limit`, `tool_name`, `exit_behavior`로 검색형 도구 사용량을 제한해 비용과 루프를 막는 방법을 정리한 글입니다.
+
+- [[libraries/langchain/model-fallback-middleware|LangChain ModelFallbackMiddleware로 모델 장애에 대비하기]]  
+  주 모델 실패 시 같은 provider의 보조 모델이나 다른 provider의 대체 모델로 넘겨 응답 가용성을 높이는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/pii-middleware-redaction-guardrails|LangChain PIIMiddleware로 입력과 출력의 민감정보 가드레일 두기]]  
-  `redact`, `mask`, `block`, custom detector와 `apply_to_input`/`apply_to_tool_results`/`apply_to_output`를 조합해 민감정보 경계를 두는 방법을 정리한 글입니다.
+  `redact`, `mask`, `block`, custom detector와 `apply_to_input`/`apply_to_tool_results`/`apply_to_output`을 조합해 민감정보 경계를 세우는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/user-interaction-patterns|LangChain 에이전트는 사용자와 어떻게 상호작용할까]]  
   메시지, 스트리밍, 도구 호출, 확인 단계, UI 연결 구조까지 포함한 사용자 상호작용 패턴을 정리한 글입니다.
 
-- [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 승인 단계 넣기]]  
-  위험한 도구 호출 전에 사람 승인을 두는 흐름을 정리한 글입니다.
+- [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 확인 단계 넣기]]  
+  위험한 도구 호출 전에 사람 확인을 넣는 흐름을 정리한 글입니다.
 
 ### Library / LangGraph Foundations
 
-- [[libraries/langgraph/subgraph-parent-handoff|LangGraph subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]
-  `StateGraph`를 계층화하고 subgraph 내부 판단 결과를 부모 graph의 다음 단계로 넘기는 패턴을 정리한 글입니다.
+- [[libraries/langgraph/subgraph-parent-handoff|LangGraph subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]  
+  `StateGraph`를 계층화하고 subgraph 안의 중간 결과를 부모 graph의 다음 단계로 넘기는 패턴을 정리한 글입니다.
 
-- [[libraries/langgraph/send-dynamic-parallelism|LangGraph Send로 동적 병렬 fan-out/map-reduce 처리하기]]
-  `Send`와 reducer를 함께 써서 입력 개수에 따라 병렬 작업을 펼치고 결과를 안전하게 모으는 패턴을 정리한 글입니다.
+- [[libraries/langgraph/send-dynamic-parallelism|LangGraph Send로 동적 병렬 fan-out/map-reduce 처리하기]]  
+  `Send`와 reducer를 함께 써서 입력 개수에 따라 병렬 작업을 던지고 결과를 안전하게 모으는 패턴을 정리한 글입니다.
 
-- [[libraries/langgraph/interrupt-human-approval-resume|LangGraph interrupt()로 사람 승인 대기 후 Command(resume=...)로 재개하기]]
-  사람 승인 단계가 필요한 workflow에서 checkpointer, `thread_id`, resume 흐름을 어떻게 연결하는지 정리한 글입니다.
+- [[libraries/langgraph/interrupt-human-approval-resume|LangGraph interrupt()로 사람 확인 대기 후 Command(resume=...)로 재개하기]]  
+  사람 확인 단계가 필요한 workflow에서 checkpointer, `thread_id`, resume 흐름을 어떻게 연결하는지 정리한 글입니다.
 
-- [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
+- [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]  
   Graph API에서 상태 갱신과 다음 노드 분기를 한 번에 처리하는 패턴을 정리한 글입니다.
 
 ### Library / Multi-Agent Patterns
 
-- [[libraries/langchain/subagents-supervisor-pattern|LangChain subagents로 역할 분리된 에이전트 만들기]]  
+- [[libraries/langchain/subagents-supervisor-pattern|LangChain subagents로 역할 분리한 에이전트 만들기]]  
   supervisor와 subagent로 책임을 나누는 패턴을 정리한 글입니다.
 
 - [[libraries/langchain/supervisor-subagent-call-flow|LangChain supervisor가 subagent를 호출할 때 내부 로직은 어떻게 흐를까]]  
