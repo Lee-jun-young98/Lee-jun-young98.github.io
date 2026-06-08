@@ -42,6 +42,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프로젝트 배포 고정하기]]  
   `push_prompt`, `pull_prompt`, commit tag, prompt cache를 묶어 코드 수정 없이 프로젝트 버전을 배포하는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule과 webhook으로 운영 점검 자동화하기]]  
+  automation rule, online evaluator, annotation queue, webhook을 분리해서 운영 품질 점검 흐름을 자동화하는 방법을 정리한 글입니다.
+
 ### Library / Agent Foundations
 
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  

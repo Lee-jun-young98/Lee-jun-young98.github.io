@@ -19,6 +19,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-prompt-commit-tags-cache|prompt commit tag로 프로젝트 배포 고정하기]]
 
+## Library / Production Operations
+
+- [[libraries/langsmith/langsmith-automation-rules-webhooks|automation rule과 webhook으로 운영 점검 자동화하기]]
+
 ## Library / Agent Foundations
 
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
