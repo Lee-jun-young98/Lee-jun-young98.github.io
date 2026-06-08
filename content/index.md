@@ -91,6 +91,8 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library / LangGraph Foundations
 
+- [[libraries/langgraph/add-messages-chat-history|LangGraph add_messages로 채팅 히스토리를 안전하게 누적하고 수정하기]]
+  `MessagesState`, `RemoveMessage`, `Overwrite`를 기준으로 채팅형 그래프의 메시지 상태를 append, replace, delete하는 패턴을 정리한 글입니다.
 - [[libraries/langgraph/time-travel-replay-fork|LangGraph time travel로 체크포인트 replay와 fork 디버깅하기]]  
   `get_state_history`, `update_state`, `as_node`를 기준으로 과거 체크포인트를 재실행하거나 새 분기로 실험하는 방법을 정리한 글입니다.
 
