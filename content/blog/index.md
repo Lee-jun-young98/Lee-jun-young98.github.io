@@ -23,6 +23,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|automation rule과 webhook으로 운영 점검 자동화하기]]
 
+## Library / Conversation Observability
+
+- [[libraries/langsmith/langsmith-threads-query-sdk|thread_id로 멀티턴 대화 추적하고 SDK로 조회하기]]
+
 ## Library / Agent Foundations
 
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]

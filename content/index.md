@@ -45,6 +45,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule과 webhook으로 운영 점검 자동화하기]]  
   automation rule, online evaluator, annotation queue, webhook을 분리해서 운영 품질 점검 흐름을 자동화하는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-threads-query-sdk|LangSmith thread_id로 멀티턴 대화 추적하고 SDK로 조회하기]]
+  `thread_id`, `uuid7()`, `list_threads`, `read_thread`를 기준으로 멀티턴 대화 세션을 추적하고 다시 조회하는 방법을 정리한 글입니다.
+
 ### Library / Agent Foundations
 
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  
