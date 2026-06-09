@@ -23,6 +23,7 @@ LangChain 실전에서 바로 써볼 만한 에이전트, 메모리, 미들웨�
 - [[libraries/langchain/tool-call-limit-middleware|ToolCallLimitMiddleware로 agent tool 호출 수 제한 걸기]]
 - [[libraries/langchain/model-retry-middleware|ModelRetryMiddleware로 모델 호출 재시도하기]]
 - [[libraries/langchain/model-fallback-middleware|ModelFallbackMiddleware로 모델 장애에 대비하기]]
+- [[libraries/langchain/long-term-memory-store|long-term memory로 사용자 선호 저장하고 다시 꺼내기]]
 - [[libraries/langchain/pii-middleware-redaction-guardrails|PIIMiddleware로 입력과 출력의 민감정보 가드레일 두기]]
 - [[libraries/langchain/user-interaction-patterns|에이전트는 사용자와 어떻게 상호작용할까]]
 - [[libraries/langchain/subagents-supervisor-pattern|subagents로 역할 분리한 에이전트 만들기]]
