@@ -80,6 +80,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/model-retry-middleware|LangChain ModelRetryMiddleware로 모델 호출 재시도하기]]  
   `retry_on`, `on_failure`, exponential backoff로 일시적인 provider 실패를 복구하고 모델 내부 `max_retries`와 역할을 나누는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/long-term-memory-store|LangChain long-term memory로 사용자 선호 저장하고 다시 꺼내기]]  
+  `store`, `ToolRuntime`, `context_schema`를 연결해 세션 밖 사용자 선호를 저장하고 다시 읽는 장기 메모리 패턴을 정리한 글입니다.
+
 - [[libraries/langchain/pii-middleware-redaction-guardrails|LangChain PIIMiddleware로 입력과 출력의 민감정보 가드레일 두기]]  
   `redact`, `mask`, `block`, custom detector와 `apply_to_input`/`apply_to_tool_results`/`apply_to_output`을 조합해 민감정보 경계를 두는 방법을 정리한 글입니다.
 
