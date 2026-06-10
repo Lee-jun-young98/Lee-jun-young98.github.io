@@ -71,6 +71,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/dynamic-model-selection-middleware|LangChain middleware로 동적 모델 선택과 도구 호출 제어하기]]  
   `wrap_model_call`로 비용 최적화와 권한별 도구 호출 제어를 구현하는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/dynamic-tool-selection|LangChain 동적 도구 선택으로 프롬프트를 줄이고 권한을 나누기]]  
+  `wrap_model_call`과 `request.override(tools=...)`로 런타임마다 필요한 도구만 노출해 정확도, 비용, 권한 제어를 함께 개선하는 패턴을 정리한 글입니다.
+
 - [[libraries/langchain/context-editing-clear-tool-outputs|LangChain ContextEditingMiddleware로 오래된 tool output 정리하기]]  
   긴 agent 대화에서 오래된 도구 출력만 정리해 컨텍스트 비용을 줄이는 방법을 정리한 글입니다.
 
