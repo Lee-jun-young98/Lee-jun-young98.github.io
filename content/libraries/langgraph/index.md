@@ -17,8 +17,9 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 - [[libraries/langgraph/interrupt-human-approval-resume|interrupt()로 사람 승인 대기 후 Command(resume=...)로 재개하기]]
 - [[libraries/langgraph/command-routing-state-updates|Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
 
-### Runtime & Observability
+### Runtime & Reliability
 
+- [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
 - [[libraries/langgraph/stream-mode-updates-messages-custom|stream()으로 updates, messages, custom 이벤트 흘려보내기]]
 - [[libraries/langgraph/time-travel-replay-fork|time travel로 체크포인트 replay와 fork 디버깅하기]]
 
