@@ -100,22 +100,33 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library / LangGraph Foundations
 
+- [[libraries/langgraph/checkpointer-persistence-threads|LangGraph checkpointer로 thread 상태를 저장하고 이어서 실행하기]]
+  `thread_id`, `get_state()`, `get_state_history()`, saver 선택 기준을 묶어 durable execution의 시작점을 정리한 글입니다.
+
 - [[libraries/langgraph/add-messages-chat-history|LangGraph add_messages로 채팅 히스토리를 안전하게 누적하고 수정하기]]
   `MessagesState`, `RemoveMessage`, `Overwrite`를 기준으로 채팅형 그래프의 메시지 상태를 append, replace, delete하는 패턴을 정리한 글입니다.
-- [[libraries/langgraph/time-travel-replay-fork|LangGraph time travel로 체크포인트 replay와 fork 디버깅하기]]  
-  `get_state_history`, `update_state`, `as_node`를 기준으로 과거 체크포인트를 재실행하거나 새 분기로 실험하는 방법을 정리한 글입니다.
-
-- [[libraries/langgraph/subgraph-parent-handoff|LangGraph subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]  
-  `StateGraph`를 계층화하고 subgraph 안의 중간 결과를 부모 graph의 다음 단계로 넘기는 패턴을 정리한 글입니다.
-
-- [[libraries/langgraph/send-dynamic-parallelism|LangGraph Send로 동적 병렬 fan-out/map-reduce 처리하기]]  
-  `Send`와 reducer를 함께 써서 입력 개수에 따라 병렬 작업을 펼치고 결과를 안전하게 모으는 패턴을 정리한 글입니다.
 
 - [[libraries/langgraph/interrupt-human-approval-resume|LangGraph interrupt()로 사람 확인 대기 후 Command(resume=...)로 재개하기]]  
   사람 확인 단계가 필요한 workflow에서 checkpointer, `thread_id`, resume 흐름을 어떻게 연결하는지 정리한 글입니다.
 
 - [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]  
   Graph API에서 상태 갱신과 다음 노드 분기를 한 번에 처리하는 패턴을 정리한 글입니다.
+
+### Library / LangGraph Runtime & Observability
+
+- [[libraries/langgraph/stream-mode-updates-messages-custom|LangGraph stream()으로 updates, messages, custom 이벤트 흘려보내기]]
+  `version="v2"` 기준으로 `updates`, `values`, `messages`, `custom`, `tasks`, `debug`를 언제 쓰는지 실전 예제로 정리한 글입니다.
+
+- [[libraries/langgraph/time-travel-replay-fork|LangGraph time travel로 체크포인트 replay와 fork 디버깅하기]]  
+  `get_state_history`, `update_state`, `as_node`를 기준으로 과거 체크포인트를 재실행하거나 새 분기로 실험하는 방법을 정리한 글입니다.
+
+### Library / LangGraph Composition Patterns
+
+- [[libraries/langgraph/send-dynamic-parallelism|LangGraph Send로 동적 병렬 fan-out/map-reduce 처리하기]]  
+  `Send`와 reducer를 함께 써서 입력 개수에 따라 병렬 작업을 펼치고 결과를 안전하게 모으는 패턴을 정리한 글입니다.
+
+- [[libraries/langgraph/subgraph-parent-handoff|LangGraph subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]  
+  `StateGraph`를 계층화하고 subgraph 안의 중간 결과를 부모 graph의 다음 단계로 넘기는 패턴을 정리한 글입니다.
 
 ### Library / Multi-Agent Patterns
 
