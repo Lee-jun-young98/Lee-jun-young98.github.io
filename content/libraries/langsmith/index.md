@@ -16,3 +16,4 @@ LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 
 - [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프롬프트 배포 고정하기]]
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule과 webhook으로 운영 점검 자동화하기]]
 - [[libraries/langsmith/langsmith-threads-query-sdk|LangSmith thread_id로 멀티턴 대화 추적하고 SDK로 조회하기]]
+- [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정밀하게 조회하기]]
