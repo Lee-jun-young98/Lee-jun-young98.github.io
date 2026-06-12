@@ -6,7 +6,7 @@ title: Junyoung AI Study Notes
 
 AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록합니다.
 
-완성된 결과만 모으기보다 실제로 막힌 지점, 다시 확인한 개념, 구현과 바로 연결되는 패턴을 중심으로 정리합니다.
+완성된 결과만 모으기보다 실제로 막힌 지점, 다시 확인한 개념, 구현과 바로 연결되는 판단을 중심으로 정리합니다.
 
 ## Focus
 
@@ -34,19 +34,22 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   LangSmith에서 OpenAI 호출을 추적하기 위한 최소 tracing 설정과 흔한 실수를 정리한 글입니다.
 
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|LangSmith dataset split과 version tag로 평가셋 고정하기]]  
-  dataset example을 split과 metadata로 나누고 version tag를 붙여 재현 가능한 평가셋을 운영하는 방법을 정리한 글입니다.
+  dataset example를 split과 metadata로 나누고 version tag를 붙여 재현 가능한 평가셋을 운영하는 방법을 정리한 글입니다.
 
 - [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue로 사람 검토 흐름 만들기]]  
   review rubric과 feedback config를 고정하고 실패 run을 queue로 모아 사람 검토를 운영하는 방법을 정리한 글입니다.
 
-- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프로젝트 배포 고정하기]]  
-  `push_prompt`, `pull_prompt`, commit tag, prompt cache를 묶어 코드 수정 없이 프로젝트 버전을 배포하는 방법을 정리한 글입니다.
+- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프롬프트 배포 고정하기]]  
+  `push_prompt`, `pull_prompt`, commit tag, prompt cache를 묶어 코드 수정 없이 프롬프트 버전을 배포하는 방법을 정리한 글입니다.
 
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule과 webhook으로 운영 점검 자동화하기]]  
   automation rule, online evaluator, annotation queue, webhook을 분리해서 운영 품질 점검 흐름을 자동화하는 방법을 정리한 글입니다.
 
 - [[libraries/langsmith/langsmith-threads-query-sdk|LangSmith thread_id로 멀티턴 대화 추적하고 SDK로 조회하기]]
   `thread_id`, `uuid7()`, `list_threads`, `read_thread`를 기준으로 멀티턴 대화 세션을 추적하고 다시 조회하는 방법을 정리한 글입니다.
+
+- [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정밀하게 조회하기]]
+  `list_runs`, `filter`, `trace_filter`, `tree_filter`, `read_run(load_child_runs=True)`를 조합해 운영 trace를 좁혀 보고 export하는 방법을 정리한 글입니다.
 
 ### Library / Agent Foundations
 
@@ -81,7 +84,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   `write_todos` 도구 자동 주입, 계획 추적, 커스텀 prompt, 운영성 middleware 조합을 정리한 글입니다.
 
 - [[libraries/langchain/context-editing-clear-tool-outputs|LangChain ContextEditingMiddleware로 오래된 tool output 정리하기]]  
-  긴 agent 대화에서 오래된 도구 출력만 정리해 컨텍스트 비용을 줄이는 방법을 정리한 글입니다.
+  긴 agent 대화에서 오래된 도구 출력만 정리해 비용과 컨텍스트 오염을 줄이는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/tool-retry-middleware|LangChain ToolRetryMiddleware로 실패하는 도구 호출 재시도하기]]  
   외부 API와 검색 도구의 일시 실패를 재시도하고 최종 실패 UX까지 설계하는 방법을 정리한 글입니다.
