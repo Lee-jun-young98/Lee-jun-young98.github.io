@@ -13,11 +13,11 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|dataset split과 version tag로 평가셋 고정하기]]
-- [[libraries/langsmith/langsmith-annotation-queues-sdk|annotation queue로 사람 검토 흐름 만들기]]
+- [[libraries/langsmith/langsmith-annotation-queues-sdk|annotation queue로 사람 검수 흐름 만들기]]
 
 ## Library / PromptOps
 
-- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|prompt commit tag로 프로젝트 배포 고정하기]]
+- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|prompt commit tag로 프롬프트 배포 고정하기]]
 
 ## Library / Production Operations
 
@@ -34,6 +34,10 @@ hideAutoFolderListing: true
 ## Library / Conversation Observability
 
 - [[libraries/langsmith/langsmith-threads-query-sdk|thread_id로 멀티턴 대화 추적하고 SDK로 조회하기]]
+
+## Library / Trace Analytics
+
+- [[libraries/langsmith/langsmith-query-traces-sdk|list_runs, filter, trace_filter로 운영 trace를 정밀하게 조회하기]]
 
 ## Library / Agent Foundations
 
@@ -65,7 +69,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Runtime & Observability
 
-- [[libraries/langgraph/stream-mode-updates-messages-custom|stream()으로 updates, messages, custom, debug 이벤트 흘려보내기]]
+- [[libraries/langgraph/stream-mode-updates-messages-custom|stream()로 updates, messages, custom, debug 이벤트 흘려보내기]]
 - [[libraries/langgraph/time-travel-replay-fork|time travel로 체크포인트 replay와 fork 디버깅하기]]
 
 ## Library / LangGraph Composition Patterns
