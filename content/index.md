@@ -106,6 +106,11 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langgraph/retry-policy-node-retries|LangGraph RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]  
   `RetryPolicy`, `retry_on`, `max_attempts`, backoff를 기준으로 외부 API/LLM 노드의 일시 실패만 재시도하는 방법을 정리한 글입니다.
 
+### Library / Workflow Performance
+
+- [[libraries/langgraph/cache-policy-node-caching|LangGraph cache_policy로 비싼 노드 결과 재사용하기]]  
+  `CachePolicy`, `InMemoryCache`, `SqliteCache`, `key_func`, `ttl`을 기준으로 반복 계산을 줄이고 캐시 적중률을 관리하는 방법을 정리한 글입니다.
+
 ### Library / LangGraph Foundations
 
 - [[libraries/langgraph/checkpointer-persistence-threads|LangGraph checkpointer로 thread 상태를 저장하고 이어서 실행하기]]
