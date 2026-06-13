@@ -40,6 +40,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-query-traces-sdk|list_runs, filter, trace_filter로 운영 trace를 정밀하게 조회하기]]
 
+## Library / Experiment Analytics
+
+- [[libraries/langsmith/langsmith-experiment-metrics-sdk|read_project(include_stats=True)로 experiment 지표 가져오기]]
+
 ## Library / Agent Foundations
 
 - [[libraries/langchain/mcp-server-tools|MCP 서버 도구를 agent에 붙이기]]

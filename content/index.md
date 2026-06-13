@@ -57,6 +57,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정밀하게 조회하기]]
   `list_runs`, `filter`, `trace_filter`, `tree_filter`, `read_run(load_child_runs=True)`를 조합해 운영 trace를 좁혀 보고 export하는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
+  `evaluate()` 결과의 `experiment_name`과 `read_project(include_stats=True)`를 조합해 latency, cost, token, feedback 통계를 조회하는 방법을 정리한 글입니다.
+
 ### Library / Agent Foundations
 
 - [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]  
