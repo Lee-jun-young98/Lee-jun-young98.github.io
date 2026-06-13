@@ -10,6 +10,7 @@ title: Library Study Notes
 
 ## 목록
 
+- [[libraries/langchain/index|LangChain]]
 - [[libraries/langsmith/index|LangSmith]]
 - [[libraries/langchain/index|LangChain]]
 - [[libraries/langgraph/index|LangGraph]]

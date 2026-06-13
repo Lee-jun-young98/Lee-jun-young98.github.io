@@ -30,6 +30,12 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library Study Notes
 
+- [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]  
+  `langchain-mcp-adapters`와 `MultiServerMCPClient`로 MCP 서버 도구를 LangChain agent에 연결하는 패턴을 정리한 글입니다.
+
+- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]  
+  Build a small LangSmith regression eval set with `evaluate()` and metadata filtering.
+
 - [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]  
   LangSmith에서 OpenAI 호출을 추적하기 위한 최소 tracing 설정과 흔한 실수를 정리한 글입니다.
 
@@ -52,6 +58,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   `list_runs`, `filter`, `trace_filter`, `tree_filter`, `read_run(load_child_runs=True)`를 조합해 운영 trace를 좁혀 보고 export하는 방법을 정리한 글입니다.
 
 ### Library / Agent Foundations
+
+- [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]  
+  `client.get_tools()`, `client.session(...)`, `handle_tool_errors=False` 기준으로 MCP 도구 연동 패턴을 정리한 글입니다.
 
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  
   LangChain v1의 `create_agent`를 기준으로 tool calling agent를 시작하는 방법을 정리한 글입니다.
