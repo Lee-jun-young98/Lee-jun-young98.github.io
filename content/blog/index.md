@@ -26,6 +26,7 @@ hideAutoFolderListing: true
 ## Library / Workflow Reliability
 
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
+- [[libraries/langgraph/deferred-node-cleanup-finalizers|defer=True로 cleanup, audit, notification을 run 마지막으로 미루기]]
 
 ## Library / Workflow Performance
 
