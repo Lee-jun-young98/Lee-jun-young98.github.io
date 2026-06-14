@@ -11,6 +11,7 @@ hideAutoFolderListing: true
 
 ## Library / Observability & Evaluation
 
+- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]
 - [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|dataset split과 version tag로 평가셋 고정하기]]
 - [[libraries/langsmith/langsmith-annotation-queues-sdk|annotation queue로 사람 검수 흐름 만들기]]
