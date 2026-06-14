@@ -60,6 +60,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
   `evaluate()` 결과의 `experiment_name`과 `read_project(include_stats=True)`를 조합해 latency, cost, token, feedback 통계를 조회하는 방법을 정리한 글입니다.
 
+- [[libraries/index|Library Study Notes]]  
+  LangSmith, LangChain, LangGraph 중심 라이브러리 학습 노트를 모아 둔 페이지입니다.
+
 ### Library / Agent Foundations
 
 - [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]  
@@ -118,6 +121,11 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 - [[libraries/langchain/human-in-the-loop-agent-approval|LangChain Human-in-the-Loop으로 에이전트 확인 단계 넣기]]  
   위험한 도구 호출 전에 사람 확인을 넣는 흐름을 정리한 글입니다.
+
+### Library / Agent Guardrails
+
+- [[libraries/langchain/model-call-limit-middleware|LangChain ModelCallLimitMiddleware로 에이전트 모델 호출 상한 걸기]]  
+  `run_limit`, `thread_limit`, `exit_behavior`, `checkpointer`를 기준으로 과도한 모델 호출과 무한 루프를 막는 방법을 정리한 글입니다.
 
 ### Library / Workflow Reliability
 
