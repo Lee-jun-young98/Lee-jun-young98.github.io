@@ -11,7 +11,9 @@ author: "Yiwen Chen, Kuan Li, Fuzhen Zhuang, Deqing Wang, Zhao Zhang, Liwen Zhan
 journal: "arXiv"
 paper: "https://arxiv.org/abs/2605.10235"
 aliases:
+  - "/papers/llm/2026-06-14-route-before-retrieve-rag-vs-long-context-selection"
   - "/papers/llm/route-before-retrieve-rag-vs-long-context-selection"
+  - "/papers/llm/pre-route-rag-vs-long-context-selection"
 ---
 
 # 한 줄 요약
