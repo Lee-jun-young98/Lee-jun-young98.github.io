@@ -45,6 +45,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue로 사람 검토 흐름 만들기]]  
   review rubric과 feedback config를 고정하고 실패 run을 queue로 모아 사람 검토를 운영하는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-presigned-feedback-tokens|LangSmith presigned feedback token으로 프론트엔드 평가 수집하기]]  
+  `create_feedback()`, presigned token URL, child run 피드백을 조합해 사용자 평가를 안전하게 수집하는 방법을 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프롬프트 배포 고정하기]]  
   `push_prompt`, `pull_prompt`, commit tag, prompt cache를 묶어 코드 수정 없이 프롬프트 버전을 배포하는 방법을 정리한 글입니다.
 
