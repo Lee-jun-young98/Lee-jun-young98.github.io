@@ -162,6 +162,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langgraph/command-routing-state-updates|LangGraph Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]  
   Graph API에서 상태 갱신과 다음 노드 분기를 한 번에 처리하는 패턴을 정리한 글입니다.
 
+- [[libraries/langgraph/input-output-private-state-schemas|LangGraph input_schema, output_schema, private state로 공개 입력과 내부 상태 분리하기]]
+  `input_schema`, `output_schema`, private channel을 사용해 외부 계약과 내부 워크플로 상태를 분리하고 `stream(values)` 노출 범위를 관리하는 패턴을 정리한 글입니다.
+
 ### Library / LangGraph Runtime & Observability
 
 - [[libraries/langgraph/stream-mode-updates-messages-custom|LangGraph stream()으로 updates, messages, custom 이벤트 흘려보내기]]
