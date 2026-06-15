@@ -30,9 +30,6 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library Study Notes
 
-- [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]  
-  `langchain-mcp-adapters`와 `MultiServerMCPClient`로 MCP 서버 도구를 LangChain agent에 연결하는 패턴을 정리한 글입니다.
-
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]  
   Build a small LangSmith regression eval set with `evaluate()` and metadata filtering.
 
@@ -70,6 +67,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 - [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]  
   `client.get_tools()`, `client.session(...)`, `handle_tool_errors=False` 기준으로 MCP 도구 연동 패턴을 정리한 글입니다.
+
+- [[libraries/langchain/mcp-resources-prompts-interceptors|LangChain MCP resource, prompt, interceptor로 서버 문맥 연결하기]]  
+  `get_resources()`, `get_prompt()`, structured content artifact, tool interceptor로 서버 문맥을 agent에 주입하는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  
   LangChain v1의 `create_agent`를 기준으로 tool calling agent를 시작하는 방법을 정리한 글입니다.
