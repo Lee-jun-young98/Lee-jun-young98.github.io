@@ -28,6 +28,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|automation rule과 webhook으로 운영 점검 자동화하기]]
 
+## Library / Developer Tooling
+
+- [[libraries/langsmith/langsmith-cli-traces-datasets-threads|LangSmith CLI로 trace, dataset, thread를 터미널에서 바로 다루기]]
+
 ## Library / Workflow Reliability
 
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
