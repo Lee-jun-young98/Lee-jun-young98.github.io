@@ -86,6 +86,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/runtime-context-toolruntime|LangChain runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]  
   사용자 정보, 권한, 기타 설정값을 agent와 tool에 주입하는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/toolruntime-command-state-updates|LangChain ToolRuntime와 Command(update=...)로 tool에서 state 쓰기]]  
+  `runtime.state`, `runtime.context`, `Command(update=...)`, `ToolMessage`를 조합해 tool이 short-term memory를 직접 갱신하는 방법을 정리한 글입니다.
+
 - [[libraries/langchain/dynamic-prompt-system-instructions|LangChain dynamic_prompt로 상황별 system prompt 주입하기]]  
   `dynamic_prompt`로 사용자 역할, 대화 길이, 선호에 따라 system prompt를 호출마다 조립하는 패턴을 정리한 글입니다.
 
