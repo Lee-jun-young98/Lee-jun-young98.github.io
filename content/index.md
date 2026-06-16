@@ -135,6 +135,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langgraph/retry-policy-node-retries|LangGraph RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]  
   `RetryPolicy`, `retry_on`, `max_attempts`, backoff를 기준으로 외부 API/LLM 노드의 일시 실패만 재시도하는 방법을 정리한 글입니다.
 
+- [[libraries/langgraph/error-handler-recovery-routing|LangGraph error_handler로 실패 후 보상 흐름과 대체 경로 만들기]]  
+  `error_handler`, `NodeError`, `Command`, `RetryPolicy`를 기준으로 최종 실패 뒤 수동 검토, fallback, 보상 경로를 graph 안에서 처리하는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/deferred-node-cleanup-finalizers|LangGraph defer=True로 정리 작업을 run 마지막으로 미루기]]  
   `defer=True`를 기준으로 branch 길이가 달라도 cleanup, audit, notification 같은 후처리를 마지막에 한 번만 실행하는 패턴을 정리한 글입니다.
 
