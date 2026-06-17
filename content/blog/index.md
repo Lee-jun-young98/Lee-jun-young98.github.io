@@ -58,6 +58,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|read_project(include_stats=True)로 experiment 지표 가져오기]]
 
+## Library / Feedback & Review Ops
+
+- [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]
+
 ## Library / Agent Foundations
 
 - [[libraries/langchain/mcp-server-tools|MCP 서버 도구를 agent에 붙이기]]
