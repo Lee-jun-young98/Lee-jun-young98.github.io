@@ -106,6 +106,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langchain/provider-tool-search-middleware|LangChain ProviderToolSearchMiddleware로 provider 검색형 도구 지연 로딩하기]]  
   지원 provider의 server-side tool search를 활용해 일부 도구를 필요할 때만 노출하는 LangChain 패턴을 정리한 글입니다.
 
+- [[libraries/langchain/filesystem-file-search-middleware|LangChain FilesystemFileSearchMiddleware로 코드베이스 glob/grep 검색 붙이기]]  
+  `glob_search`, `grep_search`, `root_path`, `use_ripgrep` 기준으로 코드베이스 탐색형 agent 패턴을 정리한 글입니다.
+
 - [[libraries/langchain/todo-list-middleware|LangChain TodoListMiddleware로 복잡한 작업 계획 추적하기]]  
   `write_todos` 도구 자동 주입, 계획 추적, 커스텀 prompt, 운영성 middleware 조합을 정리한 글입니다.
 
