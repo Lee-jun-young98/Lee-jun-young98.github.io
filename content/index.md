@@ -179,6 +179,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langgraph/input-output-private-state-schemas|LangGraph input_schema, output_schema, private state로 공개 입력과 내부 상태 분리하기]]
   `input_schema`, `output_schema`, private channel을 사용해 외부 계약과 내부 워크플로 상태를 분리하고 `stream(values)` 노출 범위를 관리하는 패턴을 정리한 글입니다.
 
+- [[libraries/langgraph/functional-api-entrypoint-task-workflows|LangGraph Functional API로 @entrypoint와 @task workflow 만들기]]
+  `@entrypoint`, `@task`, `thread_id`, `invoke(None, config=...)`를 묶어 기존 Python 제어 흐름에 replay-safe persistence를 붙이는 패턴을 정리한 글입니다.
+
 - [[libraries/langgraph/toolnode-command-state-updates|LangGraph ToolNode로 tool 결과와 state 업데이트 함께 반영하기]]
   `ToolNode`, `ToolMessage`, `Command(update=...)`, `InjectedToolCallId`를 묶어 tool 호출과 state 갱신을 안전하게 연결하는 패턴을 정리한 글입니다.
 
