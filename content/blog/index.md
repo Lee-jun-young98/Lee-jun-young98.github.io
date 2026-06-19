@@ -16,6 +16,10 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|dataset split과 version tag로 평가셋 고정하기]]
 
+## Library / Comparative Evaluation
+
+- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|pairwise evaluation으로 두 실험을 비교하기]]
+
 ## Library / Feedback Collection
 
 - [[libraries/langsmith/langsmith-presigned-feedback-tokens|presigned feedback token으로 프론트엔드 평가 수집하기]]

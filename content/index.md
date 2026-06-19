@@ -30,6 +30,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation으로 두 실험을 비교하기]]  
+  `evaluate()`로 만든 두 experiment를 `randomize_order`, `runs`, pairwise score mapping 기준으로 비교하는 방법을 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]  
   `error_handling="ignore"`, `list_runs`, `list_examples`, `experiment=results.experiment_name`으로 실패한 evaluation example만 다시 실행하는 패턴을 정리한 글입니다.
 
