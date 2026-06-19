@@ -176,6 +176,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langgraph/add-messages-chat-history|LangGraph add_messages로 채팅 히스토리를 안전하게 누적하고 수정하기]]
   `MessagesState`, `RemoveMessage`, `Overwrite`를 기준으로 채팅형 그래프의 메시지 상태를 append, replace, delete하는 패턴을 정리한 글입니다.
 
+- [[libraries/langgraph/reducers-parallel-state-merges|LangGraph reducer로 병렬 state update 안전하게 합치기]]
+  `Annotated[..., reducer]`, `operator.add`, `INVALID_CONCURRENT_GRAPH_UPDATE`, `update_state()` 기준으로 병렬 state 병합 규칙을 정리한 글입니다.
+
 - [[libraries/langgraph/interrupt-human-approval-resume|LangGraph interrupt()로 사람 확인 대기 후 Command(resume=...)로 재개하기]]  
   사람 확인 단계가 필요한 workflow에서 checkpointer, `thread_id`, resume 흐름을 어떻게 연결하는지 정리한 글입니다.
 
