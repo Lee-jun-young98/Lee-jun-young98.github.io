@@ -239,6 +239,11 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[papers/index|Paper Reviews]]  
   vision, generative AI, multimodal, agent, LLM 논문을 읽고 구현 관점을 정리합니다.
 
+### Library / Agent Safety & Moderation
+
+- [[libraries/langchain/openai-moderation-middleware|LangChain OpenAIModerationMiddleware로 입력, 출력, tool 결과 안전성 검사하기]]  
+  `check_input`, `check_output`, `check_tool_results`, `exit_behavior`를 기준으로 사용자 입력과 모델 문맥 전체에 안전성 검사를 거는 방법을 정리한 글입니다.
+
 ## Direction
 
 모델 자체를 이해하는 것에서 멈추지 않고, 데이터를 준비하고 실험을 재현하며 결과물을 운영 가능한 형태로 정리하는 AI engineer 방향을 목표로 공부하고 있습니다.
