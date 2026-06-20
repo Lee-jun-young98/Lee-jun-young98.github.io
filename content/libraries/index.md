@@ -4,19 +4,19 @@ title: Library Study Notes
 
 # Library Study Notes
 
-?쇱씠釉뚮윭由??ъ슜踰뺤쓣 怨듬??섎㈃???뺣━???명듃?낅땲??
+라이브러리를 실제로 써 보면서 사용법과 운영 패턴을 정리한 노트 모음입니다.
 
-吏湲덉? 鍮좊Ⅴ寃??⑤낫???낅Ц 湲遺???쒖옉?섍퀬, ?섏쨷?먮뒗 媛??쇱씠釉뚮윭由щ퀎濡?RAG, agent, memory, evaluation 媛숈? 二쇱젣瑜??볦븘媛?ㅺ퀬 ?⑸땲??
+지금은 LangChain, LangGraph, LangSmith를 중심으로 agent, memory, evaluation, observability 주제를 이어서 정리하고 있습니다.
 
-## 紐⑸줉
+## 목록
 
 - [[libraries/langchain/index|LangChain]]
 - [[libraries/langsmith/index|LangSmith]]
 - [[libraries/langgraph/index|LangGraph]]
 
-LangChain ?뱀뀡?먯꽌??runtime context, ToolRuntime, middleware, multi-agent, memory 媛숈? ?ㅼ쟾 二쇱젣瑜??꾩쟻 ?뺣━?⑸땲??
+LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent, memory 같은 실전 주제를 추적합니다.
 
 ### Recent LangSmith Notes
 
-- [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments濡?硫?고え??evaluation ?댁쁺?섍린]]
-- [[libraries/langsmith/langsmith-experiment-metrics-sdk|read_project(include_stats=True)濡?experiment 吏??媛?몄삤湲?]
+- [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments로 멀티모달 evaluation 운영하기]]
+- [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
