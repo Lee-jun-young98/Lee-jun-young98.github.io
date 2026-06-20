@@ -30,6 +30,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments濡?硫?고え??evaluation ?댁쁺?섍린]]  
+  dataset example??PDF, image, audio attachment瑜?遺숈씠怨?`evaluate()`?먯꽌 `attachments`瑜?諛쏆븘 ?ㅼ젣 硫?고え??target/evaluator瑜??뚮━?뒗 ?먮쫫???뺣━??湲?낅땲??
+
 - [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation으로 두 실험을 비교하기]]  
   `evaluate()`로 만든 두 experiment를 `randomize_order`, `runs`, pairwise score mapping 기준으로 비교하는 방법을 정리한 글입니다.
 
