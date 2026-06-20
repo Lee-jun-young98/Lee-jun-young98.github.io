@@ -73,6 +73,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library / Agent Foundations
 
+- [[libraries/langchain/custom-middleware-hooks-state-tools|LangChain custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]  
+  `before_model`, `after_model`, `state_schema`, middleware tool을 묶어 agent 정책을 재사용 가능한 단위로 구성하는 방법을 정리한 글입니다.
+
 - [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]  
   `client.get_tools()`, `client.session(...)`, `handle_tool_errors=False` 기준으로 MCP 도구 연동 패턴을 정리한 글입니다.
 
