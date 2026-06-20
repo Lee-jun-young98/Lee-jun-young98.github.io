@@ -4,24 +4,24 @@ title: LangSmith
 
 # LangSmith
 
-LangSmith??LLM ?좏뵆由ъ??댁뀡???ㅽ뻾 怨쇱젙??異붿쟻?섍퀬, 臾몄젣瑜??붾쾭源낇븯怨? ?댄썑 ?됯?? ?댁쁺 愿痢≪쑝濡??댁뼱 媛湲?醫뗪쾶 ?뺣━??二쇰뒗 ?꾧뎄??
+LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 디버깅하고, 이후 평가와 운영 관측으로 이어 가기 좋게 정리해 주는 도구입니다.
 
-泥섏쓬?먮뒗 tracing怨?project 援ъ꽦??以묒떖?쇰줈 ?듯엳怨? ?댄썑?먮뒗 evaluation, automation, feedback ?먮쫫源뚯? ?뺤옣?섎뒗 ?앹씠 ?덉젙?곸씠??
+처음에는 tracing과 project 구성을 중심으로 익히고, 이후에는 evaluation, automation, feedback 흐름까지 확장하는 식이 안정적입니다.
 
-## 湲 紐⑸줉
+## 글 목록
 
-- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation?쇰줈 ???ㅽ뿕??鍮꾧탳?섍린]]
-- [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation?먯꽌 ?ㅽ뙣??example留??ъ떆?꾪븯湲?]
+- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation으로 두 실험을 비교하기]]
+- [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]
-- [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 鍮좊Ⅴ寃?遺숈씠湲? traceable怨?wrap_openai ?ㅼ쟾 ?덉젣]]
-- [[libraries/langsmith/langsmith-dataset-splits-version-tags|LangSmith dataset split怨?version tag濡??됯? 湲곗? 怨좎젙?섍린]]
-- [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue濡??щ엺 寃???먮쫫 留뚮뱾湲?]
-- [[libraries/langsmith/langsmith-presigned-feedback-tokens|LangSmith presigned feedback token?쇰줈 ?꾨줎?몄뿏???됯? ?섏쭛?섍린]]
-- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag濡??꾨＼?꾪듃 諛고룷 怨좎젙?섍린]]
-- [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule怨?webhook?쇰줈 ?댁쁺 ?≪뀡 ?먮룞?뷀븯湲?]
-- [[libraries/langsmith/langsmith-threads-query-sdk|LangSmith thread_id濡?硫?고꽩 ???異붿쟻?섍퀬 SDK濡?議고쉶?섍린]]
-- [[libraries/langsmith/langsmith-cli-traces-datasets-threads|LangSmith CLI濡?trace, dataset, thread瑜??곕??먯뿉??諛붾줈 ?ㅻ（湲?]
-- [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric??肄붾뱶濡?愿由ы븯湲?]
-- [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments濡?硫?고え??evaluation ?댁쁺?섍린]]
-- [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs濡??댁쁺 trace瑜??뺣??섍쾶 議고쉶?섍린]]
-- [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)濡?experiment 吏??媛?몄삤湲?]
+- [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]
+- [[libraries/langsmith/langsmith-dataset-splits-version-tags|LangSmith dataset split과 version tag로 평가셋 고정하기]]
+- [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue로 사람 검토 흐름 만들기]]
+- [[libraries/langsmith/langsmith-presigned-feedback-tokens|LangSmith presigned feedback token으로 프론트엔드 평가 수집하기]]
+- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프롬프트 배포 고정하기]]
+- [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule과 webhook으로 운영 점검 자동화하기]]
+- [[libraries/langsmith/langsmith-threads-query-sdk|LangSmith thread_id로 멀티턴 대화 추적하고 SDK로 조회하기]]
+- [[libraries/langsmith/langsmith-cli-traces-datasets-threads|LangSmith CLI로 trace, dataset, thread를 터미널에서 바로 다루기]]
+- [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]
+- [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments로 멀티모달 evaluation 운영하기]]
+- [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정밀하게 조회하기]]
+- [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
