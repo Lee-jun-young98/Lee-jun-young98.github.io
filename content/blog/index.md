@@ -105,6 +105,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Foundations
 
+- [[libraries/langgraph/store-cross-thread-long-term-memory|store로 cross-thread 장기 메모리 붙이기]]
 - [[libraries/langgraph/checkpointer-persistence-threads|checkpointer로 thread 상태를 저장하고 같은 ID로 이어서 실행하기]]
 - [[libraries/langgraph/add-messages-chat-history|add_messages로 채팅 히스토리를 안전하게 누적·교체·삭제하기]]
 - [[libraries/langgraph/reducers-parallel-state-merges|reducer로 병렬 state update 안전하게 합치기]]

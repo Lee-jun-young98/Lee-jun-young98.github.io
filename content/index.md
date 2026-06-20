@@ -176,6 +176,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langgraph/checkpointer-persistence-threads|LangGraph checkpointer로 thread 상태를 저장하고 이어서 실행하기]]
   `thread_id`, `get_state()`, `get_state_history()`, saver 선택 기준을 묶어 durable execution의 시작점을 정리한 글입니다.
 
+- [[libraries/langgraph/store-cross-thread-long-term-memory|LangGraph store로 cross-thread 장기 메모리 붙이기]]
+  `store`, `Runtime`, `context_schema`, semantic search를 기준으로 thread 밖 사용자 메모리를 저장하고 재사용하는 패턴을 정리한 글입니다.
+
 - [[libraries/langgraph/add-messages-chat-history|LangGraph add_messages로 채팅 히스토리를 안전하게 누적하고 수정하기]]
   `MessagesState`, `RemoveMessage`, `Overwrite`를 기준으로 채팅형 그래프의 메시지 상태를 append, replace, delete하는 패턴을 정리한 글입니다.
 
