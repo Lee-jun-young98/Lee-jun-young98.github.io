@@ -7,6 +7,7 @@ tags:
   - agent
   - multi-agent
   - supervisor
+  - python
 ---
 
 # LangChain supervisor가 subagent를 호출할 때 내부 로직은 어떻게 흐를까

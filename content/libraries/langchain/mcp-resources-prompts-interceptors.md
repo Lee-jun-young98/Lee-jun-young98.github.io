@@ -5,7 +5,7 @@ date: 2026-06-15
 tags:
   - langchain
   - mcp
-  - agents
+  - agent
   - python
 aliases:
   - "/blog/langchain-mcp-resources-prompts-interceptors"

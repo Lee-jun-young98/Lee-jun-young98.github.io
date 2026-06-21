@@ -4,8 +4,8 @@ description: Deep Agents의 `create_deep_agent`로 LangChain 에이전트에 pla
 date: 2026-06-21
 tags:
   - langchain
-  - deepagents
   - agent
+  - multi-agent
   - python
   - productivity
 aliases:

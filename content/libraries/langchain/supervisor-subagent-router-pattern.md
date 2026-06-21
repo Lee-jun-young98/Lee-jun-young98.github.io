@@ -7,6 +7,7 @@ tags:
   - agent
   - multi-agent
   - router
+  - python
 ---
 
 # LangChain supervisor는 subagent를 어떤 식으로 고를까
