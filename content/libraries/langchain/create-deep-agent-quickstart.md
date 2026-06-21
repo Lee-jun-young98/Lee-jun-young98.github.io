@@ -1,6 +1,6 @@
 ---
-title: LangChain Deep Agents `create_deep_agent`로 planning, filesystem, subagent를 한 번에 붙이기
-description: Deep Agents의 `create_deep_agent`로 LangChain 에이전트에 planning, 가상 파일시스템, 서브에이전트, memory를 빠르게 붙이는 실전 패턴 정리
+title: "LangChain Deep Agents create_deep_agent quickstart"
+description: "Practical guide to using create_deep_agent with planning, filesystem, subagents, and memory in LangChain."
 date: 2026-06-21
 tags:
   - langchain

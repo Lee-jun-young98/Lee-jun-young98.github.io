@@ -76,7 +76,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 ### Library / Agent Foundations
 
-- [[libraries/langchain/create-deep-agent-quickstart|LangChain Deep Agents `create_deep_agent`로 planning, filesystem, subagent를 한 번에 붙이기]]  
+- [[libraries/langchain/create-deep-agent-quickstart|LangChain Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]  
   `create_deep_agent`, `checkpointer`, `thread_id`, `subagents`, `excluded_tools` 기준으로 Deep Agents 하네스를 빠르게 붙이는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/custom-middleware-hooks-state-tools|LangChain custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]  
