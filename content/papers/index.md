@@ -29,6 +29,8 @@ paper_sync: true
 
 ## [LLM](/papers/llm/)
 
+### [R3AG: Retriever Routing for Retrieval-Augmented Generation](/papers/llm/02-r3ag-retriever-routing-for-rag)
+
 ### [ReAct: Synergizing Reasoning and Acting in Language Models](/papers/llm/react-synergizing-reasoning-and-acting)
 
 ## [Generative AI](/papers/generative-ai/)
