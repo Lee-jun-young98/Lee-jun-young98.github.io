@@ -11,8 +11,8 @@ title: Library Study Notes
 ## 목록
 
 - [[libraries/langchain/index|LangChain]]
-- [[libraries/langsmith/index|LangSmith]]
 - [[libraries/langgraph/index|LangGraph]]
+- [[libraries/langsmith/index|LangSmith]]
 
 LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent, memory 같은 실전 주제를 추적합니다.
 

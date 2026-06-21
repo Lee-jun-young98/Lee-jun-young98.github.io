@@ -73,6 +73,7 @@ hideAutoFolderListing: true
 
 ## Library / Agent Foundations
 
+- [[libraries/langchain/create-deep-agent-quickstart|Deep Agents `create_deep_agent`로 planning, filesystem, subagent를 한 번에 붙이기]]
 - [[libraries/langchain/custom-middleware-hooks-state-tools|custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]
 - [[libraries/langchain/mcp-server-tools|MCP 서버 도구를 agent에 붙이기]]
 - [[libraries/langchain/mcp-resources-prompts-interceptors|MCP resource, prompt, interceptor로 서버 문맥 연결하기]]
