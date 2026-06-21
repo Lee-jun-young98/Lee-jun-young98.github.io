@@ -12,7 +12,7 @@ LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 
 
 - [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation으로 두 실험을 비교하기]]
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]
-- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]
+- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기: dataset, evaluate(), aevaluate()]]
 - [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|LangSmith dataset split과 version tag로 평가셋 고정하기]]
 - [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue로 사람 검토 흐름 만들기]]

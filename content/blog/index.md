@@ -12,13 +12,13 @@ hideAutoFolderListing: true
 ## Library / Observability & Evaluation
 
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]
-- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]
+- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기: dataset, evaluate(), aevaluate()]]
 - [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|dataset split과 version tag로 평가셋 고정하기]]
 
 ## Library / Multimodal Evaluation
 
-- [[libraries/langsmith/langsmith-evaluate-with-attachments|attachments濡?image, PDF, audio eval dataset ?댁쁺?섍린]]
+- [[libraries/langsmith/langsmith-evaluate-with-attachments|attachments로 image, PDF, audio eval dataset 운영하기]]
 
 ## Library / Comparative Evaluation
 

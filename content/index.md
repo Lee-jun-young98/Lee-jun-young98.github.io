@@ -40,7 +40,7 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
   `error_handling="ignore"`, `list_runs`, `list_examples`, `experiment=results.experiment_name`으로 실패한 evaluation example만 다시 실행하는 패턴을 정리한 글입니다.
 
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]  
-  Build a small LangSmith regression eval set with `evaluate()` and metadata filtering.
+  작은 회귀 평가셋을 만들고 `evaluate()`, `aevaluate()`, `upload_results=False`를 실무 흐름에 맞게 붙이는 방법을 정리한 글입니다.
 
 - [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]  
   LangSmith에서 OpenAI 호출을 추적하기 위한 최소 tracing 설정과 흔한 실수를 정리한 글입니다.
