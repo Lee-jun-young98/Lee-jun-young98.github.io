@@ -127,6 +127,7 @@ hideAutoFolderListing: true
 ## Library / LangGraph Composition Patterns
 
 - [[libraries/langgraph/send-dynamic-parallelism|Send로 동적 병렬 fan-out/map-reduce 처리하기]]
+- [[libraries/langgraph/subgraph-persistence-modes-state-inspection|subgraph에서 checkpointer=None, True, False를 어떻게 고를까]]
 - [[libraries/langgraph/subgraph-parent-handoff|subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]
 
 ## Library / Multi-Agent Patterns
