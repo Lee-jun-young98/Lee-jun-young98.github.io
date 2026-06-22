@@ -68,6 +68,8 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
   `evaluate()` 결과의 `experiment_name`과 `read_project(include_stats=True)`를 조합해 latency, cost, token, feedback 통계를 조회하는 방법을 정리한 글입니다.
+- [[libraries/langsmith/langsmith-evaluate-existing-experiment|LangSmith 기존 experiment에 evaluator만 다시 붙이기]]
+  이미 끝난 experiment를 다시 실행하지 않고 `evaluate()`와 `aevaluate()`로 새 evaluator만 추가하는 패턴을 정리한 글입니다.
 - [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]  
   `create_feedback_config()`와 `create_annotation_queue()`로 사람 검토 rubric을 코드로 관리하고 automation과 연결하는 흐름을 정리한 글입니다.
 

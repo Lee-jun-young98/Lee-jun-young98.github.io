@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-evaluate-existing-experiment|LangSmith 기존 experiment에 evaluator만 다시 붙이기]]
 - [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation으로 두 실험을 비교하기]]
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기: dataset, evaluate(), aevaluate()]]
