@@ -29,6 +29,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 - [[libraries/langgraph/cache-policy-node-caching|cache_policy로 비싼 노드 결과 재사용하기]]
 - [[libraries/langgraph/deferred-node-cleanup-finalizers|defer=True로 cleanup, audit, notification을 run 마지막으로 미루기]]
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
+- [[libraries/langgraph/recursion-limit-remaining-steps|recursion_limit과 RemainingSteps로 루프 안전장치 두기]]
 - [[libraries/langgraph/stream-mode-updates-messages-custom|stream()으로 updates, messages, custom 이벤트 흘려보내기]]
 - [[libraries/langgraph/time-travel-replay-fork|time travel로 체크포인트 replay와 fork 디버깅하기]]
 

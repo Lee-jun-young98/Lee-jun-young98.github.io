@@ -46,6 +46,7 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
 - [[libraries/langgraph/error-handler-recovery-routing|error_handler로 실패 후 보상 흐름과 대체 경로 만들기]]
 - [[libraries/langgraph/deferred-node-cleanup-finalizers|defer=True로 cleanup, audit, notification을 run 마지막으로 미루기]]
+- [[libraries/langgraph/recursion-limit-remaining-steps|recursion_limit과 RemainingSteps로 루프 안전장치 두기]]
 
 ## Library / Workflow Operations
 
