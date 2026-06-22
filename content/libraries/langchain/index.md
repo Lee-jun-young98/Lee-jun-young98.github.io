@@ -26,6 +26,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/dynamic-tool-selection|동적 도구 선택으로 프롬프트를 줄이고 권한도 나누기]]
 - [[libraries/langchain/llm-tool-selector-middleware|LLMToolSelectorMiddleware로 많은 도구 중 필요한 것만 고르기]]
 - [[libraries/langchain/provider-tool-search-middleware|ProviderToolSearchMiddleware로 provider 검색형 도구 지연 로딩하기]]
+- [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지속형 셸 세션 붙이기]]
 - [[libraries/langchain/filesystem-file-search-middleware|FilesystemFileSearchMiddleware로 코드베이스 glob/grep 검색 붙이기]]
 - [[libraries/langchain/todo-list-middleware|TodoListMiddleware로 복잡한 작업 계획 추적하기]]
 - [[libraries/langchain/context-editing-clear-tool-outputs|ContextEditingMiddleware로 오래된 tool output 정리하기]]
