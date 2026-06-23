@@ -79,6 +79,7 @@ hideAutoFolderListing: true
 - [[libraries/langchain/custom-middleware-hooks-state-tools|custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]
 - [[libraries/langchain/mcp-server-tools|MCP 서버 도구를 agent에 붙이기]]
 - [[libraries/langchain/mcp-resources-prompts-interceptors|MCP resource, prompt, interceptor로 서버 문맥 연결하기]]
+- [[libraries/langchain/custom-state-middleware|custom state와 middleware로 사용자별 컨텍스트 다루기]]
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
 - [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 이어가기]]
 - [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]

@@ -38,6 +38,8 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]  
   `error_handling="ignore"`, `list_runs`, `list_examples`, `experiment=results.experiment_name`으로 실패한 evaluation example만 다시 실행하는 패턴을 정리한 글입니다.
+- [[libraries/langchain/custom-state-middleware|LangChain custom state와 middleware로 사용자별 컨텍스트 다루기]]  
+  `create_agent`, `state_schema`, `ToolRuntime`, middleware를 묶어 사용자별 컨텍스트와 호출 제한을 함께 다루는 패턴을 정리한 글입니다.
 
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation quickstart with dataset and evaluate()]]  
   작은 회귀 평가셋을 만들고 `evaluate()`, `aevaluate()`, `upload_results=False`를 실무 흐름에 맞게 붙이는 방법을 정리한 글입니다.
@@ -89,6 +91,8 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 
 - [[libraries/langchain/mcp-resources-prompts-interceptors|LangChain MCP resource, prompt, interceptor로 서버 문맥 연결하기]]  
   `get_resources()`, `get_prompt()`, structured content artifact, tool interceptor로 서버 문맥을 agent에 주입하는 방법을 정리한 글입니다.
+- [[libraries/langchain/custom-state-middleware|LangChain custom state와 middleware로 사용자별 컨텍스트 다루기]]  
+  `ToolRuntime`으로 사용자 상태를 읽고 middleware로 model 호출 횟수와 종료 조건을 관리하는 실전 패턴을 정리한 글입니다.
 
 - [[libraries/langchain/create-agent-tool-calling|LangChain create_agent로 도구 호출 에이전트 시작하기]]  
   LangChain v1의 `create_agent`를 기준으로 tool calling agent를 시작하는 방법을 정리한 글입니다.
