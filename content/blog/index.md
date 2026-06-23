@@ -57,6 +57,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
 
+## Library / Workflow Debugging
+
+- [[libraries/langgraph/static-breakpoints-interrupt-before-after|static breakpoint로 노드 전후 실행을 멈춰 디버깅하기]]
+
 ## Library / Workflow Performance
 
 - [[libraries/langgraph/cache-policy-node-caching|cache_policy로 비싼 노드 결과 재사용하기]]
