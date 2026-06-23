@@ -47,6 +47,9 @@ AI 모델을 공부하고, 실험과 프로젝트로 검증한 내용을 기록�
 - [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]  
   LangSmith에서 OpenAI 호출을 추적하기 위한 최소 tracing 설정과 흔한 실수를 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-trace-routing-projects-workspaces|LangSmith tracing_context로 trace를 project, workspace, replica로 라우팅하기]]
+  `LANGSMITH_PROJECT`, `langsmith_extra`, `tracing_context`, `WriteReplica`를 써서 운영 trace 목적지를 나누는 방법을 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|LangSmith dataset split과 version tag로 평가셋 고정하기]]  
   dataset example를 split과 metadata로 나누고 version tag를 붙여 재현 가능한 평가셋을 운영하는 방법을 정리한 글입니다.
 

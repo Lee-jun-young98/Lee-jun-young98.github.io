@@ -14,7 +14,11 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-evaluate-existing-experiment|LangSmith 기존 experiment에 evaluator만 다시 붙이기]]
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기: dataset, evaluate(), aevaluate()]]
+
+## Library / Trace Routing & Configuration
+
 - [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]
+- [[libraries/langsmith/langsmith-trace-routing-projects-workspaces|tracing_context로 trace를 project, workspace, replica로 라우팅하기]]
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|dataset split과 version tag로 평가셋 고정하기]]
 
 ## Library / Multimodal Evaluation
