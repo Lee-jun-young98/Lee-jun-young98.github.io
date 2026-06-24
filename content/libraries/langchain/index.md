@@ -23,6 +23,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/runtime-context-toolruntime|runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]
 - [[libraries/langchain/toolruntime-command-state-updates|ToolRuntime와 Command(update=...)로 tool에서 state 쓰기]]
 - [[libraries/langchain/dynamic-prompt-system-instructions|dynamic_prompt로 상황별 system prompt 주입하기]]
+- [[libraries/langchain/anthropic-prompt-caching-middleware|AnthropicPromptCachingMiddleware로 긴 system prompt 비용과 지연 줄이기]]
 - [[libraries/langchain/dynamic-model-selection-middleware|middleware로 동적 모델 선택과 도구 호출 제어하기]]
 - [[libraries/langchain/dynamic-tool-selection|동적 도구 선택으로 프롬프트를 줄이고 권한도 나누기]]
 - [[libraries/langchain/llm-tool-selector-middleware|LLMToolSelectorMiddleware로 많은 도구 중 필요한 것만 고르기]]

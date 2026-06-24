@@ -109,6 +109,10 @@ hideAutoFolderListing: true
 - [[libraries/langchain/user-interaction-patterns|에이전트는 사용자와 어떻게 상호작용할까]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 확인 단계 넣기]]
 
+## Library / Agent Cost & Performance
+
+- [[libraries/langchain/anthropic-prompt-caching-middleware|AnthropicPromptCachingMiddleware로 긴 system prompt 비용과 지연 줄이기]]
+
 ## Library / Agent Execution Environment
 
 - [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지속형 셸 세션 붙이기]]
