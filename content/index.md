@@ -44,6 +44,11 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 - [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments로 멀티모달 evaluation 운영하기]]  
   dataset example에 PDF, image, audio attachment를 넣고 `evaluate()`에서 활용하는 패턴을 정리했습니다.
+- [[libraries/langsmith/langsmith-annotation-queue-sdk|LangSmith annotation queue를 Python SDK로 운영하기]]  
+  `create_feedback_config`, `create_annotation_queue`, `add_runs_to_annotation_queue`를 조합해 사람 리뷰 큐를 운영하는 흐름을 정리한 글입니다.
+
+- [[libraries/index|Library Study Notes]]  
+  LangSmith 중심 라이브러리 학습 노트를 모아 둔 페이지입니다.
 
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]  
   `list_runs`, `list_examples`를 이용해 실패한 evaluation example만 다시 실행하는 방법을 정리했습니다.

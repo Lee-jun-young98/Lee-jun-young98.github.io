@@ -35,6 +35,11 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-presigned-feedback-tokens|presigned feedback token으로 프론트엔드 평가 수집하기]]
 - [[libraries/langsmith/langsmith-annotation-queues-sdk|annotation queue로 사람 검수 흐름 만들기]]
 
+## Library / Feedback & Review Ops
+
+- [[libraries/langsmith/langsmith-annotation-queue-sdk|annotation queue를 Python SDK로 운영하기]]
+- [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]
+
 ## Library / PromptOps
 
 - [[libraries/langsmith/langsmith-prompt-commit-tags-cache|prompt commit tag로 프롬프트 배포 고정하기]]
@@ -78,10 +83,6 @@ hideAutoFolderListing: true
 ## Library / Experiment Analytics
 
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|read_project(include_stats=True)로 experiment 지표 가져오기]]
-
-## Library / Feedback & Review Ops
-
-- [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]
 
 ## Library / Agent Foundations
 
