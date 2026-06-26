@@ -117,6 +117,10 @@ hideAutoFolderListing: true
 - [[libraries/langchain/user-interaction-patterns|에이전트는 사용자와 어떻게 상호작용할까]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 확인 단계 넣기]]
 
+## Library / Agent Testing
+
+- [[libraries/langchain/llm-tool-emulator-middleware|LLMToolEmulator로 실제 환불, 메일, 외부 API 호출 없이 에이전트 흐름 테스트하기]]
+
 ## Library / Agent Cost & Performance
 
 - [[libraries/langchain/anthropic-prompt-caching-middleware|AnthropicPromptCachingMiddleware로 긴 system prompt 비용과 지연 줄이기]]

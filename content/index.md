@@ -64,3 +64,6 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 - [[libraries/langchain/toolruntime-stream-writer-progress|LangChain ToolRuntime.stream_writer로 도구 진행 상황 스트리밍하기]]  
   `stream_mode="custom"`과 `["updates", "custom"]`로 긴 tool 실행 중간 진행 상황을 사용자에게 보여주는 패턴을 정리했습니다.
+
+- [[libraries/langchain/llm-tool-emulator-middleware|LangChain LLMToolEmulator로 실제 툴 없이 에이전트 흐름 테스트하기]]  
+  `LLMToolEmulator()`로 환불, 메일, 외부 API 같은 부작용 툴을 에뮬레이션하고 로컬·CI에서 tool-calling 흐름을 빠르게 검증하는 방법을 정리했습니다.
