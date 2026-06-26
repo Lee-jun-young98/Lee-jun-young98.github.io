@@ -48,6 +48,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|automation rule과 webhook으로 운영 점검 자동화하기]]
 
+## Library / Privacy & Compliance
+
+- [[libraries/langsmith/langsmith-mask-sensitive-traces|민감정보를 가리고 trace는 남기는 방법]]
+
 ## Library / Developer Tooling
 
 - [[libraries/langsmith/langsmith-cli-traces-datasets-threads|LangSmith CLI로 trace, dataset, thread를 터미널에서 바로 다루기]]
