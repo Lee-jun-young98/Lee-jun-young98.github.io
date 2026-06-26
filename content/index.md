@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/toolruntime-toolnode-state-store-context|LangGraph ToolRuntime으로 ToolNode 안에서 state, store, context 함께 주입하기]]  
+  `ToolRuntime`으로 `ToolNode` 안에서 graph state, user context, persistent store를 함께 읽고 `Command(update=...)`까지 안전하게 반영하는 패턴을 정리한 글입니다.
+
 - [[libraries/langgraph/event-streaming-v3-projections|LangGraph event streaming v3로 상태, 토큰, interrupt를 한 스트림에서 다루기]]  
   `stream_events(..., version="v3")`에서 `stream.values`, `stream.messages`, raw protocol event, interrupt resume를 어떻게 나눠 쓰는지 정리한 글입니다.
 

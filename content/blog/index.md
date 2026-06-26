@@ -133,6 +133,8 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Tool Execution
 
+- [[libraries/langgraph/toolruntime-toolnode-state-store-context|ToolRuntime으로 ToolNode 안에서 state, store, context 함께 주입하기]]
+
 - [[libraries/langgraph/toolnode-command-state-updates|ToolNode로 tool 결과와 state 업데이트 함께 반영하기]]
 
 ## Library / LangGraph Foundations
