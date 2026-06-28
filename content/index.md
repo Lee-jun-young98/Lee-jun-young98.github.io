@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/parallel-interrupts-resume-map|LangGraph 병렬 interrupt를 ID 매핑으로 한 번에 재개하기]]  
+  `stream.interrupts`와 `Interrupt.id`를 이용해 parallel branch의 승인 응답을 안전하게 재개하는 패턴을 정리했습니다.
+
 - [[libraries/langgraph/toolruntime-toolnode-state-store-context|LangGraph ToolRuntime으로 ToolNode 안에서 state, store, context 함께 주입하기]]  
   `ToolRuntime`으로 `ToolNode` 안에서 graph state, user context, persistent store를 함께 읽고 `Command(update=...)`까지 안전하게 반영하는 패턴을 정리한 글입니다.
 

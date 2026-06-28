@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/parallel-interrupts-resume-map|LangGraph 병렬 interrupt를 ID 매핑으로 한 번에 재개하기]]
 - [[libraries/langgraph/toolruntime-toolnode-state-store-context|LangGraph ToolRuntime으로 ToolNode 안에서 state, store, context 함께 주입하기]]
 
 ### Recent LangSmith Notes
