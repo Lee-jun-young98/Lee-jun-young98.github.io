@@ -59,6 +59,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langsmith/langsmith-mask-sensitive-traces|LangSmith에서 민감정보를 가리고 trace는 남기는 방법]]  
   `hide_inputs`, `anonymizer`, `process_inputs`, `tracing_context`로 PII를 가리면서 trace 구조를 유지하는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-tracing-sampling-conditional|LangSmith tracing sampling? conditional tracing?? ??? ??? ?? ??]]  
+  `LANGSMITH_TRACING_SAMPLING_RATE`, `Client(tracing_sampling_rate=...)`, `tracing_context(enabled=...)`? ??? ?? trace ??? ??? ???? ?? ???? ??? ??????.
+
 - [[libraries/index|Library Study Notes]]  
   LangSmith 중심 라이브러리 학습 노트를 모아 둔 페이지입니다.
 
