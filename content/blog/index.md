@@ -125,6 +125,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langchain/anthropic-prompt-caching-middleware|AnthropicPromptCachingMiddleware로 긴 system prompt 비용과 지연 줄이기]]
 
+## Library / Frontend Agent UX
+
+- [[libraries/langchain/headless-tools-client-execution|headless tools로 브라우저 전용 도구를 client에서 실행하기]]
+
 ## Library / Agent Execution Environment
 
 - [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지속형 셸 세션 붙이기]]
