@@ -54,6 +54,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langchain/headless-tools-client-execution|LangChain headless tools로 브라우저 전용 도구를 client에서 실행하기]]  
   Python agent에는 schema-only tool만 두고, React `useStream`에서 geolocation, localStorage 같은 브라우저 전용 도구를 실행하는 패턴을 정리했습니다.
 
+- [[libraries/langchain/markdown-messages|LangChain markdown messages로 스트리밍 응답을 읽기 좋은 UI로 렌더링하기]]  
+  `useStream`, `react-markdown`, code block highlighting을 조합해 assistant 메시지를 표, 리스트, 코드 블록까지 읽기 좋게 그리는 방법을 정리했습니다.
+
 - [[libraries/langgraph/static-breakpoints-interrupt-before-after|LangGraph static breakpoint로 노드 전후 실행을 멈춰 디버깅하기]]  
   `interrupt_before`, `interrupt_after`로 노드 전후 state를 단계별로 확인하는 흐름을 정리했습니다.
 
