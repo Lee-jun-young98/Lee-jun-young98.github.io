@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-create-feedback-list-feedback|LangSmith create_feedback와 list_feedback으로 사용자 평가 수집하고 분석하기]]  
+  `create_feedback()`, `list_feedback()`, `list_runs()`를 묶어 운영 중인 사용자 평가를 저장하고 다시 분석하는 흐름을 정리했습니다.
+
 - [[libraries/langgraph/parallel-interrupts-resume-map|LangGraph 병렬 interrupt를 ID 매핑으로 한 번에 재개하기]]  
   `stream.interrupts`와 `Interrupt.id`를 이용해 parallel branch의 승인 응답을 안전하게 재개하는 패턴을 정리했습니다.
 

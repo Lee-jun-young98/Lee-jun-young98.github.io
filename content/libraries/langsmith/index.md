@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-create-feedback-list-feedback|LangSmith create_feedback와 list_feedback으로 사용자 평가 수집하고 분석하기]]
 - [[libraries/langsmith/langsmith-tracing-sampling-conditional|LangSmith tracing sampling? conditional tracing?? ??? ??? ?? ??]]
 - [[libraries/langsmith/langsmith-pytest-evals-ci|LangSmith pytest로 LLM eval과 회귀 테스트를 CI에 붙이기]]
 - [[libraries/langsmith/langsmith-trace-routing-projects-workspaces|LangSmith tracing_context로 trace를 project, workspace, replica로 라우팅하기]]
