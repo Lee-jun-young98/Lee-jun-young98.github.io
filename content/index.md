@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/backward-compatibility-graph-migrations|LangGraph backward compatibility로 in-flight thread 안 깨고 그래프 변경하기]]
+  checkpointer가 있는 운영 그래프를 바꿀 때 node rename, state schema 변경, versioned rollout을 어떻게 잡아야 하는지 정리했습니다.
+
 - [[libraries/langsmith/langsmith-create-feedback-list-feedback|LangSmith create_feedback와 list_feedback으로 사용자 평가 수집하고 분석하기]]  
   `create_feedback()`, `list_feedback()`, `list_runs()`를 묶어 운영 중인 사용자 평가를 저장하고 다시 분석하는 흐름을 정리했습니다.
 
