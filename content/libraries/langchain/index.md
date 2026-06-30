@@ -45,6 +45,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/pii-middleware-redaction-guardrails|PIIMiddleware로 입력과 출력의 민감정보 가려내기]]
 - [[libraries/langchain/openai-moderation-middleware|OpenAIModerationMiddleware로 입력, 출력, tool 결과 안전성 검사하기]]
 - [[libraries/langchain/user-interaction-patterns|에이전트는 사용자와 어떻게 상호작용할까]]
+- [[libraries/langchain/handoffs-customer-support|handoffs로 고객지원 상태 전환 에이전트 만들기]]
 - [[libraries/langchain/subagents-supervisor-pattern|subagents로 역할 분리한 에이전트 만들기]]
 - [[libraries/langchain/supervisor-subagent-call-flow|supervisor가 subagent를 호출할 때 내부 로직은 어떻게 될까]]
 - [[libraries/langchain/supervisor-subagent-router-pattern|supervisor는 subagent를 어떤 방식으로 고를까]]

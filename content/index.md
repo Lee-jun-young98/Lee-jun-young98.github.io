@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langchain/handoffs-customer-support|LangChain handoffs로 고객지원 상태 전환 에이전트 만들기]]  
+  `current_step`, `Command(update=...)`, middleware를 조합해 순차 제약이 있는 고객지원 에이전트를 구성하는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/backward-compatibility-graph-migrations|LangGraph backward compatibility로 in-flight thread 안 깨고 그래프 변경하기]]
   checkpointer가 있는 운영 그래프를 바꿀 때 node rename, state schema 변경, versioned rollout을 어떻게 잡아야 하는지 정리했습니다.
 
