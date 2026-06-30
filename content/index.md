@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langchain/handoffs-customer-support|LangChain handoffs로 고객지원 상태 전환 에이전트 만들기]]  
   `current_step`, `Command(update=...)`, middleware를 조합해 순차 제약이 있는 고객지원 에이전트를 구성하는 방법을 정리한 글입니다.
 
+- [[libraries/langgraph/store-semantic-search-memory|LangGraph store semantic search로 장기 메모리 검색 붙이기]]
+  `store.search(query=...)`와 embedding index로 여러 thread에 걸친 사용자 장기 메모리를 의미 기반으로 다시 찾는 패턴을 정리했습니다.
+
 - [[libraries/langgraph/backward-compatibility-graph-migrations|LangGraph backward compatibility로 in-flight thread 안 깨고 그래프 변경하기]]
   checkpointer가 있는 운영 그래프를 바꿀 때 node rename, state schema 변경, versioned rollout을 어떻게 잡아야 하는지 정리했습니다.
 
@@ -78,7 +81,7 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
   `LANGSMITH_TRACING_SAMPLING_RATE`, `Client(tracing_sampling_rate=...)`, `tracing_context(enabled=...)`? ??? ?? trace ??? ??? ???? ?? ???? ??? ??????.
 
 - [[libraries/index|Library Study Notes]]  
-  LangSmith 중심 라이브러리 학습 노트를 모아 둔 페이지입니다.
+  LangSmith, LangChain, LangGraph 라이브러리 학습 노트를 모아 둔 페이지입니다.
 
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]  
   `list_runs`, `list_examples`를 이용해 실패한 evaluation example만 다시 실행하는 방법을 정리했습니다.
