@@ -30,5 +30,6 @@ LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 
 - [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments로 멀티모달 evaluation 운영하기]]
 - [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정밀하게 조회하기]]
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
+- [[libraries/langsmith/langsmith-feedback-formulas-sdk|LangSmith feedback formula로 여러 평가 점수를 composite metric으로 묶기]]
 - [[libraries/langsmith/langsmith-annotation-queue-sdk|LangSmith annotation queue를 Python SDK로 운영하기]]
 - [[libraries/langsmith/langsmith-mask-sensitive-traces|LangSmith에서 민감정보를 가리고 trace는 남기는 방법]]
