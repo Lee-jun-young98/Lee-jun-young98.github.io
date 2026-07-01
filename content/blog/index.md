@@ -71,6 +71,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Reliability
 
+- [[libraries/langgraph/durability-modes-sync-async-exit|durability로 sync, async, exit를 워크로드별로 고르기]]
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
 - [[libraries/langgraph/timeout-policy-node-timeouts|TimeoutPolicy로 느린 노드를 run_timeout, idle_timeout으로 끊기]]
 - [[libraries/langgraph/error-handler-recovery-routing|error_handler로 실패 후 보상 흐름과 대체 경로 만들기]]

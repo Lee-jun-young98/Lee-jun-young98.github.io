@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/durability-modes-sync-async-exit|LangGraph durability로 sync, async, exit를 언제 고를까]]
+  checkpointer와 `durability` 옵션을 함께 써서 성능과 복구 가능성 사이의 균형을 잡는 기준을 정리했습니다.
+
 - [[libraries/langchain/trim-messages-before-model|LangChain trim_messages로 context window 넘치기 전에 대화 기록 자르기]]  
   `before_model`, `trim_messages`, `RemoveMessage`를 조합해 긴 대화 히스토리를 최근 문맥 위주로 줄이는 패턴을 정리한 글입니다.
 
