@@ -65,6 +65,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-cli-traces-datasets-threads|LangSmith CLI로 trace, dataset, thread를 터미널에서 바로 다루기]]
 
+## Library / Data Export & Warehousing
+
+- [[libraries/langsmith/langsmith-bulk-export-s3-parquet|bulk export로 trace를 S3/Parquet로 내보내기]]
+
 ## Library / Workflow Reliability
 
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
