@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langchain/trim-messages-before-model|LangChain trim_messages로 context window 넘치기 전에 대화 기록 자르기]]  
+  `before_model`, `trim_messages`, `RemoveMessage`를 조합해 긴 대화 히스토리를 최근 문맥 위주로 줄이는 패턴을 정리한 글입니다.
+
 - [[libraries/langchain/handoffs-customer-support|LangChain handoffs로 고객지원 상태 전환 에이전트 만들기]]  
   `current_step`, `Command(update=...)`, middleware를 조합해 순차 제약이 있는 고객지원 에이전트를 구성하는 방법을 정리한 글입니다.
 
