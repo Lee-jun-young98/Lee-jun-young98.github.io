@@ -12,6 +12,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Foundations
 
+- [[libraries/langgraph/pydantic-state-validation-coercion|Pydantic state로 입력 검증과 타입 coercion 붙이기]]
 - [[libraries/langgraph/store-semantic-search-memory|store semantic search로 장기 메모리 검색 붙이기]]
 - [[libraries/langgraph/toolruntime-toolnode-state-store-context|ToolRuntime으로 ToolNode 안에서 state, store, context 함께 주입하기]]
 
