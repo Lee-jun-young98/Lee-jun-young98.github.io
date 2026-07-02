@@ -111,6 +111,7 @@ hideAutoFolderListing: true
 
 - [[libraries/langchain/create-deep-agent-quickstart|Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
 - [[libraries/langchain/custom-middleware-hooks-state-tools|custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]
+- [[libraries/langchain/custom-stream-transformers|custom stream transformers로 stream_events v3 확장 채널 만들기]]
 - [[libraries/langchain/mcp-server-tools|MCP 서버 도구를 agent에 붙이기]]
 - [[libraries/langchain/mcp-resources-prompts-interceptors|MCP resource, prompt, interceptor로 서버 문맥 연결하기]]
 - [[libraries/langchain/custom-state-middleware|custom state와 middleware로 사용자별 컨텍스트 다루기]]
@@ -149,6 +150,11 @@ hideAutoFolderListing: true
 
 - [[libraries/langchain/markdown-messages|markdown messages로 스트리밍 응답을 읽기 좋은 UI로 렌더링하기]]
 - [[libraries/langchain/headless-tools-client-execution|headless tools로 브라우저 전용 도구를 client에서 실행하기]]
+
+## Library / Agent Streaming Extensions
+
+- [[libraries/langchain/custom-stream-transformers|custom stream transformers로 stream_events v3 확장 채널 만들기]]
+- [[libraries/langchain/toolruntime-stream-writer-progress|ToolRuntime.stream_writer로 도구 진행 상황 스트리밍하기]]
 
 ## Library / Agent Execution Environment
 

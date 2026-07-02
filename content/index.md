@@ -36,6 +36,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/pydantic-state-validation-coercion|LangGraph Pydantic state로 입력 검증과 타입 coercion 붙이기]]
   외부 입력이 섞이는 그래프에서 `BaseModel` state로 validation, 기본값, 타입 coercion을 붙이는 기준을 정리했습니다.
 
+- [[libraries/langchain/custom-stream-transformers|LangChain custom stream transformers로 stream_events v3 확장 채널 만들기]]
+  `StreamTransformer`, `StreamChannel`, middleware `transformers` 등록으로 retrieval progress 같은 앱 전용 스트림 채널을 만드는 패턴을 정리했습니다.
+
 - [[libraries/langgraph/durability-modes-sync-async-exit|LangGraph durability로 sync, async, exit를 언제 고를까]]
   checkpointer와 `durability` 옵션을 함께 써서 성능과 복구 가능성 사이의 균형을 잡는 기준을 정리했습니다.
 
