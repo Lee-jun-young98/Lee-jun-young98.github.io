@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-upload-external-experiments-rest-api|LangSmith REST API로 외부 실험 결과 업로드하기]]  
+  LangSmith 밖에서 끝난 평가 결과를 externally-managed dataset과 experiment로 올려 비교하는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/durability-modes-sync-async-exit|LangGraph durability로 sync, async, exit를 언제 고를까]]
   checkpointer와 `durability` 옵션을 함께 써서 성능과 복구 가능성 사이의 균형을 잡는 기준을 정리했습니다.
 
