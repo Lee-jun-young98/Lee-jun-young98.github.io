@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langsmith/langsmith-upload-external-experiments-rest-api|LangSmith REST API로 외부 실험 결과 업로드하기]]  
   LangSmith 밖에서 끝난 평가 결과를 externally-managed dataset과 experiment로 올려 비교하는 방법을 정리한 글입니다.
 
+- [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|LangGraph set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
+  `set_node_defaults()`로 graph-wide retry, timeout, error handler 기본 정책을 선언하고 예외 노드만 override하는 패턴을 정리했습니다.
+
 - [[libraries/langgraph/pydantic-state-validation-coercion|LangGraph Pydantic state로 입력 검증과 타입 coercion 붙이기]]
   외부 입력이 섞이는 그래프에서 `BaseModel` state로 validation, 기본값, 타입 coercion을 붙이는 기준을 정리했습니다.
 

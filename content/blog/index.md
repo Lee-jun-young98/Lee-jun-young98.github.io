@@ -72,6 +72,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Reliability
 
+- [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
 - [[libraries/langgraph/durability-modes-sync-async-exit|durability로 sync, async, exit를 워크로드별로 고르기]]
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
 - [[libraries/langgraph/timeout-policy-node-timeouts|TimeoutPolicy로 느린 노드를 run_timeout, idle_timeout으로 끊기]]
