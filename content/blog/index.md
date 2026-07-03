@@ -159,6 +159,7 @@ hideAutoFolderListing: true
 
 ## Library / Agent Execution Environment
 
+- [[libraries/langchain/deep-agents-composite-backend-workspace-memory|Deep Agents CompositeBackend로 workspace scratch와 durable memory 분리하기]]
 - [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지속형 셸 세션 붙이기]]
 - [[libraries/langchain/filesystem-file-search-middleware|FilesystemFileSearchMiddleware로 코드베이스 glob/grep 검색 붙이기]]
 

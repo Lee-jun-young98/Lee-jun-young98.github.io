@@ -11,6 +11,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 ## 글 목록
 
 - [[libraries/langchain/create-deep-agent-quickstart|LangChain Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
+- [[libraries/langchain/deep-agents-composite-backend-workspace-memory|LangChain Deep Agents CompositeBackend로 workspace와 memory 분리하기]]
 - [[libraries/langchain/custom-middleware-hooks-state-tools|LangChain custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]
 - [[libraries/langchain/custom-stream-transformers|LangChain custom stream transformers로 stream_events v3 확장 채널 만들기]]
 - [[libraries/langchain/custom-state-middleware|LangChain custom state와 middleware로 사용자별 컨텍스트 다루기]]
