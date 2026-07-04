@@ -5,9 +5,9 @@ hideAutoFolderListing: true
 
 # Blog
 
-공부하면서 직접 확인하고 정리한 글들을 역할별로 묶어 두는 공간입니다.
+공부하면서 직접 확인하고 정리한 글들을 역할별로 묶어 보는 공간입니다.
 
-단순한 날짜순 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
+단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
 ## Library / Observability & Evaluation
 
@@ -30,7 +30,7 @@ hideAutoFolderListing: true
 
 ## Library / Trace Coverage & Cost Control
 
-- [[libraries/langsmith/langsmith-tracing-sampling-conditional|sampling? conditional tracing?? ??? ??? ?? ??]]
+- [[libraries/langsmith/langsmith-tracing-sampling-conditional|sampling과 conditional tracing으로 필요한 trace만 남기기]]
 
 ## Library / Multimodal Evaluation
 
@@ -38,13 +38,13 @@ hideAutoFolderListing: true
 
 ## Library / Comparative Evaluation
 
-- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|pairwise evaluation으로 두 실험을 비교하기]]
+- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|pairwise evaluation으로 두 실험 비교하기]]
 
 ## Library / Feedback Collection
 
 - [[libraries/langsmith/langsmith-create-feedback-list-feedback|create_feedback와 list_feedback으로 사용자 평가 수집하고 분석하기]]
-- [[libraries/langsmith/langsmith-presigned-feedback-tokens|presigned feedback token으로 프론트엔드 평가 수집하기]]
-- [[libraries/langsmith/langsmith-annotation-queues-sdk|annotation queue로 사람 검수 흐름 만들기]]
+- [[libraries/langsmith/langsmith-presigned-feedback-tokens|presigned feedback token으로 프론트엔드에서 평가 수집하기]]
+- [[libraries/langsmith/langsmith-annotation-queues-sdk|annotation queue로 사람 검토 흐름 만들기]]
 
 ## Library / Feedback & Review Ops
 
@@ -61,11 +61,11 @@ hideAutoFolderListing: true
 
 ## Library / Production Operations
 
-- [[libraries/langsmith/langsmith-automation-rules-webhooks|automation rule과 webhook으로 운영 점검 자동화하기]]
+- [[libraries/langsmith/langsmith-automation-rules-webhooks|automation rule과 webhook으로 운영 알림 자동화하기]]
 
 ## Library / Privacy & Compliance
 
-- [[libraries/langsmith/langsmith-mask-sensitive-traces|민감정보를 가리고 trace는 남기는 방법]]
+- [[libraries/langsmith/langsmith-mask-sensitive-traces|민감정보를 가리고 trace를 남기는 방법]]
 
 ## Library / Developer Tooling
 
@@ -83,11 +83,15 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/timeout-policy-node-timeouts|TimeoutPolicy로 느린 노드를 run_timeout, idle_timeout으로 끊기]]
 - [[libraries/langgraph/error-handler-recovery-routing|error_handler로 실패 후 보상 흐름과 대체 경로 만들기]]
 - [[libraries/langgraph/deferred-node-cleanup-finalizers|defer=True로 cleanup, audit, notification을 run 마지막으로 미루기]]
-- [[libraries/langgraph/recursion-limit-remaining-steps|recursion_limit과 RemainingSteps로 루프 안전장치 두기]]
+- [[libraries/langgraph/recursion-limit-remaining-steps|recursion_limit와 RemainingSteps로 루프 안전장치 두기]]
 
 ## Library / Workflow Operations
 
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
+
+## Library / Workflow Composition
+
+- [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 
 ## Library / Workflow Evolution
 
@@ -103,11 +107,11 @@ hideAutoFolderListing: true
 
 ## Library / Conversation Observability
 
-- [[libraries/langsmith/langsmith-threads-query-sdk|thread_id로 멀티턴 대화 추적하고 SDK로 조회하기]]
+- [[libraries/langsmith/langsmith-threads-query-sdk|thread_id로 멀티턴 상태 추적하고 SDK로 조회하기]]
 
 ## Library / Trace Analytics
 
-- [[libraries/langsmith/langsmith-query-traces-sdk|list_runs, filter, trace_filter로 운영 trace를 정밀하게 조회하기]]
+- [[libraries/langsmith/langsmith-query-traces-sdk|list_runs, filter, trace_filter로 운영 trace를 정확하게 조회하기]]
 
 ## Library / Experiment Analytics
 
@@ -118,37 +122,37 @@ hideAutoFolderListing: true
 - [[libraries/langchain/server-side-tool-use|server-side tool use로 web_search를 provider 쪽에서 실행하기]]
 
 - [[libraries/langchain/create-deep-agent-quickstart|Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
-- [[libraries/langchain/custom-middleware-hooks-state-tools|custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]
+- [[libraries/langchain/custom-middleware-hooks-state-tools|custom middleware로 before_model, after_model, state_schema 묶어 에이전트 확장하기]]
 - [[libraries/langchain/custom-stream-transformers|custom stream transformers로 stream_events v3 확장 채널 만들기]]
 - [[libraries/langchain/mcp-server-tools|MCP 서버 도구를 agent에 붙이기]]
 - [[libraries/langchain/mcp-resources-prompts-interceptors|MCP resource, prompt, interceptor로 서버 문맥 연결하기]]
-- [[libraries/langchain/custom-state-middleware|custom state와 middleware로 사용자별 컨텍스트 다루기]]
+- [[libraries/langchain/custom-state-middleware|custom state와 middleware로 사용자별 컨텍스트 넣기]]
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
 - [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 이어가기]]
-- [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 대화 기록 자르기]]
+- [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 기록 자르기]]
 - [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]
 - [[libraries/langchain/structured-output-response-format|structured output으로 에이전트 응답 스키마 고정하기]]
 - [[libraries/langchain/runtime-context-toolruntime|runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]
 - [[libraries/langchain/toolruntime-stream-writer-progress|ToolRuntime.stream_writer로 도구 진행 상황 스트리밍하기]]
-- [[libraries/langchain/toolruntime-command-state-updates|ToolRuntime와 Command(update=...)로 tool에서 state 쓰기]]
+- [[libraries/langchain/toolruntime-command-state-updates|ToolRuntime과 Command(update=...)로 tool에서 state 갱신하기]]
 - [[libraries/langchain/dynamic-prompt-system-instructions|dynamic_prompt로 상황별 system prompt 주입하기]]
 - [[libraries/langchain/dynamic-model-selection-middleware|middleware로 동적 모델 선택과 도구 호출 제어하기]]
-- [[libraries/langchain/dynamic-tool-selection|동적 도구 선택으로 프롬프트를 줄이고 권한을 나누기]]
+- [[libraries/langchain/dynamic-tool-selection|동적 도구 선택으로 프로젝트를 줄이고 권한별로 나누기]]
 - [[libraries/langchain/llm-tool-selector-middleware|LLMToolSelectorMiddleware로 많은 도구 중 필요한 것만 고르기]]
 - [[libraries/langchain/provider-tool-search-middleware|ProviderToolSearchMiddleware로 provider 검색형 도구 지연 로딩하기]]
 - [[libraries/langchain/todo-list-middleware|TodoListMiddleware로 복잡한 작업 계획 추적하기]]
 - [[libraries/langchain/context-editing-clear-tool-outputs|ContextEditingMiddleware로 오래된 tool output 정리하기]]
-- [[libraries/langchain/tool-retry-middleware|ToolRetryMiddleware로 실패하는 도구 호출 재시도하기]]
-- [[libraries/langchain/tool-call-limit-middleware|ToolCallLimitMiddleware로 agent tool 호출 수 제한 걸기]]
+- [[libraries/langchain/tool-retry-middleware|ToolRetryMiddleware로 실패한 도구 호출 재시도하기]]
+- [[libraries/langchain/tool-call-limit-middleware|ToolCallLimitMiddleware로 agent tool 호출 상한 걸기]]
 - [[libraries/langchain/model-retry-middleware|ModelRetryMiddleware로 모델 호출 재시도하기]]
 - [[libraries/langchain/long-term-memory-store|long-term memory로 사용자 선호 저장하고 다시 꺼내기]]
-- [[libraries/langchain/pii-middleware-redaction-guardrails|PIIMiddleware로 입력과 출력의 민감정보 가드레일 두기]]
-- [[libraries/langchain/user-interaction-patterns|에이전트는 사용자와 어떻게 상호작용할까]]
-- [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 확인 단계 넣기]]
+- [[libraries/langchain/pii-middleware-redaction-guardrails|PIIMiddleware로 입력과 출력의 민감정보 가리기]]
+- [[libraries/langchain/user-interaction-patterns|에이전트가 사용자와 어떻게 상호작용할까]]
+- [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop로 에이전트 확인 단계 넣기]]
 
 ## Library / Agent Testing
 
-- [[libraries/langchain/llm-tool-emulator-middleware|LLMToolEmulator로 실제 환불, 메일, 외부 API 호출 없이 에이전트 흐름 테스트하기]]
+- [[libraries/langchain/llm-tool-emulator-middleware|LLMToolEmulator로 실제 결제, 메일, 외부 API 호출 없이 에이전트 흐름 테스트하기]]
 
 ## Library / Agent Cost & Performance
 
@@ -167,7 +171,7 @@ hideAutoFolderListing: true
 ## Library / Agent Execution Environment
 
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|Deep Agents CompositeBackend로 workspace scratch와 durable memory 분리하기]]
-- [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지속형 셸 세션 붙이기]]
+- [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지역 실행 권한 붙이기]]
 - [[libraries/langchain/filesystem-file-search-middleware|FilesystemFileSearchMiddleware로 코드베이스 glob/grep 검색 붙이기]]
 
 ## Library / Agent Guardrails
@@ -177,8 +181,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Tool Execution
 
-- [[libraries/langgraph/toolruntime-toolnode-state-store-context|ToolRuntime으로 ToolNode 안에서 state, store, context 함께 주입하기]]
-
+- [[libraries/langgraph/toolruntime-toolnode-state-store-context|ToolRuntime으로 ToolNode 안에서 state, store, context 모두 주입하기]]
 - [[libraries/langgraph/toolnode-command-state-updates|ToolNode로 tool 결과와 state 업데이트 함께 반영하기]]
 
 ## Library / LangGraph Foundations
@@ -187,7 +190,7 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/store-semantic-search-memory|LangGraph store semantic search로 장기 메모리 검색 붙이기]]
 - [[libraries/langgraph/store-cross-thread-long-term-memory|store로 cross-thread 장기 메모리 붙이기]]
 - [[libraries/langgraph/checkpointer-persistence-threads|checkpointer로 thread 상태를 저장하고 같은 ID로 이어서 실행하기]]
-- [[libraries/langgraph/add-messages-chat-history|add_messages로 채팅 히스토리를 안전하게 누적·교체·삭제하기]]
+- [[libraries/langgraph/add-messages-chat-history|add_messages로 채팅 히스토리를 안전하게 추가하고 교체하고 제거하기]]
 - [[libraries/langgraph/reducers-parallel-state-merges|reducer로 병렬 state update 안전하게 합치기]]
 - [[libraries/langgraph/interrupt-human-approval-resume|interrupt()로 사람 확인 대기 후 Command(resume=...)로 재개하기]]
 - [[libraries/langgraph/parallel-interrupts-resume-map|병렬 interrupt를 ID 매핑으로 한 번에 재개하기]]
@@ -198,19 +201,20 @@ hideAutoFolderListing: true
 ## Library / LangGraph Runtime & Observability
 
 - [[libraries/langgraph/event-streaming-v3-projections|event streaming v3로 상태, 토큰, interrupt를 한 스트림에서 다루기]]
-- [[libraries/langgraph/stream-mode-updates-messages-custom|stream()로 updates, messages, custom, debug 이벤트 흘려보내기]]
+- [[libraries/langgraph/stream-mode-updates-messages-custom|stream()으로 updates, messages, custom, debug 이벤트 흘려보내기]]
 - [[libraries/langgraph/time-travel-replay-fork|time travel로 체크포인트 replay와 fork 디버깅하기]]
 
 ## Library / LangGraph Composition Patterns
 
 - [[libraries/langgraph/send-dynamic-parallelism|Send로 동적 병렬 fan-out/map-reduce 처리하기]]
+- [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 - [[libraries/langgraph/subgraph-persistence-modes-state-inspection|subgraph에서 checkpointer=None, True, False를 어떻게 고를까]]
 - [[libraries/langgraph/subgraph-parent-handoff|subgraph에서 Command.PARENT로 부모 그래프로 handoff하기]]
 
 ## Library / Multi-Agent Patterns
 
 - [[libraries/langchain/handoffs-customer-support|handoffs로 고객지원 상태 전환 에이전트 만들기]]
-- [[libraries/langchain/subagents-supervisor-pattern|subagents로 역할 분리한 에이전트 만들기]]
+- [[libraries/langchain/subagents-supervisor-pattern|subagents로 역할 분리된 에이전트 만들기]]
 - [[libraries/langchain/supervisor-subagent-call-flow|supervisor가 subagent를 호출할 때 내부 로직은 어떻게 흐를까]]
 - [[libraries/langchain/supervisor-subagent-router-pattern|supervisor는 subagent를 어떤 방식으로 고를까]]
 

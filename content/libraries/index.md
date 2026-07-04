@@ -18,13 +18,14 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/subgraph-node-vs-invoke|LangGraph subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 - [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|LangGraph set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
 - [[libraries/langgraph/pydantic-state-validation-coercion|LangGraph Pydantic state로 입력 검증과 타입 coercion 붙이기]]
 - [[libraries/langgraph/durability-modes-sync-async-exit|LangGraph durability로 sync, async, exit를 언제 고를까]]
 - [[libraries/langgraph/store-semantic-search-memory|LangGraph store semantic search로 장기 메모리 검색 붙이기]]
 - [[libraries/langgraph/backward-compatibility-graph-migrations|LangGraph backward compatibility로 in-flight thread 안 깨고 그래프 변경하기]]
 - [[libraries/langgraph/parallel-interrupts-resume-map|LangGraph 병렬 interrupt를 ID 매핑으로 한 번에 재개하기]]
-- [[libraries/langgraph/toolruntime-toolnode-state-store-context|LangGraph ToolRuntime으로 ToolNode 안에서 state, store, context 함께 주입하기]]
+- [[libraries/langgraph/toolruntime-toolnode-state-store-context|LangGraph ToolRuntime으로 ToolNode 안에서 state, store, context 모두 주입하기]]
 
 ### Recent LangSmith Notes
 
@@ -38,7 +39,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|Deep Agents CompositeBackend로 workspace와 memory 분리하기]]
 - [[libraries/langchain/custom-stream-transformers|custom stream transformers로 stream_events v3 확장 채널 만들기]]
-- [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 대화 기록 자르기]]
+- [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 기록 자르기]]
 - [[libraries/langchain/handoffs-customer-support|handoffs로 고객지원 상태 전환 에이전트 만들기]]
 - [[libraries/langchain/markdown-messages|markdown messages로 스트리밍 응답을 읽기 좋은 UI로 렌더링하기]]
 - [[libraries/langchain/headless-tools-client-execution|headless tools로 브라우저 전용 도구를 client에서 실행하기]]
