@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langchain/server-side-tool-use|LangChain server-side tool use로 web_search를 provider 쪽에서 실행하기]]  
+  provider 내장 web search를 `bind_tools`로 붙이고 `content_blocks`로 결과를 다루는 방법을 정리한 글입니다.  
+
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|LangChain Deep Agents CompositeBackend로 workspace와 memory 분리하기]]  
   `CompositeBackend`, `StateBackend`, `FilesystemBackend`, `StoreBackend`를 조합해 thread별 scratch space와 cross-thread memory를 분리하는 패턴을 정리한 글입니다.
 
