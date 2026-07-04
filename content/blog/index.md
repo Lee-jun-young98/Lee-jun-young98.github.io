@@ -18,6 +18,10 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기]]
 - [[libraries/langsmith/langsmith-evaluate-intermediate-steps|LangSmith evaluate()에서 중간 단계까지 평가하기]]
 
+## Library / OpenTelemetry Evaluation
+
+- [[libraries/langsmith/langsmith-evaluate-with-opentelemetry|OpenTelemetry trace를 LangSmith experiment로 평가하기]]
+
 ## Library / Trace Routing & Configuration
 
 - [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]

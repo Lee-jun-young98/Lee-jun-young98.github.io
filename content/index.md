@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|LangChain Deep Agents CompositeBackend로 workspace와 memory 분리하기]]  
   `CompositeBackend`, `StateBackend`, `FilesystemBackend`, `StoreBackend`를 조합해 thread별 scratch space와 cross-thread memory를 분리하는 패턴을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-evaluate-with-opentelemetry|LangSmith OpenTelemetry trace를 experiment로 평가하기]]  
+  OpenTelemetry로 계측된 앱을 LangSmith experiment와 dataset example에 연결해 평가하는 패턴을 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-upload-external-experiments-rest-api|LangSmith REST API로 외부 실험 결과 업로드하기]]  
   LangSmith 밖에서 끝난 평가 결과를 externally-managed dataset과 experiment로 올려 비교하는 방법을 정리한 글입니다.
 
