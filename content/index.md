@@ -34,7 +34,7 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
   `before_agent`에서 금지 요청을 조기 차단하고 `after_agent`에서 최종 응답을 재검사하는 실전 guardrail 패턴을 정리했습니다.
 
 - [[libraries/langchain/server-side-tool-use|LangChain server-side tool use로 web_search를 provider 쪽에서 실행하기]]  
-  provider 내장 web search를 `bind_tools`로 붙이고 `content_blocks`로 결과를 다루는 방법을 정리한 글입니다.  
+  provider 내장 web search를 `bind_tools`로 붙이고 `content_blocks`로 결과를 다루는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|LangChain Deep Agents CompositeBackend로 workspace와 memory 분리하기]]  
   `CompositeBackend`, `StateBackend`, `FilesystemBackend`, `StoreBackend`를 조합해 thread별 scratch space와 cross-thread memory를 분리하는 패턴을 정리한 글입니다.
@@ -71,6 +71,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 - [[libraries/langsmith/langsmith-create-feedback-list-feedback|LangSmith create_feedback와 list_feedback으로 사용자 평가 수집하고 분석하기]]  
   `create_feedback()`, `list_feedback()`, `list_runs()`를 묶어 운영 중인 사용자 평가를 저장하고 다시 분석하는 흐름을 정리했습니다.
+
+- [[libraries/langsmith/langsmith-custom-run-id-feedback|LangSmith custom run ID로 feedback과 조회 흐름 안정적으로 연결하기]]  
+  `uuid7()`, `langsmith_extra={"run_id": ...}`, `trace(..., run_id=...)`, `create_feedback()`를 묶어 feedback과 trace를 안정적으로 연결하는 방법을 정리했습니다.
 
 - [[libraries/langsmith/langsmith-feedback-formulas-sdk|LangSmith feedback formula로 여러 평가 점수를 composite metric으로 묶기]]  
   `create_feedback_formula()`, `list_feedback_formulas()`, `update_feedback_formula()`로 개별 평가 점수를 dataset 또는 experiment 단위 종합 점수로 묶는 방법을 정리했습니다.
