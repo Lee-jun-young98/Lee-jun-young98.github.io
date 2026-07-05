@@ -10,6 +10,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 
 ## 글 목록
 
+- [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]
 - [[libraries/langchain/server-side-tool-use|server-side tool use로 web_search를 provider 쪽에서 실행하기]]
 
 - [[libraries/langchain/create-deep-agent-quickstart|LangChain Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
@@ -40,6 +41,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지속형 셸 세션 붙이기]]
 - [[libraries/langchain/filesystem-file-search-middleware|FilesystemFileSearchMiddleware로 코드베이스 glob/grep 검색 붙이기]]
 - [[libraries/langchain/todo-list-middleware|TodoListMiddleware로 복잡한 작업 계획 추적하기]]
+- [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]
 - [[libraries/langchain/context-editing-clear-tool-outputs|ContextEditingMiddleware로 오래된 tool output 정리하기]]
 - [[libraries/langchain/model-call-limit-middleware|ModelCallLimitMiddleware로 에이전트 모델 호출 상한 걸기]]
 - [[libraries/langchain/tool-retry-middleware|ToolRetryMiddleware로 실패하는 도구 호출 재시도하기]]

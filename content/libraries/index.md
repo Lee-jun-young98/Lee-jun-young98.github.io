@@ -35,6 +35,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]
 - [[libraries/langchain/server-side-tool-use|server-side tool use로 web_search를 provider 쪽에서 실행하기]]
 
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|Deep Agents CompositeBackend로 workspace와 memory 분리하기]]

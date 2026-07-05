@@ -119,6 +119,7 @@ hideAutoFolderListing: true
 
 ## Library / Agent Foundations
 
+- [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]
 - [[libraries/langchain/server-side-tool-use|server-side tool use로 web_search를 provider 쪽에서 실행하기]]
 
 - [[libraries/langchain/create-deep-agent-quickstart|Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
@@ -176,6 +177,7 @@ hideAutoFolderListing: true
 
 ## Library / Agent Guardrails
 
+- [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]
 - [[libraries/langchain/model-call-limit-middleware|ModelCallLimitMiddleware로 에이전트 모델 호출 상한 걸기]]
 - [[libraries/langchain/openai-moderation-middleware|OpenAIModerationMiddleware로 입력, 출력, tool 결과 안전성 검사하기]]
 
