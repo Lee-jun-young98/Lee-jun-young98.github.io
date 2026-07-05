@@ -80,6 +80,7 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
 - [[libraries/langgraph/durability-modes-sync-async-exit|durability로 sync, async, exit를 워크로드별로 고르기]]
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
+- [[libraries/langgraph/runtime-execution-info-retry-fallbacks|runtime.execution_info로 재시도 차수별 fallback 분기하기]]
 - [[libraries/langgraph/timeout-policy-node-timeouts|TimeoutPolicy로 느린 노드를 run_timeout, idle_timeout으로 끊기]]
 - [[libraries/langgraph/error-handler-recovery-routing|error_handler로 실패 후 보상 흐름과 대체 경로 만들기]]
 - [[libraries/langgraph/deferred-node-cleanup-finalizers|defer=True로 cleanup, audit, notification을 run 마지막으로 미루기]]
