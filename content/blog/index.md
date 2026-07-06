@@ -52,6 +52,10 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-annotation-queue-sdk|annotation queue를 Python SDK로 운영하기]]
 - [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]
 
+## Library / Human Review to Offline Evals
+
+- [[libraries/langsmith/langsmith-assertions-offline-evals|assertion으로 human review를 offline eval로 연결하기]]
+
 ## Library / Feedback Analytics
 
 - [[libraries/langsmith/langsmith-feedback-formulas-sdk|feedback formula로 여러 평가 점수를 composite metric으로 묶기]]

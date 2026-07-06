@@ -110,6 +110,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langsmith/langsmith-annotation-queue-sdk|LangSmith annotation queue를 Python SDK로 운영하기]]  
   `create_feedback_config`, `create_annotation_queue`, `add_runs_to_annotation_queue`를 조합해 사람 리뷰 큐를 운영하는 흐름을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-assertions-offline-evals|LangSmith assertion으로 human review를 offline eval로 연결하기]]  
+  single-run annotation queue에서 적은 assertions를 dataset example의 `reference_outputs["assertions"]`로 저장하고, 이를 여러 metric evaluator로 다시 채점하는 패턴을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-mask-sensitive-traces|LangSmith에서 민감정보를 가리고 trace는 남기는 방법]]  
   `hide_inputs`, `anonymizer`, `process_inputs`, `tracing_context`로 PII를 가리면서 trace 구조를 유지하는 방법을 정리한 글입니다.
 
