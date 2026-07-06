@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/update-state-manual-patching|LangGraph update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]  
+  `get_state_history()`, `update_state()`, `as_node`를 이용해 체크포인트에서 분기 실행하고 테스트용 부분 실행을 빠르게 만드는 방법을 정리한 글입니다.
+
 - [[libraries/langchain/custom-guardrails-before-after-agent|LangChain custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]  
   `before_agent`에서 금지 요청을 조기 차단하고 `after_agent`에서 최종 응답을 재검사하는 실전 guardrail 패턴을 정리했습니다.
 

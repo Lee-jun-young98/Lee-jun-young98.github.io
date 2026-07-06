@@ -226,6 +226,10 @@ hideAutoFolderListing: true
 - [[libraries/langchain/supervisor-subagent-call-flow|supervisor가 subagent를 호출할 때 내부 로직은 어떻게 흐를까]]
 - [[libraries/langchain/supervisor-subagent-router-pattern|supervisor는 subagent를 어떤 방식으로 고를까]]
 
+## Library / Workflow State Repair & Testing
+
+- [[libraries/langgraph/update-state-manual-patching|update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]
+
 ## Training / MLOps
 
 - [[blog/hydra-llm-sft-training-pipeline|Hydra로 LLM SFT 실험 설정 정리하기]]

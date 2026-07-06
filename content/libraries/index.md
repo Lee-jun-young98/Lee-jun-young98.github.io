@@ -18,9 +18,10 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/update-state-manual-patching|LangGraph update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|LangGraph subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 - [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|LangGraph set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
-- [[libraries/langgraph/pydantic-state-validation-coercion|LangGraph Pydantic state로 입력 검증과 타입 coercion 붙이기]]
+- [[libraries/langgraph/pydantic-state-validation-coercion|LangGraph Pydantic state로 입력 검증과 자동 coercion 붙이기]]
 - [[libraries/langgraph/durability-modes-sync-async-exit|LangGraph durability로 sync, async, exit를 언제 고를까]]
 - [[libraries/langgraph/store-semantic-search-memory|LangGraph store semantic search로 장기 메모리 검색 붙이기]]
 - [[libraries/langgraph/backward-compatibility-graph-migrations|LangGraph backward compatibility로 in-flight thread 안 깨고 그래프 변경하기]]
@@ -35,9 +36,8 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
-- [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]
+- [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레일 넣기]]
 - [[libraries/langchain/server-side-tool-use|server-side tool use로 web_search를 provider 쪽에서 실행하기]]
-
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|Deep Agents CompositeBackend로 workspace와 memory 분리하기]]
 - [[libraries/langchain/custom-stream-transformers|custom stream transformers로 stream_events v3 확장 채널 만들기]]
 - [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 기록 자르기]]
