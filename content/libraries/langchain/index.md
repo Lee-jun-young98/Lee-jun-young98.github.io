@@ -24,6 +24,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 확인 단계 넣기]]
 - [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 이어가기]]
 - [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 대화 기록 자르기]]
+- [[libraries/langchain/delete-messages-removemessage|RemoveMessage로 대화 기록 일부만 안전하게 지우기]]
 - [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]
 - [[libraries/langchain/structured-output-response-format|structured output으로 에이전트 응답 스키마 고정하기]]
 - [[libraries/langchain/runtime-context-toolruntime|runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]

@@ -135,9 +135,6 @@ hideAutoFolderListing: true
 - [[libraries/langchain/mcp-resources-prompts-interceptors|MCP resource, prompt, interceptor로 서버 문맥 연결하기]]
 - [[libraries/langchain/custom-state-middleware|custom state와 middleware로 사용자별 컨텍스트 넣기]]
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
-- [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 이어가기]]
-- [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 기록 자르기]]
-- [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]
 - [[libraries/langchain/structured-output-response-format|structured output으로 에이전트 응답 스키마 고정하기]]
 - [[libraries/langchain/runtime-context-toolruntime|runtime context와 ToolRuntime으로 사용자별 설정 주입하기]]
 - [[libraries/langchain/toolruntime-stream-writer-progress|ToolRuntime.stream_writer로 도구 진행 상황 스트리밍하기]]
@@ -156,6 +153,14 @@ hideAutoFolderListing: true
 - [[libraries/langchain/pii-middleware-redaction-guardrails|PIIMiddleware로 입력과 출력의 민감정보 가리기]]
 - [[libraries/langchain/user-interaction-patterns|에이전트가 사용자와 어떻게 상호작용할까]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop로 에이전트 확인 단계 넣기]]
+
+## Library / Agent Memory Hygiene
+
+- [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 이어가기]]
+- [[libraries/langchain/trim-messages-before-model|trim_messages로 context window 넘치기 전에 기록 자르기]]
+- [[libraries/langchain/delete-messages-removemessage|RemoveMessage로 대화 기록 일부만 안전하게 지우기]]
+  오래된 턴, 민감한 응답, 잘못된 assistant message를 state에서 제거하는 기준과 패턴을 정리한 글입니다.
+- [[libraries/langchain/summarization-middleware|SummarizationMiddleware로 긴 대화를 요약 메모리로 압축하기]]
 
 ## Library / Agent Testing
 
