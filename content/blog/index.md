@@ -110,6 +110,7 @@ hideAutoFolderListing: true
 ## Library / Workflow Performance
 
 - [[libraries/langgraph/cache-policy-node-caching|cache_policy로 비싼 노드 결과 재사용하기]]
+- [[libraries/langgraph/delta-channel-checkpoint-storage|DeltaChannel로 긴 thread checkpoint 크기 줄이기]]
 
 ## Library / Conversation Observability
 

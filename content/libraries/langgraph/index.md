@@ -37,6 +37,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 - [[libraries/langgraph/timeout-policy-node-timeouts|TimeoutPolicy로 느린 노드를 run_timeout, idle_timeout으로 끊기]]
 - [[libraries/langgraph/error-handler-recovery-routing|error_handler로 실패 후 보상 흐름과 대체 경로 만들기]]
 - [[libraries/langgraph/cache-policy-node-caching|cache_policy로 비싼 노드 결과 재사용하기]]
+- [[libraries/langgraph/delta-channel-checkpoint-storage|DeltaChannel로 긴 thread checkpoint 크기 줄이기]]
 - [[libraries/langgraph/deferred-node-cleanup-finalizers|defer=True로 cleanup, audit, notification을 run 마지막으로 미루기]]
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
 - [[libraries/langgraph/recursion-limit-remaining-steps|recursion_limit와 RemainingSteps로 루프 안전장치 넣기]]

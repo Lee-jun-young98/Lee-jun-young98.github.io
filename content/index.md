@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/delta-channel-checkpoint-storage|LangGraph DeltaChannel로 긴 thread checkpoint 크기 줄이기]]  
+  `DeltaChannel`, bulk reducer, `snapshot_frequency`로 대화 기록 같은 append-heavy state의 checkpoint 저장량을 줄이는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/update-state-manual-patching|LangGraph update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]  
   `get_state_history()`, `update_state()`, `as_node`를 이용해 체크포인트에서 분기 실행하고 테스트용 부분 실행을 빠르게 만드는 방법을 정리한 글입니다.
 
