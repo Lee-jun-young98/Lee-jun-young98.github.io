@@ -29,6 +29,8 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 ## Study Notes
 
 ### Library Study Notes
+- [[libraries/langsmith/langsmith-manage-evaluators-sdk|LangSmith evaluators를 SDK로 생성·수정·비용 추적하기]]  
+  evaluator를 workspace 자산처럼 관리하면서 prompt judge, code evaluator, spend 추적까지 묶는 운영 패턴을 정리했습니다.
 
 - [[libraries/langgraph/delta-channel-checkpoint-storage|LangGraph DeltaChannel로 긴 thread checkpoint 크기 줄이기]]  
   `DeltaChannel`, bulk reducer, `snapshot_frequency`로 대화 기록 같은 append-heavy state의 checkpoint 저장량을 줄이는 방법을 정리한 글입니다.
