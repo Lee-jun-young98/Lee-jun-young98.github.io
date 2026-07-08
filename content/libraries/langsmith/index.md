@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-online-code-evaluators|LangSmith online code evaluator로 운영 trace 품질 가드레일 걸기]]
 - [[libraries/langsmith/langsmith-custom-run-id-feedback|LangSmith custom run ID로 feedback과 조회 흐름 안정적으로 연결하기]]
 - [[libraries/langsmith/langsmith-evaluate-with-opentelemetry|LangSmith OpenTelemetry trace를 experiment로 평가하기]]
 - [[libraries/langsmith/langsmith-upload-external-experiments-rest-api|LangSmith REST API로 외부 실험 결과 업로드하기]]
