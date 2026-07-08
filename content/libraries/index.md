@@ -39,6 +39,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/tool-args-schema-validation|@tool과 args_schema로 도구 입력 스키마를 단단하게 만들기]]
 - [[libraries/langchain/quickjs-code-interpreter-middleware|CodeInterpreterMiddleware로 agent 안에 QuickJS 계산 루프 넣기]]
 - [[libraries/langchain/delete-messages-removemessage|RemoveMessage로 대화 기록 일부만 안전하게 지우기]]
 - [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레일 넣기]]
