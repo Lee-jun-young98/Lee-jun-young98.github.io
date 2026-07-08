@@ -97,6 +97,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Composition
 
+- [[libraries/langgraph/add-node-destinations-command-routing-rendering|add_node(destinations=...)로 Command 라우팅 그래프를 읽기 좋게 그리기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 
 ## Library / Workflow Evolution
