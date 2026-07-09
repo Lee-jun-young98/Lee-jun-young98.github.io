@@ -1,4 +1,4 @@
----
+﻿---
 title: Blog
 hideAutoFolderListing: true
 ---
@@ -143,6 +143,7 @@ hideAutoFolderListing: true
 - [[libraries/langchain/create-deep-agent-quickstart|Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
 - [[libraries/langchain/custom-middleware-hooks-state-tools|custom middleware로 before_model, after_model, state_schema 묶어 에이전트 확장하기]]
 - [[libraries/langchain/custom-stream-transformers|custom stream transformers로 stream_events v3 확장 채널 만들기]]
+- [[libraries/langchain/mcp-adapters-multi-server-tools|MCP adapters? ?? MCP ?? ?? ????]]
 - [[libraries/langchain/mcp-server-tools|MCP 서버 도구를 agent에 붙이기]]
 - [[libraries/langchain/mcp-resources-prompts-interceptors|MCP resource, prompt, interceptor로 서버 문맥 연결하기]]
 - [[libraries/langchain/custom-state-middleware|custom state와 middleware로 사용자별 컨텍스트 넣기]]
