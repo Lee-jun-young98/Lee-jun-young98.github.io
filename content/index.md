@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]  
+  `PostgresSaver`, `checkpointer.setup()`, `thread_id`, `interrupt()`를 묶어 운영 환경에서 thread 상태를 안전하게 이어가는 방법을 정리한 글입니다.
+
 - [[libraries/langchain/tool-args-schema-validation|LangChain @tool과 args_schema로 도구 입력 스키마를 단단하게 만들기]]  
   `@tool`, `args_schema`, `parse_docstring`, `return_direct`를 기준으로 LangChain 도구 입력 검증과 설계 포인트를 정리한 글입니다.
 

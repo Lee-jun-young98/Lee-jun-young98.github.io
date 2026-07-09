@@ -87,6 +87,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Reliability
 
+- [[libraries/langgraph/postgres-checkpointer-production|PostgresSaver로 durable checkpointer를 운영 환경에 붙이기]]
 - [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
 - [[libraries/langgraph/durability-modes-sync-async-exit|durability로 sync, async, exit를 워크로드별로 고르기]]
 - [[libraries/langgraph/retry-policy-node-retries|RetryPolicy로 일시 실패 노드만 안전하게 재시도하기]]
@@ -218,6 +219,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Foundations
 
+- [[libraries/langgraph/postgres-checkpointer-production|PostgresSaver로 durable checkpointer를 운영 환경에 붙이기]]
 - [[libraries/langgraph/pydantic-state-validation-coercion|Pydantic state로 입력 검증과 타입 coercion 붙이기]]
 - [[libraries/langgraph/store-semantic-search-memory|LangGraph store semantic search로 장기 메모리 검색 붙이기]]
 - [[libraries/langgraph/store-cross-thread-long-term-memory|store로 cross-thread 장기 메모리 붙이기]]
