@@ -16,6 +16,7 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-evaluate-existing-experiment|LangSmith 기존 experiment에 evaluator만 다시 붙이기]]
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]
 - [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기]]
+- [[libraries/langsmith/langsmith-summary-evaluators-pass-rate-f1|LangSmith summary_evaluators로 experiment pass rate와 F1 집계하기]]
 - [[libraries/langsmith/langsmith-evaluate-intermediate-steps|LangSmith evaluate()에서 중간 단계까지 평가하기]]
 
 ## Library / Online Production Evaluation
@@ -128,6 +129,7 @@ hideAutoFolderListing: true
 ## Library / Experiment Analytics
 
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|read_project(include_stats=True)로 experiment 지표 가져오기]]
+- [[libraries/langsmith/langsmith-summary-evaluators-pass-rate-f1|summary_evaluators로 pass rate, F1, p95 latency 함께 보기]]
 
 ## Library / Evaluator Management
 

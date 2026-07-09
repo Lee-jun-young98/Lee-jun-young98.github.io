@@ -29,6 +29,7 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 ## Study Notes
 
 ### Library Study Notes
+
 - [[libraries/langchain/tool-args-schema-validation|LangChain @tool과 args_schema로 도구 입력 스키마를 단단하게 만들기]]  
   `@tool`, `args_schema`, `parse_docstring`, `return_direct`를 기준으로 LangChain 도구 입력 검증과 설계 포인트를 정리한 글입니다.
 
@@ -37,6 +38,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 - [[libraries/langsmith/langsmith-manage-evaluators-sdk|LangSmith evaluators를 SDK로 생성·수정·비용 추적하기]]  
   evaluator를 workspace 자산처럼 관리하면서 prompt judge, code evaluator, spend 추적까지 묶는 운영 패턴을 정리했습니다.
+
+- [[libraries/langsmith/langsmith-summary-evaluators-pass-rate-f1|LangSmith summary_evaluators로 pass rate와 F1 한 번에 집계하기]]  
+  `evaluate()` 결과를 example 단위에서 끝내지 않고 experiment-level pass rate, F1, p95 latency로 묶는 방법을 정리한 글입니다.
 
 - [[libraries/langchain/quickjs-code-interpreter-middleware|LangChain Deep Agents CodeInterpreterMiddleware로 agent 안에 QuickJS 계산 루프 넣기]]  
   QuickJS interpreter와 `CodeInterpreterMiddleware`, PTC, `mode="thread"` 상태 지속 범위를 실전 기준으로 정리한 글입니다.
