@@ -4,9 +4,9 @@ title: LangSmith
 
 # LangSmith
 
-LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 디버깅하고, 이후 평가와 운영 관측으로 이어 가기 좋게 정리해 주는 도구입니다.
+LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation, monitoring 흐름을 한곳에서 다루기 좋게 정리해 주는 도구다.
 
-처음에는 tracing과 project 구성을 중심으로 익히고, 이후에는 evaluation, automation, feedback 흐름까지 확장하는 식이 안정적입니다.
+처음에는 tracing과 project 구성을 중심으로 익히고, 이후에는 evaluator, human review, observability, 운영 자동화까지 확장해 보는 편이 실전적이다.
 
 ## 글 목록
 
@@ -20,24 +20,25 @@ LangSmith는 LLM 애플리케이션의 실행 과정을 추적하고, 문제를 
 - [[libraries/langsmith/langsmith-manage-evaluators-sdk|LangSmith evaluators를 SDK로 생성·수정·비용 추적하기]]
 - [[libraries/langsmith/langsmith-trace-routing-projects-workspaces|LangSmith tracing_context로 trace를 project, workspace, replica로 라우팅하기]]
 - [[libraries/langsmith/langsmith-evaluate-existing-experiment|LangSmith 기존 experiment에 evaluator만 다시 붙이기]]
-- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation으로 실험 결과 비교하기]]
+- [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|LangSmith pairwise evaluation으로 두 실험 비교하기]]
 - [[libraries/langsmith/langsmith-retry-failed-evaluation-examples|LangSmith evaluation에서 실패한 example만 재시도하기]]
-- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기: dataset, evaluate(), aevaluate()]]
-- [[libraries/langsmith/langsmith-summary-evaluators-pass-rate-f1|LangSmith summary_evaluators로 pass rate와 F1 한 번에 집계하기]]
-- [[libraries/langsmith/langsmith-evaluate-intermediate-steps|LangSmith evaluate()에서 중간 단계까지 평가하기: run/rootRun 실전 패턴]]
+- [[libraries/langsmith/langsmith-offline-evaluation-quickstart|LangSmith offline evaluation 빠르게 시작하기]]
+- [[libraries/langsmith/langsmith-summary-evaluators-pass-rate-f1|LangSmith summary_evaluators로 experiment pass rate와 F1 집계하기]]
+- [[libraries/langsmith/langsmith-evaluate-intermediate-steps|LangSmith evaluate()에서 중간 단계까지 평가하기]]
 - [[libraries/langsmith/langsmith-tracing-quickstart|LangSmith tracing 빠르게 붙이기: traceable과 wrap_openai 실전 예제]]
-- [[libraries/langsmith/langsmith-dataset-splits-version-tags|LangSmith dataset split과 version tag로 평가축 고정하기]]
+- [[libraries/langsmith/langsmith-dataset-splits-version-tags|LangSmith dataset split과 version tag로 평가셋 고정하기]]
 - [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue로 사람 검토 흐름 만들기]]
 - [[libraries/langsmith/langsmith-assertions-offline-evals|LangSmith assertion으로 human review를 offline eval로 연결하기]]
-- [[libraries/langsmith/langsmith-presigned-feedback-tokens|LangSmith presigned feedback token으로 프론트엔드 사용자 평가 수집하기]]
-- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프로젝트 배포 고정하기]]
+- [[libraries/langsmith/langsmith-presigned-feedback-tokens|LangSmith presigned feedback token으로 프론트엔드에서 평가 수집하기]]
+- [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프롬프트 배포 고정하기]]
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule과 webhook으로 운영 알림 자동화하기]]
+- [[libraries/langsmith/langsmith-dashboards-alerts-monitoring|LangSmith dashboards와 alerts로 운영 trace 감시하기]]
 - [[libraries/langsmith/langsmith-threads-query-sdk|LangSmith thread_id로 멀티턴 상태 추적하고 SDK로 조회하기]]
-- [[libraries/langsmith/langsmith-cli-traces-datasets-threads|LangSmith CLI로 trace, dataset, thread를 터미널에서 바로 보기]]
+- [[libraries/langsmith/langsmith-cli-traces-datasets-threads|LangSmith CLI로 trace, dataset, thread를 터미널에서 바로 다루기]]
 - [[libraries/langsmith/langsmith-bulk-export-s3-parquet|LangSmith bulk export로 trace를 S3/Parquet로 내보내기]]
 - [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]
 - [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments로 멀티모달 evaluation 운영하기]]
-- [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정밀하게 조회하기]]
+- [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정교하게 조회하기]]
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
 - [[libraries/langsmith/langsmith-feedback-formulas-sdk|LangSmith feedback formula로 여러 평가 점수를 composite metric으로 묶기]]
 - [[libraries/langsmith/langsmith-annotation-queue-sdk|LangSmith annotation queue를 Python SDK로 운영하기]]

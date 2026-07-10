@@ -38,6 +38,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-tracing-sampling-conditional|sampling과 conditional tracing으로 필요한 trace만 남기기]]
 
+## Library / Monitoring & Alerting
+
+- [[libraries/langsmith/langsmith-dashboards-alerts-monitoring|dashboards와 alerts로 운영 trace 감시하기]]
+
 ## Library / Multimodal Evaluation
 
 - [[libraries/langsmith/langsmith-evaluate-with-attachments|attachments로 image, PDF, audio eval dataset 운영하기]]

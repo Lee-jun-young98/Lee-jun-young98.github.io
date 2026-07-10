@@ -36,6 +36,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langchain/rubric-middleware-self-evaluation|LangChain RubricMiddleware로 agent 결과를 자기검토하며 재시도하기]]  
   `RubricMiddleware`, grader 모델, 검증용 tool을 조합해 deep agent 출력에 런타임 합격 기준을 걸고 자동 재시도 루프를 만드는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-dashboards-alerts-monitoring|LangSmith dashboards와 alerts로 운영 trace 감시하기]]  
+  dashboard와 alert를 이용해 에러율, latency, 비용, feedback score를 운영 지표로 감시하는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]  
   `PostgresSaver`, `checkpointer.setup()`, `thread_id`, `interrupt()`를 묶어 운영 환경에서 thread 상태를 안전하게 이어가는 방법을 정리한 글입니다.
 
