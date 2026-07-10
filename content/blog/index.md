@@ -101,6 +101,12 @@ hideAutoFolderListing: true
 
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
 
+## Library / Human-in-the-Loop Workflows
+
+- [[libraries/langgraph/interrupt-validation-loop-conditional-edges|interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]
+- [[libraries/langgraph/parallel-interrupts-resume-map|병렬 interrupt를 ID 매핑으로 한 번에 재개하기]]
+- [[libraries/langgraph/interrupt-human-approval-resume|interrupt()로 사람 확인 대기 후 Command(resume=...)로 재개하기]]
+
 ## Library / Workflow Composition
 
 - [[libraries/langgraph/add-node-destinations-command-routing-rendering|add_node(destinations=...)로 Command 라우팅 그래프를 읽기 좋게 그리기]]
@@ -226,8 +232,6 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/checkpointer-persistence-threads|checkpointer로 thread 상태를 저장하고 같은 ID로 이어서 실행하기]]
 - [[libraries/langgraph/add-messages-chat-history|add_messages로 채팅 히스토리를 안전하게 추가하고 교체하고 제거하기]]
 - [[libraries/langgraph/reducers-parallel-state-merges|reducer로 병렬 state update 안전하게 합치기]]
-- [[libraries/langgraph/interrupt-human-approval-resume|interrupt()로 사람 확인 대기 후 Command(resume=...)로 재개하기]]
-- [[libraries/langgraph/parallel-interrupts-resume-map|병렬 interrupt를 ID 매핑으로 한 번에 재개하기]]
 - [[libraries/langgraph/command-routing-state-updates|Command로 상태 업데이트와 라우팅을 한 번에 처리하기]]
 - [[libraries/langgraph/input-output-private-state-schemas|input_schema, output_schema, private state로 공개 입력과 내부 상태 분리하기]]
 - [[libraries/langgraph/functional-api-entrypoint-task-workflows|Functional API에서 @entrypoint와 @task로 replay-safe workflow 만들기]]

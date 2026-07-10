@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/interrupt-validation-loop-conditional-edges|LangGraph interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]  
+  `interrupt()` 재개 규칙 때문에 validation loop를 Python `while True`가 아니라 state와 conditional edge로 설계하는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]  
   `PostgresSaver`, `checkpointer.setup()`, `thread_id`, `interrupt()`를 묶어 운영 환경에서 thread 상태를 안전하게 이어가는 방법을 정리한 글입니다.
 
@@ -156,7 +159,6 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
   `create_agent`, `state_schema`, `ToolRuntime`를 묶어 사용자별 상태를 주입하는 패턴을 정리했습니다.
 - [[libraries/langchain/mcp-adapters-multi-server-tools|LangChain MCP adapters? ?? MCP ?? ?? ????]]  
   `langchain-mcp-adapters`, `MultiServerMCPClient`, stateful session, HTTP header/auth ???? MCP ?? ??? ????? ??? ?? ??? ??? ????.
-
 
 - [[libraries/langchain/toolruntime-stream-writer-progress|LangChain ToolRuntime.stream_writer로 도구 진행 상황 스트리밍하기]]  
   `stream_mode="custom"`과 `["updates", "custom"]`로 긴 tool 실행 중간 진행 상황을 사용자에게 보여주는 패턴을 정리했습니다.

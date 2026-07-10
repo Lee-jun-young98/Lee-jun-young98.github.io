@@ -18,6 +18,8 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/interrupt-validation-loop-conditional-edges|LangGraph interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]
+
 - [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]
 - [[libraries/langgraph/add-node-destinations-command-routing-rendering|LangGraph add_node(destinations=...)로 Command 라우팅 그래프를 읽기 좋게 그리기]]
 - [[libraries/langgraph/delta-channel-checkpoint-storage|LangGraph DeltaChannel로 긴 thread checkpoint 크기 줄이기]]
