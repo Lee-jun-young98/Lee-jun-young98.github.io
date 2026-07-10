@@ -186,6 +186,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langchain/llm-tool-emulator-middleware|LLMToolEmulator로 실제 결제, 메일, 외부 API 호출 없이 에이전트 흐름 테스트하기]]
 
+## Library / Agent Self-Evaluation
+
+- [[libraries/langchain/rubric-middleware-self-evaluation|RubricMiddleware로 agent 결과를 자기검토하며 재시도하기]]
+
 ## Library / Agent Cost & Performance
 
 - [[libraries/langchain/anthropic-prompt-caching-middleware|AnthropicPromptCachingMiddleware로 긴 system prompt 비용과 지연 줄이기]]

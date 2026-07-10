@@ -13,6 +13,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/tool-args-schema-validation|@tool과 args_schema로 도구 입력 스키마를 단단하게 만들기]]
 - [[libraries/langchain/custom-guardrails-before-after-agent|custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]
 - [[libraries/langchain/server-side-tool-use|server-side tool use로 web_search를 provider 쪽에서 실행하기]]
+- [[libraries/langchain/rubric-middleware-self-evaluation|RubricMiddleware로 agent 결과를 자기검토하며 재시도하기]]
 
 - [[libraries/langchain/create-deep-agent-quickstart|LangChain Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
 - [[libraries/langchain/quickjs-code-interpreter-middleware|LangChain Deep Agents CodeInterpreterMiddleware로 agent 안에 QuickJS 계산 루프 넣기]]

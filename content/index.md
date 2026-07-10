@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/interrupt-validation-loop-conditional-edges|LangGraph interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]  
   `interrupt()` 재개 규칙 때문에 validation loop를 Python `while True`가 아니라 state와 conditional edge로 설계하는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/rubric-middleware-self-evaluation|LangChain RubricMiddleware로 agent 결과를 자기검토하며 재시도하기]]  
+  `RubricMiddleware`, grader 모델, 검증용 tool을 조합해 deep agent 출력에 런타임 합격 기준을 걸고 자동 재시도 루프를 만드는 방법을 정리한 글입니다.
+
 - [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]  
   `PostgresSaver`, `checkpointer.setup()`, `thread_id`, `interrupt()`를 묶어 운영 환경에서 thread 상태를 안전하게 이어가는 방법을 정리한 글입니다.
 
