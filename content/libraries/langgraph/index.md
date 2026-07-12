@@ -12,7 +12,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Foundations
 
-- [[libraries/langgraph/context-schema-runtime-context|context_schema와 Runtime[Context]로 요청별 설정 주입하기]]
+- [[libraries/langgraph/context-schema-runtime-context|context_schema와 Runtime context로 요청별 설정 주입하기]]
 
 - [[libraries/langgraph/interrupt-validation-loop-conditional-edges|interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]
 

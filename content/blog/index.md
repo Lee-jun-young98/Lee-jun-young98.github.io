@@ -242,7 +242,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Foundations
 
-- [[libraries/langgraph/context-schema-runtime-context|context_schema와 Runtime[Context]로 요청별 설정 주입하기]]
+- [[libraries/langgraph/context-schema-runtime-context|context_schema와 Runtime context로 요청별 설정 주입하기]]
 
 - [[libraries/langgraph/postgres-checkpointer-production|PostgresSaver로 durable checkpointer를 운영 환경에 붙이기]]
 - [[libraries/langgraph/pydantic-state-validation-coercion|Pydantic state로 입력 검증과 타입 coercion 붙이기]]
