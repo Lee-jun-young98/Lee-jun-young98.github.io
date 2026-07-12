@@ -18,6 +18,8 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/context-schema-runtime-context|LangGraph context_schema와 Runtime[Context]로 요청별 설정 주입하기]]
+
 - [[libraries/langgraph/interrupt-validation-loop-conditional-edges|LangGraph interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]
 
 - [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]
