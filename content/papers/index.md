@@ -29,8 +29,6 @@ paper_sync: true
 
 ## [LLM](/papers/llm/)
 
-### [Continual Model Routing in Evolving Model Hubs: 계속 늘어나는 모델 허브에서 라우터를 유지하는 법](/papers/llm/2026-07-12-continual-model-routing-in-evolving-model-hubs)
-
 ### [ReAct: Synergizing Reasoning and Acting in Language Models](/papers/llm/react-synergizing-reasoning-and-acting)
 
 ## [Generative AI](/papers/generative-ai/)
