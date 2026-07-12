@@ -179,6 +179,14 @@ hideAutoFolderListing: true
 - [[libraries/langchain/user-interaction-patterns|에이전트가 사용자와 어떻게 상호작용할까]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop로 에이전트 확인 단계 넣기]]
 
+## Library / Agent Execution Environment
+
+- [[libraries/langchain/filesystem-middleware-agent-workspace|FilesystemMiddleware로 에이전트 작업 공간 붙이기]]
+- [[libraries/langchain/create-deep-agent-quickstart|Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
+- [[libraries/langchain/quickjs-code-interpreter-middleware|CodeInterpreterMiddleware로 agent 안에 QuickJS 계산 루프 넣기]]
+- [[libraries/langchain/shell-tool-middleware|ShellToolMiddleware로 agent에 지속형 셸 세션 붙이기]]
+- [[libraries/langchain/filesystem-file-search-middleware|FilesystemFileSearchMiddleware로 코드베이스 glob/grep 검색 붙이기]]
+
 ## Library / Agent Memory Hygiene
 
 - [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 이어가기]]

@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/context-schema-runtime-context|LangGraph context_schema와 Runtime[Context]로 요청별 설정 주입하기]]  
   `context_schema`, `Runtime[Context]`, `graph.invoke(..., context=...)`로 사용자 티어, locale, 모델 선택 같은 요청별 설정을 state 밖에서 다루는 방법을 정리한 글입니다.
 
+- [[libraries/langchain/filesystem-middleware-agent-workspace|LangChain FilesystemMiddleware로 에이전트 작업 공간 붙이기]]  
+  `FilesystemMiddleware`, `StateBackend`, `CompositeBackend`, `LangSmithSandbox`를 묶어 파일 작업 공간과 실행 환경을 붙이는 패턴을 정리한 글입니다.
+
 - [[libraries/langgraph/interrupt-validation-loop-conditional-edges|LangGraph interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]  
   `interrupt()` 재개 규칙 때문에 validation loop를 Python `while True`가 아니라 state와 conditional edge로 설계하는 방법을 정리한 글입니다.
 

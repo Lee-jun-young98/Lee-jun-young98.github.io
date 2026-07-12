@@ -16,6 +16,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/rubric-middleware-self-evaluation|RubricMiddleware로 agent 결과를 자기검토하며 재시도하기]]
 
 - [[libraries/langchain/create-deep-agent-quickstart|LangChain Deep Agents create_deep_agent로 planning, filesystem, subagent를 한 번에 붙이기]]
+- [[libraries/langchain/filesystem-middleware-agent-workspace|LangChain FilesystemMiddleware로 에이전트 작업 공간 붙이기]]
 - [[libraries/langchain/quickjs-code-interpreter-middleware|LangChain Deep Agents CodeInterpreterMiddleware로 agent 안에 QuickJS 계산 루프 넣기]]
 - [[libraries/langchain/deep-agents-composite-backend-workspace-memory|LangChain Deep Agents CompositeBackend로 workspace와 memory 분리하기]]
 - [[libraries/langchain/custom-middleware-hooks-state-tools|LangChain custom middleware로 before_model, after_model, state_schema 묶어 에이전트 정책 넣기]]
