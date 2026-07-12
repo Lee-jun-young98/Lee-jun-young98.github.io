@@ -30,6 +30,7 @@ hideAutoFolderListing: true
 ## Library / Trace Routing & Configuration
 
 - [[libraries/langsmith/langsmith-tracing-quickstart|traceable과 wrap_openai로 tracing 시작하기]]
+- [[libraries/langsmith/langsmith-distributed-tracing-python|분산 tracing으로 서비스 간 trace 이어 붙이기]]
 - [[libraries/langsmith/langsmith-custom-run-id-feedback|custom run ID로 feedback과 조회 흐름 안정적으로 연결하기]]
 - [[libraries/langsmith/langsmith-trace-routing-projects-workspaces|tracing_context로 trace를 project, workspace, replica로 라우팅하기]]
 - [[libraries/langsmith/langsmith-dataset-splits-version-tags|dataset split과 version tag로 평가셋 고정하기]]

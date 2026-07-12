@@ -51,6 +51,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langsmith/langsmith-manage-evaluators-sdk|LangSmith evaluators를 SDK로 생성·수정·비용 추적하기]]  
   evaluator를 workspace 자산처럼 관리하면서 prompt judge, code evaluator, spend 추적까지 묶는 운영 패턴을 정리했습니다.
 
+- [[libraries/langsmith/langsmith-distributed-tracing-python|LangSmith 분산 tracing으로 서비스 간 trace 이어 붙이기]]  
+  `get_current_run_tree()`, `to_headers()`, `TracingMiddleware`, `tracing_context(parent=...)`로 Python 서비스 사이 trace를 끊기지 않게 전파하는 방법을 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-summary-evaluators-pass-rate-f1|LangSmith summary_evaluators로 pass rate와 F1 한 번에 집계하기]]  
   `evaluate()` 결과를 example 단위에서 끝내지 않고 experiment-level pass rate, F1, p95 latency로 묶는 방법을 정리한 글입니다.
 

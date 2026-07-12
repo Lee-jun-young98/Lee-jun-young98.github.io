@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-distributed-tracing-python|LangSmith 분산 tracing으로 서비스 간 trace 이어 붙이기]]
 - [[libraries/langsmith/langsmith-online-code-evaluators|LangSmith online code evaluator로 운영 trace 품질 가드레일 걸기]]
 - [[libraries/langsmith/langsmith-custom-run-id-feedback|LangSmith custom run ID로 feedback과 조회 흐름 안정적으로 연결하기]]
 - [[libraries/langsmith/langsmith-evaluate-with-opentelemetry|LangSmith OpenTelemetry trace를 experiment로 평가하기]]
