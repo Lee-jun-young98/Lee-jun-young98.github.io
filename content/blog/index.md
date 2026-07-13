@@ -279,6 +279,7 @@ hideAutoFolderListing: true
 ## Library / Workflow State Repair & Testing
 
 - [[libraries/langgraph/update-state-manual-patching|update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]
+- [[libraries/langgraph/bulk-update-state-supersteps|bulk_update_state()로 여러 superstep checkpoint를 한 번에 심기]]
 
 ## Training / MLOps
 

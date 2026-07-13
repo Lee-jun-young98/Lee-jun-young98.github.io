@@ -26,6 +26,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 - [[libraries/langgraph/add-node-destinations-command-routing-rendering|LangGraph add_node(destinations=...)로 Command 라우팅 그래프를 읽기 좋게 그리기]]
 - [[libraries/langgraph/delta-channel-checkpoint-storage|LangGraph DeltaChannel로 긴 thread checkpoint 크기 줄이기]]
 - [[libraries/langgraph/update-state-manual-patching|LangGraph update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]
+- [[libraries/langgraph/bulk-update-state-supersteps|LangGraph bulk_update_state()로 여러 superstep checkpoint를 한 번에 심기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|LangGraph subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 - [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|LangGraph set_node_defaults()로 retry, timeout, error_handler 기본값을 한 번에 깔기]]
 - [[libraries/langgraph/pydantic-state-validation-coercion|LangGraph Pydantic state로 입력 검증과 자동 coercion 붙이기]]

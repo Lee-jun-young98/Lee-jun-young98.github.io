@@ -72,6 +72,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/update-state-manual-patching|LangGraph update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]  
   `get_state_history()`, `update_state()`, `as_node`를 이용해 체크포인트에서 분기 실행하고 테스트용 부분 실행을 빠르게 만드는 방법을 정리한 글입니다.
 
+- [[libraries/langgraph/bulk-update-state-supersteps|LangGraph bulk_update_state()로 여러 superstep checkpoint를 한 번에 심기]]  
+  `bulk_update_state()`, `get_state_history()`, `invoke(None, config)`를 묶어 여러 단계 checkpoint fixture를 만들고 뒤쪽 실행만 재개하는 방법을 정리한 글입니다.
+
 - [[libraries/langchain/delete-messages-removemessage|LangChain RemoveMessage로 대화 기록 일부만 안전하게 지우기]]  
   `RemoveMessage`, `REMOVE_ALL_MESSAGES`, `after_model`, `before_model`을 써서 short-term memory를 직접 재구성하는 패턴을 정리한 글입니다.
 

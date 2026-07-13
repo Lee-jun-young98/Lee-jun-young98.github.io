@@ -50,6 +50,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 - [[libraries/langgraph/stream-mode-updates-messages-custom|stream()으로 updates, messages, custom 이벤트 흘려보내기]]
 - [[libraries/langgraph/time-travel-replay-fork|time travel로 체크포인트 replay와 fork 되짚어보기]]
 - [[libraries/langgraph/update-state-manual-patching|update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]
+- [[libraries/langgraph/bulk-update-state-supersteps|bulk_update_state()로 여러 superstep checkpoint를 한 번에 심기]]
 
 ### Composition Patterns
 
