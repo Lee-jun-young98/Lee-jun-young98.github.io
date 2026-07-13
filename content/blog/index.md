@@ -180,6 +180,10 @@ hideAutoFolderListing: true
 - [[libraries/langchain/user-interaction-patterns|에이전트가 사용자와 어떻게 상호작용할까]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop로 에이전트 확인 단계 넣기]]
 
+## Library / Structured Output & Extraction
+
+- [[libraries/langchain/chatopenai-structured-output-json-schema|ChatOpenAI.with_structured_output()로 JSON Schema 강제하기]]
+
 ## Library / Agent Execution Environment
 
 - [[libraries/langchain/filesystem-middleware-agent-workspace|FilesystemMiddleware로 에이전트 작업 공간 붙이기]]

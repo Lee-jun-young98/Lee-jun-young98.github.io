@@ -186,3 +186,8 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 - [[libraries/langchain/llm-tool-emulator-middleware|LangChain LLMToolEmulator로 실제 툴 없이 에이전트 흐름 테스트하기]]  
   `LLMToolEmulator()`로 환불, 메일, 외부 API 같은 부작용 툴을 에뮬레이션하고 로컬·CI에서 tool-calling 흐름을 빠르게 검증하는 방법을 정리했습니다.
+
+### Library / Structured Output & Extraction
+
+- [[libraries/langchain/chatopenai-structured-output-json-schema|LangChain ChatOpenAI.with_structured_output()로 JSON Schema 강제하기]]  
+  `with_structured_output(..., method="json_schema")`로 추출·분류 응답을 타입 안정적인 객체로 받고, tool calling과 함께 확장하는 패턴을 정리한 글입니다.

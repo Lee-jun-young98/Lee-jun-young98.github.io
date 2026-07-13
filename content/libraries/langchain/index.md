@@ -25,6 +25,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 - [[libraries/langchain/mcp-adapters-multi-server-tools|LangChain MCP adapters? ?? MCP ?? ?? ????]]
 - [[libraries/langchain/mcp-server-tools|LangChain에서 MCP 서버 도구를 agent에 붙이기]]
 - [[libraries/langchain/mcp-resources-prompts-interceptors|LangChain MCP resource, prompt, interceptor로 서버 문맥 연결하기]]
+- [[libraries/langchain/chatopenai-structured-output-json-schema|ChatOpenAI.with_structured_output()로 JSON Schema 강제하기]]
 - [[libraries/langchain/create-agent-tool-calling|create_agent로 도구 호출 에이전트 시작하기]]
 - [[libraries/langchain/human-in-the-loop-agent-approval|Human-in-the-Loop으로 에이전트 확인 단계 넣기]]
 - [[libraries/langchain/short-term-memory|short-term memory로 대화 맥락 이어가기]]
