@@ -31,6 +31,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 - [[libraries/langsmith/langsmith-annotation-queues-sdk|LangSmith annotation queue로 사람 검토 흐름 만들기]]
 - [[libraries/langsmith/langsmith-assertions-offline-evals|LangSmith assertion으로 human review를 offline eval로 연결하기]]
 - [[libraries/langsmith/langsmith-presigned-feedback-tokens|LangSmith presigned feedback token으로 프론트엔드에서 평가 수집하기]]
+- [[libraries/langsmith/langsmith-prompt-webhooks-deploy-automation|LangSmith prompt webhook으로 프롬프트 배포 자동화하기]]
 - [[libraries/langsmith/langsmith-prompt-commit-tags-cache|LangSmith prompt commit tag로 프롬프트 배포 고정하기]]
 - [[libraries/langsmith/langsmith-automation-rules-webhooks|LangSmith automation rule과 webhook으로 운영 알림 자동화하기]]
 - [[libraries/langsmith/langsmith-dashboards-alerts-monitoring|LangSmith dashboards와 alerts로 운영 trace 감시하기]]

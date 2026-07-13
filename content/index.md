@@ -120,6 +120,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langsmith/langsmith-custom-run-id-feedback|LangSmith custom run ID로 feedback과 조회 흐름 안정적으로 연결하기]]  
   `uuid7()`, `langsmith_extra={"run_id": ...}`, `trace(..., run_id=...)`, `create_feedback()`를 묶어 feedback과 trace를 안정적으로 연결하는 방법을 정리했습니다.
 
+- [[libraries/langsmith/langsmith-prompt-webhooks-deploy-automation|LangSmith prompt webhook으로 프롬프트 배포 자동화하기]]
+  `push_prompt`, `prompt-webhooks` API, `tag:update`, FastAPI 수신 서버를 묶어 프롬프트 배포 자동화를 구성하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-feedback-formulas-sdk|LangSmith feedback formula로 여러 평가 점수를 composite metric으로 묶기]]  
   `create_feedback_formula()`, `list_feedback_formulas()`, `update_feedback_formula()`로 개별 평가 점수를 dataset 또는 experiment 단위 종합 점수로 묶는 방법을 정리했습니다.
 

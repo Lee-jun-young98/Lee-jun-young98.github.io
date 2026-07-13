@@ -72,6 +72,7 @@ hideAutoFolderListing: true
 
 ## Library / PromptOps
 
+- [[libraries/langsmith/langsmith-prompt-webhooks-deploy-automation|prompt webhook으로 프롬프트 배포 자동화하기]]
 - [[libraries/langsmith/langsmith-prompt-commit-tags-cache|prompt commit tag로 프롬프트 배포 고정하기]]
 
 ## Library / Production Operations
