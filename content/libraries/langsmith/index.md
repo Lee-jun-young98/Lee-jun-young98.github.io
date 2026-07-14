@@ -40,6 +40,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 - [[libraries/langsmith/langsmith-bulk-export-s3-parquet|LangSmith bulk export로 trace를 S3/Parquet로 내보내기]]
 - [[libraries/langsmith/langsmith-annotation-queue-rubric-sdk|LangSmith annotation queue rubric을 코드로 관리하기]]
 - [[libraries/langsmith/langsmith-evaluate-with-attachments|LangSmith attachments로 멀티모달 evaluation 운영하기]]
+- [[libraries/langsmith/langsmith-pairwise-annotation-queues|LangSmith pairwise annotation queue로 사람 A/B 리뷰 붙이기]]
 - [[libraries/langsmith/langsmith-query-traces-sdk|LangSmith list_runs로 운영 trace를 정교하게 조회하기]]
 - [[libraries/langsmith/langsmith-experiment-metrics-sdk|LangSmith read_project(include_stats=True)로 experiment 지표 가져오기]]
 - [[libraries/langsmith/langsmith-feedback-formulas-sdk|LangSmith feedback formula로 여러 평가 점수를 composite metric으로 묶기]]

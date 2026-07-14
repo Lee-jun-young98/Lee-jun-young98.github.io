@@ -49,6 +49,7 @@ hideAutoFolderListing: true
 
 ## Library / Comparative Evaluation
 
+- [[libraries/langsmith/langsmith-pairwise-annotation-queues|pairwise annotation queue로 사람 A/B 리뷰 붙이기]]
 - [[libraries/langsmith/langsmith-pairwise-evaluation-experiments|pairwise evaluation으로 두 실험 비교하기]]
 
 ## Library / Feedback Collection

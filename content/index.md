@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/context-schema-runtime-context|LangGraph context_schema와 Runtime context로 요청별 설정 주입하기]]  
   `context_schema`, `Runtime[Context]`, `graph.invoke(..., context=...)`로 사용자 티어, locale, 모델 선택 같은 요청별 설정을 state 밖에서 다루는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-pairwise-annotation-queues|LangSmith pairwise annotation queue로 사람 A/B 리뷰 붙이기]]  
+  comparative experiment와 pairwise annotation queue를 연결해 두 실험 출력을 사람 기준으로 빠르게 비교하는 방법을 정리한 글입니다.
+
 - [[libraries/langchain/filesystem-middleware-agent-workspace|LangChain FilesystemMiddleware로 에이전트 작업 공간 붙이기]]  
   `FilesystemMiddleware`, `StateBackend`, `CompositeBackend`, `LangSmithSandbox`를 묶어 파일 작업 공간과 실행 환경을 붙이는 패턴을 정리한 글입니다.
 
