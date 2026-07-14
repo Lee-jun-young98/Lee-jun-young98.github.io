@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/overwrite-bypass-reducers-reset-state|LangGraph Overwrite로 reducer를 우회해 state를 리셋하기]]  
+  reducer가 붙은 `messages`나 list channel을 특정 단계에서 완전 교체해야 할 때 `Overwrite`와 `__overwrite__`를 쓰는 패턴을 정리한 글입니다.
+
 - [[libraries/langgraph/context-schema-runtime-context|LangGraph context_schema와 Runtime context로 요청별 설정 주입하기]]  
   `context_schema`, `Runtime[Context]`, `graph.invoke(..., context=...)`로 사용자 티어, locale, 모델 선택 같은 요청별 설정을 state 밖에서 다루는 방법을 정리한 글입니다.
 
@@ -74,6 +77,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 - [[libraries/langgraph/update-state-manual-patching|LangGraph update_state()로 thread 상태를 수동 수정하고 이어서 실행하기]]  
   `get_state_history()`, `update_state()`, `as_node`를 이용해 체크포인트에서 분기 실행하고 테스트용 부분 실행을 빠르게 만드는 방법을 정리한 글입니다.
+
+- [[libraries/langgraph/overwrite-bypass-reducers-reset-state|LangGraph Overwrite로 reducer를 우회해 state를 리셋하기]]  
+  reducer가 붙은 누적 state를 특정 단계에서 새 기준값으로 갈아끼우고 싶을 때 `Overwrite`를 적용하는 패턴을 정리한 글입니다.
 
 - [[libraries/langgraph/bulk-update-state-supersteps|LangGraph bulk_update_state()로 여러 superstep checkpoint를 한 번에 심기]]  
   `bulk_update_state()`, `get_state_history()`, `invoke(None, config)`를 묶어 여러 단계 checkpoint fixture를 만들고 뒤쪽 실행만 재개하는 방법을 정리한 글입니다.

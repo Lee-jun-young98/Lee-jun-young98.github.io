@@ -19,6 +19,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 ### Recent LangGraph Notes
 
 - [[libraries/langgraph/context-schema-runtime-context|LangGraph context_schema와 Runtime context로 요청별 설정 주입하기]]
+- [[libraries/langgraph/overwrite-bypass-reducers-reset-state|LangGraph Overwrite로 reducer를 우회해 state를 리셋하기]]
 
 - [[libraries/langgraph/interrupt-validation-loop-conditional-edges|LangGraph interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]
 
