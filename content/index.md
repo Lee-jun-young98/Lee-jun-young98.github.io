@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-run-evals-rest-api|LangSmith REST API만으로 dataset 기반 evaluation 실행하기]]  
+  SDK 없이 LangSmith REST API로 dataset example 조회, experiment(session) 생성, run 업로드, feedback 채점까지 묶는 실전 노트입니다.
+
 - [[libraries/langgraph/overwrite-bypass-reducers-reset-state|LangGraph Overwrite로 reducer를 우회해 state를 리셋하기]]  
   reducer가 붙은 `messages`나 list channel을 특정 단계에서 완전 교체해야 할 때 `Overwrite`와 `__overwrite__`를 쓰는 패턴을 정리한 글입니다.
 
