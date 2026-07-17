@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/command-resume-vs-dict-thread-inputs|LangGraph 기존 thread에 새 입력을 넣을 때는 dict를 쓰고, interrupt 재개에만 Command(resume=...) 쓰기]]  
+  checkpointer가 있는 thread에서 새 사용자 입력은 plain dict로 다시 시작하고, `Command(resume=...)`는 interrupt 재개에만 써야 하는 이유를 검증 예제로 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-run-evals-rest-api|LangSmith REST API만으로 dataset 기반 evaluation 실행하기]]  
   SDK 없이 LangSmith REST API로 dataset example 조회, experiment(session) 생성, run 업로드, feedback 채점까지 묶는 실전 노트입니다.
 

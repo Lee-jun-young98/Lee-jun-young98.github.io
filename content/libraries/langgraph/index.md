@@ -21,6 +21,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 - [[libraries/langgraph/store-semantic-search-memory|store semantic search로 장기 메모리 검색 붙이기]]
 - [[libraries/langgraph/toolruntime-toolnode-state-store-context|ToolRuntime으로 ToolNode 안에서 state, store, context 모두 주입하기]]
 - [[libraries/langgraph/checkpointer-persistence-threads|checkpointer로 thread 상태를 저장하고 같은 ID로 이어서 실행하기]]
+- [[libraries/langgraph/command-resume-vs-dict-thread-inputs|기존 thread에 새 입력을 넣을 때는 dict를 쓰고, interrupt 재개에만 Command(resume=...) 쓰기]]
 - [[libraries/langgraph/store-cross-thread-long-term-memory|store로 cross-thread 장기 메모리 붙이기]]
 - [[libraries/langgraph/add-messages-chat-history|add_messages로 채팅 히스토리를 안전하게 추가하고 교체하고 제거하기]]
 - [[libraries/langgraph/reducers-parallel-state-merges|reducer로 병렬 state update 안전하게 합치기]]

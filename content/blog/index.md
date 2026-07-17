@@ -109,6 +109,12 @@ hideAutoFolderListing: true
 
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
 
+## Library / Workflow Thread Continuation
+
+- [[libraries/langgraph/checkpointer-persistence-threads|checkpointer로 thread 상태를 저장하고 같은 ID로 이어서 실행하기]]
+- [[libraries/langgraph/command-resume-vs-dict-thread-inputs|기존 thread에 새 입력을 넣을 때는 dict를 쓰고, interrupt 재개에만 Command(resume=...) 쓰기]]
+- [[libraries/langgraph/interrupt-human-approval-resume|interrupt()로 사람 확인 대기 후 Command(resume=...)로 재개하기]]
+
 ## Library / Human-in-the-Loop Workflows
 
 - [[libraries/langgraph/interrupt-validation-loop-conditional-edges|interrupt() 검증 루프를 while True 대신 conditional edge로 만들기]]
