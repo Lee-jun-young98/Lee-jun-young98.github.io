@@ -32,6 +32,8 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 - [[libraries/langsmith/langsmith-dataset-transformations-chat-model-schema|LangSmith dataset transformations로 운영 trace를 평가셋 형식으로 정규화하기]]
   Chat Model schema로 메시지와 tool 정의를 OpenAI 표준 형식으로 바꾸고, system prompt 제거 여부와 저장 결과 검증 기준을 정리한 글입니다.
+- [[libraries/langchain/wrap-tool-call-error-handling|LangChain wrap_tool_call로 도구 오류를 안전하게 복구하기]]<br>
+  `@wrap_tool_call`, `ToolMessage`, middleware 합성 순서를 이용해 도구 예외를 분류·마스킹하고 agent가 안전하게 복구하도록 만드는 패턴을 정리했습니다.
 
 - [[libraries/langgraph/command-resume-vs-dict-thread-inputs|LangGraph 기존 thread에 새 입력을 넣을 때는 dict를 쓰고, interrupt 재개에만 Command(resume=...) 쓰기]]  
   checkpointer가 있는 thread에서 새 사용자 입력은 plain dict로 다시 시작하고, `Command(resume=...)`는 interrupt 재개에만 써야 하는 이유를 검증 예제로 정리한 글입니다.

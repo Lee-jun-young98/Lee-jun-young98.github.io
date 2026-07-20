@@ -238,6 +238,10 @@ hideAutoFolderListing: true
 - [[libraries/langchain/tool-args-schema-validation|@tool, args_schema, parse_docstring으로 도구 입력 스키마 단단하게 만들기]]
 - [[libraries/langchain/headless-tools-client-execution|headless tools로 브라우저 전용 도구를 client에서 실행하기]]
 
+## Library / Agent Tool Reliability
+
+- [[libraries/langchain/wrap-tool-call-error-handling|wrap_tool_call로 도구 오류를 안전하게 복구하기]]
+
 ## Library / Agent Streaming Basics
 
 - [[libraries/langchain/agent-stream-events-messages-tool-calls|agent.stream_events()로 messages와 tool_calls를 함께 스트리밍하기]]
