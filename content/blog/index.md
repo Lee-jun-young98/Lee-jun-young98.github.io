@@ -20,6 +20,10 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-summary-evaluators-pass-rate-f1|LangSmith summary_evaluators로 experiment pass rate와 F1 집계하기]]
 - [[libraries/langsmith/langsmith-evaluate-intermediate-steps|LangSmith evaluate()에서 중간 단계까지 평가하기]]
 
+## Library / Dataset Preparation & Normalization
+
+- [[libraries/langsmith/langsmith-dataset-transformations-chat-model-schema|dataset transformations로 운영 trace를 평가셋 형식으로 정규화하기]]
+
 ## Library / Online Production Evaluation
 
 - [[libraries/langsmith/langsmith-online-code-evaluators|online code evaluator로 운영 trace 품질 가드레일 걸기]]

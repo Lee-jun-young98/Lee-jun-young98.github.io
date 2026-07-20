@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-dataset-transformations-chat-model-schema|LangSmith dataset transformations로 운영 trace를 평가셋 형식으로 정규화하기]]
 - [[libraries/langsmith/langsmith-run-evals-rest-api|LangSmith REST API만으로 dataset 기반 evaluation 실행하기]]
 - [[libraries/langsmith/langsmith-distributed-tracing-python|LangSmith 분산 tracing으로 서비스 간 trace 이어 붙이기]]
 - [[libraries/langsmith/langsmith-online-code-evaluators|LangSmith online code evaluator로 운영 trace 품질 가드레일 걸기]]
