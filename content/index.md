@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/encrypted-checkpoint-serializer|LangGraph EncryptedSerializer로 checkpoint를 AES 암호화하기]]
+  SQLite와 Postgres checkpoint payload를 저장 시점에 암호화하고 키 관리·회전·평문 migration에서 놓치기 쉬운 점을 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-dataset-transformations-chat-model-schema|LangSmith dataset transformations로 운영 trace를 평가셋 형식으로 정규화하기]]
   Chat Model schema로 메시지와 tool 정의를 OpenAI 표준 형식으로 바꾸고, system prompt 제거 여부와 저장 결과 검증 기준을 정리한 글입니다.
 - [[libraries/langchain/wrap-tool-call-error-handling|LangChain wrap_tool_call로 도구 오류를 안전하게 복구하기]]<br>

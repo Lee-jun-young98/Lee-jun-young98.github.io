@@ -35,6 +35,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Runtime & Reliability
 
+- [[libraries/langgraph/encrypted-checkpoint-serializer|EncryptedSerializer로 checkpoint를 AES 암호화하기]]
 - [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
 - [[libraries/langgraph/durability-modes-sync-async-exit|durability로 sync, async, exit를 언제 고를까]]
 - [[libraries/langgraph/backward-compatibility-graph-migrations|backward compatibility로 in-flight thread 안 깨고 그래프 변경하기]]

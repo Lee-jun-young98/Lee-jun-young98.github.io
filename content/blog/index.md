@@ -143,6 +143,10 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/cache-policy-node-caching|cache_policy로 비싼 노드 결과 재사용하기]]
 - [[libraries/langgraph/delta-channel-checkpoint-storage|DeltaChannel로 긴 thread checkpoint 크기 줄이기]]
 
+## Library / Workflow Security
+
+- [[libraries/langgraph/encrypted-checkpoint-serializer|EncryptedSerializer로 checkpoint를 AES 암호화하기]]
+
 ## Library / Workflow State Repair & Reset
 
 - [[libraries/langgraph/overwrite-bypass-reducers-reset-state|Overwrite로 reducer를 우회해 누적 state 리셋하기]]
