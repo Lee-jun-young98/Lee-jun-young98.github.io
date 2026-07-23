@@ -136,6 +136,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Debugging
 
+- [[libraries/langgraph/graph-visualization-mermaid-png|graph를 Mermaid와 PNG로 시각화해 실행 구조 검토하기]]
 - [[libraries/langgraph/static-breakpoints-interrupt-before-after|static breakpoint로 노드 전후 실행을 멈춰 디버깅하기]]
 
 ## Library / Workflow Performance
