@@ -10,6 +10,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 
 ## 글 목록
 
+- [[libraries/langchain/standard-content-blocks-cross-provider|content_blocks로 모델별 메시지를 같은 형식으로 다루기]]
 - [[libraries/langchain/wrap-tool-call-error-handling|wrap_tool_call로 도구 오류를 안전하게 복구하기]]
 - [[libraries/langchain/agent-stream-events-messages-tool-calls|agent.stream_events()로 messages와 tool_calls를 함께 스트리밍하기]]
 - [[libraries/langchain/tool-args-schema-validation|@tool과 args_schema로 도구 입력 스키마를 단단하게 만들기]]

@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Message Interoperability
+
+- [[libraries/langchain/standard-content-blocks-cross-provider|LangChain content_blocks로 모델별 메시지를 같은 형식으로 다루기]]
+
 ## Library / Observability & Evaluation
 
 - [[libraries/langsmith/langsmith-run-evals-rest-api|REST API만으로 dataset 기반 evaluation 실행하기]]
