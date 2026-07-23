@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/graph-visualization-mermaid-png|LangGraph graph를 Mermaid와 PNG로 시각화하기]]
   조건부 라우팅을 정확히 표시하고 Mermaid 원문과 PNG를 문서·PR·CI에서 활용하는 방법을 정리한 글입니다.
 
+- [[libraries/langsmith/langsmith-prompt-optimization-job-rest-api|LangSmith Prompt Optimization Job을 REST API로 자동화하기]]
+  비동기 prompt optimization job을 시작하고 상태·로그를 폴링한 뒤 평가와 환경 승격으로 연결하는 흐름을 정리한 글입니다.
+
 - [[libraries/langgraph/encrypted-checkpoint-serializer|LangGraph EncryptedSerializer로 checkpoint를 AES 암호화하기]]
   SQLite와 Postgres checkpoint payload를 저장 시점에 암호화하고 키 관리·회전·평문 migration에서 놓치기 쉬운 점을 정리한 글입니다.
 
