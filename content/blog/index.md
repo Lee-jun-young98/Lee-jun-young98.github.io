@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Model Capability & Routing
+
+- [[libraries/langchain/model-profiles-capability-gating|LangChain model profile로 모델 기능을 실행 전에 검사하기]]
+
 ## Library / Message Interoperability
 
 - [[libraries/langchain/standard-content-blocks-cross-provider|LangChain content_blocks로 모델별 메시지를 같은 형식으로 다루기]]

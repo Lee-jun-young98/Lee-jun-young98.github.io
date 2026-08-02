@@ -36,6 +36,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/state-snapshot-tasks-failure-diagnostics|LangGraph StateSnapshot.tasks로 실패 노드 진단하기]]<br>
   실패한 thread의 checkpoint에서 node별 error와 interrupt를 구분하고 안전한 복구 판단에 연결하는 방법을 정리했습니다.
 
+- [[libraries/langchain/model-profiles-capability-gating|LangChain model profile로 모델 기능을 실행 전에 검사하기]]<br>
+  context window, tool calling, structured output, multimodal 지원을 호출 전에 확인하고 capability fallback을 구성하는 방법을 정리했습니다.
+
 - [[libraries/langchain/standard-content-blocks-cross-provider|LangChain content_blocks로 모델별 메시지를 같은 형식으로 다루기]]<br>
   OpenAI와 Anthropic의 text, reasoning, image 출력을 표준 블록으로 읽고 저장·UI 경계를 공급자에서 분리하는 방법을 정리했습니다.
 
