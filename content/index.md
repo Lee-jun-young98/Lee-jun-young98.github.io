@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-multi-turn-online-evaluators|LangSmith multi-turn online evaluator로 전체 대화 품질 평가하기]]<br>
+  같은 `thread_id`의 여러 턴을 idle time 뒤 하나의 대화로 조립해 semantic outcome과 trajectory를 평가하는 운영 패턴을 정리했습니다.
+
 - [[libraries/langgraph/state-snapshot-tasks-failure-diagnostics|LangGraph StateSnapshot.tasks로 실패 노드 진단하기]]<br>
   실패한 thread의 checkpoint에서 node별 error와 interrupt를 구분하고 안전한 복구 판단에 연결하는 방법을 정리했습니다.
 
