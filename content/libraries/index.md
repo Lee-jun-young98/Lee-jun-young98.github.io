@@ -50,6 +50,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/dynamic-response-format-middleware|middleware로 상황별 response format 동적 선택하기]]
 - [[libraries/langchain/model-profiles-capability-gating|model profile로 모델 기능을 실행 전에 검사하기]]
 - [[libraries/langchain/standard-content-blocks-cross-provider|content_blocks로 모델별 메시지를 같은 형식으로 다루기]]
 - [[libraries/langchain/wrap-tool-call-error-handling|wrap_tool_call로 도구 오류를 안전하게 복구하기]]
