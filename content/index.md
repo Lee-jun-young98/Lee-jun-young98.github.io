@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-local-evaluation-no-upload|LangSmith upload_results=False로 평가를 로컬에서만 실행하기]]<br>
+  임시 experiment와 trace를 업로드하지 않고 evaluator를 검증하고 실패 사례를 CI quality gate로 쓰는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-multi-turn-online-evaluators|LangSmith multi-turn online evaluator로 전체 대화 품질 평가하기]]<br>
   같은 `thread_id`의 여러 턴을 idle time 뒤 하나의 대화로 조립해 semantic outcome과 trajectory를 평가하는 운영 패턴을 정리했습니다.
 
