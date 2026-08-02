@@ -299,6 +299,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Runtime & Observability
 
+- [[libraries/langgraph/state-snapshot-tasks-failure-diagnostics|StateSnapshot.tasks로 실패 노드 진단하기]]
 - [[libraries/langgraph/event-streaming-v3-projections|event streaming v3로 상태, 토큰, interrupt를 한 스트림에서 다루기]]
 - [[libraries/langgraph/stream-mode-updates-messages-custom|stream()으로 updates, messages, custom, debug 이벤트 흘려보내기]]
 - [[libraries/langgraph/time-travel-replay-fork|time travel로 체크포인트 replay와 fork 디버깅하기]]

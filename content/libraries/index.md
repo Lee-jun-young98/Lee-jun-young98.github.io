@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/state-snapshot-tasks-failure-diagnostics|LangGraph StateSnapshot.tasks로 실패 노드 진단하기]]
 - [[libraries/langgraph/graph-visualization-mermaid-png|LangGraph graph를 Mermaid와 PNG로 시각화하기]]
 - [[libraries/langgraph/encrypted-checkpoint-serializer|LangGraph EncryptedSerializer로 checkpoint를 AES 암호화하기]]
 - [[libraries/langgraph/command-resume-vs-dict-thread-inputs|LangGraph 기존 thread에 새 입력을 넣을 때는 dict를 쓰고, interrupt 재개에만 Command(resume=...) 쓰기]]
