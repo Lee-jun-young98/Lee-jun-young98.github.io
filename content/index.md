@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/pending-writes-parallel-failure-resume|LangGraph pending writes로 병렬 실패를 이어서 복구하기]]<br>
+  같은 super-step의 성공한 node 출력을 보존하고 재개 시 실패한 node만 다시 실행하는 복구 패턴을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-local-evaluation-no-upload|LangSmith upload_results=False로 평가를 로컬에서만 실행하기]]<br>
   임시 experiment와 trace를 업로드하지 않고 evaluator를 검증하고 실패 사례를 CI quality gate로 쓰는 방법을 정리했습니다.
 

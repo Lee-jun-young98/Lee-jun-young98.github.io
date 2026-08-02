@@ -117,6 +117,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Reliability
 
+- [[libraries/langgraph/pending-writes-parallel-failure-resume|pending writes로 병렬 node 부분 실패를 이어서 복구하기]]
 - [[libraries/langgraph/postgres-checkpointer-production|PostgresSaver로 durable checkpointer를 운영 환경에 붙이기]]
 - [[libraries/langgraph/set-node-defaults-graph-wide-fault-tolerance|set_node_defaults()로 retry, timeout, error_handler 기본값 한 번에 깔기]]
 - [[libraries/langgraph/durability-modes-sync-async-exit|durability로 sync, async, exit를 워크로드별로 고르기]]
