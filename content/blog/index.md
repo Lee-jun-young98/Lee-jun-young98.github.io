@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Agent Control Flow
+
+- [[libraries/langchain/middleware-jump-to-agent-routing|LangChain middleware jump_to로 에이전트 루프 제어하기]]
+
 ## Library / Output Contracts
 
 - [[libraries/langchain/dynamic-response-format-middleware|LangChain middleware로 상황별 response format 동적 선택하기]]

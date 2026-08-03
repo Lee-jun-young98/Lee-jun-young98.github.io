@@ -36,6 +36,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langsmith/langsmith-custom-cost-tracking-usage-metadata|LangSmith usage_metadata로 custom model과 tool 비용 추적하기]]<br>
   custom·self-hosted model의 token usage와 유료 tool 비용을 trace에 기록해 한곳에서 분석하는 방법을 정리했습니다.
 
+- [[libraries/langchain/middleware-jump-to-agent-routing|LangChain middleware jump_to로 에이전트 루프 제어하기]]<br>
+  `before_model`, `after_model`, `can_jump_to`를 조합해 agent를 조기 종료하거나 model과 tools 경로로 안전하게 재진입하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/pending-writes-parallel-failure-resume|LangGraph pending writes로 병렬 실패를 이어서 복구하기]]<br>
   같은 super-step의 성공한 node 출력을 보존하고 재개 시 실패한 node만 다시 실행하는 복구 패턴을 정리했습니다.
 

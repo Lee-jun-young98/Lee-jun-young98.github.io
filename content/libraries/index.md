@@ -52,6 +52,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/middleware-jump-to-agent-routing|middleware jump_to로 에이전트 루프 제어하기]]
 - [[libraries/langchain/dynamic-response-format-middleware|middleware로 상황별 response format 동적 선택하기]]
 - [[libraries/langchain/model-profiles-capability-gating|model profile로 모델 기능을 실행 전에 검사하기]]
 - [[libraries/langchain/standard-content-blocks-cross-provider|content_blocks로 모델별 메시지를 같은 형식으로 다루기]]
