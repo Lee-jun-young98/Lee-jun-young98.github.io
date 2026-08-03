@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/subgraph-streaming-v2-namespaces|LangGraph subgraph 스트림을 v2 namespace로 라우팅하기]]<br>
   루트와 중첩 그래프의 update를 한 스트림에서 받고 namespace로 UI·로그 scope를 안전하게 나누는 방법을 정리했습니다.
 
+- [[libraries/langchain/middleware-jump-to-agent-routing|LangChain middleware jump_to로 에이전트 루프 제어하기]]<br>
+  `before_model`, `after_model`, `can_jump_to`를 조합해 agent를 조기 종료하거나 model과 tools 경로로 안전하게 재진입하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/pending-writes-parallel-failure-resume|LangGraph pending writes로 병렬 실패를 이어서 복구하기]]<br>
   같은 super-step의 성공한 node 출력을 보존하고 재개 시 실패한 node만 다시 실행하는 복구 패턴을 정리했습니다.
 
