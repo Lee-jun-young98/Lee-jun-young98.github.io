@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-custom-cost-tracking-usage-metadata|LangSmith usage_metadata로 custom model과 tool 비용 추적하기]]
 - [[libraries/langsmith/langsmith-local-evaluation-no-upload|LangSmith upload_results=False로 평가를 로컬에서만 실행하기]]
 - [[libraries/langsmith/langsmith-multi-turn-online-evaluators|LangSmith multi-turn online evaluator로 전체 대화 품질 평가하기]]
 - [[libraries/langsmith/langsmith-prompt-optimization-job-rest-api|LangSmith Prompt Optimization Job을 REST API로 자동화하기]]

@@ -56,6 +56,7 @@ hideAutoFolderListing: true
 
 ## Library / Trace Coverage & Cost Control
 
+- [[libraries/langsmith/langsmith-custom-cost-tracking-usage-metadata|usage_metadata로 custom model과 tool 비용 추적하기]]
 - [[libraries/langsmith/langsmith-tracing-sampling-conditional|sampling과 conditional tracing으로 필요한 trace만 남기기]]
 
 ## Library / Monitoring & Alerting

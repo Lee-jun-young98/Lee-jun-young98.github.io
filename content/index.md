@@ -33,6 +33,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/subgraph-streaming-v2-namespaces|LangGraph subgraph 스트림을 v2 namespace로 라우팅하기]]<br>
   루트와 중첩 그래프의 update를 한 스트림에서 받고 namespace로 UI·로그 scope를 안전하게 나누는 방법을 정리했습니다.
 
+- [[libraries/langsmith/langsmith-custom-cost-tracking-usage-metadata|LangSmith usage_metadata로 custom model과 tool 비용 추적하기]]<br>
+  custom·self-hosted model의 token usage와 유료 tool 비용을 trace에 기록해 한곳에서 분석하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/pending-writes-parallel-failure-resume|LangGraph pending writes로 병렬 실패를 이어서 복구하기]]<br>
   같은 super-step의 성공한 node 출력을 보존하고 재개 시 실패한 node만 다시 실행하는 복구 패턴을 정리했습니다.
 
