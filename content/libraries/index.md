@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/subgraph-streaming-v2-namespaces|LangGraph subgraph 스트림을 v2 namespace로 라우팅하기]]
 - [[libraries/langgraph/pending-writes-parallel-failure-resume|LangGraph pending writes로 병렬 실패를 이어서 복구하기]]
 - [[libraries/langgraph/state-snapshot-tasks-failure-diagnostics|LangGraph StateSnapshot.tasks로 실패 노드 진단하기]]
 - [[libraries/langgraph/graph-visualization-mermaid-png|LangGraph graph를 Mermaid와 PNG로 시각화하기]]

@@ -35,6 +35,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Runtime & Reliability
 
+- [[libraries/langgraph/subgraph-streaming-v2-namespaces|subgraph 스트림을 v2 namespace로 라우팅하기]]
 - [[libraries/langgraph/pending-writes-parallel-failure-resume|pending writes로 병렬 실패를 이어서 복구하기]]
 - [[libraries/langgraph/state-snapshot-tasks-failure-diagnostics|StateSnapshot.tasks로 실패 노드 진단하기]]
 - [[libraries/langgraph/graph-visualization-mermaid-png|graph를 Mermaid와 PNG로 시각화하기]]

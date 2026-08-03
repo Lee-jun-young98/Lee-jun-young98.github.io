@@ -155,6 +155,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Debugging
 
+- [[libraries/langgraph/subgraph-streaming-v2-namespaces|subgraphs=True와 v2 namespace로 중첩 workflow 진행 상황 라우팅하기]]
 - [[libraries/langgraph/graph-visualization-mermaid-png|graph를 Mermaid와 PNG로 시각화해 실행 구조 검토하기]]
 - [[libraries/langgraph/static-breakpoints-interrupt-before-after|static breakpoint로 노드 전후 실행을 멈춰 디버깅하기]]
 
