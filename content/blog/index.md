@@ -27,6 +27,7 @@ hideAutoFolderListing: true
 
 ## Library / Observability & Evaluation
 
+- [[libraries/langsmith/langsmith-production-trace-agent-backtesting|운영 trace로 새 agent 버전 backtest하기]]
 - [[libraries/langsmith/langsmith-local-evaluation-no-upload|LangSmith upload_results=False로 평가를 로컬에서만 실행하기]]
 - [[libraries/langsmith/langsmith-run-evals-rest-api|REST API만으로 dataset 기반 evaluation 실행하기]]
 - [[libraries/langsmith/langsmith-upload-external-experiments-rest-api|REST API로 외부 실험 결과 업로드하기]]
