@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langchain/runtime-execution-info-server-info|LangChain Runtime execution_info와 server_info로 실행 문맥 추적하기]]<br>
+  도구와 middleware에서 thread, run, task, retry, 배포 인증 정보를 읽어 로그·멱등성·권한 검사를 구성하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-production-trace-agent-backtesting|LangSmith 운영 trace로 새 agent 버전 backtest하기]]<br>
   실제 운영 입력과 기존 출력을 baseline experiment로 고정하고 새 agent를 같은 dataset에서 평가해 배포 전 회귀를 찾는 방법을 정리했습니다.
 

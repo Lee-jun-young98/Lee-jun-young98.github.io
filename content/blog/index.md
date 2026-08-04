@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Agent Runtime Identity & Authorization
+
+- [[libraries/langchain/runtime-execution-info-server-info|LangChain Runtime execution_info와 server_info로 실행 문맥 추적하기]]
+
 ## Library / Agent Control Flow
 
 - [[libraries/langchain/middleware-jump-to-agent-routing|LangChain middleware jump_to로 에이전트 루프 제어하기]]

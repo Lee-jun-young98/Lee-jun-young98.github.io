@@ -10,6 +10,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 
 ## 글 목록
 
+- [[libraries/langchain/runtime-execution-info-server-info|Runtime execution_info와 server_info로 실행 문맥 추적하기]]
 - [[libraries/langchain/middleware-jump-to-agent-routing|middleware jump_to로 에이전트 루프 제어하기]]
 - [[libraries/langchain/dynamic-response-format-middleware|middleware로 상황별 response format 동적 선택하기]]
 - [[libraries/langchain/model-profiles-capability-gating|model profile로 모델 기능을 실행 전에 검사하기]]
