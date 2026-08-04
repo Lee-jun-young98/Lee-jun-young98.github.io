@@ -135,6 +135,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Operations
 
+- [[libraries/langgraph/checkpoint-thread-retention-delete|delete_thread로 checkpoint 보존 기간과 thread 삭제 운영하기]]
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
 
 ## Library / Workflow Thread Continuation

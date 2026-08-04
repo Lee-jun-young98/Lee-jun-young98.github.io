@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langgraph/checkpoint-thread-retention-delete|LangGraph checkpoint를 thread 단위로 보존하고 삭제하기]]<br>
+  자동 TTL을 기대하지 않고 완료된 thread의 checkpoint와 pending write를 안전하게 정리하는 운영 패턴을 정리했습니다.
+
 - [[libraries/langgraph/subgraph-streaming-v2-namespaces|LangGraph subgraph 스트림을 v2 namespace로 라우팅하기]]<br>
   루트와 중첩 그래프의 update를 한 스트림에서 받고 namespace로 UI·로그 scope를 안전하게 나누는 방법을 정리했습니다.
 
