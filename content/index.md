@@ -35,6 +35,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 - [[libraries/langgraph/async-nodes-ainvoke-event-loop|LangGraph async 노드와 ainvoke로 I/O 병렬 처리하기]]<br>
   독립 I/O 노드를 같은 super-step에서 병렬 실행하고 이벤트 루프 블로킹을 피하는 패턴을 정리했습니다.
 
+- [[libraries/langchain/runtime-tool-registration-middleware|LangChain runtime tool registration으로 실행 중 발견한 도구 연결하기]]<br>
+  MCP, 데이터베이스, 외부 registry에서 실행 중 발견한 도구를 model 노출과 실제 실행 경로에 함께 연결하는 방법을 정리했습니다.
+
 - [[libraries/langchain/runtime-execution-info-server-info|LangChain Runtime execution_info와 server_info로 실행 문맥 추적하기]]<br>
   도구와 middleware에서 thread, run, task, retry, 배포 인증 정보를 읽어 로그·멱등성·권한 검사를 구성하는 방법을 정리했습니다.
 

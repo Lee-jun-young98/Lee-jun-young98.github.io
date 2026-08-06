@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Dynamic Tool Discovery & Execution
+
+- [[libraries/langchain/runtime-tool-registration-middleware|LangChain runtime tool registration으로 실행 중 발견한 도구 연결하기]]
+
 ## Library / Agent Runtime Identity & Authorization
 
 - [[libraries/langchain/runtime-execution-info-server-info|LangChain Runtime execution_info와 server_info로 실행 문맥 추적하기]]
