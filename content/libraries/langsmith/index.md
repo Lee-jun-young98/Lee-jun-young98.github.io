@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-experiment-repetitions-concurrency-cache|LangSmith 평가 반복·동시성·캐시로 실험 비용과 분산 관리하기]]
 - [[libraries/langsmith/langsmith-production-trace-agent-backtesting|LangSmith 운영 trace로 새 agent 버전 backtest하기]]
 - [[libraries/langsmith/langsmith-custom-cost-tracking-usage-metadata|LangSmith usage_metadata로 custom model과 tool 비용 추적하기]]
 - [[libraries/langsmith/langsmith-local-evaluation-no-upload|LangSmith upload_results=False로 평가를 로컬에서만 실행하기]]
