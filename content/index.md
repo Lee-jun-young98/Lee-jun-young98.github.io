@@ -31,6 +31,10 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 ### Library Study Notes
 
 - [[libraries/langsmith/langsmith-experiment-repetitions-concurrency-cache|LangSmith 평가 반복·동시성·캐시로 실험 비용과 분산 관리하기]]<br>
+
+- [[libraries/langgraph/async-nodes-ainvoke-event-loop|LangGraph async 노드와 ainvoke로 I/O 병렬 처리하기]]<br>
+  독립 I/O 노드를 같은 super-step에서 병렬 실행하고 이벤트 루프 블로킹을 피하는 패턴을 정리했습니다.
+
 - [[libraries/langchain/runtime-execution-info-server-info|LangChain Runtime execution_info와 server_info로 실행 문맥 추적하기]]<br>
   도구와 middleware에서 thread, run, task, retry, 배포 인증 정보를 읽어 로그·멱등성·권한 검사를 구성하는 방법을 정리했습니다.
 
