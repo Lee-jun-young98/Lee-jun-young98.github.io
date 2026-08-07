@@ -34,6 +34,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ## Projects
 
+- [Agent RAG Evaluation Lab](https://github.com/Lee-jun-young98/agent-rag-evaluation-lab)  
+  회사 코드나 내부 인프라를 포함하지 않고, codebase RAG, agent routing, mock PR review, retrieval evaluation을 public-safe하게 재현한 포트폴리오용 lab입니다.
+
 - [[10_projects/LLM-SFT-Training-Platform|LLM SFT Training Platform]]  
   Hydra 기반 설정 관리, QA 데이터셋, trainer 구조, 실험 추적을 묶어 LLM SFT 파이프라인을 정리한 프로젝트입니다.
 
