@@ -150,6 +150,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Operations
 
+- [[libraries/langgraph/store-ttl-memory-expiration|Store TTL로 cross-thread 장기 메모리 만료 정책 운영하기]]
 - [[libraries/langgraph/checkpoint-thread-retention-delete|delete_thread로 checkpoint 보존 기간과 thread 삭제 운영하기]]
 - [[libraries/langgraph/graceful-shutdown-runcontrol-resume|RunControl로 graceful shutdown 후 안전하게 재개하기]]
 
