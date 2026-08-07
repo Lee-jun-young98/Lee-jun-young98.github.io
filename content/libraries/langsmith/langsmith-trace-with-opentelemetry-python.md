@@ -225,4 +225,3 @@ trace tree, run type, inputs/outputs, metadata, token usage를 LangSmith UI에�
 - [Evaluate with OpenTelemetry](https://docs.langchain.com/langsmith/evaluate-with-opentelemetry)
 - [Log traces to a specific project](https://docs.langchain.com/langsmith/log-traces-to-project)
 - [OpenTelemetry Python SDK](https://opentelemetry.io/docs/languages/python/)
-
