@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Agent State & Usage Accounting
+
+- [[libraries/langchain/extended-model-response-state-updates|LangChain ExtendedModelResponse로 model call 결과와 state 함께 갱신하기]]
+
 ## Library / Dynamic Tool Discovery & Execution
 
 - [[libraries/langchain/runtime-tool-registration-middleware|LangChain runtime tool registration으로 실행 중 발견한 도구 연결하기]]

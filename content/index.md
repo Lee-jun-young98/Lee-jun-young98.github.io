@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langchain/extended-model-response-state-updates|LangChain ExtendedModelResponse로 model call 결과와 state 함께 갱신하기]]<br>
+  `wrap_model_call`에서 모델 응답을 보존하면서 token usage와 감사 메타데이터를 reducer 기반 agent state에 함께 누적하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-trace-with-opentelemetry-python|LangSmith에 OpenTelemetry Python trace 보내기]]<br>
   LangChain 없이 만든 Python 서비스의 span을 OTLP로 보내고 입력·출력·token·metadata를 LangSmith run 필드에 매핑하는 방법을 정리했습니다.
 
