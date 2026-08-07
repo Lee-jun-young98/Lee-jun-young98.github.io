@@ -43,6 +43,25 @@ Building AI systems that are fast, reliable, and useful in the real world.
 - [[10_projects/Fire-Detection-Robot|Fire Detection Robot]]  
   YOLO, Jetson, OpenCV 기반으로 edge 환경에서 화재 탐지를 다룬 프로젝트입니다.
 
+## Representative Notes
+
+처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
+
+- [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]  
+  운영 환경에서 agent thread 상태를 안전하게 이어가기 위한 checkpoint 구조를 정리했습니다.
+
+- [[libraries/langsmith/langsmith-production-trace-agent-backtesting|LangSmith 운영 trace로 새 agent 버전 backtest하기]]  
+  실제 운영 trace를 baseline으로 삼아 새 agent 버전의 회귀를 배포 전에 찾는 방법을 정리했습니다.
+
+- [[libraries/langchain/custom-guardrails-before-after-agent|LangChain custom guardrails로 before_agent와 after_agent 안전 레이어 넣기]]  
+  agent 실행 전후에 안전성 검사를 넣고 실패를 제어하는 guardrail 패턴을 다룹니다.
+
+- [[libraries/langgraph/store-semantic-search-memory|LangGraph store semantic search로 장기 메모리 검색 붙이기]]  
+  cross-thread memory를 embedding index로 검색해 agent memory를 구성하는 방법을 정리했습니다.
+
+- [[libraries/langsmith/langsmith-bulk-export-s3-parquet|LangSmith bulk export로 trace를 S3/Parquet로 내보내기]]  
+  운영 trace를 S3-compatible storage와 Parquet로 적재해 분석 가능한 형태로 만드는 흐름을 다룹니다.
+
 ## Study Notes
 
 ### Library Study Notes
