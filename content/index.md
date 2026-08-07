@@ -34,6 +34,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ## Projects
 
+- [Production AI Performance Lab](https://github.com/Lee-jun-young98/production-ai-performance-lab)  
+  RAG pipeline latency, reranker batching, length bucketing, TTFT, synthetic benchmark 분석을 통해 운영형 AI 시스템의 성능 최적화 과정을 정리한 engineering lab입니다.
+
 - [Agent RAG Evaluation Lab](https://github.com/Lee-jun-young98/agent-rag-evaluation-lab)  
   codebase RAG, agent routing, mock PR review, retrieval evaluation을 작은 예제로 정리한 Agent/RAG 실습 lab입니다.
 
