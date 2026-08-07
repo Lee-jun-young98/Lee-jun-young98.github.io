@@ -30,6 +30,9 @@ AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 �
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-trace-with-opentelemetry-python|LangSmith에 OpenTelemetry Python trace 보내기]]<br>
+  LangChain 없이 만든 Python 서비스의 span을 OTLP로 보내고 입력·출력·token·metadata를 LangSmith run 필드에 매핑하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-experiment-repetitions-concurrency-cache|LangSmith 평가 반복·동시성·캐시로 실험 비용과 분산 관리하기]]<br>
 
 - [[libraries/langgraph/async-nodes-ainvoke-event-loop|LangGraph async 노드와 ainvoke로 I/O 병렬 처리하기]]<br>

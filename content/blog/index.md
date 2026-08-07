@@ -56,8 +56,9 @@ hideAutoFolderListing: true
 - [[libraries/langsmith/langsmith-multi-turn-online-evaluators|multi-turn online evaluator로 전체 대화 품질 평가하기]]
 - [[libraries/langsmith/langsmith-online-code-evaluators|online code evaluator로 운영 trace 품질 가드레일 걸기]]
 
-## Library / OpenTelemetry Evaluation
+## Library / OpenTelemetry Tracing & Evaluation
 
+- [[libraries/langsmith/langsmith-trace-with-opentelemetry-python|LangChain 없이 OpenTelemetry Python trace를 LangSmith로 보내기]]
 - [[libraries/langsmith/langsmith-evaluate-with-opentelemetry|OpenTelemetry trace를 LangSmith experiment로 평가하기]]
 
 ## Library / Trace Routing & Configuration
