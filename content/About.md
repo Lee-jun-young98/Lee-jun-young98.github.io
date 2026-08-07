@@ -4,31 +4,37 @@ title: About
 
 # About
 
-안녕하세요. AI 모델과 학습 파이프라인을 공부하며, 배운 내용을 프로젝트와 글로 정리하는 이준영입니다.
+안녕하세요. AI Systems Engineer 이준영입니다.
 
-관심사는 LLM fine-tuning, computer vision, medical AI, diffusion model, MLOps입니다. 특히 모델을 단순히 실행해 보는 것보다 데이터 전처리, 학습 설정, 평가, 산출물 관리까지 이어지는 전체 흐름을 이해하는 데 집중하고 있습니다.
+저는 연구 아이디어를 실험 코드에만 머무르게 하지 않고, 실제 사용자가 체감할 수 있는 AI 시스템으로 연결하는 일에 관심이 있습니다. 현재는 LLM 플랫폼, agent/RAG 시스템, vision AI, GPU 기반 모델 서빙, 평가와 관측 가능성까지 이어지는 production AI engineering을 중심으로 공부하고 구현합니다.
 
-## I Study
+## Identity
 
-- LLM SFT와 모델별 trainer 구조
-- Vision transformer, SAM, diffusion model, multimodal model
-- 의료 이미지 분류와 segmentation
-- Hydra, Docker, CUDA, GPU 서버, S3/MinIO 기반 실험 관리
-- 논문을 읽고 실제 프로젝트 구조로 옮기는 방법
+I build production-grade AI systems that turn research into real-world user value.
 
-## I Build
+## Focus
+
+- **LLM Systems**: LLM serving, embedding, VectorDB, RAG, SFT pipeline
+- **Agent Systems**: LangGraph, LangChain, LangSmith, memory, guardrails, streaming
+- **AI Platform Engineering**: Kubernetes, GPU serving, deployment architecture, observability
+- **Performance Optimization**: vLLM, batching, TTFT, throughput, GPU-efficient inference
+- **Vision AI**: medical image AI, detection, segmentation, edge AI
+
+## What I Build
 
 - [[10_projects/LLM-SFT-Training-Platform|LLM SFT Training Platform]]
 - [[10_projects/Pressure-Ulcer-AI|Pressure Ulcer AI]]
 - [[10_projects/Fire-Detection-Robot|Fire Detection Robot]]
 
-## Writing Style
+## How I Work
 
-이 블로그는 완성된 지식만 모아두는 공간이 아니라, 공부하면서 막혔던 지점과 다시 이해한 과정을 남기는 공간입니다. 논문 리뷰에서는 핵심 아이디어, 모델 구조, 실험 관점, 프로젝트에 적용할 수 있는 부분을 중심으로 정리합니다.
+모델 성능만 보는 것보다 데이터 흐름, 평가 기준, 추적 가능한 실험, 배포 구조, 운영 중 관측 가능성까지 함께 보는 것을 중요하게 생각합니다. 좋은 AI 시스템은 “모델이 동작한다”에서 끝나지 않고, 빠르고 안정적이며 재현 가능하고 실제 문제를 줄여야 한다고 믿습니다.
+
+이 블로그에는 agent runtime, evaluation, observability, training pipeline, vision AI, GPU serving처럼 실제 구현에서 다시 꺼내 쓸 수 있는 노트를 정리합니다.
 
 ## Links
 
 - GitHub: [Lee-jun-young98](https://github.com/Lee-jun-young98)
-- Blog: [[blog/index|블로그 글 모음]]
-- Paper Reviews: [[papers/index|논문 리뷰 노트]]
+- Blog: [[blog/index|Blog]]
+- Paper Reviews: [[papers/index|Paper Reviews]]
 - Library Study Notes: [[libraries/index|Library Study Notes]]

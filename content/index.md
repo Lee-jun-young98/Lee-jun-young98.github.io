@@ -1,19 +1,36 @@
 ﻿---
-title: Junyoung AI Study Notes
+title: Junyoung Lee | AI Systems Engineer
 ---
 
-# Junyoung AI Study Notes
+# Junyoung Lee
 
-AI를 공부하고 실험하면서 직접 확인한 내용을 프로젝트와 스터디 노트 형태로 정리하는 공간입니다.
+AI Systems Engineer
 
-논문 요약만 모으기보다 실제 구현에서 바로 써볼 수 있는 agent, evaluation, training, vision 주제를 중심으로 정리합니다.
+Building AI systems that are fast, reliable, and useful in the real world.
 
 ## Focus
 
-- LLM fine-tuning, SFT 파이프라인, 실험 자동화
-- Computer vision, medical image AI
-- AI agent, evaluation, observability, workflow runtime
-- Docker, Hydra, GPU, S3/MinIO 같은 운영 환경 구성
+- LLM Systems
+- Agent Systems
+- AI Platform
+- Vision
+- Performance Optimization
+
+## What I Build
+
+- **Production LLM Platforms**  
+  Kubernetes 기반 model serving, embedding, VectorDB, observability, deployment architecture를 다룹니다.
+
+- **Agent & RAG Systems**  
+  LangGraph, LangChain, LangSmith 기반 agent runtime, memory, evaluation, guardrails, streaming을 정리합니다.
+
+- **High-performance Model Serving**  
+  vLLM, GPU serving, batching, TTFT, throughput, benchmark 관점에서 AI 시스템 성능을 개선합니다.
+
+- **Vision AI Systems**  
+  medical image AI, detection, segmentation, edge AI 프로젝트를 실제 서비스 가능성 중심으로 다룹니다.
+
+이 공간은 논문 요약만 모으는 곳이 아니라, 연구 아이디어를 실제 구현·평가·운영 가능한 시스템으로 바꾸는 과정을 기록하는 포트폴리오입니다.
 
 ## Projects
 
