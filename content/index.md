@@ -75,6 +75,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-few-shot-evaluator-corrections|LangSmith few-shot evaluator로 사람의 평가 수정사항 반영하기]]<br>
+  사람이 LLM-as-a-judge 점수와 근거를 교정하고, correction dataset의 예시로 다음 평가 기준을 개선하는 흐름을 정리했습니다.
+
 - [[libraries/langgraph/store-ttl-memory-expiration|LangGraph Store TTL로 장기 메모리 만료 정책 운영하기]]<br>
   PostgresStore의 기본·항목별 TTL과 조회 갱신, sweeper 생명주기를 조합해 cross-thread 메모리를 자동 만료하는 방법을 정리했습니다.
 
