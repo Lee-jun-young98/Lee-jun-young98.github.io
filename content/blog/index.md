@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Model Generation Policy
+
+- [[libraries/langchain/dynamic-model-settings-middleware|LangChain middleware로 요청별 model settings 동적 조정하기]]
+
 ## Library / Agent State & Usage Accounting
 
 - [[libraries/langchain/extended-model-response-state-updates|LangChain ExtendedModelResponse로 model call 결과와 state 함께 갱신하기]]
