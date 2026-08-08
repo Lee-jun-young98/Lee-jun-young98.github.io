@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/invoke-v2-graph-output-interrupts|LangGraph invoke v2와 GraphOutput으로 결과와 interrupt 분리하기]]
 - [[libraries/langgraph/store-ttl-memory-expiration|LangGraph Store TTL로 장기 메모리 만료 정책 운영하기]]
 - [[libraries/langgraph/async-nodes-ainvoke-event-loop|LangGraph async 노드와 ainvoke로 I/O 병렬 처리하기]]
 - [[libraries/langgraph/checkpoint-thread-retention-delete|LangGraph checkpoint를 thread 단위로 보존하고 삭제하기]]

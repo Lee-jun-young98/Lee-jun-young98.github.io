@@ -149,6 +149,10 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/deferred-node-cleanup-finalizers|defer=True로 cleanup, audit, notification을 run 마지막으로 미루기]]
 - [[libraries/langgraph/recursion-limit-remaining-steps|recursion_limit와 RemainingSteps로 루프 안전장치 두기]]
 
+## Library / Workflow Invocation Contracts
+
+- [[libraries/langgraph/invoke-v2-graph-output-interrupts|LangGraph invoke v2와 GraphOutput으로 결과와 interrupt 분리하기]]
+
 ## Library / Workflow Operations
 
 - [[libraries/langgraph/store-ttl-memory-expiration|Store TTL로 cross-thread 장기 메모리 만료 정책 운영하기]]
