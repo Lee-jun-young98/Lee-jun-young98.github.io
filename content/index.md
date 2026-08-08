@@ -84,6 +84,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 - [[libraries/langgraph/store-ttl-memory-expiration|LangGraph Store TTL로 장기 메모리 만료 정책 운영하기]]<br>
   PostgresStore의 기본·항목별 TTL과 조회 갱신, sweeper 생명주기를 조합해 cross-thread 메모리를 자동 만료하는 방법을 정리했습니다.
 
+- [[libraries/langchain/dynamic-model-settings-middleware|LangChain middleware로 요청별 model settings 동적 조정하기]]<br>
+  runtime context의 사용자 등급과 작업 종류에 따라 temperature와 max tokens를 model call별로 안전하게 조정하는 방법을 정리했습니다.
+
 - [[libraries/langchain/extended-model-response-state-updates|LangChain ExtendedModelResponse로 model call 결과와 state 함께 갱신하기]]<br>
   `wrap_model_call`에서 모델 응답을 보존하면서 token usage와 감사 메타데이터를 reducer 기반 agent state에 함께 누적하는 방법을 정리했습니다.
 

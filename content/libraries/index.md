@@ -56,6 +56,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/dynamic-model-settings-middleware|middleware로 요청별 model settings 동적 조정하기]]
 - [[libraries/langchain/extended-model-response-state-updates|ExtendedModelResponse로 model call 결과와 state 함께 갱신하기]]
 - [[libraries/langchain/runtime-tool-registration-middleware|runtime tool registration으로 실행 중 발견한 도구 연결하기]]
 - [[libraries/langchain/runtime-execution-info-server-info|Runtime execution_info와 server_info로 실행 문맥 추적하기]]
