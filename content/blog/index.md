@@ -43,6 +43,7 @@ hideAutoFolderListing: true
 
 ## Library / Observability & Evaluation
 
+- [[libraries/langsmith/langsmith-openevals-llm-as-judge|OpenEvals 사전 정의 evaluator를 LangSmith 실험에 재사용하기]]
 - [[libraries/langsmith/langsmith-few-shot-evaluator-corrections|few-shot evaluator로 사람의 평가 수정사항 반영하기]]
 - [[libraries/langsmith/langsmith-experiment-repetitions-concurrency-cache|평가 반복·동시성·캐시로 실험 비용과 분산 관리하기]]
 - [[libraries/langsmith/langsmith-production-trace-agent-backtesting|운영 trace로 새 agent 버전 backtest하기]]
