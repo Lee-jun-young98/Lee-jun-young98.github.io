@@ -75,6 +75,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-openevals-llm-as-judge|LangSmith와 OpenEvals로 LLM-as-a-judge 평가 재사용하기]]<br>
+  OpenEvals의 사전 정의 prompt와 evaluator factory를 LangSmith experiment와 pytest에서 같은 평가 기준으로 재사용하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-few-shot-evaluator-corrections|LangSmith few-shot evaluator로 사람의 평가 수정사항 반영하기]]<br>
   사람이 LLM-as-a-judge 점수와 근거를 교정하고, correction dataset의 예시로 다음 평가 기준을 개선하는 흐름을 정리했습니다.
 
