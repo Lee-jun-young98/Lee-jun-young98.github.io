@@ -35,6 +35,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Runtime & Reliability
 
+- [[libraries/langgraph/task-checkpoint-debug-streaming|tasks와 checkpoints 스트림으로 실행 중 노드 진단하기]]
 - [[libraries/langgraph/invoke-v2-graph-output-interrupts|invoke v2와 GraphOutput으로 결과와 interrupt 분리하기]]
 - [[libraries/langgraph/store-ttl-memory-expiration|Store TTL로 장기 메모리 만료 정책 운영하기]]
 - [[libraries/langgraph/async-nodes-ainvoke-event-loop|async 노드와 ainvoke로 I/O 병렬 처리하기]]
