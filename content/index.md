@@ -75,6 +75,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/anthropic-cache-cross-provider-fallback|LangChain Anthropic prompt cache와 cross-provider fallback 안전하게 조합하기]]<br>
+  Claude prompt cache를 유지하면서 다른 provider로 fallback할 때 Anthropic 전용 cache marker를 안전하게 정리하는 middleware 조합을 다룹니다.
+
 - [[libraries/langgraph/task-checkpoint-debug-streaming|LangGraph tasks와 checkpoints 스트림으로 실행 중 노드 진단하기]]<br>
   node task의 시작·종료·오류와 super-step checkpoint 경계를 v2 stream에서 구분해 실시간 관찰하는 방법을 정리했습니다.
 

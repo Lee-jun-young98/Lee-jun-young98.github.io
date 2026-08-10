@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Model Resilience & Prompt Caching
+
+- [[libraries/langchain/anthropic-cache-cross-provider-fallback|LangChain Anthropic prompt cache와 cross-provider fallback 안전하게 조합하기]]
+
 ## Library / Model Generation Policy
 
 - [[libraries/langchain/dynamic-model-settings-middleware|LangChain middleware로 요청별 model settings 동적 조정하기]]
