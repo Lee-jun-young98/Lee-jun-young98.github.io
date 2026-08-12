@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Model Traffic & Rate Control
+
+- [[libraries/langchain/in-memory-rate-limiter-agent-model|LangChain InMemoryRateLimiter로 agent 모델 호출 속도 제어하기]]
+
 ## Library / Model Resilience & Prompt Caching
 
 - [[libraries/langchain/anthropic-cache-cross-provider-fallback|LangChain Anthropic prompt cache와 cross-provider fallback 안전하게 조합하기]]

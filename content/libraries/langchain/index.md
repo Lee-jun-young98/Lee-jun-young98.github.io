@@ -10,6 +10,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 
 ## 글 목록
 
+- [[libraries/langchain/in-memory-rate-limiter-agent-model|InMemoryRateLimiter로 agent 모델 호출 속도 제어하기]]
 - [[libraries/langchain/anthropic-cache-cross-provider-fallback|Anthropic prompt cache와 cross-provider fallback 안전하게 조합하기]]
 - [[libraries/langchain/dynamic-model-settings-middleware|middleware로 요청별 model settings 동적 조정하기]]
 - [[libraries/langchain/extended-model-response-state-updates|ExtendedModelResponse로 model call 결과와 state 함께 갱신하기]]
