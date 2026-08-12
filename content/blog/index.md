@@ -334,6 +334,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Foundations
 
+- [[libraries/langgraph/conditional-entry-point-start-routing|LangGraph conditional entry point로 입력별 시작 노드 바로 고르기]]
 - [[libraries/langgraph/context-schema-runtime-context|context_schema와 Runtime context로 요청별 설정 주입하기]]
 
 - [[libraries/langgraph/postgres-checkpointer-production|PostgresSaver로 durable checkpointer를 운영 환경에 붙이기]]

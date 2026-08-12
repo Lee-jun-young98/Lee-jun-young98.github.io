@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langgraph/conditional-entry-point-start-routing|LangGraph conditional entry point로 시작 노드 바로 고르기]]
+  `START`에서 입력별 첫 노드를 직접 선택하고 병렬 진입, 타입 힌트, 정적 edge 혼용 함정을 정리했습니다.
+
 - [[libraries/langgraph/postgres-checkpointer-production|LangGraph PostgresSaver로 durable checkpointer 운영하기]]  
   운영 환경에서 agent thread 상태를 안전하게 이어가기 위한 checkpoint 구조를 정리했습니다.
 
