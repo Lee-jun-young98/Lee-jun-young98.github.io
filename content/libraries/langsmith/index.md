@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-playground-tool-registry|LangSmith Playground tool registry로 도구 스키마 재사용하기]]
 - [[libraries/langsmith/langsmith-openevals-llm-as-judge|LangSmith와 OpenEvals로 LLM-as-a-judge 평가 재사용하기]]
 - [[libraries/langsmith/langsmith-few-shot-evaluator-corrections|LangSmith few-shot evaluator로 사람의 평가 수정사항 반영하기]]
 - [[libraries/langsmith/langsmith-trace-with-opentelemetry-python|LangSmith에 OpenTelemetry Python trace 보내기]]

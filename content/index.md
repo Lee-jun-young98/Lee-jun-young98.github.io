@@ -75,6 +75,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-playground-tool-registry|LangSmith Playground tool registry로 도구 스키마 재사용하기]]<br>
+  workspace registry에 custom·built-in tool을 저장하고 prompt별 활성화, schema versioning, Python handler 검증으로 안전하게 재사용하는 방법을 정리했습니다.
+
 - [[libraries/langchain/anthropic-cache-cross-provider-fallback|LangChain Anthropic prompt cache와 cross-provider fallback 안전하게 조합하기]]<br>
   Claude prompt cache를 유지하면서 다른 provider로 fallback할 때 Anthropic 전용 cache marker를 안전하게 정리하는 middleware 조합을 다룹니다.
 
