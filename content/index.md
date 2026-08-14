@@ -81,6 +81,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/human-in-loop-conditional-decisions|LangChain 조건부 HITL과 approve·edit·reject·respond 결정 운영하기]]<br>
+  위험한 도구 호출만 조건부로 멈추고 승인·수정·거절·직접 응답으로 안전하게 재개하는 운영 패턴을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-bulk-curate-dataset-examples|LangSmith dataset example을 metadata로 골라 bulk update하기]]<br>
   metadata filter, dry-run, `update_examples(updates=[...])`, 사후 검증, version tag를 묶어 evaluation dataset을 안전하게 일괄 정리하는 방법을 정리했습니다.
 

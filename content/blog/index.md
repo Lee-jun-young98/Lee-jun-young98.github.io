@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Human Review & Tool Decisions
+
+- [[libraries/langchain/human-in-loop-conditional-decisions|LangChain 조건부 HITL과 approve·edit·reject·respond 결정 운영하기]]
+
 ## Library / Model Traffic & Rate Control
 
 - [[libraries/langchain/in-memory-rate-limiter-agent-model|LangChain InMemoryRateLimiter로 agent 모델 호출 속도 제어하기]]
