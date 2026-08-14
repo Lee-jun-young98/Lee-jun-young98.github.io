@@ -78,6 +78,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-bulk-curate-dataset-examples|LangSmith dataset example을 metadata로 골라 bulk update하기]]<br>
+  metadata filter, dry-run, `update_examples(updates=[...])`, 사후 검증, version tag를 묶어 evaluation dataset을 안전하게 일괄 정리하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-playground-tool-registry|LangSmith Playground tool registry로 도구 스키마 재사용하기]]<br>
   workspace registry에 custom·built-in tool을 저장하고 prompt별 활성화, schema versioning, Python handler 검증으로 안전하게 재사용하는 방법을 정리했습니다.
 
