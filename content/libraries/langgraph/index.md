@@ -36,6 +36,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Runtime & Reliability
 
+- [[libraries/langgraph/checkpoint-history-pagination-filter|checkpoint history를 filter, before, limit로 페이지네이션하기]]
 - [[libraries/langgraph/task-checkpoint-debug-streaming|tasks와 checkpoints 스트림으로 실행 중 노드 진단하기]]
 - [[libraries/langgraph/invoke-v2-graph-output-interrupts|invoke v2와 GraphOutput으로 결과와 interrupt 분리하기]]
 - [[libraries/langgraph/store-ttl-memory-expiration|Store TTL로 장기 메모리 만료 정책 운영하기]]

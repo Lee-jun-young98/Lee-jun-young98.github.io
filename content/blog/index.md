@@ -355,6 +355,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Runtime & Observability
 
+- [[libraries/langgraph/checkpoint-history-pagination-filter|checkpoint history를 filter, before, limit로 페이지네이션하기]]
 - [[libraries/langgraph/task-checkpoint-debug-streaming|tasks와 checkpoints 스트림으로 실행 중 노드 진단하기]]
 - [[libraries/langgraph/state-snapshot-tasks-failure-diagnostics|StateSnapshot.tasks로 실패 노드 진단하기]]
 - [[libraries/langgraph/event-streaming-v3-projections|event streaming v3로 상태, 토큰, interrupt를 한 스트림에서 다루기]]
