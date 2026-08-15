@@ -59,6 +59,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 - [[libraries/langgraph/checkpoint-history-pagination-filter|LangGraph checkpoint history를 페이지네이션하기]]
   `filter`, `before`, `limit`로 긴 thread 이력을 운영 화면에서 cursor 기반으로 나누어 읽는 방법을 정리했습니다.
 
+- [[libraries/langgraph/max-concurrency-parallel-task-limits|LangGraph max_concurrency로 병렬 task 동시 실행 수 제한하기]]
+  fan-out task의 동시 실행 수를 run별로 제한해 API와 DB의 순간 부하를 제어하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/conditional-entry-point-start-routing|LangGraph conditional entry point로 시작 노드 바로 고르기]]
   `START`에서 입력별 첫 노드를 직접 선택하고 병렬 진입, 타입 힌트, 정적 edge 혼용 함정을 정리했습니다.
 
@@ -83,6 +86,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 - [[libraries/langsmith/langsmith-dataset-json-schema-validation|LangSmith dataset JSON Schema로 evaluation 입력 계약 고정하기]]<br>
   `inputs_schema`, `outputs_schema`, 로컬 사전 검증으로 잘못된 evaluation example을 업로드 전에 차단하는 방법을 정리했습니다.
+
+- [[libraries/langgraph/max-concurrency-parallel-task-limits|LangGraph max_concurrency로 병렬 task 동시 실행 수 제한하기]]<br>
+  fan-out workflow의 동시 task 수를 제한하고 전역 rate limit, node 내부 병렬성과 구분하는 운영 기준을 정리했습니다.
 
 - [[libraries/langchain/human-in-loop-conditional-decisions|LangChain 조건부 HITL과 approve·edit·reject·respond 결정 운영하기]]<br>
   위험한 도구 호출만 조건부로 멈추고 승인·수정·거절·직접 응답으로 안전하게 재개하는 운영 패턴을 정리했습니다.

@@ -208,6 +208,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Performance
 
+- [[libraries/langgraph/max-concurrency-parallel-task-limits|LangGraph max_concurrency로 병렬 task 동시 실행 수 제한하기]]
 - [[libraries/langgraph/async-nodes-ainvoke-event-loop|LangGraph async 노드와 ainvoke로 I/O 병렬 처리하기]]
 - [[libraries/langgraph/cache-policy-node-caching|cache_policy로 비싼 노드 결과 재사용하기]]
 - [[libraries/langgraph/delta-channel-checkpoint-storage|DeltaChannel로 긴 thread checkpoint 크기 줄이기]]
