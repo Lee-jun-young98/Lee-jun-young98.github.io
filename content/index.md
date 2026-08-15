@@ -84,6 +84,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/llm-response-cache-agent-calls|LangChain LLM response cache로 agent 모델 호출 재사용하기]]<br>
+  동일한 prompt와 모델 설정의 generation을 재사용하면서 tool side effect, streaming, graph cache·checkpointer 경계를 안전하게 구분하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-dataset-json-schema-validation|LangSmith dataset JSON Schema로 evaluation 입력 계약 고정하기]]<br>
   `inputs_schema`, `outputs_schema`, 로컬 사전 검증으로 잘못된 evaluation example을 업로드 전에 차단하는 방법을 정리했습니다.
 

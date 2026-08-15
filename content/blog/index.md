@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Model Response Caching
+
+- [[libraries/langchain/llm-response-cache-agent-calls|LangChain LLM response cache로 agent 모델 호출 재사용하기]]
+
 ## Library / Human Review & Tool Decisions
 
 - [[libraries/langchain/human-in-loop-conditional-decisions|LangChain 조건부 HITL과 approve·edit·reject·respond 결정 운영하기]]
