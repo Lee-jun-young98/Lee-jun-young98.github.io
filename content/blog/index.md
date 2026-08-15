@@ -71,6 +71,7 @@ hideAutoFolderListing: true
 
 ## Library / Dataset Preparation & Normalization
 
+- [[libraries/langsmith/langsmith-dataset-json-schema-validation|dataset JSON Schema로 evaluation 입력 계약 고정하기]]
 - [[libraries/langsmith/langsmith-bulk-curate-dataset-examples|metadata filter와 bulk update로 evaluation dataset 정리하기]]
 - [[libraries/langsmith/langsmith-dataset-transformations-chat-model-schema|dataset transformations로 운영 trace를 평가셋 형식으로 정규화하기]]
 

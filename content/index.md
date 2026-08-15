@@ -81,6 +81,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-dataset-json-schema-validation|LangSmith dataset JSON Schema로 evaluation 입력 계약 고정하기]]<br>
+  `inputs_schema`, `outputs_schema`, 로컬 사전 검증으로 잘못된 evaluation example을 업로드 전에 차단하는 방법을 정리했습니다.
+
 - [[libraries/langchain/human-in-loop-conditional-decisions|LangChain 조건부 HITL과 approve·edit·reject·respond 결정 운영하기]]<br>
   위험한 도구 호출만 조건부로 멈추고 승인·수정·거절·직접 응답으로 안전하게 재개하는 운영 패턴을 정리했습니다.
 

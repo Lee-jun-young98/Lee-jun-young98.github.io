@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-dataset-json-schema-validation|LangSmith dataset JSON Schema로 evaluation 입력 계약 고정하기]]
 - [[libraries/langsmith/langsmith-bulk-curate-dataset-examples|LangSmith dataset example을 metadata로 골라 bulk update하기]]
 - [[libraries/langsmith/langsmith-playground-tool-registry|LangSmith Playground tool registry로 도구 스키마 재사용하기]]
 - [[libraries/langsmith/langsmith-openevals-llm-as-judge|LangSmith와 OpenEvals로 LLM-as-a-judge 평가 재사용하기]]
