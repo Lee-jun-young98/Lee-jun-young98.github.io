@@ -10,6 +10,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 
 ## 글 목록
 
+- [[libraries/langchain/private-state-schema-boundaries|private state로 agent 입출력 스키마 경계 나누기]]
 - [[libraries/langchain/llm-response-cache-agent-calls|LLM response cache로 agent 모델 호출 재사용하기]]
 - [[libraries/langchain/human-in-loop-conditional-decisions|조건부 HITL과 approve·edit·reject·respond 결정 운영하기]]
 - [[libraries/langchain/in-memory-rate-limiter-agent-model|InMemoryRateLimiter로 agent 모델 호출 속도 제어하기]]
