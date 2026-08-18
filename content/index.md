@@ -84,6 +84,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-trace-retention-cost-controls|LangSmith trace retention으로 보존 기간과 관측 비용 제어하기]]<br>
+  Base·Extended 보존 등급, 자동 승격 조건, metadata 기반 선별 보존과 usage limit의 운영 부작용을 정리했습니다.
+
 - [[libraries/langchain/llm-response-cache-agent-calls|LangChain LLM response cache로 agent 모델 호출 재사용하기]]<br>
   동일한 prompt와 모델 설정의 generation을 재사용하면서 tool side effect, streaming, graph cache·checkpointer 경계를 안전하게 구분하는 방법을 정리했습니다.
 
