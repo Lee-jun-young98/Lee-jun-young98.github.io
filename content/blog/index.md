@@ -184,6 +184,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Invocation Contracts
 
+- [[libraries/langgraph/entrypoint-final-return-save-state|LangGraph entrypoint.final로 반환값과 저장 상태 분리하기]]
 - [[libraries/langgraph/invoke-v2-graph-output-interrupts|LangGraph invoke v2와 GraphOutput으로 결과와 interrupt 분리하기]]
 
 ## Library / Workflow Operations

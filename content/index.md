@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langgraph/entrypoint-final-return-save-state|LangGraph entrypoint.final로 반환값과 저장 상태 분리하기]]
+  Functional API에서 이번 호출의 공개 응답과 다음 호출에 전달할 내부 상태를 독립적으로 설계하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/add-sequence-linear-pipeline|LangGraph add_sequence로 순차 파이프라인 간결하게 만들기]]
   선형 구간의 노드 등록과 edge 연결을 줄이면서 START, 이름 지정, 분기 경계를 명확히 유지하는 방법을 정리했습니다.
 
