@@ -87,6 +87,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]<br>
+  `SKILL.md` 메타데이터와 progressive disclosure로 큰 업무 지침을 필요한 순간에만 불러오는 패턴을 정리했습니다.
+
 - [[libraries/langchain/private-state-schema-boundaries|LangChain private state로 agent 입출력 스키마 경계 나누기]]<br>
   `PrivateStateAttr`, `OmitFromInput`, `OmitFromOutput`으로 middleware 내부 state와 공개 API 계약을 분리하는 방법을 정리했습니다.
 
