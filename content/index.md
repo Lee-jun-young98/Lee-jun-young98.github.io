@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langgraph/add-sequence-linear-pipeline|LangGraph add_sequence로 순차 파이프라인 간결하게 만들기]]
+  선형 구간의 노드 등록과 edge 연결을 줄이면서 START, 이름 지정, 분기 경계를 명확히 유지하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/checkpoint-history-pagination-filter|LangGraph checkpoint history를 페이지네이션하기]]
   `filter`, `before`, `limit`로 긴 thread 이력을 운영 화면에서 cursor 기반으로 나누어 읽는 방법을 정리했습니다.
 

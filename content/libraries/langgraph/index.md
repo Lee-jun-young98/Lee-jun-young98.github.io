@@ -69,6 +69,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Composition Patterns
 
+- [[libraries/langgraph/add-sequence-linear-pipeline|add_sequence로 순차 파이프라인 간결하게 만들기]]
 - [[libraries/langgraph/add-node-destinations-command-routing-rendering|add_node(destinations=...)로 Command 라우팅 그래프를 읽기 좋게 그리기]]
 - [[libraries/langgraph/send-dynamic-parallelism|Send로 동적 병렬 fan-out과 map-reduce 처리하기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]

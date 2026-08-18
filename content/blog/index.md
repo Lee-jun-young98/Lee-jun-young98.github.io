@@ -375,6 +375,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Composition Patterns
 
+- [[libraries/langgraph/add-sequence-linear-pipeline|add_sequence로 순차 파이프라인 간결하게 만들기]]
 - [[libraries/langgraph/send-dynamic-parallelism|Send로 동적 병렬 fan-out/map-reduce 처리하기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 - [[libraries/langgraph/subgraph-persistence-modes-state-inspection|subgraph에서 checkpointer=None, True, False를 어떻게 고를까]]

@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/add-sequence-linear-pipeline|LangGraph add_sequence로 순차 파이프라인 간결하게 만들기]]
 - [[libraries/langgraph/max-concurrency-parallel-task-limits|LangGraph max_concurrency로 병렬 task 동시 실행 수 제한하기]]
 - [[libraries/langgraph/checkpoint-history-pagination-filter|LangGraph checkpoint history를 filter, before, limit로 페이지네이션하기]]
 - [[libraries/langgraph/conditional-entry-point-start-routing|LangGraph conditional entry point로 시작 노드 바로 고르기]]
