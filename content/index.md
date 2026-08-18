@@ -93,6 +93,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]<br>
   `SKILL.md` 메타데이터와 progressive disclosure로 큰 업무 지침을 필요한 순간에만 불러오는 패턴을 정리했습니다.
 
+- [[libraries/langsmith/langsmith-agent-trajectory-evaluation|LangSmith trajectory evaluator로 agent 실행 경로 평가하기]]<br>
+  최종 답변과 별도로 node·tool 호출 순서와 single-step route를 평가해 agent 회귀 원인을 좁히는 방법을 정리했습니다.
+
 - [[libraries/langchain/private-state-schema-boundaries|LangChain private state로 agent 입출력 스키마 경계 나누기]]<br>
   `PrivateStateAttr`, `OmitFromInput`, `OmitFromOutput`으로 middleware 내부 state와 공개 API 계약을 분리하는 방법을 정리했습니다.
 

@@ -67,6 +67,7 @@ hideAutoFolderListing: true
 
 ## Library / Observability & Evaluation
 
+- [[libraries/langsmith/langsmith-agent-trajectory-evaluation|trajectory evaluator로 agent의 node와 tool 실행 경로 평가하기]]
 - [[libraries/langsmith/langsmith-openevals-llm-as-judge|OpenEvals 사전 정의 evaluator를 LangSmith 실험에 재사용하기]]
 - [[libraries/langsmith/langsmith-few-shot-evaluator-corrections|few-shot evaluator로 사람의 평가 수정사항 반영하기]]
 - [[libraries/langsmith/langsmith-experiment-repetitions-concurrency-cache|평가 반복·동시성·캐시로 실험 비용과 분산 관리하기]]
