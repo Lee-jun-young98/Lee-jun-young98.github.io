@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langgraph/messages-state-custom-fields|LangGraph MessagesState에 사용자 정의 필드 확장하기]]
+  내장 메시지 reducer를 재사용하면서 고객 ID, 턴 수 같은 업무 상태를 안전하게 덧붙이는 방법을 정리했습니다.
+
 - [[libraries/langgraph/entrypoint-final-return-save-state|LangGraph entrypoint.final로 반환값과 저장 상태 분리하기]]
   Functional API에서 이번 호출의 공개 응답과 다음 호출에 전달할 내부 상태를 독립적으로 설계하는 방법을 정리했습니다.
 

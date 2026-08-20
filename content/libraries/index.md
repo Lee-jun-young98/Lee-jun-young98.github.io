@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/messages-state-custom-fields|LangGraph MessagesState에 사용자 정의 필드 확장하기]]
 - [[libraries/langgraph/entrypoint-final-return-save-state|LangGraph entrypoint.final로 반환값과 저장 상태 분리하기]]
 - [[libraries/langgraph/add-sequence-linear-pipeline|LangGraph add_sequence로 순차 파이프라인 간결하게 만들기]]
 - [[libraries/langgraph/max-concurrency-parallel-task-limits|LangGraph max_concurrency로 병렬 task 동시 실행 수 제한하기]]

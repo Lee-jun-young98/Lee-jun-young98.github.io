@@ -69,6 +69,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langchain/standard-content-blocks-cross-provider|LangChain content_blocks로 모델별 메시지를 같은 형식으로 다루기]]
 
+## Library / Conversation State Schemas
+
+- [[libraries/langgraph/messages-state-custom-fields|LangGraph MessagesState에 사용자 정의 필드 확장하기]]
+
 ## Library / Observability & Evaluation
 
 - [[libraries/langsmith/langsmith-agent-trajectory-evaluation|trajectory evaluator로 agent의 node와 tool 실행 경로 평가하기]]
