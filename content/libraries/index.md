@@ -63,6 +63,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/tool-content-artifact-return-direct|LangChain tool content와 artifact를 분리하고 return_direct로 루프 끝내기]]
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]
 - [[libraries/langchain/private-state-schema-boundaries|LangChain private state로 agent 입출력 스키마 경계 나누기]]
 - [[libraries/langchain/llm-response-cache-agent-calls|LangChain LLM response cache로 agent 모델 호출 재사용하기]]

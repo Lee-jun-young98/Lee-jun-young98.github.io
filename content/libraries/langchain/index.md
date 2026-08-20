@@ -10,6 +10,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 
 ## 글 목록
 
+- [[libraries/langchain/tool-content-artifact-return-direct|tool content와 artifact를 분리하고 return_direct로 루프 끝내기]]
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|Deep Agents skills로 작업 지침을 점진적으로 불러오기]]
 - [[libraries/langchain/private-state-schema-boundaries|private state로 agent 입출력 스키마 경계 나누기]]
 - [[libraries/langchain/llm-response-cache-agent-calls|LLM response cache로 agent 모델 호출 재사용하기]]

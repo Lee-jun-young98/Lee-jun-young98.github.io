@@ -13,6 +13,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langsmith/langsmith-granular-billable-usage-api|granular usage API로 팀별 trace와 deployment 사용량 분석하기]]
 
+## Library / Tool Output Contracts
+
+- [[libraries/langchain/tool-content-artifact-return-direct|LangChain tool content와 artifact를 분리하고 return_direct로 루프 끝내기]]
+
 ## Library / Agent Skills & Context Engineering
 
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]

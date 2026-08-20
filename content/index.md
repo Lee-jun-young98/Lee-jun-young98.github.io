@@ -96,6 +96,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 - [[libraries/langsmith/langsmith-granular-billable-usage-api|LangSmith granular usage API로 팀별 trace와 deployment 사용량 분석하기]]<br>
   workspace·project·user·API key별 trace와 Deployment 사용량을 조회하고 UTC bucket 계약에 맞춰 비용 보고서를 만드는 방법을 정리했습니다.
 
+- [[libraries/langchain/tool-content-artifact-return-direct|LangChain tool content와 artifact를 분리하고 return_direct로 루프 끝내기]]<br>
+  `content_and_artifact`로 모델용 요약과 애플리케이션용 원본을 나누고, `return_direct`로 불필요한 후속 모델 호출을 끝내는 방법을 정리했습니다.
+
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]<br>
   `SKILL.md` 메타데이터와 progressive disclosure로 큰 업무 지침을 필요한 순간에만 불러오는 패턴을 정리했습니다.
 
