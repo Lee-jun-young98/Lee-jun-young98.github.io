@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-granular-billable-usage-api|LangSmith granular usage API로 팀별 trace와 deployment 사용량 분석하기]]
 - [[libraries/langsmith/langsmith-agent-trajectory-evaluation|LangSmith trajectory evaluator로 agent 실행 경로 평가하기]]
 - [[libraries/langsmith/langsmith-trace-retention-cost-controls|LangSmith trace retention으로 보존 기간과 관측 비용 제어하기]]
 - [[libraries/langsmith/langsmith-dataset-json-schema-validation|LangSmith dataset JSON Schema로 evaluation 입력 계약 고정하기]]

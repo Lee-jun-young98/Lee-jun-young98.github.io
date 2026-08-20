@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Billing & Usage Control
+
+- [[libraries/langsmith/langsmith-granular-billable-usage-api|granular usage API로 팀별 trace와 deployment 사용량 분석하기]]
+
 ## Library / Agent Skills & Context Engineering
 
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]

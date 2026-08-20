@@ -90,6 +90,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-granular-billable-usage-api|LangSmith granular usage API로 팀별 trace와 deployment 사용량 분석하기]]<br>
+  workspace·project·user·API key별 trace와 Deployment 사용량을 조회하고 UTC bucket 계약에 맞춰 비용 보고서를 만드는 방법을 정리했습니다.
+
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]<br>
   `SKILL.md` 메타데이터와 progressive disclosure로 큰 업무 지침을 필요한 순간에만 불러오는 패턴을 정리했습니다.
 
