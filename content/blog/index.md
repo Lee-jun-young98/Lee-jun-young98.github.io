@@ -224,6 +224,7 @@ hideAutoFolderListing: true
 
 ## Library / Workflow Composition
 
+- [[libraries/langgraph/multi-start-edge-fan-in-barrier|multi-start edge로 고정 병렬 작업을 모두 기다리는 fan-in barrier 만들기]]
 - [[libraries/langgraph/add-node-destinations-command-routing-rendering|add_node(destinations=...)로 Command 라우팅 그래프를 읽기 좋게 그리기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 
@@ -401,6 +402,7 @@ hideAutoFolderListing: true
 
 ## Library / LangGraph Composition Patterns
 
+- [[libraries/langgraph/multi-start-edge-fan-in-barrier|multi-start edge로 병렬 fan-in barrier 만들기]]
 - [[libraries/langgraph/add-sequence-linear-pipeline|add_sequence로 순차 파이프라인 간결하게 만들기]]
 - [[libraries/langgraph/send-dynamic-parallelism|Send로 동적 병렬 fan-out/map-reduce 처리하기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
