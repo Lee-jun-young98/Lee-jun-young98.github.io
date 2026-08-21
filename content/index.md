@@ -99,6 +99,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 - [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]<br>
   structured output 검증 실패와 복수 출력 오류를 분류해 안전한 피드백으로 재시도하거나 즉시 실패시키는 방법을 정리했습니다.
 
+- [[libraries/langsmith/langsmith-engine-webhook-fastapi|LangSmith Engine webhook을 FastAPI로 안전하게 받기]]<br>
+  HMAC 서명 검증, event id 멱등 처리, request_id 묶음 처리로 Engine issue를 incident 시스템에 안전하게 전달하는 방법을 정리한 글입니다.
+
 - [[libraries/langsmith/langsmith-granular-billable-usage-api|LangSmith granular usage API로 팀별 trace와 deployment 사용량 분석하기]]<br>
   workspace·project·user·API key별 trace와 Deployment 사용량을 조회하고 UTC bucket 계약에 맞춰 비용 보고서를 만드는 방법을 정리했습니다.
 

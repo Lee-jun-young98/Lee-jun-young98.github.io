@@ -13,6 +13,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]
 
+## Library / Incident Detection & Routing
+
+- [[libraries/langsmith/langsmith-engine-webhook-fastapi|LangSmith Engine issue webhook을 검증하고 incident 흐름으로 전달하기]]
+
 ## Library / Billing & Usage Control
 
 - [[libraries/langsmith/langsmith-granular-billable-usage-api|granular usage API로 팀별 trace와 deployment 사용량 분석하기]]
