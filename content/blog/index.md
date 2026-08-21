@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Structured Output Reliability
+
+- [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]
+
 ## Library / Billing & Usage Control
 
 - [[libraries/langsmith/langsmith-granular-billable-usage-api|granular usage API로 팀별 trace와 deployment 사용량 분석하기]]

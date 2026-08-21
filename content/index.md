@@ -93,6 +93,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]<br>
+  structured output 검증 실패와 복수 출력 오류를 분류해 안전한 피드백으로 재시도하거나 즉시 실패시키는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-granular-billable-usage-api|LangSmith granular usage API로 팀별 trace와 deployment 사용량 분석하기]]<br>
   workspace·project·user·API key별 trace와 Deployment 사용량을 조회하고 UTC bucket 계약에 맞춰 비용 보고서를 만드는 방법을 정리했습니다.
 

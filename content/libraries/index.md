@@ -63,6 +63,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]
 - [[libraries/langchain/tool-content-artifact-return-direct|LangChain tool content와 artifact를 분리하고 return_direct로 루프 끝내기]]
 - [[libraries/langchain/deep-agents-skills-progressive-disclosure|LangChain Deep Agents skills로 작업 지침을 점진적으로 불러오기]]
 - [[libraries/langchain/private-state-schema-boundaries|LangChain private state로 agent 입출력 스키마 경계 나누기]]
