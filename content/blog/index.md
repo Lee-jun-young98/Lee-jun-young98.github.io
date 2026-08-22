@@ -91,6 +91,7 @@ hideAutoFolderListing: true
 
 ## Library / Observability & Evaluation
 
+- [[libraries/langsmith/langsmith-insights-agent-trace-patterns|Insights로 대량 trace의 사용·실패 패턴을 계층형 category로 발견하기]]
 - [[libraries/langsmith/langsmith-agent-trajectory-evaluation|trajectory evaluator로 agent의 node와 tool 실행 경로 평가하기]]
 - [[libraries/langsmith/langsmith-openevals-llm-as-judge|OpenEvals 사전 정의 evaluator를 LangSmith 실험에 재사용하기]]
 - [[libraries/langsmith/langsmith-few-shot-evaluator-corrections|few-shot evaluator로 사람의 평가 수정사항 반영하기]]
