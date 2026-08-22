@@ -232,6 +232,10 @@ hideAutoFolderListing: true
 - [[libraries/langgraph/add-node-destinations-command-routing-rendering|add_node(destinations=...)로 Command 라우팅 그래프를 읽기 좋게 그리기]]
 - [[libraries/langgraph/subgraph-node-vs-invoke|subgraph를 node로 직접 붙일지, node 안에서 invoke할지 고르기]]
 
+## Library / Pregel Channels
+
+- [[libraries/langgraph/topic-channel-pubsub-accumulation|Topic 채널로 여러 actor의 값을 step별로 모으고 누적하기]]
+
 ## Library / Workflow Evolution
 
 - [[libraries/langgraph/backward-compatibility-graph-migrations|backward compatibility로 in-flight thread 안 깨고 그래프 변경하기]]
