@@ -16,6 +16,11 @@ title: Library Study Notes
 
 LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent, memory 같은 실전 주제를 추적합니다.
 
+### Recent LangChain Notes
+
+- [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]
+- [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]
+
 ### Recent LangGraph Notes
 
 - [[libraries/langgraph/topic-channel-pubsub-accumulation|LangGraph Topic 채널로 여러 actor의 값을 모으기]]

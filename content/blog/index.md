@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Multi-Agent Persistence
+
+- [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]
+
 ## Library / Structured Output Reliability
 
 - [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]

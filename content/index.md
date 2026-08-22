@@ -99,6 +99,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]<br>
+  inherited, continuations, stateless persistence를 구분해 subagent의 기억과 interrupt 범위를 설계합니다.
+
 - [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]<br>
   structured output 검증 실패와 복수 출력 오류를 분류해 안전한 피드백으로 재시도하거나 즉시 실패시키는 방법을 정리했습니다.
 
