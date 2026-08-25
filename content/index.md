@@ -105,6 +105,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 - [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]<br>
   before·after hook과 wrap hook의 실행 방향을 검증하고 인증, 재시도, 관측 레이어를 안전하게 배치하는 방법을 정리했습니다.
 
+- [[libraries/langsmith/langsmith-remote-mcp-observability-access|LangSmith Remote MCP로 trace와 evaluation 데이터를 AI 도구에 연결하기]]<br>
+  OAuth와 API key를 구분해 관측 데이터를 좁게 조회하고, 페이지네이션과 documentation-only tool 경계를 지키는 방법을 정리했습니다.
+
 - [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]<br>
   inherited, continuations, stateless persistence를 구분해 subagent의 기억과 interrupt 범위를 설계합니다.
 

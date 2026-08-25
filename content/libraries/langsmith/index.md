@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-remote-mcp-observability-access|LangSmith Remote MCP로 trace와 evaluation 데이터를 AI 도구에 연결하기]]
 - [[libraries/langsmith/langsmith-insights-agent-trace-patterns|LangSmith Insights로 대량 trace의 실패 패턴 찾기]]
 - [[libraries/langsmith/langsmith-engine-webhook-fastapi|LangSmith Engine webhook을 FastAPI로 안전하게 받기]]
 - [[libraries/langsmith/langsmith-granular-billable-usage-api|LangSmith granular usage API로 팀별 trace와 deployment 사용량 분석하기]]

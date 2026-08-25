@@ -13,6 +13,10 @@ hideAutoFolderListing: true
 
 - [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]
 
+## Library / AI-Assisted Observability Access
+
+- [[libraries/langsmith/langsmith-remote-mcp-observability-access|LangSmith Remote MCP로 trace, thread, dataset, experiment를 AI 도구에서 안전하게 조회하기]]
+
 ## Library / Multi-Agent Persistence
 
 - [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]
