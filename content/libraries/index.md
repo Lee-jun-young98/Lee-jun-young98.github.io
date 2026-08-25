@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]
 - [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]
 - [[libraries/langchain/tool-strategy-structured-output-error-handling|LangChain ToolStrategy handle_errors로 structured output 재시도 제어하기]]
 

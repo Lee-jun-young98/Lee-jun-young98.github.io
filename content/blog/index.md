@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Middleware Composition & Reliability
+
+- [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]
+
 ## Library / Multi-Agent Persistence
 
 - [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]

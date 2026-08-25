@@ -102,6 +102,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]<br>
+  before·after hook과 wrap hook의 실행 방향을 검증하고 인증, 재시도, 관측 레이어를 안전하게 배치하는 방법을 정리했습니다.
+
 - [[libraries/langchain/subagent-checkpointer-persistence-modes|LangChain subagent checkpointer 모드로 기억 범위 설계하기]]<br>
   inherited, continuations, stateless persistence를 구분해 subagent의 기억과 interrupt 범위를 설계합니다.
 
