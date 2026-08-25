@@ -1,6 +1,6 @@
 ---
 title: "Skill-RAG: Failure-State-Aware Retrieval Augmentation via Hidden-State Probing and Skill Routing"
-date: 2026-06-28
+date: 2026-08-25
 tags:
   - "paper-review"
   - "LLM"
@@ -23,31 +23,31 @@ aliases:
 - 저자: Kai Wei, Raymond Li, Xi Zhu, Zhaoqian Xue, Jiaojiao Han, Jingcheng Niu, Fan Yang
 - 기관: University of Michigan, University of British Columbia, Rutgers University, University of Pennsylvania, New Jersey Institute of Technology, Independent Researcher, Wake Forest University
 - 최초 공개일: 2026-04-17
-- 최신 버전 갱신일: 2026-06-21
+- 최신 버전 갱신일: 2026-08-07
 - 링크:
   - 논문 abs: [arXiv 2604.15771](https://arxiv.org/abs/2604.15771)
-  - 논문 HTML: [arXiv HTML](https://arxiv.org/html/2604.15771v3)
+  - 논문 HTML: [arXiv HTML](https://arxiv.org/html/2604.15771v4)
 
 # 이번 주 후보 논문 스크리닝
 
-이번 주에는 작은 모델 라우터, adaptive RAG, domain routing, multi-domain learning 관점에서 아래 후보들을 먼저 좁혔다.
+이번 주에는 작은 모델 라우터, adaptive RAG, domain routing, multi-domain learning 관점에서 아래 후보들을 먼저 좁혔다. 이번 실행일은 2026-08-25이고, 후보군은 최근 몇 달 논문과 공식 연구 글 중에서 지금 읽을 가치가 높은 것만 추렸다.
 
 1. [Skill-RAG: Failure-State-Aware Retrieval Augmentation via Hidden-State Probing and Skill Routing](https://arxiv.org/abs/2604.15771)
    선택. retrieval failure를 단순 재검색 문제가 아니라 `failure state -> corrective skill` 문제로 재정의한 점이 가장 새로웠다. hidden-state probe, query rewrite, decomposition, evidence focusing, exit까지 실제 RAG 운영 제어면과 직접 연결된다.
-2. [To Isolate or to Score? Model-Adaptive Assessment for Cost-Efficient Multi-Agent RAG](https://arxiv.org/abs/2606.25191)
-   보류. 2026-06-23 공개로 매우 최신이고 cost-aware evaluation framing도 좋다. 다만 이번 글은 평가 프레임보다 retrieval failure correction 메커니즘을 더 깊게 다루고 싶어서 제외했다.
-3. [Dissecting Agentic RAG: A Component Ablation for Multi-Hop QA with a Local 7B Model](https://arxiv.org/abs/2606.21553)
-   보류. local 7B 기반 component ablation은 실용적이지만 새 라우팅 알고리즘보다는 실험 비교 논문에 가깝다. 이번 주에는 구조적 아이디어가 더 강한 논문을 우선했다.
-4. [FlowRAG: Synergizing Explicit Reasoning via Frequency-Aware Multi-Granularity Graph Flow](https://arxiv.org/abs/2606.17856)
-   보류. reasoning graph를 통한 multi-hop 보강은 흥미롭지만, 리뷰 중심축이 graph construction 쪽으로 이동할 가능성이 커서 이번 자동화의 라우팅/RAG 축과는 약간 어긋났다.
-5. [Holistic Data Scheduler for LLM Pre-training via Multi-Objective Reinforcement Learning](https://arxiv.org/abs/2606.24133)
-   보류. multi-domain learning 관점에서는 중요하다. 하지만 retrieval/runtime routing보다는 pretraining scheduler에 가까워 이번 주 공개 글 한 편으로는 결이 달랐다.
-6. [Continual Model Routing in Evolving Model Hubs](https://arxiv.org/abs/2605.28577)
-   보류. 모델 허브에서의 continual routing은 매우 중요한 주제지만, RAG 시스템이나 문서 retrieval 제어와의 직접 연결은 `Skill-RAG`보다 약했다.
-7. [RAGRouter-Bench: A Dataset and Benchmark for Adaptive RAG Routing](https://arxiv.org/abs/2602.00296)
-   보류. adaptive RAG routing 평가셋으로 매우 가치가 크다. 다만 이번에는 벤치마크가 아니라 실전 corrective loop를 구현하는 방법론 논문을 더 우선했다.
+2. [Route Before Retrieve: Activating Latent Routing Abilities of LLMs for RAG vs. Long-Context Selection](https://arxiv.org/abs/2605.10235)
+   보류. RAG와 long-context 사이를 사전 라우팅하고, 작은 모델 distillation까지 제안해서 매우 강한 후보였다. 다만 이번에는 retrieval 이후 실패 복구까지 다루는 논문이 더 실무적으로 중요하다고 봤다.
+3. [Continual Model Routing in Evolving Model Hubs](https://arxiv.org/abs/2605.28577)
+   보류. 2,000개가 넘는 후보 모델과 continual learning 관점을 결합한 점은 강력하다. 하지만 이번 글 한 편은 모델 허브 라우팅보다 RAG 제어 계층에 더 가까운 논문으로 좁히는 편이 맞았다.
+4. [R3AG: Retriever Routing for Retrieval-Augmented Generation](https://arxiv.org/abs/2604.22849)
+   보류. retriever selection 문제를 retrieval quality와 generation utility로 분해한 점이 좋다. 다만 router가 "어느 retriever를 고를까"에 집중해 있고, failure recovery loop의 폭은 `Skill-RAG`보다 좁다.
+5. [Grounded Cache Routing for Retrieval-Augmented Generation: When Is It Safe to Reuse an Answer?](https://arxiv.org/abs/2605.27494)
+   보류. 캐시 재사용 안전성은 production 관점에서 매우 중요하고 실험도 탄탄하다. 하지만 주제가 cache safety 쪽으로 이동해 이번 자동화의 핵심인 small router / adaptive retrieval 흐름과는 약간 달랐다.
+6. [Cost-Aware Query Routing in RAG: Empirical Analysis of Retrieval Depth Tradeoffs](https://arxiv.org/abs/2606.02581)
+   보류. 비용, latency, 품질을 묶어서 discrete bundle을 고르는 문제 설정은 실용적이다. 다만 28-query 규모의 실험 세팅보다 `Skill-RAG`의 failure taxonomy가 블로그와 후속 구현 아이디어로 더 풍부했다.
+7. [Lightweight Chunk Selection for Mobile Retrieval-Augmented Generation](https://arxiv.org/abs/2608.03148)
+   보류. 2026-08-04 공개로 최근성은 높고 작은 모델/모바일 제약과도 잘 맞는다. 하지만 chunk selector 중심이라 이번 주의 라우팅 메인 축으로 잡기에는 범위가 좁았다.
 8. [Unlocking dependable responses with Gemini Enterprise Agent Platform’s Agentic RAG](https://research.google/blog/unlocking-dependable-responses-with-gemini-enterprise-agent-platforms-agentic-rag/)
-   참고만. 2026-06-05 Google Research 공식 글로 multi-agent RAG의 planning, rewriting, routing 사례를 잘 보여준다. 하지만 공개 실험 세부와 ablation이 제한적이어서 이번 deep paper review 대상으론 논문 쪽이 더 적합했다.
+   참고만. 2026-06-05 Google Research 공식 글로 cross-corpus planning, query rewriting, sufficient-context 판단을 잘 설명한다. 다만 공개된 실험 세부와 ablation 깊이는 논문보다 얕아서 deep review 대상에서는 제외했다.
 
 # 최종 선정 이유
 
@@ -444,11 +444,11 @@ state에는 다음 필드를 두면 된다.
 # 참고 링크
 
 - [Skill-RAG: Failure-State-Aware Retrieval Augmentation via Hidden-State Probing and Skill Routing](https://arxiv.org/abs/2604.15771)
-- [Skill-RAG HTML 버전](https://arxiv.org/html/2604.15771v3)
-- [To Isolate or to Score? Model-Adaptive Assessment for Cost-Efficient Multi-Agent RAG](https://arxiv.org/abs/2606.25191)
-- [Dissecting Agentic RAG: A Component Ablation for Multi-Hop QA with a Local 7B Model](https://arxiv.org/abs/2606.21553)
-- [FlowRAG: Synergizing Explicit Reasoning via Frequency-Aware Multi-Granularity Graph Flow](https://arxiv.org/abs/2606.17856)
-- [Holistic Data Scheduler for LLM Pre-training via Multi-Objective Reinforcement Learning](https://arxiv.org/abs/2606.24133)
+- [Skill-RAG HTML 버전](https://arxiv.org/html/2604.15771v4)
+- [Route Before Retrieve: Activating Latent Routing Abilities of LLMs for RAG vs. Long-Context Selection](https://arxiv.org/abs/2605.10235)
 - [Continual Model Routing in Evolving Model Hubs](https://arxiv.org/abs/2605.28577)
-- [RAGRouter-Bench: A Dataset and Benchmark for Adaptive RAG Routing](https://arxiv.org/abs/2602.00296)
+- [R3AG: Retriever Routing for Retrieval-Augmented Generation](https://arxiv.org/abs/2604.22849)
+- [Grounded Cache Routing for Retrieval-Augmented Generation: When Is It Safe to Reuse an Answer?](https://arxiv.org/abs/2605.27494)
+- [Cost-Aware Query Routing in RAG: Empirical Analysis of Retrieval Depth Tradeoffs](https://arxiv.org/abs/2606.02581)
+- [Lightweight Chunk Selection for Mobile Retrieval-Augmented Generation](https://arxiv.org/abs/2608.03148)
 - [Google Research: Unlocking dependable responses with Gemini Enterprise Agent Platform’s Agentic RAG](https://research.google/blog/unlocking-dependable-responses-with-gemini-enterprise-agent-platforms-agentic-rag/)
