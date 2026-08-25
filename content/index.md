@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langgraph/ephemeral-value-step-signals|LangGraph EphemeralValue로 한 step짜리 신호 전달하기]]
+  Pregel actor 사이에서 다음 step에만 필요한 트리거와 중간 payload를 전달하고 자동으로 비우는 방법을 정리했습니다.
+
 - [[libraries/langgraph/topic-channel-pubsub-accumulation|LangGraph Topic 채널로 여러 actor의 값을 모으기]]
   Pregel workflow에서 같은 step의 여러 write를 batch로 받고, 실행 전체 누적 여부를 제어하는 방법을 정리했습니다.
 

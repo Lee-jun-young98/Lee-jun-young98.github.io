@@ -38,6 +38,7 @@ LangGraph는 상태를 가진 workflow와 agent를 그래프 형태로 설계하
 
 ### Runtime & Reliability
 
+- [[libraries/langgraph/ephemeral-value-step-signals|EphemeralValue로 한 step짜리 신호 전달하기]]
 - [[libraries/langgraph/topic-channel-pubsub-accumulation|Topic 채널로 여러 actor의 값을 모으기]]
 - [[libraries/langgraph/max-concurrency-parallel-task-limits|max_concurrency로 병렬 task 동시 실행 수 제한하기]]
 - [[libraries/langgraph/checkpoint-history-pagination-filter|checkpoint history를 filter, before, limit로 페이지네이션하기]]

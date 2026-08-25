@@ -239,6 +239,7 @@ hideAutoFolderListing: true
 
 ## Library / Pregel Channels
 
+- [[libraries/langgraph/ephemeral-value-step-signals|EphemeralValue로 다음 super-step에만 일회성 신호 전달하기]]
 - [[libraries/langgraph/topic-channel-pubsub-accumulation|Topic 채널로 여러 actor의 값을 step별로 모으고 누적하기]]
 
 ## Library / Workflow Evolution
