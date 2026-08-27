@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Security Audit & Compliance
+
+- [[libraries/langsmith/langsmith-audit-logs-ocsf-siem|LangSmith Audit Logs API를 OCSF 형식으로 수집해 SIEM에 연결하기]]
+
 ## Library / Middleware Composition & Reliability
 
 - [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]

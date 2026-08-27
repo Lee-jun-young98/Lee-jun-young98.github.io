@@ -102,6 +102,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-audit-logs-ocsf-siem|LangSmith Audit Logs API를 OCSF 형식으로 수집해 SIEM에 연결하기]]<br>
+  조직의 관리·설정 변경 이력을 cursor 기반으로 수집하고 OCSF 이벤트를 정규화해 SIEM과 보안 경보에 연결하는 방법을 정리했습니다.
+
 - [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]<br>
   before·after hook과 wrap hook의 실행 방향을 검증하고 인증, 재시도, 관측 레이어를 안전하게 배치하는 방법을 정리했습니다.
 
