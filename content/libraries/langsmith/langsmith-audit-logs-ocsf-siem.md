@@ -229,4 +229,3 @@ checkpoint에는 “마지막 이벤트 시각”보다 **성공적으로 적재
 - [LangSmith Audit logs](https://docs.langchain.com/langsmith/audit-logs)
 - [Get audit logs REST API](https://docs.langchain.com/langsmith/smith-api/audit-logs/get-audit-logs)
 - [OCSF 1.7.0 API Activity](https://schema.ocsf.io/1.7.0/classes/api_activity)
-
