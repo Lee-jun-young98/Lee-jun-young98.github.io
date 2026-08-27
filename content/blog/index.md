@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Tool Failure Recovery
+
+- [[libraries/langchain/tool-error-middleware-safe-recovery|LangChain ToolErrorMiddleware로 도구 예외를 안전하게 복구하기]]
+
 ## Library / Security Audit & Compliance
 
 - [[libraries/langsmith/langsmith-audit-logs-ocsf-siem|LangSmith Audit Logs API를 OCSF 형식으로 수집해 SIEM에 연결하기]]

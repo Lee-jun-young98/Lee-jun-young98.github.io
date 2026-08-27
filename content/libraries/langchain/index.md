@@ -10,6 +10,7 @@ LangChain 실전에서 바로 효과를 볼 만한 에이전트, 메모리, 미�
 
 ## 글 목록
 
+- [[libraries/langchain/tool-error-middleware-safe-recovery|ToolErrorMiddleware로 도구 예외를 안전하게 복구하기]]
 - [[libraries/langchain/middleware-execution-order-onion-model|middleware 실행 순서와 onion model 이해하기]]
 - [[libraries/langchain/subagent-checkpointer-persistence-modes|subagent checkpointer 모드로 기억 범위 설계하기]]
 - [[libraries/langchain/tool-strategy-structured-output-error-handling|ToolStrategy handle_errors로 structured output 재시도 제어하기]]

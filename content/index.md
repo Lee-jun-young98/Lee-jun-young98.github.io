@@ -105,6 +105,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/tool-error-middleware-safe-recovery|LangChain ToolErrorMiddleware로 도구 예외를 안전하게 복구하기]]<br>
+  선택한 도구 실행 예외만 안전한 error ToolMessage로 바꾸고 retry와 조합하는 방법을 정리했습니다.
+
 - [[libraries/langsmith/langsmith-audit-logs-ocsf-siem|LangSmith Audit Logs API를 OCSF 형식으로 수집해 SIEM에 연결하기]]<br>
   조직의 관리·설정 변경 이력을 cursor 기반으로 수집하고 OCSF 이벤트를 정규화해 SIEM과 보안 경보에 연결하는 방법을 정리했습니다.
 
