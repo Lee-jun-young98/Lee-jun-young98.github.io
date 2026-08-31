@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Resource Access Control
+
+- [[libraries/langsmith/langsmith-resource-tags-abac-access-control|LangSmith resource tags와 ABAC로 프로젝트·데이터셋 접근 범위 제한하기]]
+
 ## Library / Middleware Trace Payload Control
 
 - [[libraries/langchain/middleware-trace-policy-payload-control|LangChain TracePolicy로 middleware hook trace payload 줄이기]]

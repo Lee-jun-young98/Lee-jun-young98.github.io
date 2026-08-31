@@ -108,6 +108,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langsmith/langsmith-resource-tags-abac-access-control|LangSmith resource tags와 ABAC로 리소스 접근 범위 제한하기]]<br>
+  프로젝트·데이터셋·prompt에 tag를 원자적으로 적용하고 RBAC fallback과 deny 우선순위를 고려해 환경·팀·PII별 접근 경계를 만드는 방법을 정리했습니다.
+
 - [[libraries/langchain/middleware-trace-policy-payload-control|LangChain TracePolicy로 middleware hook trace payload 줄이기]]<br>
   hook span의 실행 시간은 유지하면서 중복되는 state와 message payload만 생략하거나 요약하는 방법을 정리했습니다.
 
