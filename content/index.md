@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langgraph/untracked-value-runtime-only-state|LangGraph UntrackedValue로 실행 전용 state를 checkpoint에서 제외하기]]
+  client와 session 같은 현재 실행 전용 객체를 노드 사이에 전달하면서 checkpoint 직렬화에서 제외하고, interrupt 재개 경계를 설계하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/binary-operator-aggregate-running-totals|LangGraph BinaryOperatorAggregate로 running total 만들기]]
   여러 super-step의 숫자 update를 원본 목록으로 쌓지 않고 reducer로 즉시 집계하는 방법을 정리했습니다.
 

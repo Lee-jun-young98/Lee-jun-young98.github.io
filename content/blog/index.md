@@ -259,6 +259,7 @@ hideAutoFolderListing: true
 
 ## Library / Pregel Channels
 
+- [[libraries/langgraph/untracked-value-runtime-only-state|UntrackedValue로 실행 전용 객체를 전달하되 checkpoint에서 제외하기]]
 - [[libraries/langgraph/binary-operator-aggregate-running-totals|BinaryOperatorAggregate로 여러 step의 running total 유지하기]]
 - [[libraries/langgraph/ephemeral-value-step-signals|EphemeralValue로 다음 super-step에만 일회성 신호 전달하기]]
 - [[libraries/langgraph/topic-channel-pubsub-accumulation|Topic 채널로 여러 actor의 값을 step별로 모으고 누적하기]]

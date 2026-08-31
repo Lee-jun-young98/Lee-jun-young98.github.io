@@ -25,6 +25,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/untracked-value-runtime-only-state|LangGraph UntrackedValue로 실행 전용 state를 checkpoint에서 제외하기]]
 - [[libraries/langgraph/binary-operator-aggregate-running-totals|LangGraph BinaryOperatorAggregate로 running total 만들기]]
 - [[libraries/langgraph/ephemeral-value-step-signals|LangGraph EphemeralValue로 한 step짜리 신호 전달하기]]
 - [[libraries/langgraph/topic-channel-pubsub-accumulation|LangGraph Topic 채널로 여러 actor의 값을 모으기]]
