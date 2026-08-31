@@ -105,6 +105,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 ### Library Study Notes
 
+- [[libraries/langchain/middleware-trace-policy-payload-control|LangChain TracePolicy로 middleware hook trace payload 줄이기]]<br>
+  hook span의 실행 시간은 유지하면서 중복되는 state와 message payload만 생략하거나 요약하는 방법을 정리했습니다.
+
 - [[libraries/langchain/tool-error-middleware-safe-recovery|LangChain ToolErrorMiddleware로 도구 예외를 안전하게 복구하기]]<br>
   선택한 도구 실행 예외만 안전한 error ToolMessage로 바꾸고 retry와 조합하는 방법을 정리했습니다.
 

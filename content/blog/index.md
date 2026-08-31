@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Middleware Trace Payload Control
+
+- [[libraries/langchain/middleware-trace-policy-payload-control|LangChain TracePolicy로 middleware hook trace payload 줄이기]]
+
 ## Library / Tool Failure Recovery
 
 - [[libraries/langchain/tool-error-middleware-safe-recovery|LangChain ToolErrorMiddleware로 도구 예외를 안전하게 복구하기]]
