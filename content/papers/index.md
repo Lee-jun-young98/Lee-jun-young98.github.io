@@ -3,6 +3,16 @@ title: "논문 리뷰 노트"
 paper_sync: true
 ---
 
+## [VLA](/papers/vla/)
+
+Vision-Language-Action 및 robotics foundation model 논문 리뷰 노트가 추가될 공간입니다.
+
+### [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](/papers/vla/demavla-vision-language-action-foundation-model-for-generalizable-deformable-manipulation)
+
+## [VLM](/papers/vlm/)
+
+Vision-Language Model 논문 리뷰 노트가 추가될 공간입니다.
+
 ## [Agent](/papers/agent/)
 
 ### [Voyager: An Open-Ended Embodied Agent with Large Language Models](/papers/agent/voyager-open-ended-embodied-agent-with-large-language-models)

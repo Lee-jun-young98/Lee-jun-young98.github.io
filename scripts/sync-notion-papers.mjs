@@ -1,5 +1,6 @@
 import fs from "node:fs/promises"
 import path from "node:path"
+import yaml from "js-yaml"
 
 // Keep the GitHub Pages copy as generated Markdown text, not as Notion page links.
 const notionToken = process.env.NOTION_TOKEN
@@ -11,10 +12,14 @@ const assetPublicRoot = "/papers/assets/notion"
 const siteUrl = (process.env.SITE_URL || "https://lee-jun-young98.github.io").replace(/\/$/, "")
 
 if (!notionToken) {
-  throw new Error("NOTION_TOKEN is required. Share the paper review database with the integration first.")
+  throw new Error(
+    "NOTION_TOKEN is required. Share the paper review database with the integration first.",
+  )
 }
 
 const categoryFolders = {
+  VLM: "vlm",
+  VLA: "vla",
   "Generative AI": "generative-ai",
   LLM: "llm",
   Vision: "vision",
@@ -26,6 +31,8 @@ const categoryFolders = {
 }
 
 const categoryTitles = {
+  vlm: "VLM",
+  vla: "VLA",
   "generative-ai": "Generative AI",
   llm: "LLM",
   vision: "Vision",
@@ -36,7 +43,18 @@ const categoryTitles = {
   metrics: "Metrics",
 }
 
-const categoryPriority = ["Agent", "3D", "MultiModal", "LLM", "Generative AI", "Vision", "Skill", "Metrics"]
+const categoryPriority = [
+  "VLA",
+  "VLM",
+  "Agent",
+  "3D",
+  "MultiModal",
+  "LLM",
+  "Generative AI",
+  "Vision",
+  "Skill",
+  "Metrics",
+]
 
 const manualPaperReviews = [
   {
@@ -58,7 +76,8 @@ const manualPaperReviews = [
     title: "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows",
     folder: "vision",
     slug: "swin-transformer-hierarchical-vision-transformer-using-shifted-windows",
-    thumbnail: "/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png",
+    thumbnail:
+      "/papers/assets/notion/swin-transformer-hierarchical-vision-transformer-using-shifted-windows-f489ce43a650.png",
   },
   {
     title: "SAM 2: Segment Anything in Images and Videos",
@@ -239,8 +258,13 @@ function getTextProperty(properties, name) {
   if (property.type === "select") return property.select?.name || ""
   if (property.type === "url") return property.url || ""
   if (property.type === "date") return property.date?.start || ""
-  if (property.type === "people") return property.people.map((person) => person.name).filter(Boolean).join(", ")
-  if (property.type === "multi_select") return property.multi_select.map((item) => item.name).join(", ")
+  if (property.type === "people")
+    return property.people
+      .map((person) => person.name)
+      .filter(Boolean)
+      .join(", ")
+  if (property.type === "multi_select")
+    return property.multi_select.map((item) => item.name).join(", ")
 
   return ""
 }
@@ -296,7 +320,9 @@ async function downloadNotionAsset(url, block, context) {
   const response = await fetch(url)
 
   if (!response.ok) {
-    throw new Error(`Failed to download Notion asset ${response.status} ${response.statusText}: ${url}`)
+    throw new Error(
+      `Failed to download Notion asset ${response.status} ${response.statusText}: ${url}`,
+    )
   }
 
   await fs.writeFile(filePath, Buffer.from(await response.arrayBuffer()))
@@ -329,7 +355,9 @@ function buildFrontmatter(page, metadata, body) {
 async function blockToMarkdown(block, context, depth = 0) {
   const type = block.type
   const value = block[type]
-  const children = block.has_children ? await blocksToMarkdown(await getChildren(block.id), context, depth + 1) : ""
+  const children = block.has_children
+    ? await blocksToMarkdown(await getChildren(block.id), context, depth + 1)
+    : ""
   const indent = "  ".repeat(depth)
 
   switch (type) {
@@ -371,7 +399,16 @@ async function blockToMarkdown(block, context, depth = 0) {
     }
     case "callout": {
       const text = richTextToMarkdown(value.rich_text)
-      return ["> [!note]", text ? `> ${text}` : "", children ? children.split("\n").map((line) => `> ${line}`).join("\n") : ""]
+      return [
+        "> [!note]",
+        text ? `> ${text}` : "",
+        children
+          ? children
+              .split("\n")
+              .map((line) => `> ${line}`)
+              .join("\n")
+          : "",
+      ]
         .filter(Boolean)
         .join("\n")
     }
@@ -385,7 +422,8 @@ async function blockToMarkdown(block, context, depth = 0) {
       return "---"
     case "image": {
       const sourceUrl = value.type === "external" ? value.external.url : value.file.url
-      const url = value.type === "external" ? sourceUrl : await downloadNotionAsset(sourceUrl, block, context)
+      const url =
+        value.type === "external" ? sourceUrl : await downloadNotionAsset(sourceUrl, block, context)
       const caption = richTextToPlain(value.caption)
       if (!context.thumbnail) context.thumbnail = url
       return `![${caption}](${url})`
@@ -394,7 +432,8 @@ async function blockToMarkdown(block, context, depth = 0) {
     case "pdf":
     case "video": {
       const sourceUrl = value.type === "external" ? value.external.url : value.file.url
-      const url = value.type === "external" ? sourceUrl : await downloadNotionAsset(sourceUrl, block, context)
+      const url =
+        value.type === "external" ? sourceUrl : await downloadNotionAsset(sourceUrl, block, context)
       const caption = richTextToPlain(value.caption) || url
       return `[${caption}](${url})`
     }
@@ -476,7 +515,9 @@ function groupedIndexBody(title, papers, byFolder) {
 
   for (const category of categoryPriority) {
     const folder = categoryFolders[category]
-    const folderPapers = [...(byFolder.get(folder) || [])].sort((a, b) => a.title.localeCompare(b.title, "ko"))
+    const folderPapers = [...(byFolder.get(folder) || [])].sort((a, b) =>
+      a.title.localeCompare(b.title, "ko"),
+    )
     if (folderPapers.length === 0) continue
 
     const sectionTitle = categoryTitles[folder] || category
@@ -485,6 +526,48 @@ function groupedIndexBody(title, papers, byFolder) {
   }
 
   return `---\ntitle: "${escapeYaml(title)}"\npaper_sync: true\n---\n\n${sections.join("\n\n")}\n`
+}
+
+async function discoverLocalPaperReviews(directory = contentRoot) {
+  const papers = []
+  let entries = []
+
+  try {
+    entries = await fs.readdir(directory, { withFileTypes: true })
+  } catch (error) {
+    if (error.code === "ENOENT") return papers
+    throw error
+  }
+
+  for (const entry of entries) {
+    const entryPath = path.join(directory, entry.name)
+    if (entry.isDirectory()) {
+      if (entry.name !== "assets") papers.push(...(await discoverLocalPaperReviews(entryPath)))
+      continue
+    }
+
+    if (!entry.name.endsWith(".md") || entry.name === "index.md") continue
+
+    const content = await fs.readFile(entryPath, "utf8")
+    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+    if (!match) continue
+
+    const frontmatter = yaml.load(match[1]) || {}
+    if (!frontmatter.paper_monitor) continue
+
+    const relativePath = path.relative(contentRoot, entryPath)
+    const folder = path.dirname(relativePath).replaceAll("\\", "/")
+    const slug = path.basename(entry.name, ".md")
+
+    papers.push({
+      title: frontmatter.title || slug,
+      folder,
+      slug,
+      thumbnail: frontmatter.thumbnail || "",
+    })
+  }
+
+  return papers
 }
 
 async function removePreviouslySyncedMarkdown(directory) {
@@ -544,7 +627,8 @@ async function main() {
     console.log(`synced ${metadata.folder}/${metadata.slug}.md`)
   }
 
-  const allPapers = [...synced, ...manualPaperReviews]
+  const localPaperReviews = await discoverLocalPaperReviews()
+  const allPapers = [...synced, ...manualPaperReviews, ...localPaperReviews]
   const byFolder = new Map()
   for (const paper of allPapers) {
     const papers = byFolder.get(paper.folder) || []
