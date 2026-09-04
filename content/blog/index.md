@@ -9,6 +9,10 @@ hideAutoFolderListing: true
 
 단순한 날짜 나열보다 어떤 성격의 글인지 바로 보이도록 섹션 단위로 정리합니다.
 
+## Library / Runtime Model Configuration
+
+- [[libraries/langchain/init-chat-model-runtime-configuration|LangChain init_chat_model로 런타임 모델 설정을 안전하게 전환하기]]
+
 ## Library / Composite Evaluation & Quality Gates
 
 - [[libraries/langsmith/langsmith-composite-evaluators-migration|composite evaluator로 품질 점수를 집계하고 feedback formula에서 이전하기]]

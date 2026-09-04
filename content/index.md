@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langchain/init-chat-model-runtime-configuration|LangChain init_chat_model로 런타임 모델 설정을 안전하게 전환하기]]
+  요청별 모델 전환에서 허용 필드를 제한하고 prefix로 설정 충돌을 막는 운영 패턴을 정리했습니다.
+
 - [[libraries/langgraph/last-value-after-finish-final-output|LangGraph LastValueAfterFinish로 종료 시점에 최종값만 공개하기]]
   여러 actor가 중간 후보를 갱신해도 실행 중에는 숨기고, run이 끝난 뒤 마지막 결과만 공개하는 Pregel 출력 채널을 정리했습니다.
 

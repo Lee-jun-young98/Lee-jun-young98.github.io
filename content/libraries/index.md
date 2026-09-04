@@ -18,6 +18,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangChain Notes
 
+- [[libraries/langchain/init-chat-model-runtime-configuration|LangChain init_chat_model로 런타임 모델 설정을 안전하게 전환하기]]
 - [[libraries/langchain/middleware-trace-policy-payload-control|LangChain TracePolicy로 middleware hook trace payload 줄이기]]
 - [[libraries/langchain/tool-error-middleware-safe-recovery|LangChain ToolErrorMiddleware로 도구 예외를 안전하게 복구하기]]
 - [[libraries/langchain/middleware-execution-order-onion-model|LangChain middleware 실행 순서와 onion model 이해하기]]
