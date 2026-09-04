@@ -25,6 +25,7 @@ LangChain 섹션에서는 runtime context, ToolRuntime, middleware, multi-agent,
 
 ### Recent LangGraph Notes
 
+- [[libraries/langgraph/last-value-after-finish-final-output|LangGraph LastValueAfterFinish로 종료 시점에 최종값만 공개하기]]
 - [[libraries/langgraph/untracked-value-runtime-only-state|LangGraph UntrackedValue로 실행 전용 state를 checkpoint에서 제외하기]]
 - [[libraries/langgraph/binary-operator-aggregate-running-totals|LangGraph BinaryOperatorAggregate로 running total 만들기]]
 - [[libraries/langgraph/ephemeral-value-step-signals|LangGraph EphemeralValue로 한 step짜리 신호 전달하기]]
