@@ -56,6 +56,9 @@ Building AI systems that are fast, reliable, and useful in the real world.
 
 처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
 
+- [[libraries/langsmith/langsmith-composite-evaluators-migration|LangSmith composite evaluator로 여러 품질 점수를 하나로 묶기]]
+  종료된 feedback formula 대신 weighted average·sum과 SDK 사용자 정의 집계로 종합 품질 점수를 운영하는 방법을 정리했습니다.
+
 - [[libraries/langgraph/untracked-value-runtime-only-state|LangGraph UntrackedValue로 실행 전용 state를 checkpoint에서 제외하기]]
   client와 session 같은 현재 실행 전용 객체를 노드 사이에 전달하면서 checkpoint 직렬화에서 제외하고, interrupt 재개 경계를 설계하는 방법을 정리했습니다.
 

@@ -10,6 +10,7 @@ LangSmith는 LLM 애플리케이션의 tracing, evaluation, feedback, automation
 
 ## 글 목록
 
+- [[libraries/langsmith/langsmith-composite-evaluators-migration|LangSmith composite evaluator로 여러 품질 점수를 하나로 묶기]]
 - [[libraries/langsmith/langsmith-resource-tags-abac-access-control|LangSmith resource tags와 ABAC로 리소스 접근 범위 제한하기]]
 - [[libraries/langsmith/langsmith-audit-logs-ocsf-siem|LangSmith Audit Logs API를 OCSF 형식으로 수집해 SIEM에 연결하기]]
 - [[libraries/langsmith/langsmith-remote-mcp-observability-access|LangSmith Remote MCP로 trace와 evaluation 데이터를 AI 도구에 연결하기]]
