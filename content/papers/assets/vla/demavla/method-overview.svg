@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 370" role="img" aria-labelledby="title desc">
+  <title id="title">DeMaVLA 학습과 실행 흐름</title>
+  <desc id="desc">약 5,000시간의 양팔 로봇 시연으로 사전 학습하고, 이미지·언어·로봇 상태를 Qwen3-VL과 가지치기한 액션 전문가에 입력해 flow matching으로 행동을 생성하며, 사람의 실패 교정으로 후속 학습하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#486581"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .box { fill: #fff; stroke: #9ab6cc; stroke-width: 2; }
+      .accent { fill: #e7f3ef; stroke: #71a493; stroke-width: 2; }
+      .line { stroke: #486581; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .title { font: 700 20px sans-serif; fill: #213547; }
+      .body { font: 16px sans-serif; fill: #3c5163; }
+      .small { font: 14px sans-serif; fill: #536b7b; }
+    </style>
+  </defs>
+  <rect class="bg" width="1120" height="370" rx="24"/>
+  <text x="36" y="42" class="title">DeMaVLA: 데이터 → 행동 생성 → 실패 교정</text>
+  <rect x="35" y="85" width="245" height="165" rx="18" class="box"/>
+  <text x="58" y="122" class="title">사전 학습 데이터</text>
+  <text x="58" y="158" class="body">양팔 로봇 시연 약 5,000시간</text>
+  <text x="58" y="190" class="small">접기·이동·배치 등 다양한 조작</text>
+  <path d="M287 167 H340" class="line"/>
+  <rect x="350" y="85" width="380" height="165" rx="18" class="accent"/>
+  <text x="374" y="122" class="title">VLM + 액션 전문가</text>
+  <text x="374" y="158" class="body">Qwen3-VL → 층 정렬을 유지한 가지치기</text>
+  <text x="374" y="190" class="body">Flow matching으로 연속 행동 생성</text>
+  <text x="374" y="221" class="small">입력: 카메라 영상 · 언어 지시 · 로봇 상태</text>
+  <path d="M737 167 H790" class="line"/>
+  <rect x="800" y="85" width="285" height="165" rx="18" class="box"/>
+  <text x="824" y="122" class="title">양팔 의류 접기</text>
+  <text x="824" y="158" class="body">셔츠 · 치마 · 바지 · 수건</text>
+  <text x="824" y="190" class="small">한 체크포인트로 여러 범주 수행</text>
+  <path d="M943 257 V303 H542 V257" class="line"/>
+  <text x="594" y="337" class="body">실패 구간에서 사람의 교정 시연 수집 (DAgger)</text>
+</svg>

@@ -53,11 +53,27 @@ VLA 연구에서 중요한 질문은 "VLM의 의미 이해를 어떻게 실제 a
 
 학습은 두 단계로 이해할 수 있다. 먼저 대규모 양팔 demonstration에서 일반 조작 prior를 pre-training한다. 그 다음 mixed folding data와 real-robot failure correction을 모아 post-training한다. 특히 human-gated DAgger는 정책이 실패하는 상태 분포에서 사람이 필요한 순간만 개입해 correction trajectory를 수집한다는 점이 핵심이다.
 
+# 핵심 그림
+
+![DeMaVLA의 데이터, 모델, 실패 교정 흐름](/papers/assets/vla/demavla/method-overview.svg)
+
+> 논문의 모델 구성과 학습 절차를 바탕으로 재구성한 설명 그림. [원 논문](https://arxiv.org/abs/2605.31286)의 Figure 2를 그대로 복제한 이미지는 아니다.
+
 # Experiments / Results
 
 평가는 RoboTwin simulation benchmark와 real-world household folding benchmark에서 진행된다. 논문은 DeMaVLA가 시뮬레이션 평균 성능에서 기존 VLA baseline보다 강한 결과를 보이고, 실제 folding benchmark에서도 단일 태스크 fine-tuning이 아니라 multi-category folding을 하나의 정책으로 수행할 수 있음을 강조한다.
 
 pre-training scaling 분석도 인상적이다. 논문은 real-world pre-training data를 500시간, 2,500시간, 5,000시간으로 늘려 비교하고, 5,000시간 설정에서 shirt-folding 성공률과 완료 시간이 크게 좋아졌다고 보고한다. 이는 deformable manipulation에서 모델 구조만큼 데이터 규모가 중요하다는 근거로 읽힌다.
+
+## 주요 실험 결과
+
+| 설정 / 지표                                               | DeMaVLA |         비교 기준 |    차이 | 출처                                                              |
+| --------------------------------------------------------- | ------: | ----------------: | ------: | ----------------------------------------------------------------- |
+| RoboTwin 2.0, 50개 태스크 평균 성공률 — clean (%, ↑)      |   88.42 | LingBot-VLA 86.50 | +1.92%p | [저자 공개 결과](https://github.com/midea-ai/DeMaVLA#robotwin-20) |
+| RoboTwin 2.0, 50개 태스크 평균 성공률 — randomized (%, ↑) |   86.78 | LingBot-VLA 85.34 | +1.44%p | [저자 공개 결과](https://github.com/midea-ai/DeMaVLA#robotwin-20) |
+| 실제 양팔 의류 접기, 4개 태스크 평균 성공률 (%, ↑)        |    92.5 |           π₀ 76.3 | +16.2%p | [논문 Table 4](https://arxiv.org/abs/2605.31286)                  |
+
+실제 의류 접기 비교에서 두 방법은 모두 학습 시 RTC를 사용한다. 평균 성공률이 높아졌다는 결과가 모든 태스크에서 완료 시간도 짧아졌다는 뜻은 아니다. 셔츠와 치마에서는 DeMaVLA의 평균 완료 시간이 더 길다.
 
 # Limitations / Discussion
 
