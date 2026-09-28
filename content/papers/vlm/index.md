@@ -13,6 +13,10 @@ paper_sync: true
 
 ## [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 
+## [The Alignment Illusion in Multimodal Large Language Models](/papers/vlm/the-alignment-illusion-in-multimodal-large-language-models)
+
 ## [VideoResearcher: Self-Improving Tool Design for Long-Video Understanding](/papers/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding)
 
 ## [VideoScout: Learning Agentic Active Exploration with Adaptive Reasoning Pacing for Long Video Understanding](/papers/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding)
+
+## [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)
