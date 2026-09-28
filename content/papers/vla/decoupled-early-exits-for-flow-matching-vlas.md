@@ -49,6 +49,12 @@ VLA의 compute budget은 단일한 "작은 모델" 문제가 아니다. 의미 �
 - 하드웨어: NVIDIA A100 40GB, batch size 1 latency
 - 지표: success rate, action-generation latency, GFLOPs
 
+# 핵심 그림
+
+![Flow-matching VLA에서 VLM 깊이, action expert 깊이, denoising 단계의 세 연산 축](https://arxiv.org/html/2609.29382v1/teaser.png)
+
+_원문 Figure 1._ 연산 예산의 세 축과 과업별 성공률·지연시간·FLOPs 절충을 함께 보여 준다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.29382).
+
 # Method
 
 각 설정은 $(V,A,D)$로 표현한다. $V$와 $A$의 중간 지점에는 마지막 layer의 출력을 모사하는 Exit Transformer를 배치하고, 원래 backbone과 action expert는 고정한다. 각 exit의 추가 parameter는 SmolVLA 2.1%, $\pi_{0.5}$ 4.1%다.

@@ -49,6 +49,12 @@ Kintsugi-VLA는 실패한 simulator rollout의 각 상태에서 expert continuat
 - Protocol G pool: 3,016 states, calibration continuation 45,240회
 - 비교: nominal-only, random, uniform-window, targeted recovery
 
+# 핵심 그림
+
+![실패한 로봇 rollout의 저장 상태에서 회복 가능성을 시험해 recovery 데이터를 만드는 과정](https://arxiv.org/html/2609.31048v1/figures/main.png)
+
+_원문 Figure 1._ 실패 궤적의 모든 프레임을 동일하게 쓰지 않고, 전문가가 실제로 복구할 수 있는 상태를 선별하는 문제를 보여 준다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.31048).
+
 # Method
 
 각 snapshot state에서 동일 expert를 여러 번 실행하고 Wilson interval을 사용해 recovery probability를 적응적으로 추정한다. 시간에 따라 단조롭게 감소한다고 가정하지 않고, 마지막으로 낮은 recoverability가 지속되는 frontier를 찾는다.

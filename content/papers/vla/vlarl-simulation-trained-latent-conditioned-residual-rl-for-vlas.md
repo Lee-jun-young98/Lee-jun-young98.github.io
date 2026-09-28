@@ -49,6 +49,12 @@ VLA 내부 표현을 semantic feature일 뿐 아니라 sim-to-real control inter
 - 데이터: 과업당 실로봇 teleoperation 32 demonstrations
 - 평가: 실로봇 조건당 40 trials, unseen shape/color object 포함
 
+# 핵심 그림
+
+![VLaRL에서 고정된 VLA 행동을 시뮬레이션 학습 residual policy로 국소 보정하는 개념](https://arxiv.org/html/2609.30868v1/concept_VLaRL_3.png)
+
+_원문 Figure 1._ 실세계 온라인 RL 없이 시뮬레이션에서 학습한 residual 보정을 실로봇에 옮기는 핵심 구조다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.30868).
+
 # Method
 
 먼저 실제 demonstration으로 VLA를 fine-tune하고 고정한다. 같은 trajectory의 sim-real latent 쌍을 이용해 simulation latent를 real latent 분포로 옮기는 mapper를 학습한다.

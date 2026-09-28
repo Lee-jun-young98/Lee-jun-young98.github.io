@@ -41,6 +41,12 @@ Representational Similarity Analysis(RSA)와 activation patching 기반 Causal M
 
 또한 모델 전체를 재학습하지 않고 외부 Active Speaker Detection(ASD) 결과를 빨간 bounding box로 영상에 덧씌우는 visual prompting만으로 audio-visual binding을 보완한다. 이는 시각 마커와 도구 출력을 VLM 입력 공간에 다시 렌더링하는 방식이 단순한 편의 기능을 넘어 내부 결합 회로를 안정화할 수 있음을 보여 준다.
 
+# 핵심 그림
+
+![오디오의 발화 순서 ID와 영상의 화자 위치 ID를 연결하는 trimodal binding 과정](https://arxiv.org/html/2609.31193v1/main.png)
+
+_원문 Figure 1(a)._ anchor ID 검색 → target ID 선택 → 의미 특징 회수의 세 단계와 실패 지점을 보여 준다. [그림 출처: 논문 원문](https://arxiv.org/html/2609.31193).
+
 # Method
 
 1. video-SALMONN2+ 7B, Qwen2.5-Omni 3B/7B, MiniCPM-o-4.5 9B를 대상으로 AAVR(Acoustically-Anchored Visual Retrieval)와 VAAR(Visually-Anchored Audio Retrieval) 과제를 구성한다.
@@ -58,6 +64,18 @@ Representational Similarity Analysis(RSA)와 activation patching 기반 Causal M
 - Qwen2.5-Omni 7B에서 training-free ASD는 SocialOmni 38.95%→41.90%, DiaDemBench REF 19.1→22.5, ASR 28.1→33.0으로 개선했다. 잘못된 화자나 무작위 영역을 표시하면 성능이 오히려 하락해, 일반적인 saliency가 아니라 정확한 화자 위치가 중요했다.
 - ASD-FT는 Qwen2.5-Omni 7B의 AVSpeaker 44.86%→48.79%, DailyOmni 64.33%→71.09%, SocialOmni 38.95%→44.25%를 기록했다. MiniCPM-o-4.5와 video-SALMONN2+에서도 대화 중심 세 데이터셋 성능이 전반적으로 향상됐다.
 - 300 step 미만의 경량 fine-tuning 후 OmniBench, DAVE, WorldSense 같은 일반 audio-visual benchmark에서도 세 모델이 일관되게 개선되어, bounding-box 해석을 넘어 audio-visual alignment 자체가 강화되었을 가능성을 보였다.
+
+## 주요 실험표
+
+논문 Table 1의 Qwen2.5-Omni 7B 비교를 발췌했다. AVSpeaker·DailyOmni·SocialOmni는 정확도(%), DiaDemBench의 REF·ASR은 논문 보고 점수(높을수록 좋음)다.
+
+| 방법                | AVSpeaker | DailyOmni | SocialOmni |     DiaDem REF |     DiaDem ASR |
+| ------------------- | --------: | --------: | ---------: | -------------: | -------------: |
+| 기본 모델           |     44.86 |     64.33 |      38.95 |     19.1 ± 0.4 |     28.1 ± 0.1 |
+| + ASD (재학습 없음) |     45.59 |     64.66 |      41.90 | **22.5 ± 0.2** | **33.0 ± 0.2** |
+| + ASD-FT            | **48.79** | **71.09** |  **44.25** |     20.7 ± 0.2 |     32.3 ± 0.1 |
+
+ASD-FT가 모든 지표에서 최고인 것은 아니다. DiaDemBench의 REF·ASR은 재학습 없는 ASD가 더 높다. 표의 원자료: [논문 Table 1](https://arxiv.org/html/2609.31193).
 
 # Limitations / Discussion
 

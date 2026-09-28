@@ -49,6 +49,12 @@ Uniform binning과 BEAST 모두에 붙일 수 있는 analytic representation이�
 - tokenizer: 256-bin BIN, B-spline 기반 BEAST와 각각 결합
 - 설정: single-dataset와 heterogeneous mixed-dataset training
 
+# 핵심 그림
+
+![DSD가 이동을 방향과 크기로, 회전을 축과 각도로 분리해 토큰화하는 방식](https://arxiv.org/html/2609.28865v1/dsd_graphical_abstract_9.svg)
+
+_원문 Figure 1._ 속도나 데이터셋 정규화가 달라도 동작의 기하학적 방향을 보존하려는 표현 설계다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.28865).
+
 # Method
 
 Translation increment는 크기와 3D unit direction으로, rotation increment는 회전각과 unit axis로 바꾼다. Directional component에는 고정된 dataset-independent bound를 적용하고 scale component는 별도로 정규화한다. 예측 후에는 방향에 magnitude를 곱하고 axis-angle을 회전 표현으로 복원해 원래 action을 얻는다.

@@ -49,6 +49,12 @@ VLA를 전면 미세조정하지 않고 frozen proposal과 내부 latent를 재�
 - 비교: Base Policy, RLT, DSRL; 동일 online robot-data budget
 - 평가 지표: 성공률과 사람 개입률
 
+# 핵심 그림
+
+![BEE의 VLA 제안, 사람 교정 모델, 차원별 제약을 결합한 학습 구조](https://arxiv.org/html/2609.27450v1/Teaser_v38.png)
+
+_원문 Figure 1._ 사람의 교정을 그대로 모방하는 대신, 교정의 차원별 불확실성으로 RL 제약 강도를 조절한다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.27450).
+
 # Method
 
 Frozen VLA는 action proposal과 내부 feature latent를 출력한다. Residual Policy는 이 proposal에 더할 action chunk residual을 예측하며, critic은 chunk 단위 return을 학습한다. 사람 개입이 발생하면 원래 VLA proposal을 버리지 않고 사람 액션과 함께 저장해 correction residual을 구성한다.

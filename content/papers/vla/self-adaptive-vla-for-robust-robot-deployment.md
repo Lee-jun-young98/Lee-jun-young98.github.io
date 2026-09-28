@@ -49,6 +49,12 @@ Self-Adaptive VLA는 실패한 이전 rollout의 영상·proprioception·action�
 - 평가: 과업별 unseen shift 20 episodes, episode당 최대 6 trials
 - Base VLA: Qwen-3.5-0.8B VLM encoder와 8-layer 340M Action DiT
 
+# 핵심 그림
+
+![하드웨어 변화로 성능이 떨어진 VLA가 배포 중 수집한 rollout 문맥으로 적응하는 과정](https://arxiv.org/html/2609.30092v1/teaser_v4.png)
+
+_원문 Figure 1._ actuation·encoder 변화에 따른 성능 저하와, 배포 중 축적한 context로 이를 보정하는 개념을 보여 준다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.30092).
+
 # Method
 
 먼저 shift가 주입된 환경에서 base policy rollout을 context로 수집한다. 알려진 shift의 역변환으로 기존 expert action을 보상해 같은 demonstration을 여러 하드웨어 조건에 맞는 contextualized dataset으로 바꾼다.

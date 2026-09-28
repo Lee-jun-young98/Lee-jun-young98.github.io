@@ -39,6 +39,12 @@ VLM 해석 연구에서 내부 정렬 곡선을 곧바로 “모델이 이미지
 
 또한 무관한 이미지도 projector에 잘 인코딩되고 답변 경로로 전파되어 text-only보다 성능을 더 낮춘다는 결과는, VLM이 시각 입력을 받는 것과 질문에 맞게 사용하는 것이 별개의 문제임을 보여 준다. 모델 비교나 학습 진단에서도 내부 similarity와 task accuracy를 동일한 종류의 증거로 취급해서는 안 된다.
 
+# 핵심 그림
+
+![시각 토큰을 훼손해도 정렬 점수는 높게 남을 수 있는 alignment illusion](https://arxiv.org/html/2609.30210v1/main.png)
+
+_원문 Figure 1._ 내부 정렬 점수와 실제 시각 정보 사용은 다를 수 있다는 논문의 문제 설정이다. [그림 출처: 논문 원문](https://arxiv.org/html/2609.30210).
+
 # Method
 
 1. LLaVA-OV, LLaVA-OV-1.5, Qwen2-VL, Qwen2.5-VL, InternVL3 계열 13개 모델의 layer별 visual/text hidden state를 수집한다.
@@ -58,6 +64,19 @@ VLM 해석 연구에서 내부 정렬 곡선을 곧바로 “모델이 이미지
 - Orig, Irr, Noise의 layer-mean PA gap 중앙값은 각각 0.130, 0.213, 0.324였으며, 13개 중 12개 모델에서 이 순서를 유지했다.
 - 정확도는 Orig 85.4%, Irr 36.1%, Noise 39.0%로 기하학적 순서와 달랐다. 무관한 자연 이미지는 text-only보다 중앙값 5.0%p 낮아, 모델이 이를 무시하지 않고 오히려 방해받았다.
 - projector token linear probe는 무관 이미지 category를 74.4~78.5% 정확도로 복원했다(우연 수준 5%). principal-angle subspace 내부 perturbation은 외부 perturbation보다 전 모델에서 1.1~5.5%p 더 큰 정확도 하락을 일으켰다.
+
+## 주요 실험표
+
+논문 Table 1 중 핵심 지표를 옮겼다. 13개 모델의 graded visual degradation에서 각 정렬 지표와 정확도의 절대 Pearson 상관계수다. 값이 클수록 정확도 변화를 더 잘 추적한다.
+
+| 지표                           | 평균 \|r\| | 중앙값 \|r\| | \|r\| > 0.80인 모델 | 상관 방향 일치 |
+| ------------------------------ | ---------: | -----------: | ------------------: | -------------: |
+| 첫 principal-angle cosine (σ₁) |      0.730 |        0.765 |                5/13 |           4/13 |
+| CKA                            |      0.752 |        0.765 |                6/13 |           4/13 |
+| SVCCA                          |      0.736 |        0.788 |                6/13 |           3/13 |
+| **PA gap (σ₁ − σ₂)**           |  **0.894** |    **0.917** |           **12/13** |      **13/13** |
+
+표의 원자료와 측정 조건: [논문 Table 1](https://arxiv.org/html/2609.30210).
 
 # Limitations / Discussion
 

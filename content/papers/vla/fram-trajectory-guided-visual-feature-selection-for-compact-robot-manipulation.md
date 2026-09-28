@@ -48,6 +48,12 @@ Trajectory가 예측과 시각 정보 선택을 연결하므로, action represen
 - action: future trajectory와 local image feature를 조건으로 한 flow-matching expert
 - 변화 평가: object layout, camera viewpoint, robot initial pose
 
+# 핵심 그림
+
+![FRAM의 미래 말단효과기 궤적 예측과 궤적 주변 시각 특징 선택](https://arxiv.org/html/2609.30965v1/figs/model_overview.png)
+
+_원문 Figure 1._ 예측한 미래 궤적에 맞춰 국소 시각 특징을 골라 flow-matching action 생성에 전달한다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.30965).
+
 # Method
 
 Language와 image encoder가 기본 context를 만든다. Future trajectory predictor가 demonstration 기반 end-effector 궤적을 출력하고, camera calibration으로 궤적 point를 image plane에 투영한다.

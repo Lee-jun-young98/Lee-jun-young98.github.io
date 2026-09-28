@@ -48,6 +48,12 @@ Causeway는 새 과업 demonstration에서 re-entry pose를 정하고, frozen VL
 - 실로봇: xArm, button/bowl/corn instruction switching
 - action: 6D pose increment와 gripper command의 chunk
 
+# 핵심 그림
+
+![Causeway가 태스크 전환 전에 다음 태스크의 진입 가능한 상태로 복귀시키는 과정](https://arxiv.org/html/2609.30913v1/fig1_causeway_v2.png)
+
+_원문 Figure 1._ 이전 태스크의 종료 상태가 다음 태스크의 시연 상태 집합 밖에 있을 때, 단순 지시 전환이 실패하는 이유와 재진입 경로를 보여 준다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.30913).
+
 # Method
 
 Target 과업의 phase-compatible demonstration segment에서 handoff pose를 선택한다. 현재 end-effector pose와 목표 pose의 translation·rotation error를 계산하고, 이 error를 줄이는 action이 나오도록 decoding hidden state에 공유 perturbation을 gradient descent로 찾는다.

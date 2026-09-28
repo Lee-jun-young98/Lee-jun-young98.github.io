@@ -49,6 +49,12 @@ Phase gate와 condition noise/dropout은 goal 주입이 단순 변위 적분 sho
 - executor: 300M flow-matching action expert
 - 제어: 최대 7개 waypoint, action horizon 32
 
+# 핵심 그림
+
+![계층형 VLA의 waypoint planner와 action executor 사이의 연결](https://arxiv.org/html/2609.30833v1/fig1_teaser.png)
+
+_원문 Figure 1._ planner가 위치·그리퍼·지속시간 waypoint를 만들고 executor가 이를 실제 동작으로 바꾸는 인터페이스를 보여 준다. [그림·실험표 출처: 논문 원문](https://arxiv.org/html/2609.30833).
+
 # Method
 
 Demonstration에서 AWE로 gripper transition과 최대 horizon 제약을 만족하는 waypoint를 추출한다. 각 waypoint는 목표 configuration, gripper 상태, 실행 duration으로 구성된다.
