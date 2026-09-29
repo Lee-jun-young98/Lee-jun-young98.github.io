@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">GT-VLA pipeline reconstruction</title>
+  <desc id="desc">A generalist VLM produces a skill plan and semantic target, a trace expert converts them into a visual path, and a skill-routed action expert controls the robot.</desc>
+  <rect width="1200" height="520" fill="#f8fafc"/>
+  <text x="60" y="62" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">GT-VLA: semantic intent becomes executable trace guidance</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="130" width="220" height="180" rx="20" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+    <text x="170" y="180" text-anchor="middle" font-size="22" font-weight="700" fill="#1e3a8a">Generalist VLM</text>
+    <text x="170" y="225" text-anchor="middle" font-size="18" fill="#1e40af">skill sequence</text>
+    <text x="170" y="258" text-anchor="middle" font-size="18" fill="#1e40af">semantic target point</text>
+    <rect x="365" y="130" width="220" height="180" rx="20" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+    <text x="475" y="180" text-anchor="middle" font-size="22" font-weight="700" fill="#14532d">Trace expert</text>
+    <text x="475" y="225" text-anchor="middle" font-size="18" fill="#166534">flow matching</text>
+    <text x="475" y="258" text-anchor="middle" font-size="18" fill="#166534">2D end-effector path</text>
+    <rect x="670" y="130" width="220" height="180" rx="20" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+    <text x="780" y="180" text-anchor="middle" font-size="22" font-weight="700" fill="#78350f">Action expert</text>
+    <text x="780" y="225" text-anchor="middle" font-size="18" fill="#92400e">skill-routed MoE</text>
+    <text x="780" y="258" text-anchor="middle" font-size="18" fill="#92400e">trace-overlay input</text>
+    <rect x="975" y="130" width="165" height="180" rx="20" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="1057" y="185" text-anchor="middle" font-size="22" font-weight="700" fill="#4c1d95">Robot</text>
+    <text x="1057" y="228" text-anchor="middle" font-size="18" fill="#5b21b6">6-DoF action</text>
+    <text x="1057" y="260" text-anchor="middle" font-size="18" fill="#5b21b6">+ gripper</text>
+    <g stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)">
+      <path d="M280 220 H350"/><path d="M585 220 H655"/><path d="M890 220 H960"/>
+    </g>
+    <rect x="360" y="380" width="535" height="72" rx="16" fill="#ffffff" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="627" y="410" text-anchor="middle" font-size="18" font-weight="700" fill="#334155">robust trace conditioning</text>
+    <text x="627" y="438" text-anchor="middle" font-size="16" fill="#475569">scene drop · trace drop · low-frequency perturbation</text>
+  </g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+</svg>

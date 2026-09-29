@@ -5,6 +5,12 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
+### [Find Something You Can't Do: Agentic Real-World Reinforcement Learning for Self-Improving VLA Models](/papers/vla/find-agentic-real-world-reinforcement-learning-for-self-improving-vla-models)
+
+### [GT-VLA: Target-Conditioned Trace Guidance for Generalizable Robotic Manipulation](/papers/vla/gt-vla-target-conditioned-trace-guidance-for-generalizable-robotic-manipulation)
+
+### [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
+
 ### [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
 ### [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)

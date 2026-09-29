@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">FIND autonomous practice loop reconstruction</title>
+  <desc id="desc">The current scene is analyzed to select a weak feasible task, a frozen VLA plus gated residual policy executes it, and a VLM evaluates the result to update learning and the curriculum.</desc>
+  <rect width="1200" height="560" fill="#f8fafc"/>
+  <text x="60" y="62" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">FIND: autonomous practice in a persistent workspace</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="75" y="150" width="230" height="130" rx="22" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+    <text x="190" y="198" text-anchor="middle" font-size="21" font-weight="700" fill="#1e3a8a">Current scene</text>
+    <text x="190" y="238" text-anchor="middle" font-size="17" fill="#1e40af">feasible tasks</text>
+    <rect x="385" y="110" width="260" height="210" rx="22" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+    <text x="515" y="158" text-anchor="middle" font-size="21" font-weight="700" fill="#14532d">Weakness-aware agent</text>
+    <text x="515" y="202" text-anchor="middle" font-size="17" fill="#166534">pick low-success task</text>
+    <text x="515" y="236" text-anchor="middle" font-size="17" fill="#166534">from feasible library</text>
+    <text x="515" y="278" text-anchor="middle" font-size="15" fill="#166534">performance-aware curriculum</text>
+    <rect x="725" y="110" width="380" height="210" rx="22" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+    <text x="915" y="158" text-anchor="middle" font-size="21" font-weight="700" fill="#78350f">Execute</text>
+    <text x="915" y="202" text-anchor="middle" font-size="17" fill="#92400e">frozen VLA base action</text>
+    <text x="915" y="236" text-anchor="middle" font-size="17" fill="#92400e">+ bounded residual policy</text>
+    <text x="915" y="278" text-anchor="middle" font-size="15" fill="#92400e">critic gate falls back when uncertain</text>
+    <rect x="385" y="390" width="520" height="105" rx="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="645" y="430" text-anchor="middle" font-size="21" font-weight="700" fill="#4c1d95">Paired-image VLM evaluation</text>
+    <text x="645" y="466" text-anchor="middle" font-size="17" fill="#5b21b6">reward → replay buffer → residual RL → next curriculum</text>
+    <g stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)">
+      <path d="M305 215 H370"/><path d="M645 215 H710"/><path d="M915 320 V375 H900"/><path d="M385 443 H190 V295"/>
+    </g>
+  </g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+</svg>
