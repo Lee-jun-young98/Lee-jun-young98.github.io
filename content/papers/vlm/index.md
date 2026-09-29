@@ -11,6 +11,8 @@ paper_sync: true
 
 ## [How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining](/papers/vlm/how-far-are-we-from-removing-the-visual-encoder)
 
+![](/papers/assets/vlm/how-far-are-we-from-removing-the-visual-encoder/encoder-free-scaling-overview.svg)
+
 ## [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
 ## [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)

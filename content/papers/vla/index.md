@@ -3,12 +3,6 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [Find Something You Can't Do: Agentic Real-World Reinforcement Learning for Self-Improving VLA Models](/papers/vla/find-agentic-real-world-reinforcement-learning-for-self-improving-vla-models)
-
-## [GT-VLA: Target-Conditioned Trace Guidance for Generalizable Robotic Manipulation](/papers/vla/gt-vla-target-conditioned-trace-guidance-for-generalizable-robotic-manipulation)
-
-## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
-
 ## [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
 ## [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
@@ -27,6 +21,8 @@ paper_sync: true
 
 ## [Fast Plans, Faithful Actions: Closing the Planning-Execution Gap in Hierarchical Vision-Language-Action Models](/papers/vla/fast-plans-faithful-actions-closing-the-planning-execution-gap-in-hierarchical-vlas)
 
+## [Find Something You Can't Do: Agentic Real-World Reinforcement Learning for Self-Improving VLA Models](/papers/vla/find-agentic-real-world-reinforcement-learning-for-self-improving-vla-models)
+
 ## [ForeTac-VLA: A Forecasting-Based Tactile-Vision-Language-Action Model for Contact-Rich Robotic Manipulation](/papers/vla/foretac-vla-forecasting-based-tactile-vision-language-action-model)
 
 ## [FRAM: Trajectory-Guided Visual Feature Selection for Compact Language-Conditioned Robot Manipulation](/papers/vla/fram-trajectory-guided-visual-feature-selection-for-compact-robot-manipulation)
@@ -34,6 +30,8 @@ paper_sync: true
 ## [GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments](/papers/vla/gala-geometry-aware-latent-action-modeling-for-vla-pretraining-across-embodiments)
 
 ## [GeoAAC: Geometry-Based Adaptive Action Chunking from Denoising Trajectories in VLA Policies](/papers/vla/geoaac-geometry-based-adaptive-action-chunking-from-denoising-trajectories)
+
+## [GT-VLA: Target-Conditioned Trace Guidance for Generalizable Robotic Manipulation](/papers/vla/gt-vla-target-conditioned-trace-guidance-for-generalizable-robotic-manipulation)
 
 ## [H-VLA: Hierarchical Vision-Language-Action Model with Key-Action Reasoning and Motion Planning in a Unified Action Space](/papers/vla/h-vla-hierarchical-vision-language-action-model-with-key-action-reasoning)
 
@@ -46,6 +44,8 @@ paper_sync: true
 ## [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
 
 ## [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
+
+## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
 ## [SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation](/papers/vla/savla-symmetry-aware-vision-language-action-models-for-robotic-manipulation)
 
