@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">다중 세션 비디오 비서의 persistent memory와 효용·지연·저장 비용 절충</title>
+  <desc id="desc">끊어진 세 개의 1인칭 비디오 세션 사이에서 persistent memory가 과거 근거를 저장하고 현재 장면에 선택적으로 주입되는 흐름과, raw video, text summary, event memory의 상대적 특성을 보여 주는 재구성 설명도.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#172554"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7dd3fc"/>
+    </marker>
+    <style>
+      .title { font: 700 30px system-ui, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 500 16px system-ui, sans-serif; fill: #bae6fd; }
+      .label { font: 700 18px system-ui, sans-serif; fill: #f8fafc; }
+      .body { font: 500 15px system-ui, sans-serif; fill: #dbeafe; }
+      .small { font: 500 13px system-ui, sans-serif; fill: #cbd5e1; }
+      .number { font: 700 20px system-ui, sans-serif; fill: #fef3c7; }
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+  <text x="60" y="58" class="title">APM-Bench: 세션을 넘어 지속되는 비디오 메모리</text>
+  <text x="60" y="88" class="subtitle">논문 Figure 1·2와 Table 3을 바탕으로 재구성</text>
+
+  <g transform="translate(60 125)">
+    <rect x="0" y="0" width="260" height="130" rx="18" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2"/>
+    <text x="22" y="35" class="label">Session 1</text>
+    <text x="22" y="65" class="body">과거 활동과 시각 근거</text>
+    <text x="22" y="92" class="small">interaction 종료 후 영상 접근 불가</text>
+    <circle cx="225" cy="95" r="17" fill="#38bdf8"/>
+    <path d="M215 95h20M225 85v20" stroke="#082f49" stroke-width="4"/>
+
+    <line x1="270" y1="65" x2="425" y2="65" stroke="#7dd3fc" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+    <text x="305" y="46" class="small">수 시간·수일</text>
+
+    <rect x="435" y="0" width="260" height="130" rx="18" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2"/>
+    <text x="457" y="35" class="label">Session 2</text>
+    <text x="457" y="65" class="body">관련 활동 재개</text>
+    <text x="457" y="92" class="small">기억 갱신과 cross-session 질의</text>
+
+    <line x1="705" y1="65" x2="860" y2="65" stroke="#7dd3fc" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+    <text x="740" y="46" class="small">새 상호작용</text>
+
+    <rect x="870" y="0" width="260" height="130" rx="18" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2"/>
+    <text x="892" y="35" class="label">Session 3</text>
+    <text x="892" y="65" class="body">현재 장면 + 선제적 응답</text>
+    <text x="892" y="92" class="small">필요할 때 개입, 아니면 침묵</text>
+
+    <rect x="318" y="158" width="494" height="88" rx="18" fill="#0f766e" stroke="#5eead4" stroke-width="2"/>
+    <text x="345" y="190" class="label">Persistent memory</text>
+    <text x="345" y="218" class="body">저장 → 관련성 선택 → 현재 causal prefix에 주입</text>
+    <path d="M130 130 C180 190, 245 202, 315 202" fill="none" stroke="#5eead4" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M565 130 L565 155" fill="none" stroke="#5eead4" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M815 202 C885 202, 950 175, 1000 133" fill="none" stroke="#5eead4" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+
+  <line x1="60" y1="402" x2="1140" y2="402" stroke="#334155" stroke-width="2"/>
+  <text x="60" y="440" class="label">같은 Gemini 3.6 Flash에서 드러난 절충</text>
+
+  <g transform="translate(60 465)">
+    <rect x="0" y="0" width="330" height="118" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="2"/>
+    <text x="20" y="31" class="label">Raw video</text>
+    <text x="20" y="61" class="number">회상 69.37 · 전체 60.21</text>
+    <text x="20" y="89" class="body">시각 세부 보존, 3.01 GiB/video-hour</text>
+
+    <rect x="375" y="0" width="330" height="118" rx="16" fill="#4c1d95" stroke="#c084fc" stroke-width="2"/>
+    <text x="395" y="31" class="label">Text summary</text>
+    <text x="395" y="61" class="number">회상 47.50 · 전체 53.54</text>
+    <text x="395" y="89" class="body">KiB급 저장, 현재 인식 +1.78%p</text>
+
+    <rect x="750" y="0" width="330" height="118" rx="16" fill="#164e63" stroke="#22d3ee" stroke-width="2"/>
+    <text x="770" y="31" class="label">Event memory</text>
+    <text x="770" y="61" class="number">전용 시스템 중 최고 41.46</text>
+    <text x="770" y="89" class="body">선택적 구조화, 아직 지연·용량 부담</text>
+  </g>
+</svg>

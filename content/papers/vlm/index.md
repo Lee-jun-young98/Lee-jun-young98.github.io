@@ -3,6 +3,10 @@ title: "VLM"
 paper_sync: true
 ---
 
+## [APM-Bench: Benchmarking Cross-session Persistent Memory for Egocentric Streaming Video Assistants](/papers/vlm/apm-bench-cross-session-persistent-memory-for-egocentric-streaming-video-assistants)
+
+![](/papers/assets/vlm/apm-bench-cross-session-persistent-memory-for-egocentric-streaming-video-assistants/persistent-memory-tradeoff.svg)
+
 ## [Benchmarking the Explanatory Quality of Open-Weight Vision-Language Models in Face Recognition](/papers/vlm/benchmarking-the-explanatory-quality-of-open-weight-vision-language-models-in-face-recognition)
 
 ## [Canonical Color as a Lens into Concept Decodability in Vision Encoders and VLMs](/papers/vlm/canonical-color-as-a-lens-into-concept-decodability-in-vision-encoders-and-vlms)
