@@ -1,0 +1,277 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Exemplar2VQA dual-track multi-agent data generation pipeline</title>
+  <desc id="desc">
+    A spatial question-answer exemplar is expanded through separate camera and QA code-generation
+    tracks. Architect, Coder, Reviewer, and Refiner agents use simulator feedback and deterministic
+    geometry APIs to create verified visual question-answer training data.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="1" stop-color="#1e293b" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#020617" flood-opacity="0.3" />
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#94a3b8" />
+    </marker>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)" />
+  <text
+    x="60"
+    y="58"
+    fill="#f8fafc"
+    font-family="Arial, 'Noto Sans KR', sans-serif"
+    font-size="30"
+    font-weight="700"
+  >
+    Exemplar2VQA — 의미는 에이전트가, 공간 계산은 코드가
+  </text>
+  <text x="60" y="88" fill="#94a3b8" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="16">
+    논문 Figure 1·2와 Section 3을 바탕으로 재구성
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect
+      x="55"
+      y="180"
+      width="190"
+      height="220"
+      rx="22"
+      fill="#312e81"
+      stroke="#818cf8"
+      stroke-width="2"
+    />
+    <text
+      x="150"
+      y="220"
+      text-anchor="middle"
+      fill="#c7d2fe"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="17"
+      font-weight="700"
+    >
+      공간 QA exemplar
+    </text>
+    <text
+      x="150"
+      y="258"
+      text-anchor="middle"
+      fill="#f8fafc"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="15"
+    >
+      “소파 기준으로
+    </text>
+    <text
+      x="150"
+      y="282"
+      text-anchor="middle"
+      fill="#f8fafc"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="15"
+    >
+      의자는 어느 방향?”
+    </text>
+    <rect x="82" y="314" width="136" height="48" rx="12" fill="#4338ca" />
+    <text
+      x="150"
+      y="344"
+      text-anchor="middle"
+      fill="#e0e7ff"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="14"
+    >
+      질문 형식 + 의도
+    </text>
+  </g>
+
+  <path d="M245 290 H302" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)" />
+
+  <g filter="url(#shadow)">
+    <rect
+      x="315"
+      y="125"
+      width="525"
+      height="180"
+      rx="22"
+      fill="#0f3d4c"
+      stroke="#22d3ee"
+      stroke-width="2"
+    />
+    <text
+      x="345"
+      y="159"
+      fill="#a5f3fc"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="18"
+      font-weight="700"
+    >
+      Track 1 · Camera Generation
+    </text>
+    <g font-family="Arial, 'Noto Sans KR', sans-serif" font-size="14" text-anchor="middle">
+      <rect x="345" y="186" width="100" height="52" rx="12" fill="#155e75" />
+      <text x="395" y="218" fill="#ecfeff">Architect</text>
+      <rect x="465" y="186" width="100" height="52" rx="12" fill="#155e75" />
+      <text x="515" y="218" fill="#ecfeff">Coder</text>
+      <rect x="585" y="186" width="100" height="52" rx="12" fill="#155e75" />
+      <text x="635" y="218" fill="#ecfeff">Reviewer</text>
+      <rect x="705" y="186" width="100" height="52" rx="12" fill="#155e75" />
+      <text x="755" y="218" fill="#ecfeff">Refiner</text>
+    </g>
+    <path
+      d="M445 212 H465 M565 212 H585 M685 212 H705"
+      stroke="#67e8f9"
+      stroke-width="2"
+      marker-end="url(#arrow)"
+    />
+    <text
+      x="575"
+      y="270"
+      text-anchor="middle"
+      fill="#bae6fd"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="14"
+    >
+      AI2-THOR 실행 피드백 → 유효한 camera pose와 multi-view 관측
+    </text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect
+      x="315"
+      y="330"
+      width="525"
+      height="180"
+      rx="22"
+      fill="#3f2b0a"
+      stroke="#fbbf24"
+      stroke-width="2"
+    />
+    <text
+      x="345"
+      y="364"
+      fill="#fde68a"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="18"
+      font-weight="700"
+    >
+      Track 2 · QA Generation
+    </text>
+    <g font-family="Arial, 'Noto Sans KR', sans-serif" font-size="14" text-anchor="middle">
+      <rect x="345" y="391" width="100" height="52" rx="12" fill="#92400e" />
+      <text x="395" y="423" fill="#fffbeb">Architect</text>
+      <rect x="465" y="391" width="100" height="52" rx="12" fill="#92400e" />
+      <text x="515" y="423" fill="#fffbeb">Coder</text>
+      <rect x="585" y="391" width="100" height="52" rx="12" fill="#92400e" />
+      <text x="635" y="423" fill="#fffbeb">Reviewer</text>
+      <rect x="705" y="391" width="100" height="52" rx="12" fill="#92400e" />
+      <text x="755" y="423" fill="#fffbeb">Refiner</text>
+    </g>
+    <path
+      d="M445 417 H465 M565 417 H585 M685 417 H705"
+      stroke="#fcd34d"
+      stroke-width="2"
+      marker-end="url(#arrow)"
+    />
+    <text
+      x="575"
+      y="475"
+      text-anchor="middle"
+      fill="#fef3c7"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="14"
+    >
+      3D metadata + 기하 API → 실행 가능한 QA 생성 코드
+    </text>
+  </g>
+
+  <path d="M840 215 H895" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)" />
+  <path d="M840 420 H895" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)" />
+
+  <g filter="url(#shadow)">
+    <rect
+      x="910"
+      y="180"
+      width="235"
+      height="250"
+      rx="22"
+      fill="#064e3b"
+      stroke="#34d399"
+      stroke-width="2"
+    />
+    <text
+      x="1027"
+      y="220"
+      text-anchor="middle"
+      fill="#a7f3d0"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="18"
+      font-weight="700"
+    >
+      검증된 VQA 데이터
+    </text>
+    <text
+      x="1027"
+      y="264"
+      text-anchor="middle"
+      fill="#ecfdf5"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="15"
+    >
+      관측 이미지 / 영상
+    </text>
+    <text
+      x="1027"
+      y="296"
+      text-anchor="middle"
+      fill="#ecfdf5"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="15"
+    >
+      인스턴스화된 질문
+    </text>
+    <text
+      x="1027"
+      y="328"
+      text-anchor="middle"
+      fill="#ecfdf5"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="15"
+    >
+      결정론적 정답
+    </text>
+    <rect x="948" y="354" width="159" height="44" rx="12" fill="#047857" />
+    <text
+      x="1027"
+      y="382"
+      text-anchor="middle"
+      fill="#d1fae5"
+      font-family="Arial, 'Noto Sans KR', sans-serif"
+      font-size="14"
+    >
+      대규모 반복 생성
+    </text>
+  </g>
+
+  <rect x="315" y="540" width="830" height="52" rx="16" fill="#172554" stroke="#3b82f6" />
+  <text
+    x="730"
+    y="572"
+    text-anchor="middle"
+    fill="#dbeafe"
+    font-family="Arial, 'Noto Sans KR', sans-serif"
+    font-size="15"
+  >
+    핵심 경계: LLM은 schema와 호출 순서를 작성하고, 거리·방향·가림의 정답은 Python 실행기가
+    계산한다.
+  </text>
+</svg>

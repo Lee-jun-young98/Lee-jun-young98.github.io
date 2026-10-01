@@ -7,6 +7,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/apm-bench-cross-session-persistent-memory-for-egocentric-streaming-video-assistants/persistent-memory-tradeoff.svg)
 
+## [Exemplar2VQA: A Scalable Exemplar-Driven Visual Question Answering Generation Framework via Multi-Agent Coding](/papers/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation)
+
+![](/papers/assets/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation/exemplar2vqa-pipeline.svg)
+
 ## [Benchmarking the Explanatory Quality of Open-Weight Vision-Language Models in Face Recognition](/papers/vlm/benchmarking-the-explanatory-quality-of-open-weight-vision-language-models-in-face-recognition)
 
 ## [Canonical Color as a Lens into Concept Decodability in Vision Encoders and VLMs](/papers/vlm/canonical-color-as-a-lens-into-concept-decodability-in-vision-encoders-and-vlms)
