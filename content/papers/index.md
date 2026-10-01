@@ -19,6 +19,8 @@ paper_sync: true
 
 ### [Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](/papers/vla/cue-the-flow-steering-flow-matching-policies)
 
+![](/papers/assets/vla/cue-the-flow-steering-flow-matching-policies/overview.svg)
+
 ### [Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs](/papers/vla/decoupled-early-exits-for-flow-matching-vlas)
 
 ### [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](/papers/vla/demavla-vision-language-action-foundation-model-for-generalizable-deformable-manipulation)
@@ -28,6 +30,8 @@ paper_sync: true
 ### [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
 ### [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
+
+![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
 
 ### [Fast Plans, Faithful Actions: Closing the Planning-Execution Gap in Hierarchical Vision-Language-Action Models](/papers/vla/fast-plans-faithful-actions-closing-the-planning-execution-gap-in-hierarchical-vlas)
 
@@ -77,15 +81,15 @@ paper_sync: true
 
 ![](/papers/assets/vlm/apm-bench-cross-session-persistent-memory-for-egocentric-streaming-video-assistants/persistent-memory-tradeoff.svg)
 
-### [Exemplar2VQA: A Scalable Exemplar-Driven Visual Question Answering Generation Framework via Multi-Agent Coding](/papers/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation)
-
-![](/papers/assets/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation/exemplar2vqa-pipeline.svg)
-
 ### [Benchmarking the Explanatory Quality of Open-Weight Vision-Language Models in Face Recognition](/papers/vlm/benchmarking-the-explanatory-quality-of-open-weight-vision-language-models-in-face-recognition)
 
 ### [Canonical Color as a Lens into Concept Decodability in Vision Encoders and VLMs](/papers/vlm/canonical-color-as-a-lens-into-concept-decodability-in-vision-encoders-and-vlms)
 
 ### [DiaVLo: Diagnosing Behaviours of Vision-Language Models](/papers/vlm/diavlo-diagnosing-behaviours-of-vision-language-models)
+
+### [Exemplar2VQA: A Scalable Exemplar-Driven Visual Question Answering Generation Framework via Multi-Agent Coding](/papers/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation)
+
+![](/papers/assets/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation/exemplar2vqa-pipeline.svg)
 
 ### [How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining](/papers/vlm/how-far-are-we-from-removing-the-visual-encoder)
 

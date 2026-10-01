@@ -17,6 +17,8 @@ paper_sync: true
 
 ## [Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](/papers/vla/cue-the-flow-steering-flow-matching-policies)
 
+![](/papers/assets/vla/cue-the-flow-steering-flow-matching-policies/overview.svg)
+
 ## [Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs](/papers/vla/decoupled-early-exits-for-flow-matching-vlas)
 
 ## [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](/papers/vla/demavla-vision-language-action-foundation-model-for-generalizable-deformable-manipulation)
@@ -26,6 +28,8 @@ paper_sync: true
 ## [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
 ## [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
+
+![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
 
 ## [Fast Plans, Faithful Actions: Closing the Planning-Execution Gap in Hierarchical Vision-Language-Action Models](/papers/vla/fast-plans-faithful-actions-closing-the-planning-execution-gap-in-hierarchical-vlas)
 
