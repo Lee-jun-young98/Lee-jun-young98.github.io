@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">ReGuide semantic and geometric rebinding pipeline</title>
+  <desc id="desc">A frozen VLA proposes an action, semantic rebinding detects a wrong referent, geometric rebinding moves to a demonstrated pre-contact pose, and control returns to the frozen VLA.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <text x="60" y="58" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">ReGuide: WHERE를 고치고 HOW를 보존</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="55" y="150" width="220" height="150" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+    <text x="165" y="205" font-size="24" font-weight="700" fill="#1e3a8a">Frozen VLA</text><text x="165" y="242" font-size="18" fill="#334155">action chunk 예측</text>
+    <rect x="345" y="120" width="240" height="210" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+    <text x="465" y="172" font-size="23" font-weight="700" fill="#92400e">Semantic rebinding</text><text x="465" y="213" font-size="18" fill="#334155">예상 endpoint ↔ 지시 대상</text><text x="465" y="247" font-size="18" fill="#334155">mismatch / progress 감시</text><text x="465" y="286" font-size="18" font-weight="700" fill="#b45309">WHERE 오류 감지</text>
+    <rect x="655" y="120" width="250" height="210" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+    <text x="780" y="172" font-size="23" font-weight="700" fill="#166534">Geometric rebinding</text><text x="780" y="213" font-size="18" fill="#334155">demonstration 통계</text><text x="780" y="247" font-size="18" fill="#334155">bounded pose transport</text><text x="780" y="286" font-size="18" font-weight="700" fill="#15803d">pre-contact set 진입</text>
+    <rect x="975" y="150" width="170" height="150" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="1060" y="205" font-size="23" font-weight="700" fill="#5b21b6">Hand-back</text><text x="1060" y="243" font-size="18" fill="#334155">실제 관측으로</text><text x="1060" y="272" font-size="18" fill="#334155">HOW 실행</text>
+  </g>
+  <g fill="none" stroke="#475569" stroke-width="4" marker-end="url(#arrow)"><path d="M275 225 H335"/><path d="M585 225 H645"/><path d="M905 225 H965"/><path d="M1060 310 C1060 430 165 430 165 315"/></g>
+  <text x="600" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#64748b">논문 Figure 2를 바탕으로 재구성 · object pose grounding + frozen policy</text>
+</svg>

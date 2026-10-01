@@ -13,11 +13,15 @@ paper_sync: true
 
 ## [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
 
+## [Correcting WHERE, Preserving HOW: Compositional Generalization for Vision-Language-Action Models via Referential Guidance](/papers/vla/correcting-where-preserving-how-referential-guidance-for-vlas)
+
 ## [Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs](/papers/vla/decoupled-early-exits-for-flow-matching-vlas)
 
 ## [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](/papers/vla/demavla-vision-language-action-foundation-model-for-generalizable-deformable-manipulation)
 
 ## [Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models](/papers/vla/direction-scale-decomposition-for-vision-language-action-models)
+
+## [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
 ## [Fast Plans, Faithful Actions: Closing the Planning-Execution Gap in Hierarchical Vision-Language-Action Models](/papers/vla/fast-plans-faithful-actions-closing-the-planning-execution-gap-in-hierarchical-vlas)
 
@@ -42,6 +46,8 @@ paper_sync: true
 ## [IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies](/papers/vla/imle-vla-fast-single-step-action-generation-for-vision-language-action-policies)
 
 ## [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
+
+## [Magic-W0: A Structured World-Action Foundation Model for Physical Intelligence](/papers/vla/magic-w0-structured-world-action-foundation-model)
 
 ## [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
 

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Magic-W0 structured world-action interaction</title>
+  <desc id="desc">Current 3D geometry, 3D motion, and future semantics form a structured world transition that exchanges information bidirectionally with a continuous action expert.</desc>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="560" rx="24" fill="#f8fafc"/>
+  <text x="55" y="58" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">Magic-W0: Structured World Transition ↔ Action</text>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="55" y="120" width="250" height="150" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/><text x="180" y="170" font-size="22" font-weight="700" fill="#1e3a8a">Current State</text><text x="180" y="210" font-size="18" fill="#334155">VLM context</text><text x="180" y="240" font-size="18" fill="#334155">Current 3D Geometry</text>
+    <rect x="365" y="120" width="250" height="150" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/><text x="490" y="170" font-size="22" font-weight="700" fill="#9a3412">Transition</text><text x="490" y="213" font-size="19" fill="#334155">action-induced</text><text x="490" y="243" font-size="19" font-weight="700" fill="#c2410c">3D Motion</text>
+    <rect x="675" y="120" width="250" height="150" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/><text x="800" y="170" font-size="22" font-weight="700" fill="#166534">Future State</text><text x="800" y="213" font-size="19" fill="#334155">task-relevant</text><text x="800" y="243" font-size="19" font-weight="700" fill="#15803d">Future Semantics</text>
+    <rect x="300" y="360" width="620" height="130" rx="22" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/><text x="610" y="410" font-size="27" font-weight="700" fill="#5b21b6">Continuous Action Expert</text><text x="610" y="452" font-size="19" fill="#334155">layer-aligned joint attention · flow-based generation</text>
+    <rect x="980" y="190" width="165" height="220" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/><text x="1062" y="245" font-size="21" font-weight="700" fill="#334155">Outputs</text><text x="1062" y="292" font-size="18" fill="#334155">world prediction</text><text x="1062" y="328" font-size="18" fill="#334155">+</text><text x="1062" y="366" font-size="18" fill="#334155">robot actions</text>
+  </g>
+  <g fill="none" stroke="#475569" stroke-width="4" marker-end="url(#m)"><path d="M305 195 H355"/><path d="M615 195 H665"/><path d="M180 280 C180 335 390 330 440 355"/><path d="M490 280 V350"/><path d="M800 280 C800 330 735 335 715 355"/><path d="M440 350 C390 325 180 325 180 280"/><path d="M610 350 V285"/><path d="M715 350 C760 325 800 320 800 280"/><path d="M925 195 H970"/><path d="M920 425 H970"/></g>
+  <text x="600" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#64748b">논문 Figure 2의 Magic-W0 구조를 바탕으로 재구성</text>
+</svg>

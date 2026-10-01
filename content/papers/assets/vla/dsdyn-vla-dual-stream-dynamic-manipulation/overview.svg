@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">DSDyn-VLA slow-fast dual-stream architecture</title>
+  <desc id="desc">RGB and optical flow enter a slow Flow-Planner while current state enters a fast Res-Refiner; macro actions and residual corrections are added for robot control.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="560" rx="24" fill="#f8fafc"/>
+  <text x="55" y="58" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0f172a">DSDyn-VLA: slow planning + fast correction</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="115" width="190" height="110" rx="16" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/><text x="150" y="160" text-anchor="middle" font-size="22" font-weight="700" fill="#075985">RGB + Flow</text><text x="150" y="192" text-anchor="middle" font-size="17" fill="#334155">motion perception</text>
+    <rect x="330" y="90" width="370" height="190" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/><text x="515" y="140" text-anchor="middle" font-size="25" font-weight="700" fill="#1e3a8a">Flow-Planner · 2–3 Hz</text><text x="515" y="182" text-anchor="middle" font-size="18" fill="#334155">dual visual encoder</text><text x="515" y="215" text-anchor="middle" font-size="18" fill="#334155">future-state awareness</text><text x="515" y="248" text-anchor="middle" font-size="18" font-weight="700" fill="#1d4ed8">macro action chunk</text>
+    <rect x="55" y="355" width="190" height="110" rx="16" fill="#fef3c7" stroke="#d97706" stroke-width="3"/><text x="150" y="400" text-anchor="middle" font-size="22" font-weight="700" fill="#92400e">Current state</text><text x="150" y="432" text-anchor="middle" font-size="17" fill="#334155">fast observation</text>
+    <rect x="330" y="330" width="370" height="190" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/><text x="515" y="380" text-anchor="middle" font-size="25" font-weight="700" fill="#9a3412">Res-Refiner · 30 Hz</text><text x="515" y="422" text-anchor="middle" font-size="18" fill="#334155">RLPD residual policy</text><text x="515" y="455" text-anchor="middle" font-size="18" fill="#334155">closed-loop disturbance response</text><text x="515" y="488" text-anchor="middle" font-size="18" font-weight="700" fill="#c2410c">bounded correction</text>
+    <circle cx="820" cy="300" r="58" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/><text x="820" y="312" text-anchor="middle" font-size="38" font-weight="700" fill="#166534">+</text>
+    <rect x="950" y="225" width="195" height="150" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/><text x="1048" y="278" text-anchor="middle" font-size="24" font-weight="700" fill="#5b21b6">Robot action</text><text x="1048" y="318" text-anchor="middle" font-size="18" fill="#334155">dynamic target</text><text x="1048" y="347" text-anchor="middle" font-size="18" fill="#334155">closed-loop control</text>
+  </g>
+  <g fill="none" stroke="#475569" stroke-width="4" marker-end="url(#a)"><path d="M245 170 H320"/><path d="M245 410 H320"/><path d="M700 205 C760 205 770 245 790 260"/><path d="M700 425 C760 425 770 355 792 340"/><path d="M878 300 H940"/></g>
+  <text x="905" y="510" text-anchor="end" font-family="Arial, sans-serif" font-size="17" fill="#64748b">논문 Figure 3을 바탕으로 재구성</text>
+</svg>
