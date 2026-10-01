@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Cue the Flow 파이프라인 재구성</title>
+  <desc id="desc">자유형 언어 지시를 공간 heatmap cue로 만들고, contrastive adapter가 동결된 flow matching VLA의 속도장을 affine 조향해 목표 물체 행동을 생성한다.</desc>
+  <rect width="1200" height="430" fill="#f8fafc"/>
+  <text x="600" y="42" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="700" fill="#0f172a">Cue the Flow — 공간 cue로 동결 VLA의 생성 경로 조향</text>
+  <g font-family="sans-serif" font-size="18" fill="#0f172a">
+    <rect x="35" y="110" width="220" height="190" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+    <text x="145" y="150" text-anchor="middle" font-weight="700">System 2: Grounding</text>
+    <text x="145" y="190" text-anchor="middle">자유형 언어 + 장면</text>
+    <text x="145" y="225" text-anchor="middle">Qwen3-VL + SAM2.1</text>
+    <text x="145" y="260" text-anchor="middle">목표 Gaussian heatmap</text>
+    <rect x="345" y="110" width="240" height="190" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="465" y="150" text-anchor="middle" font-weight="700">Contrastive Adapter</text>
+    <text x="465" y="190" text-anchor="middle">spatial-shift negatives</text>
+    <text x="465" y="225" text-anchor="middle">cue residual E(h)-E(0)</text>
+    <text x="465" y="260" text-anchor="middle">γ, β 예측 (약 0.02%)</text>
+    <rect x="675" y="110" width="230" height="190" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+    <text x="790" y="150" text-anchor="middle" font-weight="700">Frozen Flow VLA</text>
+    <text x="790" y="190" text-anchor="middle">ṽ = v ⊙ (1+γ) + β</text>
+    <text x="790" y="225" text-anchor="middle">매 integration step 조향</text>
+    <text x="790" y="260" text-anchor="middle">조작 prior 보존</text>
+    <rect x="995" y="110" width="170" height="190" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/>
+    <text x="1080" y="160" text-anchor="middle" font-weight="700">Robot Action</text>
+    <text x="1080" y="205" text-anchor="middle">목표 물체 접근</text>
+    <text x="1080" y="240" text-anchor="middle">grasp + delivery</text>
+  </g>
+  <g stroke="#334155" stroke-width="4" fill="none" marker-end="url(#arrow)"><path d="M255 205H335"/><path d="M585 205H665"/><path d="M905 205H985"/></g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+  <text x="600" y="375" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#475569">논문 Figure 1 및 Sections 3.2–3.3을 바탕으로 재구성 · arXiv:2609.38989</text>
+</svg>

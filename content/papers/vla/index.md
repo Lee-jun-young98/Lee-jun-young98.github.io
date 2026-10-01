@@ -15,6 +15,8 @@ paper_sync: true
 
 ## [Correcting WHERE, Preserving HOW: Compositional Generalization for Vision-Language-Action Models via Referential Guidance](/papers/vla/correcting-where-preserving-how-referential-guidance-for-vlas)
 
+## [Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](/papers/vla/cue-the-flow-steering-flow-matching-policies)
+
 ## [Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs](/papers/vla/decoupled-early-exits-for-flow-matching-vlas)
 
 ## [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](/papers/vla/demavla-vision-language-action-foundation-model-for-generalizable-deformable-manipulation)
@@ -22,6 +24,8 @@ paper_sync: true
 ## [Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models](/papers/vla/direction-scale-decomposition-for-vision-language-action-models)
 
 ## [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
+
+## [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
 
 ## [Fast Plans, Faithful Actions: Closing the Planning-Execution Gap in Hierarchical Vision-Language-Action Models](/papers/vla/fast-plans-faithful-actions-closing-the-planning-execution-gap-in-hierarchical-vlas)
 

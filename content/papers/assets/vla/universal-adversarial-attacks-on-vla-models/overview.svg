@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Universal Adversarial Object 공격 파이프라인 재구성</title>
+  <desc id="desc">SPSA로 여러 VLA와 태스크의 실패, 궤적 편차, 액션 교란을 최적화한 구형 물체가 다중 카메라 관측을 거쳐 로봇 행동을 교란한다.</desc>
+  <rect width="1200" height="430" fill="#fff7ed"/>
+  <text x="600" y="42" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="700" fill="#431407">Universal Adversarial Object — 물리 장면 속 VLA 공격면</text>
+  <g font-family="sans-serif" font-size="18" fill="#1c1917">
+    <rect x="35" y="105" width="245" height="205" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+    <text x="158" y="145" text-anchor="middle" font-weight="700">Black-box 최적화</text>
+    <text x="158" y="185" text-anchor="middle">SPSA · 모델/태스크 교대</text>
+    <text x="158" y="220" text-anchor="middle">task failure + trajectory</text>
+    <text x="158" y="255" text-anchor="middle">action shaking + regularize</text>
+    <rect x="360" y="105" width="190" height="205" rx="18" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/>
+    <circle cx="455" cy="200" r="58" fill="#fb7185" stroke="#9f1239" stroke-width="5"/>
+    <path d="M410 175Q455 130 500 175M410 225Q455 270 500 225" stroke="#fff" stroke-width="8" fill="none"/>
+    <text x="455" y="290" text-anchor="middle" font-weight="700">3 cm textured sphere</text>
+    <rect x="630" y="105" width="235" height="205" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+    <text x="748" y="145" text-anchor="middle" font-weight="700">Multi-view Observation</text>
+    <text x="748" y="190" text-anchor="middle">overhead camera</text>
+    <text x="748" y="225" text-anchor="middle">left/right wrist cameras</text>
+    <text x="748" y="260" text-anchor="middle">RDT 또는 π₀</text>
+    <rect x="945" y="105" width="220" height="205" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="1055" y="150" text-anchor="middle" font-weight="700">Corrupted Control</text>
+    <text x="1055" y="195" text-anchor="middle">trajectory deviation</text>
+    <text x="1055" y="230" text-anchor="middle">task failure</text>
+    <text x="1055" y="265" text-anchor="middle">ALOHA dual-arm</text>
+  </g>
+  <g stroke="#7f1d1d" stroke-width="4" fill="none" marker-end="url(#arrow)"><path d="M280 207H350"/><path d="M550 207H620"/><path d="M865 207H935"/></g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7f1d1d"/></marker></defs>
+  <text x="600" y="375" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#57534e">논문 Figure 1 및 Algorithm 1을 바탕으로 재구성 · arXiv:2609.39178</text>
+</svg>
