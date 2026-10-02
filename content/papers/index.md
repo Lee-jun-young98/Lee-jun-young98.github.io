@@ -5,6 +5,18 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
+### [DriftOPD: Sequence-Level Reverse-KL Distillation for One-Step VLA Policies](/papers/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies)
+
+![](/papers/assets/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies/overview.svg)
+
+### [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
+
+![](/papers/assets/vla/craft-skill-alignment-for-compositional-generalization-in-vlas/overview.svg)
+
+### [TacDyn-WAM: Learning Implicit Tactile Dynamics in a Heterogeneous Visuo-Tactile World Action Model](/papers/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models)
+
+![](/papers/assets/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models/overview.svg)
+
 ### [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
 ### [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)

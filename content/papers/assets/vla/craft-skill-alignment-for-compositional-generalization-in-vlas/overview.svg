@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">CRAFT counterfactual skill alignment 재구성</title><desc id="desc">같은 관측에서 instruction을 바꾼 counterfactual skill 표현을 constituent skill demonstration의 state 및 action target으로 정렬하는 과정</desc>
+  <rect width="1200" height="520" fill="#fffdf7"/><style>.b{fill:#fff;stroke:#44403c;stroke-width:2}.skill{fill:#fef3c7;stroke:#d97706}.state{fill:#dbeafe;stroke:#2563eb}.target{fill:#dcfce7;stroke:#16a34a}.t{font:700 25px system-ui;fill:#1c1917}.s{font:18px system-ui;fill:#44403c}.a{stroke:#57534e;stroke-width:3;fill:none;marker-end:url(#m)}</style>
+  <defs><marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#57534e"/></marker></defs>
+  <text x="45" y="55" class="t">CRAFT — 같은 scene, 다른 instruction을 label 있는 skill 실행과 정렬</text>
+  <rect x="45" y="115" width="285" height="145" rx="18" class="b"/><text x="75" y="160" class="t">Counterfactual pair</text><text x="75" y="198" class="s">관측은 고정</text><text x="75" y="230" class="s">instruction만 새 조합</text>
+  <rect x="45" y="315" width="285" height="145" rx="18" class="b"/><text x="75" y="360" class="t">기존 demonstration</text><text x="75" y="398" class="s">필요 skill을 실제 수행</text><text x="75" y="430" class="s">action target 보유</text>
+  <rect x="430" y="110" width="290" height="155" rx="18" class="b skill"/><text x="465" y="158" class="t">Skill representation</text><text x="465" y="197" class="s">image + text query</text><text x="465" y="230" class="s">“무엇을 할지”</text>
+  <rect x="430" y="310" width="290" height="155" rx="18" class="b state"/><text x="465" y="358" class="t">State representation</text><text x="465" y="397" class="s">image-only query</text><text x="465" y="430" class="s">“어떻게 움직일지”</text>
+  <rect x="825" y="185" width="325" height="170" rx="18" class="b target"/><text x="860" y="235" class="t">Action expert</text><text x="860" y="275" class="s">skill(CF) + state(demo)</text><text x="860" y="309" class="s">demo velocity로 감독</text><text x="860" y="337" class="s">→ 미시연 조합 일반화</text>
+  <path d="M330 175H430" class="a"/><path d="M330 388H430" class="a"/><path d="M720 185C775 185 775 235 825 245" class="a"/><path d="M720 390C775 390 775 320 825 305" class="a"/>
+  <text x="45" y="500" class="s">논문 Figure 2와 공식 프로젝트를 바탕으로 재구성 · 출처: arXiv:2610.00524</text>
+</svg>

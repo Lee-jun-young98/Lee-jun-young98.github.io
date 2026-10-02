@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">TacDyn-WAM 이질적 world-action 구조 재구성</title><desc id="desc">시각 latent 미래와 촉각 dynamics 미래를 각 expert가 예측하고 현재 촉각 memory와 함께 action expert로 결합하는 구조</desc>
+  <rect width="1200" height="540" fill="#f8fafc"/><style>.b{fill:#fff;stroke:#334155;stroke-width:2}.v{fill:#dbeafe;stroke:#2563eb}.tac{fill:#fae8ff;stroke:#c026d3}.mem{fill:#fef3c7;stroke:#d97706}.out{fill:#dcfce7;stroke:#16a34a}.h{font:700 25px system-ui;fill:#0f172a}.s{font:18px system-ui;fill:#334155}.a{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#m)}</style>
+  <defs><marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#475569"/></marker></defs>
+  <text x="45" y="55" class="h">TacDyn-WAM — modality별 미래 예측 공간 + joint attention</text>
+  <rect x="45" y="115" width="250" height="125" rx="18" class="b v"/><text x="78" y="162" class="h">Visual expert</text><text x="78" y="202" class="s">미래 visual latent</text>
+  <rect x="45" y="280" width="250" height="125" rx="18" class="b tac"/><text x="78" y="327" class="h">Tactile expert</text><text x="78" y="367" class="s">TacRep dynamics · multi-horizon</text>
+  <rect x="390" y="105" width="335" height="150" rx="18" class="b"/><text x="425" y="153" class="h">Heterogeneous future</text><text x="425" y="193" class="s">시각: latent prediction</text><text x="425" y="225" class="s">촉각: 변화량 prediction</text>
+  <rect x="390" y="300" width="335" height="145" rx="18" class="b mem"/><text x="425" y="347" class="h">Read-only memory</text><text x="425" y="387" class="s">현재 tactile state 보존</text><text x="425" y="417" class="s">key/value로만 제공</text>
+  <rect x="825" y="180" width="330" height="180" rx="18" class="b out"/><text x="865" y="230" class="h">Action expert</text><text x="865" y="270" class="s">vision + tactile future</text><text x="865" y="304" class="s">+ current tactile memory</text><text x="865" y="338" class="s">→ contact-rich action chunk</text>
+  <path d="M295 175H390" class="a"/><path d="M295 342C340 342 340 220 390 205" class="a"/><path d="M295 355H390" class="a"/><path d="M725 180H825" class="a"/><path d="M725 372C775 372 775 320 825 305" class="a"/>
+  <text x="45" y="505" class="s">논문 Figures 2–4와 Section 2를 바탕으로 재구성 · 출처: arXiv:2610.00638</text>
+</svg>
