@@ -7,6 +7,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/apm-bench-cross-session-persistent-memory-for-egocentric-streaming-video-assistants/persistent-memory-tradeoff.svg)
 
+## [Before It Fades: Reinforcing Temporal Representations at Inference Time in VideoLLMs](/papers/vlm/before-it-fades-reinforcing-temporal-representations-in-videollms)
+
+![](/papers/assets/vlm/before-it-fades-reinforcing-temporal-representations-in-videollms/tai-temporal-signal.svg)
+
 ## [Benchmarking the Explanatory Quality of Open-Weight Vision-Language Models in Face Recognition](/papers/vlm/benchmarking-the-explanatory-quality-of-open-weight-vision-language-models-in-face-recognition)
 
 ## [Canonical Color as a Lens into Concept Decodability in Vision Encoders and VLMs](/papers/vlm/canonical-color-as-a-lens-into-concept-decodability-in-vision-encoders-and-vlms)
