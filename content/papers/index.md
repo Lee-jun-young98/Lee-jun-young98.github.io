@@ -5,18 +5,6 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
-### [DriftOPD: Sequence-Level Reverse-KL Distillation for One-Step VLA Policies](/papers/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies)
-
-![](/papers/assets/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies/overview.svg)
-
-### [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
-
-![](/papers/assets/vla/craft-skill-alignment-for-compositional-generalization-in-vlas/overview.svg)
-
-### [TacDyn-WAM: Learning Implicit Tactile Dynamics in a Heterogeneous Visuo-Tactile World Action Model](/papers/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models)
-
-![](/papers/assets/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models/overview.svg)
-
 ### [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
 ### [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
@@ -38,6 +26,10 @@ paper_sync: true
 ### [DeMaVLA: A Vision-Language-Action Foundation Model for Generalizable Deformable Manipulation](/papers/vla/demavla-vision-language-action-foundation-model-for-generalizable-deformable-manipulation)
 
 ### [Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models](/papers/vla/direction-scale-decomposition-for-vision-language-action-models)
+
+### [DriftOPD: Sequence-Level Reverse-KL Distillation for One-Step VLA Policies](/papers/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies)
+
+![](/papers/assets/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies/overview.svg)
 
 ### [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
@@ -75,11 +67,19 @@ paper_sync: true
 
 ### [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
+### [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
+
+![](/papers/assets/vla/craft-skill-alignment-for-compositional-generalization-in-vlas/overview.svg)
+
 ### [SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation](/papers/vla/savla-symmetry-aware-vision-language-action-models-for-robotic-manipulation)
 
 ### [Self-Adaptive VLA for Robust Robot Deployment](/papers/vla/self-adaptive-vla-for-robust-robot-deployment)
 
 ### [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
+
+### [TacDyn-WAM: Learning Implicit Tactile Dynamics in a Heterogeneous Visuo-Tactile World Action Model](/papers/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models)
+
+![](/papers/assets/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models/overview.svg)
 
 ### [TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model](/papers/vla/tango-humanoid-navigation-in-cluttered-environments-with-a-whole-body-vision-language-action-model)
 
