@@ -113,6 +113,10 @@ paper_sync: true
 
 ### [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
+### [Omni-Embed-Mini: Binding Modalities Without Forgetting via Dense Distillation](/papers/vlm/omni-embed-mini-binding-modalities-without-forgetting)
+
+![](/papers/assets/vlm/omni-embed-mini-binding-modalities-without-forgetting/omni-embed-mini-architecture.svg)
+
 ### [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 
 ### [The Alignment Illusion in Multimodal Large Language Models](/papers/vlm/the-alignment-illusion-in-multimodal-large-language-models)

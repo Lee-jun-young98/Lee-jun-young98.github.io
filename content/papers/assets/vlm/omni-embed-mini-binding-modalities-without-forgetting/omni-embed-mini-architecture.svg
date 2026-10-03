@@ -1,0 +1,201 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Omni-Embed-Mini 구조 재구성</title>
+  <desc id="desc">
+    여섯 입력 모달리티가 미디어 학생 경로와 밀도 높은 캡션 교사 경로를 거쳐 동일한 고정 백본 임베딩
+    공간에 정렬되는 과정
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 30px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .subtitle {
+        font:
+          500 16px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .head {
+        font:
+          700 19px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .label {
+        font:
+          600 15px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #1e293b;
+      }
+      .small {
+        font:
+          500 13px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .tiny {
+        font:
+          500 12px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #64748b;
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="24" fill="url(#bg)" />
+  <text x="60" y="58" class="title">Omni-Embed-Mini: 고정된 텍스트 공간에 모달리티를 결합</text>
+  <text x="60" y="88" class="subtitle">
+    논문 Figure 4 · Section 3 기반 재구성 — gradient는 projector와 media encoder LoRA에만 흐른다
+  </text>
+
+  <rect
+    x="45"
+    y="125"
+    width="220"
+    height="400"
+    rx="20"
+    fill="#ffffff"
+    stroke="#cbd5e1"
+    stroke-width="2"
+  />
+  <text x="75" y="162" class="head">입력 · 6 modalities</text>
+  <g class="label">
+    <rect x="75" y="188" width="160" height="42" rx="12" fill="#dbeafe" />
+    <text x="155" y="214" text-anchor="middle">Text</text>
+    <rect x="75" y="242" width="76" height="42" rx="12" fill="#e0e7ff" />
+    <text x="113" y="268" text-anchor="middle">Image</text>
+    <rect x="159" y="242" width="76" height="42" rx="12" fill="#e0e7ff" />
+    <text x="197" y="268" text-anchor="middle">Video</text>
+    <rect x="75" y="296" width="76" height="42" rx="12" fill="#fce7f3" />
+    <text x="113" y="322" text-anchor="middle">Speech</text>
+    <rect x="159" y="296" width="76" height="42" rx="12" fill="#fce7f3" />
+    <text x="197" y="322" text-anchor="middle">Audio</text>
+    <rect x="75" y="350" width="160" height="42" rx="12" fill="#dcfce7" />
+    <text x="155" y="376" text-anchor="middle">Visual document</text>
+  </g>
+  <text x="75" y="432" class="small">227,704 effective rows</text>
+  <text x="75" y="456" class="tiny">image · video · speech</text>
+  <text x="75" y="476" class="tiny">audio · visual document</text>
+  <text x="75" y="503" class="tiny">텍스트는 원래 경로 그대로 사용</text>
+
+  <path d="M265 270 H325" stroke="#475569" stroke-width="3" marker-end="url(#arrow)" />
+  <path
+    d="M265 380 C300 380 300 475 335 475"
+    fill="none"
+    stroke="#475569"
+    stroke-width="3"
+    marker-end="url(#arrow)"
+  />
+
+  <rect
+    x="335"
+    y="125"
+    width="330"
+    height="245"
+    rx="20"
+    fill="#eff6ff"
+    stroke="#60a5fa"
+    stroke-width="2"
+  />
+  <text x="365" y="164" class="head">Student · media 경로</text>
+  <rect x="370" y="192" width="260" height="55" rx="13" fill="#ffffff" stroke="#93c5fd" />
+  <text x="500" y="217" class="label" text-anchor="middle">modality encoder</text>
+  <text x="500" y="238" class="tiny" text-anchor="middle">ViT · Whisper · Dasheng + LoRA</text>
+  <path d="M500 247 V275" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="370" y="282" width="260" height="55" rx="13" fill="#ffffff" stroke="#93c5fd" />
+  <text x="500" y="315" class="label" text-anchor="middle">
+    trainable projector · token sequence
+  </text>
+  <text x="365" y="355" class="tiny">Phase 1 projector → 20% 이후 encoder LoRA</text>
+
+  <rect
+    x="335"
+    y="405"
+    width="330"
+    height="120"
+    rx="20"
+    fill="#fff7ed"
+    stroke="#fb923c"
+    stroke-width="2"
+  />
+  <text x="365" y="442" class="head">Teacher · dense caption 경로</text>
+  <text x="365" y="472" class="label">Qwen3-Omni가 만든 cascaded caption</text>
+  <text x="365" y="498" class="tiny">객체 · 속성 · OCR · 시간 사건 · 음향 환경</text>
+
+  <path d="M665 280 H730" stroke="#475569" stroke-width="3" marker-end="url(#arrow)" />
+  <path
+    d="M665 465 H705 C720 465 720 350 735 350"
+    fill="none"
+    stroke="#475569"
+    stroke-width="3"
+    marker-end="url(#arrow)"
+  />
+
+  <rect
+    x="740"
+    y="170"
+    width="250"
+    height="260"
+    rx="24"
+    fill="#ede9fe"
+    stroke="#8b5cf6"
+    stroke-width="3"
+  />
+  <text x="865" y="215" class="head" text-anchor="middle">동일한 frozen backbone</text>
+  <text x="865" y="247" class="small" text-anchor="middle">❄ text embedding geometry</text>
+  <rect x="785" y="280" width="160" height="64" rx="16" fill="#ffffff" stroke="#a78bfa" />
+  <text x="865" y="307" class="label" text-anchor="middle">EOS pooling</text>
+  <text x="865" y="331" class="tiny" text-anchor="middle">L2-normalized embedding</text>
+  <text x="865" y="380" class="small" text-anchor="middle">backbone update = 0</text>
+  <text x="865" y="404" class="tiny" text-anchor="middle">
+    teacher · student가 같은 좌표계 사용
+  </text>
+
+  <path d="M990 300 H1040" stroke="#475569" stroke-width="3" marker-end="url(#arrow)" />
+  <circle cx="1100" cy="300" r="70" fill="#ecfdf5" stroke="#10b981" stroke-width="3" />
+  <text x="1100" y="278" class="head" text-anchor="middle">하나의 cosine</text>
+  <text x="1100" y="304" class="head" text-anchor="middle">embedding</text>
+  <text x="1100" y="330" class="small" text-anchor="middle">space</text>
+
+  <rect x="740" y="470" width="410" height="76" rx="18" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="765" y="499" class="label">학습 신호</text>
+  <text x="765" y="525" class="small">
+    cosine distillation + Matryoshka SigLIP + online hard negatives
+  </text>
+  <path d="M944 470 V430" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+
+  <text x="60" y="590" class="tiny">
+    출처: arXiv:2610.02148 Figure 4, Sections 3–4 · 작성일 2026-10-03 · 논문 내용을 바탕으로 직접
+    재구성
+  </text>
+</svg>
