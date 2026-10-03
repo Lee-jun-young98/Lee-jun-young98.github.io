@@ -25,6 +25,10 @@ paper_sync: true
 
 ## [Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models](/papers/vla/direction-scale-decomposition-for-vision-language-action-models)
 
+## [Divide-and-Remember: Recursive Action-Relevant Memory for Long-Horizon VLA Policies](/papers/vla/divide-and-remember-recursive-action-relevant-memory-for-long-horizon-vlas)
+
+![](/papers/assets/vla/divide-and-remember-recursive-action-relevant-memory-for-long-horizon-vlas/overview.svg)
+
 ## [DriftOPD: Sequence-Level Reverse-KL Distillation for One-Step VLA Policies](/papers/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies)
 
 ![](/papers/assets/vla/driftopd-sequence-level-reverse-kl-distillation-for-one-step-vla-policies/overview.svg)
@@ -80,6 +84,10 @@ paper_sync: true
 ![](/papers/assets/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models/overview.svg)
 
 ## [TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model](/papers/vla/tango-humanoid-navigation-in-cluttered-environments-with-a-whole-body-vision-language-action-model)
+
+## [UniWAM: Unified World-Action Model](/papers/vla/uniwam-unified-world-action-model)
+
+![](/papers/assets/vla/uniwam-unified-world-action-model/overview.svg)
 
 ## [VLaRL: Augmenting Vision-Language-Action Models with Simulation-Trained Latent-Conditioned Residual RL](/papers/vla/vlarl-simulation-trained-latent-conditioned-residual-rl-for-vlas)
 
