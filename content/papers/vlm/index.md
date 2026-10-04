@@ -39,4 +39,6 @@ paper_sync: true
 
 ## [VideoScout: Learning Agentic Active Exploration with Adaptive Reasoning Pacing for Long Video Understanding](/papers/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding)
 
+![](/papers/assets/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding/videoscout-sea-pipeline.svg)
+
 ## [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)

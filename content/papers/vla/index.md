@@ -5,6 +5,8 @@ paper_sync: true
 
 ## [ActiveWAM: Evidence-Aware Active Vision for World-Action Models](/papers/vla/activewam-evidence-aware-active-vision)
 
+![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
+
 ## [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
 ## [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
@@ -13,9 +15,11 @@ paper_sync: true
 
 ## [Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models](/papers/vla/co-vla-consensus-based-federated-training-for-vision-language-action-models)
 
-## [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
-
 ## [Completion Aware Guidance for World Action Models](/papers/vla/completion-aware-guidance-for-world-action-models)
+
+![](/papers/assets/vla/completion-aware-guidance-for-world-action-models/overview.svg)
+
+## [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
 
 ## [Correcting WHERE, Preserving HOW: Compositional Generalization for Vision-Language-Action Models via Referential Guidance](/papers/vla/correcting-where-preserving-how-referential-guidance-for-vlas)
 
@@ -82,6 +86,8 @@ paper_sync: true
 ## [Self-Adaptive VLA for Robust Robot Deployment](/papers/vla/self-adaptive-vla-for-robust-robot-deployment)
 
 ## [SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation](/papers/vla/skelewam-skeleton-world-action-modeling)
+
+![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
 
 ## [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
 

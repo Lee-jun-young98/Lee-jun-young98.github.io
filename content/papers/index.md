@@ -7,6 +7,8 @@ paper_sync: true
 
 ### [ActiveWAM: Evidence-Aware Active Vision for World-Action Models](/papers/vla/activewam-evidence-aware-active-vision)
 
+![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
+
 ### [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
 ### [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
@@ -15,9 +17,11 @@ paper_sync: true
 
 ### [Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models](/papers/vla/co-vla-consensus-based-federated-training-for-vision-language-action-models)
 
-### [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
-
 ### [Completion Aware Guidance for World Action Models](/papers/vla/completion-aware-guidance-for-world-action-models)
+
+![](/papers/assets/vla/completion-aware-guidance-for-world-action-models/overview.svg)
+
+### [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
 
 ### [Correcting WHERE, Preserving HOW: Compositional Generalization for Vision-Language-Action Models via Referential Guidance](/papers/vla/correcting-where-preserving-how-referential-guidance-for-vlas)
 
@@ -85,6 +89,8 @@ paper_sync: true
 
 ### [SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation](/papers/vla/skelewam-skeleton-world-action-modeling)
 
+![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
+
 ### [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
 
 ### [TacDyn-WAM: Learning Implicit Tactile Dynamics in a Heterogeneous Visuo-Tactile World Action Model](/papers/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models)
@@ -138,6 +144,8 @@ paper_sync: true
 ### [VideoResearcher: Self-Improving Tool Design for Long-Video Understanding](/papers/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding)
 
 ### [VideoScout: Learning Agentic Active Exploration with Adaptive Reasoning Pacing for Long Video Understanding](/papers/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding)
+
+![](/papers/assets/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding/videoscout-sea-pipeline.svg)
 
 ### [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)
 
