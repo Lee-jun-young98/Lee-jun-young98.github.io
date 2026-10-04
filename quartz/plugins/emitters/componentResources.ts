@@ -97,11 +97,8 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
           dataLayer.push(arguments);
         }
         gtag('js', new Date());
-        gtag('config', '${tagId}', { send_page_view: false });
-        gtag('event', 'page_view', { page_title: document.title, page_location: location.href });
-        document.addEventListener('nav', () => {
-          gtag('event', 'page_view', { page_title: document.title, page_location: location.href });
-        });
+        // GA4 Enhanced Measurement tracks SPA history changes; avoid duplicate manual events.
+        gtag('config', '${tagId}');
       };
       
       document.head.appendChild(gtagScript);
