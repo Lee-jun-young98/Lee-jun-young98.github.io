@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">VideoScout Sequential Evidence Acquisition 파이프라인</title>
+  <desc id="desc">긴 비디오를 chunk로 나누고 현재 클립, 이전 메모리, 질의를 정책에 넣어 속도 조절, 재시청, 답변 행동을 반복 선택하는 구조와 SFT 및 DAPO 학습 흐름</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f9ff"/>
+      <stop offset="1" stop-color="#eef7f4"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#344054"/>
+    </marker>
+    <marker id="arrowLight" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#d0d5dd"/>
+    </marker>
+    <style>
+      .title{font:700 28px 'Arial','Noto Sans KR',sans-serif;fill:#101828}.sub{font:500 15px 'Arial','Noto Sans KR',sans-serif;fill:#475467}.h{font:700 18px 'Arial','Noto Sans KR',sans-serif;fill:#101828}.t{font:500 14px 'Arial','Noto Sans KR',sans-serif;fill:#344054}.small{font:500 12px 'Arial','Noto Sans KR',sans-serif;fill:#475467}.box{stroke-width:2}.arrow{stroke:#344054;stroke-width:2.2;fill:none;marker-end:url(#arrow)}
+      .td{font:500 14px 'Arial','Noto Sans KR',sans-serif;fill:#fff}.smalld{font:500 12px 'Arial','Noto Sans KR',sans-serif;fill:#d0d5dd}
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="24" fill="url(#bg)"/>
+  <text x="54" y="52" class="title">VideoScout: 긴 비디오를 능동적으로 읽는 SEA 폐루프</text>
+  <text x="54" y="79" class="sub">논문 Figure 2 · Section III-A · 식 (1)–(2)를 바탕으로 재구성</text>
+
+  <rect x="54" y="118" width="250" height="150" rx="16" fill="#fff" stroke="#7f56d9" class="box"/>
+  <text x="76" y="149" class="h">입력과 분할</text>
+  <text x="76" y="179" class="t">긴 비디오 V + 질의 q</text>
+  <g transform="translate(76 198)">
+    <rect x="0" y="0" width="43" height="34" rx="5" fill="#d9d6fe" stroke="#7f56d9"/>
+    <rect x="48" y="0" width="43" height="34" rx="5" fill="#d9d6fe" stroke="#7f56d9"/>
+    <rect x="96" y="0" width="43" height="34" rx="5" fill="#d9d6fe" stroke="#7f56d9"/>
+    <rect x="144" y="0" width="43" height="34" rx="5" fill="#d9d6fe" stroke="#7f56d9"/>
+    <text x="9" y="22" class="small">c₁</text><text x="57" y="22" class="small">c₂</text><text x="105" y="22" class="small">…</text><text x="153" y="22" class="small">cₙ</text>
+  </g>
+  <text x="76" y="252" class="small">길이별 10–45초 연속 chunk</text>
+
+  <path d="M304 194 H382" class="arrow"/>
+  <rect x="382" y="112" width="390" height="186" rx="18" fill="#fff" stroke="#1570ef" class="box"/>
+  <text x="404" y="145" class="h">턴 t: Qwen2.5-VL-7B 정책 πθ</text>
+  <rect x="404" y="165" width="104" height="52" rx="10" fill="#d1e9ff" stroke="#1570ef"/>
+  <text x="419" y="188" class="t">현재 클립</text><text x="445" y="207" class="small">vₜ</text>
+  <rect x="522" y="165" width="108" height="52" rx="10" fill="#dcfae6" stroke="#12b76a"/>
+  <text x="535" y="188" class="t">이전 메모리</text><text x="563" y="207" class="small">mₜ₋₁</text>
+  <rect x="644" y="165" width="106" height="52" rx="10" fill="#fef0c7" stroke="#f79009"/>
+  <text x="674" y="188" class="t">질의</text><text x="691" y="207" class="small">q</text>
+  <path d="M456 217 V240 M576 217 V240 M697 217 V240" stroke="#344054" stroke-width="1.8"/>
+  <path d="M456 240 H697" stroke="#344054" stroke-width="1.8"/>
+  <text x="419" y="268" class="t">출력: 추론 rₜ + 새 메모리 mₜ + 행동 aₜ</text>
+
+  <path d="M772 204 H838" class="arrow"/>
+  <rect x="838" y="112" width="308" height="244" rx="18" fill="#fff" stroke="#f04438" class="box"/>
+  <text x="860" y="145" class="h">세 가지 행동</text>
+  <rect x="860" y="164" width="264" height="49" rx="10" fill="#eff8ff" stroke="#1570ef"/>
+  <text x="878" y="187" class="t">speed(1× / 2× / 4×)</text>
+  <text x="878" y="204" class="small">세부 해상도 ↔ 시간 범위 교환</text>
+  <rect x="860" y="224" width="264" height="49" rx="10" fill="#ecfdf3" stroke="#12b76a"/>
+  <text x="878" y="247" class="t">rewatch(k)</text>
+  <text x="878" y="264" class="small">현재 창의 chunk를 다음 턴 1× 재관찰</text>
+  <rect x="860" y="284" width="264" height="49" rx="10" fill="#fff4ed" stroke="#f04438"/>
+  <text x="878" y="307" class="t">answer(ŷ)</text>
+  <text x="878" y="324" class="small">증거가 충분하면 rollout 종료</text>
+
+  <path d="M991 356 V390 H578 V300" class="arrow"/>
+  <text x="685" y="381" class="small">speed / rewatch: 메모리와 전진 포인터를 갱신해 다음 턴</text>
+
+  <rect x="54" y="418" width="1092" height="154" rx="18" fill="#101828"/>
+  <text x="78" y="451" class="td" style="font-weight:700;font-size:18px">학습: 행동 형식에서 전체 궤적 최적화로</text>
+  <rect x="78" y="472" width="286" height="70" rx="12" fill="#344054" stroke="#98a2b3"/>
+  <text x="96" y="497" class="td">VideoScout-66K</text>
+  <text x="96" y="519" class="smalld">10K 검증 궤적 · 66K+ 탐색 턴</text>
+  <path d="M364 507 H438" stroke="#d0d5dd" stroke-width="2.2" fill="none" marker-end="url(#arrowLight)"/>
+  <rect x="438" y="472" width="250" height="70" rx="12" fill="#175cd3"/>
+  <text x="456" y="497" class="td">1단계: 턴 단위 SFT</text>
+  <text x="456" y="519" class="smalld">형식 · 메모리 · 행동 cold start</text>
+  <path d="M688 507 H762" stroke="#d0d5dd" stroke-width="2.2" fill="none" marker-end="url(#arrowLight)"/>
+  <rect x="762" y="472" width="360" height="70" rx="12" fill="#067647"/>
+  <text x="780" y="497" class="td">2단계: 궤적 단위 DAPO</text>
+  <text x="780" y="519" class="smalld">정답 + 형식 + 답변 시점 IoU 복합 보상</text>
+  <text x="54" y="606" class="small">재구성 출처: arXiv:2609.15606v1 Figure 2, Section III-A · 원 논문 CC BY-NC-SA 4.0</text>
+</svg>
