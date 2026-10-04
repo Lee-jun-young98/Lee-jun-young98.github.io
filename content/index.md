@@ -1,5 +1,6 @@
-﻿---
-title: Junyoung Lee | AI Systems Engineer
+---
+title: Junyoung AI Lab | AI 연구와 개발 기록
+description: AI Systems Engineer 이준영의 논문 리뷰, 개발 노트와 프로젝트. 연구의 핵심부터 구현과 운영까지 연결합니다.
 ---
 
 # Junyoung Lee
