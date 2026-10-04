@@ -42,7 +42,11 @@ Google 및 광고 파트너의 처리·보관 기준은 각 제공업체의 정�
 
 ## 방문 통계와 사이트 제공
 
-사이트에는 Plausible 방문 통계 스크립트가 설정되어 있으며, 스크립트가 실행되면 페이지 조회 등 이용 정보가 해당 서비스에 전달될 수 있습니다. 서비스의 처리 방식은 [Plausible 데이터 정책](https://plausible.io/data-policy)에서 확인할 수 있습니다.
+사이트는 **Google Analytics 4(GA4)**를 사용하여 방문자 수, 페이지 조회, 유입 경로 및 사이트 이용 현황을 분석합니다. 통계 서비스가 실행되면 페이지 URL, 브라우저·기기 관련 정보, 유입 경로와 이용 이벤트 등이 Google에 전달될 수 있습니다. IP 주소는 통신 과정에서 전달되며, Google의 GA4 정책에 따라 개별 IP 주소는 기록·저장되지 않습니다.
+
+GA4는 방문자와 세션을 구분하기 위해 `_ga`, `_ga_<측정 식별자>` 등의 자사 쿠키를 사용할 수 있습니다. 쿠키의 보관 기간은 서비스 설정과 브라우저 정책에 따라 달라집니다. 수집 정보는 사이트 이용 현황을 파악하고 글과 탐색 경험을 개선하는 데 사용됩니다. 실제 수집 범위는 GA4 속성 설정, 향상된 측정 및 방문자의 동의·브라우저 설정에 따라 달라질 수 있습니다.
+
+Google Analytics의 처리 방식은 [Google Analytics 데이터 보호 안내](https://support.google.com/analytics/answer/6004245?hl=ko)와 [GA4 쿠키 안내](https://support.google.com/analytics/answer/11397207?hl=ko)에서 확인할 수 있습니다. 브라우저의 쿠키 설정을 관리하거나 [Google Analytics 차단 브라우저 부가 기능](https://tools.google.com/dlpage/gaoptout?hl=ko)을 이용하여 Analytics의 정보 수집을 제한할 수 있습니다. 광고 동의와 Analytics의 정보 수집 설정은 별도로 적용될 수 있습니다.
 
 사이트는 GitHub Pages에서 제공됩니다. 접속 과정에서 GitHub가 서비스 제공·보안 등을 위해 접속 관련 정보를 처리할 수 있습니다. 자세한 내용은 [GitHub 개인정보처리방침](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)을 확인해 주세요.
 
