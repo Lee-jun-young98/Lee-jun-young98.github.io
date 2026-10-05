@@ -127,6 +127,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation/exemplar2vqa-pipeline.svg)
 
+### [From Patching to Pruning Visual Computation in Vision-Language Models](/papers/vlm/from-patching-to-pruning-visual-computation-in-vision-language-models)
+
+![](/papers/assets/vlm/from-patching-to-pruning-visual-computation-in-vision-language-models/p2p-architecture.svg)
+
 ### [How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining](/papers/vlm/how-far-are-we-from-removing-the-visual-encoder)
 
 ![](/papers/assets/vlm/how-far-are-we-from-removing-the-visual-encoder/encoder-free-scaling-overview.svg)

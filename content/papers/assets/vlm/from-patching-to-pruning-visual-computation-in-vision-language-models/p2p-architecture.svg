@@ -1,0 +1,161 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Patch-to-Prune 전체 파이프라인 재구성</title>
+  <desc id="desc">
+    통계 데이터에서 층별 시각 평균 activation을 만들고 검증 데이터의 양방향 sweep으로 초기와 후기
+    safe layer를 선택한 뒤, 추론 시 그 층의 시각 projection 연산만 우회하는 구조
+  </desc>
+  <defs>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="8"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#49647a" />
+    </marker>
+    <style>
+      .bg {
+        fill: #f7f8fb;
+      }
+      .card {
+        fill: #fff;
+        stroke: #c7d3df;
+        stroke-width: 2;
+      }
+      .blue {
+        fill: #e7f1ff;
+        stroke: #4b82c3;
+        stroke-width: 2;
+      }
+      .green {
+        fill: #e8f6ef;
+        stroke: #3f9369;
+        stroke-width: 2;
+      }
+      .amber {
+        fill: #fff2d8;
+        stroke: #cb8a24;
+        stroke-width: 2;
+      }
+      .red {
+        fill: #fdebea;
+        stroke: #c85a54;
+        stroke-width: 2;
+      }
+      .t {
+        font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+        fill: #1f2d3d;
+      }
+      .h {
+        font-size: 26px;
+        font-weight: 700;
+      }
+      .s {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .b {
+        font-size: 15px;
+      }
+      .small {
+        font-size: 13px;
+        fill: #526476;
+      }
+      .arrow {
+        stroke: #49647a;
+        stroke-width: 2.5;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630" rx="24" />
+  <text class="t h" x="52" y="52">
+    Patch-to-Prune: 토큰은 유지하고, 불필요한 깊이의 시각 연산만 우회
+  </text>
+  <text class="t small" x="54" y="78">
+    논문 Figure 1 · Sections 3–4를 바탕으로 재구성 · 파란색=설정 단계, 초록색=추론 단계
+  </text>
+
+  <rect class="blue" x="48" y="112" width="250" height="178" rx="18" />
+  <text class="t s" x="72" y="146">① 평균 activation 생성</text>
+  <text class="t b" x="72" y="181">통계 split (과제별 100개)</text>
+  <rect class="card" x="76" y="198" width="194" height="58" rx="10" />
+  <text class="t b" x="94" y="222">layer × projection ×</text>
+  <text class="t b" x="94" y="244">image/text 평균 μ</text>
+  <text class="t small" x="72" y="276">샘플별 token 평균 → 샘플 평균</text>
+
+  <path class="arrow" d="M298 201 H352" />
+  <rect class="blue" x="352" y="112" width="300" height="178" rx="18" />
+  <text class="t s" x="376" y="146">② 양방향 검증 sweep</text>
+  <text class="t b" x="376" y="180">forward: 0 → L 누적 patch</text>
+  <text class="t b" x="376" y="207">backward: L → N−1 누적 patch</text>
+  <rect class="amber" x="382" y="225" width="238" height="42" rx="9" />
+  <text class="t b" x="399" y="251">Acc ≥ (1−τ) Acc₀ ?</text>
+  <text class="t small" x="376" y="282">기본 tolerance τ = 3%</text>
+
+  <path class="arrow" d="M652 201 H706" />
+  <rect class="blue" x="706" y="112" width="446" height="178" rx="18" />
+  <text class="t s" x="730" y="146">③ safe layer = 초기 prefix ∪ 후기 suffix</text>
+  <rect class="green" x="738" y="178" width="92" height="62" rx="9" />
+  <text class="t b" x="757" y="204">초기 층</text>
+  <text class="t small" x="754" y="226">safe</text>
+  <rect class="red" x="848" y="178" width="142" height="62" rx="9" />
+  <text class="t b" x="867" y="204">중간 층</text>
+  <text class="t small" x="868" y="226">시각 통합 핵심</text>
+  <rect class="green" x="1008" y="178" width="112" height="62" rx="9" />
+  <text class="t b" x="1027" y="204">후기 층</text>
+  <text class="t small" x="1034" y="226">safe</text>
+  <text class="t small" x="741" y="270">선택 결과는 고정해 test에 그대로 적용</text>
+
+  <path class="arrow" d="M930 290 V334" />
+  <rect class="green" x="48" y="334" width="1104" height="244" rx="18" />
+  <text class="t s" x="72" y="370">④ computation-bypassed inference</text>
+  <rect class="card" x="76" y="402" width="184" height="112" rx="12" />
+  <text class="t b" x="100" y="431">이미지 + 질문</text>
+  <text class="t small" x="100" y="458">시각 토큰과 텍스트 토큰</text>
+  <text class="t small" x="100" y="480">순서·mask·residual 유지</text>
+  <path class="arrow" d="M260 458 H318" />
+
+  <rect class="green" x="318" y="394" width="190" height="128" rx="12" />
+  <text class="t b" x="345" y="424">safe layer</text>
+  <text class="t small" x="345" y="451">시각 projection matmul</text>
+  <text class="t small" x="345" y="473">건너뛰기</text>
+  <text class="t b" x="345" y="501">→ cached μ 삽입</text>
+  <path class="arrow" d="M508 458 H560" />
+
+  <rect class="red" x="560" y="394" width="230" height="128" rx="12" />
+  <text class="t b" x="586" y="424">민감한 중간 layer</text>
+  <text class="t small" x="586" y="451">모든 token의 Q/K/V/O와</text>
+  <text class="t small" x="586" y="473">gated-MLP 원 계산 유지</text>
+  <text class="t small" x="586" y="501">task-relevant 시각 통합</text>
+  <path class="arrow" d="M790 458 H842" />
+
+  <rect class="green" x="842" y="394" width="190" height="128" rx="12" />
+  <text class="t b" x="869" y="424">safe layer</text>
+  <text class="t small" x="869" y="451">시각 token은 cached μ</text>
+  <text class="t small" x="869" y="473">텍스트 token은 원 계산</text>
+  <text class="t small" x="869" y="501">선택적 LoRA 보정 가능</text>
+  <path class="arrow" d="M1032 458 H1080" />
+  <text class="t b" x="1080" y="451">답변</text>
+  <text class="t small" x="1080" y="474">생성</text>
+
+  <text class="t small" x="72" y="557">
+    핵심 차이: token pruning처럼 시퀀스에서 토큰을 삭제하지 않고, safe depth의 token-specific
+    projection 계산만 proxy로 대체한다.
+  </text>
+  <text class="t small" x="72" y="606">
+    출처: arXiv:2610.03389v1, Figure 1, Sections 3–4, Equations (1)–(2) · CC BY-SA 4.0 · 한국어
+    재구성
+  </text>
+</svg>
