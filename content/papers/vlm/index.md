@@ -45,4 +45,8 @@ paper_sync: true
 
 ![](/papers/assets/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding/videoscout-sea-pipeline.svg)
 
+## [VideoTapestry: Query-Adaptive Memory Refinement for Multi-Agent Long-Video Understanding](/papers/vlm/videotapestry-query-adaptive-memory-refinement-for-multi-agent-long-video-understanding)
+
+![](/papers/assets/vlm/videotapestry-query-adaptive-memory-refinement-for-multi-agent-long-video-understanding/videotapestry-architecture.svg)
+
 ## [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)
