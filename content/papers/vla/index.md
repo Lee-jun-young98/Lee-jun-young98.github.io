@@ -3,6 +3,10 @@ title: "VLA"
 paper_sync: true
 ---
 
+## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
+
+![](/papers/assets/vla/robodawn/framework.png)
+
 ## [AE-VLA: Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models](/papers/vla/ae-vla-arm-wise-compositional-generalization)
 
 ![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
