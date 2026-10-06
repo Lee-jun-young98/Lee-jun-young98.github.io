@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">FAVOR 미래 앵커 기반 실행 검증과 복구</title>
+  <desc id="desc">현재 관찰과 지시에서 WAM이 미래 앵커와 행동을 만들고, 검증기가 실제 관찰과 비교해 이탈 시 VLM 교정 지시와 CFG 복구를 수행하는 흐름</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker><style>text{font-family:Arial,'Noto Sans KR',sans-serif;fill:#172033}.h{font-size:27px;font-weight:700}.t{font-size:18px}.s{font-size:15px;fill:#475569}.box{rx:18;stroke-width:2}.arrow{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="h">FAVOR: 예측 미래를 실행 앵커와 복구 목표로 재사용</text>
+  <rect x="45" y="95" width="210" height="120" class="box" fill="#dbeafe" stroke="#2563eb"/><text x="150" y="140" text-anchor="middle" class="t">현재 관찰 oₜ</text><text x="150" y="176" text-anchor="middle" class="t">과업 지시 ℓ</text>
+  <rect x="330" y="85" width="260" height="140" class="box" fill="#ede9fe" stroke="#7c3aed"/><text x="460" y="132" text-anchor="middle" class="t">Frozen WAM</text><text x="460" y="166" text-anchor="middle" class="s">미래 예측 p(Z|o,ℓ)</text><text x="460" y="194" text-anchor="middle" class="s">IDM p(A|o,Z,ℓ)</text>
+  <rect x="675" y="75" width="230" height="90" class="box" fill="#dcfce7" stroke="#16a34a"/><text x="790" y="113" text-anchor="middle" class="t">미래 프레임 앵커</text><text x="790" y="142" text-anchor="middle" class="s">Î₁ … Îⱼ</text>
+  <rect x="675" y="185" width="230" height="90" class="box" fill="#ffedd5" stroke="#ea580c"/><text x="790" y="225" text-anchor="middle" class="t">Action chunk</text><text x="790" y="253" text-anchor="middle" class="s">a₁ … aⱼ 실행</text>
+  <path d="M255 155 H330" class="arrow"/><path d="M590 130 H675" class="arrow"/><path d="M590 185 L675 220" class="arrow"/>
+  <rect x="930" y="185" width="220" height="90" class="box" fill="#fef3c7" stroke="#d97706"/><text x="1040" y="225" text-anchor="middle" class="t">실제 관찰 Iₜ₊ⱼΔ</text><text x="1040" y="252" text-anchor="middle" class="s">로봇·환경 피드백</text><path d="M905 230 H930" class="arrow"/>
+  <rect x="330" y="335" width="540" height="115" class="box" fill="#e0f2fe" stroke="#0284c7"/><text x="600" y="373" text-anchor="middle" class="t">Anchor Verifier</text><text x="600" y="405" text-anchor="middle" class="s">DINOv2(anchor, observation) + action + horizon</text><text x="600" y="430" text-anchor="middle" class="s">Spatial Transformer → causal GRU → deviation score</text>
+  <path d="M790 165 L690 335" class="arrow"/><path d="M1040 275 L800 335" class="arrow"/>
+  <rect x="70" y="520" width="300" height="105" class="box" fill="#dcfce7" stroke="#16a34a"/><text x="220" y="558" text-anchor="middle" class="t">정상: 기존 chunk 계속 실행</text><text x="220" y="592" text-anchor="middle" class="s">score ≤ τ</text>
+  <rect x="455" y="500" width="300" height="135" class="box" fill="#fee2e2" stroke="#dc2626"/><text x="605" y="538" text-anchor="middle" class="t">이탈: VLM 교정 지시</text><text x="605" y="570" text-anchor="middle" class="s">anchor + current + task</text><text x="605" y="600" text-anchor="middle" class="s">→ “잃어버린 조건을 복구”</text>
+  <rect x="835" y="500" width="300" height="135" class="box" fill="#f3e8ff" stroke="#9333ea"/><text x="985" y="538" text-anchor="middle" class="t">CFG 강화 WAM 복구</text><text x="985" y="570" text-anchor="middle" class="s">guided future → IDM actions</text><text x="985" y="600" text-anchor="middle" class="s">앵커 회복 후 원 과업 복귀</text>
+  <path d="M485 450 L300 520" class="arrow"/><path d="M660 450 L620 500" class="arrow"/><path d="M755 568 H835" class="arrow"/><path d="M1135 520 C1180 420 1160 140 905 120" class="arrow"/>
+  <text x="600" y="662" text-anchor="middle" class="s">논문 Figure 2를 바탕으로 재구성 · arXiv:2610.06280</text>
+</svg>

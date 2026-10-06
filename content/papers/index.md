@@ -5,6 +5,10 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
+### [AE-VLA: Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models](/papers/vla/ae-vla-arm-wise-compositional-generalization)
+
+![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
+
 ### [ActiveWAM: Evidence-Aware Active Vision for World-Action Models](/papers/vla/activewam-evidence-aware-active-vision)
 
 ![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
@@ -50,6 +54,10 @@ paper_sync: true
 ![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
 
 ### [Fast Plans, Faithful Actions: Closing the Planning-Execution Gap in Hierarchical Vision-Language-Action Models](/papers/vla/fast-plans-faithful-actions-closing-the-planning-execution-gap-in-hierarchical-vlas)
+
+### [FAVOR: Future Anchored Verification and Online Recovery for World Action Models](/papers/vla/favor-future-anchored-verification-and-online-recovery)
+
+![](/papers/assets/vla/favor-future-anchored-verification-and-online-recovery/overview.svg)
 
 ### [Find Something You Can't Do: Agentic Real-World Reinforcement Learning for Self-Improving VLA Models](/papers/vla/find-agentic-real-world-reinforcement-learning-for-self-improving-vla-models)
 
@@ -104,6 +112,10 @@ paper_sync: true
 ![](/papers/assets/vla/uniwam-unified-world-action-model/overview.svg)
 
 ### [VLaRL: Augmenting Vision-Language-Action Models with Simulation-Trained Latent-Conditioned Residual RL](/papers/vla/vlarl-simulation-trained-latent-conditioned-residual-rl-for-vlas)
+
+### [VLA-ZO: Fast Zeroth-Order Adaptation for Vision-Language-Action Models](/papers/vla/vla-zo-fast-zeroth-order-adaptation)
+
+![](/papers/assets/vla/vla-zo-fast-zeroth-order-adaptation/overview.svg)
 
 ### [XPACE: Joint World and Action Modeling from Heterogeneous Experience](/papers/vla/xpace-joint-world-and-action-modeling-from-heterogeneous-experience)
 
