@@ -3,17 +3,13 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
+## [ActiveWAM: Evidence-Aware Active Vision for World-Action Models](/papers/vla/activewam-evidence-aware-active-vision)
 
-![](/papers/assets/vla/robodawn/framework.png)
+![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
 
 ## [AE-VLA: Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models](/papers/vla/ae-vla-arm-wise-compositional-generalization)
 
 ![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
-
-## [ActiveWAM: Evidence-Aware Active Vision for World-Action Models](/papers/vla/activewam-evidence-aware-active-vision)
-
-![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
 
 ## [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
@@ -89,6 +85,10 @@ paper_sync: true
 
 ## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
+## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
+
+![](/papers/assets/vla/robodawn/framework.png)
+
 ## [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
 
 ![](/papers/assets/vla/craft-skill-alignment-for-compositional-generalization-in-vlas/overview.svg)
@@ -113,10 +113,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/uniwam-unified-world-action-model/overview.svg)
 
-## [VLaRL: Augmenting Vision-Language-Action Models with Simulation-Trained Latent-Conditioned Residual RL](/papers/vla/vlarl-simulation-trained-latent-conditioned-residual-rl-for-vlas)
-
 ## [VLA-ZO: Fast Zeroth-Order Adaptation for Vision-Language-Action Models](/papers/vla/vla-zo-fast-zeroth-order-adaptation)
 
 ![](/papers/assets/vla/vla-zo-fast-zeroth-order-adaptation/overview.svg)
+
+## [VLaRL: Augmenting Vision-Language-Action Models with Simulation-Trained Latent-Conditioned Residual RL](/papers/vla/vlarl-simulation-trained-latent-conditioned-residual-rl-for-vlas)
 
 ## [XPACE: Joint World and Action Modeling from Heterogeneous Experience](/papers/vla/xpace-joint-world-and-action-modeling-from-heterogeneous-experience)
