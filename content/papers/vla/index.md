@@ -3,6 +3,10 @@ title: "VLA"
 paper_sync: true
 ---
 
+## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
+
+![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
+
 ## [ActiveWAM: Evidence-Aware Active Vision for World-Action Models](/papers/vla/activewam-evidence-aware-active-vision)
 
 ![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
@@ -83,6 +87,10 @@ paper_sync: true
 
 ## [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
 
+## [ProactiveVLA: Augmenting Embodied Memory through Proactive Environment Exploration](/papers/vla/proactivevla-proactive-environment-exploration)
+
+![](/papers/assets/vla/proactivevla-proactive-environment-exploration/overview.svg)
+
 ## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
 ## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
@@ -100,6 +108,10 @@ paper_sync: true
 ## [SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation](/papers/vla/skelewam-skeleton-world-action-modeling)
 
 ![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
+
+## [SWAP: Stepwise Action Policy Routing for Vision-Language-Action Models](/papers/vla/swap-stepwise-action-policy-routing)
+
+![](/papers/assets/vla/swap-stepwise-action-policy-routing/overview.svg)
 
 ## [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
 
