@@ -109,11 +109,11 @@ paper_sync: true
 
 ![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
 
+## [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
+
 ## [SWAP: Stepwise Action Policy Routing for Vision-Language-Action Models](/papers/vla/swap-stepwise-action-policy-routing)
 
 ![](/papers/assets/vla/swap-stepwise-action-policy-routing/overview.svg)
-
-## [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
 
 ## [TacDyn-WAM: Learning Implicit Tactile Dynamics in a Heterogeneous Visuo-Tactile World Action Model](/papers/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models)
 
