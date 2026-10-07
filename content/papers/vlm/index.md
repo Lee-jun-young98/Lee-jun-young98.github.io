@@ -25,6 +25,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/from-patching-to-pruning-visual-computation-in-vision-language-models/p2p-architecture.svg)
 
+## [GeoPID: Decomposing and Steering Visual Information in Vision-Language Models](/papers/vlm/geopid-decomposing-and-steering-visual-information)
+
+![](/papers/assets/vlm/geopid-decomposing-and-steering-visual-information/geopid-pipeline.svg)
+
 ## [How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining](/papers/vlm/how-far-are-we-from-removing-the-visual-encoder)
 
 ![](/papers/assets/vlm/how-far-are-we-from-removing-the-visual-encoder/encoder-free-scaling-overview.svg)
