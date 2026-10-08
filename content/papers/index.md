@@ -177,6 +177,10 @@ paper_sync: true
 
 ### [The Alignment Illusion in Multimodal Large Language Models](/papers/vlm/the-alignment-illusion-in-multimodal-large-language-models)
 
+### [VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding](/papers/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding)
+
+![](/papers/assets/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding/videoevolve-architecture.svg)
+
 ### [VideoResearcher: Self-Improving Tool Design for Long-Video Understanding](/papers/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding)
 
 ### [VideoScout: Learning Agentic Active Exploration with Adaptive Reasoning Pacing for Long Video Understanding](/papers/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding)
