@@ -53,6 +53,10 @@ paper_sync: true
 
 ### [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
+### [Many Ways to Succeed: Diversity-Driven RL Fine-Tuning for VLA Generalization](/papers/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization)
+
+![](/papers/assets/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization/overview.svg)
+
 ### [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
 
 ![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
@@ -82,6 +86,10 @@ paper_sync: true
 ### [HuRo: Robotizing Human Videos for Scalable VLA Pretraining](/papers/vla/huro-robotizing-human-videos-for-scalable-vla-pretraining)
 
 ### [IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies](/papers/vla/imle-vla-fast-single-step-action-generation-for-vision-language-action-policies)
+
+### [Juno: Taming Predictive Latents for Vision-Language-Action Models](/papers/vla/juno-taming-predictive-latents-for-vlas)
+
+![](/papers/assets/vla/juno-taming-predictive-latents-for-vlas/overview.svg)
 
 ### [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
 
@@ -120,6 +128,10 @@ paper_sync: true
 ### [TacDyn-WAM: Learning Implicit Tactile Dynamics in a Heterogeneous Visuo-Tactile World Action Model](/papers/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models)
 
 ![](/papers/assets/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models/overview.svg)
+
+### [TempoBridge: Language-Guided Tempo Control for Vision-Language-Action Policies](/papers/vla/tempobridge-language-guided-tempo-control)
+
+![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
 
 ### [TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model](/papers/vla/tango-humanoid-navigation-in-cluttered-environments-with-a-whole-body-vision-language-action-model)
 

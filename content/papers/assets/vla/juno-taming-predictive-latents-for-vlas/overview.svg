@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Juno 전체 구조 재구성</title>
+  <desc id="desc">제어 정렬 JEPA 사전학습, VLA의 분리된 미래 latent 추론, dynamics-first test-time adaptation 흐름</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+  <rect width="1200" height="620" rx="24" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" fill="#0f172a">Juno: predictive latent를 VLA 제어에 맞추는 3단계</text>
+  <rect x="45" y="90" width="330" height="430" rx="20" fill="#e0f2fe" stroke="#0284c7" stroke-width="3"/>
+  <text x="210" y="128" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700">1. Control-Aligned Pretraining</text>
+  <rect x="82" y="170" width="256" height="70" rx="12" fill="white" stroke="#38bdf8"/><text x="210" y="198" text-anchor="middle" font-family="sans-serif" font-size="17">현재 관찰 + 실행 action</text><text x="210" y="222" text-anchor="middle" font-family="sans-serif" font-size="15">embodiment-matched trajectory</text>
+  <path d="M210 240 V285" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="82" y="292" width="256" height="82" rx="12" fill="white" stroke="#38bdf8"/><text x="210" y="322" text-anchor="middle" font-family="sans-serif" font-size="17">Action-conditioned JEPA</text><text x="210" y="348" text-anchor="middle" font-family="sans-serif" font-size="15">patch dynamics + predictor</text>
+  <path d="M210 374 V417" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="82" y="424" width="256" height="62" rx="12" fill="#bae6fd" stroke="#0284c7"/><text x="210" y="451" text-anchor="middle" font-family="sans-serif" font-size="16">Dynamic CLS loss</text><text x="210" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">motion-weighted global state</text>
+  <rect x="435" y="90" width="330" height="430" rx="20" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+  <text x="600" y="128" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700">2. Predictive VLA Learning</text>
+  <rect x="472" y="170" width="256" height="70" rx="12" fill="white" stroke="#a78bfa"/><text x="600" y="198" text-anchor="middle" font-family="sans-serif" font-size="17">현재 JEPA patch + 언어</text><text x="600" y="222" text-anchor="middle" font-family="sans-serif" font-size="15">VLA visual token에 fusion</text>
+  <path d="M600 240 V285" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="472" y="292" width="256" height="82" rx="12" fill="white" stroke="#a78bfa"/><text x="600" y="322" text-anchor="middle" font-family="sans-serif" font-size="17">Decoupled reasoning branch</text><text x="600" y="348" text-anchor="middle" font-family="sans-serif" font-size="15">미래 latent distillation</text>
+  <path d="M600 374 V417" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="472" y="424" width="256" height="62" rx="12" fill="#ddd6fe" stroke="#7c3aed"/><text x="600" y="451" text-anchor="middle" font-family="sans-serif" font-size="16">Flow-matching action decoder</text><text x="600" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">예측 latent → executable action</text>
+  <rect x="825" y="90" width="330" height="430" rx="20" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="990" y="128" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700">3. Dynamics-First TTT</text>
+  <rect x="862" y="170" width="256" height="70" rx="12" fill="white" stroke="#4ade80"/><text x="990" y="198" text-anchor="middle" font-family="sans-serif" font-size="17">배포 rollout buffer</text><text x="990" y="222" text-anchor="middle" font-family="sans-serif" font-size="15">성공 + 실패 transition</text>
+  <path d="M990 240 V285" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="862" y="292" width="256" height="82" rx="12" fill="white" stroke="#4ade80"/><text x="990" y="319" text-anchor="middle" font-family="sans-serif" font-size="16">전체 transition으로 dynamics 적응</text><text x="990" y="346" text-anchor="middle" font-family="sans-serif" font-size="15">adapted teacher 고정</text>
+  <path d="M990 374 V417" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="862" y="424" width="256" height="62" rx="12" fill="#bbf7d0" stroke="#16a34a"/><text x="990" y="451" text-anchor="middle" font-family="sans-serif" font-size="16">성공 실행만 policy 재정렬</text><text x="990" y="473" text-anchor="middle" font-family="sans-serif" font-size="14">LoRA + action head</text>
+  <path d="M375 305 H425" stroke="#334155" stroke-width="4" marker-end="url(#a)"/><path d="M765 305 H815" stroke="#334155" stroke-width="4" marker-end="url(#a)"/>
+  <text x="600" y="570" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#475569">실패의 결과는 dynamics supervision에 사용하지만, 실패 action은 policy target으로 사용하지 않는다.</text>
+</svg>
