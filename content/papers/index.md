@@ -53,10 +53,6 @@ paper_sync: true
 
 ### [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
-### [Many Ways to Succeed: Diversity-Driven RL Fine-Tuning for VLA Generalization](/papers/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization)
-
-![](/papers/assets/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization/overview.svg)
-
 ### [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
 
 ![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
@@ -95,6 +91,10 @@ paper_sync: true
 
 ### [Magic-W0: A Structured World-Action Foundation Model for Physical Intelligence](/papers/vla/magic-w0-structured-world-action-foundation-model)
 
+### [Many Ways to Succeed: Diversity-Driven RL Fine-Tuning for VLA Generalization](/papers/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization)
+
+![](/papers/assets/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization/overview.svg)
+
 ### [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
 
 ### [ProactiveVLA: Augmenting Embodied Memory through Proactive Environment Exploration](/papers/vla/proactivevla-proactive-environment-exploration)
@@ -129,11 +129,11 @@ paper_sync: true
 
 ![](/papers/assets/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models/overview.svg)
 
+### [TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model](/papers/vla/tango-humanoid-navigation-in-cluttered-environments-with-a-whole-body-vision-language-action-model)
+
 ### [TempoBridge: Language-Guided Tempo Control for Vision-Language-Action Policies](/papers/vla/tempobridge-language-guided-tempo-control)
 
 ![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
-
-### [TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model](/papers/vla/tango-humanoid-navigation-in-cluttered-environments-with-a-whole-body-vision-language-action-model)
 
 ### [UniWAM: Unified World-Action Model](/papers/vla/uniwam-unified-world-action-model)
 
