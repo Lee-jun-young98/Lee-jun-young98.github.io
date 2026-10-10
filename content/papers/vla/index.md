@@ -3,14 +3,6 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
-
-![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
-
-## [REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](/papers/vla/react-rolling-denoising-for-reactive-vla-control)
-
-![](/papers/assets/vla/react-rolling-denoising-for-reactive-vla-control/overview.svg)
-
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -103,11 +95,19 @@ paper_sync: true
 
 ## [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
 
+## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
+
+![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
+
 ## [ProactiveVLA: Augmenting Embodied Memory through Proactive Environment Exploration](/papers/vla/proactivevla-proactive-environment-exploration)
 
 ![](/papers/assets/vla/proactivevla-proactive-environment-exploration/overview.svg)
 
 ## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
+
+## [REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](/papers/vla/react-rolling-denoising-for-reactive-vla-control)
+
+![](/papers/assets/vla/react-rolling-denoising-for-reactive-vla-control/overview.svg)
 
 ## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
 
