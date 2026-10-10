@@ -1,0 +1,202 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Syn-Omni OME-LoRA와 Progressive Synergy Routing 구조</title>
+  <desc id="desc">
+    텍스트, 이미지, 비디오, 오디오 입력이 모달리티 인코더와 고정 Qwen2.5-Omni를 거친 뒤 공유 LoRA 및
+    네 모달리티 전문가 경로로 분기되고, hard routing에서 soft routing으로 전환되어 공통 임베딩을
+    만드는 과정을 보여준다.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081426" />
+      <stop offset="1" stop-color="#132c46" />
+    </linearGradient>
+    <linearGradient id="route" gradientUnits="userSpaceOnUse" x1="154" y1="31" x2="1068" y2="31">
+      <stop offset="0" stop-color="#38bdf8" />
+      <stop offset="0.5" stop-color="#a78bfa" />
+      <stop offset="1" stop-color="#f472b6" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#020617" flood-opacity="0.45" />
+    </filter>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#93c5fd" />
+    </marker>
+    <style>
+      .kr {
+        font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      }
+      .title {
+        font-size: 28px;
+        font-weight: 800;
+        fill: #f8fafc;
+      }
+      .sub {
+        font-size: 14px;
+        fill: #cbd5e1;
+      }
+      .head {
+        font-size: 17px;
+        font-weight: 700;
+        fill: #f8fafc;
+      }
+      .body {
+        font-size: 13px;
+        fill: #dbeafe;
+      }
+      .tiny {
+        font-size: 11px;
+        fill: #bfdbfe;
+      }
+      .box {
+        stroke: #60a5fa;
+        stroke-width: 1.5;
+        rx: 14;
+        filter: url(#shadow);
+      }
+      .arrow {
+        stroke: #93c5fd;
+        stroke-width: 2.2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="48" y="48" class="kr title">Syn-Omni: 먼저 전문화하고, 점진적으로 협업한다</text>
+  <text x="48" y="74" class="kr sub">
+    Figure 2와 Section 3을 바탕으로 재구성 · frozen backbone + OME-LoRA + PSR
+  </text>
+
+  <g transform="translate(48 112)">
+    <rect width="170" height="330" fill="#0f2742" class="box" />
+    <text x="85" y="34" text-anchor="middle" class="kr head">옴니모달 입력</text>
+    <g transform="translate(20 60)">
+      <rect width="130" height="48" rx="11" fill="#164e63" stroke="#22d3ee" />
+      <text x="65" y="29" text-anchor="middle" class="kr body">T · 텍스트</text>
+      <rect y="62" width="130" height="48" rx="11" fill="#1e3a8a" stroke="#60a5fa" />
+      <text x="65" y="91" text-anchor="middle" class="kr body">I · 이미지</text>
+      <rect y="124" width="130" height="48" rx="11" fill="#4c1d95" stroke="#a78bfa" />
+      <text x="65" y="153" text-anchor="middle" class="kr body">V · 비디오</text>
+      <rect y="186" width="130" height="48" rx="11" fill="#831843" stroke="#f472b6" />
+      <text x="65" y="215" text-anchor="middle" class="kr body">A · 오디오</text>
+    </g>
+    <text x="85" y="312" text-anchor="middle" class="kr tiny">단일·복합 입력 모두 허용</text>
+  </g>
+
+  <path d="M218 277 H270" class="arrow" />
+
+  <g transform="translate(270 112)">
+    <rect width="220" height="330" fill="#102a43" class="box" />
+    <text x="110" y="34" text-anchor="middle" class="kr head">Frozen Omni-MLLM</text>
+    <rect x="24" y="58" width="172" height="74" rx="12" fill="#173b5e" stroke="#38bdf8" />
+    <text x="110" y="86" text-anchor="middle" class="kr body">모달리티별 encoder</text>
+    <text x="110" y="109" text-anchor="middle" class="kr tiny">vision · video · audio · text</text>
+    <path d="M110 132 V169" class="arrow" />
+    <rect
+      x="24"
+      y="170"
+      width="172"
+      height="100"
+      rx="12"
+      fill="#1e293b"
+      stroke="#64748b"
+      stroke-dasharray="6 4"
+    />
+    <text x="110" y="202" text-anchor="middle" class="kr body">Qwen2.5-Omni</text>
+    <text x="110" y="225" text-anchor="middle" class="kr body">LLM backbone</text>
+    <text x="110" y="250" text-anchor="middle" class="kr tiny">가중치 고정 W₀</text>
+    <text x="110" y="307" text-anchor="middle" class="kr tiny">각 layer에 OME-LoRA 삽입</text>
+  </g>
+
+  <path d="M490 277 H532" class="arrow" />
+
+  <g transform="translate(532 96)">
+    <rect width="394" height="362" fill="#13233d" class="box" />
+    <text x="197" y="34" text-anchor="middle" class="kr head">OME-LoRA: 공통 축 + 전문 축</text>
+    <rect x="22" y="58" width="350" height="58" rx="12" fill="#164e63" stroke="#22d3ee" />
+    <text x="197" y="82" text-anchor="middle" class="kr body">Shared LoRA ΔWₛₕᵣ · 항상 활성</text>
+    <text x="197" y="103" text-anchor="middle" class="kr tiny">모든 모달리티의 보편 의미</text>
+    <path d="M197 116 V143" class="arrow" />
+    <g transform="translate(22 144)">
+      <rect width="78" height="82" rx="11" fill="#164e63" stroke="#22d3ee" />
+      <text x="39" y="33" text-anchor="middle" class="kr body">Text</text>
+      <text x="39" y="57" text-anchor="middle" class="kr tiny">expert</text>
+      <rect x="90" width="78" height="82" rx="11" fill="#1e3a8a" stroke="#60a5fa" />
+      <text x="129" y="33" text-anchor="middle" class="kr body">Image</text>
+      <text x="129" y="57" text-anchor="middle" class="kr tiny">expert</text>
+      <rect x="180" width="78" height="82" rx="11" fill="#4c1d95" stroke="#a78bfa" />
+      <text x="219" y="33" text-anchor="middle" class="kr body">Video</text>
+      <text x="219" y="57" text-anchor="middle" class="kr tiny">expert</text>
+      <rect x="270" width="78" height="82" rx="11" fill="#831843" stroke="#f472b6" />
+      <text x="309" y="33" text-anchor="middle" class="kr body">Audio</text>
+      <text x="309" y="57" text-anchor="middle" class="kr tiny">expert</text>
+    </g>
+    <rect x="22" y="248" width="350" height="78" rx="12" fill="#271749" stroke="#c084fc" />
+    <text x="197" y="273" text-anchor="middle" class="kr body">PSR router · 가중합 Σ wₘΔWₘ</text>
+    <text x="197" y="296" text-anchor="middle" class="kr tiny">
+      hard routing → cosine blending → soft synergy
+    </text>
+    <text x="197" y="316" text-anchor="middle" class="kr tiny">
+      SML: absent expert를 0으로 완전 억제하지 않음
+    </text>
+    <text x="197" y="350" text-anchor="middle" class="kr tiny">
+      Lₒᵣₜₕₒ: shared와 expert 입력 부분공간의 중복 감소
+    </text>
+  </g>
+
+  <path d="M926 277 H970" class="arrow" />
+
+  <g transform="translate(970 112)">
+    <rect width="182" height="330" fill="#102a43" class="box" />
+    <text x="91" y="34" text-anchor="middle" class="kr head">공통 임베딩</text>
+    <circle
+      cx="91"
+      cy="115"
+      r="52"
+      fill="#1d4ed8"
+      fill-opacity="0.35"
+      stroke="#60a5fa"
+      stroke-width="2"
+    />
+    <circle cx="73" cy="103" r="7" fill="#22d3ee" />
+    <circle cx="106" cy="92" r="7" fill="#60a5fa" />
+    <circle cx="112" cy="128" r="7" fill="#a78bfa" />
+    <circle cx="75" cy="137" r="7" fill="#f472b6" />
+    <text x="91" y="196" text-anchor="middle" class="kr body">last-token pooling</text>
+    <text x="91" y="220" text-anchor="middle" class="kr tiny">e(xₘ)</text>
+    <rect x="20" y="250" width="142" height="54" rx="11" fill="#14532d" stroke="#4ade80" />
+    <text x="91" y="274" text-anchor="middle" class="kr body">InfoNCE</text>
+    <text x="91" y="294" text-anchor="middle" class="kr tiny">matched pair 정렬</text>
+  </g>
+
+  <g transform="translate(48 490)">
+    <rect width="1104" height="94" rx="14" fill="#0b1e33" stroke="#334155" />
+    <text x="24" y="30" class="kr head">학습 시간축</text>
+    <line
+      x1="154"
+      y1="31"
+      x2="1068"
+      y2="31"
+      stroke="url(#route)"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+    <circle cx="154" cy="31" r="8" fill="#38bdf8" />
+    <circle cx="245" cy="31" r="8" fill="#a78bfa" />
+    <circle cx="702" cy="31" r="8" fill="#f472b6" />
+    <text x="154" y="64" text-anchor="middle" class="kr body">0%</text>
+    <text x="245" y="64" text-anchor="middle" class="kr body">10%</text>
+    <text x="702" y="64" text-anchor="middle" class="kr body">60%</text>
+    <text x="1068" y="64" text-anchor="middle" class="kr body">100%</text>
+    <text x="197" y="84" text-anchor="middle" class="kr tiny">Warmup · 입력 expert만</text>
+    <text x="473" y="84" text-anchor="middle" class="kr tiny">Blending · hard/soft 혼합</text>
+    <text x="885" y="84" text-anchor="middle" class="kr tiny">Synergy · 학습된 soft router</text>
+  </g>
+</svg>

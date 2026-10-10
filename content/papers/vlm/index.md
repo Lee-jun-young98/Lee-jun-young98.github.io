@@ -41,6 +41,10 @@ paper_sync: true
 
 ## [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 
+## [Syn-Omni: Structured Specialization and Progressive Collaboration for Omnimodal Embeddings](/papers/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings)
+
+![](/papers/assets/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings/syn-omni-architecture.svg)
+
 ## [The Alignment Illusion in Multimodal Large Language Models](/papers/vlm/the-alignment-illusion-in-multimodal-large-language-models)
 
 ## [VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding](/papers/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding)
