@@ -3,6 +3,14 @@ title: "VLA"
 paper_sync: true
 ---
 
+## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
+
+![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
+
+## [REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](/papers/vla/react-rolling-denoising-for-reactive-vla-control)
+
+![](/papers/assets/vla/react-rolling-denoising-for-reactive-vla-control/overview.svg)
+
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)

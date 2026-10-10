@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">REACT rolling denoising architecture</title>
+  <desc id="desc">Latest observations are encoded asynchronously, used to denoise a staggered action buffer, execute the clean front block, shift future blocks, and append noise.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f172a"/><stop offset="1" stop-color="#172554"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#93c5fd"/></marker>
+    <style>.t{font:700 30px Arial,sans-serif;fill:#f8fafc}.h{font:700 21px Arial,sans-serif;fill:#e0f2fe}.p{font:16px Arial,sans-serif;fill:#cbd5e1}.s{font:700 16px Arial,sans-serif;fill:#0f172a}.box{fill:#1e293b;stroke:#60a5fa;stroke-width:2}.arrow{stroke:#93c5fd;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1280" height="720" rx="24" fill="url(#bg)"/>
+  <text x="54" y="62" class="t">REACT: 최신 관측으로 미래 action을 계속 정제</text>
+  <rect x="55" y="100" width="230" height="150" rx="18" class="box"/><text x="82" y="138" class="h">Dual Decoupling</text><text x="82" y="174" class="p">카메라 · 언어 · 상태</text><text x="82" y="202" class="p">비동기 VLM workers</text><text x="82" y="230" class="p">latest-ready cache</text>
+  <rect x="365" y="100" width="240" height="150" rx="18" class="box"/><text x="400" y="138" class="h">DiT 한 번 갱신</text><text x="397" y="175" class="p">전체 H-step horizon</text><text x="397" y="203" class="p">x̃ = x − v / K</text><text x="397" y="231" class="p">최신 embedding 조건</text>
+  <path d="M285 175 H355" class="arrow"/>
+  <text x="55" y="322" class="h">staggered flow time: 앞은 clean, 뒤는 noise</text>
+  <g transform="translate(55 350)">
+    <rect width="200" height="110" rx="14" fill="#bbf7d0"/><text x="37" y="43" class="s">B₀ · τ=1/K</text><text x="42" y="75" class="s">지금 실행</text>
+    <rect x="220" width="200" height="110" rx="14" fill="#bae6fd"/><text x="255" y="43" class="s">B₁ · τ=2/K</text><text x="251" y="75" class="s">부분 정제</text>
+    <rect x="440" width="200" height="110" rx="14" fill="#c4b5fd"/><text x="474" y="43" class="s">B₂ · τ=3/K</text><text x="471" y="75" class="s">부분 정제</text>
+    <text x="666" y="61" class="h">…</text>
+    <rect x="730" width="200" height="110" rx="14" fill="#f9a8d4"/><text x="760" y="43" class="s">Bₖ₋₁ · τ=1</text><text x="776" y="75" class="s">fresh noise</text>
+  </g>
+  <path d="M255 485 C255 540 120 525 120 595" class="arrow"/><rect x="55" y="595" width="260" height="76" rx="14" fill="#14532d" stroke="#86efac" stroke-width="2"/><text x="85" y="630" class="h">clean block 실행</text><text x="85" y="655" class="p">S개 action streaming</text>
+  <path d="M475 485 C475 550 670 540 670 595" class="arrow"/><rect x="525" y="595" width="300" height="76" rx="14" fill="#312e81" stroke="#c4b5fd" stroke-width="2"/><text x="557" y="630" class="h">shift + noise 보충</text><text x="557" y="655" class="p">다음 관측에서 다시 전체 정제</text>
+  <path d="M825 633 C1120 633 1160 205 620 175" class="arrow"/>
+  <rect x="920" y="100" width="305" height="180" rx="18" class="box"/><text x="956" y="138" class="h">Staircase Training</text><text x="956" y="176" class="p">τ={1/K,…,1} 동시 감독</text><text x="956" y="206" class="p">추론 buffer schedule과 정렬</text><text x="956" y="236" class="p">여러 관측 → 한 실행 block</text>
+  <text x="920" y="330" class="p">논문 Figure 1 및 Method 3.1–3.3 기반 재구성</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">PLaW-VLA predictive latent world model architecture</title>
+  <desc id="desc">Observation history and language flow through a VLM, frozen V-JEPA 2 encoder, latent world model future queries, and action expert.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#0f3b3e"/></linearGradient>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#99f6e4"/></marker>
+    <style>.t{font:700 30px Arial,sans-serif;fill:#f8fafc}.h{font:700 21px Arial,sans-serif;fill:#ecfeff}.p{font:16px Arial,sans-serif;fill:#cbd5e1}.box{fill:#1f2937;stroke:#5eead4;stroke-width:2}.arr{stroke:#99f6e4;stroke-width:3;fill:none;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="1280" height="720" rx="24" fill="url(#bg)"/>
+  <text x="55" y="62" class="t">PLaW-VLA: 픽셀 대신 제어 관련 미래 latent 예측</text>
+  <rect x="55" y="110" width="235" height="165" rx="18" class="box"/><text x="83" y="148" class="h">입력 context</text><text x="83" y="185" class="p">multi-view observation</text><text x="83" y="213" class="p">language instruction</text><text x="83" y="241" class="p">proprioception · history</text>
+  <rect x="365" y="90" width="245" height="115" rx="18" class="box"/><text x="402" y="130" class="h">VLM Expert</text><text x="397" y="165" class="p">PaliGemma semantic φₜ</text>
+  <rect x="365" y="245" width="245" height="115" rx="18" class="box"/><text x="393" y="285" class="h">Frozen Encoder</text><text x="397" y="320" class="p">V-JEPA 2 history z≤t</text>
+  <path d="M290 170 H355" class="arr"/><path d="M290 222 C325 222 325 302 355 302" class="arr"/>
+  <rect x="700" y="145" width="260" height="180" rx="18" class="box"/><text x="735" y="185" class="h">Latent World Model</text><text x="735" y="223" class="p">K learnable future queries</text><text x="735" y="251" class="p">near / far future 병렬 예측</text><text x="735" y="285" class="h">ẑₜ₊₁:ₜ₊ₖ</text>
+  <path d="M610 145 C650 145 650 195 690 195" class="arr"/><path d="M610 302 C650 302 650 255 690 255" class="arr"/>
+  <rect x="1015" y="145" width="220" height="180" rx="18" class="box"/><text x="1054" y="185" class="h">Action Expert</text><text x="1048" y="223" class="p">semantic + history</text><text x="1048" y="251" class="p">+ predicted future</text><text x="1048" y="285" class="h">continuous actions</text>
+  <path d="M960 235 H1005" class="arr"/>
+  <text x="55" y="425" class="h">3-stage video-to-robot 학습</text>
+  <rect x="55" y="455" width="330" height="120" rx="16" fill="#164e63" stroke="#67e8f9" stroke-width="2"/><text x="85" y="495" class="h">Stage I · video-only</text><text x="85" y="530" class="p">human + robot video로 latent dynamics</text><text x="85" y="555" class="p">action supervision 없음</text>
+  <rect x="475" y="455" width="330" height="120" rx="16" fill="#134e4a" stroke="#5eead4" stroke-width="2"/><text x="505" y="495" class="h">Stage II · robot trajectory</text><text x="505" y="530" class="p">future prediction + action 공동 학습</text><text x="505" y="555" class="p">predictive dynamics를 제어에 grounding</text>
+  <rect x="895" y="455" width="330" height="120" rx="16" fill="#3f3f46" stroke="#d4d4d8" stroke-width="2"/><text x="925" y="495" class="h">Stage III · adaptation</text><text x="925" y="530" class="p">target task와 embodiment</text><text x="925" y="555" class="p">최종 policy fine-tuning</text>
+  <path d="M385 515 H465" class="arr"/><path d="M805 515 H885" class="arr"/>
+  <text x="55" y="645" class="p">논문 Figure 2 및 공식 프로젝트 Framework 기반 재구성 · structured causal attention: VLM → LWM → Action</text>
+</svg>
