@@ -87,11 +87,19 @@ paper_sync: true
 
 ## [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
 
+## [LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC](/papers/vla/lewam-jepa-world-action-model-with-diffusion-steering)
+
+![](/papers/assets/vla/lewam-jepa-world-action-model-with-diffusion-steering/overview.svg)
+
 ## [Magic-W0: A Structured World-Action Foundation Model for Physical Intelligence](/papers/vla/magic-w0-structured-world-action-foundation-model)
 
 ## [Many Ways to Succeed: Diversity-Driven RL Fine-Tuning for VLA Generalization](/papers/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization)
 
 ![](/papers/assets/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization/overview.svg)
+
+## [MiniWAM: Learning Compact Future Targets for Efficient World-Action Modeling](/papers/vla/miniwam-compact-future-targets-for-world-action-modeling)
+
+![](/papers/assets/vla/miniwam-compact-future-targets-for-world-action-modeling/overview.svg)
 
 ## [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
 
@@ -140,6 +148,10 @@ paper_sync: true
 ## [TempoBridge: Language-Guided Tempo Control for Vision-Language-Action Policies](/papers/vla/tempobridge-language-guided-tempo-control)
 
 ![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
+
+## [UNITAS: A 3D-Native World Action Model for Embodied Manipulation](/papers/vla/unitas-3d-native-world-action-model)
+
+![](/papers/assets/vla/unitas-3d-native-world-action-model/overview.svg)
 
 ## [UniWAM: Unified World-Action Model](/papers/vla/uniwam-unified-world-action-model)
 
