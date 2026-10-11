@@ -1,0 +1,184 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">OmniCapBench 심층 구조 평가 파이프라인</title>
+  <desc id="desc">
+    후보 영상에서 검증된 Reference, Event, Shot 정답 구조를 만들고, 평가 모델의 구조화 JSON을 규칙
+    검증과 제한된 의미 비교에 통과시켜 정체성, 시간, 오디오, 시청각 결합 지표를 계산하는 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081426" />
+      <stop offset="1" stop-color="#132c42" />
+    </linearGradient>
+    <marker
+      id="arrow"
+      viewBox="0 0 10 10"
+      refX="9"
+      refY="5"
+      markerWidth="7"
+      markerHeight="7"
+      orient="auto-start-reverse"
+    >
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8dd8ff" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 30px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #f4fbff;
+      }
+      .sub {
+        font:
+          500 15px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #b9d2e3;
+      }
+      .label {
+        font:
+          700 18px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #f5fbff;
+      }
+      .body {
+        font:
+          500 14px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #d8e8f2;
+      }
+      .tiny {
+        font:
+          500 12px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #a8c0d2;
+      }
+      .arrow {
+        stroke: #8dd8ff;
+        stroke-width: 3;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke: #668da5;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="24" fill="url(#bg)" />
+  <text x="54" y="54" class="title">OmniCapBench: 구조를 먼저 검증하고 의미를 나중에 판정</text>
+  <text x="54" y="80" class="sub">
+    논문 Figure 1·2와 Section 3을 바탕으로 재구성 · 단일 캡션 점수 → 추적 가능한 원자 단위 진단
+  </text>
+
+  <rect
+    x="50"
+    y="110"
+    width="1100"
+    height="160"
+    rx="18"
+    fill="#10283b"
+    stroke="#3b6e89"
+    stroke-width="2"
+  />
+  <text x="72" y="140" class="label" fill="#8dd8ff">A. 정답 구조 제작 (오프라인)</text>
+  <rect x="75" y="165" width="175" height="72" rx="12" fill="#17384e" stroke="#4c829e" />
+  <text x="162" y="192" text-anchor="middle" class="label">후보 영상</text>
+  <text x="162" y="217" text-anchor="middle" class="body">오디오·사건 밀도 필터</text>
+  <path d="M 250 201 L 300 201" class="arrow" />
+  <rect x="300" y="155" width="310" height="92" rx="12" fill="#17384e" stroke="#4c829e" />
+  <text x="455" y="184" text-anchor="middle" class="label">원자 단위 생성</text>
+  <text x="455" y="210" text-anchor="middle" class="body">Reference → Event → Shot</text>
+  <text x="455" y="231" text-anchor="middle" class="tiny">생성 · 평가/검증 · 국소 보정 · 선택</text>
+  <path d="M 610 201 L 660 201" class="arrow" />
+  <rect x="660" y="165" width="210" height="72" rx="12" fill="#17384e" stroke="#4c829e" />
+  <text x="765" y="192" text-anchor="middle" class="label">품질 감사</text>
+  <text x="765" y="217" text-anchor="middle" class="body">규칙 검사 + 사람 검수</text>
+  <path d="M 870 201 L 920 201" class="arrow" />
+  <rect
+    x="920"
+    y="155"
+    width="200"
+    height="92"
+    rx="12"
+    fill="#214b55"
+    stroke="#68cbbf"
+    stroke-width="2"
+  />
+  <text x="1020" y="184" text-anchor="middle" class="label">고정 정답 S*(V)</text>
+  <text x="1020" y="209" text-anchor="middle" class="body">R · E · H</text>
+  <text x="1020" y="231" text-anchor="middle" class="tiny">ID · 시간 · cross-link</text>
+
+  <rect
+    x="50"
+    y="290"
+    width="1100"
+    height="270"
+    rx="18"
+    fill="#0d2134"
+    stroke="#3b6e89"
+    stroke-width="2"
+  />
+  <text x="72" y="322" class="label">B. 모델 평가 (추론)</text>
+  <rect x="75" y="355" width="150" height="80" rx="12" fill="#243d5a" stroke="#718fbd" />
+  <text x="150" y="384" text-anchor="middle" class="label">오디오·비디오</text>
+  <text x="150" y="411" text-anchor="middle" class="body">평가 입력 V</text>
+  <path d="M 225 395 L 275 395" class="arrow" />
+  <rect x="275" y="345" width="195" height="100" rx="12" fill="#243d5a" stroke="#718fbd" />
+  <text x="372" y="376" text-anchor="middle" class="label">Omni MLLM</text>
+  <text x="372" y="402" text-anchor="middle" class="body">native JSON 생성</text>
+  <text x="372" y="425" text-anchor="middle" class="tiny">Ŝ(V) = (R̂, Ê, Ĥ)</text>
+  <path d="M 470 395 L 520 395" class="arrow" />
+  <rect x="520" y="335" width="205" height="120" rx="12" fill="#3c334c" stroke="#b18bc4" />
+  <text x="622" y="365" text-anchor="middle" class="label">① 구조 검증·정렬</text>
+  <text x="622" y="393" text-anchor="middle" class="body">ID · 시간 범위 · 연결 규칙</text>
+  <text x="622" y="418" text-anchor="middle" class="body">tIoU / 제한된 matcher</text>
+  <text x="622" y="441" text-anchor="middle" class="tiny">오류 unit은 여기서 추적·제외</text>
+  <path d="M 725 395 L 775 395" class="arrow" />
+  <rect x="775" y="345" width="180" height="100" rx="12" fill="#3c334c" stroke="#b18bc4" />
+  <text x="865" y="375" text-anchor="middle" class="label">② 국소 의미 판정</text>
+  <text x="865" y="402" text-anchor="middle" class="body">정렬된 unit pair만</text>
+  <text x="865" y="425" text-anchor="middle" class="tiny">recall ↔ precision</text>
+  <path d="M 955 395 L 1000 395" class="arrow" />
+  <rect
+    x="1000"
+    y="335"
+    width="120"
+    height="120"
+    rx="12"
+    fill="#214b55"
+    stroke="#68cbbf"
+    stroke-width="2"
+  />
+  <text x="1060" y="365" text-anchor="middle" class="label">진단 지표</text>
+  <text x="1060" y="392" text-anchor="middle" class="body">CCC</text>
+  <text x="1060" y="414" text-anchor="middle" class="body">tIoU · F1</text>
+  <text x="1060" y="436" text-anchor="middle" class="body">EVSA</text>
+  <path d="M 1015 247 C 1015 285 650 282 622 333" class="dash" />
+  <text x="825" y="305" class="tiny">정답 unit과 one-to-one 비교</text>
+
+  <rect x="75" y="480" width="1045" height="55" rx="11" fill="#132e43" />
+  <text x="97" y="504" class="body">핵심 차이</text>
+  <text x="190" y="504" class="body">기존 global judge: 긴 자유형 캡션을 한 번에 역파싱·판정</text>
+  <text x="190" y="525" class="body">
+    OmniCapBench: 결정적 구조 검사 → 정렬된 작은 의미 비교 → 오류 위치별 점수
+  </text>
+
+  <text x="54" y="594" class="tiny">
+    출처: OmniCapBench Figure 1, Figure 2, Sections 3.1–3.2 · CC BY 4.0 · 논문 내용을 바탕으로
+    재구성
+  </text>
+</svg>
