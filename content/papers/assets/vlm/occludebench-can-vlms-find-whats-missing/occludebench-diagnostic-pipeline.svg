@@ -1,0 +1,279 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">OccludeBench 진단 및 inpaint-then-confront 파이프라인</title>
+  <desc id="desc">
+    실제 이미지의 물체를 완전히 가린 뒤 direct와 inferential 증거를 평가하고, 네 단계 OccludeTrace로
+    전체 장면 속 투영 회수 병목을 찾은 후 시각 가설 생성과 물리 일관성 대조로 답을 수정하는 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081426" />
+      <stop offset="1" stop-color="#15294a" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8fb8ff" />
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#020817" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text
+    x="60"
+    y="64"
+    fill="#f7fbff"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="30"
+    font-weight="700"
+  >
+    OccludeBench: 정답보다 ‘증거 사용’을 진단한다
+  </text>
+  <text
+    x="60"
+    y="94"
+    fill="#a9bdd8"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="15"
+  >
+    논문 Figure 3·5·9 및 Sections 2–3을 바탕으로 재구성 · 학습 없음, 평가/추론 파이프라인
+  </text>
+
+  <rect
+    x="50"
+    y="130"
+    width="280"
+    height="425"
+    rx="20"
+    fill="#132744"
+    stroke="#4678bd"
+    stroke-width="2"
+    filter="url(#shadow)"
+  />
+  <text
+    x="78"
+    y="172"
+    fill="#79c7ff"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="21"
+    font-weight="700"
+  >
+    1 통제된 가림 입력
+  </text>
+  <rect x="79" y="202" width="222" height="112" rx="12" fill="#20395c" />
+  <circle cx="139" cy="253" r="27" fill="#ffc857" />
+  <rect
+    x="180"
+    y="222"
+    width="78"
+    height="63"
+    rx="4"
+    fill="#05080d"
+    stroke="#ff7b72"
+    stroke-width="3"
+  />
+  <path d="M115 290 Q180 330 274 292" fill="none" stroke="#72d6a7" stroke-width="8" opacity="0.7" />
+  <text
+    x="190"
+    y="248"
+    fill="#f7fbff"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="13"
+    text-anchor="middle"
+  >
+    목표 물체
+  </text>
+  <text
+    x="190"
+    y="267"
+    fill="#f7fbff"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="13"
+    text-anchor="middle"
+  >
+    완전 가림
+  </text>
+  <text
+    x="78"
+    y="348"
+    fill="#ffffff"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >
+    Direct · 197장
+  </text>
+  <text
+    x="78"
+    y="374"
+    fill="#c4d4e8"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="14"
+  >
+    반사·그림자가 결정적 증거
+  </text>
+  <text
+    x="78"
+    y="413"
+    fill="#ffffff"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="17"
+    font-weight="700"
+  >
+    Inferential · 181장
+  </text>
+  <text
+    x="78"
+    y="439"
+    fill="#c4d4e8"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="14"
+  >
+    넓은 장면 문맥으로 추론
+  </text>
+  <rect x="78" y="474" width="224" height="53" rx="10" fill="#0c1a2e" />
+  <text
+    x="190"
+    y="497"
+    fill="#a9bdd8"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="13"
+    text-anchor="middle"
+  >
+    자유형 답 · 온도 0
+  </text>
+  <text
+    x="190"
+    y="518"
+    fill="#a9bdd8"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="13"
+    text-anchor="middle"
+  >
+    동일 judge · 사람 기준선
+  </text>
+
+  <path d="M340 342 H382" stroke="#8fb8ff" stroke-width="3" marker-end="url(#arrow)" />
+  <rect
+    x="390"
+    y="130"
+    width="390"
+    height="425"
+    rx="20"
+    fill="#132744"
+    stroke="#6b8fd6"
+    stroke-width="2"
+    filter="url(#shadow)"
+  />
+  <text
+    x="418"
+    y="172"
+    fill="#a9bfff"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="21"
+    font-weight="700"
+  >
+    2 OccludeTrace 병목 분해
+  </text>
+  <g font-family="Segoe UI, Noto Sans KR, sans-serif">
+    <rect x="420" y="201" width="330" height="55" rx="11" fill="#20395c" />
+    <text x="444" y="225" fill="#fff" font-size="15" font-weight="700">① 단서 감지</text>
+    <text x="444" y="246" fill="#b8cae2" font-size="13">실패 99% · 성공 100%</text>
+    <rect x="420" y="270" width="330" height="55" rx="11" fill="#20395c" />
+    <text x="444" y="294" fill="#fff" font-size="15" font-weight="700">② Crop 속 물체 인식</text>
+    <text x="444" y="315" fill="#b8cae2" font-size="13">실패 79% · 성공 88%</text>
+    <rect x="420" y="339" width="330" height="55" rx="11" fill="#20395c" />
+    <text x="444" y="363" fill="#fff" font-size="15" font-weight="700">
+      ③ 투영 → 원천 위치 연결
+    </text>
+    <text x="444" y="384" fill="#b8cae2" font-size="13">실패 85% · 성공 82%</text>
+    <rect
+      x="420"
+      y="408"
+      width="330"
+      height="77"
+      rx="11"
+      fill="#4b2538"
+      stroke="#ff7b9c"
+      stroke-width="2"
+    />
+    <text x="444" y="435" fill="#fff" font-size="15" font-weight="700">
+      ④ 전체 장면 속 투영 회수
+    </text>
+    <text x="444" y="460" fill="#ffd0dc" font-size="15" font-weight="700">
+      실패 50% · 성공 91% → 41%p
+    </text>
+    <text x="585" y="519" fill="#ffb3c6" font-size="14" text-anchor="middle">
+      핵심: 증거의 존재가 아니라 전역 문맥 속 선택·회수가 병목
+    </text>
+  </g>
+
+  <path d="M790 342 H832" stroke="#8fb8ff" stroke-width="3" marker-end="url(#arrow)" />
+  <rect
+    x="840"
+    y="130"
+    width="310"
+    height="425"
+    rx="20"
+    fill="#132744"
+    stroke="#39a97a"
+    stroke-width="2"
+    filter="url(#shadow)"
+  />
+  <text
+    x="868"
+    y="172"
+    fill="#72d6a7"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="21"
+    font-weight="700"
+  >
+    3 Inpaint → Confront
+  </text>
+  <g font-family="Segoe UI, Noto Sans KR, sans-serif">
+    <rect x="870" y="204" width="250" height="68" rx="12" fill="#173b38" />
+    <text x="995" y="232" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">
+      시각 후보 생성
+    </text>
+    <text x="995" y="254" fill="#b9e8d5" font-size="13" text-anchor="middle">
+      가린 영역을 한 번 채운다
+    </text>
+    <path d="M995 278 V306" stroke="#72d6a7" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="870" y="314" width="250" height="78" rx="12" fill="#173b38" />
+    <text x="995" y="341" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">
+      물리 단서와 대조
+    </text>
+    <text x="995" y="364" fill="#b9e8d5" font-size="13" text-anchor="middle">
+      반사·그림자와 충돌하면
+    </text>
+    <text x="995" y="383" fill="#b9e8d5" font-size="13" text-anchor="middle">
+      후보를 거부하고 답 수정
+    </text>
+    <rect x="870" y="421" width="250" height="96" rx="12" fill="#0d2f29" stroke="#72d6a7" />
+    <text x="995" y="450" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">
+      Direct 정확도 향상
+    </text>
+    <text x="995" y="476" fill="#72d6a7" font-size="16" font-weight="700" text-anchor="middle">
+      GPT-5.4 +16.7%p
+    </text>
+    <text x="995" y="500" fill="#72d6a7" font-size="16" font-weight="700" text-anchor="middle">
+      Gemini 3.1 Pro +10.6%p
+    </text>
+  </g>
+  <text
+    x="600"
+    y="594"
+    fill="#879db9"
+    font-family="Segoe UI, Noto Sans KR, sans-serif"
+    font-size="13"
+    text-anchor="middle"
+  >
+    출처: arXiv:2610.13790 · Figure 3, 5, 9 · Table 1–3 · CC BY-NC-SA 4.0 · 논문 내용을 바탕으로
+    재구성
+  </text>
+</svg>

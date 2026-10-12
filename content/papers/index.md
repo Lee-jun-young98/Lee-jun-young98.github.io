@@ -201,6 +201,10 @@ paper_sync: true
 
 ### [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
+### [OccludeBench: Can VLMs Find What's Missing?](/papers/vlm/occludebench-can-vlms-find-whats-missing)
+
+![](/papers/assets/vlm/occludebench-can-vlms-find-whats-missing/occludebench-diagnostic-pipeline.svg)
+
 ### [Omni-Embed-Mini: Binding Modalities Without Forgetting via Dense Distillation](/papers/vlm/omni-embed-mini-binding-modalities-without-forgetting)
 
 ![](/papers/assets/vlm/omni-embed-mini-binding-modalities-without-forgetting/omni-embed-mini-architecture.svg)
