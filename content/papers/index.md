@@ -19,6 +19,10 @@ paper_sync: true
 
 ### [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
+### [Beyond Actions: Learning Future Operation Targets for Vision-Language-Action Models](/papers/vla/beyond-actions-action-future-coupled-effect-learning)
+
+![](/papers/assets/vla/beyond-actions-action-future-coupled-effect-learning/overview.svg)
+
 ### [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
 
 ### [Causeway: Restoring Task Accessibility for Instruction Switching in VLA Policies](/papers/vla/causeway-restoring-task-accessibility-for-instruction-switching-in-vla-policies)
@@ -53,6 +57,10 @@ paper_sync: true
 
 ### [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
+### [Dual-Stream Memory for Vision-Language-Action Policies](/papers/vla/dual-stream-memory-for-vla-policies)
+
+![](/papers/assets/vla/dual-stream-memory-for-vla-policies/overview.svg)
+
 ### [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
 
 ![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
@@ -66,6 +74,10 @@ paper_sync: true
 ### [Find Something You Can't Do: Agentic Real-World Reinforcement Learning for Self-Improving VLA Models](/papers/vla/find-agentic-real-world-reinforcement-learning-for-self-improving-vla-models)
 
 ### [ForeTac-VLA: A Forecasting-Based Tactile-Vision-Language-Action Model for Contact-Rich Robotic Manipulation](/papers/vla/foretac-vla-forecasting-based-tactile-vision-language-action-model)
+
+### [Forward Dynamics Models: Action-to-Future Learning for Robot Policies](/papers/vla/forward-dynamics-models-action-to-future-learning)
+
+![](/papers/assets/vla/forward-dynamics-models-action-to-future-learning/overview.svg)
 
 ### [FRAM: Trajectory-Guided Visual Feature Selection for Compact Language-Conditioned Robot Manipulation](/papers/vla/fram-trajectory-guided-visual-feature-selection-for-compact-robot-manipulation)
 
