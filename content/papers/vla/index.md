@@ -3,18 +3,6 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [Chronos Policy: Learning Robot Policies on Physical Time](/papers/vla/chronos-policy-learning-robot-policies-on-physical-time)
-
-![](/papers/assets/vla/chronos-policy-learning-robot-policies-on-physical-time/overview.svg)
-
-## [Noise Space Learning for VLA Adaptation](/papers/vla/noise-space-learning-for-vla-adaptation)
-
-![](/papers/assets/vla/noise-space-learning-for-vla-adaptation/overview.svg)
-
-## [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
-
-![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
-
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -36,6 +24,10 @@ paper_sync: true
 ## [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
 
 ## [Causeway: Restoring Task Accessibility for Instruction Switching in VLA Policies](/papers/vla/causeway-restoring-task-accessibility-for-instruction-switching-in-vla-policies)
+
+## [Chronos Policy: Learning Robot Policies on Physical Time](/papers/vla/chronos-policy-learning-robot-policies-on-physical-time)
+
+![](/papers/assets/vla/chronos-policy-learning-robot-policies-on-physical-time/overview.svg)
 
 ## [Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models](/papers/vla/co-vla-consensus-based-federated-training-for-vision-language-action-models)
 
@@ -127,6 +119,10 @@ paper_sync: true
 
 ## [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
 
+## [Noise Space Learning for VLA Adaptation](/papers/vla/noise-space-learning-for-vla-adaptation)
+
+![](/papers/assets/vla/noise-space-learning-for-vla-adaptation/overview.svg)
+
 ## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
 ![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
@@ -158,6 +154,10 @@ paper_sync: true
 ![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
 
 ## [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
+
+## [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
+
+![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
 
 ## [SWAP: Stepwise Action Policy Routing for Vision-Language-Action Models](/papers/vla/swap-stepwise-action-policy-routing)
 
