@@ -5,6 +5,18 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
+### [Chronos Policy: Learning Robot Policies on Physical Time](/papers/vla/chronos-policy-learning-robot-policies-on-physical-time)
+
+![](/papers/assets/vla/chronos-policy-learning-robot-policies-on-physical-time/overview.svg)
+
+### [Noise Space Learning for VLA Adaptation](/papers/vla/noise-space-learning-for-vla-adaptation)
+
+![](/papers/assets/vla/noise-space-learning-for-vla-adaptation/overview.svg)
+
+### [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
+
+![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
+
 ### [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
