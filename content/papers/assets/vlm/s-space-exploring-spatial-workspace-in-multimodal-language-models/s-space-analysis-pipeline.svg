@@ -1,0 +1,247 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">S-Space 공간 표현 분석 파이프라인</title>
+  <desc id="desc">
+    이미지와 공간 질문에서 물체 토큰의 중간 표현을 얻고, 정답 로짓의 반대 역할 그래디언트로
+    좌우·상하·거리 축을 식별한 뒤 좌표 읽기, 인과 개입, 관점 회전 진단으로 나누는 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7f8ff" />
+      <stop offset="1" stop-color="#eef8f5" />
+    </linearGradient>
+    <linearGradient id="space" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6750a4" />
+      <stop offset="1" stop-color="#2d7f79" />
+    </linearGradient>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#52606d" />
+    </marker>
+    <style>
+      .t {
+        font-family: "Malgun Gothic", "Noto Sans KR", sans-serif;
+        fill: #17212b;
+      }
+      .small {
+        font-size: 15px;
+      }
+      .body {
+        font-size: 17px;
+      }
+      .head {
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: 800;
+      }
+      .box {
+        fill: #ffffff;
+        stroke: #aab6c2;
+        stroke-width: 2;
+        rx: 18;
+      }
+      .arrow {
+        fill: none;
+        stroke: #52606d;
+        stroke-width: 3;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        fill: none;
+        stroke: #7d8a96;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="600" y="43" text-anchor="middle" class="t title">
+    S-Space: 내부 공간 표현을 읽고, 쓰고, 진단하기
+  </text>
+  <text x="600" y="69" text-anchor="middle" class="t small" fill="#52606d">
+    논문 Figure 2·4·8과 Sections 2·3·5를 바탕으로 재구성
+  </text>
+
+  <rect x="35" y="105" width="220" height="205" class="box" />
+  <rect x="35" y="105" width="220" height="42" rx="18" fill="#d9e7ff" />
+  <text x="145" y="133" text-anchor="middle" class="t head">1. 입력과 중간 표현</text>
+  <rect
+    x="62"
+    y="169"
+    width="78"
+    height="71"
+    rx="10"
+    fill="#eef4ff"
+    stroke="#5b7db1"
+    stroke-width="2"
+  />
+  <circle cx="84" cy="192" r="9" fill="#f6b44b" />
+  <rect x="99" y="203" width="25" height="22" rx="4" fill="#6aa6a0" />
+  <path d="M69 229 L91 207 L106 221 L126 197 L134 229 Z" fill="#8ab0df" />
+  <text x="101" y="259" text-anchor="middle" class="t small">이미지</text>
+  <text x="157" y="180" class="t small">“사과는 컵의</text>
+  <text x="157" y="202" class="t small">왼쪽/오른쪽?”</text>
+  <rect x="61" y="273" width="168" height="25" rx="12" fill="#edf8f5" stroke="#2d7f79" />
+  <text x="145" y="291" text-anchor="middle" class="t small">
+    MLLM 중간층 h
+    <tspan baseline-shift="sub">q</tspan>
+    , h
+    <tspan baseline-shift="sub">r</tspan>
+  </text>
+
+  <path d="M255 208 L316 208" class="arrow" />
+
+  <rect x="318" y="89" width="414" height="238" class="box" />
+  <rect x="318" y="89" width="414" height="44" rx="18" fill="#eee8ff" />
+  <text x="525" y="119" text-anchor="middle" class="t head">2. S-Space 축 식별 · backward 1회</text>
+  <text x="347" y="163" class="t body">정답 logit 대비</text>
+  <rect x="342" y="178" width="166" height="39" rx="9" fill="#faf8ff" stroke="#735bb1" />
+  <text x="425" y="203" text-anchor="middle" class="t small">
+    s
+    <tspan baseline-shift="sub">x</tspan>
+    = logit(R) − logit(L)
+  </text>
+  <text x="347" y="248" class="t body">역할 반대 gradient</text>
+  <rect x="342" y="260" width="166" height="39" rx="9" fill="#faf8ff" stroke="#735bb1" />
+  <text x="425" y="285" text-anchor="middle" class="t small">
+    (∇h
+    <tspan baseline-shift="sub">q</tspan>
+    s − ∇h
+    <tspan baseline-shift="sub">r</tspan>
+    s) / 2
+  </text>
+  <path d="M520 198 C555 198 550 260 580 260" class="arrow" />
+  <rect x="572" y="151" width="132" height="146" rx="16" fill="url(#space)" />
+  <text x="638" y="180" text-anchor="middle" class="t head" fill="#ffffff">S-Space</text>
+  <line
+    x1="638"
+    y1="258"
+    x2="685"
+    y2="258"
+    stroke="#ffffff"
+    stroke-width="3"
+    marker-end="url(#arrow)"
+  />
+  <line
+    x1="638"
+    y1="258"
+    x2="638"
+    y2="205"
+    stroke="#ffffff"
+    stroke-width="3"
+    marker-end="url(#arrow)"
+  />
+  <line
+    x1="638"
+    y1="258"
+    x2="600"
+    y2="282"
+    stroke="#ffffff"
+    stroke-width="3"
+    marker-end="url(#arrow)"
+  />
+  <text x="687" y="250" class="t small" fill="#ffffff">x</text>
+  <text x="646" y="207" class="t small" fill="#ffffff">y</text>
+  <text x="588" y="294" class="t small" fill="#ffffff">z</text>
+  <text x="638" y="319" text-anchor="middle" class="t small">prompt·순서·예제 평균 → 고정 V</text>
+
+  <path d="M732 208 L793 208" class="arrow" />
+  <rect x="795" y="105" width="370" height="205" class="box" />
+  <rect x="795" y="105" width="370" height="42" rx="18" fill="#daf1eb" />
+  <text x="980" y="133" text-anchor="middle" class="t head">3. 좌표 읽기 · forward만</text>
+  <text x="827" y="178" class="t body">object token 투영</text>
+  <rect x="826" y="191" width="308" height="42" rx="10" fill="#f2fbf8" stroke="#2d7f79" />
+  <text x="980" y="218" text-anchor="middle" class="t body">
+    c
+    <tspan baseline-shift="sub">t</tspan>
+    = V
+    <tspan baseline-shift="super">T</tspan>
+    h
+    <tspan baseline-shift="sub">t</tspan>
+    = (x, y, z)
+  </text>
+  <circle cx="890" cy="267" r="9" fill="#6750a4" />
+  <circle cx="1058" cy="251" r="9" fill="#2d7f79" />
+  <line x1="850" y1="278" x2="1100" y2="278" stroke="#7d8a96" stroke-width="2" />
+  <text x="842" y="296" class="t small">left</text>
+  <text x="1081" y="296" class="t small">right</text>
+  <text x="980" y="267" text-anchor="middle" class="t small">
+    m
+    <tspan baseline-shift="sub">g</tspan>
+    = c
+    <tspan baseline-shift="sub">q,g</tspan>
+    − c
+    <tspan baseline-shift="sub">r,g</tspan>
+  </text>
+
+  <path d="M980 310 L980 355" class="arrow" />
+  <text x="600" y="366" text-anchor="middle" class="t small" fill="#52606d">
+    고정된 내부 좌표를 세 가지 방식으로 검증 · 추가 학습 없음
+  </text>
+
+  <rect x="35" y="385" width="345" height="196" class="box" />
+  <rect x="35" y="385" width="345" height="43" rx="18" fill="#e8efff" />
+  <text x="207" y="414" text-anchor="middle" class="t head">A. 읽기: 공간 QA</text>
+  <text x="65" y="456" class="t body">두 좌표 차이의 부호로 답 선택</text>
+  <text x="65" y="486" class="t small">• dataset·prompt가 바뀌어도 유지되는가?</text>
+  <text x="65" y="513" class="t small">• verbal answer보다 내부 좌표가 정확한가?</text>
+  <rect x="64" y="532" width="286" height="32" rx="10" fill="#f4f7ff" />
+  <text x="207" y="554" text-anchor="middle" class="t small">
+    CV-Bench · EmbSpatial · SpatialTunnel
+  </text>
+
+  <rect x="427" y="385" width="345" height="196" class="box" />
+  <rect x="427" y="385" width="345" height="43" rx="18" fill="#f3e9ff" />
+  <text x="599" y="414" text-anchor="middle" class="t head">B. 쓰기: 인과 개입</text>
+  <text x="457" y="454" class="t body">목표 좌표 c′를 hidden state에 기록</text>
+  <rect x="457" y="468" width="285" height="37" rx="9" fill="#fbf7ff" stroke="#735bb1" />
+  <text x="599" y="493" text-anchor="middle" class="t small">
+    h′ = h + V(V
+    <tspan baseline-shift="super">T</tspan>
+    V)
+    <tspan baseline-shift="super">−1</tspan>
+    (c′−c)
+  </text>
+  <text x="457" y="532" class="t small">swap → 공간 답 변화</text>
+  <text x="457" y="558" class="t small">random edit → 답 거의 보존</text>
+
+  <rect x="819" y="385" width="346" height="196" class="box" />
+  <rect x="819" y="385" width="346" height="43" rx="18" fill="#ddf4ed" />
+  <text x="992" y="414" text-anchor="middle" class="t head">C. 진단: 관점 회전</text>
+  <text x="849" y="451" class="t body">원시점 좌표</text>
+  <path d="M949 447 C985 426 1013 445 1021 474" class="arrow" />
+  <text x="1021" y="451" class="t body">
+    R
+    <tspan baseline-shift="sub">view</tspan>
+    (x,z)
+  </text>
+  <text x="849" y="494" class="t small">명시적 회전 → 결정론적 답</text>
+  <rect x="849" y="516" width="286" height="48" rx="10" fill="#effaf6" stroke="#2d7f79" />
+  <text x="992" y="537" text-anchor="middle" class="t small">SpinBench: 지각과 계산 분리</text>
+  <text x="992" y="557" text-anchor="middle" class="t small">Direct 대비 +26.39~+37.50%p</text>
+
+  <path d="M895 344 C720 351 364 350 207 385" class="dash" />
+  <path d="M980 344 C850 350 700 350 599 385" class="dash" />
+  <path d="M1065 344 C1072 356 1040 372 992 385" class="dash" />
+  <text x="600" y="611" text-anchor="middle" class="t small" fill="#52606d">
+    핵심 진단: 모델은 공간을 표현하지만, 그 표현을 관점 변화에 맞게 안정적으로 계산하지 못할 수
+    있다.
+  </text>
+</svg>

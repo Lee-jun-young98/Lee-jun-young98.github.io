@@ -227,6 +227,10 @@ paper_sync: true
 
 ### [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 
+### [S-Space: Exploring Spatial Workspace in Multimodal Language Models](/papers/vlm/s-space-exploring-spatial-workspace-in-multimodal-language-models)
+
+![](/papers/assets/vlm/s-space-exploring-spatial-workspace-in-multimodal-language-models/s-space-analysis-pipeline.svg)
+
 ### [Syn-Omni: Structured Specialization and Progressive Collaboration for Omnimodal Embeddings](/papers/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings)
 
 ![](/papers/assets/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings/syn-omni-architecture.svg)
