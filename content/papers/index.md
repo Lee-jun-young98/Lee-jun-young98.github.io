@@ -77,11 +77,11 @@ paper_sync: true
 
 ### [Find Something You Can't Do: Agentic Real-World Reinforcement Learning for Self-Improving VLA Models](/papers/vla/find-agentic-real-world-reinforcement-learning-for-self-improving-vla-models)
 
-### [ForeTac-VLA: A Forecasting-Based Tactile-Vision-Language-Action Model for Contact-Rich Robotic Manipulation](/papers/vla/foretac-vla-forecasting-based-tactile-vision-language-action-model)
-
 ### [ForceWAM: Decoupling Future and Response Learning from Demo and Play Data](/papers/vla/forcewam-visual-wrench-futures-for-contact-rich-manipulation)
 
 ![](/papers/assets/vla/forcewam-visual-wrench-futures-for-contact-rich-manipulation/overview.svg)
+
+### [ForeTac-VLA: A Forecasting-Based Tactile-Vision-Language-Action Model for Contact-Rich Robotic Manipulation](/papers/vla/foretac-vla-forecasting-based-tactile-vision-language-action-model)
 
 ### [Forward Dynamics Models: Action-to-Future Learning for Robot Policies](/papers/vla/forward-dynamics-models-action-to-future-learning)
 
