@@ -79,6 +79,10 @@ paper_sync: true
 
 ### [ForeTac-VLA: A Forecasting-Based Tactile-Vision-Language-Action Model for Contact-Rich Robotic Manipulation](/papers/vla/foretac-vla-forecasting-based-tactile-vision-language-action-model)
 
+### [ForceWAM: Decoupling Future and Response Learning from Demo and Play Data](/papers/vla/forcewam-visual-wrench-futures-for-contact-rich-manipulation)
+
+![](/papers/assets/vla/forcewam-visual-wrench-futures-for-contact-rich-manipulation/overview.svg)
+
 ### [Forward Dynamics Models: Action-to-Future Learning for Robot Policies](/papers/vla/forward-dynamics-models-action-to-future-learning)
 
 ![](/papers/assets/vla/forward-dynamics-models-action-to-future-learning/overview.svg)
@@ -108,6 +112,10 @@ paper_sync: true
 ### [LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC](/papers/vla/lewam-jepa-world-action-model-with-diffusion-steering)
 
 ![](/papers/assets/vla/lewam-jepa-world-action-model-with-diffusion-steering/overview.svg)
+
+### [LoopWAM: Closed-Loop Generalist Policy Improvement from Deployment Rollouts](/papers/vla/loopwam-closed-loop-generalist-policy-improvement)
+
+![](/papers/assets/vla/loopwam-closed-loop-generalist-policy-improvement/overview.svg)
 
 ### [Magic-W0: A Structured World-Action Foundation Model for Physical Intelligence](/papers/vla/magic-w0-structured-world-action-foundation-model)
 
@@ -178,6 +186,10 @@ paper_sync: true
 ### [UNITAS: A 3D-Native World Action Model for Embodied Manipulation](/papers/vla/unitas-3d-native-world-action-model)
 
 ![](/papers/assets/vla/unitas-3d-native-world-action-model/overview.svg)
+
+### [UniW(A)M: Unified Mixture-of-Experts for World and World-Action Models](/papers/vla/uniwam-mixture-of-experts-world-action-interfaces)
+
+![](/papers/assets/vla/uniwam-mixture-of-experts-world-action-interfaces/overview.svg)
 
 ### [UniWAM: Unified World-Action Model](/papers/vla/uniwam-unified-world-action-model)
 
