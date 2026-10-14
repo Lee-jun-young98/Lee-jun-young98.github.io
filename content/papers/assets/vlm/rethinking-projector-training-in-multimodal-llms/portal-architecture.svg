@@ -1,0 +1,196 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">PORTAL의 training-free projector 구성과 VLM 학습 흐름</title>
+  <desc id="desc">
+    비라벨 이미지와 LLM embedding의 PCA 통계에서 Gaussian optimal transport projector를 폐형식으로
+    만들고 동일한 Stage-II instruction tuning으로 연결하는 구조도
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081426" />
+      <stop offset="1" stop-color="#13243d" />
+    </linearGradient>
+    <linearGradient id="portal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0ea5e9" />
+      <stop offset="1" stop-color="#8b5cf6" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8da2c0" />
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.28" />
+    </filter>
+    <style>
+      .title {
+        font:
+          700 27px "Noto Sans KR",
+          "Segoe UI",
+          sans-serif;
+        fill: #f8fafc;
+      }
+      .sub {
+        font:
+          500 14px "Noto Sans KR",
+          "Segoe UI",
+          sans-serif;
+        fill: #a9b9d0;
+      }
+      .head {
+        font:
+          700 17px "Noto Sans KR",
+          "Segoe UI",
+          sans-serif;
+        fill: #f8fafc;
+      }
+      .body {
+        font:
+          500 14px "Noto Sans KR",
+          "Segoe UI",
+          sans-serif;
+        fill: #d9e5f5;
+      }
+      .tiny {
+        font:
+          500 12px "Noto Sans KR",
+          "Segoe UI",
+          sans-serif;
+        fill: #a9b9d0;
+      }
+      .accent {
+        font:
+          700 14px "Noto Sans KR",
+          "Segoe UI",
+          sans-serif;
+        fill: #7dd3fc;
+      }
+      .formula {
+        font:
+          600 15px "Cambria Math",
+          "Segoe UI",
+          sans-serif;
+        fill: #f5f3ff;
+      }
+      .box {
+        stroke-width: 1.5;
+        filter: url(#shadow);
+      }
+      .arrow {
+        stroke: #8da2c0;
+        stroke-width: 2.2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="50" y="48" class="title">PORTAL: paired Stage-I을 분포 기하 정렬로 치환</text>
+  <text x="50" y="73" class="sub">
+    논문 Figure 1 · Eq. 2 · Figure 4를 바탕으로 재구성 · NeurIPS 2026
+  </text>
+
+  <rect
+    x="50"
+    y="102"
+    width="1100"
+    height="112"
+    rx="18"
+    fill="#17243a"
+    stroke="#475569"
+    class="box"
+  />
+  <text x="72" y="131" class="head">기존 Stage-I · paired projector training</text>
+  <rect x="75" y="149" width="190" height="43" rx="10" fill="#263752" stroke="#64748b" />
+  <text x="170" y="176" text-anchor="middle" class="body">이미지–캡션 558k pairs</text>
+  <path d="M275 171 H342" class="arrow" />
+  <rect x="352" y="139" width="205" height="63" rx="12" fill="#263752" stroke="#64748b" />
+  <text x="454" y="164" text-anchor="middle" class="body">Frozen vision encoder</text>
+  <text x="454" y="184" text-anchor="middle" class="tiny">visual patch tokens</text>
+  <path d="M567 171 H628" class="arrow" />
+  <rect x="638" y="139" width="206" height="63" rx="12" fill="#4c1d95" stroke="#a78bfa" />
+  <text x="741" y="164" text-anchor="middle" class="head">Projector</text>
+  <text x="741" y="184" text-anchor="middle" class="tiny">gradient update</text>
+  <path d="M854 171 H916" class="arrow" />
+  <rect x="926" y="139" width="196" height="63" rx="12" fill="#263752" stroke="#64748b" />
+  <text x="1024" y="164" text-anchor="middle" class="body">Frozen LLM</text>
+  <text x="1024" y="184" text-anchor="middle" class="tiny">caption prediction</text>
+
+  <rect
+    x="50"
+    y="238"
+    width="1100"
+    height="263"
+    rx="18"
+    fill="#102a3e"
+    stroke="#0ea5e9"
+    class="box"
+  />
+  <text x="72" y="269" class="head">PORTAL · paired captions 0 · gradient steps 0</text>
+
+  <rect x="75" y="292" width="210" height="80" rx="12" fill="#12324b" stroke="#38bdf8" />
+  <text x="180" y="319" text-anchor="middle" class="head">비라벨 이미지 1,024장</text>
+  <text x="180" y="343" text-anchor="middle" class="body">vision patch features X</text>
+  <text x="180" y="362" text-anchor="middle" class="tiny">COCO val2017 · caption 불필요</text>
+
+  <rect x="75" y="397" width="210" height="80" rx="12" fill="#2b2451" stroke="#a78bfa" />
+  <text x="180" y="425" text-anchor="middle" class="head">LLM embedding table</text>
+  <text x="180" y="449" text-anchor="middle" class="body">language features Y</text>
+  <text x="180" y="468" text-anchor="middle" class="tiny">별도 text pair 불필요</text>
+
+  <path d="M295 332 H354" class="arrow" />
+  <path d="M295 437 H354" class="arrow" />
+  <rect x="364" y="292" width="226" height="185" rx="14" fill="#17364d" stroke="#67e8f9" />
+  <text x="477" y="323" text-anchor="middle" class="head">각 modality PCA</text>
+  <text x="477" y="353" text-anchor="middle" class="body">평균 μs, μt</text>
+  <text x="477" y="379" text-anchor="middle" class="body">상위-k 방향 Vs, Vt</text>
+  <text x="477" y="405" text-anchor="middle" class="body">축별 spread σs, σt</text>
+  <line x1="391" y1="423" x2="563" y2="423" stroke="#3e637c" />
+  <text x="477" y="448" text-anchor="middle" class="accent">기본 k = 512</text>
+  <text x="477" y="468" text-anchor="middle" class="tiny">평균·공분산만 사용</text>
+
+  <path d="M600 384 H650" class="arrow" />
+  <rect x="660" y="292" width="277" height="185" rx="14" fill="url(#portal)" stroke="#c4b5fd" />
+  <text x="798" y="323" text-anchor="middle" class="head">Gaussian optimal transport</text>
+  <text x="798" y="352" text-anchor="middle" class="formula">W₁ = Vt diag(σt / σs) Vsᵀ</text>
+  <text x="798" y="378" text-anchor="middle" class="formula">b₁ = μt − W₁ μs</text>
+  <line x1="690" y1="396" x2="907" y2="396" stroke="#ddd6fe" stroke-opacity="0.55" />
+  <text x="798" y="420" text-anchor="middle" class="body">whiten → rotate → rescale</text>
+  <text x="798" y="444" text-anchor="middle" class="body">recenter · W₂ = I, b₂ = 0</text>
+  <text x="798" y="466" text-anchor="middle" class="tiny">폐형식 구성 · RTX 3090 &lt; 30초</text>
+
+  <path d="M947 384 H983" class="arrow" />
+  <rect x="993" y="312" width="132" height="145" rx="14" fill="#193b35" stroke="#34d399" />
+  <text x="1059" y="343" text-anchor="middle" class="head">PORTAL</text>
+  <text x="1059" y="368" text-anchor="middle" class="body">projector</text>
+  <text x="1059" y="398" text-anchor="middle" class="accent">Stage-I 생략</text>
+  <text x="1059" y="424" text-anchor="middle" class="tiny">또는 약 4k pair</text>
+  <text x="1059" y="443" text-anchor="middle" class="tiny">warm start</text>
+
+  <path d="M741 214 V234" class="arrow" />
+  <path d="M1059 501 V527" class="arrow" />
+  <rect
+    x="488"
+    y="526"
+    width="637"
+    height="72"
+    rx="15"
+    fill="#17243a"
+    stroke="#34d399"
+    class="box"
+  />
+  <text x="806" y="555" text-anchor="middle" class="head">
+    동일 Stage-II: LLaVA-665k instruction tuning
+  </text>
+  <text x="806" y="579" text-anchor="middle" class="body">
+    projector + LLM 학습 → 7 encoder–LLM 조합 · 16 benchmarks
+  </text>
+
+  <rect x="50" y="526" width="404" height="72" rx="15" fill="#1d3048" stroke="#64748b" />
+  <text x="72" y="553" class="accent">핵심 결과</text>
+  <text x="72" y="578" class="body">0 paired data로 3/7 설정 우위 · 나머지 96.3–99.3%</text>
+</svg>

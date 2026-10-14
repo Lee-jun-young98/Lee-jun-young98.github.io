@@ -237,6 +237,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/omnicapbench-deep-structured-audio-visual-captioning-evaluation/omnicapbench-evaluation-pipeline.svg)
 
+### [Rethinking Projector Training in Multimodal LLMs](/papers/vlm/rethinking-projector-training-in-multimodal-llms)
+
+![](/papers/assets/vlm/rethinking-projector-training-in-multimodal-llms/portal-architecture.svg)
+
 ### [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 
 ### [S-Space: Exploring Spatial Workspace in Multimodal Language Models](/papers/vlm/s-space-exploring-spatial-workspace-in-multimodal-language-models)
