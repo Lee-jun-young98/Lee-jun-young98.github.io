@@ -1,0 +1,181 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">mmVB 다중 이미지 visual budgeter 아키텍처</title>
+  <desc id="desc">
+    학습 때 검증된 최소 해상도 label을 만들고, 추론 때 질문과 여러 이미지의 저비용 특징을 작은
+    Transformer로 결합해 이미지별 해상도를 선택한 다음 frozen MLLM에 전달하는 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426" />
+      <stop offset="1" stop-color="#102b46" />
+    </linearGradient>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#8bd5ff" />
+    </marker>
+    <style>
+      .h1 {
+        font:
+          700 27px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #f4f9ff;
+      }
+      .h2 {
+        font:
+          700 18px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #d9f2ff;
+      }
+      .t {
+        font:
+          500 15px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #d7e7f6;
+      }
+      .s {
+        font:
+          500 13px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #9fc1d9;
+      }
+      .box {
+        fill: #122f4d;
+        stroke: #4aa3d8;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .accent {
+        fill: #163e43;
+        stroke: #4ed3a8;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .output {
+        fill: #372f55;
+        stroke: #ba9cff;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .train {
+        fill: #392a2b;
+        stroke: #ff9f80;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .line {
+        stroke: #8bd5ff;
+        stroke-width: 2.5;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke: #ffb79f;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="54" y="50" class="h1">mmVB: 질문에 따라 이미지별 visual token 예산을 먼저 정한다</text>
+  <text x="54" y="78" class="s">
+    논문 Figure 2 · Algorithm 1 · Sections 2.1–2.3을 바탕으로 재구성
+  </text>
+
+  <text x="54" y="125" class="h2">오프라인 학습</text>
+  <rect x="54" y="143" width="225" height="92" class="train" />
+  <text x="72" y="174" class="t">Full-res 정답 샘플</text>
+  <text x="72" y="199" class="s">level 0→4 ascending search</text>
+  <text x="72" y="219" class="s">full-res 오답은 제외</text>
+  <path d="M279 189 H340" class="dash" />
+  <rect x="340" y="143" width="250" height="92" class="train" />
+  <text x="360" y="174" class="t">Joint verification</text>
+  <text x="360" y="199" class="s">필요하면 iterative relaxation</text>
+  <text x="360" y="219" class="s">정답이 유지되는 level만 반환</text>
+  <path d="M590 189 H650" class="dash" />
+  <rect x="650" y="143" width="242" height="92" class="train" />
+  <text x="670" y="174" class="t">Ordinal label ℓᵢ ∈ {0…4}</text>
+  <text x="670" y="199" class="s">보수적 feasible allocation</text>
+  <text x="670" y="219" class="s">ordinal BCE로 budgeter 학습</text>
+  <path d="M892 189 H955 V289" class="dash" />
+
+  <line x1="54" y1="266" x2="1146" y2="266" stroke="#31516a" stroke-width="1.5" />
+  <text x="54" y="304" class="h2">추론: base MLLM은 frozen, 내부 attention 접근 없음</text>
+
+  <rect x="54" y="329" width="198" height="124" class="box" />
+  <text x="73" y="360" class="t">N개 이미지 + 질문</text>
+  <text x="73" y="386" class="s">이미지: 저비용 thumbnail</text>
+  <text x="73" y="408" class="s">질문: MLLM embedding</text>
+  <text x="73" y="433" class="s">입력별 서로 다른 정보 수요</text>
+  <path d="M252 391 H303" class="line" />
+
+  <rect x="303" y="329" width="220" height="124" class="box" />
+  <text x="322" y="360" class="t">Frozen proxy encoders</text>
+  <text x="322" y="386" class="s">EfficientNet-B0: 1280→256</text>
+  <text x="322" y="408" class="s">Text: mean pool, 64 bottleneck</text>
+  <text x="322" y="433" class="s">N+1개의 256-d token</text>
+  <path d="M523 391 H574" class="line" />
+
+  <rect x="574" y="313" width="243" height="156" class="accent" />
+  <text x="595" y="346" class="t">Cross-image Transformer</text>
+  <text x="595" y="373" class="s">2 layers · 4 heads · FFN 512</text>
+  <text x="595" y="399" class="s">shared MLP 256→64→4</text>
+  <text x="595" y="425" class="s">P(ℓᵢ ≥ k) = σ(zᵢ,k)</text>
+  <text x="595" y="451" class="s">1.6M trainable · 약 2 ms</text>
+  <path d="M817 391 H865" class="line" />
+
+  <rect x="865" y="329" width="137" height="124" class="accent" />
+  <text x="884" y="360" class="t">Resize</text>
+  <text x="884" y="386" class="s">I₁ → level 1</text>
+  <text x="884" y="408" class="s">I₂ → level 4</text>
+  <text x="884" y="430" class="s">I₃ → level 0</text>
+  <path d="M1002 391 H1041" class="line" />
+
+  <rect x="1041" y="329" width="105" height="124" class="output" />
+  <text x="1060" y="360" class="t">Frozen</text>
+  <text x="1060" y="384" class="t">MLLM</text>
+  <text x="1060" y="412" class="s">ViT + LLM</text>
+  <text x="1060" y="434" class="s">1회 실행</text>
+
+  <rect
+    x="54"
+    y="500"
+    width="1092"
+    height="82"
+    rx="14"
+    fill="#0d2338"
+    stroke="#315b78"
+    stroke-width="1.5"
+  />
+  <text x="77" y="531" class="t">핵심 차이</text>
+  <text x="177" y="531" class="s">
+    post-encoding pruning은 full ViT 비용을 이미 지불하지만, mmVB는 vision encoder 전에 해상도를
+    낮춘다.
+  </text>
+  <text x="77" y="558" class="t">보고 결과</text>
+  <text x="177" y="558" class="s">
+    visual token 9.2× 감소 · prefill FLOPs 7.3× 감소 · full-resolution 정확도의 94.4% 유지
+  </text>
+  <text x="54" y="613" class="s">
+    출처: https://arxiv.org/html/2610.18858 — CC BY 4.0 논문의 내용을 바탕으로 직접 재구성
+  </text>
+</svg>
