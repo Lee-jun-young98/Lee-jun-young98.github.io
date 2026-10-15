@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">OxyGen 통합 KV cache 관리 구조</title>
+  <desc id="desc">관측을 한 번 prefill한 뒤 KV cache를 행동 expert와 여러 프레임의 언어 요청이 공유하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>.h{font:700 28px sans-serif;fill:#0f172a}.t{font:600 20px sans-serif;fill:#0f172a}.s{font:16px sans-serif;fill:#334155}.box{stroke-width:2;rx:18}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="620" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="h">OxyGen: 작업·프레임을 가로지르는 KV cache</text>
+  <rect x="40" y="115" width="180" height="120" fill="#dbeafe" stroke="#2563eb" class="box"/>
+  <text x="130" y="155" text-anchor="middle" class="t">프레임 t 관측</text><text x="130" y="188" text-anchor="middle" class="s">RGB + instruction</text><text x="130" y="214" text-anchor="middle" class="s">한 번만 입력</text>
+  <rect x="285" y="115" width="220" height="120" fill="#ede9fe" stroke="#7c3aed" class="box"/>
+  <text x="395" y="155" text-anchor="middle" class="t">공유 VLM prefill</text><text x="395" y="190" text-anchor="middle" class="s">modality-agnostic</text><text x="395" y="216" text-anchor="middle" class="s">KV[t] 생성</text>
+  <rect x="570" y="95" width="240" height="160" fill="#fef3c7" stroke="#d97706" class="box"/>
+  <text x="690" y="137" text-anchor="middle" class="t">통합 KV manager</text><text x="690" y="172" text-anchor="middle" class="s">cache 공유 · 상태 저장</text><text x="690" y="200" text-anchor="middle" class="s">Store / Retrieve / Update</text><text x="690" y="228" text-anchor="middle" class="s">미완료 요청 유지</text>
+  <rect x="880" y="80" width="270" height="135" fill="#dcfce7" stroke="#16a34a" class="box"/>
+  <text x="1015" y="122" text-anchor="middle" class="t">Action expert</text><text x="1015" y="157" text-anchor="middle" class="s">현재 frame denoising</text><text x="1015" y="184" text-anchor="middle" class="s">행동 chunk → deadline 준수</text>
+  <rect x="880" y="270" width="270" height="205" fill="#ffe4e6" stroke="#e11d48" class="box"/>
+  <text x="1015" y="312" text-anchor="middle" class="t">Language expert</text><text x="1015" y="347" text-anchor="middle" class="s">active request를 batch</text><text x="1015" y="375" text-anchor="middle" class="s">각 요청 k token 진행</text><text x="1015" y="403" text-anchor="middle" class="s">미완료 상태는 다음 frame으로</text><text x="1015" y="431" text-anchor="middle" class="s">cross-frame</text><text x="1015" y="457" text-anchor="middle" class="s">continuous batching</text>
+  <path d="M220 175 H285" class="a"/><path d="M505 175 H570" class="a"/><path d="M810 145 H880" class="a"/><path d="M810 205 C850 205 850 360 880 360" class="a"/>
+  <rect x="295" y="340" width="470" height="150" fill="#ffffff" stroke="#64748b" class="box"/>
+  <text x="530" y="378" text-anchor="middle" class="t">프레임 t+1, t+2, …</text><text x="530" y="414" text-anchor="middle" class="s">새 관측은 새 KV를 만들지만</text><text x="530" y="442" text-anchor="middle" class="s">이전 언어 요청의 KV + token 상태는 유지</text><text x="530" y="470" text-anchor="middle" class="s">→ 행동 갱신과 언어 생성을 시간 분리</text>
+  <path d="M765 415 H880" class="a"/>
+  <text x="600" y="565" text-anchor="middle" class="s">논문 Figure 2–3을 바탕으로 재구성 · 학습 모델은 바꾸지 않고 추론 데이터 흐름만 변경</text>
+</svg>

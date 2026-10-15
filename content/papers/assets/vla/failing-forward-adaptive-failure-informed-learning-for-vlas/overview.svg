@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">AFIL 이중 action generator 학습과 추론 구조</title>
+  <desc id="desc">성공과 교정 궤적은 성공 generator를, raw failure는 실패 generator를 학습하고 추론에서 실패 방향을 빼는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>.h{font:700 28px sans-serif;fill:#0f172a}.t{font:600 19px sans-serif;fill:#0f172a}.s{font:16px sans-serif;fill:#334155}.box{stroke-width:2;rx:18}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.d{stroke:#e11d48;stroke-width:3;stroke-dasharray:9 7;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="650" fill="#f8fafc"/>
+  <text x="600" y="46" text-anchor="middle" class="h">AFIL: 실패 분포를 추론 시 음의 guidance로 사용</text>
+  <text x="92" y="92" class="t">학습</text>
+  <rect x="40" y="120" width="230" height="120" fill="#dcfce7" stroke="#16a34a" class="box"/>
+  <text x="155" y="158" text-anchor="middle" class="t">성공 데이터</text><text x="155" y="191" text-anchor="middle" class="s">expert 성공 궤적</text><text x="155" y="218" text-anchor="middle" class="s">+ failure correction</text>
+  <rect x="40" y="285" width="230" height="105" fill="#ffe4e6" stroke="#e11d48" class="box"/>
+  <text x="155" y="327" text-anchor="middle" class="t">Raw failure</text><text x="155" y="360" text-anchor="middle" class="s">온라인 rollout 실패 궤적</text>
+  <rect x="340" y="175" width="240" height="150" fill="#dbeafe" stroke="#2563eb" class="box"/>
+  <text x="460" y="216" text-anchor="middle" class="t">공유 VLM backbone</text><text x="460" y="252" text-anchor="middle" class="s">image + language</text><text x="460" y="280" text-anchor="middle" class="s">공통 조건 표현</text>
+  <rect x="655" y="105" width="235" height="110" fill="#dcfce7" stroke="#16a34a" class="box"/>
+  <text x="772" y="148" text-anchor="middle" class="t">G_succ</text><text x="772" y="181" text-anchor="middle" class="s">성공 noise / velocity</text>
+  <rect x="655" y="270" width="235" height="110" fill="#ffe4e6" stroke="#e11d48" class="box"/>
+  <text x="772" y="313" text-anchor="middle" class="t">G_fail</text><text x="772" y="346" text-anchor="middle" class="s">실패 noise / velocity</text>
+  <path d="M270 180 H340" class="a"/><path d="M270 338 C305 338 305 285 340 285" class="a"/><path d="M580 220 C620 220 620 160 655 160" class="a"/><path d="M580 280 C620 280 620 325 655 325" class="d"/>
+  <text x="935" y="92" class="t">추론</text>
+  <rect x="945" y="135" width="215" height="200" fill="#fef3c7" stroke="#d97706" class="box"/>
+  <text x="1052" y="176" text-anchor="middle" class="t">Adaptive guidance</text><text x="1052" y="212" text-anchor="middle" class="s">같은 noisy action 평가</text><text x="1052" y="242" text-anchor="middle" class="s">cosine disagreement</text><text x="1052" y="272" text-anchor="middle" class="s">→ step별 scale</text><text x="1052" y="302" text-anchor="middle" class="s">성공 방향 − 실패 방향</text>
+  <path d="M890 160 H945" class="a"/><path d="M890 325 C925 325 925 290 945 290" class="d"/>
+  <rect x="730" y="455" width="430" height="105" fill="#ede9fe" stroke="#7c3aed" class="box"/>
+  <text x="945" y="498" text-anchor="middle" class="t">최종 action chunk 실행</text><text x="945" y="532" text-anchor="middle" class="s">실패-prone 영역에서 멀어지고 성공 mode로 이동</text>
+  <path d="M1052 335 V455" class="a"/>
+  <rect x="70" y="455" width="520" height="105" fill="#ffffff" stroke="#64748b" class="box"/>
+  <text x="330" y="492" text-anchor="middle" class="t">역할 분리</text><text x="330" y="524" text-anchor="middle" class="s">교정 궤적은 성공 분포를 확장 · raw failure는 피할 분포를 보존</text>
+  <text x="600" y="615" text-anchor="middle" class="s">논문 Figure 1–2를 바탕으로 재구성 · diffusion과 flow-matching VLA 모두 동일 개념 적용</text>
+</svg>

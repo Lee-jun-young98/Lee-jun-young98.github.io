@@ -69,6 +69,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
 
+### [Failing Forward: Adaptive Failure-Informed Learning for Vision-Language-Action Models](/papers/vla/failing-forward-adaptive-failure-informed-learning-for-vlas)
+
+![](/papers/assets/vla/failing-forward-adaptive-failure-informed-learning-for-vlas/overview.svg)
+
 ### [Fast Plans, Faithful Actions: Closing the Planning-Execution Gap in Hierarchical Vision-Language-Action Models](/papers/vla/fast-plans-faithful-actions-closing-the-planning-execution-gap-in-hierarchical-vlas)
 
 ### [FAVOR: Future Anchored Verification and Online Recovery for World Action Models](/papers/vla/favor-future-anchored-verification-and-online-recovery)
@@ -132,6 +136,10 @@ paper_sync: true
 ### [Noise Space Learning for VLA Adaptation](/papers/vla/noise-space-learning-for-vla-adaptation)
 
 ![](/papers/assets/vla/noise-space-learning-for-vla-adaptation/overview.svg)
+
+### [OxyGen: Unified KV Cache Management for VLA Inference under Multi-Task Parallelism](/papers/vla/oxygen-unified-kv-cache-management-for-vla-inference)
+
+![](/papers/assets/vla/oxygen-unified-kv-cache-management-for-vla-inference/overview.svg)
 
 ### [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
