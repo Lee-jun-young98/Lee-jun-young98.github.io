@@ -1,0 +1,186 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">EVA-Cap 사건 중심 데이터 구축과 점진적 학습 파이프라인</title>
+  <desc id="desc">
+    원시 시청각 영상에서 검증된 EVA-Data를 만들고 Qwen2.5-Omni를 SFT한 뒤 사건 완전성과 시청각
+    동기화, 인물 귀속 보상을 두 단계로 추가해 상세 캡션을 생성하는 과정
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071426" />
+      <stop offset="1" stop-color="#17233f" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#82d4ff" />
+    </marker>
+    <marker id="trainArrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ffb07c" />
+    </marker>
+    <style>
+      .h1 {
+        font:
+          700 27px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #f6f9ff;
+      }
+      .h2 {
+        font:
+          700 18px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #e1f4ff;
+      }
+      .t {
+        font:
+          600 15px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #e6f0fb;
+      }
+      .s {
+        font:
+          500 13px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #aec7dc;
+      }
+      .data {
+        fill: #15314e;
+        stroke: #4aa9df;
+        stroke-width: 2;
+      }
+      .verify {
+        fill: #173e3d;
+        stroke: #55d5a9;
+        stroke-width: 2;
+      }
+      .model {
+        fill: #322d52;
+        stroke: #b7a0ff;
+        stroke-width: 2;
+      }
+      .reward {
+        fill: #432d2a;
+        stroke: #ffad7b;
+        stroke-width: 2;
+      }
+      .output {
+        fill: #243b2b;
+        stroke: #9bda72;
+        stroke-width: 2;
+      }
+      .line {
+        stroke: #82d4ff;
+        stroke-width: 2.5;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .trainline {
+        stroke: #ffb07c;
+        stroke-width: 2.5;
+        fill: none;
+        marker-end: url(#trainArrow);
+      }
+      .dash {
+        stroke-dasharray: 7 6;
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="52" y="47" class="h1">
+    EVA-Cap: 캡션을 사건 단위로 검증하고, 쉬운 정렬부터 순차 학습한다
+  </text>
+  <text x="52" y="74" class="s">논문 Figure 2 · Figure 4 · Sections 3.1–3.2를 바탕으로 재구성</text>
+
+  <text x="52" y="115" class="h2">① 오프라인 EVA-Data 구축</text>
+  <rect x="52" y="134" width="174" height="105" rx="14" class="data" />
+  <text x="70" y="165" class="t">Raw AV video 100K</text>
+  <text x="70" y="191" class="s">LLaVA-Video · FineVideo</text>
+  <text x="70" y="214" class="s">Shot2Story · 200초 미만</text>
+  <path d="M226 186 H263" class="line" />
+
+  <rect x="263" y="134" width="198" height="105" rx="14" class="data" />
+  <text x="281" y="165" class="t">초기화 · 정제</text>
+  <text x="281" y="191" class="s">AVoCaDO: holistic 초안</text>
+  <text x="281" y="214" class="s">Gemini: 시간·화자 보정</text>
+  <path d="M461 186 H498" class="line" />
+
+  <rect x="498" y="126" width="222" height="121" rx="14" class="verify" />
+  <text x="516" y="157" class="t">Event-centric QC</text>
+  <text x="516" y="183" class="s">Gemini: timestamp event 추출</text>
+  <text x="516" y="206" class="s">GPT-4.1: tuple hit 검증</text>
+  <text x="516" y="229" class="s">hit ratio ≥ 0.8만 유지</text>
+  <path d="M720 186 H757" class="line" />
+
+  <rect x="757" y="134" width="176" height="105" rx="14" class="verify" />
+  <text x="776" y="165" class="t">EVA-Data 63K</text>
+  <text x="776" y="191" class="s">평균 73.7초</text>
+  <text x="776" y="214" class="s">평균 504.3 words</text>
+  <path d="M933 186 H1000 V317 H970" class="trainline dash" />
+
+  <line x1="52" y1="274" x2="1148" y2="274" stroke="#344d6b" stroke-width="1.5" />
+  <text x="52" y="312" class="h2">② Qwen2.5-Omni-7B 후처리 학습</text>
+
+  <rect x="52" y="333" width="202" height="130" rx="14" class="data" />
+  <text x="72" y="364" class="t">Video + audio</text>
+  <text x="72" y="390" class="s">2 FPS · interleaved tokens</text>
+  <text x="72" y="414" class="s">frozen vision/audio encoder</text>
+  <text x="72" y="438" class="s">학습: adapter + LLM</text>
+  <path d="M254 398 H296" class="line" />
+
+  <rect x="296" y="333" width="203" height="130" rx="14" class="model" />
+  <text x="316" y="364" class="t">SFT · 63K</text>
+  <text x="316" y="390" class="s">상세 AV caption 형식 학습</text>
+  <text x="316" y="414" class="s">next-token objective</text>
+  <text x="316" y="438" class="s">2 epochs</text>
+  <path d="M499 398 H541" class="trainline" />
+
+  <rect x="541" y="319" width="212" height="158" rx="14" class="reward" />
+  <text x="561" y="351" class="t">GRPO stage 1 · 3.2K</text>
+  <text x="561" y="378" class="s">Rcomp: event recall</text>
+  <text x="561" y="402" class="s">Rsync: audio↔visual F1</text>
+  <text x="561" y="426" class="s">전역 coverage + 시간 결합</text>
+  <text x="561" y="451" class="s">Qwen3.5-27B reward judge</text>
+  <path d="M753 398 H795" class="trainline" />
+
+  <rect x="795" y="319" width="202" height="158" rx="14" class="reward" />
+  <text x="815" y="351" class="t">GRPO stage 2</text>
+  <text x="815" y="378" class="s">Rcomp + Rsync 유지</text>
+  <text x="815" y="402" class="s">Rattr: 인물 귀속 추가</text>
+  <text x="815" y="426" class="s">전역 → 세부 curriculum</text>
+  <text x="815" y="451" class="s">reference는 학습 때만 사용</text>
+  <path d="M997 398 H1039" class="line" />
+
+  <rect x="1039" y="333" width="109" height="130" rx="14" class="output" />
+  <text x="1058" y="364" class="t">EVA-Cap</text>
+  <text x="1058" y="390" class="s">추론:</text>
+  <text x="1058" y="414" class="s">AV 입력 →</text>
+  <text x="1058" y="438" class="s">상세 캡션</text>
+
+  <rect
+    x="52"
+    y="510"
+    width="1096"
+    height="72"
+    rx="14"
+    fill="#0d2338"
+    stroke="#385d7b"
+    stroke-width="1.5"
+  />
+  <text x="73" y="538" class="t">핵심 차이</text>
+  <text x="168" y="538" class="s">
+    holistic caption reward 대신 completeness · attribution · synchronization을 분리한다.
+  </text>
+  <text x="73" y="563" class="t">matched 결과</text>
+  <text x="168" y="563" class="s">7B DiaDem 대비 V2A +9.5%p · A2V +8.5%p · AV-Speaker +7.4%p</text>
+  <text x="52" y="612" class="s">
+    출처: https://arxiv.org/html/2610.22186 — CC BY 4.0 논문 내용을 바탕으로 직접 재구성
+  </text>
+</svg>

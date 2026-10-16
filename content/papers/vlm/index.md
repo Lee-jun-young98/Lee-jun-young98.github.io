@@ -21,6 +21,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation/exemplar2vqa-pipeline.svg)
 
+## [EVA-Cap: Optimizing Audiovisual Video Captioning via Event-Centric Alignment](/papers/vlm/eva-cap-event-centric-audiovisual-video-captioning)
+
+![](/papers/assets/vlm/eva-cap-event-centric-audiovisual-video-captioning/eva-cap-training-pipeline.svg)
+
 ## [From Patching to Pruning Visual Computation in Vision-Language Models](/papers/vlm/from-patching-to-pruning-visual-computation-in-vision-language-models)
 
 ![](/papers/assets/vlm/from-patching-to-pruning-visual-computation-in-vision-language-models/p2p-architecture.svg)
