@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">REKI register memory architecture</title>
+  <desc id="desc">현재 관측과 언어를 VLM으로 인코딩한 뒤 과거 register KV cache를 읽는 flow action expert가 행동 chunk를 생성하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#334155"/></marker>
+    <style>.box{rx:18;stroke-width:2}.h{font:700 24px sans-serif;fill:#0f172a}.t{font:18px sans-serif;fill:#334155}.s{font:15px sans-serif;fill:#475569}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="560" fill="#f8fafc"/>
+  <text x="48" y="50" class="h">REKI — action expert 안에 남기는 관측 기억</text>
+  <rect class="box" x="45" y="105" width="205" height="130" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="70" y="145" class="h">현재 입력</text><text x="70" y="180" class="t">카메라 + 언어</text><text x="70" y="210" class="t">robot state</text>
+  <path class="a" d="M250 170 H330"/>
+  <rect class="box" x="330" y="105" width="230" height="130" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="365" y="150" class="h">Qwen3.5 VLM</text><text x="370" y="188" class="t">현재 문맥 E<tspan baseline-shift="sub">t</tspan></text><text x="365" y="216" class="s">프레임당 1회 인코딩</text>
+  <path class="a" d="M560 170 H650"/>
+  <rect class="box" x="650" y="82" width="320" height="200" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="695" y="122" class="h">Flow action expert</text>
+  <rect x="680" y="145" width="115" height="70" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="698" y="174" class="t">register</text><text x="700" y="200" class="s">32 tokens</text>
+  <rect x="825" y="145" width="115" height="70" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="841" y="174" class="t">noisy action</text><text x="848" y="200" class="s">10 Euler steps</text>
+  <path class="a" d="M795 180 H825"/><text x="690" y="253" class="s">action은 register를 읽고, register는 action을 읽지 않음</text>
+  <path class="a" d="M970 180 H1090"/>
+  <rect class="box" x="1040" y="115" width="125" height="110" fill="#cffafe" stroke="#0891b2"/>
+  <text x="1062" y="156" class="h">출력</text><text x="1058" y="193" class="t">행동 chunk</text>
+  <rect class="box" x="410" y="360" width="430" height="120" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="450" y="400" class="h">과거 register KV rolling cache</text><text x="452" y="438" class="t">M<tspan baseline-shift="sub">t-2</tspan> → M<tspan baseline-shift="sub">t-1</tspan> → M<tspan baseline-shift="sub">t</tspan>  (K=3)</text><text x="452" y="464" class="s">추론: 다음 프레임과 denoising step에서 재사용</text>
+  <path class="a" d="M650 215 C590 300 560 330 560 360"/>
+  <path class="a" d="M760 360 C760 325 745 305 735 282"/>
+  <text x="45" y="525" class="s">학습: K개 프레임을 한 batch로 처리하고 각 프레임에 flow loss · 추론: VLM 재입력 없이 register KV만 전달</text>
+</svg>

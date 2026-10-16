@@ -153,6 +153,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/react-rolling-denoising-for-reactive-vla-control/overview.svg)
 
+## [REKI: Registering Knowledge in VLAs](/papers/vla/reki-registering-knowledge-in-vlas)
+
+![](/papers/assets/vla/reki-registering-knowledge-in-vlas/overview.svg)
+
 ## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
 
 ![](/papers/assets/vla/robodawn/framework.png)
@@ -189,6 +193,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
 
+## [TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control](/papers/vla/ts-wam-temporal-latent-actions-and-world-action-coupling)
+
+![](/papers/assets/vla/ts-wam-temporal-latent-actions-and-world-action-coupling/overview.svg)
+
 ## [UNITAS: A 3D-Native World Action Model for Embodied Manipulation](/papers/vla/unitas-3d-native-world-action-model)
 
 ![](/papers/assets/vla/unitas-3d-native-world-action-model/overview.svg)
@@ -200,6 +208,10 @@ paper_sync: true
 ## [UniWAM: Unified World-Action Model](/papers/vla/uniwam-unified-world-action-model)
 
 ![](/papers/assets/vla/uniwam-unified-world-action-model/overview.svg)
+
+## [VeriVLA: Adaptive Test-Time Verification for Flow-Based VLAs with Latent World Models](/papers/vla/verivla-adaptive-test-time-verification)
+
+![](/papers/assets/vla/verivla-adaptive-test-time-verification/overview.svg)
 
 ## [VLA-ZO: Fast Zeroth-Order Adaptation for Vision-Language-Action Models](/papers/vla/vla-zo-fast-zeroth-order-adaptation)
 
