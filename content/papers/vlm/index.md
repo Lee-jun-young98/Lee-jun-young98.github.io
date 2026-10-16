@@ -17,13 +17,13 @@ paper_sync: true
 
 ## [DiaVLo: Diagnosing Behaviours of Vision-Language Models](/papers/vlm/diavlo-diagnosing-behaviours-of-vision-language-models)
 
-## [Exemplar2VQA: A Scalable Exemplar-Driven Visual Question Answering Generation Framework via Multi-Agent Coding](/papers/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation)
-
-![](/papers/assets/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation/exemplar2vqa-pipeline.svg)
-
 ## [EVA-Cap: Optimizing Audiovisual Video Captioning via Event-Centric Alignment](/papers/vlm/eva-cap-event-centric-audiovisual-video-captioning)
 
 ![](/papers/assets/vlm/eva-cap-event-centric-audiovisual-video-captioning/eva-cap-training-pipeline.svg)
+
+## [Exemplar2VQA: A Scalable Exemplar-Driven Visual Question Answering Generation Framework via Multi-Agent Coding](/papers/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation)
+
+![](/papers/assets/vlm/exemplar2vqa-scalable-exemplar-driven-visual-question-answering-generation/exemplar2vqa-pipeline.svg)
 
 ## [From Patching to Pruning Visual Computation in Vision-Language Models](/papers/vlm/from-patching-to-pruning-visual-computation-in-vision-language-models)
 
