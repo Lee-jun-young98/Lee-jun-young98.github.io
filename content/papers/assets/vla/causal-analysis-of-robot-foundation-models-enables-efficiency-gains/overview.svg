@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">VLA action-conditioning interface의 인과 분석과 sparse 구조</title>
+  <desc id="desc">counterfactual 장면과 지시에서 activation을 교체해 VLM의 시각, 의미, 기하 정보 흐름을 찾고 중후반 3개 층만 action expert에 연결하는 과정</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>text{font-family:Arial,'Noto Sans KR',sans-serif;fill:#172033}.h{font-size:27px;font-weight:700}.t{font-size:18px;font-weight:700}.s{font-size:15px;fill:#475569}.box{rx:18;stroke-width:2}.arrow{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:8 7}.muted{opacity:.28}</style>
+  </defs>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <text x="600" y="42" text-anchor="middle" class="h">인과 분석으로 찾은 VLA의 좁은 action-conditioning interface</text>
+
+  <text x="190" y="88" text-anchor="middle" class="t">1 · Counterfactual 입력</text>
+  <rect x="35" y="112" width="310" height="112" class="box" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="190" y="147" text-anchor="middle" class="t">Recipient episode</text>
+  <text x="190" y="178" text-anchor="middle" class="s">장면: 사과(왼쪽) · 바나나(오른쪽)</text>
+  <text x="190" y="204" text-anchor="middle" class="s">지시: “사과를 집어라”</text>
+  <rect x="35" y="252" width="310" height="112" class="box" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="190" y="287" text-anchor="middle" class="t">Donor episode</text>
+  <text x="190" y="318" text-anchor="middle" class="s">물체 위치 또는 target noun 변경</text>
+  <text x="190" y="344" text-anchor="middle" class="s">내부 activation을 recipient에 복사</text>
+
+  <text x="595" y="88" text-anchor="middle" class="t">2 · VLM에서 행동 변수 형성</text>
+  <rect x="410" y="112" width="370" height="252" class="box" fill="#ffffff" stroke="#64748b"/>
+  <rect x="435" y="140" width="320" height="54" class="box" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="595" y="173" text-anchor="middle" class="t">초기 image token · 시각 배치 V</text>
+  <path d="M595 194 V218" class="arrow"/>
+  <rect x="435" y="220" width="320" height="54" class="box" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="595" y="253" text-anchor="middle" class="t">초기 noun token · target 의미 S</text>
+  <path d="M595 274 V298" class="arrow"/>
+  <rect x="435" y="300" width="320" height="54" class="box" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="595" y="333" text-anchor="middle" class="t">후기 text/readout · target 위치 G</text>
+  <path d="M345 168 H410" class="arrow"/>
+  <path d="M345 308 H410" class="arrow"/>
+
+  <text x="1000" y="88" text-anchor="middle" class="t">3 · Interface patching</text>
+  <rect x="835" y="112" width="330" height="252" class="box" fill="#fef3c7" stroke="#d97706"/>
+  <text x="1000" y="149" text-anchor="middle" class="t">Action expert 연결 sweep</text>
+  <text x="1000" y="181" text-anchor="middle" class="s">single layer / 인접 3-layer window</text>
+  <text x="1000" y="219" text-anchor="middle" class="t">정규화 궤적 이동 E</text>
+  <text x="1000" y="250" text-anchor="middle" class="s">E=0: 변화 없음 · E=1: reference 도달</text>
+  <rect x="870" y="278" width="260" height="62" class="box" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="1000" y="304" text-anchor="middle" class="t">중후반 1–3층에서 peak</text>
+  <text x="1000" y="329" text-anchor="middle" class="s">MolmoBot: layer 24 주변</text>
+  <path d="M780 327 H835" class="arrow"/>
+
+  <text x="600" y="423" text-anchor="middle" class="t">4 · 발견된 handover 지점만 남겨 배포</text>
+  <rect x="65" y="457" width="275" height="142" class="box" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="202" y="491" text-anchor="middle" class="t">Dense MolmoBot</text>
+  <text x="202" y="524" text-anchor="middle" class="s">VLM 36층 ↔ AE 36개 연결</text>
+  <text x="202" y="553" text-anchor="middle" class="s">11.93 TFLOPs/chunk</text>
+  <text x="202" y="580" text-anchor="middle" class="s">평균 성공률 46.9%</text>
+  <path d="M340 528 H440" class="arrow"/>
+  <rect x="440" y="457" width="320" height="142" class="box" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="600" y="491" text-anchor="middle" class="t">Sparse action interface</text>
+  <text x="600" y="523" text-anchor="middle" class="s">layer 23–25 연결만 유지</text>
+  <text x="600" y="551" text-anchor="middle" class="s">layer 25 뒤 VLM 조기 종료</text>
+  <text x="600" y="579" text-anchor="middle" class="s">cross-attention 92% 제거</text>
+  <path d="M760 528 H860" class="arrow"/>
+  <rect x="860" y="457" width="275" height="142" class="box" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="997" y="491" text-anchor="middle" class="t">효율·성능</text>
+  <text x="997" y="524" text-anchor="middle" class="s">7.96 TFLOPs/chunk (−33%)</text>
+  <text x="997" y="553" text-anchor="middle" class="s">209 ms/chunk (−33%)</text>
+  <text x="997" y="580" text-anchor="middle" class="s">평균 성공률 46.7% (−0.2%p)</text>
+
+  <path d="M202 599 V645 H997 V599" class="arrow dash muted"/>
+  <text x="600" y="684" text-anchor="middle" class="s">논문 Figure 1–2와 Section 2–3을 바탕으로 재구성 · arXiv:2610.20750 · CC BY 4.0</text>
+</svg>

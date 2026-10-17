@@ -25,6 +25,10 @@ paper_sync: true
 
 ### [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
 
+### [Causal Analysis of Robot Foundation Models Enables Efficiency Gains](/papers/vla/causal-analysis-of-robot-foundation-models-enables-efficiency-gains)
+
+![](/papers/assets/vla/causal-analysis-of-robot-foundation-models-enables-efficiency-gains/overview.svg)
+
 ### [Causeway: Restoring Task Accessibility for Instruction Switching in VLA Policies](/papers/vla/causeway-restoring-task-accessibility-for-instruction-switching-in-vla-policies)
 
 ### [Chronos Policy: Learning Robot Policies on Physical Time](/papers/vla/chronos-policy-learning-robot-policies-on-physical-time)
