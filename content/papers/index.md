@@ -5,6 +5,10 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
+### [Octopi-1.5: 촉각을 언어와 검색 메모리에 연결하는 모델](/papers/vla/octopi-1-5-visual-tactile-language-model)
+
+![](/papers/assets/vla/octopi-1-5/architecture.png)
+
 ### [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
