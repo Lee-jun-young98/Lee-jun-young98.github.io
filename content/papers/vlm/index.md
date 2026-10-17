@@ -17,6 +17,10 @@ paper_sync: true
 
 ## [DiaVLo: Diagnosing Behaviours of Vision-Language Models](/papers/vlm/diavlo-diagnosing-behaviours-of-vision-language-models)
 
+## [DK-VLM: Geometry as Position for Spatial Reasoning in Vision-Language Models](/papers/vlm/dk-vlm-geometry-as-position-for-spatial-reasoning)
+
+![](/papers/assets/vlm/dk-vlm-geometry-as-position-for-spatial-reasoning/dk-vlm-dual-kernel-architecture.svg)
+
 ## [EVA-Cap: Optimizing Audiovisual Video Captioning via Event-Centric Alignment](/papers/vlm/eva-cap-event-centric-audiovisual-video-captioning)
 
 ![](/papers/assets/vlm/eva-cap-event-centric-audiovisual-video-captioning/eva-cap-training-pipeline.svg)

@@ -1,0 +1,177 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">DK-VLM Dual-Kernel Attention 아키텍처</title>
+  <desc id="desc">
+    RGB 프레임과 질문에서 visual token과 3D geometry를 만들고, 기존 semantic attention과
+    Point·Camera GTA geometric attention을 병렬 계산해 learned gate로 합치는 학습 및 추론 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#475569" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 28px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .sub {
+        font:
+          500 14px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .h {
+        font:
+          700 17px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .t {
+        font:
+          500 14px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          500 12px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .box {
+        stroke-width: 2;
+        rx: 14;
+      }
+      .arrow {
+        fill: none;
+        stroke: #475569;
+        stroke-width: 2.4;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        fill: none;
+        stroke: #7c3aed;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="24" />
+  <text x="54" y="52" class="title">DK-VLM: geometry를 token 내용이 아니라 attention의 위치로</text>
+  <text x="54" y="78" class="sub">
+    논문 Figure 2와 Sections 3.1–3.3을 바탕으로 재구성 · 학습 전용 경로는 보라색 점선
+  </text>
+
+  <rect x="54" y="126" width="155" height="122" class="box" fill="#ffffff" stroke="#94a3b8" />
+  <text x="131.5" y="157" text-anchor="middle" class="h">입력</text>
+  <rect x="76" y="172" width="48" height="38" rx="6" fill="#dbeafe" stroke="#3b82f6" />
+  <rect x="91" y="182" width="48" height="38" rx="6" fill="#bfdbfe" stroke="#2563eb" />
+  <rect x="106" y="192" width="48" height="38" rx="6" fill="#93c5fd" stroke="#1d4ed8" />
+  <text x="175" y="191" text-anchor="middle" class="t">RGB frames</text>
+  <text x="175" y="214" text-anchor="middle" class="t">+ 질문</text>
+
+  <rect x="264" y="105" width="205" height="122" class="box" fill="#eff6ff" stroke="#3b82f6" />
+  <text x="366.5" y="137" text-anchor="middle" class="h">Frozen vision encoder</text>
+  <text x="366.5" y="166" text-anchor="middle" class="t">visual token</text>
+  <text x="366.5" y="190" text-anchor="middle" class="small">semantic · time · 2D grid</text>
+
+  <rect x="264" y="265" width="205" height="142" class="box" fill="#ecfdf5" stroke="#10b981" />
+  <text x="366.5" y="297" text-anchor="middle" class="h">Frozen geometry frontend</text>
+  <text x="366.5" y="327" text-anchor="middle" class="t">patch 3D point xᵢ</text>
+  <text x="366.5" y="351" text-anchor="middle" class="t">frame camera pose Cᵢ</text>
+  <text x="366.5" y="380" text-anchor="middle" class="small">첫 frame 좌표계로 정렬</text>
+
+  <path d="M209 166 H264" class="arrow" />
+  <path d="M209 204 C232 204 230 336 264 336" class="arrow" />
+
+  <rect x="528" y="102" width="276" height="140" class="box" fill="#fff7ed" stroke="#f59e0b" />
+  <text x="666" y="134" text-anchor="middle" class="h">Semantic kernel</text>
+  <text x="666" y="164" text-anchor="middle" class="t">native Q/K/V + mRoPE</text>
+  <text x="666" y="188" text-anchor="middle" class="t">causal / padding mask 유지</text>
+  <text x="666" y="216" text-anchor="middle" class="small">pretrained 관계를 보존</text>
+
+  <rect x="528" y="272" width="276" height="170" class="box" fill="#ecfdf5" stroke="#10b981" />
+  <text x="666" y="304" text-anchor="middle" class="h">Geometric kernel</text>
+  <text x="666" y="335" text-anchor="middle" class="t">별도 Q/K/V · visual full attention</text>
+  <rect x="550" y="354" width="106" height="56" rx="10" fill="#d1fae5" stroke="#059669" />
+  <text x="603" y="379" text-anchor="middle" class="t">Point GTA</text>
+  <text x="603" y="398" text-anchor="middle" class="small">3D displacement</text>
+  <rect x="676" y="354" width="106" height="56" rx="10" fill="#d1fae5" stroke="#059669" />
+  <text x="729" y="379" text-anchor="middle" class="t">Camera GTA</text>
+  <text x="729" y="398" text-anchor="middle" class="small">view transform</text>
+  <text x="666" y="431" text-anchor="middle" class="small">geometry-valid token만 사용</text>
+
+  <path d="M469 166 H528" class="arrow" />
+  <path d="M469 178 C493 178 493 324 528 324" class="arrow" />
+  <path d="M469 336 H528" class="arrow" />
+
+  <rect x="861" y="181" width="148" height="188" class="box" fill="#f5f3ff" stroke="#8b5cf6" />
+  <text x="935" y="216" text-anchor="middle" class="h">Learned gate</text>
+  <text x="935" y="247" text-anchor="middle" class="t">semantic Sℓ</text>
+  <text x="935" y="271" text-anchor="middle" class="t">+ geometry Gℓ</text>
+  <circle cx="935" cy="308" r="24" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2" />
+  <text x="935" y="314" text-anchor="middle" class="h">αℓ</text>
+  <text x="935" y="348" text-anchor="middle" class="small">shared output projection</text>
+  <path d="M804 172 C834 172 830 232 861 232" class="arrow" />
+  <path d="M804 357 H861" class="arrow" />
+
+  <rect x="1059" y="202" width="94" height="144" class="box" fill="#ffffff" stroke="#334155" />
+  <text x="1106" y="238" text-anchor="middle" class="h">출력</text>
+  <text x="1106" y="271" text-anchor="middle" class="t">residual</text>
+  <text x="1106" y="293" text-anchor="middle" class="t">stream</text>
+  <text x="1106" y="322" text-anchor="middle" class="small">공간 답변</text>
+  <path d="M1009 275 H1059" class="arrow" />
+
+  <rect
+    x="529"
+    y="493"
+    width="274"
+    height="82"
+    class="box"
+    fill="#faf5ff"
+    stroke="#8b5cf6"
+    stroke-dasharray="7 6"
+  />
+  <text x="666" y="523" text-anchor="middle" class="h">학습 전용 pairwise head</text>
+  <text x="666" y="549" text-anchor="middle" class="t">token pair의 거리 + 방향 감독</text>
+  <path d="M666 442 V493" class="dash" />
+
+  <rect
+    x="861"
+    y="476"
+    width="292"
+    height="112"
+    class="box"
+    fill="#faf5ff"
+    stroke="#8b5cf6"
+    stroke-dasharray="7 6"
+  />
+  <text x="1007" y="507" text-anchor="middle" class="h">Reference-Frame Composition</text>
+  <text x="1007" y="535" text-anchor="middle" class="t">
+    검증된 single-step 관계 → 2–3 step chain
+  </text>
+  <text x="1007" y="560" text-anchor="middle" class="t">매 단계 turn δₖ · 누적 heading hₖ SFT</text>
+  <path d="M1007 476 C1007 426 976 410 955 369" class="dash" />
+
+  <text x="54" y="604" class="small">
+    추론: RGB + 질문 → 추정 geometry → dual-kernel decoder → 답변 · pairwise head와 RC label은 제거
+  </text>
+</svg>
