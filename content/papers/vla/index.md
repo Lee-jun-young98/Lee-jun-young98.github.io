@@ -3,10 +3,6 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [Octopi-1.5: 촉각을 언어와 검색 메모리에 연결하는 모델](/papers/vla/octopi-1-5-visual-tactile-language-model)
-
-![](/papers/assets/vla/octopi-1-5/architecture.png)
-
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -142,6 +138,10 @@ paper_sync: true
 ## [Noise Space Learning for VLA Adaptation](/papers/vla/noise-space-learning-for-vla-adaptation)
 
 ![](/papers/assets/vla/noise-space-learning-for-vla-adaptation/overview.svg)
+
+## [Octopi-1.5: 촉각을 언어와 검색 메모리에 연결하는 모델](/papers/vla/octopi-1-5-visual-tactile-language-model)
+
+![](/papers/assets/vla/octopi-1-5/architecture.png)
 
 ## [OxyGen: Unified KV Cache Management for VLA Inference under Multi-Task Parallelism](/papers/vla/oxygen-unified-kv-cache-management-for-vla-inference)
 
