@@ -135,6 +135,10 @@ paper_sync: true
 
 ## [Modality-Autoregressive World-Action Models](/papers/vla/modality-autoregressive-world-action-models)
 
+## [Multi-Dimensional Featurizers Yield Fine-Grained Steering and Data Shaping in Robot Foundation Models](/papers/vla/multi-dimensional-featurizers-for-robot-foundation-models)
+
+![](/papers/assets/vla/multi-dimensional-featurizers-for-robot-foundation-models/overview.svg)
+
 ## [Noise Space Learning for VLA Adaptation](/papers/vla/noise-space-learning-for-vla-adaptation)
 
 ![](/papers/assets/vla/noise-space-learning-for-vla-adaptation/overview.svg)

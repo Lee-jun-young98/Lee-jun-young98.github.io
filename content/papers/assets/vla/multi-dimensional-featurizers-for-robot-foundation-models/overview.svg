@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Block-sparse VLA feature analysis pipeline</title>
+  <desc id="desc">Image, language, and robot state tokens flow through a VLA backbone. Block-sparse features preserve low-dimensional manifolds and support action steering and recovery-data attribution.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .h{font:700 27px Arial,sans-serif;fill:#0f172a}.t{font:600 19px Arial,sans-serif;fill:#0f172a}.s{font:16px Arial,sans-serif;fill:#334155}.box{rx:18;stroke-width:2}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="h">다차원 VLA feature → 행동 steering → 학습 데이터 shaping</text>
+  <rect x="45" y="105" width="210" height="210" fill="#e0f2fe" stroke="#0284c7" class="box"/>
+  <text x="150" y="142" text-anchor="middle" class="t">VLA 입력</text>
+  <text x="75" y="190" class="s">• 외부·손목 이미지 token</text><text x="75" y="228" class="s">• 언어 instruction token</text><text x="75" y="266" class="s">• robot state token</text>
+  <path d="M255 210 H340" class="a"/>
+  <rect x="345" y="105" width="230" height="210" fill="#ede9fe" stroke="#7c3aed" class="box"/>
+  <text x="460" y="142" text-anchor="middle" class="t">VLA backbone</text>
+  <text x="380" y="190" class="s">MolmoAct2 · π₀.₅</text><text x="380" y="228" class="s">여러 층의 token activation</text><text x="380" y="266" class="s">5,200만 unpooled 표본</text>
+  <path d="M575 210 H660" class="a"/>
+  <rect x="665" y="82" width="490" height="256" fill="#ecfdf5" stroke="#059669" class="box"/>
+  <text x="910" y="122" text-anchor="middle" class="t">Block-Sparse Featurizer</text>
+  <text x="700" y="162" class="s">group TopK: norm이 큰 k개 block 선택</text>
+  <rect x="710" y="188" width="112" height="90" rx="12" fill="#a7f3d0" stroke="#047857"/><rect x="840" y="188" width="112" height="90" rx="12" fill="#6ee7b7" stroke="#047857"/><rect x="970" y="188" width="112" height="90" rx="12" fill="#34d399" stroke="#047857"/>
+  <text x="766" y="220" text-anchor="middle" class="s">의미</text><text x="766" y="250" text-anchor="middle" class="s">좌표계</text><text x="896" y="220" text-anchor="middle" class="s">시각</text><text x="896" y="250" text-anchor="middle" class="s">manifold</text><text x="1026" y="220" text-anchor="middle" class="s">기하·상태</text><text x="1026" y="250" text-anchor="middle" class="s">부분공간</text>
+  <text x="910" y="314" text-anchor="middle" class="s">SAE의 단일 방향 대신 feature별 저차원 부분공간</text>
+  <path d="M790 338 V412 H390 V456" class="a"/>
+  <path d="M1015 338 V456" class="a"/>
+  <rect x="120" y="460" width="520" height="155" fill="#fff7ed" stroke="#ea580c" class="box"/>
+  <text x="380" y="500" text-anchor="middle" class="t">추론: 인과적 feature steering</text>
+  <text x="155" y="540" class="s">semantic · visual · geometric block code 교체</text><text x="155" y="578" class="s">→ 입력은 그대로 두고 target 선택·reach 방향 변경</text>
+  <rect x="685" y="460" width="470" height="155" fill="#fef2f2" stroke="#dc2626" class="box"/>
+  <text x="920" y="500" text-anchor="middle" class="t">학습: feature 기반 데이터 attribution</text>
+  <text x="720" y="540" class="s">실패 복구 block F1515로 DROID window 검색</text><text x="720" y="578" class="s">→ 겹치는 action loss 1.38%만 선택적 마스킹</text>
+  <text x="600" y="654" text-anchor="middle" class="s">논문 Figure 2–4와 Section 2–4를 바탕으로 재구성</text>
+</svg>
