@@ -273,6 +273,10 @@ paper_sync: true
 
 ### [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
+### [MMSearch-OPD: Easy Made Hard, Hard Made Learnable for Long-Horizon Multimodal Search Agents](/papers/vlm/mmsearch-opd-long-horizon-multimodal-search-agents)
+
+![](/papers/assets/vlm/mmsearch-opd-long-horizon-multimodal-search-agents/mmsearch-opd-pipeline.svg)
+
 ### [OccludeBench: Can VLMs Find What's Missing?](/papers/vlm/occludebench-can-vlms-find-whats-missing)
 
 ![](/papers/assets/vlm/occludebench-can-vlms-find-whats-missing/occludebench-diagnostic-pipeline.svg)
