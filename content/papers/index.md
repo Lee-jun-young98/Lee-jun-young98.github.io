@@ -171,10 +171,6 @@ paper_sync: true
 
 ![](/papers/assets/vla/react-rolling-denoising-for-reactive-vla-control/overview.svg)
 
-### [RePlanMem-VLA: Replanning-Guided Visual Memory for Vision-Language-Action Models](/papers/vla/replanmem-vla-replanning-guided-visual-memory)
-
-![](/papers/assets/vla/replanmem-vla-replanning-guided-visual-memory/overview.svg)
-
 ### [REKI: Registering Knowledge in VLAs](/papers/vla/reki-registering-knowledge-in-vlas)
 
 ![](/papers/assets/vla/reki-registering-knowledge-in-vlas/overview.svg)
@@ -240,6 +236,10 @@ paper_sync: true
 ![](/papers/assets/vla/vla-zo-fast-zeroth-order-adaptation/overview.svg)
 
 ### [VLaRL: Augmenting Vision-Language-Action Models with Simulation-Trained Latent-Conditioned Residual RL](/papers/vla/vlarl-simulation-trained-latent-conditioned-residual-rl-for-vlas)
+
+### [When Plans Change, Remember: Replanning-Guided Visual Memory for Vision-Language-Action Models](/papers/vla/replanmem-vla-replanning-guided-visual-memory)
+
+![](/papers/assets/vla/replanmem-vla-replanning-guided-visual-memory/overview.svg)
 
 ### [XPACE: Joint World and Action Modeling from Heterogeneous Experience](/papers/vla/xpace-joint-world-and-action-modeling-from-heterogeneous-experience)
 
