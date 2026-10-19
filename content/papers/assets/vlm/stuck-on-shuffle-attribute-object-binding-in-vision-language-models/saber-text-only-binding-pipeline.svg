@@ -1,0 +1,176 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">SABER 평가와 텍스트 전용 속성-객체 결합 학습 파이프라인</title>
+  <desc id="desc">
+    같은 객체와 속성의 연결만 섞어 네 모달리티 방향을 평가하는 SABER와, 합성 텍스트의 positive 및
+    hard negative로 공유 Qwen3-VL 임베더를 학습하고 LiNeS로 범용성을 보존하는 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#334155" flood-opacity="0.15" />
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 27px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .section {
+        font:
+          700 18px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #312e81;
+      }
+      .label {
+        font:
+          700 15px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          500 13px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          500 12px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #475569;
+      }
+      .metric {
+        font:
+          700 16px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #065f46;
+      }
+      .box {
+        stroke-width: 1.5;
+        rx: 14;
+        filter: url(#shadow);
+      }
+      .arrow {
+        fill: none;
+        stroke: #475569;
+        stroke-width: 2.2;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        fill: none;
+        stroke: #64748b;
+        stroke-width: 1.7;
+        stroke-dasharray: 7 6;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" rx="24" />
+  <text x="60" y="48" class="title">Stuck on Shuffle: 결합을 진단하고 텍스트로 교정하기</text>
+
+  <text x="60" y="88" class="section">① SABER: 단어는 같고 연결만 다른 통제 평가</text>
+  <rect x="60" y="108" width="225" height="146" class="box" fill="#fff7ed" stroke="#fb923c" />
+  <text x="78" y="136" class="label">Query binding</text>
+  <text x="78" y="166" class="body">금색 → 대포</text>
+  <text x="78" y="190" class="body">타이다이 → 잠수함</text>
+  <text x="78" y="214" class="body">빛나는 → 기린</text>
+  <text x="78" y="238" class="small">2~10 pairs · 232 objects · 50 attrs</text>
+
+  <path d="M285 180 H335" class="arrow" />
+  <rect x="335" y="108" width="300" height="146" class="box" fill="#ffffff" stroke="#818cf8" />
+  <text x="353" y="136" class="label">4-way candidates</text>
+  <rect x="353" y="151" width="116" height="34" rx="8" fill="#dcfce7" stroke="#22c55e" />
+  <text x="367" y="173" class="small">✓ 연결 유지</text>
+  <rect x="485" y="151" width="132" height="34" rx="8" fill="#fee2e2" stroke="#ef4444" />
+  <text x="499" y="173" class="small">✕ 속성 재배치</text>
+  <rect x="353" y="199" width="116" height="34" rx="8" fill="#fee2e2" stroke="#ef4444" />
+  <text x="367" y="221" class="small">✕ 객체 재배치</text>
+  <rect x="485" y="199" width="132" height="34" rx="8" fill="#fee2e2" stroke="#ef4444" />
+  <text x="499" y="221" class="small">✕ 다른 permutation</text>
+
+  <path d="M635 180 H685" class="arrow" />
+  <rect x="685" y="108" width="210" height="146" class="box" fill="#eff6ff" stroke="#3b82f6" />
+  <text x="703" y="136" class="label">이미지 + 텍스트 표현</text>
+  <text x="703" y="166" class="body">GPT-Image-2 합성</text>
+  <text x="703" y="190" class="body">수동 binding 검수</text>
+  <text x="703" y="214" class="body">1,800 Q / 7,200 후보</text>
+  <text x="703" y="238" class="small">MCQ accuracy + gallery mAP</text>
+
+  <path d="M895 180 H945" class="arrow" />
+  <rect x="945" y="108" width="195" height="146" class="box" fill="#f5f3ff" stroke="#8b5cf6" />
+  <text x="963" y="136" class="label">네 방향 평가</text>
+  <text x="963" y="168" class="body">Text → Text</text>
+  <text x="963" y="190" class="body">Text → Image</text>
+  <text x="963" y="212" class="body">Image → Text</text>
+  <text x="963" y="234" class="body">Image → Image</text>
+
+  <line x1="60" y1="282" x2="1140" y2="282" stroke="#cbd5e1" stroke-width="1.5" />
+  <text x="60" y="322" class="section">
+    ② Text-only finetuning: 공유 backbone으로 시각 표현까지 전이
+  </text>
+
+  <rect x="60" y="344" width="245" height="166" class="box" fill="#fff7ed" stroke="#fb923c" />
+  <text x="78" y="372" class="label">합성 text supervision</text>
+  <text x="78" y="402" class="body">Query: red banner + torn flag</text>
+  <text x="78" y="430" class="body">Positive: 연결 보존</text>
+  <text x="78" y="454" class="body">Negative: 속성/객체 교환</text>
+  <text x="78" y="482" class="small">10만 examples · 20만 triplets</text>
+  <text x="78" y="500" class="small">7 constructions · 이미지 0장</text>
+
+  <path d="M305 425 H355" class="arrow" />
+  <rect x="355" y="344" width="265" height="166" class="box" fill="#eef2ff" stroke="#6366f1" />
+  <text x="373" y="372" class="label">Qwen3-VL-Embedding 2B / 8B</text>
+  <text x="373" y="404" class="body">공유 multimodal backbone</text>
+  <text x="373" y="430" class="body">LoRA + cosine triplet loss</text>
+  <text x="373" y="458" class="small">sim(q, +) &gt; sim(q, −) + γ</text>
+  <text x="373" y="486" class="small">후반층에 binding 신호 보존</text>
+
+  <path d="M620 425 H670" class="arrow" />
+  <rect x="670" y="344" width="205" height="166" class="box" fill="#ecfdf5" stroke="#10b981" />
+  <text x="688" y="372" class="label">LiNeS</text>
+  <text x="688" y="404" class="body">층별 update rescale</text>
+  <text x="688" y="430" class="body">pretrained 능력 복구</text>
+  <text x="688" y="462" class="small">SABER 일부 양보</text>
+  <text x="688" y="486" class="small">MMEB-v3 망각 완화</text>
+
+  <path d="M875 425 H925" class="arrow" />
+  <rect x="925" y="344" width="215" height="166" class="box" fill="#f0fdf4" stroke="#22c55e" />
+  <text x="943" y="372" class="label">동일한 추론 구조</text>
+  <text x="943" y="404" class="body">단일 embedding</text>
+  <text x="943" y="430" class="body">cosine similarity ranking</text>
+  <text x="943" y="462" class="metric">52.5% → 84.2%</text>
+  <text x="943" y="486" class="small">SABER 4-way 평균 +31.7%p</text>
+
+  <path d="M790 254 V316 H488 V344" class="dash" />
+  <text x="802" y="305" class="small">학습에는 이미지를 쓰지 않음</text>
+
+  <rect x="60" y="544" width="1080" height="52" rx="12" fill="#ffffff" stroke="#cbd5e1" />
+  <text x="80" y="567" class="body">
+    핵심: 동일 어휘의 binding-conflicting negative로 쉬운 bag-of-words 경로를 닫고, 공유 MLLM
+    backbone에서 text→vision 전이를 유도한다.
+  </text>
+  <text x="80" y="587" class="small">
+    논문 Figure 1 및 Sections 3–4를 바탕으로 재구성 · 원문 CC BY-NC-SA 4.0
+  </text>
+</svg>
