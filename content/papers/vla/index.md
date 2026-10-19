@@ -67,6 +67,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/dual-stream-memory-for-vla-policies/overview.svg)
 
+## [Embodiment-Classifier Guidance: Transferring Frozen VLAs Across Robot Dynamics without Demonstrations](/papers/vla/embodiment-classifier-guidance-for-frozen-vlas)
+
+![](/papers/assets/vla/embodiment-classifier-guidance-for-frozen-vlas/overview.svg)
+
 ## [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
 
 ![](/papers/assets/vla/universal-adversarial-attacks-on-vla-models/overview.svg)
@@ -164,6 +168,10 @@ paper_sync: true
 ## [REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](/papers/vla/react-rolling-denoising-for-reactive-vla-control)
 
 ![](/papers/assets/vla/react-rolling-denoising-for-reactive-vla-control/overview.svg)
+
+## [RePlanMem-VLA: Replanning-Guided Visual Memory for Vision-Language-Action Models](/papers/vla/replanmem-vla-replanning-guided-visual-memory)
+
+![](/papers/assets/vla/replanmem-vla-replanning-guided-visual-memory/overview.svg)
 
 ## [REKI: Registering Knowledge in VLAs](/papers/vla/reki-registering-knowledge-in-vlas)
 

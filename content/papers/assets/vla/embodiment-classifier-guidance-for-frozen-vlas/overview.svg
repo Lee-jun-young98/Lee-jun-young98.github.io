@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Embodiment-classifier guidance architecture</title>
+  <desc id="desc">Successful source and target body action chunks train a small classifier. During inference its gradient nudges each denoising step of a frozen pi-zero policy toward target-body successes.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>.box{fill:#f8fafc;stroke:#334155;stroke-width:2;rx:16}.blue{fill:#dbeafe;stroke:#2563eb}.green{fill:#dcfce7;stroke:#16a34a}.amber{fill:#fef3c7;stroke:#d97706}.purple{fill:#ede9fe;stroke:#7c3aed}.red{fill:#fee2e2;stroke:#dc2626}.t{font:700 24px sans-serif;fill:#0f172a}.s{font:17px sans-serif;fill:#334155}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:8 7}</style>
+  </defs>
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="55" y="54" class="t">Embodiment-Classifier Guidance: frozen VLA의 sampling만 보정</text>
+  <text x="55" y="95" class="t">학습</text>
+  <rect x="55" y="120" width="225" height="120" class="box blue"/><text x="168" y="160" text-anchor="middle" class="t">Source body A</text><text x="168" y="197" text-anchor="middle" class="s">성공 action chunks D_A</text>
+  <rect x="55" y="275" width="225" height="120" class="box green"/><text x="168" y="315" text-anchor="middle" class="t">Target body B</text><text x="168" y="352" text-anchor="middle" class="s">성공 action chunks D_B</text>
+  <rect x="360" y="180" width="260" height="150" class="box amber"/><text x="490" y="225" text-anchor="middle" class="t">Noise-conditioned</text><text x="490" y="256" text-anchor="middle" class="t">classifier (0.8M)</text><text x="490" y="294" text-anchor="middle" class="s">log qᵗ_B / qᵗ_A 근사</text>
+  <path d="M280 180 H360" class="a"/><path d="M280 335 C320 335 320 290 360 290" class="a"/>
+  <text x="700" y="95" class="t">추론</text>
+  <rect x="680" y="120" width="220" height="115" class="box purple"/><text x="790" y="160" text-anchor="middle" class="t">Frozen π₀</text><text x="790" y="195" text-anchor="middle" class="s">observation · instruction</text><text x="790" y="220" text-anchor="middle" class="s">task-level velocity v</text>
+  <rect x="680" y="310" width="220" height="120" class="box amber"/><text x="790" y="350" text-anchor="middle" class="t">Classifier gradient</text><text x="790" y="386" text-anchor="middle" class="s">∇ log qᵗ_B / qᵗ_A</text><text x="790" y="412" text-anchor="middle" class="s">20% norm cap</text>
+  <path d="M620 255 C650 255 650 370 680 370" class="a dash"/><text x="642" y="315" class="s">고정</text>
+  <rect x="970" y="205" width="180" height="150" class="box green"/><text x="1060" y="246" text-anchor="middle" class="t">10-step flow</text><text x="1060" y="282" text-anchor="middle" class="s">v + δv</text><text x="1060" y="311" text-anchor="middle" class="s">target-success 쪽으로</text><text x="1060" y="337" text-anchor="middle" class="s">action chunk 생성</text>
+  <path d="M900 178 C940 178 940 250 970 250" class="a"/><path d="M900 370 C940 370 940 315 970 315" class="a"/>
+  <rect x="970" y="430" width="180" height="105" class="box blue"/><text x="1060" y="470" text-anchor="middle" class="t">Target robot</text><text x="1060" y="505" text-anchor="middle" class="s">앞 5 action 실행</text><path d="M1060 355 V430" class="a"/>
+  <rect x="650" y="500" width="275" height="85" class="box red"/><text x="788" y="535" text-anchor="middle" class="t">경계 조건</text><text x="788" y="566" text-anchor="middle" class="s">불가능한 관절 운동은 보정 못함</text>
+  <text x="55" y="635" class="s">논문 Figure 1 및 Equation 2–3을 바탕으로 재구성 · arXiv:2610.22576</text>
+</svg>
