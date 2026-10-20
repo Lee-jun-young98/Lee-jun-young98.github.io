@@ -59,13 +59,13 @@ paper_sync: true
 
 ![](/papers/assets/vlm/omnicapbench-deep-structured-audio-visual-captioning-evaluation/omnicapbench-evaluation-pipeline.svg)
 
-## [Rethinking Projector Training in Multimodal LLMs](/papers/vlm/rethinking-projector-training-in-multimodal-llms)
-
-![](/papers/assets/vlm/rethinking-projector-training-in-multimodal-llms/portal-architecture.svg)
-
 ## [Reinforcement Learning with Visually Attributable On-Policy Self-Distillation](/papers/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation)
 
 ![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
+
+## [Rethinking Projector Training in Multimodal LLMs](/papers/vlm/rethinking-projector-training-in-multimodal-llms)
+
+![](/papers/assets/vlm/rethinking-projector-training-in-multimodal-llms/portal-architecture.svg)
 
 ## [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 

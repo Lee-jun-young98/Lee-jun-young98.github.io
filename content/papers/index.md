@@ -123,11 +123,11 @@ paper_sync: true
 
 ![](/papers/assets/vla/juno-taming-predictive-latents-for-vlas/overview.svg)
 
+### [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
+
 ### [Language-Forcing: Advancing Humanoid Loco-Manipulation via Semantic Alignment of Whole-Body World Action Models](/papers/vla/language-forcing-semantic-alignment-for-whole-body-wams)
 
 ![](/papers/assets/vla/language-forcing-semantic-alignment-for-whole-body-wams/overview.svg)
-
-### [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
 
 ### [LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC](/papers/vla/lewam-jepa-world-action-model-with-diffusion-steering)
 
@@ -313,6 +313,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/omnicapbench-deep-structured-audio-visual-captioning-evaluation/omnicapbench-evaluation-pipeline.svg)
 
+### [Reinforcement Learning with Visually Attributable On-Policy Self-Distillation](/papers/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation)
+
+![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
+
 ### [Rethinking Projector Training in Multimodal LLMs](/papers/vlm/rethinking-projector-training-in-multimodal-llms)
 
 ![](/papers/assets/vlm/rethinking-projector-training-in-multimodal-llms/portal-architecture.svg)
@@ -326,10 +330,6 @@ paper_sync: true
 ### [Stuck on Shuffle: On Attribute-Object Binding in Vision-Language Models](/papers/vlm/stuck-on-shuffle-attribute-object-binding-in-vision-language-models)
 
 ![](/papers/assets/vlm/stuck-on-shuffle-attribute-object-binding-in-vision-language-models/saber-text-only-binding-pipeline.svg)
-
-### [Reinforcement Learning with Visually Attributable On-Policy Self-Distillation](/papers/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation)
-
-![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
 
 ### [Syn-Omni: Structured Specialization and Progressive Collaboration for Omnimodal Embeddings](/papers/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings)
 

@@ -121,11 +121,11 @@ paper_sync: true
 
 ![](/papers/assets/vla/juno-taming-predictive-latents-for-vlas/overview.svg)
 
+## [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
+
 ## [Language-Forcing: Advancing Humanoid Loco-Manipulation via Semantic Alignment of Whole-Body World Action Models](/papers/vla/language-forcing-semantic-alignment-for-whole-body-wams)
 
 ![](/papers/assets/vla/language-forcing-semantic-alignment-for-whole-body-wams/overview.svg)
-
-## [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
 
 ## [LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC](/papers/vla/lewam-jepa-world-action-model-with-diffusion-steering)
 
