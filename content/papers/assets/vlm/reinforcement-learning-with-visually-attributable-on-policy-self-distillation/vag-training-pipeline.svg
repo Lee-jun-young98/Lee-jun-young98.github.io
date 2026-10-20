@@ -1,0 +1,177 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">VAG의 시각 귀속 기반 on-policy 자기증류 학습 파이프라인</title>
+  <desc id="desc">
+    학생 rollout과 verifier advantage, 근거 crop과 random-mask crop을 처리하는 동일 EMA teacher,
+    교정과 시각 contrast의 부호 일치 gate, token-level advantage와 GRPO update의 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 28px Arial,
+          sans-serif;
+        fill: #0f172a;
+      }
+      .subtitle {
+        font:
+          500 14px Arial,
+          sans-serif;
+        fill: #475569;
+      }
+      .stage {
+        font:
+          700 17px Arial,
+          sans-serif;
+        fill: #fff;
+      }
+      .head {
+        font:
+          700 17px Arial,
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          500 14px Arial,
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          500 12px Arial,
+          sans-serif;
+        fill: #475569;
+      }
+      .formula {
+        font:
+          italic 600 15px Georgia,
+          serif;
+        fill: #312e81;
+      }
+      .box {
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+        rx: 14;
+      }
+      .arrow {
+        stroke: #334155;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke: #64748b;
+        stroke-width: 1.5;
+        stroke-dasharray: 6 5;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="50" y="47" class="title">VAG: 시각 근거와 방향이 맞는 token 교정만 학습한다</text>
+  <text x="50" y="72" class="subtitle">논문 Figure 3 · Equations 2, 5, 7–10을 바탕으로 재구성</text>
+
+  <rect x="45" y="100" width="330" height="34" rx="9" fill="#2563eb" />
+  <text x="62" y="123" class="stage">1 · on-policy rollout + 정답 검증</text>
+  <rect x="45" y="150" width="145" height="130" class="box" fill="#dbeafe" />
+  <text x="62" y="178" class="head">원본 입력</text>
+  <rect x="64" y="193" width="106" height="53" rx="8" fill="#93c5fd" />
+  <circle cx="92" cy="219" r="12" fill="#f59e0b" />
+  <rect x="116" y="205" width="38" height="27" rx="4" fill="#1d4ed8" opacity=".72" />
+  <text x="62" y="266" class="small">이미지 I + 질문 q</text>
+  <rect x="230" y="150" width="145" height="130" class="box" fill="#eff6ff" />
+  <text x="247" y="178" class="head">학생 정책</text>
+  <text x="247" y="203" class="body">G=8 응답 생성</text>
+  <text x="247" y="228" class="body">verifier: 0 / 1</text>
+  <text x="247" y="255" class="formula">Aₒᵣₘ</text>
+  <path d="M190 215 H226" class="arrow" />
+
+  <rect x="420" y="100" width="380" height="34" rx="9" fill="#7c3aed" />
+  <text x="437" y="123" class="stage">2 · 동일 EMA teacher의 dual-view 감사</text>
+  <rect x="420" y="150" width="170" height="130" class="box" fill="#ede9fe" />
+  <text x="437" y="178" class="head">근거 보존 I₊</text>
+  <rect x="439" y="193" width="132" height="52" rx="8" fill="#c4b5fd" />
+  <rect
+    x="480"
+    y="203"
+    width="45"
+    height="31"
+    rx="4"
+    fill="none"
+    stroke="#7c3aed"
+    stroke-width="4"
+  />
+  <text x="437" y="266" class="small">evidence-centered crop</text>
+  <rect x="630" y="150" width="170" height="130" class="box" fill="#f3e8ff" />
+  <text x="647" y="178" class="head">근거 약화 I₋</text>
+  <rect x="649" y="193" width="132" height="52" rx="8" fill="#d8b4fe" />
+  <rect x="691" y="202" width="45" height="33" rx="3" fill="#1e1b4b" />
+  <text x="647" y="266" class="small">같은 crop + random mask</text>
+  <path d="M375 195 C395 195 399 195 416 195" class="dash" />
+  <path d="M375 238 C500 315 596 305 630 246" class="dash" />
+
+  <rect x="845" y="100" width="310" height="34" rx="9" fill="#0f766e" />
+  <text x="862" y="123" class="stage">3 · 귀속 gate + GRPO update</text>
+  <rect x="845" y="150" width="310" height="130" class="box" fill="#ccfbf1" />
+  <text x="865" y="178" class="head">부호 일치 검사</text>
+  <text x="865" y="205" class="formula">gₜ = 1[δₜ · vₜ &gt; 0]</text>
+  <text x="865" y="231" class="body">같은 부호 → 교정 통과</text>
+  <text x="865" y="254" class="body">다른 부호 → Aₒᵣₘ으로 복귀</text>
+  <path d="M800 215 H841" class="arrow" />
+
+  <rect x="45" y="326" width="355" height="152" class="box" fill="#fff" />
+  <text x="65" y="356" class="head">두 개의 token-level 신호</text>
+  <text x="65" y="388" class="formula">δₜ = log pT₊(ŷₜ) − log pS(ŷₜ)</text>
+  <text x="65" y="412" class="small">teacher가 학생 token을 올리거나 내리는 후보 교정</text>
+  <text x="65" y="445" class="formula">vₜ = log pT₊(ŷₜ) − log pT₋(ŷₜ)</text>
+  <text x="65" y="469" class="small">근거의 존재가 token을 지지/반박하는 방향</text>
+  <path d="M505 280 C505 306 370 302 370 322" class="arrow" />
+  <path d="M715 280 C715 314 398 300 398 322" class="arrow" />
+
+  <rect x="445" y="326" width="355" height="152" class="box" fill="#fff7ed" />
+  <text x="465" y="356" class="head">오염된 교정 제거</text>
+  <rect x="466" y="375" width="145" height="70" rx="10" fill="#dcfce7" stroke="#22c55e" />
+  <text x="481" y="400" class="body">δₜ, vₜ 같은 부호</text>
+  <text x="481" y="426" class="body">지지·반박 모두 유지</text>
+  <rect x="634" y="375" width="145" height="70" rx="10" fill="#fee2e2" stroke="#ef4444" />
+  <text x="648" y="400" class="body">δₜ, vₜ 반대 부호</text>
+  <text x="648" y="426" class="body">교정만 차단</text>
+  <path d="M400 402 H441" class="arrow" />
+
+  <rect x="845" y="326" width="310" height="152" class="box" fill="#ecfeff" />
+  <text x="865" y="356" class="head">token advantage → clipped GRPO</text>
+  <text x="865" y="389" class="formula">Ãₜ = Aₒᵣₘ + ηgₜṽₜtanh(δₜ/τ)</text>
+  <text x="865" y="421" class="body">추가 파라미터·보조 loss 없음</text>
+  <text x="865" y="447" class="body">학생 정책만 업데이트</text>
+  <path d="M800 402 H841" class="arrow" />
+
+  <rect x="45" y="520" width="1110" height="70" rx="14" fill="#0f172a" />
+  <text x="68" y="549" class="stage">추론</text>
+  <text x="145" y="549" class="stage">원본 이미지 → 학습된 학생의 단일 forward pass → 응답</text>
+  <text x="145" y="574" class="subtitle" fill="#cbd5e1">
+    verifier · privileged crop · random mask · EMA teacher는 사용하지 않음
+  </text>
+</svg>

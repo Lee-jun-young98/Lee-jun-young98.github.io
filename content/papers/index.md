@@ -315,6 +315,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/stuck-on-shuffle-attribute-object-binding-in-vision-language-models/saber-text-only-binding-pipeline.svg)
 
+### [Reinforcement Learning with Visually Attributable On-Policy Self-Distillation](/papers/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation)
+
+![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
+
 ### [Syn-Omni: Structured Specialization and Progressive Collaboration for Omnimodal Embeddings](/papers/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings)
 
 ![](/papers/assets/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings/syn-omni-architecture.svg)

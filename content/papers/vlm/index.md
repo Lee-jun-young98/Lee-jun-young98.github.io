@@ -63,6 +63,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/rethinking-projector-training-in-multimodal-llms/portal-architecture.svg)
 
+## [Reinforcement Learning with Visually Attributable On-Policy Self-Distillation](/papers/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation)
+
+![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
+
 ## [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 
 ## [S-Space: Exploring Spatial Workspace in Multimodal Language Models](/papers/vlm/s-space-exploring-spatial-workspace-in-multimodal-language-models)
