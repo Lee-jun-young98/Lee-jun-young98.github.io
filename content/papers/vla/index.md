@@ -15,6 +15,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
 
+## [AutoPruner: Agentic Depth Pruning for Vision-Language-Action Models](/papers/vla/autopruner-agentic-depth-pruning-for-vlas)
+
+![](/papers/assets/vla/autopruner-agentic-depth-pruning-for-vlas/overview.svg)
+
 ## [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
 ## [Beyond Actions: Learning Future Operation Targets for Vision-Language-Action Models](/papers/vla/beyond-actions-action-future-coupled-effect-learning)
@@ -117,6 +121,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/juno-taming-predictive-latents-for-vlas/overview.svg)
 
+## [Language-Forcing: Advancing Humanoid Loco-Manipulation via Semantic Alignment of Whole-Body World Action Models](/papers/vla/language-forcing-semantic-alignment-for-whole-body-wams)
+
+![](/papers/assets/vla/language-forcing-semantic-alignment-for-whole-body-wams/overview.svg)
+
 ## [Kintsugi-VLA: Turning Failed Robot Rollouts into Recovery Data through Interventional Recoverability](/papers/vla/kintsugi-vla-turning-failed-robot-rollouts-into-recovery-data)
 
 ## [LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC](/papers/vla/lewam-jepa-world-action-model-with-diffusion-steering)
@@ -212,6 +220,10 @@ paper_sync: true
 ## [TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control](/papers/vla/ts-wam-temporal-latent-actions-and-world-action-coupling)
 
 ![](/papers/assets/vla/ts-wam-temporal-latent-actions-and-world-action-coupling/overview.svg)
+
+## [UMI-WM: Interactive World Modeling for Bimanual Manipulation from Wrist Cameras](/papers/vla/umi-wm-bimanual-wrist-camera-world-model)
+
+![](/papers/assets/vla/umi-wm-bimanual-wrist-camera-world-model/overview.svg)
 
 ## [UNITAS: A 3D-Native World Action Model for Embodied Manipulation](/papers/vla/unitas-3d-native-world-action-model)
 

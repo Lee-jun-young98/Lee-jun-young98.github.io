@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">AutoPruner 구조와 recovery 공동 탐색</title>
+  <desc id="desc">dense VLA의 layer probe 결과와 task 목표를 LLM agent가 받아 pruning 및 recovery를 제안하고, 도구 실행과 폐루프 평가 결과를 다시 받아 배포 checkpoint를 선택하는 순환 구조</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#315b7d"/></marker><style>.t{font:700 24px Arial,sans-serif;fill:#17324d}.s{font:16px Arial,sans-serif;fill:#29455f}.b{fill:#f5f9fc;stroke:#315b7d;stroke-width:2}.g{fill:#eef8f3;stroke:#2c7a5b;stroke-width:2}.o{fill:#fff5e8;stroke:#b76b18;stroke-width:2}.p{fill:#f6f0ff;stroke:#7651a8;stroke-width:2}.ln{fill:none;stroke:#315b7d;stroke-width:3;marker-end:url(#a)}</style></defs>
+  <rect width="1200" height="680" fill="#ffffff"/><text x="60" y="58" class="t">AutoPruner: task-aware physical depth pruning</text>
+  <rect x="55" y="120" width="230" height="150" rx="16" class="b"/><text x="85" y="165" class="t">입력</text><text x="85" y="200" class="s">Dense VLA · task suite</text><text x="85" y="230" class="s">목표 SR τ · round budget</text>
+  <rect x="350" y="95" width="250" height="105" rx="16" class="g"/><text x="380" y="138" class="t">Functional probe</text><text x="380" y="171" class="s">layer bypass → action 변화 dᵢ</text>
+  <rect x="350" y="240" width="250" height="130" rx="16" class="p"/><text x="390" y="285" class="t">LLM agent</text><text x="380" y="320" class="s">삭제 집합 D + recovery r</text><text x="380" y="348" class="s">history · evidence · 진단</text>
+  <rect x="690" y="220" width="220" height="160" rx="16" class="o"/><text x="735" y="264" class="t">도구 실행</text><text x="720" y="301" class="s">physical prune</text><text x="720" y="330" class="s">recover / fine-tune</text><text x="720" y="359" class="s">closed-loop rollout</text>
+  <rect x="690" y="455" width="220" height="115" rx="16" class="b"/><text x="738" y="500" class="t">피드백</text><text x="720" y="535" class="s">SR · latency · cost · 진단</text>
+  <rect x="965" y="220" width="190" height="160" rx="16" class="g"/><text x="1000" y="265" class="t">배포 후보</text><text x="995" y="304" class="s">SR ≥ τ</text><text x="995" y="334" class="s">짧은 backbone</text><text x="995" y="364" class="s">checkpoint export</text>
+  <path d="M285 175 H350" class="ln"/><path d="M285 225 C315 225 320 305 350 305" class="ln"/><path d="M475 200 V240" class="ln"/><path d="M600 305 H690" class="ln"/><path d="M800 380 V455" class="ln"/><path d="M910 300 H965" class="ln"/><path d="M690 515 C620 515 650 405 535 370" class="ln"/>
+  <text x="60" y="632" class="s">논문 Figure 2·Algorithm 1을 바탕으로 재구성 · 실패도 다음 proposal의 evidence가 된다</text>
+</svg>
