@@ -3,6 +3,18 @@ title: "VLA"
 paper_sync: true
 ---
 
+## [UniWALM: Unified World Action Language Model for Embodied Robot Control](/papers/vla/uniwalm-unified-world-action-language-model)
+
+![](/papers/assets/vla/uniwalm-unified-world-action-language-model/overview.svg)
+
+## [De-Diffusing WAMs: Action-Sufficient Direct Prediction for Robot Control](/papers/vla/directwam-action-sufficient-direct-prediction)
+
+![](/papers/assets/vla/directwam-action-sufficient-direct-prediction/overview.svg)
+
+## [PACT-VLA: Speculative Action-Chunk Verification with Pre-Commit Observations](/papers/vla/pact-vla-precommit-action-chunk-verification)
+
+![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
+
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
