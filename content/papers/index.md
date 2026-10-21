@@ -5,18 +5,6 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
-### [UniWALM: Unified World Action Language Model for Embodied Robot Control](/papers/vla/uniwalm-unified-world-action-language-model)
-
-![](/papers/assets/vla/uniwalm-unified-world-action-language-model/overview.svg)
-
-### [De-Diffusing WAMs: Action-Sufficient Direct Prediction for Robot Control](/papers/vla/directwam-action-sufficient-direct-prediction)
-
-![](/papers/assets/vla/directwam-action-sufficient-direct-prediction/overview.svg)
-
-### [PACT-VLA: Speculative Action-Chunk Verification with Pre-Commit Observations](/papers/vla/pact-vla-precommit-action-chunk-verification)
-
-![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
-
 ### [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -64,6 +52,10 @@ paper_sync: true
 ### [Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](/papers/vla/cue-the-flow-steering-flow-matching-policies)
 
 ![](/papers/assets/vla/cue-the-flow-steering-flow-matching-policies/overview.svg)
+
+### [De-Diffusing WAMs: Action-Sufficient Direct Prediction for Robot Control](/papers/vla/directwam-action-sufficient-direct-prediction)
+
+![](/papers/assets/vla/directwam-action-sufficient-direct-prediction/overview.svg)
 
 ### [Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs](/papers/vla/decoupled-early-exits-for-flow-matching-vlas)
 
@@ -177,6 +169,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/oxygen-unified-kv-cache-management-for-vla-inference/overview.svg)
 
+### [PACT-VLA: Speculative Action-Chunk Verification with Pre-Commit Observations](/papers/vla/pact-vla-precommit-action-chunk-verification)
+
+![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
+
 ### [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
 ![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
@@ -247,6 +243,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/uniwam-mixture-of-experts-world-action-interfaces/overview.svg)
 
+### [UniWALM: Unified World Action Language Model for Embodied Robot Control](/papers/vla/uniwalm-unified-world-action-language-model)
+
+![](/papers/assets/vla/uniwalm-unified-world-action-language-model/overview.svg)
+
 ### [UniWAM: Unified World-Action Model](/papers/vla/uniwam-unified-world-action-model)
 
 ![](/papers/assets/vla/uniwam-unified-world-action-model/overview.svg)
@@ -299,13 +299,13 @@ paper_sync: true
 
 ![](/papers/assets/vlm/from-patching-to-pruning-visual-computation-in-vision-language-models/p2p-architecture.svg)
 
-### [GeoPID: Decomposing and Steering Visual Information in Vision-Language Models](/papers/vlm/geopid-decomposing-and-steering-visual-information)
-
-![](/papers/assets/vlm/geopid-decomposing-and-steering-visual-information/geopid-pipeline.svg)
-
 ### [GazeLens for Efficient Egocentric Video Question Answering with Simple Gaze-Driven Adaptive Token Reduction](/papers/vlm/gazelens-efficient-egocentric-video-question-answering)
 
 ![](/papers/assets/vlm/gazelens-efficient-egocentric-video-question-answering/gazelens-architecture.svg)
+
+### [GeoPID: Decomposing and Steering Visual Information in Vision-Language Models](/papers/vlm/geopid-decomposing-and-steering-visual-information)
+
+![](/papers/assets/vlm/geopid-decomposing-and-steering-visual-information/geopid-pipeline.svg)
 
 ### [How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining](/papers/vlm/how-far-are-we-from-removing-the-visual-encoder)
 

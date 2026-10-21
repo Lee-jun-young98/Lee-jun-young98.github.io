@@ -3,18 +3,6 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [UniWALM: Unified World Action Language Model for Embodied Robot Control](/papers/vla/uniwalm-unified-world-action-language-model)
-
-![](/papers/assets/vla/uniwalm-unified-world-action-language-model/overview.svg)
-
-## [De-Diffusing WAMs: Action-Sufficient Direct Prediction for Robot Control](/papers/vla/directwam-action-sufficient-direct-prediction)
-
-![](/papers/assets/vla/directwam-action-sufficient-direct-prediction/overview.svg)
-
-## [PACT-VLA: Speculative Action-Chunk Verification with Pre-Commit Observations](/papers/vla/pact-vla-precommit-action-chunk-verification)
-
-![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
-
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -62,6 +50,10 @@ paper_sync: true
 ## [Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](/papers/vla/cue-the-flow-steering-flow-matching-policies)
 
 ![](/papers/assets/vla/cue-the-flow-steering-flow-matching-policies/overview.svg)
+
+## [De-Diffusing WAMs: Action-Sufficient Direct Prediction for Robot Control](/papers/vla/directwam-action-sufficient-direct-prediction)
+
+![](/papers/assets/vla/directwam-action-sufficient-direct-prediction/overview.svg)
 
 ## [Decoupled Early Exits for Task-Dependent Compute Allocation in Flow-Matching VLAs](/papers/vla/decoupled-early-exits-for-flow-matching-vlas)
 
@@ -175,6 +167,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/oxygen-unified-kv-cache-management-for-vla-inference/overview.svg)
 
+## [PACT-VLA: Speculative Action-Chunk Verification with Pre-Commit Observations](/papers/vla/pact-vla-precommit-action-chunk-verification)
+
+![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
+
 ## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
 ![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
@@ -244,6 +240,10 @@ paper_sync: true
 ## [UniW(A)M: Unified Mixture-of-Experts for World and World-Action Models](/papers/vla/uniwam-mixture-of-experts-world-action-interfaces)
 
 ![](/papers/assets/vla/uniwam-mixture-of-experts-world-action-interfaces/overview.svg)
+
+## [UniWALM: Unified World Action Language Model for Embodied Robot Control](/papers/vla/uniwalm-unified-world-action-language-model)
+
+![](/papers/assets/vla/uniwalm-unified-world-action-language-model/overview.svg)
 
 ## [UniWAM: Unified World-Action Model](/papers/vla/uniwam-unified-world-action-model)
 
