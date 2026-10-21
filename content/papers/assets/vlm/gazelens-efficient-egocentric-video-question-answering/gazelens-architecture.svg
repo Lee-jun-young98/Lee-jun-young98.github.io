@@ -1,0 +1,147 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">GazeLens의 동적 프레임 선택과 질문 조건부 gaze 압축 구조</title>
+  <desc id="desc">
+    비디오와 gaze에서 HOG 변화량과 sharpness로 프레임을 고르고, vision encoder feature를 gaze focus,
+    complementary context, global mean으로 요약한 뒤 질문 gate로 프레임당 두 토큰을 만들어 LLM에
+    전달하는 파이프라인
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220" />
+      <stop offset="1" stop-color="#172554" />
+    </linearGradient>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="8"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#93c5fd" />
+    </marker>
+    <style>
+      .h1 {
+        font: 700 28px sans-serif;
+        fill: #f8fafc;
+      }
+      .h2 {
+        font: 700 18px sans-serif;
+        fill: #f8fafc;
+      }
+      .body {
+        font: 15px sans-serif;
+        fill: #dbeafe;
+      }
+      .small {
+        font: 13px sans-serif;
+        fill: #bfdbfe;
+      }
+      .box {
+        fill: #172033;
+        stroke: #60a5fa;
+        stroke-width: 2;
+        rx: 16;
+      }
+      .fixed {
+        fill: #192c2a;
+        stroke: #34d399;
+        stroke-width: 2;
+        rx: 16;
+      }
+      .train {
+        fill: #312443;
+        stroke: #c084fc;
+        stroke-width: 2;
+        rx: 16;
+      }
+      .arrow {
+        stroke: #93c5fd;
+        stroke-width: 3;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke-dasharray: 7 6;
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="54" y="48" class="h1">GazeLens: 시간축은 인코딩 전에, 공간축은 질문에 맞춰 압축</text>
+  <text x="54" y="75" class="small">논문 Figure 2 · Section 3을 바탕으로 재구성</text>
+
+  <rect x="45" y="115" width="205" height="155" class="box" />
+  <text x="65" y="148" class="h2">입력</text>
+  <text x="65" y="181" class="body">연속 egocentric video</text>
+  <text x="65" y="210" class="body">gaze 좌표 (x, y)</text>
+  <text x="65" y="239" class="body">자연어 질문</text>
+
+  <path d="M250 192 H296" class="arrow" />
+  <rect x="300" y="105" width="250" height="175" class="fixed" />
+  <text x="322" y="138" class="h2">① Dynamic Frame Selection</text>
+  <text x="322" y="171" class="body">HOG 변화량 δᵢ</text>
+  <text x="322" y="199" class="body">Laplacian sharpness ℓᵢ</text>
+  <text x="322" y="229" class="body">4 ≤ T ≤ 16</text>
+  <text x="322" y="259" class="small">parameter-free · encoder 호출 감소</text>
+
+  <path d="M550 192 H596" class="arrow" />
+  <rect x="600" y="115" width="180" height="155" class="box" />
+  <text x="622" y="148" class="h2">② Vision Encoder</text>
+  <text x="622" y="184" class="body">선택 프레임별</text>
+  <text x="622" y="212" class="body">patch feature Fₜ</text>
+  <text x="622" y="242" class="small">프레임은 독립 encoding</text>
+
+  <path d="M780 192 H826" class="arrow" />
+  <rect x="830" y="95" width="325" height="195" class="train" />
+  <text x="852" y="128" class="h2">③ Focus-Aware Aggregation</text>
+  <text x="852" y="161" class="body">gₜ: gaze Gaussian focus</text>
+  <text x="852" y="190" class="body">cₜ: complementary context</text>
+  <text x="852" y="219" class="body">mₜ: global mean</text>
+  <text x="852" y="254" class="small">hard crop 대신 주변 문맥 보존</text>
+
+  <path d="M148 270 V365 H350" class="arrow dash" />
+  <text x="165" y="347" class="small">질문 임베딩</text>
+  <path d="M990 290 V340" class="arrow" />
+  <rect x="300" y="345" width="425" height="125" class="train" />
+  <text x="322" y="380" class="h2">④ Question-Conditioned Gate</text>
+  <text x="322" y="415" class="body">s = sigmoid(MLP(question)), 0 ≤ s ≤ 1</text>
+  <text x="322" y="447" class="body">pₜ = s·gₜ + (1-s)·cₜ</text>
+  <path d="M830 385 H730" class="arrow" />
+
+  <rect x="830" y="345" width="325" height="125" class="box" />
+  <text x="852" y="380" class="h2">⑤ Token Assembly</text>
+  <text x="852" y="414" class="body">프레임당 [pₜ, mₜ]</text>
+  <text x="852" y="446" class="body">정확히 2 visual tokens</text>
+  <path d="M725 408 H826" class="arrow" />
+
+  <path d="M992 470 V510" class="arrow" />
+  <rect x="735" y="515" width="420" height="75" class="box" />
+  <text x="757" y="548" class="h2">LLM + 질문 → answer</text>
+  <text x="757" y="575" class="small">학습: gate·projector·LoRA (CE) / 추론: 단일 경로</text>
+
+  <rect
+    x="45"
+    y="505"
+    width="635"
+    height="88"
+    fill="#101a2d"
+    stroke="#475569"
+    stroke-width="1.5"
+    rx="14"
+  />
+  <circle cx="70" cy="535" r="7" fill="#34d399" />
+  <text x="87" y="541" class="small">초록: 학습 없는 사전 선택</text>
+  <circle cx="270" cy="535" r="7" fill="#c084fc" />
+  <text x="287" y="541" class="small">보라: 학습 가능한 압축 모듈</text>
+  <text x="66" y="574" class="small">
+    핵심 차이: gaze를 정답 crop으로 고정하지 않고 질문에 따라 focus와 주변 문맥을 혼합한다.
+  </text>
+</svg>

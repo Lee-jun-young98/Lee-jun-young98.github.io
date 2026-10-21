@@ -291,6 +291,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/geopid-decomposing-and-steering-visual-information/geopid-pipeline.svg)
 
+### [GazeLens for Efficient Egocentric Video Question Answering with Simple Gaze-Driven Adaptive Token Reduction](/papers/vlm/gazelens-efficient-egocentric-video-question-answering)
+
+![](/papers/assets/vlm/gazelens-efficient-egocentric-video-question-answering/gazelens-architecture.svg)
+
 ### [How Far Are We from Removing the Visual Encoder? Scaling Laws for Encoder-Free Multimodal Pretraining](/papers/vlm/how-far-are-we-from-removing-the-visual-encoder)
 
 ![](/papers/assets/vlm/how-far-are-we-from-removing-the-visual-encoder/encoder-free-scaling-overview.svg)
