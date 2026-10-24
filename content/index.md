@@ -1,61 +1,31 @@
 ---
-title: Junyoung AI Lab | AI 연구와 개발 기록
-description: AI Systems Engineer 이준영의 논문 리뷰, 개발 노트와 프로젝트. 연구의 핵심부터 구현과 운영까지 연결합니다.
+title: Junyoung AI Lab | AI 개발과 학습 기록
+description: AI Engineer 이준영의 기술 블로그. AI 플랫폼·Computer Vision 실무 경험과 설계·구현 중인 LLM Agent를 소개하고, 개인 학습·실습 기록을 따로 정리합니다.
 ---
 
-# Junyoung Lee
+# 이준영 · Junyoung Lee
 
-AI Systems Engineer
+**AI Engineer | AI Platform · Computer Vision · LLM Agent**
 
-Building AI systems that are fast, reliable, and useful in the real world.
+영상 인식 서비스와 AI 학습·서빙 플랫폼을 개발해 왔습니다. 현재는 LLM Agent의 설계와 구현을 진행하고 있습니다.
 
-## Focus
+## 실무에서 해온 일
 
-- LLM Systems
-- Agent Systems
-- AI Platform
-- Vision
-- Performance Optimization
+- **AI 학습·서빙 플랫폼**: Kubernetes 기반 학습·서빙 환경과 Airflow 학습 파이프라인을 개발·운영했습니다. 학습 상태 판정 로직을 구현하고 RAG 검색·응답 개선에 참여했습니다.
+- **Computer Vision 서비스**: 하수관로 결함 탐지와 지능형 CCTV의 데이터 처리·모델 개발·서비스 연동을 맡았습니다. 배포 이후 피드백 대응과 유지보수도 이어갔습니다.
+- **LLM Agent · 설계 및 구현 진행 중**: Planning → Dispatch → Retrieval → Verify 흐름의 시나리오와 개발·검증용 데이터를 정의하고, LangGraph 기반 실행 흐름과 도구 연동을 구현하고 있습니다.
 
-## What I Build
+## 개인 학습과 실습 기록
 
-- **Production LLM Platforms**  
-  Kubernetes 기반 model serving, embedding, VectorDB, observability, deployment architecture를 다룹니다.
+이 블로그에는 논문을 읽고 라이브러리를 공부하며 남긴 글을 모읍니다. 문서·예제에서 배운 내용과 개인 실습을 정리하며, 실무 경험은 해당 글에서 따로 밝힙니다.
 
-- **Agent & RAG Systems**  
-  LangGraph, LangChain, LangSmith 기반 agent runtime, memory, evaluation, guardrails, streaming을 정리합니다.
-
-- **High-performance Model Serving**  
-  vLLM, GPU serving, batching, TTFT, throughput, benchmark 관점에서 AI 시스템 성능을 개선합니다.
-
-- **Vision AI Systems**  
-  medical image AI, detection, segmentation, edge AI 프로젝트를 실제 서비스 가능성 중심으로 다룹니다.
-
-이 공간은 논문 요약만 모으는 곳이 아니라, 연구 아이디어를 실제 구현·평가·운영 가능한 시스템으로 바꾸는 과정을 기록하는 포트폴리오입니다.
-
-## Projects
-
-- [Production AI Performance Lab](https://github.com/Lee-jun-young98/production-ai-performance-lab)  
-  RAG pipeline latency, reranker batching, length bucketing, TTFT, synthetic benchmark 분석을 통해 운영형 AI 시스템의 성능 최적화 과정을 정리한 engineering lab입니다.
-
-- [Agent RAG Evaluation Lab](https://github.com/Lee-jun-young98/agent-rag-evaluation-lab)  
-  codebase RAG, agent routing, mock PR review, retrieval evaluation을 작은 예제로 정리한 Agent/RAG 실습 lab입니다.
-
-- [LLM SFT Training Lab](https://github.com/Lee-jun-young98/llm-sft-training-lab)  
-  config 기반 전처리, toy QA training, evaluation, artifact 저장 흐름을 개인 공부용으로 경량화해서 구현한 학습 파이프라인 lab입니다.
-
-- [[10_projects/LLM-SFT-Training-Platform|LLM SFT Training Platform]]  
-  Hydra 기반 설정 관리, QA 데이터셋, trainer 구조, 실험 추적을 묶어 LLM SFT 파이프라인을 정리한 프로젝트입니다.
-
-- [[10_projects/Pressure-Ulcer-AI|Pressure Ulcer AI]]  
-  욕창 분류와 병변 해석을 목표로 데이터 정리, 학습, 평가 흐름을 다룬 medical image AI 프로젝트입니다.
-
-- [[10_projects/Fire-Detection-Robot|Fire Detection Robot]]  
-  YOLO, Jetson, OpenCV 기반으로 edge 환경에서 화재 탐지를 다룬 프로젝트입니다.
+- [[papers/index|논문 리뷰]]: LLM·VLM·VLA 논문의 아이디어와 실험 결과를 읽고 정리합니다.
+- [[libraries/index|개발 노트]]: 라이브러리의 문서와 예제를 공부한 기록입니다.
+- [[10_projects/index|프로젝트]]: 직접 진행한 프로젝트와 작은 실습을 각 글의 범위에 맞춰 기록합니다.
 
 ## Representative Notes
 
-처음 방문한 사람이 빠르게 방향성을 볼 수 있도록, 운영형 AI 시스템 관점의 대표 노트를 모았습니다.
+라이브러리 문서와 예제를 공부하며 정리한 학습 노트입니다.
 
 - [[libraries/langchain/init-chat-model-runtime-configuration|LangChain init_chat_model로 런타임 모델 설정을 안전하게 전환하기]]
   요청별 모델 전환에서 허용 필드를 제한하고 prefix로 설정 충돌을 막는 운영 패턴을 정리했습니다.

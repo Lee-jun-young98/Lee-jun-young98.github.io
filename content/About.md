@@ -1,40 +1,43 @@
 ---
 title: About
+description: AI Engineer 이준영의 실무 경험과 블로그의 개인 학습 기록을 소개합니다.
 ---
 
-# About
+# 이준영 · Junyoung Lee
 
-안녕하세요. AI Systems Engineer 이준영입니다.
+**AI Engineer | AI Platform · Computer Vision · LLM Agent**
 
-저는 연구 아이디어를 실험 코드에만 머무르게 하지 않고, 실제 사용자가 체감할 수 있는 AI 시스템으로 연결하는 일에 관심이 있습니다. 현재는 LLM 플랫폼, agent/RAG 시스템, vision AI, GPU 기반 모델 서빙, 평가와 관측 가능성까지 이어지는 production AI engineering을 중심으로 공부하고 구현합니다.
+영상 인식 서비스와 AI 학습·서빙 플랫폼을 개발해 왔습니다. 모델 개발뿐 아니라 데이터 정리, API 연동, 배포 이후의 유지보수까지 맡아왔고, 현재는 LLM Agent의 설계와 구현을 진행하고 있습니다.
 
-## Identity
+## 실무 경험
 
-I build production-grade AI systems that turn research into real-world user value.
+### AI 학습·서빙 플랫폼
 
-## Focus
+Kubernetes에서 LLM·Embedding·Reranker를 학습하고 서빙하는 환경을 개발·운영했습니다. Airflow로 학습, 평가, 결과 저장, 모델 등록과 서빙을 연결하는 파이프라인을 구현했습니다.
 
-- **LLM Systems**: LLM serving, embedding, VectorDB, RAG, SFT pipeline
-- **Agent Systems**: LangGraph, LangChain, LangSmith, memory, guardrails, streaming
-- **AI Platform Engineering**: Kubernetes, GPU serving, deployment architecture, observability
-- **Performance Optimization**: vLLM, batching, TTFT, throughput, GPU-efficient inference
-- **Vision AI**: medical image AI, detection, segmentation, edge AI
+학습 상태 파일과 Kubernetes Job/Pod 상태를 함께 확인해 성공·실패·진행 상태를 판정하는 로직을 구현했습니다. RAG의 검색·리랭킹·응답 생성 흐름을 분석하고, 서비스 로그와 사용자 피드백을 바탕으로 검색과 응답을 개선했습니다.
 
-## What I Build
+### Computer Vision 서비스
 
-- [[10_projects/LLM-SFT-Training-Platform|LLM SFT Training Platform]]
-- [[10_projects/Pressure-Ulcer-AI|Pressure Ulcer AI]]
-- [[10_projects/Fire-Detection-Robot|Fire Detection Robot]]
+하수관로 결함 탐지에서는 데이터 정제, YOLO 기반 탐지와 후처리, FastAPI·Docker를 이용한 웹 서비스 연동·배포를 맡았습니다. 배포 이후에도 사용자 피드백 대응과 유지보수를 이어갔습니다.
 
-## How I Work
+지능형 CCTV에서는 침입·배회 이벤트 탐지를 위한 데이터 라벨링·자동 라벨링, YOLO·OpenCV 기반 영상 처리와 FFmpeg 스트리밍 연계를 개발했습니다.
 
-모델 성능만 보는 것보다 데이터 흐름, 평가 기준, 추적 가능한 실험, 배포 구조, 운영 중 관측 가능성까지 함께 보는 것을 중요하게 생각합니다. 좋은 AI 시스템은 “모델이 동작한다”에서 끝나지 않고, 빠르고 안정적이며 재현 가능하고 실제 문제를 줄여야 한다고 믿습니다.
+### LLM Agent · 설계 및 구현 진행 중
 
-이 블로그에는 agent runtime, evaluation, observability, training pipeline, vision AI, GPU serving처럼 실제 구현에서 다시 꺼내 쓸 수 있는 노트를 정리합니다.
+사용자 요청을 Planning → Dispatch → Retrieval → Verify 단계로 연결하는 기능을 개발하고 있습니다. 서비스 시나리오와 단계별 입출력을 정의하고, 개발·검증용 데이터를 생성하며 아키텍처를 설계·구현하고 있습니다.
 
-## Links
+LangGraph·ReAct 기반 실행 흐름과 코드 검색·저장소 도구 연동을 구현했습니다. 사용자 승인(HITL), 세션 상태 관리와 도구 반복 호출 한도를 적용했습니다.
 
-- GitHub: [Lee-jun-young98](https://github.com/Lee-jun-young98)
-- Blog: [[blog/index|Blog]]
-- Paper Reviews: [[papers/index|Paper Reviews]]
-- Library Study Notes: [[libraries/index|Library Study Notes]]
+## 이 블로그에 남기는 기록
+
+[[papers/index|논문 리뷰]]와 [[libraries/index|개발 노트]]는 개인적으로 읽고 공부한 내용을 정리한 글입니다. 논문에서 제시한 결과나 라이브러리의 기능을 소개하는 내용은 제 실무 성과와 구분합니다.
+
+[[10_projects/index|프로젝트 글]]에는 직접 진행한 프로젝트와 개인 실습을 기록합니다. 직접 구현한 범위와 실험 결과를 기준으로 설명하고, 진행 중인 작업은 그 상태를 함께 적습니다.
+
+로봇과 VLA에도 관심을 갖고 논문을 읽으며 공부하고 있습니다. 이 분야의 기록은 현재 학습과 탐색 과정에 해당합니다.
+
+## 링크
+
+- [GitHub 프로필](https://github.com/Lee-jun-young98)
+- [[blog/index|글 모음]]

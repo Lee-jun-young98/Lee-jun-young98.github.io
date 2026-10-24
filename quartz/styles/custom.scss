@@ -225,6 +225,35 @@ body {
     margin-top: 1.25rem;
     font-size: 0.85rem;
   }
+  .home-work {
+    h2 {
+      font-size: 1.45rem;
+      letter-spacing: -0.035em;
+    }
+    dl {
+      margin: 1rem 0 0;
+    }
+    dl > div {
+      padding: 1rem 0;
+      border-top: 1px solid var(--lightgray);
+    }
+    dt {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    dd {
+      margin: 0.5rem 0 0;
+      font-size: 0.92rem;
+      line-height: 1.85;
+      word-break: keep-all;
+    }
+  }
+  .home-study-description {
+    margin-bottom: 1.35rem;
+    font-size: 0.92rem;
+    line-height: 1.85;
+    word-break: keep-all;
+  }
   .home-topics {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
