@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">VLA-Feedback의 저주파 계획과 고주파 feedback denoising 구조</title>
+  <desc id="desc">언어, 로봇 상태, 기준 관측을 VLM-DiT planner가 near-final action chunk로 만들고, 캐시된 action feature와 최신 hand-view를 feedback module이 융합해 매 행동의 마지막 denoising velocity를 갱신하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#334155"/></marker>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="#f8fafc"/>
+  <text x="55" y="58" font-family="sans-serif" font-size="30" font-weight="700" fill="#0f172a">VLA-Feedback — 마지막 denoising을 폐루프 feedback interface로</text>
+  <text x="55" y="92" font-family="sans-serif" font-size="17" fill="#475569">논문 Figure 1–2 · Sections 3.2–3.3 기반 재구성</text>
+
+  <g font-family="sans-serif">
+    <text x="60" y="142" font-size="18" font-weight="700" fill="#1e3a8a">느린 경로 · chunk마다 1회</text>
+    <rect x="55" y="165" width="230" height="118" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="170" y="202" text-anchor="middle" font-size="19" font-weight="700" fill="#1e3a8a">기준 입력</text>
+    <text x="170" y="234" text-anchor="middle" font-size="16" fill="#1e40af">언어 · robot state</text>
+    <text x="170" y="260" text-anchor="middle" font-size="16" fill="#1e40af">저주파 observation oₜ</text>
+
+    <rect x="370" y="155" width="300" height="138" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+    <text x="520" y="197" text-anchor="middle" font-size="21" font-weight="700" fill="#4c1d95">VLM + Diffusion Transformer</text>
+    <text x="520" y="230" text-anchor="middle" font-size="16" fill="#5b21b6">반복 denoising을 마지막 직전에 정지</text>
+    <text x="520" y="260" text-anchor="middle" font-size="17" fill="#5b21b6">near-final chunk  aᵏ⁻¹ₜ:ₜ₊ₕ₋₁</text>
+
+    <rect x="765" y="155" width="365" height="138" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="947" y="193" text-anchor="middle" font-size="20" font-weight="700" fill="#78350f">Action branch · 1회 계산 후 cache</text>
+    <text x="947" y="225" text-anchor="middle" font-size="15" fill="#92400e">action encoder → cross-attention</text>
+    <text x="947" y="250" text-anchor="middle" font-size="15" fill="#92400e">projection → cached feature eᵃ</text>
+
+    <line x1="55" y1="330" x2="1130" y2="330" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10 8"/>
+    <text x="60" y="370" font-size="18" font-weight="700" fill="#166534">빠른 경로 · 각 action 직전 16회</text>
+
+    <rect x="55" y="400" width="230" height="112" rx="16" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="170" y="440" text-anchor="middle" font-size="19" font-weight="700" fill="#14532d">최신 hand-view</text>
+    <text x="170" y="475" text-anchor="middle" font-size="17" fill="#166534">oₜ₊ₕ → lightweight encoder</text>
+
+    <rect x="370" y="390" width="300" height="132" rx="18" fill="#cffafe" stroke="#0891b2" stroke-width="3"/>
+    <text x="520" y="430" text-anchor="middle" font-size="21" font-weight="700" fill="#164e63">Feedback fusion</text>
+    <text x="520" y="462" text-anchor="middle" font-size="16" fill="#155e75">cached eᵃ + current eᵒ</text>
+    <text x="520" y="493" text-anchor="middle" font-size="15" fill="#155e75">Transformer + residual scale α</text>
+
+    <rect x="765" y="390" width="365" height="132" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+    <text x="947" y="428" text-anchor="middle" font-size="20" font-weight="700" fill="#7f1d1d">마지막 denoising velocity</text>
+    <text x="947" y="462" text-anchor="middle" font-size="17" fill="#991b1b">v̂ᶠᵇ → aᵏ = aᵏ⁻¹ + Δk v̂ᶠᵇ</text>
+    <text x="947" y="494" text-anchor="middle" font-size="16" fill="#991b1b">최신 관측을 반영한 현재 action 실행</text>
+
+    <rect x="250" y="575" width="700" height="65" rx="14" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+    <text x="600" y="601" text-anchor="middle" font-size="16" font-weight="700" fill="#334155">학습: 1) planner를 L₁로 학습  2) planner 고정 후 feedback만 L₂로 학습</text>
+    <text x="600" y="626" text-anchor="middle" font-size="16" fill="#475569">추론: planner : feedback : action = 1 : 16 : 16</text>
+  </g>
+
+  <g stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <line x1="285" y1="224" x2="365" y2="224"/>
+    <line x1="670" y1="224" x2="760" y2="224"/>
+    <path d="M947 293 L947 350 L650 350 L650 385"/>
+    <line x1="285" y1="456" x2="365" y2="456"/>
+    <line x1="670" y1="456" x2="760" y2="456"/>
+  </g>
+</svg>

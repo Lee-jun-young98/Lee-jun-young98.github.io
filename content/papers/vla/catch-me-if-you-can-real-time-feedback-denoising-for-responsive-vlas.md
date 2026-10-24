@@ -54,11 +54,32 @@ Planner는 action chunk의 마지막 denoising 직전 궤적을 생성하고 act
 
 학습은 두 단계다. 먼저 표준 flow-matching loss로 planner를 학습한 뒤 이를 고정하고, ground-truth action에 대한 회귀로 feedback component만 학습한다. 실험의 호출 비율은 planner:feedback:action = 1:16:16이다.
 
+# 핵심 그림
+
+![저주파 VLM-DiT planner가 만든 near-final action chunk와 cached action feature를 고주파 feedback module이 최신 관측으로 마지막 denoising하는 VLA-Feedback 구조](/papers/assets/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas/overview.svg)
+
+> 그림 1. VLA-Feedback의 두 시간척도 구조. 원 논문 [Figure 1–2와 Sections 3.2–3.3](https://arxiv.org/html/2609.21022v1#S3.SS2)를 바탕으로 재구성했다. 원 논문의 핵심 기여가 최종 행동에 residual을 더하는 것이 아니라 **마지막 denoising 단계 자체를 feedback interface로 바꾸는 것**이어서, 대표 실험 장면보다 아키텍처 흐름을 선택했다.
+
+입력은 저주파 경로의 언어·로봇 상태·기준 관측과, 매 제어 시점 새로 들어오는 고주파 hand-view로 나뉜다. VLM-DiT planner는 chunk마다 한 번 실행해 near-final trajectory $\mathbf{a}^{k-1}$와 action feature $\mathbf{e}^{a}$를 만들고 캐시한다. 이후 feedback module은 현재 시점의 cached action feature와 최신 영상 feature를 cross-attention으로 융합하고, 학습 가능한 $\alpha$로 수정 폭을 제한한 뒤 $\hat v^{fb}$를 예측한다. 출력은 $a^{k}=a^{k-1}+\Delta k\hat v^{fb}$이며, 같은 planner를 다시 호출하지 않고 각 행동 직전에 최신 관측을 반영한다.
+
+학습 단계에서는 먼저 flow-matching loss $\mathcal{L}_1$로 planner를 학습하고, 두 번째 단계에서 planner를 고정한 채 feedback component만 ground-truth action 회귀 loss $\mathcal{L}_2$로 학습한다. 추론에서는 이 분리가 `planner:feedback:action = 1:16:16` 호출 비율로 이어진다. 기존 open-loop chunking과 달라진 지점은 느린 의미 계획을 유지하면서도 chunk 내부의 마지막 생성 단계를 10 Hz 폐루프 제어로 만든 것이다.
+
 # Experiments / Results
 
 정적 LIBERO에서는 GR00T와 거의 같은 성능을 유지했다(Goal 92% 대 92%, Object 95.5% 대 97.5%). 반면 세 동적 시뮬레이션 과업 평균은 GR00T 27.5%에서 85.0%로 상승했고, 실제 로봇 세 과업 평균은 51%에서 73%로 올랐다.
 
 Feedback inference 자체는 약 1.95 ms였고 예상 reaction latency는 $2\text{ ms}+\frac{1}{2}\Delta t$로 비교군 중 가장 짧았다. 다만 실제 hardware의 end-to-end feedback path는 카메라 노출·전송을 포함해 71.01 ms였다. 시각 입력 제거, feedback 빈도 감소, final action residual 방식은 특히 동적 과업 성능을 크게 낮췄다.
+
+## 주요 실험 결과
+
+| 평가 설정 / 지표 (단위, ↑)        | VLA-Feedback | 동일 planner 기준 GR00T |    차이 | 출처                                                       |
+| --------------------------------- | -----------: | ----------------------: | ------: | ---------------------------------------------------------- |
+| LIBERO-Goal 성공률                |        92.0% |                   92.0% |   0.0%p | 원 논문 Table 1                                            |
+| LIBERO-Object 성공률              |        95.5% |                   97.5% |  -2.0%p | 원 논문 Table 1                                            |
+| 동적 시뮬레이션 3과업 평균 성공률 |        85.0% |                   27.5% | +57.5%p | 원 논문 Table 1; 1D/2D toy pick-up 및 moving-cup drop 평균 |
+| 실제 Panda 3과업 평균 성공률      |        73.0% |                   51.0% | +22.0%p | 원 논문 Figure 4; 과업별 20 rollouts                       |
+
+가장 중요한 비교는 동일한 GR00T VLM-DiT planner, action horizon, control frequency를 유지한 동적 시뮬레이션 결과다. 정적 LIBERO에서는 차이가 0.0~-2.0%p에 그치지만, 목표가 chunk 실행 중 움직이면 +57.5%p가 된다. 즉 성능 향상은 더 큰 backbone이나 다른 demonstration 때문이 아니라, stale chunk를 각 action 직전에 최신 영상으로 마지막 denoising한 효과로 해석할 수 있다. Table 2의 module runtime도 VLA-Feedback의 빠른 경로가 2 ms로, FiS-VLA의 40 ms fast module보다 38 ms 짧다고 보고한다. 다만 이 수치는 모델 측 update 시간이며 실제 카메라·전송·제어 stack 전체 지연과 동일하지 않다.
 
 # Limitations / Discussion
 
