@@ -5,6 +5,18 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
+### [FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models](/papers/vla/focusvla-future-intent-guided-view-routing)
+
+![](/papers/assets/vla/focusvla-future-intent-guided-view-routing/overview.svg)
+
+### [FRED: Self-Distilling Future Video Representations for World Action Models](/papers/vla/fred-self-distilling-future-video-representations)
+
+![](/papers/assets/vla/fred-self-distilling-future-video-representations/overview.svg)
+
+### [UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry](/papers/vla/uniflowwam-visual-semantics-and-4d-geometry)
+
+![](/papers/assets/vla/uniflowwam-visual-semantics-and-4d-geometry/overview.svg)
+
 ### [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
