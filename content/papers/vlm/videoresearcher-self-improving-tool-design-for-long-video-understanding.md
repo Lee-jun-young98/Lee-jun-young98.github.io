@@ -10,6 +10,7 @@ authors: "Dingqiang Ye, Dongdi Zhao, Kaishen Wang, Qingqiao Hu, Jingchen Sun, Yi
 paper: "https://arxiv.org/abs/2609.19664"
 code: ""
 project: ""
+thumbnail: "/papers/assets/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding/videoresearcher-dual-loop.svg"
 ---
 
 # 한 줄 요약
@@ -42,7 +43,29 @@ VideoResearcher는 장문 비디오 질의응답을 수행하는 **Solving Loop*
 - Debugger가 등록·실행·스키마를 검사한 뒤, 고정된 Worker·perception model·시드로 기존 도구 상자와 후보를 같은 300개 ALLVB 개발 문제에서 비교한다. 정확도가 엄격히 증가한 후보만 채택한다.
 - 검증기는 새 도구가 실제로 호출되었는지, 어떤 증거가 추가되었는지, 정답 변화와 어떻게 연결되는지를 기록하고 성공·실패 사례를 경험 메모리에 누적한다.
 
+# 핵심 그림
+
+![VideoResearcher의 고정 Worker·지각 모델 사이에서 도구 상자를 사용하는 Solving Loop와 실패 궤적에서 새 도구를 만들어 역검증하는 Evolving Loop](/papers/assets/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding/videoresearcher-dual-loop.svg)
+
+> 그림 1. VideoResearcher의 이중 루프 구조. 원 논문 [Figure 2](https://arxiv.org/html/2609.19664#S3.F2)와 식 (1)–(8)을 바탕으로 재구성했다. 원문은 arXiv non-exclusive license이므로 원본 그림을 복제하지 않고 흐름을 한국어로 다시 그렸다.
+
+이 글에서는 개별 실패 사례보다 **고정된 모델 사이의 도구 계층만 진화한다는 설계 경계**가 핵심이라서 구조 그림을 골랐다. 위쪽 Solving Loop에서 입력 비디오와 질문은 고정 Worker의 도구 호출, 현재 toolbox의 시간 분할·프레임 선택, 고정 perception model의 텍스트 관찰을 거쳐 답과 실행 궤적 `τ`를 만든다. 아래쪽 Evolving Loop는 이 궤적과 정답을 받아 `진단 → 명세·코딩 → 디버그·동일 조건 역검증 → 검증·기억`을 수행한다.
+
+학습 시 가중치를 업데이트하는 구조가 아니다. 진화 단계에서 후보 도구 `g̃`의 개발 정확도 `A_val`이 기존 toolbox보다 **엄격히 높을 때만** `T^(r+1)`에 채택하며, 성공·실패 모두 experience memory에 남긴다. 추론 시에는 frozen toolbox와 두 고정 모델만 사용하므로 Evolving Loop와 reference answer는 빠지고, Worker가 새 관찰 절차를 호출해 답을 낸다. 기존 프롬프트 최적화와 달라진 핵심은 관찰 능력을 담은 실행 코드가 업데이트 단위라는 점이다.
+
 # Experiments / Results
+
+## 주요 실험 결과
+
+| 방법 (동일 Base·Worker·지각 모델·20-round 예산) | LVBench Overall (%) ↑ | LongVideoBench Overall (%) ↑ | Video-MME Overall (%) ↑ | 3개 평균 (%) ↑ | Base 대비 평균 차이 |
+| ----------------------------------------------- | --------------------: | ---------------------------: | ----------------------: | -------------: | ------------------: |
+| VideoResearcher (w/o Evolution, Base)           |                  66.9 |                         73.2 |                    76.3 |           72.1 |                   — |
+| SkillOpt                                        |                  64.8 |                         66.5 |                    78.1 |           69.8 |              -2.3%p |
+| AutoResearch                                    |                  66.8 |                         73.0 |                    75.2 |           71.7 |              -0.4%p |
+| Meta-Harness                                    |                  67.1 |                         74.9 |                    78.4 |           73.5 |              +1.4%p |
+| **VideoResearcher**                             |              **68.4** |                     **75.0** |                **80.2** |       **74.5** |          **+2.4%p** |
+
+출처: 원 논문 [Table 1](https://arxiv.org/html/2609.19664#S3.T1). 별표가 붙은 자기개선 방법들은 같은 Base, 고정 Worker·perception model, 추론 제한, 초기 `ask_video`, 300개 개발 문항, 20-round 진화 예산을 사용한다. 따라서 이 표 안에서는 자기개선 전략의 차이를 직접 비교할 수 있다. VideoResearcher는 가장 강한 비교 기준인 Meta-Harness보다 평균 **+1.0%p**, Base보다 **+2.4%p** 높으며, 세 벤치마크 모두 Base를 개선한다. 인간 설계 agent와 META는 원 논문의 별도 공개 설정이어서 이 동일 조건 표에서 제외했다.
 
 - LVBench, LongVideoBench, Video-MME의 전체 정확도 평균이 기본 에이전트 72.1에서 74.5로 2.4점 상승했다.
 - 동일한 기본 에이전트와 진화 예산을 사용한 자기개선 방법과 비교해 SkillOpt 69.8, AutoResearch 71.7, Meta-Harness 73.5보다 높은 74.5를 기록했다.
