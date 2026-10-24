@@ -1,0 +1,178 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">TRIAD 벤치마크 구성과 평가 파이프라인</title>
+  <desc id="desc">
+    텍스트, 이미지, 오디오가 함께 있어야 정답이 유일한 항목을 검수하고, 한 모달리티씩 바꾼 장면
+    그룹을 만든 뒤, 전체 및 부분 입력에서 옴니모달 모델의 질의 정확도와 그룹 정확도를 측정한다.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.13" />
+    </filter>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="8"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569" />
+    </marker>
+    <style>
+      .h1 {
+        font:
+          700 28px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .h2 {
+        font:
+          700 18px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          14px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          12px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .metric {
+        font:
+          700 18px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #312e81;
+      }
+      .card {
+        fill: #ffffff;
+        stroke: #cbd5e1;
+        stroke-width: 1.5;
+        filter: url(#shadow);
+      }
+      .arrow {
+        fill: none;
+        stroke: #475569;
+        stroke-width: 2.5;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="24" fill="url(#bg)" />
+  <text x="52" y="52" class="h1">TRIAD: 세 모달리티가 모두 결론을 바꾸는가?</text>
+  <text x="52" y="78" class="body">Figure 1 · Definition 1 · Sections 3–5를 바탕으로 재구성</text>
+
+  <rect x="44" y="110" width="230" height="380" rx="20" class="card" />
+  <text x="66" y="144" class="h2">1. Tri-modal 입력</text>
+  <rect x="66" y="170" width="186" height="68" rx="14" fill="#dbeafe" stroke="#60a5fa" />
+  <text x="83" y="199" class="h2">텍스트 T</text>
+  <text x="83" y="220" class="small">문맥 · 질문 · 선택지</text>
+  <rect x="66" y="254" width="186" height="68" rx="14" fill="#dcfce7" stroke="#4ade80" />
+  <text x="83" y="283" class="h2">이미지 V</text>
+  <text x="83" y="304" class="small">공간 · 객체 · 장면 단서</text>
+  <rect x="66" y="338" width="186" height="68" rx="14" fill="#ffedd5" stroke="#fb923c" />
+  <text x="83" y="367" class="h2">오디오 A</text>
+  <text x="83" y="388" class="small">운율 · 화자 · 환경음</text>
+  <text x="66" y="444" class="body">327 queries</text>
+  <text x="66" y="466" class="body">18 ambiguity leaves</text>
+
+  <path d="M274 300 H318" class="arrow" />
+
+  <rect x="326" y="110" width="270" height="380" rx="20" class="card" />
+  <text x="348" y="144" class="h2">2. 5인 well-posedness 검수</text>
+  <rect x="348" y="174" width="226" height="92" rx="14" fill="#ede9fe" stroke="#8b5cf6" />
+  <text x="365" y="202" class="h2">전체 T + V + A</text>
+  <text x="365" y="231" class="metric">|Y| = 1</text>
+  <text x="365" y="251" class="small">정답이 정확히 하나</text>
+  <rect x="348" y="282" width="226" height="132" rx="14" fill="#fef2f2" stroke="#f87171" />
+  <text x="365" y="310" class="h2">모든 2-modal view</text>
+  <text x="365" y="338" class="body">T+V · T+A · V+A</text>
+  <text x="365" y="370" class="metric">|Y| &gt; 1</text>
+  <text x="365" y="394" class="small">어느 쌍도 답을 확정 못함</text>
+  <text x="348" y="450" class="small">decorative modality · option leak 제거</text>
+
+  <path d="M596 300 H640" class="arrow" />
+
+  <rect x="648" y="110" width="234" height="380" rx="20" class="card" />
+  <text x="670" y="144" class="h2">3. Scene group</text>
+  <text x="670" y="169" class="small">한 단서만 바꾼 sister query</text>
+  <rect x="670" y="194" width="190" height="58" rx="12" fill="#f1f5f9" stroke="#94a3b8" />
+  <text x="688" y="220" class="body">Sister A · audio ↗</text>
+  <text x="688" y="240" class="small">정답 A</text>
+  <rect x="670" y="266" width="190" height="58" rx="12" fill="#f1f5f9" stroke="#94a3b8" />
+  <text x="688" y="292" class="body">Sister B · audio ↘</text>
+  <text x="688" y="312" class="small">정답 B</text>
+  <rect x="670" y="338" width="190" height="58" rx="12" fill="#f1f5f9" stroke="#94a3b8" />
+  <text x="688" y="364" class="body">Sister C · image Δ</text>
+  <text x="688" y="384" class="small">정답 C</text>
+  <text x="670" y="432" class="body">86 groups</text>
+  <text x="670" y="454" class="small">group size 2 · 3 · 4 · 8</text>
+
+  <path d="M882 300 H926" class="arrow" />
+
+  <rect x="934" y="110" width="222" height="380" rx="20" class="card" />
+  <text x="956" y="144" class="h2">4. 모델 진단</text>
+  <text x="956" y="169" class="small">14 omni-modal systems</text>
+  <rect x="956" y="194" width="178" height="84" rx="14" fill="#e0e7ff" stroke="#818cf8" />
+  <text x="973" y="220" class="body">입력 조건</text>
+  <text x="973" y="243" class="small">Full · single · leave-one-out</text>
+  <text x="973" y="263" class="small">no-input counterfactual</text>
+  <rect x="956" y="292" width="178" height="74" rx="14" fill="#ecfeff" stroke="#22d3ee" />
+  <text x="973" y="318" class="body">Prompt</text>
+  <text x="973" y="342" class="small">Std · CoT · Open-ended</text>
+  <rect x="956" y="380" width="178" height="78" rx="14" fill="#faf5ff" stroke="#c084fc" />
+  <text x="973" y="406" class="body">출력 지표</text>
+  <text x="973" y="430" class="small">Acc_q · Acc_g · flip</text>
+  <text x="973" y="449" class="small">shortcut / cue sensitivity</text>
+
+  <rect x="44" y="520" width="1112" height="70" rx="18" fill="#312e81" />
+  <text
+    x="68"
+    y="551"
+    style="
+      font:
+        700 18px Arial,
+        &quot;Noto Sans KR&quot;,
+        sans-serif;
+      fill: #ffffff;
+    "
+  >
+    핵심 관찰
+  </text>
+  <text
+    x="68"
+    y="576"
+    style="
+      font:
+        14px Arial,
+        &quot;Noto Sans KR&quot;,
+        sans-serif;
+      fill: #e0e7ff;
+    "
+  >
+    최상위 모델: query 90.4% → group 71.2% · option 제거 시 group 4.6% · group size 2→8에서 평균
+    Acc_g 51.8%→8.9%
+  </text>
+</svg>

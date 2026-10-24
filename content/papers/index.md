@@ -353,6 +353,10 @@ paper_sync: true
 
 ### [The Alignment Illusion in Multimodal Large Language Models](/papers/vlm/the-alignment-illusion-in-multimodal-large-language-models)
 
+### [TRIAD: Benchmarking Omni-Modal Ambiguity in Multimodal Large Language Models](/papers/vlm/triad-benchmarking-omni-modal-ambiguity-in-multimodal-large-language-models)
+
+![](/papers/assets/vlm/triad-benchmarking-omni-modal-ambiguity-in-multimodal-large-language-models/triad-evaluation-pipeline.svg)
+
 ### [VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding](/papers/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding)
 
 ![](/papers/assets/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding/videoevolve-architecture.svg)
