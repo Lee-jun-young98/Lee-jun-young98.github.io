@@ -5,18 +5,6 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
-### [FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models](/papers/vla/focusvla-future-intent-guided-view-routing)
-
-![](/papers/assets/vla/focusvla-future-intent-guided-view-routing/overview.svg)
-
-### [FRED: Self-Distilling Future Video Representations for World Action Models](/papers/vla/fred-self-distilling-future-video-representations)
-
-![](/papers/assets/vla/fred-self-distilling-future-video-representations/overview.svg)
-
-### [UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry](/papers/vla/uniflowwam-visual-semantics-and-4d-geometry)
-
-![](/papers/assets/vla/uniflowwam-visual-semantics-and-4d-geometry/overview.svg)
-
 ### [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -109,6 +97,10 @@ paper_sync: true
 
 ### [Find Something You Can't Do: Agentic Real-World Reinforcement Learning for Self-Improving VLA Models](/papers/vla/find-agentic-real-world-reinforcement-learning-for-self-improving-vla-models)
 
+### [FocusVLA: Future-Intent Guided Dynamic View Routing for Vision-Language-Action Models](/papers/vla/focusvla-future-intent-guided-view-routing)
+
+![](/papers/assets/vla/focusvla-future-intent-guided-view-routing/overview.svg)
+
 ### [ForceWAM: Decoupling Future and Response Learning from Demo and Play Data](/papers/vla/forcewam-visual-wrench-futures-for-contact-rich-manipulation)
 
 ![](/papers/assets/vla/forcewam-visual-wrench-futures-for-contact-rich-manipulation/overview.svg)
@@ -120,6 +112,10 @@ paper_sync: true
 ![](/papers/assets/vla/forward-dynamics-models-action-to-future-learning/overview.svg)
 
 ### [FRAM: Trajectory-Guided Visual Feature Selection for Compact Language-Conditioned Robot Manipulation](/papers/vla/fram-trajectory-guided-visual-feature-selection-for-compact-robot-manipulation)
+
+### [FRED: Self-Distilling Future Video Representations for World Action Models](/papers/vla/fred-self-distilling-future-video-representations)
+
+![](/papers/assets/vla/fred-self-distilling-future-video-representations/overview.svg)
 
 ### [GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments](/papers/vla/gala-geometry-aware-latent-action-modeling-for-vla-pretraining-across-embodiments)
 
@@ -246,6 +242,10 @@ paper_sync: true
 ### [UMI-WM: Interactive World Modeling for Bimanual Manipulation from Wrist Cameras](/papers/vla/umi-wm-bimanual-wrist-camera-world-model)
 
 ![](/papers/assets/vla/umi-wm-bimanual-wrist-camera-world-model/overview.svg)
+
+### [UniFlowWAM: A Unified World-Action Model with Visual Semantics and 4D Geometry](/papers/vla/uniflowwam-visual-semantics-and-4d-geometry)
+
+![](/papers/assets/vla/uniflowwam-visual-semantics-and-4d-geometry/overview.svg)
 
 ### [UNITAS: A 3D-Native World Action Model for Embodied Manipulation](/papers/vla/unitas-3d-native-world-action-model)
 
@@ -374,6 +374,8 @@ paper_sync: true
 ![](/papers/assets/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding/videoevolve-architecture.svg)
 
 ### [VideoResearcher: Self-Improving Tool Design for Long-Video Understanding](/papers/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding)
+
+![](/papers/assets/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding/videoresearcher-dual-loop.svg)
 
 ### [VideoScout: Learning Agentic Active Exploration with Adaptive Reasoning Pacing for Long Video Understanding](/papers/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding)
 

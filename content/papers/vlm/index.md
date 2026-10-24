@@ -97,6 +97,8 @@ paper_sync: true
 
 ## [VideoResearcher: Self-Improving Tool Design for Long-Video Understanding](/papers/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding)
 
+![](/papers/assets/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding/videoresearcher-dual-loop.svg)
+
 ## [VideoScout: Learning Agentic Active Exploration with Adaptive Reasoning Pacing for Long Video Understanding](/papers/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding)
 
 ![](/papers/assets/vlm/videoscout-learning-agentic-active-exploration-with-adaptive-reasoning-pacing-for-long-video-understanding/videoscout-sea-pipeline.svg)
