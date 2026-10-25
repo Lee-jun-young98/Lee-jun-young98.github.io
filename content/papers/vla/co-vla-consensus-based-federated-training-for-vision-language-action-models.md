@@ -53,8 +53,30 @@ VLA scaling의 핵심 자원인 robot trajectory는 웹 데이터처럼 쉽게 �
 각 client는 로컬 VLA loss를 최소화하면서 자신의 parameter가 global consensus variable과 일치하도록 augmented Lagrangian penalty를 받는다. 중앙 server는 client update를 모아 global variable과 dual variable을 갱신한다. 단순 평균보다 client drift를 명시적으로 제어해 이질적인 데이터 분포를 다룬다.
 
 LoRA fine-tuning에서는 완성된 weight update를 평균내기보다 low-rank factor에 직접 consensus를 적용한다. SoRA 변형은 학습 가능한 gate로 rank를 pruning해 client 간 공통 adapter를 더 작은 parameter budget으로 만든다.
+# 핵심 그림
+
+![서로 다른 로봇 클라이언트가 로컬 VLA를 학습하고 ADMM의 primal, dual, consensus 갱신을 거쳐 공통 VLA를 만드는 Co-VLA 구조](/papers/assets/vla/co-vla-consensus-based-federated-training-for-vision-language-action-models/overview.svg)
+
+> 그림 1. Co-VLA의 동기식 federated VLA 학습 흐름. 원 논문 [Figure 1, Algorithm 1, 식 (1)–(4)](https://arxiv.org/html/2609.19923v1)을 바탕으로 재구성했다. 원본 Figure 1은 전체 연합 학습 구성을 가장 직접적으로 보여 주므로 구조 그림을 선택했고, 재구성본에는 논문의 핵심 차별점인 dual-variable 누적과 LoRA/SoRA consensus까지 함께 표시했다.
+
+입력은 각 기관·로봇이 보유한 서로 다른 로컬 궤적 $\mathcal{D}_i$이고, 각 client는 현재 global parameter $\mathbf{z}^k$를 받은 뒤 로컬 action-supervision loss와 $\frac{\rho}{2}\lVert\mathbf{x}_i-\mathbf{z}^k+\mathbf{u}_i\rVert_2^2$를 함께 최소화한다. 여기서 dual variable $\mathbf{u}_i$는 이전 round부터 누적된 local-global 불일치를 기억하고, $\rho$는 합의 강도를 조절한다.
+
+학습 때 server는 over-relaxed local parameter $\widehat{\mathbf{x}}_i^{k+1}$와 dual variable을 모아 $\mathbf{z}^{k+1}=\frac{1}{N}\sum_i(\widehat{\mathbf{x}}_i^{k+1}+\mathbf{u}_i^k)$로 공통 모델을 갱신한 뒤 다시 모든 client에 방송한다. Full-model이면 $\mathbf{x}$가 전체 VLA parameter이고, LoRA이면 $\{\mathbf{A},\mathbf{B}\}$, SoRA이면 gate $\mathbf{g}$까지 consensus 대상이다. SoRA의 server 단계에는 soft threshold가 추가돼 0이 된 rank component를 제거한다.
+
+추론 때는 이 연합 학습 loop나 server가 필요하지 않다. 합의된 global VLA 하나가 관측·언어 지시를 받아 action chunk를 출력한다. FedAvg가 독립적으로 drift한 parameter를 단순 평균하는 것과 달리, Co-VLA는 학습 중 local model이 global variable에 가까워지도록 primal penalty와 dual correction을 명시적으로 둔다는 점이 핵심이다.
 
 # Experiments / Results
+
+## 주요 실험 결과
+
+| 로봇 / 태스크 / 지표 (단위, ↑/↓) | Co-VLA | 비교 기준 | 차이 | 출처 |
+| --- | ---: | ---: | ---: | --- |
+| X-VLA LoRA, LIBERO-Object 성공률 (900 communication rounds, %, ↑) | 97.0 | FlexLoRA 62.0 | +35.0%p | Table IV |
+| X-VLA LoRA, LIBERO-Long 성공률 (900 communication rounds, %, ↑) | 78.0 | 중앙집중 학습 74.0 | +4.0%p | Table IV |
+| SO-101 실제 Stack 성공률 (40 trials, %, ↑) | 97.5 | DiLoCo 67.5 | +30.0%p | Table VII |
+| 혼합 실제 데이터 open-loop 상대 action error (중앙집중 대비 평균, %, ↓) | +1.3 | FedAvg +4.3 | -3.0%p | Table VI |
+
+첫 행의 FlexLoRA는 Co-VLA와 같은 900 communication-round budget이다. 논문은 FlexLoRA를 2,500 rounds까지 늘려도 Object 성공률이 70.0%에 그쳤다고 보고하므로, 이 차이는 단순히 더 긴 통신·학습에서 나온 결과가 아니다. 실제 SO-101 실험도 모든 방법을 과업당 40회, 물체 위치를 demonstration보다 약 1–2 cm 이동한 같은 조건에서 비교했다.
 
 SmolVLA를 처음부터 학습한 LIBERO 성공률에서 Co-VLA는 Spatial/Object/Goal/Long 각각 0.80/0.91/0.92/0.71을 기록해 중앙집중 학습 0.81/0.95/0.94/0.70에 가까웠다. FedAvg는 0.76/0.89/0.91/0.63이었다.
 
