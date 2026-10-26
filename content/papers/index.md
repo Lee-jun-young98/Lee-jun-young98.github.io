@@ -5,18 +5,6 @@ paper_sync: true
 
 ## [VLA](/papers/vla/)
 
-### [Backtrack: Lightweight Recovery for Frozen VLAs](/papers/vla/backtrack-lightweight-recovery-for-frozen-vlas)
-
-![](/papers/assets/vla/backtrack-lightweight-recovery-for-frozen-vlas/overview.svg)
-
-### [Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](/papers/vla/horizon-depth-coupling-in-flow-matching-vla-policies)
-
-![](/papers/assets/vla/horizon-depth-coupling-in-flow-matching-vla-policies/overview.svg)
-
-### [MAST-VLA: Skill-Conditioned Adaptation with Trajectory-Affordance Priors](/papers/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors)
-
-![](/papers/assets/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors/overview.svg)
-
 ### [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -32,6 +20,10 @@ paper_sync: true
 ### [AutoPruner: Agentic Depth Pruning for Vision-Language-Action Models](/papers/vla/autopruner-agentic-depth-pruning-for-vlas)
 
 ![](/papers/assets/vla/autopruner-agentic-depth-pruning-for-vlas/overview.svg)
+
+### [Backtrack: Lightweight Recovery for Frozen VLAs](/papers/vla/backtrack-lightweight-recovery-for-frozen-vlas)
+
+![](/papers/assets/vla/backtrack-lightweight-recovery-for-frozen-vlas/overview.svg)
 
 ### [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
@@ -60,6 +52,10 @@ paper_sync: true
 ### [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
 
 ### [Correcting WHERE, Preserving HOW: Compositional Generalization for Vision-Language-Action Models via Referential Guidance](/papers/vla/correcting-where-preserving-how-referential-guidance-for-vlas)
+
+### [Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](/papers/vla/horizon-depth-coupling-in-flow-matching-vla-policies)
+
+![](/papers/assets/vla/horizon-depth-coupling-in-flow-matching-vla-policies/overview.svg)
 
 ### [Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](/papers/vla/cue-the-flow-steering-flow-matching-policies)
 
@@ -166,6 +162,10 @@ paper_sync: true
 ### [Many Ways to Succeed: Diversity-Driven RL Fine-Tuning for VLA Generalization](/papers/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization)
 
 ![](/papers/assets/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization/overview.svg)
+
+### [MAST-VLA: Skill-Conditioned Adaptation with Trajectory-Affordance Priors](/papers/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors)
+
+![](/papers/assets/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors/overview.svg)
 
 ### [MiniWAM: Learning Compact Future Targets for Efficient World-Action Modeling](/papers/vla/miniwam-compact-future-targets-for-world-action-modeling)
 
@@ -337,10 +337,6 @@ paper_sync: true
 
 ### [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
-### [The Answer Knows Where to Look: Zooming before MLLMs Answer under Visual-Token Budgets](/papers/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer)
-
-![](/papers/assets/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer/lookzoom-architecture.svg)
-
 ### [MMSearch-OPD: Easy Made Hard, Hard Made Learnable for Long-Horizon Multimodal Search Agents](/papers/vlm/mmsearch-opd-long-horizon-multimodal-search-agents)
 
 ![](/papers/assets/vlm/mmsearch-opd-long-horizon-multimodal-search-agents/mmsearch-opd-pipeline.svg)
@@ -380,6 +376,10 @@ paper_sync: true
 ![](/papers/assets/vlm/syn-omni-structured-specialization-and-progressive-collaboration-for-omnimodal-embeddings/syn-omni-architecture.svg)
 
 ### [The Alignment Illusion in Multimodal Large Language Models](/papers/vlm/the-alignment-illusion-in-multimodal-large-language-models)
+
+### [The Answer Knows Where to Look: Zooming before MLLMs Answer under Visual-Token Budgets](/papers/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer)
+
+![](/papers/assets/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer/lookzoom-architecture.svg)
 
 ### [TRIAD: Benchmarking Omni-Modal Ambiguity in Multimodal Large Language Models](/papers/vlm/triad-benchmarking-omni-modal-ambiguity-in-multimodal-large-language-models)
 

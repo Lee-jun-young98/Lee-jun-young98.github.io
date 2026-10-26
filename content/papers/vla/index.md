@@ -3,18 +3,6 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [Backtrack: Lightweight Recovery for Frozen VLAs](/papers/vla/backtrack-lightweight-recovery-for-frozen-vlas)
-
-![](/papers/assets/vla/backtrack-lightweight-recovery-for-frozen-vlas/overview.svg)
-
-## [Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](/papers/vla/horizon-depth-coupling-in-flow-matching-vla-policies)
-
-![](/papers/assets/vla/horizon-depth-coupling-in-flow-matching-vla-policies/overview.svg)
-
-## [MAST-VLA: Skill-Conditioned Adaptation with Trajectory-Affordance Priors](/papers/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors)
-
-![](/papers/assets/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors/overview.svg)
-
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -30,6 +18,10 @@ paper_sync: true
 ## [AutoPruner: Agentic Depth Pruning for Vision-Language-Action Models](/papers/vla/autopruner-agentic-depth-pruning-for-vlas)
 
 ![](/papers/assets/vla/autopruner-agentic-depth-pruning-for-vlas/overview.svg)
+
+## [Backtrack: Lightweight Recovery for Frozen VLAs](/papers/vla/backtrack-lightweight-recovery-for-frozen-vlas)
+
+![](/papers/assets/vla/backtrack-lightweight-recovery-for-frozen-vlas/overview.svg)
 
 ## [BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models](/papers/vla/bee-intervention-adaptive-real-world-reinforcement-learning-with-vision-language-action-models)
 
@@ -58,6 +50,10 @@ paper_sync: true
 ## [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
 
 ## [Correcting WHERE, Preserving HOW: Compositional Generalization for Vision-Language-Action Models via Referential Guidance](/papers/vla/correcting-where-preserving-how-referential-guidance-for-vlas)
+
+## [Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](/papers/vla/horizon-depth-coupling-in-flow-matching-vla-policies)
+
+![](/papers/assets/vla/horizon-depth-coupling-in-flow-matching-vla-policies/overview.svg)
 
 ## [Cue the Flow: Steering Flow-Matching Policies for Open-World Delivery Manipulation](/papers/vla/cue-the-flow-steering-flow-matching-policies)
 
@@ -164,6 +160,10 @@ paper_sync: true
 ## [Many Ways to Succeed: Diversity-Driven RL Fine-Tuning for VLA Generalization](/papers/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization)
 
 ![](/papers/assets/vla/drive-diversity-driven-rl-finetuning-for-vla-generalization/overview.svg)
+
+## [MAST-VLA: Skill-Conditioned Adaptation with Trajectory-Affordance Priors](/papers/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors)
+
+![](/papers/assets/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors/overview.svg)
 
 ## [MiniWAM: Learning Compact Future Targets for Efficient World-Action Modeling](/papers/vla/miniwam-compact-future-targets-for-world-action-modeling)
 
