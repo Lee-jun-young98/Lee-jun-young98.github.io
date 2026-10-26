@@ -1,0 +1,157 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="680"
+  viewBox="0 0 1200 680"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">LookZoom 학습 및 추론 구조</title>
+  <desc id="desc">
+    저해상도 이미지와 질문을 look 토큰으로 처리해 위치 포인터와 확대 방식을 정하고, 원본 이미지에서
+    선택 view를 만든 뒤 별도 reader가 답하는 흐름. 학습 시 올바른 답변 attention과 모든 view의
+    counterfactual 점수를 사용한다.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbff" />
+      <stop offset="1" stop-color="#eef3ff" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#355070" />
+    </marker>
+    <style>
+      .h {
+        font:
+          700 26px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #17233c;
+      }
+      .t {
+        font:
+          600 17px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #17233c;
+      }
+      .s {
+        font:
+          14px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #35415c;
+      }
+      .xs {
+        font:
+          12px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #526079;
+      }
+      .box {
+        stroke: #355070;
+        stroke-width: 2;
+        rx: 16;
+      }
+      .a {
+        fill: none;
+        stroke: #355070;
+        stroke-width: 2.5;
+        marker-end: url(#arrow);
+      }
+      .train {
+        fill: none;
+        stroke: #b35c00;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)" />
+  <text x="50" y="48" class="h">LookZoom: 답변 전에 ‘미래의 정답이 볼 곳’을 찾는다</text>
+  <text x="50" y="75" class="s">
+    논문 Figure 4와 식 (1)–(3)을 바탕으로 재구성 · 실선: 추론 · 점선: 학습 전용
+  </text>
+
+  <rect x="45" y="125" width="180" height="150" class="box" fill="#dcecff" />
+  <text x="135" y="155" text-anchor="middle" class="t">입력</text>
+  <rect x="70" y="172" width="68" height="62" fill="#fff" stroke="#527aa3" rx="6" />
+  <path d="M78 220 L94 196 L106 208 L121 187 L132 220Z" fill="#91b6da" />
+  <text x="151" y="190" class="s">저해상도 view v</text>
+  <text x="151" y="213" class="s">질문 q</text>
+  <text x="151" y="236" class="s">예산 B</text>
+
+  <path d="M225 200 H275" class="a" />
+  <rect x="275" y="105" width="245" height="190" class="box" fill="#e8def8" />
+  <text x="397" y="138" text-anchor="middle" class="t">① 전용 &lt;look&gt; prefill</text>
+  <text x="298" y="169" class="s">[image tokens, q, &lt;look&gt;]</text>
+  <text x="298" y="196" class="s">중간층 attention → 위치 분포</text>
+  <text x="397" y="224" text-anchor="middle" class="t">g_look = N(Gσ * Σ attention)</text>
+  <text x="298" y="254" class="s">hidden state → view 선택 특징</text>
+  <text x="298" y="279" class="xs">position-specific LoRA는 look 위치에만 작동</text>
+
+  <path d="M520 170 H575" class="a" />
+  <rect x="575" y="105" width="220" height="190" class="box" fill="#daf3e7" />
+  <text x="685" y="138" text-anchor="middle" class="t">② 어디서 / 어떻게</text>
+  <text x="598" y="172" class="s">pointer: evidence 위치</text>
+  <rect x="610" y="190" width="72" height="66" fill="#fff" stroke="#39866a" rx="5" />
+  <circle cx="656" cy="220" r="18" fill="#ef8354" opacity=".7" />
+  <text x="698" y="207" class="s">action head</text>
+  <text x="698" y="230" class="xs">none · crop · square</text>
+  <text x="698" y="250" class="xs">adaptive · fovea</text>
+
+  <path d="M795 200 H845" class="a" />
+  <rect x="845" y="105" width="150" height="190" class="box" fill="#fff0d6" />
+  <text x="920" y="155" text-anchor="middle" class="t">③ 선택 view</text>
+  <rect x="878" y="176" width="84" height="68" fill="#fff" stroke="#b67818" rx="5" />
+  <rect x="905" y="190" width="38" height="29" fill="#ffd166" stroke="#a86900" stroke-width="2" />
+  <text x="920" y="262" text-anchor="middle" class="xs">원본에서 변환 후</text>
+  <text x="920" y="278" text-anchor="middle" class="xs">동일 예산으로 재인코딩</text>
+
+  <path d="M995 200 H1030" class="a" />
+  <rect x="1030" y="125" width="135" height="150" class="box" fill="#dcecff" />
+  <text x="1098" y="160" text-anchor="middle" class="t">④ Reader</text>
+  <text x="1098" y="190" text-anchor="middle" class="s">v + 선택 view</text>
+  <text x="1098" y="216" text-anchor="middle" class="s">→ 최종 답변</text>
+  <line x1="1055" y1="238" x2="1140" y2="238" stroke="#c54b4b" stroke-width="3" />
+  <text x="1098" y="260" text-anchor="middle" class="xs">&lt;look&gt; 제거</text>
+
+  <rect
+    x="55"
+    y="355"
+    width="1090"
+    height="255"
+    rx="20"
+    fill="#fff8ed"
+    stroke="#c47a22"
+    stroke-width="2"
+  />
+  <text x="85" y="392" class="t" fill="#8d4e00">학습 전용 신호</text>
+  <rect x="90" y="420" width="280" height="135" class="box" fill="#fde6cf" />
+  <text x="230" y="452" text-anchor="middle" class="t">정답 rollout의 attention</text>
+  <text x="115" y="481" class="s">correct answer만 teacher-force</text>
+  <text x="115" y="507" class="s">평균 후 제곱해 target ĝ 생성</text>
+  <text x="115" y="533" class="s">L_look = KL(ĝ || g_look)</text>
+  <path d="M250 420 C300 355 375 330 400 295" class="train" />
+
+  <rect x="455" y="420" width="285" height="135" class="box" fill="#fde6cf" />
+  <text x="598" y="452" text-anchor="middle" class="t">모든 8개 view 실행</text>
+  <text x="480" y="481" class="s">6,000개 이미지의 counterfactual 점수</text>
+  <text x="480" y="507" class="s">평균 대비 실제 이득으로 action 지도</text>
+  <text x="480" y="533" class="s">L_head = -Σ π(a|φ)(s_a - s̄)</text>
+  <path d="M610 420 C650 360 675 330 685 295" class="train" />
+
+  <rect x="825" y="420" width="285" height="135" class="box" fill="#fde6cf" />
+  <text x="968" y="452" text-anchor="middle" class="t">여러 view에서 Reader 적응</text>
+  <text x="850" y="481" class="s">4,500개 질문 · 8 rollout</text>
+  <text x="850" y="507" class="s">view를 균등 표집해 200-step GRPO</text>
+  <text x="850" y="533" class="s">포인터 loss의 reader gradient는 폐기</text>
+  <path d="M980 420 C1040 350 1085 325 1095 275" class="train" />
+
+  <text x="70" y="642" class="s">
+    추론 핵심: look prefill → view 선택/재인코딩 → 답변. 정답 생성 전 box decoding이나 외부
+    localizer가 필요 없다.
+  </text>
+</svg>

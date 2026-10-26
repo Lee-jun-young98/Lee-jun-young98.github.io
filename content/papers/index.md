@@ -325,6 +325,10 @@ paper_sync: true
 
 ### [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
+### [The Answer Knows Where to Look: Zooming before MLLMs Answer under Visual-Token Budgets](/papers/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer)
+
+![](/papers/assets/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer/lookzoom-architecture.svg)
+
 ### [MMSearch-OPD: Easy Made Hard, Hard Made Learnable for Long-Horizon Multimodal Search Agents](/papers/vlm/mmsearch-opd-long-horizon-multimodal-search-agents)
 
 ![](/papers/assets/vlm/mmsearch-opd-long-horizon-multimodal-search-agents/mmsearch-opd-pipeline.svg)
