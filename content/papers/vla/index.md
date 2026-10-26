@@ -3,6 +3,18 @@ title: "VLA"
 paper_sync: true
 ---
 
+## [Backtrack: Lightweight Recovery for Frozen VLAs](/papers/vla/backtrack-lightweight-recovery-for-frozen-vlas)
+
+![](/papers/assets/vla/backtrack-lightweight-recovery-for-frozen-vlas/overview.svg)
+
+## [Coupling Execution Horizon and Sampling Depth in Flow-Matching VLA Policies](/papers/vla/horizon-depth-coupling-in-flow-matching-vla-policies)
+
+![](/papers/assets/vla/horizon-depth-coupling-in-flow-matching-vla-policies/overview.svg)
+
+## [MAST-VLA: Skill-Conditioned Adaptation with Trajectory-Affordance Priors](/papers/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors)
+
+![](/papers/assets/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors/overview.svg)
+
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
