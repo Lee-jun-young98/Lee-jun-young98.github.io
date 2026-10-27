@@ -211,11 +211,11 @@ paper_sync: true
 
 ## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
 
+![](/papers/assets/vla/robodawn/framework.png)
+
 ## [RoboDuo: Attempt, Check and Atomic Recovery through Code for Vision-Language-Action Models](/papers/vla/roboduo-attempt-check-and-atomic-recovery)
 
 ![](/papers/assets/vla/roboduo-attempt-check-and-atomic-recovery/overview.svg)
-
-![](/papers/assets/vla/robodawn/framework.png)
 
 ## [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
 
@@ -247,11 +247,11 @@ paper_sync: true
 
 ## [TempoBridge: Language-Guided Tempo Control for Vision-Language-Action Policies](/papers/vla/tempobridge-language-guided-tempo-control)
 
+![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
+
 ## [TRIAGE: Efficient Vision-Language-Action Inference Needs Both Reuse and Pruning](/papers/vla/triage-reuse-and-pruning-for-efficient-vla-inference)
 
 ![](/papers/assets/vla/triage-reuse-and-pruning-for-efficient-vla-inference/overview.svg)
-
-![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
 
 ## [TS-WAM: Temporal Latent Actions and World-Action Coupling for Vision-Language Robot Control](/papers/vla/ts-wam-temporal-latent-actions-and-world-action-coupling)
 
