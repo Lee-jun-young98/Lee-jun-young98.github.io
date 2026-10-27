@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">TRIAGE visual token 라우팅 구조</title>
+  <desc id="desc">현재 영상 토큰에서 얕은 층의 중요도와 cache drift를 계산한 뒤 고정 budget 안에서 재계산하고, 유효한 cache는 재사용하며 나머지는 가지치기해 action decoder로 보낸다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>.h{font:700 28px Arial,'Malgun Gothic',sans-serif;fill:#0f172a}.t{font:600 19px Arial,'Malgun Gothic',sans-serif;fill:#0f172a}.s{font:400 16px Arial,'Malgun Gothic',sans-serif;fill:#334155}.box{stroke:#475569;stroke-width:2;rx:18}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="60" y="58" class="h">TRIAGE: 중요도 × cache 신선도로 visual token을 세 경로에 배치</text>
+  <rect x="55" y="120" width="220" height="110" class="box" fill="#dbeafe"/>
+  <text x="165" y="160" text-anchor="middle" class="t">현재 영상 token</text><text x="165" y="192" text-anchor="middle" class="s">OpenVLA 256 / OFT 512</text>
+  <rect x="355" y="120" width="300" height="110" class="box" fill="#ede9fe"/>
+  <text x="505" y="158" text-anchor="middle" class="t">Shallow layers (ℓs = 2)</text><text x="505" y="188" text-anchor="middle" class="s">importance · drift · cache age</text>
+  <path d="M275 175 H355" class="a"/>
+  <rect x="745" y="105" width="390" height="140" class="box" fill="#ffffff"/>
+  <text x="940" y="143" text-anchor="middle" class="t">TRIAGE router</text>
+  <text x="940" y="175" text-anchor="middle" class="s">우선순위: 중요 + invalid cache</text>
+  <text x="940" y="202" text-anchor="middle" class="s">조건: drift ≤ δ, age ≤ T</text>
+  <text x="940" y="229" text-anchor="middle" class="s">고정 재계산 budget B</text>
+  <path d="M655 175 H745" class="a"/>
+  <rect x="75" y="350" width="285" height="125" class="box" fill="#dcfce7"/>
+  <text x="218" y="393" text-anchor="middle" class="t">재계산 Recompute</text><text x="218" y="425" text-anchor="middle" class="s">중요·stale token 우선</text><text x="218" y="452" text-anchor="middle" class="s">deep-layer KV 갱신</text>
+  <rect x="458" y="350" width="285" height="125" class="box" fill="#fef3c7"/>
+  <text x="600" y="393" text-anchor="middle" class="t">재사용 Reuse</text><text x="600" y="425" text-anchor="middle" class="s">낮은 drift의 유효 KV</text><text x="600" y="452" text-anchor="middle" class="s">배경 context 보존</text>
+  <rect x="840" y="350" width="285" height="125" class="box" fill="#fee2e2"/>
+  <text x="983" y="393" text-anchor="middle" class="t">가지치기 Prune</text><text x="983" y="425" text-anchor="middle" class="s">stale · budget 밖 token</text><text x="983" y="452" text-anchor="middle" class="s">오염된 context 차단</text>
+  <path d="M865 245 L270 350" class="a"/><path d="M940 245 L630 350" class="a"/><path d="M1010 245 L1000 350" class="a"/>
+  <rect x="355" y="555" width="490" height="85" class="box" fill="#e0f2fe"/>
+  <text x="600" y="590" text-anchor="middle" class="t">VLA deep backbone + action decoder</text><text x="600" y="619" text-anchor="middle" class="s">세 경로의 representation으로 action 생성 · backbone weight 고정</text>
+  <path d="M218 475 L475 555" class="a"/><path d="M600 475 V555" class="a"/><path d="M983 475 L725 555" class="a"/>
+</svg>

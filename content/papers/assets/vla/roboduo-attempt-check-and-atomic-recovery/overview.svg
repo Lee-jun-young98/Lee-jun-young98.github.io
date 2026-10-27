@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">RoboDuo 시도, 검사, 원자 복구 구조</title>
+  <desc id="desc">언어 지시와 관측을 받은 coding agent가 프로그램을 만들고, full-task VLA의 전체 시도 후 completion judge가 실패를 감지하면 atomic VLA가 남은 단계를 반복 검증하며 복구한다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#334155"/></marker>
+    <style>.h{font:700 28px Arial,'Malgun Gothic',sans-serif;fill:#0f172a}.t{font:600 19px Arial,'Malgun Gothic',sans-serif;fill:#0f172a}.s{font:400 16px Arial,'Malgun Gothic',sans-serif;fill:#334155}.box{stroke:#475569;stroke-width:2;rx:18}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="60" y="58" class="h">RoboDuo: full-task 시도 뒤 필요한 경우에만 원자 복구</text>
+  <rect x="60" y="105" width="220" height="105" class="box" fill="#dbeafe"/>
+  <text x="170" y="145" text-anchor="middle" class="t">입력</text><text x="170" y="177" text-anchor="middle" class="s">언어 지시 + 현재 관측</text>
+  <rect x="365" y="105" width="265" height="105" class="box" fill="#ede9fe"/>
+  <text x="498" y="145" text-anchor="middle" class="t">Coding agent</text><text x="498" y="177" text-anchor="middle" class="s">2층 실행 프로그램 작성</text>
+  <path d="M280 157 H365" class="a"/>
+  <rect x="120" y="285" width="275" height="120" class="box" fill="#dcfce7"/>
+  <text x="258" y="327" text-anchor="middle" class="t">1층: frozen full-task VLA</text><text x="258" y="359" text-anchor="middle" class="s">원래 과제 전체를 한 번 시도</text><text x="258" y="385" text-anchor="middle" class="s">X-VLA 또는 π0.5</text>
+  <path d="M498 210 V250 H258 V285" class="a"/>
+  <rect x="475" y="285" width="250" height="120" class="box" fill="#fef3c7"/>
+  <text x="600" y="327" text-anchor="middle" class="t">Completion judge J</text><text x="600" y="359" text-anchor="middle" class="s">현재 상태가 목표를</text><text x="600" y="385" text-anchor="middle" class="s">충족했는가?</text>
+  <path d="M395 345 H475" class="a"/>
+  <rect x="815" y="285" width="310" height="120" class="box" fill="#fee2e2"/>
+  <text x="970" y="327" text-anchor="middle" class="t">2층: frozen atomic VLA</text><text x="970" y="359" text-anchor="middle" class="s">남은 grasp/place/... 실행</text><text x="970" y="385" text-anchor="middle" class="s">단계별 최대 3회 재시도</text>
+  <path d="M725 345 H815" class="a"/><text x="770" y="330" text-anchor="middle" class="s">실패</text>
+  <path d="M970 405 V485 H600 V405" class="a"/><text x="785" y="475" text-anchor="middle" class="s">각 원자 효과를 다시 검사</text>
+  <path d="M600 285 V245 H1110 V220" class="a"/><text x="845" y="235" text-anchor="middle" class="s">성공 → 종료</text>
+  <rect x="85" y="535" width="1030" height="95" class="box" fill="#ffffff"/>
+  <text x="600" y="570" text-anchor="middle" class="t">공통 demonstration segmentation supervision</text>
+  <text x="600" y="602" text-anchor="middle" class="s">LIBERO-Atomic clips · LIBERO-Code programs · LIBERO-Judge frame labels</text>
+  <text x="600" y="625" text-anchor="middle" class="s">학습 후 두 VLA는 고정 — coding agent와 judge는 action을 직접 생성하지 않음</text>
+</svg>
