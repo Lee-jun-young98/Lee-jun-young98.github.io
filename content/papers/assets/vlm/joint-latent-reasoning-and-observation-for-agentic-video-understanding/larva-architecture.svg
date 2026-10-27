@@ -1,0 +1,190 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="700"
+  viewBox="0 0 1200 700"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">LARVA의 joint latent reasoner-observer 아키텍처</title>
+  <desc id="desc">
+    질문과 누적 문맥을 받은 latent reasoner가 비디오 획득 도구를 고르고, 선택 프레임을 latent
+    observer가 압축해 다음 라운드로 돌려보낸다. 학습에서는 행동과 답, 관찰 복원, 추론 분포 정렬
+    손실이 두 모듈을 함께 최적화한다.
+  </desc>
+  <defs>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+    <marker
+      id="arrowBlue"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 28px "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .subtitle {
+        font:
+          500 15px "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .head {
+        font:
+          700 19px "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          500 15px "Noto Sans KR",
+          sans-serif;
+        fill: #1e293b;
+      }
+      .small {
+        font:
+          500 13px "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .mono {
+        font:
+          600 15px Consolas,
+          monospace;
+        fill: #1d4ed8;
+      }
+      .box {
+        stroke: #64748b;
+        stroke-width: 1.5;
+        rx: 16;
+      }
+      .arrow {
+        stroke: #334155;
+        stroke-width: 2.2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .blueArrow {
+        stroke: #2563eb;
+        stroke-width: 2.6;
+        fill: none;
+        marker-end: url(#arrowBlue);
+      }
+      .dash {
+        stroke-dasharray: 7 6;
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="#f8fafc" />
+  <text x="60" y="48" class="title">LARVA: 관찰–추론–행동을 잇는 joint latent interface</text>
+  <text x="60" y="76" class="subtitle">
+    논문 Figure 2와 식 (1)–(7)을 바탕으로 재구성 · 파란 화살표는 추론 시 반복되는 폐루프
+  </text>
+
+  <rect
+    x="45"
+    y="105"
+    width="1110"
+    height="355"
+    rx="24"
+    fill="#ffffff"
+    stroke="#cbd5e1"
+    stroke-width="2"
+  />
+  <text x="70" y="140" class="head">추론: 텍스트 CoT·caption 없이 최대 8회 능동 획득</text>
+
+  <rect x="75" y="180" width="190" height="100" class="box" fill="#e0f2fe" />
+  <text x="170" y="215" text-anchor="middle" class="head">입력</text>
+  <text x="170" y="244" text-anchor="middle" class="body">질문 Q + 비디오 V</text>
+  <text x="170" y="267" text-anchor="middle" class="small">누적 interaction context</text>
+
+  <rect x="335" y="165" width="245" height="130" class="box" fill="#dbeafe" />
+  <text x="457" y="202" text-anchor="middle" class="head">Latent Reasoner</text>
+  <text x="457" y="232" text-anchor="middle" class="mono">Zₜ: 8 latent tokens</text>
+  <text x="457" y="259" text-anchor="middle" class="body">다음 도구 또는 최종 답 결정</text>
+  <text x="457" y="282" text-anchor="middle" class="small">공유 backbone + reasoner LoRA</text>
+
+  <rect x="650" y="165" width="225" height="130" class="box" fill="#fef3c7" />
+  <text x="762" y="202" text-anchor="middle" class="head">명시적 도구 호출</text>
+  <text x="762" y="232" text-anchor="middle" class="body">Overview: 64 frames</text>
+  <text x="762" y="257" text-anchor="middle" class="body">Skim / Focus: 16 frames</text>
+  <text x="762" y="282" text-anchor="middle" class="small">구간·query를 텍스트로 지정</text>
+
+  <rect x="945" y="165" width="175" height="130" class="box" fill="#dcfce7" />
+  <text x="1032" y="202" text-anchor="middle" class="head">Latent Observer</text>
+  <text x="1032" y="232" text-anchor="middle" class="mono">Oₜ: 8 latent tokens</text>
+  <text x="1032" y="259" text-anchor="middle" class="body">선택 프레임 압축</text>
+  <text x="1032" y="282" text-anchor="middle" class="small">observer LoRA + projector</text>
+
+  <path d="M265 230 H325" class="blueArrow" />
+  <path d="M580 230 H640" class="blueArrow" />
+  <path d="M875 230 H935" class="blueArrow" />
+  <path d="M1032 305 V370 H457 V305" class="blueArrow" />
+  <text x="744" y="356" text-anchor="middle" class="body">
+    Oₜ와 이전 Zₜ를 다음 decision context에 삽입
+  </text>
+
+  <rect
+    x="335"
+    y="385"
+    width="245"
+    height="50"
+    rx="12"
+    fill="#ede9fe"
+    stroke="#7c3aed"
+    stroke-width="1.5"
+  />
+  <text x="457" y="416" text-anchor="middle" class="body">종료 시 최종 답만 텍스트 출력</text>
+  <path d="M380 295 V375" class="arrow dash" />
+
+  <rect
+    x="45"
+    y="485"
+    width="1110"
+    height="170"
+    rx="24"
+    fill="#fff7ed"
+    stroke="#fdba74"
+    stroke-width="2"
+  />
+  <text x="70" y="520" class="head">학습 전용: teacher action replay + 세 손실의 공동 최적화</text>
+
+  <rect x="75" y="545" width="280" height="80" class="box" fill="#fee2e2" />
+  <text x="215" y="576" text-anchor="middle" class="head">Lact: 행동·최종 답</text>
+  <text x="215" y="603" text-anchor="middle" class="small">
+    미래 decision gradient가 observer까지 전달
+  </text>
+
+  <rect x="460" y="545" width="280" height="80" class="box" fill="#ffedd5" />
+  <text x="600" y="576" text-anchor="middle" class="head">Lobs: 관찰 재구성</text>
+  <text x="600" y="603" text-anchor="middle" class="small">Oₜ → teacher textual observation</text>
+
+  <rect x="845" y="545" width="280" height="80" class="box" fill="#f3e8ff" />
+  <text x="985" y="576" text-anchor="middle" class="head">Lalign: 다음 CoT 분포</text>
+  <text x="985" y="603" text-anchor="middle" class="small">text context ↔ latent context KL</text>
+
+  <path d="M355 585 H450" class="arrow" />
+  <path d="M740 585 H835" class="arrow" />
+  <text x="600" y="680" text-anchor="middle" class="subtitle">
+    추론 때는 teacher replay·재구성·정렬 branch를 제거하고 reasoner–observer 폐루프만 실행
+  </text>
+</svg>

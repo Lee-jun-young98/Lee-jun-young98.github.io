@@ -335,6 +335,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/how-far-are-we-from-removing-the-visual-encoder/encoder-free-scaling-overview.svg)
 
+### [Joint Latent Reasoning and Observation for Agentic Video Understanding](/papers/vlm/joint-latent-reasoning-and-observation-for-agentic-video-understanding)
+
+![](/papers/assets/vlm/joint-latent-reasoning-and-observation-for-agentic-video-understanding/larva-architecture.svg)
+
 ### [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
 ### [MMSearch-OPD: Easy Made Hard, Hard Made Learnable for Long-Horizon Multimodal Search Agents](/papers/vlm/mmsearch-opd-long-horizon-multimodal-search-agents)
