@@ -81,6 +81,10 @@ paper_sync: true
 
 ### [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
+### [E0.5: From Reconstructive to Future-Predictive 3D Foundations for Robotic World-Action Modeling](/papers/vla/e0-5-geometry-native-world-action-model)
+
+![](/papers/assets/vla/e0-5-geometry-native-world-action-model/overview.svg)
+
 ### [Dual-Stream Memory for Vision-Language-Action Policies](/papers/vla/dual-stream-memory-for-vla-policies)
 
 ![](/papers/assets/vla/dual-stream-memory-for-vla-policies/overview.svg)
@@ -193,6 +197,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
 
+### [PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations](/papers/vla/pdrvla-physical-dynamics-representations)
+
+![](/papers/assets/vla/pdrvla-physical-dynamics-representations/overview.svg)
+
 ### [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
 ![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
@@ -286,6 +294,10 @@ paper_sync: true
 ### [VeriVLA: Adaptive Test-Time Verification for Flow-Based VLAs with Latent World Models](/papers/vla/verivla-adaptive-test-time-verification)
 
 ![](/papers/assets/vla/verivla-adaptive-test-time-verification/overview.svg)
+
+### [VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning](/papers/vla/vla-stem-lightweight-safety-mechanism)
+
+![](/papers/assets/vla/vla-stem-lightweight-safety-mechanism/overview.svg)
 
 ### [VLA-ZO: Fast Zeroth-Order Adaptation for Vision-Language-Action Models](/papers/vla/vla-zo-fast-zeroth-order-adaptation)
 
