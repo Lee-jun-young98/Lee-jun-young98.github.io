@@ -1,0 +1,210 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="700"
+  viewBox="0 0 1200 700"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">VideoLVR의 근거 합성, 잠재 시각 추론 학습, 추론 및 TVPO 구조</title>
+  <desc id="desc">
+    입력 비디오와 질문에서 교사가 시공간 근거 trajectory를 만들고, 여러 시점의 region을 grouped
+    visual target으로 묶어 visual token prediction과 text loss로 학습한다. 추론에서는 projected
+    latent state를 되먹이며, TVPO는 text token과 sampled visual token action을 최종 답 reward로 공동
+    최적화한다.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff" />
+      <stop offset="1" stop-color="#f7f4ff" />
+    </linearGradient>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="8"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+    <marker
+      id="arrowPurple"
+      markerWidth="10"
+      markerHeight="10"
+      refX="8"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#7c3aed" />
+    </marker>
+    <style>
+      .h1 {
+        font:
+          700 27px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #172033;
+      }
+      .section {
+        font:
+          700 18px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #1e293b;
+      }
+      .body {
+        font:
+          15px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          13px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .label {
+        font:
+          700 14px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #ffffff;
+      }
+      .box {
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+        rx: 14;
+      }
+      .arrow {
+        stroke: #334155;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke: #7c3aed;
+        stroke-width: 2;
+        stroke-dasharray: 7 5;
+        fill: none;
+        marker-end: url(#arrowPurple);
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)" />
+  <text x="54" y="45" class="h1">
+    VideoLVR — Grounded Video Evidence를 잠재 상태로 되짚는 파이프라인
+  </text>
+  <text x="54" y="70" class="small">
+    논문 Figure 1 및 식 (1)–(9)을 바탕으로 재구성 · 실선: 데이터/추론 흐름 · 보라 점선: 학습 신호
+  </text>
+
+  <rect x="45" y="100" width="275" height="250" fill="#eef6ff" class="box" />
+  <rect x="45" y="100" width="275" height="38" fill="#2563eb" rx="14" />
+  <text x="182" y="125" text-anchor="middle" class="label">① Evidence-grounded data 합성</text>
+  <rect x="70" y="158" width="95" height="62" fill="#ffffff" class="box" />
+  <text x="117" y="184" text-anchor="middle" class="section">비디오</text>
+  <text x="117" y="207" text-anchor="middle" class="small">2 FPS · 최대 256F</text>
+  <rect x="195" y="158" width="95" height="62" fill="#ffffff" class="box" />
+  <text x="242" y="184" text-anchor="middle" class="section">질문</text>
+  <text x="242" y="207" text-anchor="middle" class="small">video QA</text>
+  <path d="M117 220 L117 244 L180 244" class="arrow" />
+  <path d="M242 220 L242 244 L192 244" class="arrow" />
+  <rect x="83" y="244" width="202" height="54" fill="#dbeafe" class="box" />
+  <text x="184" y="267" text-anchor="middle" class="section">Teacher MLLM</text>
+  <text x="184" y="289" text-anchor="middle" class="small">
+    정답·근거 검증 + trajectory polishing
+  </text>
+  <path d="M184 298 L184 318" class="arrow" />
+  <text x="184" y="338" text-anchor="middle" class="body">주장 cₖ + {timestamp, box} 근거 𝒢ₖ</text>
+
+  <rect x="350" y="100" width="385" height="250" fill="#f3f0ff" class="box" />
+  <rect x="350" y="100" width="385" height="38" fill="#7c3aed" rx="14" />
+  <text x="542" y="125" text-anchor="middle" class="label">② Grouped target + Unified SFT</text>
+  <text x="380" y="167" class="body">t₁ region tokens</text>
+  <rect x="520" y="150" width="33" height="27" fill="#bfdbfe" stroke="#2563eb" />
+  <rect x="558" y="150" width="33" height="27" fill="#bfdbfe" stroke="#2563eb" />
+  <text x="380" y="205" class="body">t₂ region tokens</text>
+  <rect x="520" y="188" width="33" height="27" fill="#c4b5fd" stroke="#7c3aed" />
+  <rect x="558" y="188" width="33" height="27" fill="#c4b5fd" stroke="#7c3aed" />
+  <rect x="596" y="188" width="33" height="27" fill="#c4b5fd" stroke="#7c3aed" />
+  <path d="M640 180 L686 180" class="arrow" />
+  <text x="665" y="164" text-anchor="middle" class="small">시간순 결합</text>
+  <text x="686" y="204" text-anchor="middle" class="body">Ẽₖ</text>
+  <rect x="380" y="235" width="325" height="78" fill="#ffffff" class="box" />
+  <text x="542" y="258" text-anchor="middle" class="section">MLLM decoder + projection gφ</text>
+  <text x="542" y="282" text-anchor="middle" class="body">
+    Text → &lt;bot&gt; → latent block → &lt;eot&gt; → Text
+  </text>
+  <text x="542" y="304" text-anchor="middle" class="small">
+    q=gφ(h), 입력 영상 전체 token V가 sample별 visual vocabulary
+  </text>
+  <path d="M542 313 L542 338" class="dash" />
+  <text x="542" y="344" text-anchor="middle" class="body">ℒSFT = ℒtext + λℒVTP</text>
+
+  <path d="M320 225 L350 225" class="arrow" />
+
+  <rect x="765" y="100" width="390" height="250" fill="#ecfdf5" class="box" />
+  <rect x="765" y="100" width="390" height="38" fill="#059669" rx="14" />
+  <text x="960" y="125" text-anchor="middle" class="label">
+    ③ SFT 추론: 추가 영상 삽입 없이 latent feedback
+  </text>
+  <rect x="790" y="158" width="150" height="55" fill="#ffffff" class="box" />
+  <text x="865" y="181" text-anchor="middle" class="section">Text decoding</text>
+  <text x="865" y="202" text-anchor="middle" class="small">중간 추론 → &lt;bot&gt;</text>
+  <path d="M940 185 L975 185" class="arrow" />
+  <rect x="975" y="158" width="150" height="55" fill="#d1fae5" class="box" />
+  <text x="1050" y="181" text-anchor="middle" class="section">gφ(h) = zᵢ</text>
+  <text x="1050" y="202" text-anchor="middle" class="small">연속 visual latent</text>
+  <path d="M1050 213 C1050 250 865 242 865 216" class="arrow" />
+  <text x="960" y="261" text-anchor="middle" class="body">
+    zᵢ를 다음 input embedding으로 K=8회 되먹임
+  </text>
+  <rect x="820" y="282" width="280" height="44" fill="#ffffff" class="box" />
+  <text x="960" y="309" text-anchor="middle" class="body">
+    &lt;eot&gt; 삽입 → 텍스트 추론 재개 → 답
+  </text>
+
+  <rect x="45" y="390" width="1110" height="238" fill="#fff7ed" class="box" />
+  <rect x="45" y="390" width="1110" height="40" fill="#ea580c" rx="14" />
+  <text x="600" y="417" text-anchor="middle" class="label">
+    ④ TVPO: visual token도 policy action으로 바꾸어 최종 답 reward로 공동 최적화
+  </text>
+  <rect x="80" y="460" width="205" height="86" fill="#ffffff" class="box" />
+  <text x="182" y="486" text-anchor="middle" class="section">Interleaved rollout</text>
+  <text x="182" y="512" text-anchor="middle" class="body">text action · visual action</text>
+  <text x="182" y="535" text-anchor="middle" class="small">prompt당 8 trajectories</text>
+  <path d="M285 503 L350 503" class="arrow" />
+  <rect x="350" y="460" width="230" height="86" fill="#ffedd5" class="box" />
+  <text x="465" y="486" text-anchor="middle" class="section">Visual action sampling</text>
+  <text x="465" y="512" text-anchor="middle" class="body">iₖ,ₗ ~ pvis(·|q,V)</text>
+  <text x="465" y="535" text-anchor="middle" class="small">
+    선택 token embedding을 다음 입력으로
+  </text>
+  <path d="M580 503 L645 503" class="arrow" />
+  <rect x="645" y="460" width="205" height="86" fill="#ffffff" class="box" />
+  <text x="747" y="486" text-anchor="middle" class="section">Final answer reward</text>
+  <text x="747" y="512" text-anchor="middle" class="body">정답 1 · 오답 0</text>
+  <text x="747" y="535" text-anchor="middle" class="small">group-normalized advantage Aᵢ</text>
+  <path d="M850 503 L915 503" class="arrow" />
+  <rect x="915" y="460" width="205" height="86" fill="#ffffff" class="box" />
+  <text x="1017" y="486" text-anchor="middle" class="section">GRPO update</text>
+  <text x="1017" y="512" text-anchor="middle" class="body">LM θ + projection φ</text>
+  <text x="1017" y="535" text-anchor="middle" class="small">text·visual ratio를 함께 clip</text>
+  <path d="M1017 546 C1017 575 184 575 184 550" class="dash" />
+  <text x="600" y="610" text-anchor="middle" class="body">
+    같은 advantage가 텍스트 토큰 선택과 시각 근거 token 선택 모두를 학습
+  </text>
+
+  <rect x="45" y="650" width="1110" height="32" fill="#e2e8f0" rx="10" />
+  <text x="600" y="672" text-anchor="middle" class="small">
+    핵심 차이: 좌표만 쓰지 않고 · crop/frame을 문맥에 재삽입하지 않고 · 입력 영상 내부의 근거 내용을
+    latent state로 재사용
+  </text>
+</svg>

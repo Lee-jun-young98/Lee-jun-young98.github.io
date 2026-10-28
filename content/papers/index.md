@@ -401,6 +401,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding/videoevolve-architecture.svg)
 
+### [VideoLVR: Latent Visual Reasoning over Grounded Video Evidence](/papers/vlm/videolvr-latent-visual-reasoning-over-grounded-video-evidence)
+
+![](/papers/assets/vlm/videolvr-latent-visual-reasoning-over-grounded-video-evidence/videolvr-architecture.svg)
+
 ### [VideoResearcher: Self-Improving Tool Design for Long-Video Understanding](/papers/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding)
 
 ![](/papers/assets/vlm/videoresearcher-self-improving-tool-design-for-long-video-understanding/videoresearcher-dual-loop.svg)
