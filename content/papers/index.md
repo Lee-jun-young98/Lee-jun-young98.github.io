@@ -81,13 +81,13 @@ paper_sync: true
 
 ### [DSDyn-VLA: A Dual-Stream Dynamic Manipulation Framework with Motion Perception, Future Awareness, and Realtime Correction](/papers/vla/dsdyn-vla-dual-stream-dynamic-manipulation)
 
-### [E0.5: From Reconstructive to Future-Predictive 3D Foundations for Robotic World-Action Modeling](/papers/vla/e0-5-geometry-native-world-action-model)
-
-![](/papers/assets/vla/e0-5-geometry-native-world-action-model/overview.svg)
-
 ### [Dual-Stream Memory for Vision-Language-Action Policies](/papers/vla/dual-stream-memory-for-vla-policies)
 
 ![](/papers/assets/vla/dual-stream-memory-for-vla-policies/overview.svg)
+
+### [E0.5: From Reconstructive to Future-Predictive 3D Foundations for Robotic World-Action Modeling](/papers/vla/e0-5-geometry-native-world-action-model)
+
+![](/papers/assets/vla/e0-5-geometry-native-world-action-model/overview.svg)
 
 ### [Embodiment-Classifier Guidance: Transferring Frozen VLAs Across Robot Dynamics without Demonstrations](/papers/vla/embodiment-classifier-guidance-for-frozen-vlas)
 
