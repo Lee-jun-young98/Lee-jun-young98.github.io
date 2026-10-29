@@ -17,6 +17,8 @@ paper_sync: true
 
 ## [DiaVLo: Diagnosing Behaviours of Vision-Language Models](/papers/vlm/diavlo-diagnosing-behaviours-of-vision-language-models)
 
+![](/papers/assets/vlm/diavlo-diagnosing-behaviours-of-vision-language-models/diavlo-diagnostic-pipeline.svg)
+
 ## [DK-VLM: Geometry as Position for Spatial Reasoning in Vision-Language Models](/papers/vlm/dk-vlm-geometry-as-position-for-spatial-reasoning)
 
 ![](/papers/assets/vlm/dk-vlm-geometry-as-position-for-spatial-reasoning/dk-vlm-dual-kernel-architecture.svg)
