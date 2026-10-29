@@ -10,6 +10,7 @@ authors: "Lorenzo Corti, Jie Yang"
 paper: "https://arxiv.org/abs/2609.22008"
 code: ""
 project: "https://lcorti.github.io/publications/"
+thumbnail: "/papers/assets/vlm/diavlo-diagnosing-behaviours-of-vision-language-models/diavlo-diagnostic-pipeline.svg"
 ---
 
 # 한 줄 요약
@@ -52,6 +53,16 @@ VLM은 높은 정답률을 내더라도 시각 정보 대신 언어 사전지식
 6. RK 개념을 가린 반사실적 이미지를 만들고 DoWhy/EconML의 Double Machine Learning으로 개념이 출력 토큰에 미치는 효과를 추정한다.
 7. 행동 유사도와 실제 성능의 관계는 부트스트랩한 상호정보량으로 평가하고, 인과 효과는 100개 무작위 데이터 분할의 중앙값으로 보고한다.
 
+# 핵심 그림
+
+![이미지와 질문에서 사람 검수 SHOULD-KNOW와 VLM 자기설명 REALLY-KNOW를 병렬로 만들고 의미 대응, 행동 분류, 반사실 이미지 기반 인과 추정으로 이어지는 DiaVLo 진단 파이프라인](/papers/assets/vlm/diavlo-diagnosing-behaviours-of-vision-language-models/diavlo-diagnostic-pipeline.svg)
+
+> 그림 2. 논문 Figure 2와 Sections 3–4를 바탕으로 재구성한 DiaVLo 전체 진단 파이프라인. 출처: [arXiv HTML Figure 2 및 Sections 3–4](https://arxiv.org/html/2609.22008). 원문은 CC BY-NC-SA 4.0이며, 여기서는 원본을 복사하지 않고 한국어 설명도로 재구성했다.
+
+전체 파이프라인 그림을 고른 이유는 DiaVLo의 핵심이 단일 VLM 모듈이 아니라 **같은 입력에서 기대 행동과 관찰 행동을 따로 구성한 뒤 다시 비교·검증하는 진단 흐름**에 있기 때문이다. 위쪽 경로는 이미지에서 IETrans 장면 그래프를 만들고 사람이 질문 관련성과 누락 관계를 검수해 모델 독립적인 SK를 만든다. 아래쪽 경로는 VLM의 답변·근거를 관계 삼중항으로 구조화해 모델별 RK를 만든다.
+
+두 경로는 정확 일치, OWLv2 위치 확인, 의미 임베딩 순으로 대응되고, 집합 관계와 유사도 임계값에 따라 Aligned·Expanded·Divergent로 분류된다. 별도의 검증 경로에서는 RK 개념 영역을 가린 반사실 이미지를 VLM에 다시 입력하고 Double Machine Learning으로 개념별 출력 효과를 추정한다. 즉 학습 단계가 아니라 평가·진단 단계의 구조이며, 기존 정확도 벤치마크에 “무엇을 근거로 같은 답에 도달했는가”라는 행동 명세를 덧붙이는 것이 차별점이다.
+
 # Experiments / Results
 
 - InternVL2-8B, LLaVA-1.6-7B, Qwen2.5-VL-7B, ShareGPT4V-7B를 LLaVA-Bench, MMBench, SEED-Bench 2, VQA v2에서 평가했다.
@@ -61,6 +72,29 @@ VLM은 높은 정답률을 내더라도 시각 정보 대신 언어 사전지식
 - SK-RK 유사성과 실제 성능 사이의 상호정보량은 무작위 순열 기준보다 유의미했으며, 특히 InternVL2와 LLaVA-1.6에서 행동 명세가 성능을 비교적 잘 설명했다.
 - 개념별 인과 효과는 대체로 0 부근에 몰렸지만 일부 개념은 뚜렷한 효과를 보였다. 객관식 데이터에서는 무관한 개념이 활성화되는 것으로 해석할 수 있는 0 효과가 더 많이 나타났다.
 - 충분한 반사실 샘플이 약 100개 이상 확보된 경우 RK 기반 인과 그래프는 구조 반증 테스트를 통과했지만, 표본이 적으면 검정력이 낮아 결론이 불확실했다.
+
+## 주요 실험 결과
+
+Figure 4의 네 VLM·네 데이터셋 전체 행동 분포를 동일한 분류 설정에서 비교했다. 값은 전체 분류 행동 중 비율이며, 차이는 Aligned 대비 절대 %p다.
+
+| 행동 유형 / 비율 (%, ↑는 아님) | 비율 | Aligned 대비 차이 | 해석                                          | 출처     |
+| ------------------------------ | ---: | ----------------: | --------------------------------------------- | -------- |
+| Aligned                        |  6.4 |             0.0%p | RK가 SK에 포함되는 기대 행동                  | Figure 4 |
+| Expanded                       | 52.5 |           +46.1%p | 기대 행동 일부와 추가·미지 행동이 함께 관찰됨 | Figure 4 |
+| Divergent                      | 41.1 |           +34.7%p | RK와 SK가 겹치지 않는 행동                    | Figure 4 |
+
+Expanded와 Divergent를 합치면 93.6%로 Aligned보다 +87.2%p 높다. 이 수치는 모델 정확도를 직접 비교한 것이 아니라 DiaVLo가 분류한 행동 구성비다. 따라서 “93.6%가 오답”이라는 뜻은 아니며, 정답 여부와 별개로 사람이 기대한 개념·관계와 다른 경로가 대부분이었다는 진단 결과로 읽어야 한다.
+
+Table 3은 같은 표본에서 정확도 $A$와 SK–RK 유사도 $S_c$의 상호정보량을 함께 보고한다. 데이터셋마다 정확도와 MI의 범위가 달라 MI 크기를 열 사이에서 직접 순위화하지 않고, 모델별로 행동 유사성이 성능과 함께 변하는지 확인하는 용도로 사용했다.
+
+| 모델       | LLaVA-Bench A / MI | MMBench A / MI | SEED-Bench 2 A / MI |  VQA v2 A / MI | 출처    |
+| ---------- | -----------------: | -------------: | ------------------: | -------------: | ------- |
+| InternVL2  |      0.673 / 3.367 |  0.796 / 3.200 |       0.787 / 0.379 |  0.667 / 0.476 | Table 3 |
+| LLaVA-1.6  |      0.657 / 2.389 |  0.792 / 2.512 |       0.667 / 0.438 |  0.585 / 0.481 | Table 3 |
+| Qwen2.5-VL |      0.670 / 3.008 |  0.743 / 1.561 |       0.833 / 0.188 |  0.700 / 0.147 | Table 3 |
+| ShareGPT4V |      0.687 / 2.058 |  0.705 / 2.116 |       0.661 / 0.292 | 0.810 / 0.558† | Table 3 |
+
+† ShareGPT4V의 VQA v2 값은 Table 2에서 RK가 21개 샘플에만 추출된 매우 작은 표본이므로 일반화하면 안 된다. 논문은 InternVL2와 LLaVA-1.6에서 행동 유사성이 성능과 더 일관되게 연결됐다고 해석한다.
 
 # Limitations / Discussion
 

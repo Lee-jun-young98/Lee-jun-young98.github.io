@@ -1,0 +1,165 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="700"
+  viewBox="0 0 1200 700"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">DiaVLo 비전-언어 모델 행동 진단 파이프라인</title>
+  <desc id="desc">
+    이미지와 질문에서 사람 검수 SHOULD-KNOW와 VLM 자기설명 REALLY-KNOW를 병렬 생성하고, 의미 대응과
+    행동 분류, 반사실 이미지 기반 인과 추정으로 이어지는 흐름
+  </desc>
+  <defs>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+    <style>
+      .bg {
+        fill: #f8fafc;
+      }
+      .box {
+        fill: #ffffff;
+        stroke: #334155;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .sk {
+        fill: #e0f2fe;
+        stroke: #0284c7;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .rk {
+        fill: #ede9fe;
+        stroke: #7c3aed;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .out {
+        fill: #dcfce7;
+        stroke: #16a34a;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .causal {
+        fill: #ffedd5;
+        stroke: #ea580c;
+        stroke-width: 2;
+        rx: 14;
+      }
+      .title {
+        font:
+          700 28px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .label {
+        font:
+          700 18px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          15px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          13px "Segoe UI",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .arrow {
+        stroke: #334155;
+        stroke-width: 2.5;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke: #64748b;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="700" />
+  <text class="title" x="600" y="45" text-anchor="middle">
+    DiaVLo: 기대 행동과 관찰 행동을 비교하는 VLM 진단
+  </text>
+
+  <rect class="box" x="35" y="90" width="190" height="115" />
+  <text class="label" x="130" y="122" text-anchor="middle">공통 입력</text>
+  <text class="body" x="130" y="153" text-anchor="middle">이미지 + 질문</text>
+  <text class="small" x="130" y="178" text-anchor="middle">정답/성능 지표</text>
+
+  <rect class="sk" x="285" y="75" width="230" height="145" />
+  <text class="label" x="400" y="108" text-anchor="middle">SHOULD-KNOW (SK)</text>
+  <text class="body" x="400" y="138" text-anchor="middle">IETrans 장면 그래프</text>
+  <text class="body" x="400" y="164" text-anchor="middle">→ 사람 검증·확장</text>
+  <text class="small" x="400" y="192" text-anchor="middle">모델 독립 기대 삼중항</text>
+
+  <rect class="rk" x="285" y="275" width="230" height="145" />
+  <text class="label" x="400" y="308" text-anchor="middle">REALLY-KNOW (RK)</text>
+  <text class="body" x="400" y="338" text-anchor="middle">VLM 답변 + 자기설명</text>
+  <text class="body" x="400" y="364" text-anchor="middle">→ 관계 삼중항 구조화</text>
+  <text class="small" x="400" y="392" text-anchor="middle">모델별 관찰 행동</text>
+
+  <path class="arrow" d="M225 132 L285 132" />
+  <path class="arrow" d="M225 165 C255 165 255 348 285 348" />
+
+  <rect class="box" x="585" y="145" width="230" height="185" />
+  <text class="label" x="700" y="178" text-anchor="middle">SK ↔ RK 대응</text>
+  <text class="body" x="700" y="211" text-anchor="middle">1. 정확·어휘 일치</text>
+  <text class="body" x="700" y="239" text-anchor="middle">2. OWLv2 위치 확인</text>
+  <text class="body" x="700" y="267" text-anchor="middle">3. 의미 임베딩 유사도</text>
+  <text class="small" x="700" y="302" text-anchor="middle">τa=0.75, τe=0.35, τd&lt;0.35</text>
+
+  <path class="arrow" d="M515 148 C550 148 550 195 585 195" />
+  <path class="arrow" d="M515 348 C550 348 550 280 585 280" />
+
+  <rect class="out" x="885" y="115" width="270" height="245" />
+  <text class="label" x="1020" y="150" text-anchor="middle">행동 분류 + 성능 연결</text>
+  <text class="body" x="1020" y="188" text-anchor="middle">Aligned 6.4%</text>
+  <text class="body" x="1020" y="220" text-anchor="middle">Expanded 52.5%</text>
+  <text class="body" x="1020" y="252" text-anchor="middle">Divergent 41.1%</text>
+  <line x1="920" y1="273" x2="1120" y2="273" stroke="#86efac" stroke-width="2" />
+  <text class="small" x="1020" y="303" text-anchor="middle">행동 유사도 S_c와 정확도 A의</text>
+  <text class="small" x="1020" y="326" text-anchor="middle">상호정보량을 부트스트랩</text>
+  <path class="arrow" d="M815 237 L885 237" />
+
+  <rect class="causal" x="310" y="505" width="250" height="135" />
+  <text class="label" x="435" y="538" text-anchor="middle">반사실 입력 생성</text>
+  <text class="body" x="435" y="570" text-anchor="middle">RK 개념을 이미지에서 가림</text>
+  <text class="small" x="435" y="600" text-anchor="middle">답변을 VLM으로 다시 생성</text>
+
+  <rect class="causal" x="655" y="505" width="250" height="135" />
+  <text class="label" x="780" y="538" text-anchor="middle">개념별 인과 효과</text>
+  <text class="body" x="780" y="570" text-anchor="middle">Double Machine Learning</text>
+  <text class="small" x="780" y="600" text-anchor="middle">100개 분할의 중앙값</text>
+
+  <path class="dash" d="M400 420 L400 505" />
+  <path class="arrow" d="M560 572 L655 572" />
+  <path class="dash" d="M905 572 C1010 572 1020 430 1020 360" />
+
+  <text class="small" x="600" y="675" text-anchor="middle">
+    재구성 출처: DiaVLo Figure 2, Sections 3–4 · 학습 구조가 아닌 평가·진단 파이프라인
+  </text>
+</svg>
