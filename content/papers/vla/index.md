@@ -225,6 +225,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/roboduo-attempt-check-and-atomic-recovery/overview.svg)
 
+## [Rollback: Experience Backtracking in World Models for Policy Improvement](/papers/vla/rollback-experience-backtracking-in-world-models)
+
+![](/papers/assets/vla/rollback-experience-backtracking-in-world-models/overview.svg)
+
 ## [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
 
 ![](/papers/assets/vla/craft-skill-alignment-for-compositional-generalization-in-vlas/overview.svg)

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Rollback 세계모델 기반 정책 개선 구조</title>
+  <desc id="desc">실제 로봇 trajectory에서 세계모델 context를 복구해 대안 action chunk를 tree search하고, 상대 quality label로 VLA 정책을 학습하며 실제 경험으로 세계모델을 계속 보정하는 비동기 순환 구조</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#0f172a}.sub{font:600 18px Arial,sans-serif;fill:#334155}.boxTitle{font:700 20px Arial,sans-serif;fill:#0f172a}.txt{font:16px Arial,sans-serif;fill:#334155}.small{font:14px Arial,sans-serif;fill:#475569}.line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#64748b;stroke-width:3;stroke-dasharray:9 7;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="24" fill="#f8fafc"/>
+  <text x="52" y="55" class="title">Rollback — 실제 경험을 되감는 세계모델 학습 (논문 기반 재구성)</text>
+  <text x="52" y="86" class="sub">학습: real trajectory ↔ counterfactual tree search ↔ 정책·세계모델 co-evolution</text>
+
+  <rect x="50" y="135" width="215" height="145" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+  <text x="157" y="174" text-anchor="middle" class="boxTitle">실제 로봇</text>
+  <text x="157" y="205" text-anchor="middle" class="txt">3-view RGB + proprioception</text>
+  <text x="157" y="232" text-anchor="middle" class="txt">언어 지시 · 성공/실패</text>
+  <text x="157" y="259" text-anchor="middle" class="small">episode별 trajectory 업로드</text>
+
+  <rect x="330" y="120" width="250" height="175" rx="18" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="455" y="160" text-anchor="middle" class="boxTitle">Experience Fabric</text>
+  <text x="455" y="194" text-anchor="middle" class="txt">demo + real replay</text>
+  <text x="455" y="222" text-anchor="middle" class="txt">tree supervision pool</text>
+  <text x="455" y="253" text-anchor="middle" class="small">versioned model snapshots</text>
+
+  <rect x="650" y="110" width="500" height="205" rx="18" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="900" y="148" text-anchor="middle" class="boxTitle">Experience-backtracking tree search</text>
+  <rect x="680" y="175" width="135" height="92" rx="12" fill="#ffffff" stroke="#86efac"/>
+  <text x="747" y="208" text-anchor="middle" class="txt">context mₜ</text>
+  <text x="747" y="236" text-anchor="middle" class="small">cache · restore</text>
+  <circle cx="900" cy="188" r="15" fill="#64748b"/>
+  <circle cx="855" cy="250" r="15" fill="#22c55e"/>
+  <circle cx="945" cy="250" r="15" fill="#ef4444"/>
+  <circle cx="1035" cy="250" r="15" fill="#a855f7"/>
+  <path d="M900 203 L855 235 M900 203 L945 235 M900 203 L1035 235" stroke="#475569" stroke-width="3"/>
+  <text x="900" y="292" text-anchor="middle" class="small">동일 decision context · 대안 action chunk · subtree outcome</text>
+
+  <rect x="650" y="390" width="235" height="160" rx="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="767" y="430" text-anchor="middle" class="boxTitle">상대 가치 집계</text>
+  <text x="767" y="462" text-anchor="middle" class="txt">sibling subtree 성공률</text>
+  <text x="767" y="490" text-anchor="middle" class="txt">→ quality bin 1…5</text>
+  <text x="767" y="520" text-anchor="middle" class="small">별도 value network 없음</text>
+
+  <rect x="930" y="380" width="220" height="180" rx="18" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+  <text x="1040" y="421" text-anchor="middle" class="boxTitle">π₀.₅ 정책 학습</text>
+  <text x="1040" y="454" text-anchor="middle" class="txt">advantage-conditioned</text>
+  <text x="1040" y="482" text-anchor="middle" class="txt">flow matching</text>
+  <text x="1040" y="519" text-anchor="middle" class="small">배포: 최고 bin 조건 정책만</text>
+  <text x="1040" y="542" text-anchor="middle" class="small">tree search 없이 실행</text>
+
+  <rect x="330" y="405" width="250" height="135" rx="18" fill="#cffafe" stroke="#06b6d4" stroke-width="2"/>
+  <text x="455" y="445" text-anchor="middle" class="boxTitle">GE-Sim 2.0 적응</text>
+  <text x="455" y="477" text-anchor="middle" class="txt">real trajectory → LoRA SFT</text>
+  <text x="455" y="505" text-anchor="middle" class="txt">→ DMD few-step simulator</text>
+
+  <path d="M265 205 H330" class="line"/>
+  <path d="M580 205 H650" class="line"/>
+  <path d="M900 315 V390" class="line"/>
+  <path d="M885 470 H930" class="line"/>
+  <path d="M455 295 V405" class="line"/>
+  <path d="M580 470 C620 470 615 265 650 265" class="dash"/>
+  <path d="M1040 380 C1040 340 520 345 520 295" class="dash"/>
+  <path d="M930 535 C820 620 170 610 157 280" class="dash"/>
+
+  <rect x="50" y="585" width="1100" height="60" rx="14" fill="#e2e8f0"/>
+  <text x="600" y="610" text-anchor="middle" class="txt">입력 → 실제 경험에 고정된 세계모델 context → MCTS 분기 비교 → chunk-level relative supervision → 개선된 VLA action policy</text>
+  <text x="600" y="635" text-anchor="middle" class="small">실선: 데이터·학습 신호  ·  점선: 비동기 snapshot/배포/피드백 순환</text>
+</svg>
