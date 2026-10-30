@@ -217,6 +217,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/reki-registering-knowledge-in-vlas/overview.svg)
 
+## [Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](/papers/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization)
+
+![](/papers/assets/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization/overview.svg)
+
 ## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
 
 ![](/papers/assets/vla/robodawn/framework.png)
@@ -236,6 +240,10 @@ paper_sync: true
 ## [SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation](/papers/vla/savla-symmetry-aware-vision-language-action-models-for-robotic-manipulation)
 
 ## [Self-Adaptive VLA for Robust Robot Deployment](/papers/vla/self-adaptive-vla-for-robust-robot-deployment)
+
+## [Self-Labeled Preference Transfer for Steerable Robot Manipulation](/papers/vla/self-labeled-preference-transfer-for-steerable-robot-manipulation)
+
+![](/papers/assets/vla/self-labeled-preference-transfer-for-steerable-robot-manipulation/overview.svg)
 
 ## [SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation](/papers/vla/skelewam-skeleton-world-action-modeling)
 

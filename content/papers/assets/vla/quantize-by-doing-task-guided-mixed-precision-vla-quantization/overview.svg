@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">QbD-VLA의 폐루프 혼합 정밀도 탐색 구조</title>
+  <desc id="desc">현재 VLA precision configuration에서 한 layer group의 bit를 낮춘 후보를 만들고, simulator task success와 Wilson interval로 수락 또는 거절한 뒤 최종 구성을 로봇에 배포하는 반복 과정</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:'Malgun Gothic','Noto Sans KR',sans-serif;fill:#172033}.h{font-size:25px;font-weight:700}.m{font-size:18px;font-weight:700}.s{font-size:15px}.box{stroke:#64748b;stroke-width:2;rx:16}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:8 7}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="600" y="42" text-anchor="middle" class="t h">QbD-VLA · Task-guided Mixed-Precision Allocation (재구성)</text>
+  <rect x="45" y="95" width="255" height="145" class="box" fill="#dbeafe"/>
+  <text x="172" y="132" text-anchor="middle" class="t m">현재 VLA 구성 c</text><text x="172" y="165" text-anchor="middle" class="t s">vision · language · projector</text><text x="172" y="190" text-anchor="middle" class="t s">action-head layer groups</text><text x="172" y="216" text-anchor="middle" class="t s">FP / W8A8 / W4A8 / W4A6 / W4A4</text>
+  <path d="M300 168 H400" class="a"/>
+  <rect x="410" y="105" width="275" height="125" class="box" fill="#ede9fe"/>
+  <text x="547" y="143" text-anchor="middle" class="t m">후보 c′ 생성</text><text x="547" y="176" text-anchor="middle" class="t s">한 group만 한 단계 하향</text><text x="547" y="202" text-anchor="middle" class="t s">ΔC = Δ(W + A) 큰 후보 우선</text>
+  <path d="M685 168 H785" class="a"/>
+  <rect x="795" y="95" width="355" height="145" class="box" fill="#dcfce7"/>
+  <text x="972" y="132" text-anchor="middle" class="t m">짧은 simulator 폐루프 rollout</text><text x="972" y="165" text-anchor="middle" class="t s">task마다 1 episode / batch</text><text x="972" y="190" text-anchor="middle" class="t s">최대 3 batch · 현재 mixed precision</text><text x="972" y="216" text-anchor="middle" class="t s">success estimate ŝ_H(c′)</text>
+  <path d="M972 240 V318" class="a"/>
+  <polygon points="972,310 1120,395 972,480 824,395" fill="#fef3c7" stroke="#64748b" stroke-width="2"/>
+  <text x="972" y="374" text-anchor="middle" class="t m">Wilson sequential test</text><text x="972" y="402" text-anchor="middle" class="t s">full precision 기준 floor f</text><text x="972" y="427" text-anchor="middle" class="t s">lower ≥ f: 수락 / upper &lt; f: 거절</text>
+  <path d="M824 395 H665" class="a"/>
+  <rect x="395" y="340" width="260" height="110" class="box" fill="#dcfce7"/>
+  <text x="525" y="375" text-anchor="middle" class="t m">수락</text><text x="525" y="405" text-anchor="middle" class="t s">c ← c′, 탐색 계속</text><text x="525" y="430" text-anchor="middle" class="t s">group interaction 반영</text>
+  <path d="M525 340 V285 H172 V240" class="a dash"/>
+  <path d="M972 480 V540" class="a"/>
+  <text x="995" y="516" class="t s">더 낮출 후보 없음</text>
+  <rect x="690" y="550" width="460" height="90" class="box" fill="#fee2e2"/>
+  <text x="920" y="582" text-anchor="middle" class="t m">frozen mixed-precision VLA 배포</text><text x="920" y="612" text-anchor="middle" class="t s">simulator/탐색 제거 · 관측+언어 → 로봇 action</text>
+  <rect x="45" y="535" width="510" height="105" fill="#fff" stroke="#cbd5e1" rx="16"/>
+  <text x="70" y="568" class="t m">선택 기준</text><text x="70" y="598" class="t s">accepted path 중 최소 nominal cost C(c)=W(c)+A(c)</text><text x="70" y="624" class="t s">최종 full-horizon evaluation은 별도 initial states 사용</text>
+</svg>

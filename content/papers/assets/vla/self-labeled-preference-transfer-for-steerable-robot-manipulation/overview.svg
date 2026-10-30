@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">SPT의 source 공동 학습, target 자동 라벨링, 배포 구조</title>
+  <desc id="desc">선호 라벨 source demonstration으로 action policy와 recognizer를 공동 학습하고, frozen recognizer가 target demonstration을 라벨링하여 policy를 적응한 뒤, 배포에서는 사용자 선호로 action chunk를 생성하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:'Malgun Gothic','Noto Sans KR',sans-serif;fill:#172033}.h{font-size:25px;font-weight:700}.m{font-size:18px;font-weight:700}.s{font-size:15px}.box{stroke:#64748b;stroke-width:2;rx:16}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:8 7}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="600" y="42" text-anchor="middle" class="t h">Self-Labeled Preference Transfer (논문 Figure 2 기반 재구성)</text>
+  <rect x="30" y="70" width="1140" height="225" fill="#eff6ff" stroke="#93c5fd" rx="22"/>
+  <text x="55" y="104" class="t m">Stage A · 선호 라벨 source에서 공동 학습</text>
+  <rect x="65" y="130" width="215" height="110" class="box" fill="#fff"/>
+  <text x="172" y="164" text-anchor="middle" class="t m">Source trajectory</text><text x="172" y="193" text-anchor="middle" class="t s">RGB · state · action</text><text x="172" y="219" text-anchor="middle" class="t s">task + preference label c</text>
+  <path d="M280 185 H380" class="a"/>
+  <rect x="390" y="120" width="260" height="130" class="box" fill="#dbeafe"/>
+  <text x="520" y="160" text-anchor="middle" class="t m">공유 VLM backbone</text><text x="520" y="190" text-anchor="middle" class="t s">영상·언어·EE state token</text><text x="520" y="220" text-anchor="middle" class="t s">Qwen3-VL-4B 기반</text>
+  <path d="M650 160 H760" class="a"/>
+  <path d="M650 215 H760" class="a"/>
+  <rect x="770" y="112" width="310" height="74" class="box" fill="#dcfce7"/>
+  <text x="925" y="143" text-anchor="middle" class="t m">Action branch</text><text x="925" y="168" text-anchor="middle" class="t s">L_act · 50-step action chunk</text>
+  <rect x="770" y="198" width="310" height="74" class="box" fill="#fef3c7"/>
+  <text x="925" y="229" text-anchor="middle" class="t m">Recognition branch</text><text x="925" y="254" text-anchor="middle" class="t s">L_inf · preference answer token</text>
+  <text x="925" y="289" text-anchor="middle" class="t s">공동 목적함수: L_A = L_act + λL_inf</text>
+  <rect x="30" y="315" width="1140" height="210" fill="#fff7ed" stroke="#fdba74" rx="22"/>
+  <text x="55" y="350" class="t m">Stage B · target demonstration self-labeling과 policy 적응</text>
+  <rect x="65" y="382" width="235" height="95" class="box" fill="#fff"/>
+  <text x="182" y="415" text-anchor="middle" class="t m">Target trajectory</text><text x="182" y="444" text-anchor="middle" class="t s">선호 라벨 없음</text>
+  <path d="M300 429 H405" class="a"/>
+  <rect x="415" y="375" width="245" height="108" class="box" fill="#fef3c7"/>
+  <text x="537" y="409" text-anchor="middle" class="t m">Frozen recognizer</text><text x="537" y="438" text-anchor="middle" class="t s">ĉ = g(trajectory)</text><text x="537" y="463" text-anchor="middle" class="t s">gradient 없음</text>
+  <path d="M660 429 H755" class="a"/>
+  <rect x="765" y="375" width="330" height="108" class="box" fill="#dcfce7"/>
+  <text x="930" y="409" text-anchor="middle" class="t m">Stage-A policy 복사본 적응</text><text x="930" y="438" text-anchor="middle" class="t s">task + inferred preference ĉ</text><text x="930" y="463" text-anchor="middle" class="t s">target action loss만 사용</text>
+  <path d="M930 483 V555" class="a"/>
+  <rect x="335" y="565" width="530" height="82" class="box" fill="#ede9fe"/>
+  <text x="600" y="596" text-anchor="middle" class="t m">배포 · RGB + task instruction + 사용자 선호</text><text x="600" y="625" text-anchor="middle" class="t s">adapted action policy만 실행 → continuous action chunk</text>
+  <path d="M865 606 H1080" class="a dash"/>
+  <text x="1090" y="611" class="t s">로봇</text>
+</svg>
