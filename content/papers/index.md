@@ -209,6 +209,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/proactivevla-proactive-environment-exploration/overview.svg)
 
+### [Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](/papers/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization)
+
+![](/papers/assets/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization/overview.svg)
+
 ### [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
 ### [REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](/papers/vla/react-rolling-denoising-for-reactive-vla-control)
@@ -218,10 +222,6 @@ paper_sync: true
 ### [REKI: Registering Knowledge in VLAs](/papers/vla/reki-registering-knowledge-in-vlas)
 
 ![](/papers/assets/vla/reki-registering-knowledge-in-vlas/overview.svg)
-
-### [Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](/papers/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization)
-
-![](/papers/assets/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization/overview.svg)
 
 ### [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
 
