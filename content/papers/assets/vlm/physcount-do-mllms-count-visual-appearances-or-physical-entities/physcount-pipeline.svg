@@ -1,0 +1,182 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="700"
+  viewBox="0 0 1200 700"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">PhysCount 데이터 구축과 평가 파이프라인</title>
+  <desc id="desc">
+    거울과 유리가 있는 자연 이미지를 선별하고, 출현 위치와 관찰 방식을 기록하고, 같은 물리 개체를
+    묶은 다음 네 질문군과 Score, Group-Acc, Phys-Gnd로 평가하는 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 28px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .subtitle {
+        font:
+          500 15px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #475569;
+      }
+      .head {
+        font:
+          700 18px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          500 14px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          500 12px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #475569;
+      }
+      .pill {
+        font:
+          700 12px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+      }
+      .box {
+        fill: #ffffff;
+        stroke-width: 2;
+        rx: 18;
+      }
+      .arrow {
+        fill: none;
+        stroke: #475569;
+        stroke-width: 2.5;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)" rx="24" />
+  <text x="60" y="55" class="title">
+    PhysCount: 출현을 찾고, 실재 개체로 묶어, 일관성을 평가한다
+  </text>
+  <text x="60" y="82" class="subtitle">논문 Figure 2 · Sections 3.1–3.5 기반 한국어 재구성</text>
+
+  <rect x="55" y="125" width="225" height="190" class="box" stroke="#60a5fa" />
+  <text x="77" y="157" class="head">1. 장면 후보 선별</text>
+  <rect x="78" y="178" width="82" height="56" rx="8" fill="#dbeafe" stroke="#60a5fa" />
+  <path d="M89 220 L110 196 L124 210 L140 189 L151 220 Z" fill="#60a5fa" opacity=".7" />
+  <rect
+    x="118"
+    y="184"
+    width="30"
+    height="42"
+    rx="3"
+    fill="none"
+    stroke="#2563eb"
+    stroke-width="2"
+  />
+  <text x="175" y="193" class="body">공개 자연 이미지</text>
+  <text x="175" y="216" class="body">mirror · glass</text>
+  <text x="77" y="262" class="body">Qwen 자동 필터 → 인간 선택</text>
+  <text x="77" y="287" class="small">겉보기 수가 달라지고 판정 가능한 장면</text>
+
+  <path d="M280 220 H330" class="arrow" />
+
+  <rect x="335" y="125" width="250" height="190" class="box" stroke="#34d399" />
+  <text x="357" y="157" class="head">2. appearance annotation</text>
+  <circle cx="382" cy="199" r="14" fill="#10b981" />
+  <circle cx="438" cy="199" r="14" fill="#38bdf8" />
+  <circle cx="494" cy="199" r="14" fill="#a78bfa" />
+  <text x="365" y="230" class="small">직접</text>
+  <text x="419" y="230" class="small">반사</text>
+  <text x="474" y="230" class="small">투과</text>
+  <text x="357" y="262" class="body">각 출현의 위치 + 관찰 방식</text>
+  <text x="357" y="287" class="small">7,086 appearances / 651 target groups</text>
+
+  <path d="M585 220 H635" class="arrow" />
+
+  <rect x="640" y="125" width="235" height="190" class="box" stroke="#f59e0b" />
+  <text x="662" y="157" class="head">3. physical identity</text>
+  <circle cx="690" cy="207" r="18" fill="#10b981" />
+  <circle cx="760" cy="187" r="18" fill="#38bdf8" />
+  <circle cx="760" cy="232" r="18" fill="#38bdf8" />
+  <path
+    d="M708 203 C726 196 733 190 742 188 M708 211 C726 219 733 227 742 231"
+    fill="none"
+    stroke="#f59e0b"
+    stroke-width="4"
+  />
+  <text x="662" y="269" class="body">같은 실재 개체끼리 grouping</text>
+  <text x="662" y="292" class="small">여러 appearance → 하나의 entity</text>
+
+  <path d="M875 220 H925" class="arrow" />
+
+  <rect x="930" y="125" width="215" height="190" class="box" stroke="#a78bfa" />
+  <text x="952" y="157" class="head">4. 검증·교정</text>
+  <text x="952" y="194" class="body">annotator 2 재검사</text>
+  <text x="952" y="222" class="body">GPT QA consistency check</text>
+  <text x="952" y="250" class="body">flagged pair 인간 교정</text>
+  <rect x="952" y="270" width="167" height="27" rx="13" fill="#ede9fe" />
+  <text x="971" y="289" class="pill" fill="#6d28d9">최종 구조 annotation</text>
+
+  <path d="M1038 315 V360 H600 V392" class="arrow" />
+
+  <rect x="55" y="400" width="750" height="205" class="box" stroke="#818cf8" />
+  <text x="77" y="435" class="head">구조 annotation에서 네 질문군 생성</text>
+  <rect x="77" y="460" width="160" height="92" rx="14" fill="#ecfdf5" stroke="#34d399" />
+  <text x="96" y="488" class="head">Appearance</text>
+  <text x="96" y="516" class="body">보이는 출현 모두</text>
+  <text x="96" y="537" class="small">예: 5</text>
+  <rect x="252" y="460" width="160" height="92" rx="14" fill="#fffbeb" stroke="#f59e0b" />
+  <text x="278" y="488" class="head">Entity</text>
+  <text x="273" y="516" class="body">실재 개체로 병합</text>
+  <text x="273" y="537" class="small">예: 4</text>
+  <rect x="427" y="460" width="160" height="92" rx="14" fill="#eff6ff" stroke="#60a5fa" />
+  <text x="448" y="488" class="head">Formation</text>
+  <text x="449" y="516" class="body">직접·반사·투과</text>
+  <text x="449" y="537" class="small">예: 반사 2</text>
+  <rect x="602" y="460" width="178" height="92" rx="14" fill="#f5f3ff" stroke="#a78bfa" />
+  <text x="619" y="488" class="head">Correspondence</text>
+  <text x="619" y="516" class="body">교집합·배타·중복</text>
+  <text x="619" y="537" class="small">예: 직접∩반사 1</text>
+  <text x="77" y="584" class="small">
+    546 images · 4,595 questions · 137 targets · 599 groups에 네 질문군 모두 포함
+  </text>
+
+  <path d="M805 500 H855" class="arrow" />
+
+  <rect x="860" y="400" width="285" height="205" class="box" stroke="#f43f5e" />
+  <text x="882" y="435" class="head">MLLM 평가: 숫자보다 일관성</text>
+  <rect x="882" y="458" width="238" height="34" rx="17" fill="#fff1f2" />
+  <text x="901" y="480" class="body">NAE: 각 count의 정규화 오차</text>
+  <rect x="882" y="501" width="238" height="34" rx="17" fill="#fff1f2" />
+  <text x="901" y="523" class="body">Score: 질문군 균형의 곱</text>
+  <rect x="882" y="544" width="238" height="34" rx="17" fill="#fff1f2" />
+  <text x="901" y="566" class="body">Group-Acc: 모든 답 exact match</text>
+  <text x="882" y="594" class="small">Phys-Gnd: appearance 성공 뒤 물리 grounding</text>
+
+  <rect x="55" y="632" width="1090" height="42" rx="12" fill="#0f172a" />
+  <text x="75" y="659" class="body" style="fill: #ffffff">
+    핵심 변화: visible occurrence를 그대로 세지 않고, identity edge로 묶인 persistent entity를 평가
+    단위로 만든다.
+  </text>
+</svg>

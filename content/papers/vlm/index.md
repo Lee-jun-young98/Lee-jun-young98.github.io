@@ -69,6 +69,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/omnicapbench-deep-structured-audio-visual-captioning-evaluation/omnicapbench-evaluation-pipeline.svg)
 
+## [PhysCount: Do MLLMs Count Visual Appearances or Physical Entities?](/papers/vlm/physcount-do-mllms-count-visual-appearances-or-physical-entities)
+
+![](/papers/assets/vlm/physcount-do-mllms-count-visual-appearances-or-physical-entities/physcount-pipeline.svg)
+
 ## [Reinforcement Learning with Visually Attributable On-Policy Self-Distillation](/papers/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation)
 
 ![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
