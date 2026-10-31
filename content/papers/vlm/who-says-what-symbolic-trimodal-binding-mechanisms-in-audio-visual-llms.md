@@ -10,6 +10,7 @@ authors: "Jihoo Jung, Youngjoon Jang, Joon Son Chung"
 paper: "https://arxiv.org/abs/2609.31193"
 code: ""
 project: ""
+thumbnail: "/papers/assets/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms/trimodal-binding-pipeline.svg"
 ---
 
 # 한 줄 요약
@@ -41,12 +42,6 @@ Representational Similarity Analysis(RSA)와 activation patching 기반 Causal M
 
 또한 모델 전체를 재학습하지 않고 외부 Active Speaker Detection(ASD) 결과를 빨간 bounding box로 영상에 덧씌우는 visual prompting만으로 audio-visual binding을 보완한다. 이는 시각 마커와 도구 출력을 VLM 입력 공간에 다시 렌더링하는 방식이 단순한 편의 기능을 넘어 내부 결합 회로를 안정화할 수 있음을 보여 준다.
 
-# 핵심 그림
-
-![오디오의 발화 순서 ID와 영상의 화자 위치 ID를 연결하는 trimodal binding 과정](https://arxiv.org/html/2609.31193v1/main.png)
-
-_원문 Figure 1(a)._ anchor ID 검색 → target ID 선택 → 의미 특징 회수의 세 단계와 실패 지점을 보여 준다. [그림 출처: 논문 원문](https://arxiv.org/html/2609.31193).
-
 # Method
 
 1. video-SALMONN2+ 7B, Qwen2.5-Omni 3B/7B, MiniCPM-o-4.5 9B를 대상으로 AAVR(Acoustically-Anchored Visual Retrieval)와 VAAR(Visually-Anchored Audio Retrieval) 과제를 구성한다.
@@ -55,6 +50,16 @@ _원문 Figure 1(a)._ anchor ID 검색 → target ID 선택 → 의미 특징 �
 4. 시간 순서, 화면 위치, 의미 내용을 각각 바꾼 반사실적 입력의 activation을 원래 실행에 patch해 각 정보가 출력에 미치는 인과 효과를 측정한다.
 5. primed/unprimed 표현 차이와 올바른 ID의 causal intervention을 이용해 target ID selection이 주 실패 지점임을 확인한다.
 6. off-the-shelf ASD가 탐지한 현재 화자에 bounding box를 그려 넣고, training-free ASD와 400개 합성 영상·2,040개 학습 샘플을 사용한 LoRA 기반 ASD-FT를 평가한다.
+
+# 핵심 그림
+
+![텍스트 질문의 의미를 발화 시간 ID로 바꾸고 화자 위치 ID에 대응시킨 뒤 시각 특징을 회수하며, ASD 경계상자가 오디오-비디오 대응을 보강하는 구조](/papers/assets/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms/trimodal-binding-pipeline.svg)
+
+> **그림 1 재구성.** 입력 → anchor ID 검색 → target ID 선택 → 의미 특징 회수의 핵심 아키텍처와 ASD visual prompting을 한 흐름으로 묶었다. 출처: [논문 Figure 1 및 Sections 3.1–3.2, 4.2](https://arxiv.org/html/2609.31193). 원본 이미지를 복사하지 않고 논문 내용을 바탕으로 한국어로 재구성했다.
+
+정성 예시보다 이 구조 그림을 고른 이유는 논문의 핵심 기여가 특정 장면의 성공 사례가 아니라 **의미 → 시간 ID → 위치 ID → 의미**로 이어지는 내부 결합 단계와 실패 지점의 분해에 있기 때문이다. 입력 질문의 acoustic anchor “Japan”은 먼저 세 번째 발화라는 Temporal ID `t=3`으로 바뀌고, target-ID selection이 이를 화면 위치 `p=1`에 대응시킨 뒤 그 위치의 시각 특징 “tiger”를 회수한다.
+
+붉은 점선은 학습과 추론의 차이를 나타낸다. training-free 추론에서는 off-the-shelf ASD가 활성 화자에 빨간 경계상자를 그려 `t ↔ p` 대응을 명시적으로 만든다. ASD-FT에서는 같은 시각 프롬프트가 있는 400개 합성 영상과 2,040개 샘플로 LoRA를 300 step 미만 학습해 경계상자 grounding과 audio-visual alignment를 강화한다. RSA와 CMA가 각각 중·후반층의 ID 표현과 그 인과적 사용을 확인하며, 올바른 target-ID activation을 주입했을 때 성능이 회복된다는 결과가 이 모듈 연결을 뒷받침한다.
 
 # Experiments / Results
 
@@ -65,7 +70,7 @@ _원문 Figure 1(a)._ anchor ID 검색 → target ID 선택 → 의미 특징 �
 - ASD-FT는 Qwen2.5-Omni 7B의 AVSpeaker 44.86%→48.79%, DailyOmni 64.33%→71.09%, SocialOmni 38.95%→44.25%를 기록했다. MiniCPM-o-4.5와 video-SALMONN2+에서도 대화 중심 세 데이터셋 성능이 전반적으로 향상됐다.
 - 300 step 미만의 경량 fine-tuning 후 OmniBench, DAVE, WorldSense 같은 일반 audio-visual benchmark에서도 세 모델이 일관되게 개선되어, bounding-box 해석을 넘어 audio-visual alignment 자체가 강화되었을 가능성을 보였다.
 
-## 주요 실험표
+## 주요 실험 결과
 
 논문 Table 1의 Qwen2.5-Omni 7B 비교를 발췌했다. AVSpeaker·DailyOmni·SocialOmni는 정확도(%), DiaDemBench의 REF·ASR은 논문 보고 점수(높을수록 좋음)다.
 
@@ -75,7 +80,7 @@ _원문 Figure 1(a)._ anchor ID 검색 → target ID 선택 → 의미 특징 �
 | + ASD (재학습 없음) |     45.59 |     64.66 |      41.90 | **22.5 ± 0.2** | **33.0 ± 0.2** |
 | + ASD-FT            | **48.79** | **71.09** |  **44.25** |     20.7 ± 0.2 |     32.3 ± 0.1 |
 
-ASD-FT가 모든 지표에서 최고인 것은 아니다. DiaDemBench의 REF·ASR은 재학습 없는 ASD가 더 높다. 표의 원자료: [논문 Table 1](https://arxiv.org/html/2609.31193).
+ASD-FT는 기본 모델 대비 AVSpeaker **+3.93%p**, DailyOmni **+6.76%p**, SocialOmni **+5.30%p**를 얻었다. 반면 모든 지표에서 최고인 것은 아니다. DiaDemBench의 REF·ASR은 재학습 없는 ASD가 각각 19.1→22.5(**+3.4점**), 28.1→33.0(**+4.9점**)으로 ASD-FT보다 높다. REF·ASR은 논문이 보고한 평가 점수이므로 정확도와 달리 %p로 해석하지 않았다. 수치·단위·설정의 원자료: [논문 Table 1 및 Section 5.1](https://arxiv.org/html/2609.31193).
 
 # Limitations / Discussion
 
