@@ -41,11 +41,11 @@ paper_sync: true
 
 ![](/papers/assets/vla/chronos-policy-learning-robot-policies-on-physical-time/overview.svg)
 
+## [Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models](/papers/vla/co-vla-consensus-based-federated-training-for-vision-language-action-models)
+
 ## [CoAWM: Continuous-Action World Models](/papers/vla/continuous-action-world-models)
 
 ![](/papers/assets/vla/continuous-action-world-models/overview.svg)
-
-## [Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models](/papers/vla/co-vla-consensus-based-federated-training-for-vision-language-action-models)
 
 ## [Completion Aware Guidance for World Action Models](/papers/vla/completion-aware-guidance-for-world-action-models)
 
