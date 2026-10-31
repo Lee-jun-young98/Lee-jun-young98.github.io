@@ -1,0 +1,91 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="680"
+  viewBox="0 0 1200 680"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">CoRAct 추론-행동-결과 정렬 구조</title>
+  <desc id="desc">
+    첫 단계에서 입력이 ECoT, action, future prediction으로 흐르고 두 번째 단계에서 movement와
+    waypoint 보상으로 noise policy를 학습한 뒤 단일 action sample로 추론한다.
+  </desc>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#46566d" />
+    </marker>
+    <style>
+      .h {
+        font: 700 25px sans-serif;
+        fill: #17233a;
+      }
+      .t {
+        font: 600 18px sans-serif;
+        fill: #17233a;
+      }
+      .s {
+        font: 15px sans-serif;
+        fill: #334155;
+      }
+      .b {
+        rx: 16;
+        stroke-width: 2;
+      }
+      .l {
+        stroke: #46566d;
+        stroke-width: 3;
+        fill: none;
+        marker-end: url(#a);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc" />
+  <text x="44" y="48" class="h">CoRAct — 논문 Figure 2 기반 재구성</text>
+  <text x="44" y="92" class="t">Stage 1 · joint reasoning–action–consequence modeling</text>
+  <rect class="b" x="45" y="120" width="190" height="100" fill="#e0f2fe" stroke="#0284c7" />
+  <text x="140" y="154" text-anchor="middle" class="t">입력</text>
+  <text x="140" y="181" text-anchor="middle" class="s">RGB · state · language</text>
+  <rect class="b" x="300" y="105" width="210" height="130" fill="#ede9fe" stroke="#7c3aed" />
+  <text x="405" y="145" text-anchor="middle" class="t">VLM expert</text>
+  <text x="405" y="174" text-anchor="middle" class="s">structured ECoT</text>
+  <text x="405" y="198" text-anchor="middle" class="s">movement + waypoint</text>
+  <rect class="b" x="580" y="105" width="210" height="130" fill="#dcfce7" stroke="#16a34a" />
+  <text x="685" y="145" text-anchor="middle" class="t">Action expert</text>
+  <text x="685" y="174" text-anchor="middle" class="s">flow matching</text>
+  <text x="685" y="198" text-anchor="middle" class="s">8-step action chunk</text>
+  <rect class="b" x="860" y="105" width="280" height="130" fill="#ffedd5" stroke="#ea580c" />
+  <text x="1000" y="145" text-anchor="middle" class="t">Image expert</text>
+  <text x="1000" y="174" text-anchor="middle" class="s">action-conditioned future</text>
+  <text x="1000" y="198" text-anchor="middle" class="s">visual latent → image</text>
+  <path class="l" d="M235 170 H295" />
+  <path class="l" d="M510 170 H575" />
+  <path class="l" d="M790 170 H855" />
+  <text x="44" y="300" class="t">Stage 2 · frozen backbone, verifiable noise-space alignment</text>
+  <rect class="b" x="45" y="330" width="235" height="130" fill="#fef3c7" stroke="#d97706" />
+  <text x="162" y="368" text-anchor="middle" class="t">Conditional noise policy</text>
+  <text x="162" y="397" text-anchor="middle" class="s">context → initial ε</text>
+  <text x="162" y="422" text-anchor="middle" class="s">8 candidates</text>
+  <rect class="b" x="360" y="315" width="250" height="160" fill="#dcfce7" stroke="#16a34a" />
+  <text x="485" y="355" text-anchor="middle" class="t">Frozen MoT backbone</text>
+  <text x="485" y="384" text-anchor="middle" class="s">candidate action + future</text>
+  <text x="485" y="415" text-anchor="middle" class="s">10-step flow integration</text>
+  <rect class="b" x="690" y="315" width="210" height="160" fill="#fee2e2" stroke="#dc2626" />
+  <text x="795" y="352" text-anchor="middle" class="t">검증 보상</text>
+  <text x="795" y="385" text-anchor="middle" class="s">movement endpoint</text>
+  <text x="795" y="414" text-anchor="middle" class="s">predicted waypoint</text>
+  <text x="795" y="443" text-anchor="middle" class="s">group-relative advantage</text>
+  <rect class="b" x="980" y="330" width="170" height="130" fill="#e0e7ff" stroke="#4f46e5" />
+  <text x="1065" y="368" text-anchor="middle" class="t">Update</text>
+  <text x="1065" y="398" text-anchor="middle" class="s">noise policy만</text>
+  <text x="1065" y="423" text-anchor="middle" class="s">최적화</text>
+  <path class="l" d="M280 395 H355" />
+  <path class="l" d="M610 395 H685" />
+  <path class="l" d="M900 395 H975" />
+  <path d="M1065 465 C1065 505 160 505 160 465" class="l" />
+  <rect class="b" x="170" y="555" width="860" height="80" fill="#f1f5f9" stroke="#64748b" />
+  <text x="600" y="585" text-anchor="middle" class="t">추론</text>
+  <text x="600" y="613" text-anchor="middle" class="s">
+    관측 + ECoT → 학습된 ε 1개 → frozen action expert → action chunk (후보 검증 없음)
+  </text>
+</svg>

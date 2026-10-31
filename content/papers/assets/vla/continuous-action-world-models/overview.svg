@@ -1,0 +1,95 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="680"
+  viewBox="0 0 1200 680"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">CoAWM 연속 action function 학습과 시간 질의 실행</title>
+  <desc id="desc">
+    여러 embodiment와 sampling rate의 trajectory를 latent function으로 학습하고 world model의 관측
+    조건으로 latent를 예측한 뒤 원하는 주파수의 시간 점에서 action을 질의한다.
+  </desc>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#475569" />
+    </marker>
+    <style>
+      .h {
+        font: 700 25px sans-serif;
+        fill: #17233a;
+      }
+      .t {
+        font: 600 18px sans-serif;
+        fill: #17233a;
+      }
+      .s {
+        font: 15px sans-serif;
+        fill: #334155;
+      }
+      .b {
+        rx: 16;
+        stroke-width: 2;
+      }
+      .l {
+        stroke: #475569;
+        stroke-width: 3;
+        fill: none;
+        marker-end: url(#a);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc" />
+  <text x="44" y="48" class="h">CoAWM — 논문 Figure 1 기반 재구성</text>
+  <text x="44" y="92" class="t">Stage A · cross-embodiment action-function pretraining</text>
+  <rect class="b" x="45" y="120" width="245" height="150" fill="#e0f2fe" stroke="#0284c7" />
+  <text x="168" y="156" text-anchor="middle" class="t">Timestamped trajectories</text>
+  <text x="168" y="187" text-anchor="middle" class="s">robot A · 10 Hz</text>
+  <text x="168" y="214" text-anchor="middle" class="s">robot B · 30 Hz</text>
+  <text x="168" y="241" text-anchor="middle" class="s">position · rotation · gripper</text>
+  <rect class="b" x="370" y="120" width="210" height="150" fill="#ede9fe" stroke="#7c3aed" />
+  <text x="475" y="165" text-anchor="middle" class="t">MoT encoder</text>
+  <text x="475" y="198" text-anchor="middle" class="s">multi-rate views</text>
+  <text x="475" y="225" text-anchor="middle" class="s">consistency</text>
+  <rect class="b" x="660" y="120" width="190" height="150" fill="#dcfce7" stroke="#16a34a" />
+  <text x="755" y="165" text-anchor="middle" class="t">Latent function Z</text>
+  <text x="755" y="198" text-anchor="middle" class="s">fixed size</text>
+  <text x="755" y="225" text-anchor="middle" class="s">shared motion prior</text>
+  <rect class="b" x="930" y="120" width="220" height="150" fill="#ffedd5" stroke="#ea580c" />
+  <text x="1040" y="165" text-anchor="middle" class="t">Function decoder</text>
+  <text x="1040" y="198" text-anchor="middle" class="s">D(Z, τ, context)</text>
+  <text x="1040" y="225" text-anchor="middle" class="s">action at physical time</text>
+  <path class="l" d="M290 195 H365" />
+  <path class="l" d="M580 195 H655" />
+  <path class="l" d="M850 195 H925" />
+  <text x="44" y="330" class="t">Stage B · world-model-conditioned latent prediction</text>
+  <rect class="b" x="45" y="360" width="260" height="155" fill="#dbeafe" stroke="#2563eb" />
+  <text x="175" y="398" text-anchor="middle" class="t">현재 context</text>
+  <text x="175" y="429" text-anchor="middle" class="s">3 RGB views · language</text>
+  <text x="175" y="456" text-anchor="middle" class="s">proprioception</text>
+  <text x="175" y="483" text-anchor="middle" class="s">current visual tokens</text>
+  <rect class="b" x="385" y="350" width="285" height="175" fill="#fef3c7" stroke="#d97706" />
+  <text x="527" y="390" text-anchor="middle" class="t">Frozen LaWAM</text>
+  <text x="527" y="421" text-anchor="middle" class="s">VLM features</text>
+  <text x="527" y="448" text-anchor="middle" class="s">predicted future visual tokens</text>
+  <text x="527" y="475" text-anchor="middle" class="s">Transformer prediction head</text>
+  <text x="527" y="502" text-anchor="middle" class="s">+ current-token residual</text>
+  <rect class="b" x="750" y="370" width="180" height="135" fill="#dcfce7" stroke="#16a34a" />
+  <text x="840" y="414" text-anchor="middle" class="t">예측 함수 Ẑ</text>
+  <text x="840" y="449" text-anchor="middle" class="s">latent + physical</text>
+  <text x="840" y="476" text-anchor="middle" class="s">action supervision</text>
+  <rect class="b" x="1010" y="350" width="150" height="175" fill="#fee2e2" stroke="#dc2626" />
+  <text x="1085" y="390" text-anchor="middle" class="t">시간 질의</text>
+  <text x="1085" y="423" text-anchor="middle" class="s">10 / 15 / 20</text>
+  <text x="1085" y="449" text-anchor="middle" class="s">30 / 50 / 60 Hz</text>
+  <text x="1085" y="482" text-anchor="middle" class="s">→ commands</text>
+  <path class="l" d="M305 437 H380" />
+  <path class="l" d="M670 437 H745" />
+  <path class="l" d="M930 437 H1005" />
+  <rect class="b" x="210" y="575" width="780" height="65" fill="#f1f5f9" stroke="#64748b" />
+  <text x="600" y="602" text-anchor="middle" class="t">핵심 분리</text>
+  <text x="600" y="627" text-anchor="middle" class="s">
+    motion의 물리 시간 구조(Z) ≠ command를 읽는 sampling grid(τ₁, τ₂, …)
+  </text>
+</svg>

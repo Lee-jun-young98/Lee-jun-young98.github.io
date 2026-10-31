@@ -41,6 +41,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/chronos-policy-learning-robot-policies-on-physical-time/overview.svg)
 
+## [CoAWM: Continuous-Action World Models](/papers/vla/continuous-action-world-models)
+
+![](/papers/assets/vla/continuous-action-world-models/overview.svg)
+
 ## [Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models](/papers/vla/co-vla-consensus-based-federated-training-for-vision-language-action-models)
 
 ## [Completion Aware Guidance for World Action Models](/papers/vla/completion-aware-guidance-for-world-action-models)
@@ -48,6 +52,10 @@ paper_sync: true
 ![](/papers/assets/vla/completion-aware-guidance-for-world-action-models/overview.svg)
 
 ## [CompVLA: A Variable Compliance Vision-Language-Action Model for Contact-rich Manipulation](/papers/vla/compvla-variable-compliance-vision-language-action-model-for-contact-rich-manipulation)
+
+## [CoRAct: Consequence-Grounded Reasoning-to-Action Alignment for VLA Models](/papers/vla/coract-consequence-grounded-reasoning-action-alignment)
+
+![](/papers/assets/vla/coract-consequence-grounded-reasoning-action-alignment/overview.svg)
 
 ## [Correcting WHERE, Preserving HOW: Compositional Generalization for Vision-Language-Action Models via Referential Guidance](/papers/vla/correcting-where-preserving-how-referential-guidance-for-vlas)
 
