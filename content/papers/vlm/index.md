@@ -97,6 +97,8 @@ paper_sync: true
 
 ## [The Alignment Illusion in Multimodal Large Language Models](/papers/vlm/the-alignment-illusion-in-multimodal-large-language-models)
 
+![](/papers/assets/vlm/the-alignment-illusion-in-multimodal-large-language-models/alignment-illusion-pipeline.svg)
+
 ## [The Answer Knows Where to Look: Zooming before MLLMs Answer under Visual-Token Budgets](/papers/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer)
 
 ![](/papers/assets/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer/lookzoom-architecture.svg)
