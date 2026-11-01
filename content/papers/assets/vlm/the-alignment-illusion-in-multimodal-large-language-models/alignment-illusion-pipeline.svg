@@ -1,0 +1,165 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="700"
+  viewBox="0 0 1200 700"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Alignment Illusion의 공유 MLLM 경로와 PA gap 진단 파이프라인</title>
+  <desc id="desc">
+    원본 또는 노이즈 시각 토큰과 텍스트 토큰이 공유 Transformer의 attention과 MLP를 지나고,
+    anisotropic MLP down-projection이 공통 방향을 만드는 과정과 PCA, principal-angle spectrum, PA
+    gap, 정확도를 함께 비교하는 진단 흐름
+  </desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#334155" />
+    </marker>
+    <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#dc2626" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 28px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .subtitle {
+        font:
+          600 16px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .head {
+        font:
+          700 20px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          16px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #1e293b;
+      }
+      .small {
+        font:
+          14px Arial,
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .box {
+        stroke-width: 2;
+        rx: 16;
+      }
+      .arrow {
+        stroke: #334155;
+        stroke-width: 3;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .red {
+        stroke: #dc2626;
+        stroke-width: 3;
+        fill: none;
+        marker-end: url(#arrow-red);
+      }
+      .dash {
+        stroke-dasharray: 8 6;
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" fill="#f8fafc" />
+  <text x="600" y="45" text-anchor="middle" class="title">
+    Alignment Illusion: 공유 가중치가 만든 정렬과 시각 정보 사용을 분리
+  </text>
+  <text x="600" y="74" text-anchor="middle" class="subtitle">
+    논문 Figure 1·3, Sections 2.1–3.4, Equations (1)–(4)를 바탕으로 재구성
+  </text>
+
+  <rect x="45" y="120" width="225" height="180" class="box" fill="#dbeafe" stroke="#2563eb" />
+  <text x="158" y="154" text-anchor="middle" class="head">개입 입력</text>
+  <text x="72" y="192" class="body">질문 text token H⁽⁰⁾</text>
+  <text x="72" y="226" class="body">Orig visual token V⁽⁰⁾</text>
+  <text x="72" y="255" class="small">또는 같은 norm의 Gaussian Noise</text>
+  <text x="72" y="280" class="small">추가: Irr / Shuf / Text-only</text>
+
+  <rect x="330" y="120" width="260" height="180" class="box" fill="#dcfce7" stroke="#16a34a" />
+  <text x="460" y="154" text-anchor="middle" class="head">공유 Transformer</text>
+  <text x="460" y="192" text-anchor="middle" class="body">X⁽ˡ⁾ = [V⁽ˡ⁾; H⁽ˡ⁾]</text>
+  <text x="460" y="226" text-anchor="middle" class="body">Attention + residual</text>
+  <text x="460" y="259" text-anchor="middle" class="body">MLP + residual</text>
+  <text x="460" y="284" text-anchor="middle" class="small">두 modality가 같은 block을 통과</text>
+
+  <rect x="650" y="120" width="270" height="180" class="box" fill="#fee2e2" stroke="#dc2626" />
+  <text x="785" y="154" text-anchor="middle" class="head">정렬 착시의 발생 지점</text>
+  <text x="785" y="194" text-anchor="middle" class="body">Wout · φ(Win x)</text>
+  <text x="785" y="229" text-anchor="middle" class="body">anisotropic down-projection</text>
+  <text x="785" y="263" text-anchor="middle" class="body">→ 공통 지배 방향</text>
+  <text x="785" y="287" text-anchor="middle" class="small">Noise에서도 높은 σ₁ 가능</text>
+
+  <rect x="980" y="120" width="175" height="180" class="box" fill="#fef3c7" stroke="#d97706" />
+  <text x="1068" y="154" text-anchor="middle" class="head">층별 상태</text>
+  <text x="1068" y="194" text-anchor="middle" class="body">V⁽ˡ⁾, H⁽ˡ⁾</text>
+  <text x="1068" y="230" text-anchor="middle" class="body">원본 / 개입별</text>
+  <text x="1068" y="263" text-anchor="middle" class="body">hidden states</text>
+  <text x="1068" y="287" text-anchor="middle" class="small">13개 MLLM</text>
+
+  <path d="M270 210 H320" class="arrow" />
+  <path d="M590 210 H640" class="arrow" />
+  <path d="M920 210 H970" class="arrow" />
+
+  <rect
+    x="45"
+    y="370"
+    width="1110"
+    height="230"
+    rx="20"
+    fill="#ffffff"
+    stroke="#64748b"
+    stroke-width="2"
+  />
+  <text x="600" y="405" text-anchor="middle" class="head">
+    진단: 내부 기하와 행동 성능을 같은 것으로 보지 않는다
+  </text>
+
+  <rect x="85" y="445" width="250" height="110" class="box" fill="#ede9fe" stroke="#7c3aed" />
+  <text x="210" y="478" text-anchor="middle" class="head">1. PCA (각 modality)</text>
+  <text x="210" y="513" text-anchor="middle" class="body">UV, UH · top-k = 30</text>
+  <text x="210" y="540" text-anchor="middle" class="small">층별 subspace 추출</text>
+
+  <rect x="395" y="445" width="250" height="110" class="box" fill="#e0f2fe" stroke="#0284c7" />
+  <text x="520" y="478" text-anchor="middle" class="head">2. PA spectrum</text>
+  <text x="520" y="513" text-anchor="middle" class="body">SVD(UVᵀUH) → σ₁, σ₂, …</text>
+  <text x="520" y="540" text-anchor="middle" class="small">CKA · SVCCA · MIR도 병행</text>
+
+  <rect x="705" y="445" width="190" height="110" class="box" fill="#dcfce7" stroke="#16a34a" />
+  <text x="800" y="478" text-anchor="middle" class="head">3. PA gap</text>
+  <text x="800" y="515" text-anchor="middle" class="body">Δ = σ₁ − σ₂</text>
+  <text x="800" y="540" text-anchor="middle" class="small">다방향 구조 진단</text>
+
+  <rect x="955" y="445" width="160" height="110" class="box" fill="#ffedd5" stroke="#ea580c" />
+  <text x="1035" y="478" text-anchor="middle" class="head">4. 행동 축</text>
+  <text x="1035" y="513" text-anchor="middle" class="body">MMBench 정확도</text>
+  <text x="1035" y="540" text-anchor="middle" class="small">개입별 별도 비교</text>
+
+  <path d="M1068 300 V340 H210 V435" class="arrow" />
+  <path d="M335 500 H385" class="arrow" />
+  <path d="M645 500 H695" class="arrow" />
+  <path d="M895 500 H945" class="red dash" />
+
+  <text x="600" y="642" text-anchor="middle" class="small">
+    학습 단계 없음 · 추론 개입으로 시각 내용을 통제하고, 내부 기하(PA gap)와 과제 정확도를 함께 보고
+  </text>
+  <text x="600" y="671" text-anchor="middle" class="small">
+    출처: arXiv:2609.30210 · 원문 Figure 1·3 및 식 (1)–(4)을 바탕으로 한 한국어 재구성
+  </text>
+</svg>

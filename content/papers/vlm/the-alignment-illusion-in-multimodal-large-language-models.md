@@ -10,6 +10,7 @@ authors: "Hong-Han Wang, Yuntao Wang, Hu Ding"
 paper: "https://arxiv.org/abs/2609.30210"
 code: ""
 project: ""
+thumbnail: "/papers/assets/vlm/the-alignment-illusion-in-multimodal-large-language-models/alignment-illusion-pipeline.svg"
 ---
 
 # 한 줄 요약
@@ -39,12 +40,6 @@ VLM 해석 연구에서 내부 정렬 곡선을 곧바로 “모델이 이미지
 
 또한 무관한 이미지도 projector에 잘 인코딩되고 답변 경로로 전파되어 text-only보다 성능을 더 낮춘다는 결과는, VLM이 시각 입력을 받는 것과 질문에 맞게 사용하는 것이 별개의 문제임을 보여 준다. 모델 비교나 학습 진단에서도 내부 similarity와 task accuracy를 동일한 종류의 증거로 취급해서는 안 된다.
 
-# 핵심 그림
-
-![시각 토큰을 훼손해도 정렬 점수는 높게 남을 수 있는 alignment illusion](https://arxiv.org/html/2609.30210v1/main.png)
-
-_원문 Figure 1._ 내부 정렬 점수와 실제 시각 정보 사용은 다를 수 있다는 논문의 문제 설정이다. [그림 출처: 논문 원문](https://arxiv.org/html/2609.30210).
-
 # Method
 
 1. LLaVA-OV, LLaVA-OV-1.5, Qwen2-VL, Qwen2.5-VL, InternVL3 계열 13개 모델의 layer별 visual/text hidden state를 수집한다.
@@ -54,6 +49,16 @@ _원문 Figure 1._ 내부 정렬 점수와 실제 시각 정보 사용은 다를
 5. `PA gap = σ₁ - σ₂`를 정의하고, Orig와 Noise를 0.1 간격으로 섞는 graded corruption에서 정확도와의 상관을 측정한다.
 6. 무관한 자연 이미지(Irr), visual-token 순서만 섞은 입력(Shuf), visual token을 제거한 입력(Text)을 추가해 시각 구조와 질문 관련성을 분리한다.
 7. linear probe와 principal-angle subspace 안팎의 matched perturbation으로 무관한 이미지 정보가 실제 답변 경로를 통해 전달되는지 확인한다.
+
+# 핵심 그림
+
+![원본 또는 노이즈 시각 토큰이 공유 Transformer와 MLP를 지나 정렬 점수, PA gap, 과제 정확도로 분기되는 Alignment Illusion 분석 파이프라인](/papers/assets/vlm/the-alignment-illusion-in-multimodal-large-language-models/alignment-illusion-pipeline.svg)
+
+> **그림 1. Alignment Illusion의 모델 경로와 진단 절차.** 논문 Figure 1·3, Sections 2.1–3.4, Equations (1)–(4)를 바탕으로 직접 재구성했다. 원문 그림을 복사하지 않았으며, 출처는 [arXiv:2609.30210](https://arxiv.org/html/2609.30210)이다.
+
+구조 그림을 고른 이유는 이 논문의 핵심이 새로운 학습 모듈보다 **같은 가중치를 통과하는 두 modality가 어떻게 가짜 정렬을 만드는가**에 있기 때문이다. 입력은 원본 projector visual token 또는 같은 norm의 Gaussian noise와 질문 text token이다. 두 stream은 연결된 뒤 같은 Transformer block을 지나며, 특히 MLP의 anisotropic down-projection $W_{out}$이 공통 지배 방향으로 두 표현을 끌어당긴다. 그 결과 내용이 제거된 Noise에서도 $\sigma_1$, CKA, SVCCA가 높게 남을 수 있다.
+
+진단 단계에서는 각 layer의 visual/text hidden state를 따로 PCA해 상위 30개 basis를 얻고, $U_V^\top U_H$의 singular value spectrum을 계산한다. 첫 두 값의 차이 $\Delta=\sigma_1-\sigma_2$인 PA gap은 1차원 weight-induced 성분과 다방향 시각 구조를 분리하려는 지표다. 이 연구는 모델을 새로 학습하지 않으며, 추론 시 원본·Noise·무관 이미지·Text-only 개입을 수행한 뒤 내부 기하와 MMBench 정확도를 **서로 다른 출력 축**으로 비교한다.
 
 # Experiments / Results
 
@@ -65,7 +70,7 @@ _원문 Figure 1._ 내부 정렬 점수와 실제 시각 정보 사용은 다를
 - 정확도는 Orig 85.4%, Irr 36.1%, Noise 39.0%로 기하학적 순서와 달랐다. 무관한 자연 이미지는 text-only보다 중앙값 5.0%p 낮아, 모델이 이를 무시하지 않고 오히려 방해받았다.
 - projector token linear probe는 무관 이미지 category를 74.4~78.5% 정확도로 복원했다(우연 수준 5%). principal-angle subspace 내부 perturbation은 외부 perturbation보다 전 모델에서 1.1~5.5%p 더 큰 정확도 하락을 일으켰다.
 
-## 주요 실험표
+## 주요 실험 결과
 
 논문 Table 1 중 핵심 지표를 옮겼다. 13개 모델의 graded visual degradation에서 각 정렬 지표와 정확도의 절대 Pearson 상관계수다. 값이 클수록 정확도 변화를 더 잘 추적한다.
 
