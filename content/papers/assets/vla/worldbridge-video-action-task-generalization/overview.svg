@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">WorldBridge 비디오-액션 아키텍처 재구성</title>
+  <desc id="desc">관측과 언어가 비디오 expert와 액션 expert로 들어가 joint attention을 통해 정보를 교환하고 미래 비디오와 액션 청크를 출력하는 흐름</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071426"/><stop offset="1" stop-color="#172554"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#8bd5ff"/></marker>
+    <style>.h{font:700 28px 'Segoe UI',sans-serif;fill:#f8fafc}.t{font:600 18px 'Segoe UI',sans-serif;fill:#e2e8f0}.s{font:15px 'Segoe UI',sans-serif;fill:#cbd5e1}.box{stroke:#8bd5ff;stroke-width:2;rx:18}.line{stroke:#8bd5ff;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#fbbf24;stroke-width:2.5;stroke-dasharray:8 7;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)" rx="24"/>
+  <text x="52" y="58" class="h">WorldBridge — video generalization ↔ action generalization</text>
+  <text x="52" y="88" class="s">논문 Figure 3 및 Section 2.1을 바탕으로 재구성 · 학습과 배포 경로를 함께 표시</text>
+
+  <rect x="48" y="145" width="210" height="100" class="box" fill="#12304a"/>
+  <text x="153" y="181" class="t" text-anchor="middle">현재 관측 O</text><text x="153" y="211" class="s" text-anchor="middle">RGB · robot state · memory</text>
+  <rect x="48" y="395" width="210" height="100" class="box" fill="#3a2557"/>
+  <text x="153" y="431" class="t" text-anchor="middle">언어 명령 ℓ</text><text x="153" y="461" class="s" text-anchor="middle">T5 text features</text>
+
+  <rect x="322" y="126" width="220" height="138" class="box" fill="#123b5d"/>
+  <text x="432" y="166" class="t" text-anchor="middle">Video Expert</text><text x="432" y="196" class="s" text-anchor="middle">video VAE latent</text><text x="432" y="222" class="s" text-anchor="middle">modality-specific FFN</text><text x="432" y="246" class="s" text-anchor="middle">+ language cross-attention</text>
+  <rect x="322" y="376" width="220" height="138" class="box" fill="#402864"/>
+  <text x="432" y="416" class="t" text-anchor="middle">Action Expert</text><text x="432" y="446" class="s" text-anchor="middle">noisy action chunk</text><text x="432" y="472" class="s" text-anchor="middle">modality-specific FFN</text><text x="432" y="496" class="s" text-anchor="middle">unified 46-D action space</text>
+
+  <rect x="620" y="215" width="230" height="210" class="box" fill="#164e63" stroke="#67e8f9"/>
+  <text x="735" y="262" class="t" text-anchor="middle">Joint Self-Attention</text><text x="735" y="294" class="s" text-anchor="middle">video ↔ action token 교환</text><text x="735" y="324" class="s" text-anchor="middle">expert별 FFN은 분리 유지</text>
+  <rect x="658" y="348" width="154" height="48" rx="12" fill="#0f766e"/><text x="735" y="378" class="s" text-anchor="middle">joint flow matching</text>
+
+  <rect x="932" y="126" width="220" height="138" class="box" fill="#123b5d"/>
+  <text x="1042" y="169" class="t" text-anchor="middle">Future Video</text><text x="1042" y="201" class="s" text-anchor="middle">visual dynamics</text><text x="1042" y="229" class="s" text-anchor="middle">video generalization</text>
+  <rect x="932" y="376" width="220" height="138" class="box" fill="#402864"/>
+  <text x="1042" y="419" class="t" text-anchor="middle">Action Chunk Aₜ</text><text x="1042" y="451" class="s" text-anchor="middle">실행 가능한 control</text><text x="1042" y="479" class="s" text-anchor="middle">action generalization</text>
+
+  <path d="M258 195 H322" class="line"/><path d="M258 445 H322" class="line"/>
+  <path d="M542 195 C585 195 585 260 620 275" class="line"/><path d="M542 445 C585 445 585 380 620 365" class="line"/>
+  <path d="M850 275 C885 260 890 195 932 195" class="line"/><path d="M850 365 C885 380 890 445 932 445" class="line"/>
+  <path d="M1042 264 V350 C1042 350 908 350 908 414" class="dash"/>
+  <text x="954" y="329" class="s" fill="#fde68a">학습: action forcing</text>
+
+  <rect x="48" y="566" width="1104" height="72" rx="16" fill="#0b2942" stroke="#334155"/>
+  <text x="72" y="596" class="t">학습</text><text x="145" y="596" class="s">독립 noise timestep의 future-video latent와 action chunk를 함께 복원</text>
+  <text x="72" y="624" class="t">배포</text><text x="145" y="624" class="s">action expert → 비동기 chunk 실행 · expired action 폐기 · 100 Hz servo grid</text>
+</svg>

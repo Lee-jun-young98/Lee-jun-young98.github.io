@@ -255,6 +255,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/self-labeled-preference-transfer-for-steerable-robot-manipulation/overview.svg)
 
+### [STAR: Steering Action Representations with Proprioception for VLA Inference](/papers/vla/star-steering-action-representations)
+
+![](/papers/assets/vla/star-steering-action-representations/overview.svg)
+
 ### [SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation](/papers/vla/skelewam-skeleton-world-action-modeling)
 
 ![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
@@ -328,6 +332,10 @@ paper_sync: true
 ### [When Plans Change, Remember: Replanning-Guided Visual Memory for Vision-Language-Action Models](/papers/vla/replanmem-vla-replanning-guided-visual-memory)
 
 ![](/papers/assets/vla/replanmem-vla-replanning-guided-visual-memory/overview.svg)
+
+### [WorldBridge: Bridging Video and Action for Task Generalization in World Action Models](/papers/vla/worldbridge-video-action-task-generalization)
+
+![](/papers/assets/vla/worldbridge-video-action-task-generalization/overview.svg)
 
 ### [XPACE: Joint World and Action Modeling from Heterogeneous Experience](/papers/vla/xpace-joint-world-and-action-modeling-from-heterogeneous-experience)
 

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">STAR proprioception-conditioned residual steering 재구성</title>
+  <desc id="desc">시각 언어와 proprioception 입력에서 frozen VLA 앞쪽 층은 유지하고 마지막 삼분의 일 층의 residual update를 동적 EMA로 혼합해 action chunk를 만드는 흐름</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#312e81"/></linearGradient>
+    <marker id="a2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#a5b4fc"/></marker>
+    <style>.h{font:700 28px 'Segoe UI',sans-serif;fill:#fff}.t{font:600 18px 'Segoe UI',sans-serif;fill:#eef2ff}.s{font:15px 'Segoe UI',sans-serif;fill:#c7d2fe}.b{stroke:#a5b4fc;stroke-width:2;rx:16}.l{stroke:#a5b4fc;stroke-width:3;fill:none;marker-end:url(#a2)}.p{stroke:#f9a8d4;stroke-width:3;fill:none;marker-end:url(#a2)}.d{stroke:#fbbf24;stroke-width:2.5;stroke-dasharray:8 7;fill:none;marker-end:url(#a2)}</style>
+  </defs>
+  <rect width="1200" height="680" rx="24" fill="url(#bg2)"/>
+  <text x="52" y="58" class="h">STAR — 후기층 action representation을 추론 중 조정</text>
+  <text x="52" y="88" class="s">논문 Figure 2와 Equations (2–9)를 바탕으로 재구성 · 모든 VLA 가중치는 frozen</text>
+
+  <rect x="48" y="140" width="220" height="116" class="b" fill="#1e3a5f"/>
+  <text x="158" y="177" class="t" text-anchor="middle">RGB + 언어</text><text x="158" y="207" class="s" text-anchor="middle">task-relevant visual evidence</text><text x="158" y="232" class="s" text-anchor="middle">action hidden state h⁰</text>
+  <rect x="48" y="400" width="220" height="150" class="b" fill="#4c1d54" stroke="#f9a8d4"/>
+  <text x="158" y="438" class="t" text-anchor="middle">최근 proprioception</text><text x="158" y="468" class="s" text-anchor="middle">direction · translation</text><text x="158" y="493" class="s" text-anchor="middle">jerk · rotation change</text><text x="158" y="523" class="s" text-anchor="middle">→ step coefficient βₜ</text>
+
+  <rect x="338" y="126" width="260" height="150" class="b" fill="#243b64"/>
+  <text x="468" y="164" class="t" text-anchor="middle">Transformer 앞 2/3</text><text x="468" y="196" class="s" text-anchor="middle">원래 residual update 유지</text><text x="468" y="224" class="s" text-anchor="middle">visual · language evidence 형성</text><text x="468" y="250" class="s" text-anchor="middle">L₁ … Lₚ</text>
+
+  <rect x="678" y="126" width="286" height="250" class="b" fill="#3b2773" stroke="#f9a8d4"/>
+  <text x="821" y="164" class="t" text-anchor="middle">Transformer 마지막 1/3</text><text x="821" y="194" class="s" text-anchor="middle">Lₚ₊₁ … Lₙ</text>
+  <rect x="712" y="222" width="218" height="58" rx="12" fill="#6d28d9"/><text x="821" y="247" class="s" text-anchor="middle">EMA momentum mᵏ</text><text x="821" y="268" class="s" text-anchor="middle">이전 층 update 방향</text>
+  <rect x="712" y="302" width="218" height="46" rx="12" fill="#9d174d"/><text x="821" y="331" class="s" text-anchor="middle">βₜ로 현재 Δhᵏ와 혼합</text>
+
+  <rect x="1010" y="170" width="150" height="150" class="b" fill="#164e63"/>
+  <text x="1085" y="211" class="t" text-anchor="middle">Action</text><text x="1085" y="240" class="t" text-anchor="middle">Chunk</text><text x="1085" y="274" class="s" text-anchor="middle">single pass</text><text x="1085" y="298" class="s" text-anchor="middle">no training</text>
+
+  <path d="M268 198 H338" class="l"/><path d="M598 198 H678" class="l"/><path d="M964 245 H1010" class="l"/>
+  <path d="M268 475 H600 C640 475 640 340 712 325" class="p"/>
+  <path d="M820 222 C820 190 752 190 752 222" class="d"/>
+  <text x="463" y="458" class="s" fill="#fbcfe8">동적 βₜ: transition이 크면 보수적으로</text>
+
+  <rect x="48" y="584" width="1112" height="58" rx="15" fill="#172554" stroke="#475569"/>
+  <text x="72" y="619" class="t">핵심 차이</text><text x="182" y="619" class="s">token/attention을 바꾸지 않고 후기층 residual stream만 조정 · 추가 forward pass 없음</text>
+</svg>
