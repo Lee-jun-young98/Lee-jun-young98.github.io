@@ -1,0 +1,173 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="700"
+  viewBox="0 0 1200 700"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">LARC 연속 공간 잠재 추론 아키텍처</title>
+  <desc id="desc">
+    텍스트와 선택적 이미지를 받은 통합 멀티모달 모델이 텍스트 구간과 연속 latent step을 교차
+    생성하고, curriculum SFT와 정보 이득 기반 GRPO로 학습한 뒤 이미지 모듈에서 결과를 생성하는 흐름
+  </desc>
+  <defs>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569" />
+    </marker>
+    <style>
+      text {
+        font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+        fill: #0f172a;
+      }
+      .title {
+        font-size: 28px;
+        font-weight: 700;
+      }
+      .section {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .label {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .small {
+        font-size: 14px;
+      }
+      .box {
+        stroke-width: 2;
+        rx: 16;
+      }
+      .arrow {
+        fill: none;
+        stroke: #475569;
+        stroke-width: 2.5;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke-dasharray: 8 7;
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" fill="#f8fafc" />
+  <text x="50" y="48" class="title">LARC: 생성 공간과 같은 연속 공간에서 추론하기</text>
+  <text x="50" y="76" class="small">
+    논문 Figure 2, Sections 2.1–2.4 및 식 (1)–(4)을 바탕으로 재구성
+  </text>
+
+  <rect
+    x="45"
+    y="105"
+    width="1110"
+    height="240"
+    rx="24"
+    fill="#ffffff"
+    stroke="#cbd5e1"
+    stroke-width="2"
+  />
+  <text x="70" y="137" class="section">추론 경로</text>
+
+  <rect x="70" y="170" width="150" height="110" class="box" fill="#e0f2fe" stroke="#0284c7" />
+  <text x="145" y="205" text-anchor="middle" class="label">입력 context</text>
+  <text x="145" y="233" text-anchor="middle" class="small">텍스트 prompt</text>
+  <text x="145" y="256" text-anchor="middle" class="small">+ 선택적 source image</text>
+
+  <path d="M220 225 H278" class="arrow" />
+  <rect x="280" y="160" width="250" height="130" class="box" fill="#ede9fe" stroke="#7c3aed" />
+  <text x="405" y="193" text-anchor="middle" class="label">공유 UMM Transformer</text>
+  <text x="405" y="220" text-anchor="middle" class="small">
+    s₁ → &lt;latent&gt; → l₁ → s₂ → l₂ …
+  </text>
+  <text x="405" y="246" text-anchor="middle" class="small">language: token embedding</text>
+  <text x="405" y="269" text-anchor="middle" class="small">
+    latent: 마지막 hidden state hₜ 되먹임
+  </text>
+
+  <path d="M530 225 H596" class="arrow" />
+  <rect x="600" y="170" width="210" height="110" class="box" fill="#dcfce7" stroke="#16a34a" />
+  <text x="705" y="205" text-anchor="middle" class="label">전체 trajectory h(τ)</text>
+  <text x="705" y="234" text-anchor="middle" class="small">text span: 확률적 rollout</text>
+  <text x="705" y="258" text-anchor="middle" class="small">latent step: dense 시각 정보</text>
+
+  <path d="M810 225 H866" class="arrow" />
+  <rect x="870" y="170" width="120" height="110" class="box" fill="#fef3c7" stroke="#d97706" />
+  <text x="930" y="211" text-anchor="middle" class="label">Image head</text>
+  <text x="930" y="238" text-anchor="middle" class="small">cross-attention</text>
+  <text x="930" y="261" text-anchor="middle" class="small">flow matching</text>
+
+  <path d="M990 225 H1040" class="arrow" />
+  <rect x="1042" y="180" width="88" height="90" class="box" fill="#fee2e2" stroke="#dc2626" />
+  <text x="1086" y="218" text-anchor="middle" class="label">출력</text>
+  <text x="1086" y="245" text-anchor="middle" class="small">이미지 x</text>
+
+  <path d="M482 290 C482 327 330 326 330 289" class="arrow dash" />
+  <text x="405" y="327" text-anchor="middle" class="small">
+    연속 hidden state가 다음 입력 embedding으로 순환
+  </text>
+
+  <rect
+    x="45"
+    y="370"
+    width="535"
+    height="270"
+    rx="24"
+    fill="#ffffff"
+    stroke="#cbd5e1"
+    stroke-width="2"
+  />
+  <text x="70" y="405" class="section">Stage 1 · Curriculum SFT</text>
+  <rect x="75" y="435" width="170" height="80" class="box" fill="#e0f2fe" stroke="#0284c7" />
+  <text x="160" y="468" text-anchor="middle" class="label">1M interleaved CoT</text>
+  <text x="160" y="493" text-anchor="middle" class="small">text-only로 시작</text>
+  <path d="M245 475 H294" class="arrow" />
+  <rect x="298" y="425" width="245" height="100" class="box" fill="#ede9fe" stroke="#7c3aed" />
+  <text x="420" y="458" text-anchor="middle" class="label">latent step 점진 활성화</text>
+  <text x="420" y="484" text-anchor="middle" class="small">
+    phase k: 앞쪽 k개를 hidden state로 치환
+  </text>
+  <text x="420" y="507" text-anchor="middle" class="small">text loss + image flow loss</text>
+  <path d="M420 525 V562" class="arrow" />
+  <rect x="302" y="565" width="236" height="52" class="box" fill="#dcfce7" stroke="#16a34a" />
+  <text x="420" y="598" text-anchor="middle" class="label">안정된 reference policy πref</text>
+
+  <rect
+    x="610"
+    y="370"
+    width="545"
+    height="270"
+    rx="24"
+    fill="#ffffff"
+    stroke="#cbd5e1"
+    stroke-width="2"
+  />
+  <text x="635" y="405" class="section">Stage 2 · Self-evolving RL</text>
+  <rect x="640" y="435" width="180" height="86" class="box" fill="#fef3c7" stroke="#d97706" />
+  <text x="730" y="466" text-anchor="middle" class="label">정보 이득 rIG</text>
+  <text x="730" y="491" text-anchor="middle" class="small">같은 noise에서</text>
+  <text x="730" y="512" text-anchor="middle" class="small">flow loss(trace 없음−있음)</text>
+  <rect x="640" y="548" width="180" height="68" class="box" fill="#fee2e2" stroke="#dc2626" />
+  <text x="730" y="576" text-anchor="middle" class="label">다양성 rdiv</text>
+  <text x="730" y="600" text-anchor="middle" class="small">latent collapse 방지</text>
+  <path d="M820 478 H868" class="arrow" />
+  <path d="M820 582 C850 582 850 516 868 516" class="arrow" />
+  <rect x="872" y="455" width="240" height="125" class="box" fill="#ede9fe" stroke="#7c3aed" />
+  <text x="992" y="487" text-anchor="middle" class="label">R = rIG + λdiv rdiv</text>
+  <text x="992" y="516" text-anchor="middle" class="small">group rollout → advantage 정규화</text>
+  <text x="992" y="541" text-anchor="middle" class="small">GRPO + reference KL</text>
+  <text x="992" y="566" text-anchor="middle" class="small">외부 critic·latent 정답 불필요</text>
+
+  <text x="50" y="680" class="small">
+    출처: Jeon et al., “Latent Reasoning in Continuous Space for Unified Multimodal Models,” NeurIPS
+    2026 · 재구성
+  </text>
+</svg>

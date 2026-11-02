@@ -51,6 +51,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/joint-latent-reasoning-and-observation-for-agentic-video-understanding/larva-architecture.svg)
 
+## [Latent Reasoning in Continuous Space for Unified Multimodal Models](/papers/vlm/latent-reasoning-in-continuous-space-for-unified-multimodal-models)
+
+![](/papers/assets/vlm/latent-reasoning-in-continuous-space-for-unified-multimodal-models/larc-architecture.svg)
+
 ## [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
 ## [MMSearch-OPD: Easy Made Hard, Hard Made Learnable for Long-Horizon Multimodal Search Agents](/papers/vlm/mmsearch-opd-long-horizon-multimodal-search-agents)
