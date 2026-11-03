@@ -149,6 +149,10 @@ paper_sync: true
 
 ## [IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies](/papers/vla/imle-vla-fast-single-step-action-generation-for-vision-language-action-policies)
 
+## [JADE: Vision-Language Models Are Joint Denoisers in Robotic Action Generation](/papers/vla/jade-joint-action-denoiser)
+
+![](/papers/assets/vla/jade-joint-action-denoiser/overview.svg)
+
 ## [Juno: Taming Predictive Latents for Vision-Language-Action Models](/papers/vla/juno-taming-predictive-latents-for-vlas)
 
 ![](/papers/assets/vla/juno-taming-predictive-latents-for-vlas/overview.svg)
@@ -200,6 +204,10 @@ paper_sync: true
 ![](/papers/assets/vla/oxygen-unified-kv-cache-management-for-vla-inference/overview.svg)
 
 ## [PACT-VLA: Speculative Action-Chunk Verification with Pre-Commit Observations](/papers/vla/pact-vla-precommit-action-chunk-verification)
+
+## [PREM: Prediction-Regulated Memory for Robot Manipulation](/papers/vla/prem-prediction-regulated-memory-for-robot-manipulation)
+
+![](/papers/assets/vla/prem-prediction-regulated-memory-for-robot-manipulation/overview.svg)
 
 ![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
 
