@@ -255,10 +255,6 @@ paper_sync: true
 
 ![](/papers/assets/vla/self-labeled-preference-transfer-for-steerable-robot-manipulation/overview.svg)
 
-### [STAR: Steering Action Representations with Proprioception for VLA Inference](/papers/vla/star-steering-action-representations)
-
-![](/papers/assets/vla/star-steering-action-representations/overview.svg)
-
 ### [SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation](/papers/vla/skelewam-skeleton-world-action-modeling)
 
 ![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
@@ -268,6 +264,10 @@ paper_sync: true
 ### [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
 
 ![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
+
+### [STAR: Steering Action Representations with Proprioception for VLA Inference](/papers/vla/star-steering-action-representations)
+
+![](/papers/assets/vla/star-steering-action-representations/overview.svg)
 
 ### [SWAP: Stepwise Action Policy Routing for Vision-Language-Action Models](/papers/vla/swap-stepwise-action-policy-routing)
 
