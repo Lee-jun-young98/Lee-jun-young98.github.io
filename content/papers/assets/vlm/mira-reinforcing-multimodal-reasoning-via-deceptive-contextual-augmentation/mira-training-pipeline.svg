@@ -1,0 +1,200 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="700"
+  viewBox="0 0 1200 700"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">MIRA 기만적 시각 context 생성과 correction-aware GRPO 학습 파이프라인</title>
+  <desc id="desc">
+    이미지와 질문에서 올바른 시각 설명을 만들고 expert가 정답을 바꾸는 오류를 삽입한 뒤 verifier로
+    선별한다. 기만적 설명을 assistant prefix에 넣고 rollout 절반에 reflection trigger를 주어 정답,
+    형식, correction 보상으로 GRPO를 수행한다.
+  </desc>
+  <defs>
+    <marker
+      id="arrow"
+      viewBox="0 0 10 10"
+      refX="9"
+      refY="5"
+      markerWidth="8"
+      markerHeight="8"
+      orient="auto-start-reverse"
+    >
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155" />
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.12" />
+    </filter>
+    <style>
+      .title {
+        font:
+          700 28px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .section {
+        font:
+          700 19px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .head {
+        font:
+          700 17px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .body {
+        font:
+          400 15px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #334155;
+      }
+      .small {
+        font:
+          400 13px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #475569;
+      }
+      .mono {
+        font:
+          600 14px Consolas,
+          monospace;
+        fill: #7c2d12;
+      }
+      .box {
+        stroke-width: 2;
+        rx: 16;
+        filter: url(#shadow);
+      }
+      .arrow {
+        stroke: #334155;
+        stroke-width: 2.5;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" fill="#f8fafc" />
+  <text x="600" y="42" text-anchor="middle" class="title">
+    MIRA: 잘못 본 뒤에도 회복하는 VLM 학습
+  </text>
+
+  <rect
+    x="34"
+    y="68"
+    width="1132"
+    height="265"
+    rx="22"
+    fill="#eff6ff"
+    stroke="#93c5fd"
+    stroke-width="2"
+  />
+  <text x="58" y="99" class="section">1. 검증된 기만적 시각 context 만들기 (offline)</text>
+
+  <rect x="58" y="122" width="190" height="170" fill="#ffffff" stroke="#60a5fa" class="box" />
+  <text x="153" y="152" text-anchor="middle" class="head">입력</text>
+  <rect x="78" y="170" width="64" height="54" rx="8" fill="#dbeafe" stroke="#3b82f6" />
+  <circle cx="100" cy="190" r="8" fill="#f59e0b" />
+  <path d="M84 215 L102 198 L116 210 L136 184 L136 220 L84 220 Z" fill="#60a5fa" />
+  <text x="167" y="190" class="body">이미지 I</text>
+  <text x="167" y="216" class="body">질문 Q</text>
+  <text x="153" y="260" text-anchor="middle" class="small">정답 y* 포함</text>
+
+  <path d="M248 207 L292 207" class="arrow" />
+  <rect x="294" y="122" width="220" height="170" fill="#f0fdf4" stroke="#4ade80" class="box" />
+  <text x="404" y="152" text-anchor="middle" class="head">Policy model</text>
+  <text x="404" y="181" text-anchor="middle" class="body">질문 관련 시각 사실 요약</text>
+  <rect x="318" y="203" width="172" height="52" rx="10" fill="#dcfce7" stroke="#22c55e" />
+  <text x="404" y="226" text-anchor="middle" class="mono">C_pos</text>
+  <text x="404" y="246" text-anchor="middle" class="small">“행진 연습은 2:35 시작”</text>
+
+  <path d="M514 207 L558 207" class="arrow" />
+  <rect x="560" y="122" width="240" height="170" fill="#fff7ed" stroke="#fb923c" class="box" />
+  <text x="680" y="152" text-anchor="middle" class="head">Expert model</text>
+  <text x="680" y="180" text-anchor="middle" class="body">정답을 바꾸는 사실만 교란</text>
+  <rect x="584" y="202" width="192" height="58" rx="10" fill="#ffedd5" stroke="#f97316" />
+  <text x="680" y="225" text-anchor="middle" class="mono">C_neg + M</text>
+  <text x="680" y="246" text-anchor="middle" class="small">“3:50 시작” + 수정 쌍</text>
+
+  <path d="M800 207 L844 207" class="arrow" />
+  <rect x="846" y="122" width="292" height="170" fill="#faf5ff" stroke="#c084fc" class="box" />
+  <text x="992" y="152" text-anchor="middle" class="head">Text-only verifier</text>
+  <text x="992" y="181" text-anchor="middle" class="body">C_pos → 정답 / C_neg → 오답?</text>
+  <path d="M882 210 L900 228 L934 194" stroke="#16a34a" stroke-width="5" fill="none" />
+  <text x="954" y="220" class="body">예: D_aug에 보존</text>
+  <path d="M885 254 L923 216 M923 254 L885 216" stroke="#dc2626" stroke-width="4" opacity="0.65" />
+  <text x="954" y="257" class="body">아니오: 제거</text>
+
+  <rect
+    x="34"
+    y="355"
+    width="1132"
+    height="276"
+    rx="22"
+    fill="#fff7ed"
+    stroke="#fdba74"
+    stroke-width="2"
+  />
+  <text x="58" y="387" class="section">2. 같은 오류 아래 correction 행동을 비교하는 GRPO 학습</text>
+
+  <rect x="58" y="410" width="250" height="178" fill="#ffffff" stroke="#fb923c" class="box" />
+  <text x="183" y="440" text-anchor="middle" class="head">Assistant prefix</text>
+  <text x="80" y="470" class="body">user: [image], [question]</text>
+  <rect x="78" y="488" width="210" height="68" rx="10" fill="#ffedd5" stroke="#f97316" />
+  <text x="183" y="513" text-anchor="middle" class="mono">assistant: &lt;think&gt;</text>
+  <text x="183" y="537" text-anchor="middle" class="mono">[C_neg], [trigger?]</text>
+  <text x="183" y="577" text-anchor="middle" class="small">고정 prefix는 action/loss에서 제외</text>
+
+  <path d="M308 499 L352 499" class="arrow" />
+  <rect x="354" y="410" width="248" height="178" fill="#fefce8" stroke="#eab308" class="box" />
+  <text x="478" y="440" text-anchor="middle" class="head">N개 rollout 그룹</text>
+  <rect x="378" y="462" width="94" height="42" rx="9" fill="#fef3c7" stroke="#d97706" />
+  <text x="425" y="488" text-anchor="middle" class="small">K=N/2 trigger</text>
+  <rect x="484" y="462" width="94" height="42" rx="9" fill="#f1f5f9" stroke="#94a3b8" />
+  <text x="531" y="488" text-anchor="middle" class="small">N/2 no trigger</text>
+  <text x="478" y="532" text-anchor="middle" class="body">동일 오류, 다른 correction 행동</text>
+  <text x="478" y="558" text-anchor="middle" class="small">상대 reward 차이를 크게 만듦</text>
+
+  <path d="M602 499 L646 499" class="arrow" />
+  <rect x="648" y="410" width="230" height="178" fill="#f0fdf4" stroke="#4ade80" class="box" />
+  <text x="763" y="440" text-anchor="middle" class="head">Correction-aware reward</text>
+  <text x="763" y="475" text-anchor="middle" class="mono">R = α r_fmt + β r_acc</text>
+  <text x="763" y="500" text-anchor="middle" class="mono">+ γ r_cor r_fmt r_acc</text>
+  <text x="763" y="535" text-anchor="middle" class="body">정답일 때만 correction 보상</text>
+  <text x="763" y="560" text-anchor="middle" class="small">표면적 “반성” reward hacking 억제</text>
+
+  <path d="M878 499 L922 499" class="arrow" />
+  <rect x="924" y="410" width="214" height="178" fill="#eff6ff" stroke="#60a5fa" class="box" />
+  <text x="1031" y="440" text-anchor="middle" class="head">GRPO update</text>
+  <circle cx="1031" cy="497" r="36" fill="#dbeafe" stroke="#2563eb" stroke-width="2" />
+  <path
+    d="M1008 497 C1018 475,1044 475,1054 497 C1044 519,1018 519,1008 497 Z"
+    fill="none"
+    stroke="#2563eb"
+    stroke-width="3"
+  />
+  <circle cx="1031" cy="497" r="8" fill="#2563eb" />
+  <text x="1031" y="552" text-anchor="middle" class="body">시각 자기수정 policy</text>
+  <text x="1031" y="575" text-anchor="middle" class="small">추론 시 원래 I, Q만 사용</text>
+
+  <path
+    d="M1031 588 C1031 660,478 660,478 590"
+    stroke="#334155"
+    stroke-width="2.5"
+    stroke-dasharray="8 7"
+    fill="none"
+    marker-end="url(#arrow)"
+  />
+  <text x="754" y="680" text-anchor="middle" class="small">
+    policy 갱신 → 다음 rollout에서 trigger 없이도 오류 재검토를 내재화
+  </text>
+</svg>

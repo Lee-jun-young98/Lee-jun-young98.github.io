@@ -57,6 +57,10 @@ paper_sync: true
 
 ## [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
+## [MIRA: Reinforcing Multimodal Reasoning via Deceptive Contextual Augmentation](/papers/vlm/mira-reinforcing-multimodal-reasoning-via-deceptive-contextual-augmentation)
+
+![](/papers/assets/vlm/mira-reinforcing-multimodal-reasoning-via-deceptive-contextual-augmentation/mira-training-pipeline.svg)
+
 ## [MMSearch-OPD: Easy Made Hard, Hard Made Learnable for Long-Horizon Multimodal Search Agents](/papers/vlm/mmsearch-opd-long-horizon-multimodal-search-agents)
 
 ![](/papers/assets/vlm/mmsearch-opd-long-horizon-multimodal-search-agents/mmsearch-opd-pipeline.svg)
