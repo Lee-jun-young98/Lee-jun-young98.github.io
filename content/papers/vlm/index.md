@@ -55,6 +55,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/latent-reasoning-in-continuous-space-for-unified-multimodal-models/larc-architecture.svg)
 
+## [Learning Where to Look: Observation Policy Optimization for Thinking with Images](/papers/vlm/learning-where-to-look-observation-policy-optimization-for-thinking-with-images)
+
+![](/papers/assets/vlm/learning-where-to-look-observation-policy-optimization-for-thinking-with-images/opo-training-pipeline.svg)
+
 ## [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
 ## [MIRA: Reinforcing Multimodal Reasoning via Deceptive Contextual Augmentation](/papers/vlm/mira-reinforcing-multimodal-reasoning-via-deceptive-contextual-augmentation)

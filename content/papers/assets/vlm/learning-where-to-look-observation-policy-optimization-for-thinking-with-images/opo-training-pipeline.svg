@@ -1,0 +1,218 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="760"
+  viewBox="0 0 1200 760"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">OPO 관찰 정책 최적화 학습 파이프라인</title>
+  <desc id="desc">
+    이미지와 질문으로 base rollout을 만든 뒤 불확실한 zoom event에서 중복되지 않는 crop을 분기하고,
+    crop 증거 보상을 관찰 행동 token에만 귀속하며 최종 정답 보상은 나머지 token에 적용하는 흐름
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fbff" />
+      <stop offset="1" stop-color="#eef3ff" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#25345a" flood-opacity="0.15" />
+    </filter>
+    <marker
+      id="arrow"
+      markerWidth="10"
+      markerHeight="10"
+      refX="9"
+      refY="3"
+      orient="auto"
+      markerUnits="strokeWidth"
+    >
+      <path d="M0,0 L9,3 L0,6 Z" fill="#405578" />
+    </marker>
+    <style>
+      .title {
+        font:
+          700 30px "Malgun Gothic",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        fill: #14213d;
+      }
+      .subtitle {
+        font:
+          500 15px "Malgun Gothic",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        fill: #52617d;
+      }
+      .stage {
+        font:
+          700 19px "Malgun Gothic",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        fill: #ffffff;
+      }
+      .head {
+        font:
+          700 18px "Malgun Gothic",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        fill: #17233d;
+      }
+      .body {
+        font:
+          500 14px "Malgun Gothic",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        fill: #33415c;
+      }
+      .small {
+        font:
+          500 12px "Malgun Gothic",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        fill: #52617d;
+      }
+      .footer {
+        font:
+          500 14px "Malgun Gothic",
+          "Apple SD Gothic Neo",
+          sans-serif;
+        fill: #ffffff;
+      }
+      .formula {
+        font:
+          600 13px "Segoe UI",
+          sans-serif;
+        fill: #243657;
+      }
+      .arrow {
+        fill: none;
+        stroke: #405578;
+        stroke-width: 2.5;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        fill: none;
+        stroke: #7d8eae;
+        stroke-width: 2;
+        stroke-dasharray: 7 6;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="24" fill="url(#bg)" />
+  <text x="60" y="52" class="title">
+    OPO: 불확실한 관찰을 분기하고, 증거 보상을 관찰 token에 귀속
+  </text>
+  <text x="60" y="80" class="subtitle">
+    논문 Figure 2 · Sections 4.1–4.2 · Equations (3)–(11)을 바탕으로 재구성
+  </text>
+
+  <rect x="50" y="112" width="250" height="46" rx="12" fill="#3157a4" />
+  <text x="175" y="142" text-anchor="middle" class="stage">1 · Base rollout</text>
+  <rect
+    x="50"
+    y="174"
+    width="250"
+    height="245"
+    rx="18"
+    fill="#ffffff"
+    stroke="#b9c7e3"
+    filter="url(#shadow)"
+  />
+  <rect x="72" y="198" width="206" height="62" rx="12" fill="#edf3ff" stroke="#9eb3df" />
+  <text x="175" y="223" text-anchor="middle" class="head">이미지 + 질문</text>
+  <text x="175" y="247" text-anchor="middle" class="body">고해상도 VQA 입력</text>
+  <path d="M175 260 L175 289" class="arrow" />
+  <rect x="72" y="290" width="206" height="100" rx="12" fill="#f4f7fd" stroke="#9eb3df" />
+  <text x="175" y="317" text-anchor="middle" class="head">B개 base trajectory</text>
+  <text x="175" y="343" text-anchor="middle" class="body">첫 zoom tool call까지 생성</text>
+  <text x="175" y="368" text-anchor="middle" class="small">기본: M=8, B=2, P=6</text>
+
+  <rect x="335" y="112" width="310" height="46" rx="12" fill="#7a4db2" />
+  <text x="490" y="142" text-anchor="middle" class="stage">2 · UOB 관찰 분기</text>
+  <rect
+    x="335"
+    y="174"
+    width="310"
+    height="430"
+    rx="18"
+    fill="#ffffff"
+    stroke="#cbb8e4"
+    filter="url(#shadow)"
+  />
+  <rect x="357" y="198" width="266" height="83" rx="12" fill="#f5effc" stroke="#b89ad8" />
+  <text x="490" y="225" text-anchor="middle" class="head">불확실한 event 선택</text>
+  <text x="490" y="249" text-anchor="middle" class="body">bbox token entropy → z(e)</text>
+  <text x="490" y="270" text-anchor="middle" class="small">질문 내부 baseline으로 정규화</text>
+  <path d="M490 281 L490 313" class="arrow" />
+  <rect x="357" y="314" width="266" height="92" rx="12" fill="#fbf7ff" stroke="#b89ad8" />
+  <text x="490" y="341" text-anchor="middle" class="head">shared pre-tool prefix 고정</text>
+  <text x="490" y="366" text-anchor="middle" class="body">tool-call suffix만 resampling</text>
+  <text x="490" y="389" text-anchor="middle" class="small">
+    reasoning 차이를 통제한 sibling 생성
+  </text>
+  <path d="M490 406 L490 438" class="arrow" />
+  <rect x="357" y="439" width="266" height="72" rx="12" fill="#f5effc" stroke="#b89ad8" />
+  <text x="490" y="466" text-anchor="middle" class="head">IoU 중복 filter</text>
+  <text x="490" y="491" text-anchor="middle" class="formula">Red(c|e) ≤ τred</text>
+  <path d="M490 511 L490 542" class="arrow" />
+  <rect x="357" y="543" width="266" height="39" rx="10" fill="#eadff8" stroke="#a27bc8" />
+  <text x="490" y="568" text-anchor="middle" class="body">
+    다양한 sibling crop + 완료 trajectory
+  </text>
+
+  <path d="M300 296 C318 296 318 239 335 239" class="arrow" />
+
+  <rect x="680" y="112" width="470" height="46" rx="12" fill="#19806f" />
+  <text x="915" y="142" text-anchor="middle" class="stage">3 · ELAA 국소 credit assignment</text>
+  <rect
+    x="680"
+    y="174"
+    width="470"
+    height="430"
+    rx="18"
+    fill="#ffffff"
+    stroke="#a8d3ca"
+    filter="url(#shadow)"
+  />
+
+  <rect x="705" y="198" width="198" height="116" rx="12" fill="#ecfaf6" stroke="#85c6b8" />
+  <text x="804" y="225" text-anchor="middle" class="head">Local evidence reward</text>
+  <text x="804" y="251" text-anchor="middle" class="body">질문 + sibling crop</text>
+  <text x="804" y="274" text-anchor="middle" class="body">evidence judge: 0 / 1</text>
+  <text x="804" y="298" text-anchor="middle" class="small">그룹 내부 정규화 → Alocal</text>
+
+  <rect x="927" y="198" width="198" height="116" rx="12" fill="#fff7ea" stroke="#dfbb73" />
+  <text x="1026" y="225" text-anchor="middle" class="head">Global outcome reward</text>
+  <text x="1026" y="251" text-anchor="middle" class="body">정답 + 형식 + tool-use</text>
+  <text x="1026" y="276" text-anchor="middle" class="formula">Rglobal → Aglobal</text>
+  <text x="1026" y="298" text-anchor="middle" class="small">질문별 rollout group 정규화</text>
+
+  <path d="M804 314 L804 357" class="arrow" />
+  <path d="M1026 314 L1026 357" class="arrow" />
+  <rect x="705" y="358" width="420" height="115" rx="14" fill="#f4fbf9" stroke="#72b9aa" />
+  <text x="915" y="386" text-anchor="middle" class="head">token-level advantage mask</text>
+  <rect x="728" y="404" width="174" height="47" rx="9" fill="#d9f2eb" />
+  <text x="815" y="423" text-anchor="middle" class="body">image index · region · bbox</text>
+  <text x="815" y="442" text-anchor="middle" class="small">λlocal Alocal</text>
+  <rect x="928" y="404" width="174" height="47" rx="9" fill="#ffedc9" />
+  <text x="1015" y="423" text-anchor="middle" class="body">reasoning · answer token</text>
+  <text x="1015" y="442" text-anchor="middle" class="small">Aglobal</text>
+  <path d="M915 473 L915 506" class="arrow" />
+  <rect x="755" y="507" width="320" height="69" rx="12" fill="#dff4ef" stroke="#65aa9c" />
+  <text x="915" y="535" text-anchor="middle" class="head">clipped PPO policy update</text>
+  <text x="915" y="559" text-anchor="middle" class="body">objective는 유지, advantage만 분리</text>
+
+  <path d="M645 562 C663 562 663 256 680 256" class="arrow" />
+
+  <rect x="50" y="642" width="1100" height="72" rx="18" fill="#182a4b" />
+  <text x="78" y="672" class="stage">학습과 추론의 차이</text>
+  <text x="270" y="672" class="footer">
+    학습: M개 branch + evidence judge + local/global advantage
+  </text>
+  <text x="270" y="698" class="footer">추론: 학습된 VLM + 기존 zoom-in tool만 사용</text>
+  <path d="M1110 642 C1165 605 1160 500 1090 474" class="dash" />
+</svg>
