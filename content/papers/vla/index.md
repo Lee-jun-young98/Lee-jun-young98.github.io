@@ -205,10 +205,6 @@ paper_sync: true
 
 ## [PACT-VLA: Speculative Action-Chunk Verification with Pre-Commit Observations](/papers/vla/pact-vla-precommit-action-chunk-verification)
 
-## [PREM: Prediction-Regulated Memory for Robot Manipulation](/papers/vla/prem-prediction-regulated-memory-for-robot-manipulation)
-
-![](/papers/assets/vla/prem-prediction-regulated-memory-for-robot-manipulation/overview.svg)
-
 ![](/papers/assets/vla/pact-vla-precommit-action-chunk-verification/overview.svg)
 
 ## [PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations](/papers/vla/pdrvla-physical-dynamics-representations)
@@ -218,6 +214,10 @@ paper_sync: true
 ## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
 ![](/papers/assets/vla/plaw-vla-predictive-latent-world-modeling/overview.svg)
+
+## [PREM: Prediction-Regulated Memory for Robot Manipulation](/papers/vla/prem-prediction-regulated-memory-for-robot-manipulation)
+
+![](/papers/assets/vla/prem-prediction-regulated-memory-for-robot-manipulation/overview.svg)
 
 ## [ProactiveVLA: Augmenting Embodied Memory through Proactive Environment Exploration](/papers/vla/proactivevla-proactive-environment-exploration)
 
