@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">AIRoA-0 전체 학습 및 실행 파이프라인</title>
+  <desc id="desc">YUBI 핸드헬드 양팔 시연이 anchored action과 두 단계 학습을 거쳐 stage-conditioned flow action과 여러 로봇의 streaming 실행으로 이어지는 구조</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2}.data{fill:#e0f2fe;stroke:#0369a1;stroke-width:2}.train{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}.run{fill:#dcfce7;stroke:#15803d;stroke-width:2}.head{font:700 25px Arial,sans-serif;fill:#0f172a}.t{font:700 18px Arial,sans-serif;fill:#0f172a}.s{font:15px Arial,sans-serif;fill:#334155}.tag{font:700 14px Arial,sans-serif;fill:#475569}.arr{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:7 6}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="680" rx="24"/>
+  <text class="head" x="52" y="50">AIRoA-0: handheld data → cross-embodiment execution</text>
+  <text class="tag" x="52" y="78">논문 Figure 6–7 / Sections 3–6 기반 재구성</text>
+
+  <rect class="data" x="48" y="122" width="240" height="176" rx="18"/>
+  <text class="t" x="72" y="156">YUBI 양팔 시연</text>
+  <text class="s" x="72" y="188">16,151 h · robot 불필요</text>
+  <text class="s" x="72" y="216">두 wrist RGB + gripper pose</text>
+  <text class="s" x="72" y="244">task / subtask language</text>
+  <text class="s" x="72" y="272">anchored action  aₖ=Tᵢ⁻¹Tᵢ₊ₖ</text>
+
+  <rect class="train" x="360" y="106" width="350" height="210" rx="18"/>
+  <text class="t" x="384" y="140">Pre-training: S2 + π₀.₅</text>
+  <text class="s" x="384" y="174">SigLIP → visual budget gate</text>
+  <text class="s" x="384" y="202">Gemma 2B VLM representation</text>
+  <text class="s" x="384" y="230">300M flow action expert</text>
+  <text class="s" x="384" y="258">action + budget + subtask loss</text>
+  <text class="s" x="384" y="286">task/subtask instruction 교대 조건화</text>
+
+  <rect class="train" x="782" y="106" width="370" height="210" rx="18"/>
+  <text class="t" x="806" y="140">Task post-training</text>
+  <text class="s" x="806" y="174">stage head → 현재 단계 text</text>
+  <text class="s" x="806" y="202">10-state history → 4 memory tokens</text>
+  <text class="s" x="806" y="230">20-step anchored action chunk</text>
+  <text class="s" x="806" y="258">하나의 recipe · 20,000 updates</text>
+  <text class="s" x="806" y="286">학습: flow matching + 보조 손실</text>
+
+  <path class="arr" d="M288 210H352"/><path class="arr" d="M710 210H774"/>
+
+  <rect class="box" x="104" y="390" width="292" height="186" rx="18"/>
+  <text class="t" x="128" y="426">추론 입력</text>
+  <text class="s" x="128" y="460">task instruction (1회)</text>
+  <text class="s" x="128" y="488">두 wrist view + 현재 state</text>
+  <text class="s" x="128" y="516">최근 measured proprioception</text>
+  <text class="s" x="128" y="544">robot arm 종류에는 비의존</text>
+
+  <rect class="run" x="470" y="374" width="300" height="218" rx="18"/>
+  <text class="t" x="494" y="410">Inference harness</text>
+  <text class="s" x="494" y="444">stage probability EMA</text>
+  <text class="s" x="494" y="472">stage-conditioned action expert</text>
+  <text class="s" x="494" y="500">2-slot non-uniform denoising</text>
+  <text class="s" x="494" y="528">anchored chunk 재기준화</text>
+  <text class="s" x="494" y="556">약 60 ms/query (H200)</text>
+
+  <rect class="run" x="844" y="390" width="300" height="186" rx="18"/>
+  <text class="t" x="868" y="426">연속 robot 실행</text>
+  <text class="s" x="868" y="460">Franka · TX-G2 humanoid</text>
+  <text class="s" x="868" y="488">OpenArm · dual UR</text>
+  <text class="s" x="868" y="516">동일 weights, arm별 재학습 없음</text>
+  <text class="s" x="868" y="544">부분 관측에서도 장기 단계 추적</text>
+
+  <path class="arr" d="M396 483H462"/><path class="arr" d="M770 483H836"/>
+  <path class="arr dash" d="M967 316V360H620V366"/>
+  <text class="tag" x="806" y="350">post-trained weights</text>
+</svg>

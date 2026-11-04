@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">RAFT 2단계 reasoning-aligned VLA fine-tuning</title>
+  <desc id="desc">첫 단계에서 reasoning annotation으로 LoRA만 학습하고 두 번째 단계에서 LoRA를 동결한 채 action module을 학습해 추론 시 바로 action을 생성하는 구조</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.b{fill:#fff;stroke:#334155;stroke-width:2}.r{fill:#fef3c7;stroke:#b45309;stroke-width:2}.l{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}.ac{fill:#dcfce7;stroke:#15803d;stroke-width:2}.h{font:700 25px Arial,sans-serif;fill:#0f172a}.t{font:700 18px Arial,sans-serif;fill:#0f172a}.s{font:15px Arial,sans-serif;fill:#334155}.tag{font:700 14px Arial,sans-serif;fill:#475569}.arr{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#a)}.stop{stroke:#dc2626;stroke-width:4}.freeze{font:700 14px Arial,sans-serif;fill:#b91c1c}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="680" rx="24"/>
+  <text class="h" x="52" y="50">RAFT: reasoning-aligned two-stage VLA post-training</text>
+  <text class="tag" x="52" y="82">논문 Figure 2 / Equations (1)–(2) 기반 재구성</text>
+
+  <text class="t" x="54" y="126">Stage I · Reasoning alignment</text>
+  <rect class="r" x="50" y="150" width="272" height="188" rx="18"/>
+  <text class="t" x="74" y="184">입력과 annotation</text>
+  <text class="s" x="74" y="218">image + task instruction</text>
+  <text class="s" x="74" y="246">object box · keypoint · trace</text>
+  <text class="s" x="74" y="274">spatial description · VQA</text>
+  <text class="s" x="74" y="302">Gemini annotator → target r</text>
+
+  <rect class="l" x="412" y="150" width="330" height="188" rx="18"/>
+  <text class="t" x="436" y="184">Vision / Language LoRA ϕ</text>
+  <text class="s" x="436" y="218">Lreason: target token prediction</text>
+  <text class="s" x="436" y="246">LoRA만 update</text>
+  <text class="s" x="436" y="274">SigLIP · backbone · expert 고정</text>
+  <text class="s" x="436" y="302">task-relevant grounding 형성</text>
+
+  <rect class="b" x="832" y="150" width="316" height="188" rx="18"/>
+  <text class="t" x="856" y="184">정렬된 초기화</text>
+  <text class="s" x="856" y="218">object / relation / progress</text>
+  <text class="s" x="856" y="246">late-layer representation에 보존</text>
+  <text class="s" x="856" y="274">다음 단계의 adapter ϕ*</text>
+  <text class="s" x="856" y="302">reasoning text는 추론에 불필요</text>
+  <path class="arr" d="M322 244H404"/><path class="arr" d="M742 244H824"/>
+
+  <text class="t" x="54" y="400">Stage II · Action adaptation</text>
+  <rect class="r" x="50" y="424" width="272" height="178" rx="18"/>
+  <text class="t" x="74" y="458">Target demonstrations</text>
+  <text class="s" x="74" y="492">state s + instruction T</text>
+  <text class="s" x="74" y="520">demonstrated action a</text>
+  <text class="s" x="74" y="548">좁은 환경의 소량 data</text>
+  <text class="s" x="74" y="576">LBC / policy SFT</text>
+
+  <rect class="l" x="412" y="424" width="330" height="178" rx="18"/>
+  <text class="t" x="436" y="458">LoRA ϕ* 동결</text>
+  <text class="s" x="436" y="492">reasoning grounding 유지</text>
+  <text class="s" x="436" y="520">action gradient 차단</text>
+  <line class="stop" x1="567" y1="545" x2="587" y2="575"/><line class="stop" x1="587" y1="545" x2="567" y2="575"/>
+  <text class="freeze" x="604" y="566">STOP-GRAD</text>
+
+  <rect class="ac" x="832" y="424" width="316" height="178" rx="18"/>
+  <text class="t" x="856" y="458">Action path θ update</text>
+  <text class="s" x="856" y="492">language model + projection</text>
+  <text class="s" x="856" y="520">flow action expert</text>
+  <text class="s" x="856" y="548">추론: image + instruction → action</text>
+  <text class="s" x="856" y="576">추가 reasoning decoding 없음</text>
+  <path class="arr" d="M322 513H404"/><path class="arr" d="M742 513H824"/>
+  <path class="arr" d="M990 338V416"/>
+  <text class="freeze" x="1008" y="382">ϕ* frozen</text>
+</svg>
