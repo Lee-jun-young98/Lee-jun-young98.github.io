@@ -3,14 +3,6 @@ title: "VLA"
 paper_sync: true
 ---
 
-## [AIRoA-0: Long-Horizon, Precise, Cross-Embodiment Manipulation from Handheld Data](/papers/vla/airoa-0-handheld-cross-embodiment-manipulation)
-
-![](/papers/assets/vla/airoa-0-handheld-cross-embodiment-manipulation/overview.svg)
-
-## [RAFT: Reasoning-Aligned Fine-Tuning Improves Robustness of VLA Post-Training](/papers/vla/raft-reasoning-aligned-fine-tuning)
-
-![](/papers/assets/vla/raft-reasoning-aligned-fine-tuning/overview.svg)
-
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -22,6 +14,10 @@ paper_sync: true
 ## [AE-VLA: Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models](/papers/vla/ae-vla-arm-wise-compositional-generalization)
 
 ![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
+
+## [AIRoA-0: Long-Horizon, Precise, Cross-Embodiment Manipulation from Handheld Data](/papers/vla/airoa-0-handheld-cross-embodiment-manipulation)
+
+![](/papers/assets/vla/airoa-0-handheld-cross-embodiment-manipulation/overview.svg)
 
 ## [AutoPruner: Agentic Depth Pruning for Vision-Language-Action Models](/papers/vla/autopruner-agentic-depth-pruning-for-vlas)
 
@@ -234,6 +230,10 @@ paper_sync: true
 ## [Quantize by Doing: Task-Guided Mixed-Precision Quantization of Vision-Language-Action Models](/papers/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization)
 
 ![](/papers/assets/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization/overview.svg)
+
+## [RAFT: Reasoning-Aligned Fine-Tuning Improves Robustness of VLA Post-Training](/papers/vla/raft-reasoning-aligned-fine-tuning)
+
+![](/papers/assets/vla/raft-reasoning-aligned-fine-tuning/overview.svg)
 
 ## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
