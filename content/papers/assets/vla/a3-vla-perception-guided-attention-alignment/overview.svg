@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">A³-VLA perception-guided attention alignment 구조</title>
+  <desc id="desc">시연의 상호작용 변화에서 pseudo region을 만들고 attention allocation 및 contrastive loss와 action loss로 VLA를 공동 학습하되 추론에는 추가 모듈이 없는 구조</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2}.data{fill:#e0f2fe;stroke:#0369a1;stroke-width:2}.mask{fill:#fef3c7;stroke:#b45309;stroke-width:2}.loss{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}.act{fill:#dcfce7;stroke:#15803d;stroke-width:2}.h{font:700 25px Arial,sans-serif;fill:#0f172a}.t{font:700 18px Arial,sans-serif;fill:#0f172a}.s{font:15px Arial,sans-serif;fill:#334155}.tag{font:700 14px Arial,sans-serif;fill:#475569}.arr{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.dash{stroke:#64748b;stroke-width:2;stroke-dasharray:8 7;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="680" rx="24"/>
+  <text class="h" x="48" y="48">A³-VLA: interaction cue로 VLA의 시선을 정렬</text>
+  <text class="tag" x="48" y="78">논문 Figure 2 / Sections 3.2–3.5 기반 재구성</text>
+
+  <text class="t" x="48" y="120">학습 전처리 · 시연에서 supervision 자동 생성</text>
+  <rect class="data" x="48" y="142" width="242" height="166" rx="18"/>
+  <text class="t" x="70" y="176">Demonstration</text>
+  <text class="s" x="70" y="208">image trajectory I¹…T</text>
+  <text class="s" x="70" y="236">robot state · gripper/contact</text>
+  <text class="s" x="70" y="264">language instruction</text>
+  <text class="s" x="70" y="290">interaction timestep 탐지</text>
+
+  <rect class="mask" x="360" y="142" width="266" height="166" rx="18"/>
+  <text class="t" x="382" y="176">Heuristic proposal</text>
+  <text class="s" x="382" y="208">상호작용 전후 patch 변화</text>
+  <text class="s" x="382" y="236">target / robot 후보 영역</text>
+  <text class="s" x="382" y="264">noisy region 자동 생성</text>
+  <text class="s" x="382" y="290">수동 box annotation 불필요</text>
+
+  <rect class="mask" x="696" y="142" width="222" height="166" rx="18"/>
+  <text class="t" x="718" y="176">SAM2 refinement</text>
+  <text class="s" x="718" y="208">시간축 mask 정제</text>
+  <text class="s" x="718" y="236">C<tspan baseline-shift="sub">tar</tspan> / C<tspan baseline-shift="sub">rob</tspan> cache</text>
+  <text class="s" x="718" y="264">soft pseudo region</text>
+  <text class="s" x="718" y="290">offline에서만 실행</text>
+  <path class="arr" d="M290 225H352"/><path class="arr" d="M626 225H688"/>
+
+  <text class="t" x="48" y="366">공동 fine-tuning</text>
+  <rect class="box" x="48" y="390" width="242" height="190" rx="18"/>
+  <text class="t" x="70" y="424">VLA backbone</text>
+  <text class="s" x="70" y="456">image · language · state</text>
+  <text class="s" x="70" y="484">multimodal attention</text>
+  <text class="s" x="70" y="512">noised action chunk</text>
+  <text class="s" x="70" y="540">π₀ / OpenVLA-OFT / π₀.₅</text>
+
+  <rect class="loss" x="360" y="390" width="266" height="190" rx="18"/>
+  <text class="t" x="382" y="424">Perception guidance</text>
+  <text class="s" x="382" y="456">L<tspan baseline-shift="sub">l2i</tspan>: 언어 → target 영역</text>
+  <text class="s" x="382" y="484">L<tspan baseline-shift="sub">s2i</tspan>: state → robot 영역</text>
+  <text class="s" x="382" y="512">L<tspan baseline-shift="sub">cl</tspan>: instruction ↔ target</text>
+  <text class="s" x="382" y="540">irrelevant region은 분리</text>
+
+  <rect class="act" x="696" y="390" width="222" height="190" rx="18"/>
+  <text class="t" x="718" y="424">Joint objective</text>
+  <text class="s" x="718" y="456">L<tspan baseline-shift="sub">FM</tspan> + λ₁ perception</text>
+  <text class="s" x="718" y="484">+ λ₂ contrastive</text>
+  <text class="s" x="718" y="512">action 정확도와</text>
+  <text class="s" x="718" y="540">task 시각 grounding 동시 보존</text>
+
+  <rect class="act" x="978" y="250" width="178" height="224" rx="18"/>
+  <text class="t" x="1000" y="286">추론</text>
+  <text class="s" x="1000" y="320">observation</text>
+  <text class="s" x="1000" y="348">+ instruction</text>
+  <text class="s" x="1000" y="382">↓ 학습된 VLA</text>
+  <text class="s" x="1000" y="416">action chunk</text>
+  <text class="tag" x="1000" y="450">SAM2 없음</text>
+
+  <path class="arr" d="M290 485H352"/><path class="arr" d="M626 485H688"/>
+  <path class="dash" d="M807 308V382"/>
+  <path class="arr" d="M918 485C950 485 950 362 970 362"/>
+  <text class="tag" x="48" y="628">학습: 시연 → pseudo region → attention/contrastive guidance + action loss</text>
+  <text class="tag" x="650" y="628">배포: 추가 perception module 없이 기존 action 생성 경로 사용</text>
+</svg>

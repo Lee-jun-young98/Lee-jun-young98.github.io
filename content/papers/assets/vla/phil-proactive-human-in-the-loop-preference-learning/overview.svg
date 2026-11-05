@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">PHIL proactive intervention과 preference post-training 구조</title>
+  <desc id="desc">정책의 미래 action chunk를 XR로 미리 보고 사람이 개입하여 같은 상태의 거절 예측과 교정 action을 preference pair로 만들고 VLA를 후학습하는 구조</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.base{fill:#e0f2fe;stroke:#0369a1;stroke-width:2}.human{fill:#fef3c7;stroke:#b45309;stroke-width:2}.neg{fill:#fee2e2;stroke:#b91c1c;stroke-width:2}.pos{fill:#dcfce7;stroke:#15803d;stroke-width:2}.learn{fill:#ede9fe;stroke:#6d28d9;stroke-width:2}.box{fill:#fff;stroke:#334155;stroke-width:2}.h{font:700 25px Arial,sans-serif;fill:#0f172a}.t{font:700 18px Arial,sans-serif;fill:#0f172a}.s{font:15px Arial,sans-serif;fill:#334155}.tag{font:700 14px Arial,sans-serif;fill:#475569}.arr{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.red{stroke:#b91c1c;stroke-width:3;fill:none;marker-end:url(#arrow)}.green{stroke:#15803d;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="680" rx="24"/>
+  <text class="h" x="48" y="48">PHIL: 실패 전에 개입하는 preference post-training</text>
+  <text class="tag" x="48" y="78">논문 Figure 1 / Figure 3 / Equations (4)–(9) 기반 재구성</text>
+
+  <text class="t" x="48" y="120">1 · Proactive correction rollout</text>
+  <rect class="base" x="48" y="144" width="222" height="166" rx="18"/>
+  <text class="t" x="70" y="178">Base policy / X-VLA</text>
+  <text class="s" x="70" y="210">query state c<tspan baseline-shift="sub">t</tspan></text>
+  <text class="s" x="70" y="238">H-step action chunk 예측</text>
+  <text class="s" x="70" y="266">매 B step 고정 query</text>
+  <text class="s" x="70" y="292">개입 중에도 shadow run</text>
+
+  <rect class="human" x="332" y="144" width="236" height="166" rx="18"/>
+  <text class="t" x="354" y="178">XR future preview</text>
+  <text class="s" x="354" y="210">3D end-effector trajectory</text>
+  <text class="s" x="354" y="238">물리 공간에 정합해 표시</text>
+  <text class="s" x="354" y="266">사람이 오류 전에 takeover</text>
+  <text class="s" x="354" y="292">수용 시 release</text>
+
+  <rect class="neg" x="646" y="124" width="230" height="94" rx="16"/>
+  <text class="t" x="668" y="158">거절 예측 A⁻</text>
+  <text class="s" x="668" y="190">실행되지 않은 policy chunk</text>
+  <rect class="pos" x="646" y="236" width="230" height="94" rx="16"/>
+  <text class="t" x="668" y="270">교정 action A⁺</text>
+  <text class="s" x="668" y="302">같은 state 이후 실제 H actions</text>
+  <path class="arr" d="M270 227H324"/><path class="arr" d="M568 227H620"/>
+  <path class="red" d="M620 212C630 190 632 172 638 172"/>
+  <path class="green" d="M620 242C630 264 632 282 638 282"/>
+
+  <rect class="box" x="942" y="144" width="210" height="166" rx="18"/>
+  <text class="t" x="964" y="178">Preference pair</text>
+  <text class="s" x="964" y="210">동일 context c<tspan baseline-shift="sub">t</tspan></text>
+  <text class="s" x="964" y="238">동일 horizon H</text>
+  <text class="s" x="964" y="266">A⁺ ≻ A⁻</text>
+  <text class="s" x="964" y="292">accepted 예측은 제외</text>
+  <path class="arr" d="M876 171H934"/><path class="arr" d="M876 282H934"/>
+
+  <text class="t" x="48" y="386">2 · Preference post-training과 배포</text>
+  <rect class="base" x="48" y="410" width="222" height="178" rx="18"/>
+  <text class="t" x="70" y="444">Base demonstrations</text>
+  <text class="s" x="70" y="478">original imitation data</text>
+  <text class="s" x="70" y="506">L<tspan baseline-shift="sub">base</tspan>로 forgetting 억제</text>
+  <text class="s" x="70" y="534">+ 5 correction episodes</text>
+  <text class="s" x="70" y="562">policy native loss 사용</text>
+
+  <rect class="learn" x="362" y="410" width="286" height="178" rx="18"/>
+  <text class="t" x="384" y="444">Pairwise preference loss</text>
+  <text class="s" x="384" y="478">Δ = ℓ(A⁻,c) − ℓ(A⁺,c)</text>
+  <text class="s" x="384" y="506">−log σ(βΔ)</text>
+  <text class="s" x="384" y="534">교정 chunk의 loss는 낮게</text>
+  <text class="s" x="384" y="562">거절 chunk의 loss는 높게</text>
+
+  <rect class="pos" x="742" y="410" width="206" height="178" rx="18"/>
+  <text class="t" x="764" y="444">Post-trained policy</text>
+  <text class="s" x="764" y="478">diffusion policy 또는</text>
+  <text class="s" x="764" y="506">pretrained X-VLA</text>
+  <text class="s" x="764" y="534">상태별 action 선호 내재화</text>
+  <text class="s" x="764" y="562">base skill 유지</text>
+
+  <rect class="box" x="1012" y="410" width="140" height="178" rx="18"/>
+  <text class="t" x="1034" y="444">배포</text>
+  <text class="s" x="1034" y="478">observation</text>
+  <text class="s" x="1034" y="506">→ action</text>
+  <text class="tag" x="1034" y="540">XR 없음</text>
+  <text class="tag" x="1034" y="566">사람 없음</text>
+  <path class="arr" d="M270 499H354"/><path class="arr" d="M648 499H734"/><path class="arr" d="M948 499H1004"/>
+  <path class="arr" d="M1048 310V402"/>
+  <text class="tag" x="48" y="632">수집: 미래 action을 먼저 검토 → 같은 상태의 rejected/corrected pair 생성</text>
+  <text class="tag" x="660" y="632">학습 뒤 추론: 기존 policy 경로만 사용</text>
+</svg>

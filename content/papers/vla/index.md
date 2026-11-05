@@ -3,6 +3,10 @@ title: "VLA"
 paper_sync: true
 ---
 
+## [A³-VLA: Automatic Perception-Guided Attention Alignment for Robot Manipulation](/papers/vla/a3-vla-perception-guided-attention-alignment)
+
+![](/papers/assets/vla/a3-vla-perception-guided-attention-alignment/overview.svg)
+
 ## [ACG-WAM: World-Action Modeling via Action-Conditioned Geometric Latent Prediction](/papers/vla/acg-wam-action-conditioned-geometric-latent-prediction)
 
 ![](/papers/assets/vla/acg-wam-action-conditioned-geometric-latent-prediction/overview.svg)
@@ -214,6 +218,10 @@ paper_sync: true
 ## [PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations](/papers/vla/pdrvla-physical-dynamics-representations)
 
 ![](/papers/assets/vla/pdrvla-physical-dynamics-representations/overview.svg)
+
+## [PHIL: Correct Robots Before They Make Mistakes](/papers/vla/phil-proactive-human-in-the-loop-preference-learning)
+
+![](/papers/assets/vla/phil-proactive-human-in-the-loop-preference-learning/overview.svg)
 
 ## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
