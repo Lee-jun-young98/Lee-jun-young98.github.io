@@ -1,0 +1,185 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="720"
+  viewBox="0 0 1200 720"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Visual Token Routing 학습·추론 구조</title>
+  <desc id="desc">
+    연속 화면을 위치별 시각 토큰으로 바꾸고 시공간 router가 anchor 외 토큰을 선택해 VLM 행동
+    입력으로 보내며, 학습 때 full과 blind reference 손실 및 dual ascent로 선택량을 조절하는 구조
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f8fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0 0v6l9-3z" fill="#475569" />
+    </marker>
+    <style>
+      .h {
+        font:
+          700 26px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .t {
+        font:
+          600 17px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .s {
+        font:
+          400 14px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #334155;
+      }
+      .tiny {
+        font:
+          400 12px "Noto Sans KR",
+          "Malgun Gothic",
+          sans-serif;
+        fill: #475569;
+      }
+      .box {
+        fill: #fff;
+        stroke: #94a3b8;
+        stroke-width: 2;
+      }
+      .main {
+        fill: #ecfeff;
+        stroke: #0891b2;
+        stroke-width: 2.5;
+      }
+      .train {
+        fill: #fff7ed;
+        stroke: #ea580c;
+        stroke-width: 2;
+      }
+      .ref {
+        fill: #f1f5f9;
+        stroke: #64748b;
+        stroke-width: 2;
+        stroke-dasharray: 7 5;
+      }
+      .arr {
+        stroke: #475569;
+        stroke-width: 2.2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke: #ea580c;
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 7 5;
+        marker-end: url(#arrow);
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="url(#bg)" />
+  <text x="50" y="52" class="h">VTR: 행동에 필요한 시각 토큰만 통과시키는 시공간 routing</text>
+  <text x="50" y="78" class="s">
+    논문 Figure 1–3 및 식 (1)–(8)을 바탕으로 재구성 · 실선: 학습+추론 · 점선: 학습 전용
+  </text>
+  <rect x="45" y="115" width="190" height="180" rx="18" class="box" />
+  <text x="140" y="145" text-anchor="middle" class="t">연속 screenshot</text>
+  <rect x="70" y="166" width="92" height="58" rx="8" fill="#dbeafe" stroke="#3b82f6" />
+  <rect x="85" y="178" width="92" height="58" rx="8" fill="#bfdbfe" stroke="#3b82f6" />
+  <rect x="100" y="190" width="92" height="58" rx="8" fill="#93c5fd" stroke="#2563eb" />
+  <text x="140" y="273" text-anchor="middle" class="s">현재 + 과거 10개 화면</text>
+  <path d="M235 205h40" class="arr" />
+  <rect x="275" y="135" width="180" height="140" rx="18" class="box" />
+  <text x="365" y="172" text-anchor="middle" class="t">Vision encoder</text>
+  <text x="365" y="197" text-anchor="middle" class="s">Qwen3.5 · frozen</text>
+  <g fill="#a5f3fc" stroke="#0891b2">
+    <rect x="310" y="218" width="24" height="24" />
+    <rect x="340" y="218" width="24" height="24" />
+    <rect x="370" y="218" width="24" height="24" />
+    <rect x="400" y="218" width="24" height="24" />
+  </g>
+  <text x="365" y="263" text-anchor="middle" class="tiny">
+    위치별 token v
+    <tspan baseline-shift="sub">τ,j</tspan>
+  </text>
+  <path d="M455 205h40" class="arr" />
+  <rect x="495" y="115" width="220" height="180" rx="18" class="main" />
+  <text x="605" y="150" text-anchor="middle" class="t">
+    시공간 Router f
+    <tspan baseline-shift="sub">φ</tspan>
+  </text>
+  <text x="605" y="178" text-anchor="middle" class="s">같은 위치 j의 11개 token 결합</text>
+  <text x="605" y="205" text-anchor="middle" class="s">3-layer MLP · 23.3M params</text>
+  <rect x="530" y="224" width="150" height="36" rx="18" fill="#cffafe" stroke="#0891b2" />
+  <text x="605" y="247" text-anchor="middle" class="s">keep 확률 p → gate g</text>
+  <text x="605" y="280" text-anchor="middle" class="tiny">keep: p·v · drop: sequence에서 제거</text>
+  <path d="M715 205h40" class="arr" />
+  <rect x="755" y="115" width="190" height="180" rx="18" class="box" />
+  <text x="850" y="150" text-anchor="middle" class="t">Routed history</text>
+  <rect x="785" y="173" width="130" height="34" rx="7" fill="#dbeafe" stroke="#2563eb" />
+  <text x="850" y="195" text-anchor="middle" class="s">Anchor: 전체 보존</text>
+  <rect x="785" y="216" width="28" height="28" fill="#a5f3fc" stroke="#0891b2" />
+  <rect x="823" y="216" width="28" height="28" fill="#e2e8f0" stroke="#94a3b8" />
+  <rect x="861" y="216" width="28" height="28" fill="#a5f3fc" stroke="#0891b2" />
+  <text x="850" y="268" text-anchor="middle" class="tiny">B=10마다 anchor refresh</text>
+  <path d="M945 205h40" class="arr" />
+  <rect x="985" y="135" width="170" height="140" rx="18" class="main" />
+  <text x="1070" y="178" text-anchor="middle" class="t">Qwen3.5-2B</text>
+  <text x="1070" y="205" text-anchor="middle" class="s">sparse visual history</text>
+  <text x="1070" y="238" text-anchor="middle" class="t">
+    → 다음 행동 a
+    <tspan baseline-shift="sub">t</tspan>
+  </text>
+  <text x="50" y="345" class="h">학습 전용: 성능 저하를 측정하고 token budget을 자동 조절</text>
+  <rect x="45" y="375" width="250" height="145" rx="18" class="ref" />
+  <text x="170" y="410" text-anchor="middle" class="t">Full reference</text>
+  <text x="170" y="438" text-anchor="middle" class="s">모든 screenshot token</text>
+  <text x="170" y="478" text-anchor="middle" class="s">
+    loss ℓ
+    <tspan baseline-shift="super">full</tspan>
+  </text>
+  <rect x="330" y="375" width="250" height="145" rx="18" class="ref" />
+  <text x="455" y="410" text-anchor="middle" class="t">Blind reference</text>
+  <text x="455" y="438" text-anchor="middle" class="s">anchor만 입력</text>
+  <text x="455" y="478" text-anchor="middle" class="s">
+    loss ℓ
+    <tspan baseline-shift="super">blind</tspan>
+  </text>
+  <rect x="615" y="375" width="250" height="145" rx="18" class="train" />
+  <text x="740" y="410" text-anchor="middle" class="t">Sparse VTR model</text>
+  <text x="740" y="438" text-anchor="middle" class="s">router가 남긴 token만 입력</text>
+  <text x="740" y="478" text-anchor="middle" class="s">
+    loss ℓ
+    <tspan baseline-shift="super">sparse</tspan>
+  </text>
+  <path d="M295 465h35" class="dash" />
+  <path d="M580 465h35" class="dash" />
+  <rect x="900" y="365" width="255" height="170" rx="18" class="train" />
+  <text x="1027" y="403" text-anchor="middle" class="t">저하 비율 r̄와 dual ascent</text>
+  <text x="1027" y="435" text-anchor="middle" class="s">i = ℓblind − ℓfull</text>
+  <text x="1027" y="462" text-anchor="middle" class="s">d = ℓsparse − ℓfull</text>
+  <text x="1027" y="493" text-anchor="middle" class="s">r̄ &gt; 0.1 → λ↑ → 더 keep</text>
+  <text x="1027" y="518" text-anchor="middle" class="s">r̄ ≤ 0.1 → λ↓ → 더 drop</text>
+  <path d="M865 450h35" class="dash" />
+  <path d="M1027 535C1027 590 650 590 605 295" class="dash" />
+  <rect x="45" y="565" width="820" height="105" rx="16" fill="#fff" stroke="#cbd5e1" />
+  <text x="70" y="600" class="t">목표: token 수를 미리 정하지 않고 행동 성능 저하만 제한</text>
+  <text x="70" y="628" class="s">
+    min L
+    <tspan baseline-shift="sub">tok</tspan>
+    subject to r̄ ≤ r★=0.1 · λ ← max(0, λ + α(r̄−r★))
+  </text>
+  <text x="70" y="655" class="s">
+    추론 시 reference와 dual-ascent 제거 → Vision encoder + Router + VLM만 실행
+  </text>
+  <text x="900" y="616" class="tiny">출처: arXiv:2611.06854v1</text>
+  <text x="900" y="640" class="tiny">Figure 1–3 · Sections 2.1–2.3</text>
+  <text x="900" y="664" class="tiny">논문 내용을 바탕으로 재구성</text>
+</svg>
