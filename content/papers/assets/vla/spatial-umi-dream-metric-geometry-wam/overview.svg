@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Spatial-UMI-Dream 전체 구조</title>
+  <desc id="desc">양손 UMI의 fisheye RGB와 stereo metric depth를 RGB-D canvas로 결합하고, world-only adaptation 뒤 world-action joint learning으로 미래 영상과 action chunk를 생성하는 흐름</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071426"/><stop offset="1" stop-color="#102b3e"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/></marker>
+    <style>.t{font-family:'Segoe UI','Noto Sans KR',sans-serif;fill:#eaf6ff}.h{font-weight:700;font-size:25px}.s{font-size:17px}.xs{font-size:14px}.box{fill:#102f46;stroke:#4fd1c5;stroke-width:2}.aux{fill:#2a2047;stroke:#c084fc;stroke-width:2}.out{fill:#173c2d;stroke:#86efac;stroke-width:2}.line{stroke:#67e8f9;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" rx="24" fill="url(#bg)"/>
+  <text x="48" y="54" class="t h">Spatial-UMI-Dream — Metric RGB-D World Action Model</text>
+  <text x="48" y="84" class="t s" fill="#a5d8ff">논문 Figure 2–3과 Eq. (1)–(5)를 바탕으로 재구성</text>
+  <rect x="48" y="125" width="205" height="175" rx="18" class="box"/>
+  <text x="70" y="158" class="t h">양손 UMI 입력</text>
+  <text x="70" y="195" class="t s">왼손 / 오른손</text><text x="70" y="224" class="t s">fisheye RGB</text>
+  <text x="70" y="253" class="t s">stereo camera + calibration</text><text x="70" y="282" class="t xs">언어 지시 · robot state</text>
+  <rect x="300" y="125" width="225" height="175" rx="18" class="box"/>
+  <text x="322" y="158" class="t h">Metric depth 정렬</text>
+  <text x="322" y="195" class="t s">rectify → disparity → Z-depth</text><text x="322" y="224" class="t s">원 fisheye 좌표로 역매핑</text>
+  <text x="322" y="253" class="t s">고정 범위 + Turbo 3채널</text><text x="322" y="282" class="t xs">appearance와 같은 video codec 사용</text>
+  <rect x="575" y="125" width="235" height="175" rx="18" class="box"/>
+  <text x="597" y="158" class="t h">2×2 RGB-D canvas</text>
+  <rect x="604" y="183" width="78" height="43" rx="6" fill="#155e75"/><rect x="692" y="183" width="78" height="43" rx="6" fill="#92400e"/>
+  <rect x="604" y="236" width="78" height="43" rx="6" fill="#1d4ed8"/><rect x="692" y="236" width="78" height="43" rx="6" fill="#b45309"/>
+  <text x="624" y="211" class="t xs">L RGB</text><text x="710" y="211" class="t xs">L Depth</text><text x="624" y="264" class="t xs">R RGB</text><text x="710" y="264" class="t xs">R Depth</text>
+  <rect x="860" y="125" width="292" height="175" rx="18" class="aux"/>
+  <text x="882" y="158" class="t h">Video VAE + Transformer</text>
+  <text x="882" y="195" class="t s">temporally aligned latent block Zᵢ</text><text x="882" y="224" class="t s">block-causal attention</text>
+  <text x="882" y="253" class="t s">language cross-attention</text><text x="882" y="282" class="t xs">video/action token은 block 안에서 양방향</text>
+  <path d="M253 212 H292" class="line"/><path d="M525 212 H567" class="line"/><path d="M810 212 H852" class="line"/>
+  <rect x="85" y="370" width="445" height="185" rx="18" class="aux"/>
+  <text x="109" y="405" class="t h">Stage 1 · World-only adaptation</text>
+  <text x="109" y="444" class="t s">visual history + language → 미래 RGB-D</text><text x="109" y="476" class="t s">action/state branch 비활성</text>
+  <text x="109" y="508" class="t s">ℒworld (flow matching)</text><text x="109" y="536" class="t xs">움직이는 UMI 시점과 metric geometry에 backbone 적응</text>
+  <rect x="585" y="370" width="530" height="185" rx="18" class="out"/>
+  <text x="609" y="405" class="t h">Stage 2 · Joint world-action learning</text>
+  <text x="609" y="444" class="t s">RGB-D latent Zᵢ + action chunk Aᵢ + state</text><text x="609" y="476" class="t s">ℒ = ℒworld + λₐℒaction</text>
+  <text x="609" y="508" class="t s">추론 출력: 미래 RGB-D + 24-step 양손 action</text><text x="609" y="536" class="t xs">explicit geometry로 접근 거리·접촉·양손 정렬을 보조</text>
+  <path d="M530 462 H577" class="line"/>
+  <path d="M1006 300 C1006 330 850 325 850 362" class="line"/>
+  <text x="48" y="620" class="t s">학습 데이터: 605시간 RGB-D UMI · Backbone: Wan2.2-TI2V-5B · 평가: RoboTwin-UMI + Dexmate Vega1</text>
+  <text x="48" y="650" class="t xs">재구성 출처: https://arxiv.org/html/2611.07229#S3</text>
+</svg>

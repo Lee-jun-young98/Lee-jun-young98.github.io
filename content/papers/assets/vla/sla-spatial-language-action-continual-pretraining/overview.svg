@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">SLA continual pre-training 구조</title>
+  <desc id="desc">heterogeneous robot data의 RGB와 선택적 geometry를 frozen OmniVGGT teacher와 pi0.5에 넣고, 여러 VLA layer의 token을 adaptive gate로 정렬한 뒤 추론에서는 보조 branch를 제거하는 흐름</desc>
+  <defs><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#24213f"/></linearGradient><marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#a5b4fc"/></marker><style>.t{font-family:'Segoe UI','Noto Sans KR',sans-serif;fill:#f8fafc}.h{font-size:25px;font-weight:700}.s{font-size:17px}.xs{font-size:14px}.b{fill:#1f3150;stroke:#60a5fa;stroke-width:2}.p{fill:#3b2452;stroke:#c084fc;stroke-width:2}.g{fill:#173d33;stroke:#6ee7b7;stroke-width:2}.l{stroke:#a5b4fc;stroke-width:3;fill:none;marker-end:url(#arr2)}.dash{stroke:#f0abfc;stroke-width:2;stroke-dasharray:7 6;fill:none;marker-end:url(#arr2)}</style></defs>
+  <rect width="1200" height="680" rx="24" fill="url(#bg2)"/>
+  <text x="48" y="54" class="t h">SLA — Spatial Alignment during Continual Pre-training</text><text x="48" y="84" class="t s">논문 Figure 1과 Eq. (4)–(7)을 바탕으로 재구성</text>
+  <rect x="48" y="125" width="220" height="185" rx="18" class="b"/>
+  <text x="70" y="160" class="t h">이기종 robot data</text><text x="70" y="198" class="t s">multi-view RGB · instruction</text><text x="70" y="228" class="t s">state · action</text><text x="70" y="258" class="t s">선택적 depth / camera</text><text x="70" y="288" class="t xs">1.7139M episodes · 14,330 h</text>
+  <rect x="330" y="115" width="310" height="205" rx="18" class="p"/>
+  <text x="352" y="150" class="t h">Frozen OmniVGGT teacher</text><text x="352" y="188" class="t s">RGB + 가용 geometry</text><text x="352" y="218" class="t s">pixel-level 3D feature yᵢ</text><text x="352" y="248" class="t s">camera/depth 없으면 placeholder</text><text x="352" y="284" class="t xs">gradient 없음 · spatial target만 제공</text>
+  <rect x="330" y="370" width="310" height="205" rx="18" class="b"/>
+  <text x="352" y="405" class="t h">π₀.₅ VLA student</text><text x="352" y="443" class="t s">PaliGemma 18 attention layers</text><text x="352" y="473" class="t s">visual tokens xᵢ⁽ˡ⁾ + language</text><text x="352" y="503" class="t s">flow-matching action expert</text><text x="352" y="539" class="t xs">25% state-token dropout로 shortcut 억제</text>
+  <rect x="712" y="205" width="245" height="280" rx="18" class="p"/>
+  <text x="734" y="240" class="t h">Adaptive layer fusion</text><text x="734" y="278" class="t s">LN + shared 2-layer MLP</text><text x="734" y="310" class="t s">token·channel gate gᵢ⁽ˡ⁾</text><text x="734" y="350" class="t s">zᵢ = Σₗ gᵢ⁽ˡ⁾ ⊙ proj(xᵢ⁽ˡ⁾)</text><text x="734" y="390" class="t s">ℒalign = 1 − cos(zᵢ, yᵢ)</text><text x="734" y="430" class="t s">ℒaction + αℒalign</text><text x="734" y="466" class="t xs">layer를 수동 고정하지 않음</text>
+  <rect x="1005" y="205" width="150" height="280" rx="18" class="g"/>
+  <text x="1027" y="240" class="t h">추론</text><text x="1027" y="286" class="t s">RGB</text><text x="1027" y="316" class="t s">language</text><text x="1027" y="346" class="t s">state</text><text x="1027" y="391" class="t s">→ action</text><text x="1027" y="431" class="t xs">teacher/gate</text><text x="1027" y="453" class="t xs">모두 제거</text>
+  <path d="M268 195 H322" class="l"/><path d="M268 250 C295 250 295 470 322 470" class="l"/>
+  <path d="M640 218 H704" class="dash"/><path d="M640 452 C675 452 675 380 704 380" class="l"/><path d="M957 345 H997" class="l"/>
+  <text x="655" y="192" class="t xs">spatial target yᵢ</text><text x="650" y="512" class="t xs">multi-layer tokens</text>
+  <text x="48" y="620" class="t s">핵심: 3D supervision은 학습 중 VLA 내부 표현에 증류되고, 배포 시 추가 depth 입력·teacher 계산이 없다.</text>
+  <text x="48" y="650" class="t xs">재구성 출처: https://arxiv.org/html/2611.08373#S3.SS2</text>
+</svg>
