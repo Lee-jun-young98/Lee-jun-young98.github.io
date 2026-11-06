@@ -277,23 +277,23 @@ paper_sync: true
 
 ![](/papers/assets/vla/self-labeled-preference-transfer-for-steerable-robot-manipulation/overview.svg)
 
-## [SLA: Scaling Spatial-Language-Action Model via Continual Pre-training](/papers/vla/sla-spatial-language-action-continual-pretraining)
-
-![](/papers/assets/vla/sla-spatial-language-action-continual-pretraining/overview.svg)
-
 ## [SkeleWAM: Skeleton World-Action Modeling for Efficient Robotic Manipulation](/papers/vla/skelewam-skeleton-world-action-modeling)
 
 ![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
 
+## [SLA: Scaling Spatial-Language-Action Model via Continual Pre-training](/papers/vla/sla-spatial-language-action-continual-pretraining)
+
+![](/papers/assets/vla/sla-spatial-language-action-continual-pretraining/overview.svg)
+
 ## [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
-
-## [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
-
-![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
 
 ## [Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation](/papers/vla/spatial-umi-dream-metric-geometry-wam)
 
 ![](/papers/assets/vla/spatial-umi-dream-metric-geometry-wam/overview.svg)
+
+## [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
+
+![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
 
 ## [STAR: Steering Action Representations with Proprioception for VLA Inference](/papers/vla/star-steering-action-representations)
 
