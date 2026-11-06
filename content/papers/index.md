@@ -509,6 +509,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/visual-tokens-on-demand-multi-image-reasoning/mmvb-architecture.svg)
 
+### [Where and Why is Grounded Reasoning Useful?](/papers/vlm/where-and-why-is-grounded-reasoning-useful)
+
+![](/papers/assets/vlm/where-and-why-is-grounded-reasoning-useful/grounded-reasoning-pipeline.svg)
+
 ### [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)
 
 ![](/papers/assets/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms/trimodal-binding-pipeline.svg)

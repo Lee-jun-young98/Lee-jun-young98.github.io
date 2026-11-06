@@ -1,0 +1,165 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="720"
+  viewBox="0 0 1200 720"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Grounded reasoning의 좌표 사용량 측정과 통제 학습 구조</title>
+  <desc id="desc">
+    이미지와 질문에서 좌표가 포함된 사고를 생성하고, 좌표를 무작위화한 뒤 KV cache를 재설정해
+    의존도를 측정한다. 같은 VLM의 text-only와 grounded 학습을 비교하며 언어 label이 없는 경우 좌표가
+    pointer로 유용함을 보여준다.
+  </desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f7fafc" />
+      <stop offset="1" stop-color="#eef2ff" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#334155" />
+    </marker>
+    <style>
+      .h {
+        font:
+          700 24px "Malgun Gothic",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .s {
+        font:
+          700 17px "Malgun Gothic",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #0f172a;
+      }
+      .t {
+        font:
+          14px "Malgun Gothic",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #334155;
+      }
+      .sm {
+        font:
+          12px "Malgun Gothic",
+          "Noto Sans KR",
+          sans-serif;
+        fill: #475569;
+      }
+      .box {
+        fill: #fff;
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+        rx: 14;
+      }
+      .blue {
+        fill: #e0f2fe;
+        stroke: #0284c7;
+      }
+      .violet {
+        fill: #ede9fe;
+        stroke: #7c3aed;
+      }
+      .amber {
+        fill: #fef3c7;
+        stroke: #d97706;
+      }
+      .green {
+        fill: #dcfce7;
+        stroke: #16a34a;
+      }
+      .red {
+        fill: #fee2e2;
+        stroke: #dc2626;
+      }
+      .line {
+        stroke: #334155;
+        stroke-width: 2;
+        fill: none;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke-dasharray: 7 6;
+      }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)" />
+  <text x="50" y="48" class="h">좌표를 출력하는가가 아니라, 답을 만들 때 실제로 쓰는가?</text>
+  <text x="50" y="75" class="t">
+    논문 Figure 2 · Sections 3–5를 바탕으로 재구성 — 분석 개입과 matched training 비교
+  </text>
+
+  <rect x="40" y="100" width="1120" height="250" rx="20" fill="#ffffffcc" stroke="#cbd5e1" />
+  <text x="62" y="132" class="s">A. 추론 중 인과 개입: Decode-time Grounding Corruption</text>
+  <rect x="70" y="160" width="170" height="130" class="box blue" />
+  <text x="155" y="190" class="s" text-anchor="middle">이미지 + 질문</text>
+  <rect x="100" y="210" width="44" height="44" fill="#bae6fd" stroke="#0284c7" />
+  <circle cx="124" cy="230" r="7" fill="#f97316" />
+  <path d="M105 250 L119 236 L130 244 L140 229" fill="none" stroke="#0284c7" stroke-width="3" />
+  <text x="155" y="274" class="sm" text-anchor="middle">시각 문제 입력</text>
+  <path d="M240 225 H300" class="line" />
+  <rect x="300" y="160" width="190" height="130" class="box violet" />
+  <text x="395" y="190" class="s" text-anchor="middle">VLM decoding</text>
+  <text x="395" y="220" class="t" text-anchor="middle">text → [x,y] → text</text>
+  <text x="395" y="246" class="sm" text-anchor="middle">coordinate-grounded CoT</text>
+  <text x="395" y="269" class="sm" text-anchor="middle">다음 토큰은 앞 좌표에 조건화</text>
+  <path d="M490 225 H550" class="line" />
+  <rect x="550" y="150" width="215" height="150" class="box red" />
+  <text x="657" y="181" class="s" text-anchor="middle">좌표가 나올 때마다</text>
+  <text x="657" y="211" class="t" text-anchor="middle">[x,y] → random [x′,y′]</text>
+  <text x="657" y="239" class="t" text-anchor="middle">편집 prefix로 KV cache reset</text>
+  <text x="657" y="270" class="sm" text-anchor="middle">분석 때만 적용 · completion당 반복</text>
+  <path d="M765 225 H825" class="line" />
+  <rect x="825" y="160" width="275" height="130" class="box green" />
+  <text x="962" y="190" class="s" text-anchor="middle">Grounding reliance</text>
+  <text x="962" y="222" class="t" text-anchor="middle">원래 accuracy − corruption accuracy</text>
+  <text x="962" y="251" class="t" text-anchor="middle">감소가 클수록 좌표를 실제 사용</text>
+  <text x="962" y="274" class="sm" text-anchor="middle">질문당 20 completions, T=1.0</text>
+
+  <rect x="40" y="375" width="1120" height="285" rx="20" fill="#ffffffcc" stroke="#cbd5e1" />
+  <text x="62" y="408" class="s">
+    B. 같은 backbone·QA에서 text reference와 coordinate pointer 비교
+  </text>
+  <rect x="70" y="440" width="200" height="155" class="box blue" />
+  <text x="170" y="471" class="s" text-anchor="middle">Qwen3-VL + 같은 QA</text>
+  <text x="170" y="505" class="t" text-anchor="middle">공간 추론 · 지각 · counting</text>
+  <text x="170" y="535" class="t" text-anchor="middle">3 checkpoints × 3 eval seeds</text>
+  <text x="170" y="564" class="sm" text-anchor="middle">동일 평가와 confidence interval</text>
+  <path d="M270 490 H330" class="line" />
+  <path d="M270 555 H330" class="line" />
+  <rect x="330" y="430" width="240" height="78" class="box amber" />
+  <text x="450" y="460" class="s" text-anchor="middle">Text-only SFT → RL</text>
+  <text x="450" y="486" class="sm" text-anchor="middle">언어 description으로 대상 유지</text>
+  <rect x="330" y="525" width="240" height="95" class="box violet" />
+  <text x="450" y="555" class="s" text-anchor="middle">Grounded SFT → RL</text>
+  <text x="450" y="582" class="sm" text-anchor="middle">point annotation + grounding reward</text>
+  <text x="450" y="604" class="sm" text-anchor="middle">reflection: “Look at [x,y]”</text>
+  <path d="M570 470 H630" class="line" />
+  <path d="M570 572 H630" class="line" />
+  <rect x="630" y="430" width="220" height="190" class="box" />
+  <text x="740" y="460" class="s" text-anchor="middle">Reference 조건 분리</text>
+  <rect x="655" y="480" width="170" height="48" rx="10" fill="#fef3c7" stroke="#d97706" />
+  <text x="740" y="502" class="t" text-anchor="middle">label / 고유 묘사 있음</text>
+  <text x="740" y="520" class="sm" text-anchor="middle">text pointer로 충분</text>
+  <rect x="655" y="545" width="170" height="55" rx="10" fill="#ede9fe" stroke="#7c3aed" />
+  <text x="740" y="567" class="t" text-anchor="middle">이름 붙이기 어려움</text>
+  <text x="740" y="587" class="sm" text-anchor="middle">[x,y]가 visual pointer</text>
+  <path d="M850 490 H900" class="line" />
+  <path d="M850 565 H900" class="line" />
+  <rect x="900" y="430" width="220" height="190" class="box green" />
+  <text x="1010" y="460" class="s" text-anchor="middle">관찰된 경계</text>
+  <text x="1010" y="495" class="t" text-anchor="middle">일반 공간 추론·지각:</text>
+  <text x="1010" y="518" class="t" text-anchor="middle">유의한 이득 없음</text>
+  <line x1="930" y1="538" x2="1090" y2="538" stroke="#86efac" />
+  <text x="1010" y="567" class="t" text-anchor="middle">Counting: +2.6~3.6%p</text>
+  <text x="1010" y="592" class="t" text-anchor="middle">BrickVision: +21.7%p</text>
+  <text x="1010" y="612" class="sm" text-anchor="middle">동일 fine-tuning 기준</text>
+
+  <text x="50" y="692" class="sm">
+    핵심: corruption/KV reset은 분석 전용이며, 좌표 grounding은 새 vision module이 아니라 언어로
+    지칭하기 어려운 대상을 유지하는 coordinate-token pointer다.
+  </text>
+</svg>
