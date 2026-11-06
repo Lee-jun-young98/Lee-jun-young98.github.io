@@ -501,13 +501,13 @@ paper_sync: true
 
 ![](/papers/assets/vlm/videotapestry-query-adaptive-memory-refinement-for-multi-agent-long-video-understanding/videotapestry-architecture.svg)
 
-### [Visual Tokens on Demand: Visual Budgeting for Scalable and Efficient Multi-Image Reasoning in Multimodal LLMs](/papers/vlm/visual-tokens-on-demand-multi-image-reasoning)
-
-![](/papers/assets/vlm/visual-tokens-on-demand-multi-image-reasoning/mmvb-architecture.svg)
-
 ### [Visual Token Routing: Learning to Keep Tokens That Matter](/papers/vlm/visual-token-routing-learning-to-keep-tokens-that-matter)
 
 ![](/papers/assets/vlm/visual-token-routing-learning-to-keep-tokens-that-matter/vtr-architecture.svg)
+
+### [Visual Tokens on Demand: Visual Budgeting for Scalable and Efficient Multi-Image Reasoning in Multimodal LLMs](/papers/vlm/visual-tokens-on-demand-multi-image-reasoning)
+
+![](/papers/assets/vlm/visual-tokens-on-demand-multi-image-reasoning/mmvb-architecture.svg)
 
 ### [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)
 
