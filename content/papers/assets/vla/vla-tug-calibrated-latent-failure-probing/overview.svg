@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">VLA-Tug의 calibrated latent failure monitor</title>
+  <desc id="desc">frozen VLA embedding을 recurrent probe로 읽어 failure score와 mode를 만들고 conformal threshold로 alarm과 steering을 결정하는 학습 및 추론 흐름</desc>
+  <defs><marker id="b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+  <rect width="1200" height="680" rx="28" fill="#f8fafc"/>
+  <text x="58" y="64" font-family="sans-serif" font-size="30" font-weight="700" fill="#0f172a">VLA-Tug: Calibrated Latent Failure Monitor</text>
+  <text x="58" y="98" font-family="sans-serif" font-size="17" fill="#475569">frozen action policy 옆에서 조기 경보와 failure mode를 생성</text>
+  <rect x="55" y="155" width="205" height="155" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+  <text x="158" y="196" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#1e3a8a">관측 + 명령</text><text x="158" y="234" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1e40af">Frozen VLA</text><text x="158" y="266" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1e40af">중간 embedding hₜ</text>
+  <rect x="330" y="135" width="285" height="195" rx="18" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/>
+  <text x="472" y="177" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#14532d">Recurrent probe</text><text x="472" y="215" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#166534">LSTM latent failure state</text><rect x="365" y="247" width="95" height="48" rx="10" fill="#fff"/><rect x="485" y="247" width="95" height="48" rx="10" fill="#fff"/><text x="412" y="277" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#166534">score head</text><text x="532" y="277" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#166534">mode head</text>
+  <rect x="690" y="135" width="270" height="195" rx="18" fill="#fef3c7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="825" y="177" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#78350f">Joint calibration</text><text x="825" y="216" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#92400e">max-conformal threshold</text><text x="825" y="250" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#92400e">false alarm 제어</text><text x="825" y="279" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#92400e">early detection 목표</text>
+  <rect x="1005" y="155" width="150" height="155" rx="18" fill="#fee2e2" stroke="#f87171" stroke-width="2"/>
+  <text x="1080" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#7f1d1d">Alarm</text><text x="1080" y="239" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#991b1b">failure mode</text><text x="1080" y="270" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#991b1b">stop / steering</text>
+  <path d="M260 230 H320" stroke="#334155" stroke-width="3" marker-end="url(#b)"/><path d="M615 230 H680" stroke="#334155" stroke-width="3" marker-end="url(#b)"/><path d="M960 230 H995" stroke="#334155" stroke-width="3" marker-end="url(#b)"/>
+  <rect x="150" y="420" width="900" height="165" rx="20" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="190" y="460" font-family="sans-serif" font-size="20" font-weight="700" fill="#0f172a">학습·보정 흐름</text>
+  <line x1="260" y1="515" x2="930" y2="515" stroke="#64748b" stroke-width="6"/>
+  <circle cx="470" cy="515" r="10" fill="#f59e0b"/><text x="470" y="550" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#92400e">failure onset</text>
+  <text x="330" y="494" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#166534">pre-onset도 positive supervision</text><text x="700" y="494" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#64748b">post-onset는 detection loss에서 제외</text>
+  <text x="600" y="573" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#475569">별도 calibration split으로 runtime threshold 결정 · VLA weight는 변경하지 않음</text>
+</svg>

@@ -309,6 +309,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/tacdyn-wam-implicit-tactile-dynamics-for-visuo-tactile-world-action-models/overview.svg)
 
+### [T3R: Training-Free Two-Stage Token Refinement Towards Efficient and Robust VLA Models](/papers/vla/t3r-training-free-token-refinement-for-vlas)
+
+![](/papers/assets/vla/t3r-training-free-token-refinement-for-vlas/overview.svg)
+
 ### [TANGO: Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model](/papers/vla/tango-humanoid-navigation-in-cluttered-environments-with-a-whole-body-vision-language-action-model)
 
 ### [TempoBridge: Language-Guided Tempo Control for Vision-Language-Action Policies](/papers/vla/tempobridge-language-guided-tempo-control)
@@ -354,6 +358,10 @@ paper_sync: true
 ### [VLA-Stem: A Lightweight Safety Mechanism for Vision-Language-Action Models via Reinforcement Learning](/papers/vla/vla-stem-lightweight-safety-mechanism)
 
 ![](/papers/assets/vla/vla-stem-lightweight-safety-mechanism/overview.svg)
+
+### [VLA-Tug: Failure Prediction and Classification via Calibrated Latent Probing](/papers/vla/vla-tug-calibrated-latent-failure-probing)
+
+![](/papers/assets/vla/vla-tug-calibrated-latent-failure-probing/overview.svg)
 
 ### [VLA-ZO: Fast Zeroth-Order Adaptation for Vision-Language-Action Models](/papers/vla/vla-zo-fast-zeroth-order-adaptation)
 

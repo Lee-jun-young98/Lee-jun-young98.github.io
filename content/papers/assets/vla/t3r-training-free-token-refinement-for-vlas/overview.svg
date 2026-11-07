@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">T3R의 두 단계 token refinement 구조</title>
+  <desc id="desc">카메라와 명령을 입력해 segmentation 기반 visual token pruning을 수행하고, saliency 기반 attention bias를 적용해 action chunk를 생성하는 closed-loop 흐름</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+  <rect width="1200" height="680" rx="28" fill="#f8fafc"/>
+  <text x="60" y="66" font-family="sans-serif" font-size="30" font-weight="700" fill="#0f172a">T3R: Training-Free Two-Stage Token Refinement</text>
+  <text x="60" y="98" font-family="sans-serif" font-size="17" fill="#475569">VLA weight는 고정 · 매 control step에서 pruning과 biasing만 적용</text>
+  <rect x="55" y="155" width="190" height="160" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+  <text x="150" y="195" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#1e3a8a">입력</text>
+  <text x="150" y="235" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1e40af">multi-camera RGB</text><text x="150" y="266" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1e40af">언어 명령</text>
+  <rect x="310" y="135" width="330" height="200" rx="18" fill="#dcfce7" stroke="#4ade80" stroke-width="2"/>
+  <text x="475" y="174" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#14532d">1단계 · 후보 정리</text>
+  <text x="475" y="211" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#166534">POS-weighted SigLIP similarity</text><text x="475" y="240" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#166534">+ DINOv2 → EfficientTAM mask</text><text x="475" y="279" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#166534">무관 patch 제거</text><text x="475" y="307" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#166534">원래 RoPE position은 보존</text>
+  <rect x="705" y="135" width="330" height="200" rx="18" fill="#fef3c7" stroke="#fbbf24" stroke-width="2"/>
+  <text x="870" y="174" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#78350f">2단계 · 증거 재배분</text>
+  <text x="870" y="213" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#92400e">Integrated Gradients</text><text x="870" y="242" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#92400e">instruction saliency</text><text x="870" y="280" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#92400e">중간 decoder layer에</text><text x="870" y="307" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="700" fill="#92400e">additive attention bias</text>
+  <rect x="870" y="400" width="265" height="120" rx="18" fill="#ede9fe" stroke="#a78bfa" stroke-width="2"/>
+  <text x="1002" y="445" text-anchor="middle" font-family="sans-serif" font-size="21" font-weight="700" fill="#4c1d95">Action chunk</text><text x="1002" y="480" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#5b21b6">robot 실행</text>
+  <rect x="405" y="415" width="350" height="115" rx="18" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="580" y="455" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="700" fill="#0f172a">Interested tokens만 VLA로</text><text x="580" y="491" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#475569">배경 계산↓ · 핵심 object/text attention↑</text>
+  <path d="M245 235 H300" stroke="#334155" stroke-width="3" marker-end="url(#a)"/><path d="M640 235 H695" stroke="#334155" stroke-width="3" marker-end="url(#a)"/><path d="M870 335 V390" stroke="#334155" stroke-width="3" marker-end="url(#a)"/><path d="M765 460 H860" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M1000 520 C1000 610 150 620 150 325" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="9 7" marker-end="url(#a)"/>
+  <text x="565" y="613" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#2563eb">새 관측으로 closed-loop 반복</text>
+</svg>
