@@ -95,6 +95,8 @@ paper_sync: true
 
 ## [Routing by Reasoning Need: Trajectory-Aware Decoding Control for Diffusion Vision-Language Models](/papers/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models)
 
+![](/papers/assets/vlm/routing-by-reasoning-need-trajectory-aware-decoding-control-for-diffusion-vision-language-models/routed-decoding-pipeline.svg)
+
 ## [S-Space: Exploring Spatial Workspace in Multimodal Language Models](/papers/vlm/s-space-exploring-spatial-workspace-in-multimodal-language-models)
 
 ![](/papers/assets/vlm/s-space-exploring-spatial-workspace-in-multimodal-language-models/s-space-analysis-pipeline.svg)
@@ -147,13 +149,13 @@ paper_sync: true
 
 ![](/papers/assets/vlm/visual-tokens-on-demand-multi-image-reasoning/mmvb-architecture.svg)
 
-## [Where and Why is Grounded Reasoning Useful?](/papers/vlm/where-and-why-is-grounded-reasoning-useful)
-
-![](/papers/assets/vlm/where-and-why-is-grounded-reasoning-useful/grounded-reasoning-pipeline.svg)
-
 ## [What Transfers from Text to Vision? Capability Scaling Laws and Transfer Dynamics for VLMs](/papers/vlm/what-transfers-from-text-to-vision-capability-scaling-laws)
 
 ![](/papers/assets/vlm/what-transfers-from-text-to-vision-capability-scaling-laws/cdm-scaling-pipeline.svg)
+
+## [Where and Why is Grounded Reasoning Useful?](/papers/vlm/where-and-why-is-grounded-reasoning-useful)
+
+![](/papers/assets/vlm/where-and-why-is-grounded-reasoning-useful/grounded-reasoning-pipeline.svg)
 
 ## [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)
 
