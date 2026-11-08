@@ -209,6 +209,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/octopi-1-5/architecture.png)
 
+### [OopsieRecover: Learning Transferable VLA Corrections from Semantic Interventions](/papers/vla/oopsierecover-transferable-vla-corrections)
+
+![](/papers/assets/vla/oopsierecover-transferable-vla-corrections/overview.svg)
+
 ### [OxyGen: Unified KV Cache Management for VLA Inference under Multi-Task Parallelism](/papers/vla/oxygen-unified-kv-cache-management-for-vla-inference)
 
 ![](/papers/assets/vla/oxygen-unified-kv-cache-management-for-vla-inference/overview.svg)

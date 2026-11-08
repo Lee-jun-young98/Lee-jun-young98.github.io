@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">OopsieRecover 학습과 배포 파이프라인</title>
+  <desc id="desc">인간의 의미적 개입을 3D point set 기반 gated cost로 합성하고 검증한 뒤, 배포 시 frozen VLA의 후보 action chunk를 dynamics rollout과 비용으로 재순위화하는 구조</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#18243b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8fd3ff"/>
+    </marker>
+    <style>
+      text { font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif; fill: #eef6ff; }
+      .small { font-size: 18px; fill: #c8d8e8; }
+      .label { font-size: 21px; font-weight: 700; }
+      .title { font-size: 31px; font-weight: 800; }
+      .section { font-size: 23px; font-weight: 800; }
+      .box { stroke-width: 2; rx: 18; }
+      .arrow { stroke: #8fd3ff; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <text x="60" y="53" class="title">OopsieRecover: 의미적 개입을 재사용 가능한 VLA correction으로</text>
+  <text x="60" y="82" class="small">논문 Figure 2와 식 (2), (4), (7)–(8)을 바탕으로 재구성</text>
+
+  <rect x="45" y="112" width="1110" height="235" rx="24" fill="#111c31" stroke="#efad5b" stroke-width="2"/>
+  <text x="70" y="145" class="section" fill="#ffd39c">① 구축: 인간 개입 → corrective program</text>
+  <rect class="box" x="70" y="174" width="205" height="130" fill="#3b2630" stroke="#efad5b"/>
+  <text x="92" y="207" class="label">의미적 개입</text>
+  <text x="92" y="239" class="small">개입 직전 실패 window</text>
+  <text x="92" y="266" class="small">인간 corrective trajectory</text>
+  <text x="92" y="293" class="small">“왜 고쳤는가” 언어</text>
+
+  <path class="arrow" d="M280 239 H335"/>
+  <rect class="box" x="340" y="174" width="210" height="130" fill="#183848" stroke="#57c9c2"/>
+  <text x="362" y="207" class="label">의미 grounding</text>
+  <text x="362" y="239" class="small">VLM seed + segmentation</text>
+  <text x="362" y="266" class="small">depth → 3D point set</text>
+  <text x="362" y="293" class="small">entity centroid 궤적</text>
+
+  <path class="arrow" d="M555 239 H610"/>
+  <rect class="box" x="615" y="174" width="235" height="130" fill="#2b3159" stroke="#9c9cff"/>
+  <text x="637" y="207" class="label">가설 합성</text>
+  <text x="637" y="239" class="small">gate × (correction cost</text>
+  <text x="637" y="266" class="small">+ λ × task cost)</text>
+  <text x="637" y="293" class="small">적용 조건과 방향 분리</text>
+
+  <path class="arrow" d="M855 239 H910"/>
+  <rect class="box" x="915" y="174" width="215" height="130" fill="#263b31" stroke="#78d69b"/>
+  <text x="937" y="207" class="label">보정·검증</text>
+  <text x="937" y="239" class="small">개입 직전 threshold</text>
+  <text x="937" y="266" class="small">ranking + trigger check</text>
+  <text x="937" y="293" class="small">실패 시 논리/값 refinement</text>
+
+  <rect x="45" y="375" width="1110" height="245" rx="24" fill="#101f2c" stroke="#57b9ef" stroke-width="2"/>
+  <text x="70" y="410" class="section" fill="#9bddff">② 배포: frozen VLA를 필요할 때만 조향</text>
+  <rect class="box" x="70" y="445" width="190" height="125" fill="#183848" stroke="#57c9c2"/>
+  <text x="92" y="478" class="label">현재 관측</text>
+  <text x="92" y="510" class="small">새 pose / 새 scene</text>
+  <text x="92" y="537" class="small">entity 재-grounding</text>
+
+  <path class="arrow" d="M265 507 H315"/>
+  <rect class="box" x="320" y="445" width="185" height="125" fill="#263b31" stroke="#78d69b"/>
+  <text x="342" y="478" class="label">Gate 검사</text>
+  <text x="342" y="510" class="small">score &gt; threshold?</text>
+  <text x="342" y="537" class="small">아닐 때 base 행동 유지</text>
+
+  <path class="arrow" d="M510 507 H560"/>
+  <rect class="box" x="565" y="445" width="195" height="125" fill="#2b3159" stroke="#9c9cff"/>
+  <text x="587" y="478" class="label">Frozen VLA</text>
+  <text x="587" y="510" class="small">K개 action chunk</text>
+  <text x="587" y="537" class="small">후보 생성 (재학습 없음)</text>
+
+  <path class="arrow" d="M765 507 H815"/>
+  <rect class="box" x="820" y="445" width="200" height="125" fill="#3b2630" stroke="#efad5b"/>
+  <text x="842" y="478" class="label">예측·순위화</text>
+  <text x="842" y="510" class="small">point dynamics rollout</text>
+  <text x="842" y="537" class="small">누적 gated cost 계산</text>
+
+  <path class="arrow" d="M1025 507 H1060"/>
+  <rect class="box" x="1065" y="445" width="70" height="125" fill="#214056" stroke="#57b9ef"/>
+  <text x="1082" y="482" class="label">최소</text>
+  <text x="1082" y="511" class="label">비용</text>
+  <text x="1082" y="540" class="small">실행</text>
+
+  <path d="M1100 580 C1100 645, 150 650, 150 580" stroke="#6b89a5" stroke-width="2" stroke-dasharray="8 7" fill="none" marker-end="url(#arrow)"/>
+  <text x="475" y="661" class="small">closed loop: 실행 후 새 관측에서 다시 gate를 평가</text>
+</svg>
