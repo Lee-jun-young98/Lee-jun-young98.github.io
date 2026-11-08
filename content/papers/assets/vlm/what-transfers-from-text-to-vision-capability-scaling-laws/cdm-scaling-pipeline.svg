@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">능력 기반 VLM 성능 scaling law 파이프라인</title>
+  <desc id="desc">텍스트 벤치마크 행렬에서 PCA와 투영으로 능력 점수를 만들고, 멀티모달 데이터량과 transfer 및 absorption 항으로 결합해 VLM 성능 궤적과 대형 backbone 성능을 예측한다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fbff"/><stop offset="1" stop-color="#eef2ff"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#172554" flood-opacity="0.13"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <style>
+      .h1{font:700 30px 'Segoe UI','Noto Sans KR',sans-serif;fill:#172554}.h2{font:700 20px 'Segoe UI','Noto Sans KR',sans-serif;fill:#1e293b}.body{font:16px 'Segoe UI','Noto Sans KR',sans-serif;fill:#334155}.small{font:14px 'Segoe UI','Noto Sans KR',sans-serif;fill:#475569}.formula{font:italic 18px Georgia,serif;fill:#0f172a}.card{stroke-width:2;rx:18;filter:url(#shadow)}.arrow{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="url(#bg)"/>
+  <text x="600" y="52" text-anchor="middle" class="h1">Capability-Driven Multimodal Scaling Law</text>
+  <text x="600" y="82" text-anchor="middle" class="small">논문 Figure 1·4와 Eq. 4–7을 바탕으로 재구성</text>
+
+  <rect x="48" y="130" width="245" height="190" class="card" fill="#ffffff" stroke="#60a5fa"/>
+  <text x="170" y="166" text-anchor="middle" class="h2">입력 ① 텍스트 능력</text>
+  <text x="76" y="204" class="body">• 34개 LLM backbone</text>
+  <text x="76" y="236" class="body">• 7개 모델 계열</text>
+  <text x="76" y="268" class="body">• 200+ 텍스트 benchmark</text>
+  <text x="76" y="296" class="small">score 행렬 X ∈ Rᵀˣᴹ</text>
+
+  <rect x="48" y="376" width="245" height="154" class="card" fill="#ffffff" stroke="#a78bfa"/>
+  <text x="170" y="412" text-anchor="middle" class="h2">입력 ② 학습 예산</text>
+  <text x="76" y="452" class="body">멀티모달 데이터량 Dₘₘ</text>
+  <text x="76" y="484" class="small">명시적 token budget</text>
+  <text x="76" y="510" class="small">동일 VLM training recipe</text>
+
+  <path d="M293 225 H355" class="arrow"/>
+  <rect x="356" y="130" width="250" height="190" class="card" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="481" y="166" text-anchor="middle" class="h2">능력 표현 추출</text>
+  <text x="386" y="208" class="body">1. 평균 중심화</text>
+  <text x="386" y="240" class="body">2. PCA (분산 ≥ 95%)</text>
+  <text x="386" y="272" class="body">3. 단위 투영 w</text>
+  <text x="481" y="302" text-anchor="middle" class="formula">S = wᵀ S⃗, ‖w‖ = 1</text>
+
+  <path d="M606 225 H672" class="arrow"/>
+  <path d="M293 452 C430 452 540 400 672 340" class="arrow"/>
+  <rect x="673" y="130" width="314" height="400" class="card" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="830" y="168" text-anchor="middle" class="h2">성능 scaling predictor</text>
+  <rect x="703" y="198" width="254" height="104" rx="14" fill="#ffffff" stroke="#818cf8"/>
+  <text x="830" y="230" text-anchor="middle" class="h2">Transfer</text>
+  <text x="830" y="266" text-anchor="middle" class="formula">A · S</text>
+  <text x="830" y="288" text-anchor="middle" class="small">backbone의 초기 전이 효율</text>
+  <text x="830" y="330" text-anchor="middle" class="h2">＋</text>
+  <rect x="703" y="352" width="254" height="120" rx="14" fill="#ffffff" stroke="#a78bfa"/>
+  <text x="830" y="384" text-anchor="middle" class="h2">Absorption</text>
+  <text x="830" y="420" text-anchor="middle" class="formula">(B₀ − BₘS) ln Dₘₘ</text>
+  <text x="830" y="446" text-anchor="middle" class="small">추가 데이터의 흡수 기울기</text>
+  <text x="830" y="502" text-anchor="middle" class="formula">P̂ = AS + (B₀ − BₘS) ln Dₘₘ + P₀</text>
+
+  <path d="M987 330 H1037" class="arrow"/>
+  <rect x="1038" y="154" width="124" height="352" class="card" fill="#ecfdf5" stroke="#10b981"/>
+  <text x="1100" y="192" text-anchor="middle" class="h2">출력</text>
+  <text x="1100" y="238" text-anchor="middle" class="body">성능</text>
+  <text x="1100" y="264" text-anchor="middle" class="body">궤적</text>
+  <line x1="1062" y1="326" x2="1138" y2="326" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="1062" y1="326" x2="1062" y2="286" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M1064 320 C1080 316 1086 304 1098 302 S1124 278 1136 270" fill="none" stroke="#059669" stroke-width="4"/>
+  <text x="1100" y="370" text-anchor="middle" class="body">72B</text>
+  <text x="1100" y="396" text-anchor="middle" class="body">외삽</text>
+  <text x="1100" y="446" text-anchor="middle" class="body">backbone</text>
+  <text x="1100" y="472" text-anchor="middle" class="body">·예산 선택</text>
+
+  <rect x="356" y="570" width="631" height="68" rx="16" fill="#172554"/>
+  <text x="671" y="598" text-anchor="middle" style="font:700 17px 'Segoe UI','Noto Sans KR',sans-serif;fill:#fff">학습 때: 150+ VLM checkpoint로 계수 fitting</text>
+  <text x="671" y="624" text-anchor="middle" style="font:15px 'Segoe UI','Noto Sans KR',sans-serif;fill:#dbeafe">사용 때: 후보 LLM의 텍스트 score와 데이터 예산만으로 사전 예측</text>
+</svg>

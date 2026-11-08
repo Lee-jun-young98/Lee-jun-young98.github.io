@@ -151,6 +151,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/where-and-why-is-grounded-reasoning-useful/grounded-reasoning-pipeline.svg)
 
+## [What Transfers from Text to Vision? Capability Scaling Laws and Transfer Dynamics for VLMs](/papers/vlm/what-transfers-from-text-to-vision-capability-scaling-laws)
+
+![](/papers/assets/vlm/what-transfers-from-text-to-vision-capability-scaling-laws/cdm-scaling-pipeline.svg)
+
 ## [Who Says What: Symbolic Trimodal Binding Mechanisms in Audio-Visual LLMs](/papers/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms)
 
 ![](/papers/assets/vlm/who-says-what-symbolic-trimodal-binding-mechanisms-in-audio-visual-llms/trimodal-binding-pipeline.svg)
