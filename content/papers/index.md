@@ -191,6 +191,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors/overview.svg)
 
+### [Meituan-Robotics-0: A Vision-Language-Action Foundation Model for Desktop Manipulation](/papers/vla/meituan-robotics-0-desktop-manipulation)
+
+![](/papers/assets/vla/meituan-robotics-0-desktop-manipulation/mr0-overview-figure1.png)
+
 ### [MiniWAM: Learning Compact Future Targets for Efficient World-Action Modeling](/papers/vla/miniwam-compact-future-targets-for-world-action-modeling)
 
 ![](/papers/assets/vla/miniwam-compact-future-targets-for-world-action-modeling/overview.svg)
