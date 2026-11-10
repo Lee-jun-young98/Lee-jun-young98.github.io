@@ -399,6 +399,10 @@ paper_sync: true
 
 ### [Benchmarking the Explanatory Quality of Open-Weight Vision-Language Models in Face Recognition](/papers/vlm/benchmarking-the-explanatory-quality-of-open-weight-vision-language-models-in-face-recognition)
 
+### [Beyond Modality Preference: Controlling Multimodal Arbitration under Modality Conflict in MLLMs](/papers/vlm/beyond-modality-preference-controlling-multimodal-arbitration)
+
+![](/papers/assets/vlm/beyond-modality-preference-controlling-multimodal-arbitration/arbitration-head-steering.svg)
+
 ### [Canonical Color as a Lens into Concept Decodability in Vision Encoders and VLMs](/papers/vlm/canonical-color-as-a-lens-into-concept-decodability-in-vision-encoders-and-vlms)
 
 ### [DiaVLo: Diagnosing Behaviours of Vision-Language Models](/papers/vlm/diavlo-diagnosing-behaviours-of-vision-language-models)
