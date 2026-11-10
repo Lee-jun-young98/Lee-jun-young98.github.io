@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">SPARK-VLA 학습 및 추론 구조 재구성</title>
+  <desc id="desc">RGB와 언어 입력이 보존된 2D 시각 경로와 3D 지식이 증류된 LoRA 공간 경로를 지나며, action-loss gradient로 감독되는 knowledge router가 token을 골라 LLM과 action head에 전달한다. VGGT 교사와 gradient supervision은 학습 때만 사용된다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:'Noto Sans KR','Malgun Gothic',Arial,sans-serif;fill:#172033}.h{font-size:28px;font-weight:700}.m{font-size:20px;font-weight:700}.s{font-size:16px}.box{rx:16;ry:16;stroke-width:2}.arr{fill:none;stroke:#334155;stroke-width:3;marker-end:url(#arrow)}.dash{stroke-dasharray:9 7}.train{fill:#fff1f2;stroke:#e11d48}.generic{fill:#eff6ff;stroke:#2563eb}.spatial{fill:#f5f3ff;stroke:#7c3aed}.route{fill:#ecfdf5;stroke:#059669}.out{fill:#fff7ed;stroke:#ea580c}.note{fill:#f8fafc;stroke:#94a3b8}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="50" y="48" class="t h">SPARK-VLA: preserve → specialize → route</text>
+  <text x="50" y="76" class="t s">Figure 2와 §3을 바탕으로 재구성 · 붉은 점선은 학습 전용 supervision</text>
+
+  <rect x="40" y="130" width="160" height="86" class="box note"/><text x="120" y="165" text-anchor="middle" class="t m">RGB 관측</text><text x="120" y="194" text-anchor="middle" class="t s">+ proprioception</text>
+  <rect x="40" y="280" width="160" height="76" class="box note"/><text x="120" y="325" text-anchor="middle" class="t m">언어 지시</text>
+
+  <rect x="270" y="105" width="245" height="120" class="box generic"/><text x="392" y="145" text-anchor="middle" class="t m">Generic visual path</text><text x="392" y="176" text-anchor="middle" class="t s">Frozen DINOv2</text><text x="392" y="202" text-anchor="middle" class="t s">2D 의미 token Zᵥ 보존</text>
+  <rect x="270" y="265" width="245" height="120" class="box spatial"/><text x="392" y="305" text-anchor="middle" class="t m">Spatial visual path</text><text x="392" y="336" text-anchor="middle" class="t s">DINOv2 + trainable LoRA</text><text x="392" y="362" text-anchor="middle" class="t s">공간 token Zₚ 전문화</text>
+
+  <rect x="270" y="475" width="245" height="105" class="box train"/><text x="392" y="516" text-anchor="middle" class="t m">Frozen 3D teacher</text><text x="392" y="547" text-anchor="middle" class="t s">VGGT key/value</text><text x="392" y="570" text-anchor="middle" class="t s">학습 때만 사용</text>
+
+  <rect x="610" y="180" width="255" height="190" class="box route"/><text x="737" y="220" text-anchor="middle" class="t m">Knowledge Router</text><text x="737" y="254" text-anchor="middle" class="t s">Linear → Cross-Attention</text><text x="737" y="281" text-anchor="middle" class="t s">→ MLP → gate probability</text><text x="737" y="315" text-anchor="middle" class="t s">generic / spatial top-k 선택</text><text x="737" y="343" text-anchor="middle" class="t s">위치별 fusion + projection</text>
+  <rect x="610" y="445" width="255" height="120" class="box train"/><text x="737" y="483" text-anchor="middle" class="t m">Action-driven supervision</text><text x="737" y="516" text-anchor="middle" class="t s">sₙ = ReLU(−∂Lact/∂pₙ)</text><text x="737" y="544" text-anchor="middle" class="t s">EMA top-k pseudo-label</text>
+
+  <rect x="955" y="185" width="190" height="94" class="box out"/><text x="1050" y="223" text-anchor="middle" class="t m">0.5B LLM</text><text x="1050" y="251" text-anchor="middle" class="t s">+ LoRA</text>
+  <rect x="955" y="335" width="190" height="94" class="box out"/><text x="1050" y="374" text-anchor="middle" class="t m">Action head</text><text x="1050" y="402" text-anchor="middle" class="t s">action chunk 출력</text>
+
+  <path d="M200 173 H270" class="arr"/><path d="M200 173 C230 173 230 325 270 325" class="arr"/>
+  <path d="M200 318 C400 318 455 235 610 235" class="arr"/>
+  <path d="M515 165 C560 165 565 220 610 220" class="arr"/><path d="M515 325 H610" class="arr"/>
+  <path d="M515 525 C555 525 555 350 515 350" class="arr dash" style="stroke:#e11d48"/>
+  <path d="M737 445 V370" class="arr dash" style="stroke:#e11d48"/>
+  <path d="M865 275 H930 V232 H955" class="arr"/><path d="M1050 279 V335" class="arr"/>
+  <path d="M1050 429 C1050 505 900 505 865 505" class="arr dash" style="stroke:#e11d48"/>
+
+  <rect x="40" y="615" width="1100" height="42" rx="10" fill="#f1f5f9"/>
+  <text x="590" y="642" text-anchor="middle" class="t s">추론: VGGT와 gradient supervision 제거 → RGB·언어 → 두 시각 경로 → router → LLM → action</text>
+</svg>

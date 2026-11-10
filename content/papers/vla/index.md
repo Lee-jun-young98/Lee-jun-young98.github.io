@@ -299,6 +299,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/spatial-umi-dream-metric-geometry-wam/overview.svg)
 
+## [SPARK-VLA: Spatial Representation Distillation and Knowledge Routing for Vision-Language-Action Models](/papers/vla/spark-vla-spatial-distillation-knowledge-routing)
+
+![](/papers/assets/vla/spark-vla-spatial-distillation-knowledge-routing/overview.svg)
+
 ## [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
 
 ![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
