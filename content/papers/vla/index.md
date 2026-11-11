@@ -193,6 +193,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/meituan-robotics-0-desktop-manipulation/mr0-overview-figure1.png)
 
+## [MetaWAM: From Video Frames to Robot Meta-Frames](/papers/vla/metawam-unified-robot-meta-frame)
+
+![](/papers/assets/vla/metawam-unified-robot-meta-frame/overview.svg)
+
 ## [MiniWAM: Learning Compact Future Targets for Efficient World-Action Modeling](/papers/vla/miniwam-compact-future-targets-for-world-action-modeling)
 
 ![](/papers/assets/vla/miniwam-compact-future-targets-for-world-action-modeling/overview.svg)
@@ -272,6 +276,10 @@ paper_sync: true
 ## [Rollback: Experience Backtracking in World Models for Policy Improvement](/papers/vla/rollback-experience-backtracking-in-world-models)
 
 ![](/papers/assets/vla/rollback-experience-backtracking-in-world-models/overview.svg)
+
+## [Robo-MLT: Dual-System Robotic Manipulation for Long-Horizon Medical Laboratory Tasks](/papers/vla/robomlt-dual-system-medical-laboratory-manipulation)
+
+![](/papers/assets/vla/robomlt-dual-system-medical-laboratory-manipulation/overview.svg)
 
 ## [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
 
