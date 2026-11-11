@@ -295,13 +295,13 @@ paper_sync: true
 
 ## [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
 
-## [Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation](/papers/vla/spatial-umi-dream-metric-geometry-wam)
-
-![](/papers/assets/vla/spatial-umi-dream-metric-geometry-wam/overview.svg)
-
 ## [SPARK-VLA: Spatial Representation Distillation and Knowledge Routing for Vision-Language-Action Models](/papers/vla/spark-vla-spatial-distillation-knowledge-routing)
 
 ![](/papers/assets/vla/spark-vla-spatial-distillation-knowledge-routing/overview.svg)
+
+## [Spatial-UMI-Dream: Scaling World Action Models with Metric Geometry for UMI Manipulation](/papers/vla/spatial-umi-dream-metric-geometry-wam)
+
+![](/papers/assets/vla/spatial-umi-dream-metric-geometry-wam/overview.svg)
 
 ## [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
 
