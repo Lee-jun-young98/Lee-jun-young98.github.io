@@ -17,6 +17,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/beyond-modality-preference-controlling-multimodal-arbitration/arbitration-head-steering.svg)
 
+## [C²-Routing: Complementary Cropping and Compression for Efficient Vision-Language Inference](/papers/vlm/c2-routing-complementary-cropping-compression)
+
+![](/papers/assets/vlm/c2-routing-complementary-cropping-compression/c2-routing-architecture.svg)
+
 ## [Canonical Color as a Lens into Concept Decodability in Vision Encoders and VLMs](/papers/vlm/canonical-color-as-a-lens-into-concept-decodability-in-vision-encoders-and-vlms)
 
 ## [DiaVLo: Diagnosing Behaviours of Vision-Language Models](/papers/vlm/diavlo-diagnosing-behaviours-of-vision-language-models)
