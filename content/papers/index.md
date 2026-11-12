@@ -267,6 +267,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/reki-registering-knowledge-in-vlas/overview.svg)
 
+### [Robo-MLT: Dual-System Robotic Manipulation for Long-Horizon Medical Laboratory Tasks](/papers/vla/robomlt-dual-system-medical-laboratory-manipulation)
+
+![](/papers/assets/vla/robomlt-dual-system-medical-laboratory-manipulation/overview.svg)
+
 ### [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
 
 ![](/papers/assets/vla/robodawn/framework.png)
@@ -278,10 +282,6 @@ paper_sync: true
 ### [Rollback: Experience Backtracking in World Models for Policy Improvement](/papers/vla/rollback-experience-backtracking-in-world-models)
 
 ![](/papers/assets/vla/rollback-experience-backtracking-in-world-models/overview.svg)
-
-### [Robo-MLT: Dual-System Robotic Manipulation for Long-Horizon Medical Laboratory Tasks](/papers/vla/robomlt-dual-system-medical-laboratory-manipulation)
-
-![](/papers/assets/vla/robomlt-dual-system-medical-laboratory-manipulation/overview.svg)
 
 ### [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
 
