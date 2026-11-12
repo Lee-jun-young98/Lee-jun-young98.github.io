@@ -52,6 +52,16 @@ VLM의 오답을 모두 “reasoning 실패”로 묶으면 더 큰 언어 모�
 6. 토큰별 gap의 평균을 trajectory grounding score로 사용하고, 모델 confidence와 결합해 정답 여부 및 confident error를 예측한다.
 7. 학습 확장인 SEG-Distill에서는 EMA self-teacher가 crop 정보를 본 분포를 target으로 삼고, evidence gap에 따라 trajectory 또는 token별 distillation 가중치를 조절한다.
 
+# 핵심 그림
+
+![전체 이미지와 질문에서 16개 crop을 평가해 관련 영역을 고르고, 추론 답변 또는 evidence-gap 기반 자기증류로 보내는 파이프라인](/papers/assets/vlm/look-where-it-counts-label-free-visual-evidence/seg-distill-pipeline.svg)
+
+> 그림 1 재구성. 입력 이미지와 질문에서 후보 crop을 만들고, 답변 분포가 가장 뾰족해지는 영역 `z+`를 선택한 뒤 추론과 학습에 사용하는 전체 파이프라인. 출처: [논문 Figure 1 및 식 (3)–(8)](https://arxiv.org/pdf/2609.24244). 논문 내용을 바탕으로 직접 재구성했다.
+
+이 그림은 논문의 핵심이 단일 모델 블록보다 **어떤 시각 영역을 보여 주었을 때 출력 분포가 어떻게 달라지는지**를 측정하는 전체 흐름에 있기 때문에 골랐다. 입력 `I, q`에서 16개 grid crop을 만들고, 각 crop을 붙였을 때의 다음 토큰 분포 엔트로피가 가장 낮은 영역을 `z+`로 선택한다. 추론에서는 `전체 이미지 + z+`로 다시 답해 작은 시각 단서를 복원한다.
+
+학습 경로는 학생이 전체 이미지로 생성한 각 토큰 `y_k`에 대해 관련 crop `z+`와 무관 crop `z−` 조건의 로그확률 차이 `Δ_k`를 계산한다. 이 차이의 trajectory 평균 `p`를 0–2 범위 가중치 `w`로 바꿔, `z+`를 본 EMA 자기교사 분포와 학생 분포의 정렬 강도를 조절한다. 즉 peakedness는 **어디를 볼지**, evidence gap은 **그 영역이 실제 답변 토큰에 얼마나 영향을 주었는지**를 담당한다. 다만 이 학습 경로는 300-step 파일럿에서 기본 모델을 넘지 못했고, 검증된 이득은 왼쪽의 학습 없는 추론 경로에 집중된다.
+
 # Experiments / Results
 
 - Qwen2.5-VL-7B, Qwen3-VL-8B, Qwen3-VL-30B-A3B를 V\*Bench의 191개 객관식 샘플에서 평가했다. 세부 속성 질문 115개와 전역 문맥이 필요한 상대 위치 질문 76개로 나뉜다.
@@ -60,6 +70,21 @@ VLM의 오답을 모두 “reasoning 실패”로 묶으면 더 큰 언어 모�
 - evidence gap과 confidence를 합친 정답 예측 AUC는 모델별 0.926, 0.992, 0.979로 confidence 단독보다 모두 높았다.
 - confidence 상위 절반 안에서도 evidence gap이 정답과 오답을 구분한 AUC는 0.97~1.00으로, 자신 있게 틀린 답을 탐지하는 신호가 됐다.
 - 반면 Qwen2.5-VL-7B를 300 step씩 학습한 SEG-Distill 파일럿에서는 base 71.7%, ungated OPD 71.2%, trajectory gate 70.7%, token gate 69.1%로 어떤 변형도 base를 넘지 못했다.
+
+## 주요 실험 결과
+
+Qwen3-VL-8B의 crop 선택 ablation은 단순 확대가 아니라 **질문에 맞는 영역을 고르는 방향**이 성능 향상의 원인임을 가장 직접적으로 분리하므로 핵심 비교로 골랐다. 모든 값은 같은 V\*Bench 평가 설정에서 계산된 정확도(%, ↑)이며, `direct`는 미세 속성 115문항, `rel. pos.`는 전역 문맥이 필요한 상대 위치 76문항이다.
+
+| Crop 선택 방식 | Direct attributes 정확도 (%, ↑) | 전체 정확도 (%, ↑) | Relative position 정확도 (%, ↑) | Direct 기준 full image 대비 차이 |
+| --- | ---: | ---: | ---: | ---: |
+| Full image (crop 없음) | 70.4 | 72.3 | 75.0 | 기준 |
+| Center crop | 68.7 | 71.7 | 76.3 | -1.7%p |
+| Random crop | 71.4 | 71.0 | 70.5 | +1.0%p |
+| Anti-selected (가장 낮은 peakedness) | 67.8 | 66.5 | 64.5 | -2.6%p |
+| **Peakedness-selected (제안 방식)** | **85.2** | **83.2** | **80.3** | **+14.8%p** |
+| Oracle bounding box | 100.0 | 89.0 | 72.4 | +29.6%p |
+
+출처: [원 논문 Table III](https://arxiv.org/pdf/2609.24244), Qwen3-VL-8B, full-vocabulary answer-letter log-probability 평가. 제안 방식은 random crop보다 **13.8%p**, 반대 방향 선택보다 **17.4%p** 높다. 반면 상대 위치에서는 tight oracle box가 72.4%로 전체 이미지 75.0%보다 낮아, 국소 확대가 전역 문맥을 없앨 수 있다는 한계도 함께 드러난다.
 
 # Limitations / Discussion
 

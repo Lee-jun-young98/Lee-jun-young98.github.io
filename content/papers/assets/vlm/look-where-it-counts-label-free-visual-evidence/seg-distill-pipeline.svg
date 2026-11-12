@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Look Where It Counts의 crop 탐색과 SEG-Distill 파이프라인</title>
+  <desc id="desc">전체 이미지와 질문에서 16개 후보 crop을 만들고 답변 분포의 peakedness로 관련 crop을 고른 뒤, 추론에서는 관련 crop을 추가해 다시 답하고 학습에서는 관련 crop과 무관 crop의 토큰 로그확률 차이로 자기증류 가중치를 만드는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#334155"/></marker>
+    <style>
+      .title{font:700 30px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#0f172a}.label{font:700 22px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#0f172a}.body{font:18px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#1e293b}.small{font:16px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#475569}.box{stroke-width:2;rx:18;ry:18}.arrow{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1400" height="820" fill="#f8fafc"/>
+  <text x="700" y="52" text-anchor="middle" class="title">질문에 필요한 crop을 스스로 찾고, 증거 민감도를 측정한다</text>
+
+  <rect x="45" y="115" width="240" height="150" class="box" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="165" y="158" text-anchor="middle" class="label">입력</text>
+  <text x="165" y="198" text-anchor="middle" class="body">전체 이미지 I</text>
+  <text x="165" y="230" text-anchor="middle" class="body">질문 q</text>
+
+  <rect x="360" y="95" width="285" height="190" class="box" fill="#fef3c7" stroke="#d97706"/>
+  <text x="502" y="135" text-anchor="middle" class="label">후보 영역 탐색</text>
+  <text x="502" y="176" text-anchor="middle" class="body">16개 grid crop R</text>
+  <text x="502" y="210" text-anchor="middle" class="body">각 crop으로 VLM 1회 평가</text>
+  <text x="502" y="248" text-anchor="middle" class="small">총 16회 forward</text>
+
+  <rect x="720" y="95" width="315" height="190" class="box" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="878" y="135" text-anchor="middle" class="label">Peakedness 선택</text>
+  <text x="878" y="178" text-anchor="middle" class="body">z+ = argmax −H[p(·|I,q,crop)]</text>
+  <text x="878" y="213" text-anchor="middle" class="body">z− = 선택되지 않은 crop</text>
+  <text x="878" y="250" text-anchor="middle" class="small">정답·박스 라벨 불필요</text>
+
+  <path d="M285 190 H350" class="arrow"/><path d="M645 190 H710" class="arrow"/>
+
+  <rect x="1075" y="85" width="280" height="215" class="box" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1215" y="128" text-anchor="middle" class="label">추론 경로</text>
+  <text x="1215" y="170" text-anchor="middle" class="body">전체 이미지 + z+</text>
+  <text x="1215" y="205" text-anchor="middle" class="body">다시 답변</text>
+  <text x="1215" y="246" text-anchor="middle" class="small">미세 속성 정확도 향상</text>
+  <text x="1215" y="274" text-anchor="middle" class="small">학습 없이 사용</text>
+  <path d="M1035 178 H1065" class="arrow"/>
+
+  <path d="M878 285 V370" class="arrow"/>
+  <rect x="540" y="385" width="675" height="125" class="box" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="878" y="425" text-anchor="middle" class="label">Contrastive evidence gap</text>
+  <text x="878" y="465" text-anchor="middle" class="body">Δk = log p(yk | I,q,z+) − log p(yk | I,q,z−)</text>
+  <text x="878" y="494" text-anchor="middle" class="small">관련 영역이 실제 생성 토큰 확률을 얼마나 높였는지 측정</text>
+
+  <rect x="105" y="590" width="300" height="145" class="box" fill="#e0e7ff" stroke="#4f46e5"/>
+  <text x="255" y="632" text-anchor="middle" class="label">On-policy 생성</text>
+  <text x="255" y="675" text-anchor="middle" class="body">학생이 답변 y를 샘플링</text>
+  <text x="255" y="708" text-anchor="middle" class="small">전체 이미지 입력</text>
+
+  <rect x="550" y="570" width="330" height="185" class="box" fill="#fce7f3" stroke="#db2777"/>
+  <text x="715" y="612" text-anchor="middle" class="label">증거 게이트</text>
+  <text x="715" y="652" text-anchor="middle" class="body">p = mean(Δk)</text>
+  <text x="715" y="687" text-anchor="middle" class="body">w = clip(1 + normalize(p), 0, 2)</text>
+  <text x="715" y="724" text-anchor="middle" class="small">근거 있는 trajectory에 더 큰 가중치</text>
+
+  <rect x="1025" y="570" width="315" height="185" class="box" fill="#cffafe" stroke="#0891b2"/>
+  <text x="1182" y="612" text-anchor="middle" class="label">SEG-Distill</text>
+  <text x="1182" y="653" text-anchor="middle" class="body">EMA 자기교사(z+) 분포</text>
+  <text x="1182" y="687" text-anchor="middle" class="body">↔ 학생 분포 정렬</text>
+  <text x="1182" y="724" text-anchor="middle" class="small">파일럿에서는 base를 넘지 못함</text>
+
+  <path d="M405 642 H470 V448 H530" class="arrow"/>
+  <path d="M715 510 V560" class="arrow"/>
+  <path d="M880 662 H1015" class="arrow"/>
+  <text x="700" y="797" text-anchor="middle" class="small">논문 Figure 1과 식 (3)–(8)을 바탕으로 재구성</text>
+</svg>
