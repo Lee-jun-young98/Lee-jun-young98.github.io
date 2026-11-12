@@ -269,6 +269,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/robomlt-dual-system-medical-laboratory-manipulation/overview.svg)
 
+## [RoboACE: Adversarial Co-Evolution for Robot Self-Improvement](/papers/vla/roboace-adversarial-coevolution-robot-self-improvement)
+
+![](/papers/assets/vla/roboace-adversarial-coevolution-robot-self-improvement/overview.svg)
+
 ## [RoboDawn: Transferring the Intelligence of VLMs to Robotic Control — 상세 리뷰](/papers/vla/transferring-the-intelligence-of-vlms-to-robotic-control)
 
 ![](/papers/assets/vla/robodawn/framework.png)

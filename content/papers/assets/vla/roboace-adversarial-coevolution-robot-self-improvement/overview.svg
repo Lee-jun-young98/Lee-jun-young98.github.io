@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">RoboACE 교대 curriculum-execution harness 진화 구조</title>
+  <desc id="desc">Capability Profile을 읽은 curriculum harness가 challenge를 만들어 고정 snapshot을 구성하고, execution harness가 frozen VLA와 code skill을 시험한 결과를 다음 Capability Profile로 되돌리는 순환 구조</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07152d"/>
+      <stop offset="1" stop-color="#142f4b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#cbd5e1"/>
+    </marker>
+    <style>
+      .h1 { font: 700 30px 'Segoe UI', 'Noto Sans KR', sans-serif; fill: #f8fafc; }
+      .sub { font: 500 16px 'Segoe UI', 'Noto Sans KR', sans-serif; fill: #cbd5e1; }
+      .boxTitle { font: 700 21px 'Segoe UI', 'Noto Sans KR', sans-serif; fill: #f8fafc; }
+      .body { font: 500 15px 'Segoe UI', 'Noto Sans KR', sans-serif; fill: #e2e8f0; }
+      .small { font: 500 13px 'Segoe UI', 'Noto Sans KR', sans-serif; fill: #cbd5e1; }
+      .label { font: 700 14px 'Segoe UI', 'Noto Sans KR', sans-serif; fill: #0f172a; }
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="26" fill="url(#bg)"/>
+  <text x="55" y="55" class="h1">RoboACE: 약점을 찾는 법과 실행하는 법의 교대 진화</text>
+  <text x="55" y="83" class="sub">논문 Figure 2와 §3을 바탕으로 재구성 · foundation model / VLA weight는 고정</text>
+
+  <rect x="55" y="125" width="235" height="130" rx="18" fill="#203b5d" stroke="#60a5fa" stroke-width="2"/>
+  <text x="78" y="161" class="boxTitle">Capability Profile Pₖ</text>
+  <text x="78" y="190" class="body">검증된 능력 · 미해결 gap</text>
+  <text x="78" y="216" class="body">lesson · 불확실성 · 통계</text>
+
+  <rect x="350" y="115" width="315" height="160" rx="18" fill="#5b2c4d" stroke="#f472b6" stroke-width="2"/>
+  <text x="375" y="151" class="boxTitle">1. Curriculum harness</text>
+  <text x="375" y="181" class="body">agent: practice 유지 · 교체 · 추가</text>
+  <text x="375" y="207" class="body">optimizer: evidence 사용 절차 수정</text>
+  <text x="375" y="233" class="body">admission: 물리성 · 도달성 · 일치 검사</text>
+  <rect x="493" y="242" width="147" height="23" rx="11" fill="#f9a8d4"/>
+  <text x="507" y="258" class="label">Stable ↔ Candidate</text>
+
+  <rect x="730" y="125" width="415" height="130" rx="18" fill="#214a49" stroke="#2dd4bf" stroke-width="2"/>
+  <text x="755" y="161" class="boxTitle">고정 task snapshot 𝒯ₖ</text>
+  <text x="755" y="190" class="body">admitted practice + internal benchmark</text>
+  <text x="755" y="216" class="body">task · 초기화 · model setting · budget 고정</text>
+
+  <path d="M290 190 H340" stroke="#cbd5e1" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M665 190 H720" stroke="#cbd5e1" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="730" y="345" width="415" height="190" rx="18" fill="#2b4267" stroke="#818cf8" stroke-width="2"/>
+  <text x="755" y="382" class="boxTitle">2. Execution harness</text>
+  <text x="755" y="413" class="body">agent: planning · code skill · VLA control 선택</text>
+  <text x="755" y="440" class="body">optimizer: 실패 진단, 동일 snapshot에서 비교</text>
+  <rect x="758" y="468" width="110" height="40" rx="12" fill="#172554" stroke="#93c5fd"/>
+  <text x="780" y="493" class="body">frozen π₀.₅</text>
+  <rect x="883" y="468" width="110" height="40" rx="12" fill="#172554" stroke="#93c5fd"/>
+  <text x="902" y="493" class="body">code skills</text>
+  <rect x="1008" y="468" width="110" height="40" rx="12" fill="#172554" stroke="#93c5fd"/>
+  <text x="1024" y="493" class="body">tools / memory</text>
+
+  <path d="M938 255 V335" stroke="#cbd5e1" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="955" y="303" class="small">fixed comparison</text>
+
+  <rect x="350" y="365" width="315" height="150" rx="18" fill="#314b3c" stroke="#4ade80" stroke-width="2"/>
+  <text x="375" y="402" class="boxTitle">Experience Consolidator</text>
+  <text x="375" y="433" class="body">task outcome + deployable lesson</text>
+  <text x="375" y="460" class="body">raw trajectory / calls는 분리</text>
+  <text x="375" y="487" class="body">다음 Capability Profile Pₖ₊₁ 생성</text>
+
+  <path d="M720 440 H675" stroke="#cbd5e1" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M350 440 H175 V265" fill="none" stroke="#cbd5e1" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="190" y="424" class="small">evidence closes the loop</text>
+
+  <rect x="350" y="565" width="795" height="70" rx="16" fill="#3d3521" stroke="#fbbf24" stroke-width="2"/>
+  <text x="375" y="595" class="boxTitle">Strategic Advisor — 여러 round의 반복 실패와 정체를 드물게 검토</text>
+  <text x="375" y="620" class="body">방향만 제안하며 revision 설치는 각 optimizer가 실험 후 결정</text>
+  <path d="M508 515 V555" stroke="#fbbf24" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+  <path d="M938 535 V555" stroke="#fbbf24" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+
+  <rect x="55" y="565" width="235" height="70" rx="16" fill="#3b2344" stroke="#e879f9" stroke-width="2"/>
+  <text x="78" y="595" class="boxTitle">교대 업데이트</text>
+  <text x="78" y="620" class="body">한쪽을 고정하고 다른 쪽만 수정</text>
+</svg>
