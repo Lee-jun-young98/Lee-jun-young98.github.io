@@ -349,6 +349,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
 
+## [Training Reasoning Models in Simulation to Natively Use Real Robots](/papers/vla/pear-robot-use-reinforcement-learning)
+
+![](/papers/assets/vla/pear-robot-use-reinforcement-learning/overview.svg)
+
 ## [TRIAGE: Efficient Vision-Language-Action Inference Needs Both Reuse and Pruning](/papers/vla/triage-reuse-and-pruning-for-efficient-vla-inference)
 
 ![](/papers/assets/vla/triage-reuse-and-pruning-for-efficient-vla-inference/overview.svg)
