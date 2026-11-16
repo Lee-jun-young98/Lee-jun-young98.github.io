@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">ESI의 LLM 교사, skill interface, VLA 정책 공동 적응 flywheel</title>
+  <desc id="desc">고정 LLM이 subtask를 계획하고 VLA 행동을 검토하며, 실행 경험에서 prompt, skill catalog, VLA policy를 갱신해 다음 라운드에 함께 재배포하는 구조</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#475569"/></marker>
+    <style>.h{font:700 25px 'Malgun Gothic','맑은 고딕',sans-serif;fill:#172554}.t{font:600 18px 'Malgun Gothic','맑은 고딕',sans-serif;fill:#1e293b}.s{font:15px 'Malgun Gothic','맑은 고딕',sans-serif;fill:#334155}.box{stroke-width:2}.arr{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="#f8fafc"/>
+  <text x="600" y="46" text-anchor="middle" class="h">ESI: 상호작용 자체를 LLM–VLA 공동 적응 데이터로</text>
+  <rect x="65" y="85" width="720" height="300" rx="24" fill="#f1f5f9" stroke="#64748b" class="box"/>
+  <text x="425" y="119" text-anchor="middle" class="t">라운드 r의 agent A_r = (고정 LLM T; Prompt P_r, Skill S_r, VLA theta_r)</text>
+  <rect x="105" y="150" width="180" height="92" rx="16" fill="#fff7ed" stroke="#fb923c" class="box"/>
+  <text x="195" y="181" text-anchor="middle" class="t">LLM teacher T</text><text x="195" y="207" text-anchor="middle" class="s">계획 · subtask 선택</text><text x="195" y="228" text-anchor="middle" class="s">proposal 검토 · 교정</text>
+  <rect x="335" y="150" width="180" height="92" rx="16" fill="#faf5ff" stroke="#c084fc" class="box"/>
+  <text x="425" y="181" text-anchor="middle" class="t">Skill catalog S_r</text><text x="425" y="207" text-anchor="middle" class="s">grasp · place · rotate</text><text x="425" y="228" text-anchor="middle" class="s">공유 subtask 언어</text>
+  <rect x="565" y="150" width="180" height="92" rx="16" fill="#eff6ff" stroke="#60a5fa" class="box"/>
+  <text x="655" y="181" text-anchor="middle" class="t">VLA policy theta_r</text><text x="655" y="207" text-anchor="middle" class="s">관찰 + local intent</text><text x="655" y="228" text-anchor="middle" class="s">연속 action chunk</text>
+  <path d="M285 196H335" class="arr"/><path d="M515 196H565" class="arr"/>
+  <rect x="165" y="284" width="520" height="67" rx="15" fill="#fff" stroke="#94a3b8" class="box"/>
+  <text x="425" y="309" text-anchor="middle" class="t">Plan → Propose → Review / Correct → Execute</text>
+  <text x="425" y="334" text-anchor="middle" class="s">teacher correction 뒤 student가 유효 상태에서 계속 수행</text>
+  <path d="M655 242V284" class="arr"/><path d="M195 242V284" class="arr"/>
+  <rect x="845" y="85" width="290" height="300" rx="24" fill="#ecfdf5" stroke="#10b981" class="box"/>
+  <text x="990" y="120" text-anchor="middle" class="t">Experience record B_r</text>
+  <text x="990" y="157" text-anchor="middle" class="s">관찰 · local instruction</text><text x="990" y="183" text-anchor="middle" class="s">제안/실행 action · control source</text><text x="990" y="209" text-anchor="middle" class="s">feedback · local outcome</text>
+  <rect x="885" y="247" width="210" height="98" rx="14" fill="#fff" stroke="#6ee7b7" class="box"/>
+  <text x="990" y="275" text-anchor="middle" class="t">연속 supervision window</text><text x="990" y="301" text-anchor="middle" class="s">LLM 교정 + VLA continuation</text><text x="990" y="326" text-anchor="middle" class="s">episode 실패여도 유효 구간 보존</text>
+  <path d="M785 235H845" class="arr"/>
+  <rect x="65" y="445" width="300" height="145" rx="20" fill="#fff7ed" stroke="#fb923c" class="box"/>
+  <text x="215" y="477" text-anchor="middle" class="t">Prompt update P_(r+1)</text><text x="215" y="508" text-anchor="middle" class="s">반복 난점과 recovery 규칙 검토</text><text x="215" y="534" text-anchor="middle" class="s">evidence reviewer 통과 후 게시</text><text x="215" y="560" text-anchor="middle" class="s">LLM weight는 고정</text>
+  <rect x="450" y="445" width="300" height="145" rx="20" fill="#faf5ff" stroke="#c084fc" class="box"/>
+  <text x="600" y="477" text-anchor="middle" class="t">Skill update S_(r+1)</text><text x="600" y="508" text-anchor="middle" class="s">반복 custom operation을 명명</text><text x="600" y="534" text-anchor="middle" class="s">안정적인 shared interface로 승격</text><text x="600" y="560" text-anchor="middle" class="s">control과 learning에 같은 언어 사용</text>
+  <rect x="835" y="445" width="300" height="145" rx="20" fill="#eff6ff" stroke="#60a5fa" class="box"/>
+  <text x="985" y="477" text-anchor="middle" class="t">VLA update theta_(r+1)</text><text x="985" y="508" text-anchor="middle" class="s">local intent와 유효 행동 정렬</text><text x="985" y="534" text-anchor="middle" class="s">masked flow-matching + replay</text><text x="985" y="560" text-anchor="middle" class="s">교정 상태에서의 continuation 학습</text>
+  <path d="M930 385L300 445" class="arr"/><path d="M990 385L650 445" class="arr"/><path d="M1050 385L1000 445" class="arr"/>
+  <path d="M215 590V635H425V385" class="arr"/><path d="M600 590V635H425" class="arr"/><path d="M985 590V635H425" class="arr"/>
+  <text x="425" y="662" text-anchor="middle" class="s">세 업데이트를 함께 재배포하여 다음 round r+1의 interaction 분포를 바꿈</text>
+</svg>

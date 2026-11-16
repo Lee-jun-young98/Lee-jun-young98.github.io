@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Agentic-Teacher의 실패 진단, 코드 정책 복구, 데이터 정제 및 VLA 후속학습 흐름</title>
+  <desc id="desc">VLA rollout에서 실패 원인 프레임과 실패 모드를 찾고, 코딩 에이전트가 도구를 사용해 복구 정책을 검증한 뒤, 노이즈 주입과 유휴 프레임 제거와 flow matching loss 필터를 거쳐 VLA를 후속학습하는 세 단계 구조</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#475569"/></marker>
+    <style>
+      .h{font:700 25px 'Malgun Gothic','맑은 고딕',sans-serif;fill:#172554}.t{font:600 18px 'Malgun Gothic','맑은 고딕',sans-serif;fill:#1e293b}.s{font:15px 'Malgun Gothic','맑은 고딕',sans-serif;fill:#334155}.n{font:700 18px 'Malgun Gothic','맑은 고딕',sans-serif;fill:#fff}.box{stroke-width:2}.arr{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="h">Agentic-Teacher: 실패에서 학습 가능한 교정 데이터로</text>
+  <rect x="45" y="85" width="330" height="390" rx="22" fill="#eff6ff" stroke="#2563eb" class="box"/>
+  <circle cx="78" cy="118" r="19" fill="#2563eb"/><text x="78" y="124" text-anchor="middle" class="n">1</text>
+  <text x="110" y="125" class="t">Rollout · 실패 진단</text>
+  <rect x="75" y="158" width="125" height="62" rx="12" fill="#fff" stroke="#93c5fd" class="box"/>
+  <text x="138" y="184" text-anchor="middle" class="t">실패 궤적</text><text x="138" y="207" text-anchor="middle" class="s">관찰 · 행동 · 결과</text>
+  <rect x="220" y="158" width="125" height="62" rx="12" fill="#fff" stroke="#86efac" class="box"/>
+  <text x="282" y="184" text-anchor="middle" class="t">성공 궤적</text><text x="282" y="207" text-anchor="middle" class="s">비교 reference</text>
+  <path d="M138 220V252H210" class="arr"/><path d="M282 220V252H210" class="arr"/>
+  <rect x="92" y="258" width="236" height="72" rx="14" fill="#dbeafe" stroke="#60a5fa" class="box"/>
+  <text x="210" y="285" text-anchor="middle" class="t">Causal frame localization</text><text x="210" y="312" text-anchor="middle" class="s">실패를 만든 이전 상호작용으로 역추적</text>
+  <path d="M210 330V354" class="arr"/>
+  <rect x="92" y="360" width="236" height="82" rx="14" fill="#dbeafe" stroke="#60a5fa" class="box"/>
+  <text x="210" y="388" text-anchor="middle" class="t">Failure-mode cluster</text><text x="210" y="414" text-anchor="middle" class="s">pick · transport · place 등</text><text x="210" y="434" text-anchor="middle" class="s">유사 원인과 복구 시작 상태 묶기</text>
+  <rect x="435" y="85" width="330" height="390" rx="22" fill="#faf5ff" stroke="#9333ea" class="box"/>
+  <circle cx="468" cy="118" r="19" fill="#9333ea"/><text x="468" y="124" text-anchor="middle" class="n">2</text>
+  <text x="500" y="125" class="t">코드 정책 복구 탐색</text>
+  <rect x="475" y="158" width="250" height="82" rx="14" fill="#fff" stroke="#c084fc" class="box"/>
+  <text x="600" y="186" text-anchor="middle" class="t">Coding agent</text><text x="600" y="212" text-anchor="middle" class="s">진단 · skill · 예시를 바탕으로 repair 작성</text>
+  <path d="M600 240V267" class="arr"/>
+  <rect x="475" y="273" width="250" height="92" rx="14" fill="#f3e8ff" stroke="#c084fc" class="box"/>
+  <text x="600" y="301" text-anchor="middle" class="t">Closed-loop 검증</text><text x="600" y="328" text-anchor="middle" class="s">SAM3 · grasp proposal · IK / planning</text><text x="600" y="350" text-anchor="middle" class="s">실행 피드백으로 수정, 범위 확장</text>
+  <path d="M600 365V392" class="arr"/>
+  <rect x="475" y="398" width="250" height="52" rx="14" fill="#fff" stroke="#c084fc" class="box"/>
+  <text x="600" y="430" text-anchor="middle" class="t">검증된 교정 trajectory</text>
+  <rect x="825" y="85" width="330" height="390" rx="22" fill="#fff7ed" stroke="#ea580c" class="box"/>
+  <circle cx="858" cy="118" r="19" fill="#ea580c"/><text x="858" y="124" text-anchor="middle" class="n">3</text>
+  <text x="890" y="125" class="t">정제 · VLA 후속학습</text>
+  <rect x="865" y="158" width="250" height="52" rx="14" fill="#fff" stroke="#fdba74" class="box"/><text x="990" y="191" text-anchor="middle" class="t">1. 시간 상관 action noise</text>
+  <path d="M990 210V228" class="arr"/>
+  <rect x="865" y="234" width="250" height="52" rx="14" fill="#fff" stroke="#fdba74" class="box"/><text x="990" y="267" text-anchor="middle" class="t">2. 유휴 frame 제거</text>
+  <path d="M990 286V304" class="arr"/>
+  <rect x="865" y="310" width="250" height="62" rx="14" fill="#fff" stroke="#fdba74" class="box"/><text x="990" y="337" text-anchor="middle" class="t">3. frozen base VLA의</text><text x="990" y="359" text-anchor="middle" class="s">flow-matching loss 필터</text>
+  <path d="M990 372V390" class="arr"/>
+  <rect x="865" y="396" width="250" height="54" rx="14" fill="#ffedd5" stroke="#fb923c" class="box"/><text x="990" y="430" text-anchor="middle" class="t">4. Flow-matching SFT</text>
+  <path d="M375 280H435" class="arr"/><path d="M765 280H825" class="arr"/>
+  <rect x="125" y="525" width="950" height="104" rx="20" fill="#e2e8f0" stroke="#94a3b8" class="box"/>
+  <text x="600" y="556" text-anchor="middle" class="t">학습과 추론의 구분</text>
+  <text x="600" y="585" text-anchor="middle" class="s">학습: VLA 실패 상태 → 복구 프로그램 실행 → 정제된 교정 데이터 → VLA weight update</text>
+  <text x="600" y="611" text-anchor="middle" class="s">평가/배포: 업데이트된 VLA만 실행하며 coding agent의 도움은 사용하지 않음</text>
+</svg>

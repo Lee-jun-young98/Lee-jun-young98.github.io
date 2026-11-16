@@ -19,6 +19,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
 
+## [Agentic-Teacher: An Agentic Data Engine for Failure-Driven VLA Post-Training](/papers/vla/agentic-teacher-failure-driven-vla-post-training)
+
+![](/papers/assets/vla/agentic-teacher-failure-driven-vla-post-training/overview.svg)
+
 ## [AIRoA-0: Long-Horizon, Precise, Cross-Embodiment Manipulation from Handheld Data](/papers/vla/airoa-0-handheld-cross-embodiment-manipulation)
 
 ![](/papers/assets/vla/airoa-0-handheld-cross-embodiment-manipulation/overview.svg)
@@ -98,6 +102,10 @@ paper_sync: true
 ## [Dual-Stream Memory for Vision-Language-Action Policies](/papers/vla/dual-stream-memory-for-vla-policies)
 
 ![](/papers/assets/vla/dual-stream-memory-for-vla-policies/overview.svg)
+
+## [ESI: An Embodied Self-Improvement Flywheel for LLM–VLA Agents](/papers/vla/esi-embodied-self-improvement-llm-vla-agents)
+
+![](/papers/assets/vla/esi-embodied-self-improvement-llm-vla-agents/overview.svg)
 
 ## [E0.5: From Reconstructive to Future-Predictive 3D Foundations for Robotic World-Action Modeling](/papers/vla/e0-5-geometry-native-world-action-model)
 
