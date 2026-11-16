@@ -41,6 +41,14 @@ project: ""
 - 동결 표현 위에 L2 정규화 multinomial logistic regression을 학습한다. 색 probe는 물체 클래스 단위 5-fold 교차검증으로 동일 클래스 이미지 누수를 막고, 물체 probe는 클래스별 이미지 hold-out을 사용한다.
 - CLIP–Molmo, CLIP–mPLUG-Owl, SigLIP–PaliGemma의 후학습 전후 비전 타워를 비교하고, visual interface 이후와 LLM 디코더의 visual-token 평균 표현도 probe한다.
 
+# 핵심 그림
+
+![회색조 물체 입력에서 전형색과 물체 정체성의 선형 접근성을 VLM 각 모듈과 층에서 추적하는 파이프라인](/papers/assets/vlm/canonical-color-as-a-lens-into-concept-decodability-in-vision-encoders-and-vlms/concept-decodability-pipeline.svg)
+
+> **그림: VLM 전후의 개념 접근성 추적 파이프라인(재구성).** 입력의 색 단서를 RGB → 회색조 → 회색조+히스토그램 평활화(Gray+HE) 순으로 제거한 뒤, 동결된 층별 표현 위에 전형색·물체 선형 probe를 각각 학습한다. 원문 [Figure 5](https://aclanthology.org/2026.emnlp-main.1291.pdf)와 §4.1, §5.1의 readout 설정을 바탕으로 재구성했다.
+
+이 그림은 최종 VLM 응답보다 **정보가 선형적으로 읽히는 위치의 이동**이 이 논문의 핵심이어서 선택했다. 입력은 색을 제거한 물체 이미지이고, 주요 모듈은 (1) 후학습 전 CLIP/SigLIP, (2) VLM에 포함되어 후학습된 비전 타워, (3) projector·Q-Former와 LLM 디코더다. 각 층의 patch 또는 visual-token 표현을 평균 내 동일한 probe를 적용하므로, Molmo와 mPLUG-Owl에서 비전 타워의 접근성이 낮아진 뒤 디코더 쪽에서 다시 높아지는 흐름을 모듈별로 비교할 수 있다. 학습 흐름은 VLM 후학습으로 비전 타워와 인터페이스가 갱신되는 경로이고, 분석·추론 흐름은 그 파라미터를 동결한 채 probe만 학습해 색 10종과 물체 708종을 읽는 경로다.
+
 # Experiments / Results
 
 - 회색조+히스토그램 평활화에서도 다섯 인코더 모두 13.98% 다수 클래스 기준선을 넘었고, DINOv2가 가장 높은 peak를 보였다.
@@ -48,6 +56,23 @@ project: ""
 - 모델이 예측한 물체의 전형색과 색 probe 예측이 일치하는 비율은 CLIP, SigLIP, DINOv2, Swin-V2 후반 층에서 대략 55–65%였다.
 - Molmo와 mPLUG-Owl의 후학습 비전 타워에서는 물체·색 정보의 선형 접근성이 낮아졌지만, visual interface 및 디코더 visual-token 상태에서 상당 부분 회복됐다. PaliGemma는 원래 SigLIP 패턴을 비교적 잘 보존했다.
 - 회색조 이미지에 대한 최종 VLM 응답은 내부 probe와 일치하지 않았다. 예를 들어 canonical-color 응답 정확도는 Molmo 44.5%, mPLUG-Owl 25.6%, PaliGemma 4.1%로, 최종 출력이 시각 증거와 언어 사전지식 및 출력 형식을 함께 반영함을 보여준다.
+
+## 주요 실험 결과
+
+아래 표는 원문 **Table 5**의 동일 조건 비교를 옮긴 것이다. 모두 Gray+HE 입력, object-class-level 5-fold 교차검증, mean-pooled patch 표현의 best-layer 정확도이며, `변화`는 `Post-VLM - Pre-VLM`으로 다시 계산했다.
+
+| 매칭 쌍 | Probe 과제 | Pre-VLM | Post-VLM | 변화 | paired test |
+|---|---|---:|---:|---:|---:|
+| CLIP → Molmo | 전형색 | 43.9% | 36.8% | -7.1%p | p < .05 |
+| CLIP → Molmo | 물체 | 65.0% | 26.2% | -38.8%p | p < .001 |
+| CLIP → mPLUG-Owl | 전형색 | 43.0% | 30.8% | -12.2%p | p < .05 |
+| CLIP → mPLUG-Owl | 물체 | 64.4% | 7.0% | -57.4%p | p < .001 |
+| SigLIP → PaliGemma | 전형색 | 43.3% | 42.9% | -0.4%p | n.s. |
+| SigLIP → PaliGemma | 물체 | 73.3% | 71.5% | -1.8%p | p < .001 |
+
+출처: [Chen et al., EMNLP 2026, Table 5](https://aclanthology.org/2026.emnlp-main.1291.pdf). 논문 표의 반올림 수치로 직접 뺀 값은 mPLUG-Owl 전형색이 **-12.2%p**, PaliGemma 물체가 **-1.8%p**이며, 원문 `Change` 열은 각각 -12.3%p와 -1.9%p를 보고한다. 이는 fold별 비반올림 값에서 계산한 차이로 해석해야 한다.
+
+가장 큰 변화는 CLIP → mPLUG-Owl의 물체 probe로, 후학습 뒤 선형 접근성이 **57.4%p** 낮아졌다. 반면 SigLIP → PaliGemma는 전형색이 0.4%p, 물체가 원문 기준 1.9%p만 낮아져 거의 보존된다. 따라서 “VLM 후학습이 항상 비전 의미 정보를 지운다”가 아니라, 모델 계열과 인터페이스에 따라 비전 타워의 표현 형식이 크게 달라진다는 것이 핵심 해석이다.
 
 # Limitations / Discussion
 

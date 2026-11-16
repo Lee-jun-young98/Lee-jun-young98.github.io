@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">전형색 개념의 VLM 내 선형 접근성 추적 파이프라인</title>
+  <desc id="desc">색 단서를 제거한 물체 이미지를 비전 인코더와 VLM에 입력하고, 각 층의 평균 패치 또는 비주얼 토큰 표현에 색과 물체 선형 프로브를 학습해 후학습 전 비전 타워, 후학습 비전 타워, 인터페이스와 디코더에서 개념 정보가 읽히는 위치를 비교하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#334155"/></marker>
+    <style>
+      .title{font:700 31px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#0f172a}.section{font:700 23px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#0f172a}.body{font:18px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#1e293b}.small{font:16px Arial,"Malgun Gothic","Noto Sans KR",sans-serif;fill:#475569}.box{stroke-width:2;rx:18;ry:18}.arrow{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#64748b;stroke-width:2.5;stroke-dasharray:9 8;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1500" height="900" fill="#f8fafc"/>
+  <text x="750" y="55" text-anchor="middle" class="title">색을 지운 뒤, 전형색 개념이 VLM의 어디에서 읽히는가?</text>
+
+  <rect x="45" y="135" width="270" height="190" class="box" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="180" y="180" text-anchor="middle" class="section">통제 입력</text>
+  <text x="180" y="222" text-anchor="middle" class="body">물체 이미지</text>
+  <text x="180" y="257" text-anchor="middle" class="body">RGB → Gray → Gray+HE</text>
+  <text x="180" y="295" text-anchor="middle" class="small">색도·밝기 단서 단계적 제거</text>
+
+  <rect x="385" y="110" width="300" height="240" class="box" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="535" y="154" text-anchor="middle" class="section">Pre-VLM 비전 인코더</text>
+  <text x="535" y="198" text-anchor="middle" class="body">CLIP 또는 SigLIP</text>
+  <text x="535" y="234" text-anchor="middle" class="body">층별 patch 표현</text>
+  <text x="535" y="270" text-anchor="middle" class="body">평균 풀링</text>
+  <text x="535" y="315" text-anchor="middle" class="small">후학습 전 기준선</text>
+
+  <rect x="760" y="110" width="300" height="240" class="box" fill="#fef3c7" stroke="#d97706"/>
+  <text x="910" y="154" text-anchor="middle" class="section">Post-VLM 비전 타워</text>
+  <text x="910" y="198" text-anchor="middle" class="body">Molmo / mPLUG-Owl</text>
+  <text x="910" y="234" text-anchor="middle" class="body">또는 PaliGemma</text>
+  <text x="910" y="270" text-anchor="middle" class="body">동일 층별 readout</text>
+  <text x="910" y="315" text-anchor="middle" class="small">VLM 후학습 효과 측정</text>
+
+  <rect x="1135" y="110" width="320" height="240" class="box" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1295" y="154" text-anchor="middle" class="section">인터페이스 + LLM</text>
+  <text x="1295" y="198" text-anchor="middle" class="body">projector / Q-Former</text>
+  <text x="1295" y="234" text-anchor="middle" class="body">decoder visual tokens</text>
+  <text x="1295" y="270" text-anchor="middle" class="body">층별 평균 표현</text>
+  <text x="1295" y="315" text-anchor="middle" class="small">정보의 재접근성 확인</text>
+
+  <path d="M315 230 H375" class="arrow"/>
+  <path d="M685 230 H750" class="dash"/>
+  <path d="M1060 230 H1125" class="arrow"/>
+  <text x="720" y="198" text-anchor="middle" class="small">후학습</text>
+
+  <rect x="210" y="455" width="1080" height="180" class="box" fill="#ffffff" stroke="#475569"/>
+  <text x="750" y="500" text-anchor="middle" class="section">동결 표현 위의 두 선형 프로브</text>
+  <rect x="310" y="530" width="350" height="70" class="box" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="485" y="574" text-anchor="middle" class="body">전형색 probe: 10개 색 분류</text>
+  <rect x="840" y="530" width="350" height="70" class="box" fill="#cffafe" stroke="#0891b2"/>
+  <text x="1015" y="574" text-anchor="middle" class="body">물체 probe: 708개 클래스 분류</text>
+  <path d="M535 350 V445" class="arrow"/>
+  <path d="M910 350 V445" class="arrow"/>
+  <path d="M1295 350 V410 H1110 V445" class="arrow"/>
+
+  <rect x="210" y="705" width="1080" height="105" class="box" fill="#e0e7ff" stroke="#4f46e5"/>
+  <text x="750" y="748" text-anchor="middle" class="section">비교: 정보의 존재가 아니라 “선형적으로 읽히는 위치”</text>
+  <text x="750" y="786" text-anchor="middle" class="body">Pre-VLM → Post-VLM 비전 타워 → 디코더 visual-token 상태의 층별 정확도 추적</text>
+  <path d="M750 635 V695" class="arrow"/>
+  <text x="750" y="868" text-anchor="middle" class="small">논문 Figure 5와 §4.1, §5.1의 readout 설정을 바탕으로 재구성</text>
+</svg>
