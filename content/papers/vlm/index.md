@@ -133,6 +133,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/triad-benchmarking-omni-modal-ambiguity-in-multimodal-large-language-models/triad-evaluation-pipeline.svg)
 
+## [V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations](/papers/vlm/v-jepa-lm-video-language-models-read-dynamics)
+
+![](/papers/assets/vlm/v-jepa-lm-video-language-models-read-dynamics/v-jepa-lm-overview.png)
+
 ## [VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding](/papers/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding)
 
 ![](/papers/assets/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding/videoevolve-architecture.svg)
