@@ -299,6 +299,10 @@ paper_sync: true
 
 ## [SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation](/papers/vla/savla-symmetry-aware-vision-language-action-models-for-robotic-manipulation)
 
+## [ScaleVLA: Scaling Vision-Language-Action Models to 552 Billion Parameters](/papers/vla/scalevla-frontier-backbone-scaling)
+
+![](/papers/assets/vla/scalevla-frontier-backbone-scaling/architecture.png)
+
 ## [Self-Adaptive VLA for Robust Robot Deployment](/papers/vla/self-adaptive-vla-for-robust-robot-deployment)
 
 ## [Self-Labeled Preference Transfer for Steerable Robot Manipulation](/papers/vla/self-labeled-preference-transfer-for-steerable-robot-manipulation)
@@ -348,6 +352,10 @@ paper_sync: true
 ## [TempoBridge: Language-Guided Tempo Control for Vision-Language-Action Policies](/papers/vla/tempobridge-language-guided-tempo-control)
 
 ![](/papers/assets/vla/tempobridge-language-guided-tempo-control/overview.svg)
+
+## [ThinkWAM: Rethinking Latent Futures for Action Refinement](/papers/vla/thinkwam-proposal-rethink-refine)
+
+![](/papers/assets/vla/thinkwam-proposal-rethink-refine/architecture.png)
 
 ## [Training Reasoning Models in Simulation to Natively Use Real Robots](/papers/vla/pear-robot-use-reinforcement-learning)
 
