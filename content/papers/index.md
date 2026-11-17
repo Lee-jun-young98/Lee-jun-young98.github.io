@@ -473,6 +473,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/how-far-are-we-from-removing-the-visual-encoder/encoder-free-scaling-overview.svg)
 
+### [How VLMs Plan What's Next](/papers/vlm/how-vlms-plan-whats-next)
+
+![](/papers/assets/vlm/how-vlms-plan-whats-next/vlm-planning-mechanism.svg)
+
 ### [Joint Latent Reasoning and Observation for Agentic Video Understanding](/papers/vlm/joint-latent-reasoning-and-observation-for-agentic-video-understanding)
 
 ![](/papers/assets/vlm/joint-latent-reasoning-and-observation-for-agentic-video-understanding/larva-architecture.svg)
