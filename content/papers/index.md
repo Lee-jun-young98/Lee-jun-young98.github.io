@@ -105,10 +105,6 @@ paper_sync: true
 
 ![](/papers/assets/vla/dual-stream-memory-for-vla-policies/overview.svg)
 
-### [ESI: An Embodied Self-Improvement Flywheel for LLM–VLA Agents](/papers/vla/esi-embodied-self-improvement-llm-vla-agents)
-
-![](/papers/assets/vla/esi-embodied-self-improvement-llm-vla-agents/overview.svg)
-
 ### [E0.5: From Reconstructive to Future-Predictive 3D Foundations for Robotic World-Action Modeling](/papers/vla/e0-5-geometry-native-world-action-model)
 
 ![](/papers/assets/vla/e0-5-geometry-native-world-action-model/overview.svg)
@@ -116,6 +112,10 @@ paper_sync: true
 ### [Embodiment-Classifier Guidance: Transferring Frozen VLAs Across Robot Dynamics without Demonstrations](/papers/vla/embodiment-classifier-guidance-for-frozen-vlas)
 
 ![](/papers/assets/vla/embodiment-classifier-guidance-for-frozen-vlas/overview.svg)
+
+### [ESI: An Embodied Self-Improvement Flywheel for LLM–VLA Agents](/papers/vla/esi-embodied-self-improvement-llm-vla-agents)
+
+![](/papers/assets/vla/esi-embodied-self-improvement-llm-vla-agents/overview.svg)
 
 ### [Exploiting Vulnerabilities: Universal Adversarial Attacks on Vision-Language-Action Models in Robotics](/papers/vla/universal-adversarial-attacks-on-vla-models)
 
