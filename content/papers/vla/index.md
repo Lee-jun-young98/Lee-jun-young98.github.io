@@ -165,6 +165,10 @@ paper_sync: true
 
 ## [IMLE-VLA: Fast Single-Step Action Generation for Vision-Language-Action Policies](/papers/vla/imle-vla-fast-single-step-action-generation-for-vision-language-action-policies)
 
+## [InteractVLA: Turning VLAs into Interactive Tools for Agentic Robotic Manipulation](/papers/vla/interactvla-interactive-agentic-manipulation)
+
+![](/papers/assets/vla/interactvla-interactive-agentic-manipulation/architecture.png)
+
 ## [JADE: Vision-Language Models Are Joint Denoisers in Robotic Action Generation](/papers/vla/jade-joint-action-denoiser)
 
 ![](/papers/assets/vla/jade-joint-action-denoiser/overview.svg)
@@ -314,6 +318,10 @@ paper_sync: true
 ![](/papers/assets/vla/skelewam-skeleton-world-action-modeling/overview.svg)
 
 ## [SLA: Scaling Spatial-Language-Action Model via Continual Pre-training](/papers/vla/sla-spatial-language-action-continual-pretraining)
+
+## [SR-VLA: Stall-Reduced VLA Execution via Predicted-Input Lookahead and Selective KV Cache Repair](/papers/vla/sr-vla-predicted-input-lookahead-kv-repair)
+
+![](/papers/assets/vla/sr-vla-predicted-input-lookahead-kv-repair/overview.svg)
 
 ![](/papers/assets/vla/sla-spatial-language-action-continual-pretraining/overview.svg)
 

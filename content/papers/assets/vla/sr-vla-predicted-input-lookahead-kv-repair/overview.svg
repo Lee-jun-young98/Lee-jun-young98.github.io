@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">SR-VLA predicted-input lookahead and selective KV repair</title>
+  <desc id="desc">현재 action 실행과 동시에 다음 boundary의 image와 proprioception을 예측해 speculative KV cache와 action을 만들고, 실제 입력 도착 뒤 mismatch와 task risk로 accept 또는 selective repair를 선택하는 구조</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:'Noto Sans KR','Segoe UI',sans-serif;fill:#0f172a}.h{font-size:24px;font-weight:700}.m{font-size:18px;font-weight:650}.s{font-size:15px}.box{rx:16;stroke-width:2}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:8 7}.note{font-size:14px;fill:#475569}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="50" y="48" class="t h">SR-VLA: 실행 중 lookahead + 실제 입력 기반 KV repair</text>
+  <rect x="48" y="78" width="1104" height="220" rx="24" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="70" y="108" class="t m">① 현재 action chunk Aₜ 실행 중 — overlap 가능한 speculative path</text>
+  <rect x="75" y="135" width="205" height="105" class="box" fill="#ffffff" stroke="#60a5fa"/>
+  <text x="177" y="170" text-anchor="middle" class="t m">현재 입력</text>
+  <text x="177" y="198" text-anchor="middle" class="t s">image oₜ · state pₜ</text>
+  <text x="177" y="221" text-anchor="middle" class="t s">committed actions Aₜ</text>
+  <rect x="350" y="125" width="245" height="130" class="box" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="472" y="160" text-anchor="middle" class="t m">Next-boundary predictor</text>
+  <text x="472" y="190" text-anchor="middle" class="t s">action/state MLP + state decoder</text>
+  <text x="472" y="214" text-anchor="middle" class="t s">FiLM-conditioned compact U-Net</text>
+  <text x="472" y="238" text-anchor="middle" class="t s">→ ôₜ₊ₖ, p̂ₜ₊ₖ</text>
+  <rect x="670" y="125" width="220" height="130" class="box" fill="#ede9fe" stroke="#8b5cf6"/>
+  <text x="780" y="160" text-anchor="middle" class="t m">Frozen VLA lookahead</text>
+  <text x="780" y="190" text-anchor="middle" class="t s">predicted inputs + instruction</text>
+  <text x="780" y="218" text-anchor="middle" class="t s">speculative KV cache K̂</text>
+  <text x="780" y="241" text-anchor="middle" class="t s">+ action chunk Â</text>
+  <rect x="960" y="142" width="160" height="96" class="box" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text x="1040" y="180" text-anchor="middle" class="t m">임시 저장</text>
+  <text x="1040" y="209" text-anchor="middle" class="t s">(K̂, Â)</text>
+  <path d="M280 188 H342" class="a"/><path d="M595 188 H662" class="a"/><path d="M890 188 H952" class="a"/>
+  <rect x="48" y="328" width="1104" height="282" rx="24" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="70" y="360" class="t m">② 실제 boundary t+K — authoritative input으로 검증·선택적 수정</text>
+  <rect x="72" y="392" width="220" height="110" class="box" fill="#ffffff" stroke="#fb923c"/>
+  <text x="182" y="430" text-anchor="middle" class="t m">실제 입력 도착</text>
+  <text x="182" y="461" text-anchor="middle" class="t s">image oₜ₊ₖ · state pₜ₊ₖ</text>
+  <text x="182" y="485" text-anchor="middle" class="t s">predicted–real mismatch</text>
+  <rect x="360" y="382" width="260" height="130" class="box" fill="#ffedd5" stroke="#f97316"/>
+  <text x="490" y="418" text-anchor="middle" class="t m">Query-level repair trigger</text>
+  <text x="490" y="449" text-anchor="middle" class="t s">observation-driven gate</text>
+  <text x="490" y="474" text-anchor="middle" class="t s">+ task-protection gate</text>
+  <text x="490" y="498" text-anchor="middle" class="t s">repair 필요?</text>
+  <rect x="700" y="365" width="215" height="92" class="box" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="807" y="403" text-anchor="middle" class="t m">아니오: Accept</text>
+  <text x="807" y="432" text-anchor="middle" class="t s">speculative Â 즉시 실행</text>
+  <rect x="700" y="482" width="245" height="102" class="box" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="822" y="516" text-anchor="middle" class="t m">예: Selective KV repair</text>
+  <text x="822" y="544" text-anchor="middle" class="t s">top-k patch error + task risk</text>
+  <text x="822" y="568" text-anchor="middle" class="t s">영향 token만 갱신 → action 재생성</text>
+  <rect x="1010" y="421" width="110" height="105" class="box" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="1065" y="459" text-anchor="middle" class="t m">Robot</text>
+  <text x="1065" y="489" text-anchor="middle" class="t s">next chunk</text>
+  <text x="1065" y="513" text-anchor="middle" class="t s">실행</text>
+  <path d="M292 447 H352" class="a"/><path d="M620 425 H692" class="a"/><path d="M620 477 C650 477 655 533 692 533" class="a"/>
+  <path d="M915 411 C960 411 964 455 1002 455" class="a"/><path d="M945 533 C979 533 976 494 1002 494" class="a"/>
+  <path d="M1040 238 V318 C1040 343 650 332 620 399" class="a dash"/>
+  <text x="904" y="317" class="t note">speculative pair를 실제 입력과 대조</text>
+  <text x="55" y="650" class="t note">논문 Figure 2 및 §III를 바탕으로 재구성 · base VLA는 frozen, predictor만 학습 · speculative 결과는 현재 실행 중 Aₜ에 영향 없음</text>
+</svg>
