@@ -539,6 +539,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/s-space-exploring-spatial-workspace-in-multimodal-language-models/s-space-analysis-pipeline.svg)
 
+### [Scaling Laws for Vision-Language Fusion](/papers/vlm/scaling-laws-for-vision-language-fusion)
+
+![](/papers/assets/vlm/scaling-laws-for-vision-language-fusion/fusion-scaling-law-pipeline.svg)
+
 ### [Stuck on Shuffle: On Attribute-Object Binding in Vision-Language Models](/papers/vlm/stuck-on-shuffle-attribute-object-binding-in-vision-language-models)
 
 ![](/papers/assets/vlm/stuck-on-shuffle-attribute-object-binding-in-vision-language-models/saber-text-only-binding-pipeline.svg)

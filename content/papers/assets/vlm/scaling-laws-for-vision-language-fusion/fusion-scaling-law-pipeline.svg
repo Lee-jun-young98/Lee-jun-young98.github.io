@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Vision-language fusion scaling law 파이프라인</title>
+  <desc id="desc">동일한 텍스트와 캡션 토큰 예산을 early 또는 late fusion 스케줄로 배치하고, exchange rate 기반 기본 학습량과 mixture shift를 통합 scaling law에 넣어 모델 크기별 텍스트와 비전 손실을 예측하는 구조도</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fbff"/><stop offset="1" stop-color="#eef2ff"/></linearGradient>
+    <linearGradient id="early" x1="0" x2="1"><stop stop-color="#dbeafe"/><stop offset="1" stop-color="#bfdbfe"/></linearGradient>
+    <linearGradient id="late" x1="0" x2="1"><stop stop-color="#fef3c7"/><stop offset="1" stop-color="#fed7aa"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#334155" flood-opacity="0.16"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0L12 6L0 12Z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:'Noto Sans KR','Malgun Gothic',Arial,sans-serif;fill:#172033}.h{font-size:34px;font-weight:800}.sh{font-size:24px;font-weight:750}.b{font-size:19px}.s{font-size:16px}.mono{font-family:Consolas,monospace;font-size:17px}.card{fill:white;stroke:#cbd5e1;stroke-width:2;filter:url(#shadow)}.line{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text class="t h" x="70" y="62">Vision-Language Fusion Scaling Law</text>
+  <text class="t b" x="70" y="96" fill="#475569">같은 token budget을 언제 섞을 것인가 → 두 loss 항으로 분해 → scale별 trade-off 예측</text>
+
+  <rect class="card" x="55" y="135" rx="22" width="480" height="285"/>
+  <text class="t sh" x="85" y="178">① Fusion schedule 입력</text>
+  <text class="t s" x="85" y="208">고정 예산: T_txt + T_cap (두 스케줄 동일)</text>
+  <text class="t b" x="85" y="250" font-weight="700">Late fusion</text>
+  <rect x="85" y="270" width="245" height="48" rx="8" fill="#e2e8f0"/><rect x="330" y="270" width="170" height="48" rx="8" fill="url(#late)"/>
+  <text class="t s" x="132" y="300">Text-only PT</text><text class="t s" x="348" y="300">dense CPT · 높은 R</text>
+  <text class="t b" x="85" y="352" font-weight="700">Early fusion</text>
+  <rect x="85" y="370" width="415" height="32" rx="8" fill="url(#early)"/>
+  <g fill="#f59e0b"><rect x="112" y="370" width="24" height="32"/><rect x="202" y="370" width="24" height="32"/><rect x="318" y="370" width="24" height="32"/><rect x="440" y="370" width="24" height="32"/></g>
+  <text class="t s" x="180" y="396">step 0부터 sparse multimodal mix · 낮은 R</text>
+
+  <path class="line" d="M535 277H610"/>
+  <path class="line" d="M535 382C575 382 575 343 610 343"/>
+
+  <rect class="card" x="625" y="135" rx="22" width="420" height="285"/>
+  <text class="t sh" x="655" y="178">② 학습 dynamics 분해</text>
+  <rect x="655" y="205" width="360" height="82" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text class="t b" x="680" y="238" font-weight="700">Base trajectory</text>
+  <text class="t s" x="680" y="266">유효 token = native + w_m × cross-modal</text>
+  <rect x="655" y="307" width="360" height="88" rx="14" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text class="t b" x="680" y="340" font-weight="700">Mixture shift</text>
+  <text class="t s" x="680" y="368">ρ(R) × Φ(D_cpt): 경쟁이 축적·포화</text>
+  <text class="t s" x="680" y="390" fill="#9a3412">caption σ = −1 · text σ = +1</text>
+
+  <path class="line" d="M1045 278H1120"/>
+
+  <rect class="card" x="1135" y="135" rx="22" width="410" height="285"/>
+  <text class="t sh" x="1165" y="178">③ 통합 scaling law</text>
+  <rect x="1165" y="210" width="350" height="105" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text class="t mono" x="1190" y="250">L = L₀ + A·D_base⁻ᵅ</text>
+  <text class="t mono" x="1212" y="283">+ σB₀N⁻ᵞρ(R)Φ(D_cpt)</text>
+  <text class="t s" x="1165" y="350">추가 capacity 항: C·N⁻ᵑ</text>
+  <text class="t s" x="1165" y="382">held-out fusion point · horizon · early fusion 검증</text>
+
+  <path class="line" d="M800 420V485"/>
+
+  <rect class="card" x="170" y="500" rx="22" width="1260" height="315"/>
+  <text class="t sh" x="205" y="548">④ Model scale이 바꾸는 결론</text>
+  <line x1="290" y1="745" x2="290" y2="598" stroke="#64748b" stroke-width="3"/><line x1="290" y1="745" x2="670" y2="745" stroke="#64748b" stroke-width="3"/>
+  <text class="t s" x="245" y="585">loss gap</text><text class="t s" x="560" y="780">model size N →</text>
+  <path d="M320 635C420 653 510 690 645 722" fill="none" stroke="#2563eb" stroke-width="7"/>
+  <path d="M320 610C440 608 535 611 645 609" fill="none" stroke="#dc2626" stroke-width="7"/>
+  <text class="t b" x="360" y="675" fill="#2563eb" font-weight="700">late의 vision 이점 ∝ N⁻⁰·⁵ ↓</text>
+  <text class="t b" x="360" y="600" fill="#dc2626" font-weight="700">late의 text penalty ≈ 일정</text>
+  <rect x="770" y="585" width="590" height="170" rx="18" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="2"/>
+  <text class="t sh" x="805" y="628" fill="#065f46">결론: scale이 커질수록 early fusion 선호</text>
+  <text class="t b" x="805" y="670">• caption loss 이점은 300M→1B에서 39.8% 감소</text>
+  <text class="t b" x="805" y="706">• text penalty는 2.6%만 감소</text>
+  <text class="t b" x="805" y="742">• 낮은 caption loss가 MME/GQA 향상을 보장하지 않음</text>
+
+  <text class="t s" x="70" y="865" fill="#64748b">논문 Figure 1 및 Equations 2–8을 바탕으로 재구성 · arXiv:2611.22351v1</text>
+</svg>
