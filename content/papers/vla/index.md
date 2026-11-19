@@ -41,6 +41,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/beyond-actions-action-future-coupled-effect-learning/overview.svg)
 
+## [BiCAT: Bimanual Coordination Action Tokenization](/papers/vla/bicat-bimanual-coordination-action-tokenization)
+
+![](/papers/assets/vla/bicat-bimanual-coordination-action-tokenization/architecture.png)
+
 ## [Catch Me If You Can: Real-Time Feedback Denoising for Responsive VLAs](/papers/vla/catch-me-if-you-can-real-time-feedback-denoising-for-responsive-vlas)
 
 ## [Causal Analysis of Robot Foundation Models Enables Efficiency Gains](/papers/vla/causal-analysis-of-robot-foundation-models-enables-efficiency-gains)
@@ -266,6 +270,10 @@ paper_sync: true
 ## [RAFT: Reasoning-Aligned Fine-Tuning Improves Robustness of VLA Post-Training](/papers/vla/raft-reasoning-aligned-fine-tuning)
 
 ![](/papers/assets/vla/raft-reasoning-aligned-fine-tuning/overview.svg)
+
+## [RageVLA: Augmentation-Trained Perception and Action for State-of-the-Art Robustness on LIBERO](/papers/vla/ragevla-augmentation-grounded-encoding)
+
+![](/papers/assets/vla/ragevla-augmentation-grounded-encoding/architecture.svg)
 
 ## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
