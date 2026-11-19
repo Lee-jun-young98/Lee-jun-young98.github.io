@@ -321,10 +321,6 @@ paper_sync: true
 
 ### [SLA: Scaling Spatial-Language-Action Model via Continual Pre-training](/papers/vla/sla-spatial-language-action-continual-pretraining)
 
-### [SR-VLA: Stall-Reduced VLA Execution via Predicted-Input Lookahead and Selective KV Cache Repair](/papers/vla/sr-vla-predicted-input-lookahead-kv-repair)
-
-![](/papers/assets/vla/sr-vla-predicted-input-lookahead-kv-repair/overview.svg)
-
 ![](/papers/assets/vla/sla-spatial-language-action-continual-pretraining/overview.svg)
 
 ### [SmoLSTM: A Compact Vision-Language-Action Model with Recurrent Memory that Persists](/papers/vla/smolstm-compact-vision-language-action-model-with-recurrent-memory)
@@ -340,6 +336,10 @@ paper_sync: true
 ### [Splat2Act: From Captured Scenes to Personalized VLA Manipulation](/papers/vla/splat2act-personalized-vla-manipulation)
 
 ![](/papers/assets/vla/splat2act-personalized-vla-manipulation/overview.svg)
+
+### [SR-VLA: Stall-Reduced VLA Execution via Predicted-Input Lookahead and Selective KV Cache Repair](/papers/vla/sr-vla-predicted-input-lookahead-kv-repair)
+
+![](/papers/assets/vla/sr-vla-predicted-input-lookahead-kv-repair/overview.svg)
 
 ### [STAR: Steering Action Representations with Proprioception for VLA Inference](/papers/vla/star-steering-action-representations)
 
