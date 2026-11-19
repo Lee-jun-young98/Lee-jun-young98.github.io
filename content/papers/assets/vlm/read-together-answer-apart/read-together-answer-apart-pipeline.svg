@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Read Together, Answer Apart 파이프라인</title>
+  <desc id="desc">이미지와 여러 질문을 한 번에 prefill해 시각 문맥을 공유한 뒤, 각 답변은 다른 질문 stem을 차단하고 독립적으로 decoding하는 구조</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071426"/><stop offset="1" stop-color="#102a43"/></linearGradient>
+    <linearGradient id="prefill" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0f766e"/><stop offset="1" stop-color="#14b8a6"/></linearGradient>
+    <linearGradient id="decode" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.28"/></filter>
+    <marker id="arrowCyan" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#5eead4"/></marker>
+    <marker id="arrowPurple" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#c4b5fd"/></marker>
+    <style>
+      .title{font:700 42px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#f8fafc}.sub{font:500 22px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#cbd5e1}.h{font:700 27px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#fff}.t{font:500 21px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#e2e8f0}.small{font:500 18px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#cbd5e1}.token{font:700 22px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#f8fafc;text-anchor:middle;dominant-baseline:middle}.label{font:700 19px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#99f6e4}.muted{fill:#64748b}.cross{font:800 28px sans-serif;fill:#fb7185;text-anchor:middle}
+    </style>
+  </defs>
+  <rect width="1600" height="900" rx="28" fill="url(#bg)"/>
+  <text x="70" y="72" class="title">Read Together, Answer Apart</text>
+  <text x="70" y="108" class="sub">질문은 함께 읽고(shared prefill), 답변은 서로 격리한다(isolated decoding)</text>
+
+  <g filter="url(#shadow)">
+    <rect x="65" y="155" width="350" height="650" rx="28" fill="#0b1f35" stroke="#334155" stroke-width="2"/>
+    <text x="100" y="205" class="h">입력 prompt</text>
+    <rect x="100" y="245" width="280" height="145" rx="20" fill="#164e63" stroke="#67e8f9" stroke-width="2"/>
+    <text x="240" y="285" class="token">V: image tokens</text>
+    <rect x="130" y="315" width="62" height="48" rx="9" fill="#0891b2"/><rect x="209" y="315" width="62" height="48" rx="9" fill="#0e7490"/><rect x="288" y="315" width="62" height="48" rx="9" fill="#155e75"/>
+    <text x="161" y="340" class="token">▦</text><text x="240" y="340" class="token">▧</text><text x="319" y="340" class="token">▥</text>
+    <rect x="100" y="420" width="280" height="62" rx="16" fill="#334155"/><text x="240" y="452" class="token">I: instruction</text>
+    <rect x="100" y="515" width="280" height="66" rx="16" fill="#115e59"/><text x="240" y="548" class="token">Q₁: 질문 1</text>
+    <rect x="100" y="600" width="280" height="66" rx="16" fill="#0f766e"/><text x="240" y="633" class="token">Q₂: 질문 2</text>
+    <rect x="100" y="685" width="280" height="66" rx="16" fill="#0d9488"/><text x="240" y="718" class="token">Q₃: 질문 3</text>
+  </g>
+
+  <path d="M415 470 C470 470 470 330 525 330" fill="none" stroke="#5eead4" stroke-width="5" marker-end="url(#arrowCyan)"/>
+  <g filter="url(#shadow)">
+    <rect x="525" y="155" width="1010" height="340" rx="28" fill="#0b2d35" stroke="#2dd4bf" stroke-width="2"/>
+    <rect x="525" y="155" width="1010" height="72" rx="28" fill="url(#prefill)"/>
+    <text x="565" y="201" class="h">1. Shared reading — 표준 causal prefill 1회</text>
+    <text x="565" y="270" class="t">앞 질문이 이미지에서 읽은 scene context를 token state에 저장하고 뒤 질문에 전달</text>
+    <rect x="585" y="315" width="150" height="90" rx="18" fill="#164e63" stroke="#67e8f9" stroke-width="2"/><text x="660" y="361" class="token">V, I</text>
+    <rect x="820" y="315" width="150" height="90" rx="18" fill="#115e59"/><text x="895" y="361" class="token">Q₁</text>
+    <rect x="1055" y="315" width="150" height="90" rx="18" fill="#0f766e"/><text x="1130" y="361" class="token">Q₂</text>
+    <rect x="1290" y="315" width="150" height="90" rx="18" fill="#0d9488"/><text x="1365" y="361" class="token">Q₃</text>
+    <path d="M735 360 L810 360" stroke="#5eead4" stroke-width="5" marker-end="url(#arrowCyan)"/><path d="M970 360 L1045 360" stroke="#5eead4" stroke-width="5" marker-end="url(#arrowCyan)"/><path d="M1205 360 L1280 360" stroke="#5eead4" stroke-width="5" marker-end="url(#arrowCyan)"/>
+    <path d="M660 405 C820 465 1160 465 1365 405" fill="none" stroke="#22d3ee" stroke-width="3" stroke-dasharray="10 8" marker-end="url(#arrowCyan)"/>
+    <text x="920" y="461" class="label">cross-question visual grounding 유지</text>
+  </g>
+
+  <path d="M1025 495 L1025 545" stroke="#c4b5fd" stroke-width="5" marker-end="url(#arrowPurple)"/>
+  <g filter="url(#shadow)">
+    <rect x="525" y="550" width="1010" height="255" rx="28" fill="#22153f" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="525" y="550" width="1010" height="68" rx="28" fill="url(#decode)"/>
+    <text x="565" y="594" class="h">2. Isolated answering — answer별 mask + RoPE 재배치</text>
+    <rect x="585" y="660" width="245" height="90" rx="18" fill="#4c1d95"/><text x="707" y="692" class="token">A₁ ← V, I, Q₁</text><text x="707" y="724" class="small" text-anchor="middle">Q₂, Q₃ 차단</text>
+    <rect x="905" y="660" width="245" height="90" rx="18" fill="#5b21b6"/><text x="1027" y="692" class="token">A₂ ← V, I, Q₂</text><text x="1027" y="724" class="small" text-anchor="middle">Q₁, Q₃ 차단</text>
+    <rect x="1225" y="660" width="245" height="90" rx="18" fill="#6d28d9"/><text x="1347" y="692" class="token">A₃ ← V, I, Q₃</text><text x="1347" y="724" class="small" text-anchor="middle">Q₁, Q₂ 차단</text>
+    <text x="865" y="708" class="cross">×</text><text x="1185" y="708" class="cross">×</text>
+  </g>
+  <text x="525" y="850" class="small">학습·backbone 변경 없이 inference mask와 position ID만 조정</text>
+  <text x="1480" y="850" class="small" text-anchor="end">논문 Figure 5 / Equation 1 기반 재구성</text>
+</svg>

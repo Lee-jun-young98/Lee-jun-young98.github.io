@@ -101,6 +101,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/physcount-do-mllms-count-visual-appearances-or-physical-entities/physcount-pipeline.svg)
 
+## [Read Together, Answer Apart: How Earlier Questions Help Vision-Language Models Look](/papers/vlm/read-together-answer-apart)
+
+![](/papers/assets/vlm/read-together-answer-apart/read-together-answer-apart-pipeline.svg)
+
 ## [Reinforcement Learning with Visually Attributable On-Policy Self-Distillation](/papers/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation)
 
 ![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
