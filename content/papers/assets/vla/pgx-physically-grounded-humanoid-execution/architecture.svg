@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">PGX의 predicate stage machine, VLA skill, world-coordinate locking 구조</title>
+  <desc id="desc">물리 상태가 stage 전이를 결정하고, 조작 stage에서만 VLA가 action chunk를 생성하며, world-coordinate locking이 base와 접촉 목표를 안정화하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>.h{font:700 27px 'Segoe UI',sans-serif;fill:#172033}.s{font:21px 'Segoe UI',sans-serif;fill:#253047}.n{font:17px 'Segoe UI',sans-serif;fill:#475569}.box{stroke:#334155;stroke-width:3;rx:18}.a{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="55" y="50" class="h">PGX: 물리적으로 접지된 장기 휴머노이드 VLA 실행</text>
+  <text x="55" y="80" class="n">논문 Figure 2와 §III를 바탕으로 재구성 · 학습된 VLA 가중치는 바꾸지 않고 실행 구조를 분리</text>
+  <rect x="50" y="120" width="235" height="150" class="box" fill="#dbeafe"/><text x="75" y="158" class="h">관측과 물리 상태</text><text x="75" y="198" class="s">카메라 · proprioception</text><text x="75" y="230" class="s">base / object pose</text><text x="75" y="260" class="s">grasp · device state</text>
+  <rect x="350" y="110" width="350" height="185" class="box" fill="#ede9fe"/><text x="378" y="150" class="h">Predicate-gated stage machine</text><text x="378" y="190" class="s">approach → grasp → transport → place</text><text x="378" y="222" class="s">→ press → re-grasp → deliver</text><text x="378" y="255" class="s">물리 guard · retry / reverse edge</text><text x="378" y="282" class="n">학습 segmentation·실행 gate·평가에 같은 predicate</text>
+  <rect x="770" y="120" width="370" height="150" class="box" fill="#dcfce7"/><text x="800" y="158" class="h">Executor 선택</text><text x="800" y="198" class="s">걷기: navigation controller</text><text x="800" y="230" class="s">대기: timer / state check</text><text x="800" y="260" class="s">조작: VLA skill 활성화</text>
+  <path d="M285 195 H340" class="a"/><path d="M700 195 H760" class="a"/>
+  <rect x="85" y="390" width="360" height="165" class="box" fill="#fef3c7"/><text x="115" y="430" class="h">VLA skill (조작 stage만)</text><text x="115" y="472" class="s">images + stage instruction</text><text x="115" y="505" class="s">→ action chunk Aₜ</text><text x="115" y="537" class="n">flat 또는 predicate로 자른 stage model</text>
+  <rect x="505" y="365" width="375" height="210" class="box" fill="#fee2e2"/><text x="535" y="405" class="h">World-coordinate locking</text><text x="535" y="445" class="s">1. object-relative stance 재설정</text><text x="535" y="480" class="s">2. world-frame base station keeping</text><text x="535" y="515" class="s">3. contact target 좌표 재표현</text><text x="535" y="550" class="n">VLA base channel을 stage에 따라 제약·대체</text>
+  <rect x="940" y="390" width="220" height="165" class="box" fill="#cffafe"/><text x="965" y="430" class="h">Whole-body</text><text x="965" y="462" class="h">controller</text><text x="965" y="505" class="s">joint · base · hand</text>
+  <path d="M930 270 C850 320 560 315 430 380" class="a"/><path d="M445 472 H495" class="a"/><path d="M880 472 H930" class="a"/><path d="M1040 555 C1030 625 560 630 515 585" class="a"/>
+  <text x="680" y="632" class="n">실행 결과 → predicate → 다음 stage 또는 recovery</text>
+  <text x="55" y="665" class="n">핵심 차이: VLA는 ‘어떻게 조작할지’에 집중하고, ‘언제·어디서’는 검증 가능한 물리 상태와 좌표 제어가 담당한다.</text>
+</svg>

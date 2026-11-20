@@ -93,6 +93,10 @@ paper_sync: true
 
 ## [Direction-Scale Decomposition in Action Representation: Rethinking What to Tokenize for Vision-Language-Action Models](/papers/vla/direction-scale-decomposition-for-vision-language-action-models)
 
+## [DiWALI: Diffusion Policy Learning in World Models via Latent Action Inference from Human and Robot Play](/papers/vla/diwali-latent-action-world-model)
+
+![](/papers/assets/vla/diwali-latent-action-world-model/architecture.png)
+
 ## [Divide-and-Remember: Recursive Action-Relevant Memory for Long-Horizon VLA Policies](/papers/vla/divide-and-remember-recursive-action-relevant-memory-for-long-horizon-vlas)
 
 ![](/papers/assets/vla/divide-and-remember-recursive-action-relevant-memory-for-long-horizon-vlas/overview.svg)
@@ -250,6 +254,10 @@ paper_sync: true
 ## [PHIL: Correct Robots Before They Make Mistakes](/papers/vla/phil-proactive-human-in-the-loop-preference-learning)
 
 ![](/papers/assets/vla/phil-proactive-human-in-the-loop-preference-learning/overview.svg)
+
+## [PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation](/papers/vla/pgx-physically-grounded-humanoid-execution)
+
+![](/papers/assets/vla/pgx-physically-grounded-humanoid-execution/architecture.svg)
 
 ## [PLaW-VLA: Predictive Latent World Modeling for Vision-Language-Action Policies](/papers/vla/plaw-vla-predictive-latent-world-modeling)
 
