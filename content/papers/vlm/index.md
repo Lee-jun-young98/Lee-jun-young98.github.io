@@ -75,6 +75,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/learning-where-to-look-observation-policy-optimization-for-thinking-with-images/opo-training-pipeline.svg)
 
+## [Learning to Think with Images Faithfully via Adaptive Data Selection](/papers/vlm/learning-to-think-with-images-faithfully)
+
+![](/papers/assets/vlm/learning-to-think-with-images-faithfully/faithtwi-training-pipeline.svg)
+
 ## [Look Where It Counts: A Free, Label-Free Visual Evidence Signal for Fine-Grained Vision-Language Reasoning](/papers/vlm/look-where-it-counts-label-free-visual-evidence-for-fine-grained-vision-language-reasoning)
 
 ## [MIRA: Reinforcing Multimodal Reasoning via Deceptive Contextual Augmentation](/papers/vlm/mira-reinforcing-multimodal-reasoning-via-deceptive-contextual-augmentation)
