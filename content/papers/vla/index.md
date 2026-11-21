@@ -285,6 +285,10 @@ paper_sync: true
 
 ## [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
 
+## [R2-VLA: Risk-Controlled Test-Time Adaptation for Vision-Language-Action Models](/papers/vla/r2-vla-risk-controlled-test-time-adaptation)
+
+![](/papers/assets/vla/r2-vla-risk-controlled-test-time-adaptation/architecture.svg)
+
 ## [REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](/papers/vla/react-rolling-denoising-for-reactive-vla-control)
 
 ![](/papers/assets/vla/react-rolling-denoising-for-reactive-vla-control/overview.svg)
@@ -444,3 +448,7 @@ paper_sync: true
 ![](/papers/assets/vla/worldbridge-video-action-task-generalization/overview.svg)
 
 ## [XPACE: Joint World and Action Modeling from Heterogeneous Experience](/papers/vla/xpace-joint-world-and-action-modeling-from-heterogeneous-experience)
+
+## [Z-sight: Unifying Vision-Language-Action and Latent World Modeling](/papers/vla/z-sight-native-latent-world-action-model)
+
+![](/papers/assets/vla/z-sight-native-latent-world-action-model/architecture.png)

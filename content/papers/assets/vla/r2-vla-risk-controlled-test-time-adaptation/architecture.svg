@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">R2-VLA 위험 제어형 테스트타임 적응 구조</title>
+  <desc id="desc">현재 관측과 명령, 검색 메모리, 고정 VLA와 uncertainty head, risk calibration, Act 또는 Ask 분기, expert correction memory update를 나타낸 구조도</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.box{fill:#fff;stroke:#334155;stroke-width:2;rx:16}.input{fill:#e0f2fe;stroke:#0284c7}.model{fill:#ede9fe;stroke:#7c3aed}.risk{fill:#fef3c7;stroke:#d97706}.act{fill:#dcfce7;stroke:#16a34a}.ask{fill:#fee2e2;stroke:#dc2626}.memory{fill:#e2e8f0;stroke:#475569}.t{font:700 24px Arial,sans-serif;fill:#0f172a}.h{font:700 19px Arial,sans-serif;fill:#0f172a}.p{font:15px Arial,sans-serif;fill:#334155}.small{font:13px Arial,sans-serif;fill:#475569}.arrow{stroke:#334155;stroke-width:2.5;fill:none;marker-end:url(#arrow)}.dash{stroke-dasharray:8 6}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="680"/>
+  <text x="60" y="48" class="t">R2-VLA: retrieval context의 유용성을 task-level risk로 보정</text>
+
+  <rect x="55" y="105" width="220" height="115" class="box input"/>
+  <text x="75" y="140" class="h">현재 입력 xₜ</text>
+  <text x="75" y="170" class="p">top · side · wrist RGB</text>
+  <text x="75" y="194" class="p">state + language instruction</text>
+
+  <rect x="55" y="315" width="220" height="125" class="box memory"/>
+  <text x="75" y="350" class="h">Retrieval memory</text>
+  <text x="75" y="380" class="p">expert demonstrations</text>
+  <text x="75" y="404" class="p">→ context Mₜ 검색</text>
+
+  <rect x="355" y="125" width="270" height="190" class="box model"/>
+  <text x="380" y="163" class="h">Frozen retrieval-VLA</text>
+  <text x="380" y="195" class="p">(Mₜ, xₜ) → predicted action âₜ</text>
+  <line x1="380" y1="220" x2="600" y2="220" stroke="#a78bfa" stroke-width="2"/>
+  <text x="380" y="252" class="h">Uncertainty head Uψ</text>
+  <text x="380" y="282" class="p">internal feature → scalar ûₜ</text>
+
+  <rect x="700" y="105" width="275" height="145" class="box risk"/>
+  <text x="725" y="140" class="h">Risk calibration (offline)</text>
+  <text x="725" y="172" class="p">held-out rollout × λ 후보</text>
+  <text x="725" y="198" class="p">R(λ) ≤ ε 중 ASK 최소</text>
+  <text x="725" y="225" class="h">→ calibrated λ̂</text>
+
+  <rect x="720" y="320" width="235" height="95" class="box risk"/>
+  <text x="752" y="355" class="h">Act / Ask gate</text>
+  <text x="752" y="385" class="p">ûₜ ≤ calibrated threshold?</text>
+
+  <rect x="1010" y="275" width="145" height="95" class="box act"/>
+  <text x="1052" y="313" class="h">ACT</text>
+  <text x="1030" y="343" class="p">VLA action âₜ</text>
+
+  <rect x="1010" y="430" width="145" height="110" class="box ask"/>
+  <text x="1047" y="467" class="h">ASK</text>
+  <text x="1028" y="496" class="p">expert action aₜᴱ</text>
+  <text x="1028" y="520" class="small">correction 저장</text>
+
+  <rect x="355" y="500" width="380" height="120" class="box memory"/>
+  <text x="380" y="538" class="h">Continual deployment round</text>
+  <text x="380" y="570" class="p">correction → memory 추가 → threshold 재보정</text>
+  <text x="380" y="598" class="small">policy weight는 고정, retrieval distribution만 갱신</text>
+
+  <path d="M275 155 L355 175" class="arrow"/>
+  <path d="M275 365 C315 365 315 275 355 275" class="arrow"/>
+  <path d="M625 245 C680 245 680 365 720 365" class="arrow"/>
+  <path d="M838 250 L838 320" class="arrow"/>
+  <path d="M955 350 C985 350 985 325 1010 325" class="arrow"/>
+  <path d="M838 415 C838 485 955 485 1010 485" class="arrow"/>
+  <path d="M1010 515 C900 610 810 595 735 570" class="arrow dash"/>
+  <path d="M355 570 C260 570 170 510 165 440" class="arrow dash"/>
+  <path d="M545 500 C610 450 680 445 760 415" class="arrow dash"/>
+
+  <text x="972" y="303" class="small">낮은 위험</text>
+  <text x="962" y="463" class="small">높은 위험</text>
+  <text x="60" y="655" class="small">논문 §3.1–3.4, Eq. (1), Algorithms 1–2를 바탕으로 재구성 · 실선: 현재 decision · 점선: round 간 adaptation</text>
+</svg>
