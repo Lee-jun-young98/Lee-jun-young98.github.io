@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">VLM 환각 완화 효과 감사 파이프라인</title>
+  <desc id="desc">기본 VLM과 학습된 모델의 캡션을 같은 물체 recall과 첫 등장 rank별 삭제 수에 맞춘 뒤 무작위 삭제, 11-feature probe, 학습 방법의 환각 제거량을 비교하고 값싼 신호로 DPO를 학습하는 흐름</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#334155"/></marker>
+    <style>.h{font:700 30px Arial,sans-serif;fill:#0f172a}.t{font:600 22px Arial,sans-serif;fill:#0f172a}.b{font:18px Arial,sans-serif;fill:#334155}.s{font:16px Arial,sans-serif;fill:#475569}.box{stroke:#334155;stroke-width:2;rx:18}.line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1600" height="900" fill="#f8fafc"/>
+  <text x="800" y="55" text-anchor="middle" class="h">Anti-hallucination 성과를 같은 조건에서 분해한다</text>
+  <rect x="55" y="115" width="330" height="190" class="box" fill="#dbeafe"/>
+  <text x="220" y="155" text-anchor="middle" class="t">입력 caption 쌍</text>
+  <text x="85" y="200" class="b">Base VLM: 상세 caption</text><text x="85" y="235" class="b">훈련 방법: 선호학습 caption</text>
+  <text x="85" y="275" class="s">COCO / AMBER / Object HalBench</text>
+  <rect x="465" y="105" width="390" height="220" class="box" fill="#fef3c7"/>
+  <text x="660" y="145" text-anchor="middle" class="t">반사실 조건 맞추기</text>
+  <text x="500" y="190" class="b">① 동일한 object recall</text><text x="500" y="230" class="b">② 첫 등장 rank별 동일 삭제 수</text>
+  <text x="500" y="270" class="b">③ held-out image에서 비교</text><text x="500" y="305" class="s">뒤쪽 물체의 높은 환각률 confound 제거</text>
+  <path d="M385 210 H455" class="line"/>
+  <rect x="935" y="90" width="610" height="260" class="box" fill="#e0e7ff"/>
+  <text x="1240" y="130" text-anchor="middle" class="t">동일 삭제 budget의 세 branch</text>
+  <rect x="970" y="160" width="165" height="135" rx="12" fill="#e0f2fe" stroke="#64748b"/>
+  <text x="1053" y="195" text-anchor="middle" class="b">Random</text><text x="1053" y="230" text-anchor="middle" class="s">위치 + 덜 말하기</text><text x="1053" y="260" text-anchor="middle" class="s">R_rand</text>
+  <rect x="1160" y="160" width="175" height="135" rx="12" fill="#bfdbfe" stroke="#64748b"/>
+  <text x="1248" y="195" text-anchor="middle" class="b">Cheap probe</text><text x="1248" y="230" text-anchor="middle" class="s">11 features</text><text x="1248" y="260" text-anchor="middle" class="s">R_probe</text>
+  <rect x="1360" y="160" width="150" height="135" rx="12" fill="#93c5fd" stroke="#64748b"/>
+  <text x="1435" y="195" text-anchor="middle" class="b">Method</text><text x="1435" y="230" text-anchor="middle" class="s">훈련 효과</text><text x="1435" y="260" text-anchor="middle" class="s">R_method</text>
+  <path d="M855 210 H925" class="line"/>
+  <rect x="110" y="425" width="510" height="250" class="box" fill="#dcfce7"/>
+  <text x="365" y="470" text-anchor="middle" class="t">11-feature frozen probe</text>
+  <text x="150" y="520" class="b">Surface 5: 위치·rank·언급·물체 수·hedge</text><text x="150" y="565" class="b">Prior 3: class 오류율·co-occurrence·빈도</text>
+  <text x="150" y="610" class="b">Confidence 3: 첫·최소·평균 log-prob</text><text x="150" y="650" class="s">500장 fitting → logistic regression 동결</text>
+  <rect x="720" y="420" width="420" height="270" class="box" fill="#fce7f3"/>
+  <text x="930" y="465" text-anchor="middle" class="t">제거량 분해</text>
+  <text x="760" y="520" class="b">Saying less = R_rand</text><text x="760" y="565" class="b">Cheap pruning = R_probe − R_rand</text>
+  <text x="760" y="610" class="b">Rest = R_method − R_probe</text><text x="930" y="660" text-anchor="middle" class="t">share ≥ 0.667 ?</text>
+  <path d="M1240 350 V390 H930 V410" class="line"/><path d="M620 550 H710" class="line"/>
+  <rect x="1230" y="430" width="315" height="250" class="box" fill="#ffedd5"/>
+  <text x="1388" y="475" text-anchor="middle" class="t">Cheap-label DPO</text>
+  <text x="1265" y="525" class="b">GT vs probe vs CLIP</text><text x="1265" y="565" class="b">동일 2,527 pairs / recipe</text>
+  <text x="1265" y="610" class="b">beyond-brevity gain G</text><text x="1265" y="650" class="s">GT gain 회복률 R 측정</text>
+  <path d="M1140 555 H1220" class="line"/>
+  <rect x="225" y="760" width="1150" height="85" rx="18" fill="#0f172a"/>
+  <text x="800" y="798" text-anchor="middle" style="font:700 23px Arial,sans-serif;fill:#fff">핵심 판정: CHAIR 감소 ≠ grounding 개선</text>
+  <text x="800" y="830" text-anchor="middle" style="font:18px Arial,sans-serif;fill:#cbd5e1">동일 recall · 동일 rank · cheap baseline 이후 남는 효과를 보고한다</text>
+</svg>

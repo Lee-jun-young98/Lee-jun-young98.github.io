@@ -181,6 +181,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/visual-tokens-on-demand-multi-image-reasoning/mmvb-architecture.svg)
 
+## [What Does Anti-Hallucination Training Buy? Saying Less, Cheap Pruning, and the Rest](/papers/vlm/what-does-anti-hallucination-training-buy)
+
+![](/papers/assets/vlm/what-does-anti-hallucination-training-buy/audit-pipeline.svg)
+
 ## [What Transfers from Text to Vision? Capability Scaling Laws and Transfer Dynamics for VLMs](/papers/vlm/what-transfers-from-text-to-vision-capability-scaling-laws)
 
 ![](/papers/assets/vlm/what-transfers-from-text-to-vision-capability-scaling-laws/cdm-scaling-pipeline.svg)
