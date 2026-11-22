@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">MAWAM 다중 로봇 world-action architecture</title>
+  <desc id="desc">로봇별 private view, state, role, noisy future와 action이 shared transformer에서 cross-agent attention으로 결합되어 로봇별 미래 view와 action chunk로 출력되는 재구성 구조도</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      .t{font-family:Arial,'Noto Sans KR',sans-serif;fill:#0f172a}.h{font-size:28px;font-weight:700}.s{font-size:18px}.sm{font-size:15px}.box{stroke-width:2;rx:16}.a{fill:#e0f2fe;stroke:#0284c7}.b{fill:#fef3c7;stroke:#d97706}.c{fill:#ede9fe;stroke:#7c3aed}.d{fill:#dcfce7;stroke:#16a34a}.flow{fill:none;stroke:#334155;stroke-width:3;marker-end:url(#arrow)}.dash{fill:none;stroke:#64748b;stroke-width:2;stroke-dasharray:8 6;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="600" y="48" text-anchor="middle" class="t h">MAWAM: 로봇별 인터페이스를 보존한 공동 world-action 생성</text>
+  <text x="600" y="76" text-anchor="middle" class="t sm">논문 Figure 2와 §3.1–3.4를 바탕으로 재구성</text>
+
+  <rect x="40" y="120" width="250" height="190" class="box a"/>
+  <text x="165" y="150" text-anchor="middle" class="t s" font-weight="700">Agent i stream</text>
+  <text x="65" y="185" class="t sm">• private view latent</text><text x="65" y="212" class="t sm">• proprioceptive state</text>
+  <text x="65" y="239" class="t sm">• task role embedding</text><text x="65" y="266" class="t sm">• noisy future + action</text>
+  <text x="65" y="293" class="t sm">• simplex RoPE identity</text>
+
+  <rect x="40" y="350" width="250" height="190" class="box a"/>
+  <text x="165" y="380" text-anchor="middle" class="t s" font-weight="700">Agent j stream</text>
+  <text x="65" y="415" class="t sm">• private view latent</text><text x="65" y="442" class="t sm">• proprioceptive state</text>
+  <text x="65" y="469" class="t sm">• task role embedding</text><text x="65" y="496" class="t sm">• noisy future + action</text>
+  <text x="65" y="523" class="t sm">• simplex RoPE identity</text>
+
+  <rect x="400" y="178" width="330" height="300" class="box c"/>
+  <text x="565" y="215" text-anchor="middle" class="t s" font-weight="700">Shared Transformer</text>
+  <text x="565" y="250" text-anchor="middle" class="t sm">dense bidirectional cross-agent attention</text>
+  <rect x="445" y="278" width="240" height="64" class="box b"/><text x="565" y="306" text-anchor="middle" class="t sm">action → future-view bias</text><text x="565" y="329" text-anchor="middle" class="t sm">각 action을 소유 view에 귀속</text>
+  <rect x="445" y="370" width="240" height="70" class="box d"/><text x="565" y="399" text-anchor="middle" class="t sm">joint flow matching</text><text x="565" y="424" text-anchor="middle" class="t sm">L = λv Lview + λu Laction</text>
+
+  <rect x="850" y="120" width="300" height="190" class="box d"/>
+  <text x="1000" y="153" text-anchor="middle" class="t s" font-weight="700">Agent i outputs</text>
+  <text x="880" y="195" class="t sm">• 8 private-view future frames</text><text x="880" y="225" class="t sm">• 24-step action chunk</text>
+  <text x="880" y="265" class="t sm">weight-shared decoder → controller i</text>
+
+  <rect x="850" y="350" width="300" height="190" class="box d"/>
+  <text x="1000" y="383" text-anchor="middle" class="t s" font-weight="700">Agent j outputs</text>
+  <text x="880" y="425" class="t sm">• 8 private-view future frames</text><text x="880" y="455" class="t sm">• 24-step action chunk</text>
+  <text x="880" y="495" class="t sm">weight-shared decoder → controller j</text>
+
+  <path d="M290 215 H400" class="flow"/><path d="M290 445 H400" class="flow"/><path d="M730 245 H850" class="flow"/><path d="M730 410 H850" class="flow"/>
+  <path d="M1000 310 V335 H780 V565 H565" class="dash"/>
+  <text x="880" y="585" text-anchor="middle" class="t sm">첫 8 step 동기 실행 → 새 관측 → joint replan</text>
+  <rect x="330" y="595" width="540" height="52" class="box b"/>
+  <text x="600" y="618" text-anchor="middle" class="t sm" font-weight="700">학습: single-agent warm-up → synchronized team training</text>
+  <text x="600" y="640" text-anchor="middle" class="t sm">추론: 실제 미래 target 없이 future와 action을 noise에서 공동 생성</text>
+</svg>

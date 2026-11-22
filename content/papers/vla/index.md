@@ -209,6 +209,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/mast-vla-skill-conditioned-adaptation-with-trajectory-affordance-priors/overview.svg)
 
+## [MAWAM: A Multi-Agent World-Action Model for Coordinated Manipulation](/papers/vla/mawam-multi-agent-world-action-model)
+
+![](/papers/assets/vla/mawam-multi-agent-world-action-model/architecture.svg)
+
 ## [Meituan-Robotics-0: A Vision-Language-Action Foundation Model for Desktop Manipulation](/papers/vla/meituan-robotics-0-desktop-manipulation)
 
 ![](/papers/assets/vla/meituan-robotics-0-desktop-manipulation/mr0-overview-figure1.png)
@@ -438,6 +442,10 @@ paper_sync: true
 ![](/papers/assets/vla/vla-zo-fast-zeroth-order-adaptation/overview.svg)
 
 ## [VLaRL: Augmenting Vision-Language-Action Models with Simulation-Trained Latent-Conditioned Residual RL](/papers/vla/vlarl-simulation-trained-latent-conditioned-residual-rl-for-vlas)
+
+## [WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation](/papers/vla/wevo-world-model-vla-optimization)
+
+![](/papers/assets/vla/wevo-world-model-vla-optimization/architecture.png)
 
 ## [When Plans Change, Remember: Replanning-Guided Visual Memory for Vision-Language-Action Models](/papers/vla/replanmem-vla-replanning-guided-visual-memory)
 
