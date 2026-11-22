@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ProSpace-VLM의 geometry-aware streaming architecture</title>
+  <desc id="desc">공간 요청과 순차 프레임을 visual token 및 3D geometry로 변환하고, 중간층에 geometry를 주입해 KV cache를 공간 기억으로 만든 뒤 wait 또는 respond를 결정하는 흐름</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071426"/><stop offset="1" stop-color="#102b45"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2364d8"/><stop offset="1" stop-color="#163d8f"/></linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0d9488"/><stop offset="1" stop-color="#0f5f66"/></linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#4c1d95"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity=".28"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#7dd3fc"/></marker>
+    <style>
+      .h1{font:700 38px 'Segoe UI','Noto Sans KR',sans-serif;fill:#f8fafc}.sub{font:20px 'Segoe UI','Noto Sans KR',sans-serif;fill:#b9d5ea}.k{font:700 22px 'Segoe UI','Noto Sans KR',sans-serif;fill:#fff}.t{font:18px 'Segoe UI','Noto Sans KR',sans-serif;fill:#e8f3fb}.s{font:16px 'Segoe UI','Noto Sans KR',sans-serif;fill:#b9d5ea}.eq{font:italic 17px 'Cambria Math','Segoe UI',serif;fill:#e0f2fe}.box{stroke:#7dd3fc;stroke-width:2}.arr{fill:none;stroke:#7dd3fc;stroke-width:4;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="70" y="66" class="h1">ProSpace-VLM: KV cache를 3D 공간 기억으로</text>
+  <text x="70" y="102" class="sub">논문 Figure 3·식 (1)–(4)를 바탕으로 재구성 — 모든 처리는 미래 frame을 보지 않는 causal streaming</text>
+
+  <rect x="55" y="155" width="260" height="150" rx="20" fill="#172d46" class="box" filter="url(#shadow)"/>
+  <text x="80" y="195" class="k">① 먼저 주어지는 요청</text>
+  <text x="80" y="232" class="t">“이 방에 다시 오면</text><text x="80" y="260" class="t">알려줘”</text>
+  <text x="80" y="288" class="s">query q · 응답 조건</text>
+
+  <rect x="55" y="365" width="260" height="260" rx="20" fill="#172d46" class="box" filter="url(#shadow)"/>
+  <text x="80" y="405" class="k">② 들어오는 frame</text>
+  <rect x="85" y="438" width="150" height="95" rx="8" fill="#28435f" stroke="#bae6fd"/>
+  <path d="M95 515 L135 474 L163 499 L190 462 L225 515 Z" fill="#4f8a79"/><circle cx="205" cy="460" r="12" fill="#fde68a"/>
+  <rect x="105" y="458" width="32" height="45" fill="#8b5e3c"/>
+  <text x="80" y="566" class="t">v₀ → v₁ → … → vₜ</text>
+  <text x="80" y="598" class="s">한 장씩, 1 fps 평가</text>
+
+  <path d="M315 495 C350 495 350 300 390 300" class="arr"/>
+  <path d="M315 495 C350 495 350 545 390 545" class="arr"/>
+
+  <rect x="390" y="195" width="285" height="205" rx="20" fill="url(#blue)" class="box" filter="url(#shadow)"/>
+  <text x="420" y="238" class="k">Vision encoder</text>
+  <text x="420" y="276" class="t">frame → visual tokens</text>
+  <g fill="#bfdbfe"><circle cx="440" cy="326" r="15"/><circle cx="485" cy="326" r="15"/><circle cx="530" cy="326" r="15"/><circle cx="575" cy="326" r="15"/><circle cx="620" cy="326" r="15"/></g>
+  <text x="420" y="370" class="eq">h⁽ˡ⁾ₜ,ⱼ</text>
+
+  <rect x="390" y="455" width="285" height="215" rx="20" fill="url(#teal)" class="box" filter="url(#shadow)"/>
+  <text x="420" y="498" class="k">Causal geometry encoder</text>
+  <text x="420" y="536" class="t">CUT3R / StreamVGGT</text>
+  <text x="420" y="574" class="t">3D point xₜ,ⱼ</text>
+  <text x="420" y="606" class="t">camera center cₜ + pose Rₜ</text>
+  <text x="420" y="642" class="eq">gₜ,ⱼ = [φ(xₜ,ⱼ), ψ(cₜ,Rₜ)]</text>
+
+  <path d="M675 300 L745 300" class="arr"/>
+  <path d="M675 560 C715 560 710 400 745 400" class="arr"/>
+
+  <rect x="745" y="195" width="350" height="300" rx="20" fill="url(#violet)" class="box" filter="url(#shadow)"/>
+  <text x="780" y="238" class="k">③ 중간층 geometry 주입</text>
+  <text x="780" y="280" class="t">token grid와 point map 정렬</text>
+  <rect x="790" y="315" width="255" height="55" rx="12" fill="#312e81" stroke="#c4b5fd"/>
+  <text x="815" y="350" class="t">layer별 lightweight MLP</text>
+  <text x="782" y="414" class="eq">h̃⁽ˡ⁾ₜ,ⱼ = h⁽ˡ⁾ₜ,ⱼ + fₗ(gₜ,ⱼ)</text>
+  <text x="782" y="452" class="s">초기~중간층: 좌표 주입</text>
+  <text x="782" y="478" class="s">후반층: 고수준 공간 reasoning</text>
+
+  <path d="M1095 345 L1165 345" class="arr"/>
+  <rect x="1165" y="165" width="370" height="365" rx="22" fill="#153552" class="box" filter="url(#shadow)"/>
+  <text x="1200" y="210" class="k">④ Geometry-aware KV cache</text>
+  <text x="1200" y="248" class="t">K/V + 공통 3D 좌표가 누적</text>
+  <g>
+    <rect x="1200" y="278" width="285" height="48" rx="8" fill="#1d4ed8"/><text x="1220" y="309" class="t">최근 frame: token 전체 보존</text>
+    <rect x="1200" y="340" width="285" height="48" rx="8" fill="#0f766e"/><text x="1220" y="371" class="t">오래된 frame: voxel당 1개</text>
+    <rect x="1200" y="402" width="285" height="48" rx="8" fill="#6d28d9"/><text x="1220" y="433" class="t">현재 token이 causal attention</text>
+  </g>
+  <text x="1200" y="486" class="s">별도 memory network 없이 기존 cache 재사용</text>
+
+  <path d="M1350 530 L1350 610" class="arr"/>
+  <rect x="1115" y="610" width="420" height="180" rx="22" fill="#183a32" stroke="#86efac" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1150" y="654" class="k">⑤ 매 frame wait / respond</text>
+  <text x="1150" y="693" class="eq">P(respond | q, v₀:ₜ) ≥ τ ?</text>
+  <rect x="1150" y="720" width="130" height="46" rx="23" fill="#475569"/><text x="1190" y="750" class="t">WAIT</text>
+  <rect x="1315" y="720" width="180" height="46" rx="23" fill="#16a34a"/><text x="1350" y="750" class="t">RESPOND</text>
+
+  <rect x="390" y="735" width="630" height="92" rx="16" fill="#10283d" stroke="#7dd3fc" stroke-dasharray="8 7"/>
+  <text x="425" y="772" class="k">학습</text>
+  <text x="505" y="772" class="t">geometry projection MLP + LLM LoRA</text>
+  <text x="425" y="807" class="s">decision-token cross-entropy · positive는 유효 시간창, absence는 끝까지 침묵</text>
+
+  <text x="70" y="865" class="s">재구성 출처: Thinking in Streams, Figure 3, Equations (1)–(4), arXiv:2611.25865v1</text>
+</svg>

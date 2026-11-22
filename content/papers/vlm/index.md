@@ -145,6 +145,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/the-answer-knows-where-to-look-zooming-before-mllms-answer/lookzoom-architecture.svg)
 
+## [Thinking in Streams: Proactive Spatial Reasoning with Vision-Language Models](/papers/vlm/thinking-in-streams-proactive-spatial-reasoning)
+
+![](/papers/assets/vlm/thinking-in-streams-proactive-spatial-reasoning/prospace-vlm-architecture.svg)
+
 ## [TRIAD: Benchmarking Omni-Modal Ambiguity in Multimodal Large Language Models](/papers/vlm/triad-benchmarking-omni-modal-ambiguity-in-multimodal-large-language-models)
 
 ![](/papers/assets/vlm/triad-benchmarking-omni-modal-ambiguity-in-multimodal-large-language-models/triad-evaluation-pipeline.svg)
