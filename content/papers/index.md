@@ -277,6 +277,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/quantize-by-doing-task-guided-mixed-precision-vla-quantization/overview.svg)
 
+### [R2-VLA: Risk-Controlled Test-Time Adaptation for Vision-Language-Action Models](/papers/vla/r2-vla-risk-controlled-test-time-adaptation)
+
+![](/papers/assets/vla/r2-vla-risk-controlled-test-time-adaptation/architecture.svg)
+
 ### [RAFT: Reasoning-Aligned Fine-Tuning Improves Robustness of VLA Post-Training](/papers/vla/raft-reasoning-aligned-fine-tuning)
 
 ![](/papers/assets/vla/raft-reasoning-aligned-fine-tuning/overview.svg)
@@ -286,10 +290,6 @@ paper_sync: true
 ![](/papers/assets/vla/ragevla-augmentation-grounded-encoding/architecture.svg)
 
 ### [RAVEL: Asynchronous Rolling Inference for Flow-Based Vision-Language-Action Models](/papers/vla/ravel-asynchronous-rolling-inference-for-flow-based-vlas)
-
-### [R2-VLA: Risk-Controlled Test-Time Adaptation for Vision-Language-Action Models](/papers/vla/r2-vla-risk-controlled-test-time-adaptation)
-
-![](/papers/assets/vla/r2-vla-risk-controlled-test-time-adaptation/architecture.svg)
 
 ### [REACT: Rolling Denoising and Dual Decoupling for Reactive Robot Control with VLA Models](/papers/vla/react-rolling-denoising-for-reactive-vla-control)
 
