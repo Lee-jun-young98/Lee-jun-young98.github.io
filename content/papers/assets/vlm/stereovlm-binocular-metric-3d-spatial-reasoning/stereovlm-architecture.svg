@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">StereoVLM 계층적 binocular instruction tuning 구조</title>
+  <desc id="desc">보정된 좌우 영상과 질문 및 카메라 보정값이 Qwen3-VL로 들어가고, point correspondence, disparity, metric depth에서 object 3D grounding으로 이어지는 stereo instruction과 일반 instruction을 함께 학습해 답을 생성한다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset="1" stop-color="#eef3ff"/></linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#334155"/></marker>
+    <style>.h1{font:700 38px 'Segoe UI','Noto Sans KR',sans-serif;fill:#0f172a}.h2{font:700 25px 'Segoe UI','Noto Sans KR',sans-serif;fill:#0f172a}.body{font:500 21px 'Segoe UI','Noto Sans KR',sans-serif;fill:#1e293b}.small{font:500 18px 'Segoe UI','Noto Sans KR',sans-serif;fill:#334155}.mono{font:600 20px Consolas,monospace;fill:#1e293b}.box{stroke-width:2.5;rx:22}.arrow{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="800" y="58" text-anchor="middle" class="h1">StereoVLM: 보정된 stereo에서 언어 기반 metric 3D로</text>
+  <text x="800" y="91" text-anchor="middle" class="small">논문 Figure 3 · Equations (3)–(6)을 바탕으로 재구성</text>
+  <rect x="55" y="145" width="330" height="620" fill="#ffffff" stroke="#60a5fa" class="box"/>
+  <text x="220" y="190" text-anchor="middle" class="h2">입력</text>
+  <rect x="90" y="225" width="120" height="150" rx="15" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><path d="M110 330 L145 285 L170 310 L198 266" fill="none" stroke="#2563eb" stroke-width="5"/><circle cx="135" cy="260" r="13" fill="#fbbf24"/><text x="150" y="405" text-anchor="middle" class="body">Left image</text>
+  <rect x="230" y="225" width="120" height="150" rx="15" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/><path d="M250 330 L285 285 L310 310 L338 266" fill="none" stroke="#4f46e5" stroke-width="5"/><circle cx="275" cy="260" r="13" fill="#fbbf24"/><text x="290" y="405" text-anchor="middle" class="body">Right image</text>
+  <text x="220" y="450" text-anchor="middle" class="small">ordered · rectified pair</text>
+  <rect x="90" y="490" width="260" height="105" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/><text x="220" y="530" text-anchor="middle" class="body">질문 q</text><text x="220" y="565" text-anchor="middle" class="small">pixel · object · task target</text>
+  <rect x="90" y="625" width="260" height="95" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="220" y="665" text-anchor="middle" class="body">camera calibration</text><text x="220" y="700" text-anchor="middle" class="mono">fₓ, B</text>
+  <path d="M385 455 C430 455 435 455 475 455" class="arrow"/>
+  <rect x="480" y="270" width="300" height="370" fill="#ede9fe" stroke="#7c3aed" class="box"/><text x="630" y="325" text-anchor="middle" class="h2">Qwen3-VL-Instruct</text><text x="630" y="365" text-anchor="middle" class="body">2B / 8B</text>
+  <rect x="525" y="405" width="210" height="80" rx="14" fill="#ffffff" stroke="#8b5cf6" stroke-width="2"/><text x="630" y="438" text-anchor="middle" class="body">vision + language</text><text x="630" y="468" text-anchor="middle" class="small">shared architecture</text>
+  <rect x="525" y="515" width="210" height="80" rx="14" fill="#ffffff" stroke="#8b5cf6" stroke-width="2"/><text x="630" y="548" text-anchor="middle" class="body">autoregressive</text><text x="630" y="578" text-anchor="middle" class="small">answer generation</text>
+  <path d="M780 455 C825 455 825 455 870 455" class="arrow"/>
+  <rect x="875" y="130" width="470" height="650" fill="#ffffff" stroke="#10b981" class="box"/><text x="1110" y="175" text-anchor="middle" class="h2">계층적 stereo supervision (25%)</text>
+  <rect x="915" y="210" width="390" height="130" rx="18" fill="#ecfeff" stroke="#0891b2" stroke-width="2.5"/><text x="1110" y="252" text-anchor="middle" class="h2">Point geometry · 15%</text><text x="1110" y="290" text-anchor="middle" class="body">correspondence → disparity → depth</text><text x="1110" y="322" text-anchor="middle" class="mono">d = uₗ − uᵣ   ·   Z = fₓB / d</text>
+  <path d="M1110 340 L1110 385" class="arrow"/>
+  <rect x="915" y="390" width="390" height="160" rx="18" fill="#ecfdf5" stroke="#059669" stroke-width="2.5"/><text x="1110" y="432" text-anchor="middle" class="h2">Object geometry · 10%</text><text x="1110" y="470" text-anchor="middle" class="body">언어 지칭 object의 대응·거리</text><text x="1110" y="505" text-anchor="middle" class="body">oriented 3D box · task target</text>
+  <rect x="915" y="595" width="390" height="135" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/><text x="1110" y="637" text-anchor="middle" class="h2">General instructions · 75%</text><text x="1110" y="674" text-anchor="middle" class="small">VLM · grounding · spatial · video</text><text x="1110" y="707" text-anchor="middle" class="small">tracking · robotics</text>
+  <path d="M1345 455 C1390 455 1390 455 1430 455" class="arrow"/>
+  <rect x="1435" y="330" width="125" height="250" rx="22" fill="#fff7ed" stroke="#f97316" stroke-width="2.5"/><text x="1497" y="380" text-anchor="middle" class="h2">출력</text><text x="1497" y="430" text-anchor="middle" class="body">답 token</text><text x="1497" y="470" text-anchor="middle" class="small">좌표</text><text x="1497" y="502" text-anchor="middle" class="small">거리</text><text x="1497" y="534" text-anchor="middle" class="small">3D box</text>
+  <rect x="455" y="805" width="690" height="62" rx="20" fill="#0f172a"/><text x="800" y="845" text-anchor="middle" style="font:600 22px 'Segoe UI','Noto Sans KR',sans-serif;fill:#ffffff">Full-parameter SFT · 3,000 steps · loss는 answer token에만 적용</text>
+</svg>

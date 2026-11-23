@@ -129,6 +129,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/scaling-laws-for-vision-language-fusion/fusion-scaling-law-pipeline.svg)
 
+## [StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning](/papers/vlm/stereovlm-binocular-metric-3d-spatial-reasoning)
+
+![](/papers/assets/vlm/stereovlm-binocular-metric-3d-spatial-reasoning/stereovlm-architecture.svg)
+
 ## [Stuck on Shuffle: On Attribute-Object Binding in Vision-Language Models](/papers/vlm/stuck-on-shuffle-attribute-object-binding-in-vision-language-models)
 
 ![](/papers/assets/vlm/stuck-on-shuffle-attribute-object-binding-in-vision-language-models/saber-text-only-binding-pipeline.svg)
