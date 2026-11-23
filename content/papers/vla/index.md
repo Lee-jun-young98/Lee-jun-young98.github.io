@@ -149,6 +149,10 @@ paper_sync: true
 
 ## [ForeTac-VLA: A Forecasting-Based Tactile-Vision-Language-Action Model for Contact-Rich Robotic Manipulation](/papers/vla/foretac-vla-forecasting-based-tactile-vision-language-action-model)
 
+## [FORTH: Grounding Tactile VLA Execution via Forward-Only Proxy-Control Pairing](/papers/vla/forth-tactile-vla-forward-only-grounding)
+
+![](/papers/assets/vla/forth-tactile-vla-forward-only-grounding/architecture.svg)
+
 ## [Forward Dynamics Models: Action-to-Future Learning for Robot Policies](/papers/vla/forward-dynamics-models-action-to-future-learning)
 
 ![](/papers/assets/vla/forward-dynamics-models-action-to-future-learning/overview.svg)
@@ -194,6 +198,10 @@ paper_sync: true
 ## [LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC](/papers/vla/lewam-jepa-world-action-model-with-diffusion-steering)
 
 ![](/papers/assets/vla/lewam-jepa-world-action-model-with-diffusion-steering/overview.svg)
+
+## [LoCo-WAM: Test-Time Training as Long Context for World-Action Models](/papers/vla/loco-wam-test-time-long-context)
+
+![](/papers/assets/vla/loco-wam-test-time-long-context/architecture.svg)
 
 ## [LoopWAM: Closed-Loop Generalist Policy Improvement from Deployment Rollouts](/papers/vla/loopwam-closed-loop-generalist-policy-improvement)
 

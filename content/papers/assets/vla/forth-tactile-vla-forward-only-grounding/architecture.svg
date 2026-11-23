@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">FORTH 촉각 VLA 실행 구조</title>
+  <desc id="desc">촉각 표면 입력을 layer-local Forward-Forward trunk로 표현하고 token-parallel zeroth-order rank-8 adapter로 action head를 조정한 뒤 SlipGuard가 전단력 대 수직력 비율로 그립을 폐루프 보정하는 구조</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker>
+    <style>
+      text{font-family:"Noto Sans KR","Malgun Gothic",Arial,sans-serif;fill:#0f172a}.h{font-size:25px;font-weight:700}.t{font-size:18px}.s{font-size:15px}.box{stroke-width:2;rx:16}.a{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#7c3aed;stroke-width:3;fill:none;stroke-dasharray:9 7;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="50" y="48" class="h">FORTH: proxy loss와 물리 제어 관측량을 단계별로 짝짓기</text>
+  <rect x="45" y="88" width="220" height="145" class="box" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="155" y="122" text-anchor="middle" class="h">입력</text><text x="155" y="157" text-anchor="middle" class="t">촉각 표면 I + RGB·언어</text><text x="155" y="188" text-anchor="middle" class="s">Patchify → 48×d token</text><text x="155" y="213" text-anchor="middle" class="s">힘 시계열 채널 포함</text>
+  <rect x="325" y="82" width="250" height="165" class="box" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="450" y="116" text-anchor="middle" class="h">표현 L1</text><text x="450" y="151" text-anchor="middle" class="t">2× Forward-Forward block</text><text x="450" y="182" text-anchor="middle" class="s">h=tanh(xW), f=h−μ</text><text x="450" y="207" text-anchor="middle" class="s">local goodness g=Σf²</text><text x="450" y="230" text-anchor="middle" class="s">전역 backprop 없이 접촉 구조 보존</text>
+  <rect x="635" y="82" width="250" height="165" class="box" fill="#fef3c7" stroke="#d97706"/>
+  <text x="760" y="116" text-anchor="middle" class="h">업데이트 L2</text><text x="760" y="151" text-anchor="middle" class="t">token-parallel zeroth-order</text><text x="760" y="181" text-anchor="middle" class="s">±σϵ forward loss 차분</text><text x="760" y="207" text-anchor="middle" class="s">rank-8 action-head adapter</text><text x="760" y="230" text-anchor="middle" class="s">1 Hz · backbone 고정</text>
+  <rect x="945" y="88" width="210" height="145" class="box" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="1050" y="122" text-anchor="middle" class="h">VLA 정책</text><text x="1050" y="158" text-anchor="middle" class="t">4-bit VLA · 30 Hz</text><text x="1050" y="190" text-anchor="middle" class="s">로봇 action +</text><text x="1050" y="214" text-anchor="middle" class="s">nominal grip force</text>
+  <path d="M265 160 H320" class="a"/><path d="M575 160 H630" class="a"/><path d="M885 160 H940" class="a"/>
+  <rect x="120" y="350" width="310" height="190" class="box" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="275" y="387" text-anchor="middle" class="h">SlipGuard L3 · 500 Hz</text><text x="275" y="425" text-anchor="middle" class="t">ρₜ = Fˢₜ / Fⁿₜ</text><text x="275" y="456" text-anchor="middle" class="s">τ = 평균(ρ) + 3σρ</text><text x="275" y="485" text-anchor="middle" class="s">2-frame debounce → bounded correction</text><text x="275" y="515" text-anchor="middle" class="s">Fcmd = Fnom + min(γg(ρ−τ), ΔFmax)</text>
+  <rect x="525" y="350" width="250" height="190" class="box" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="650" y="390" text-anchor="middle" class="h">로봇·물체 접촉</text><text x="650" y="430" text-anchor="middle" class="t">action 실행 / 그립 조절</text><text x="650" y="466" text-anchor="middle" class="s">법선력 Fⁿ · 전단력 Fˢ</text><text x="650" y="496" text-anchor="middle" class="s">slip·변형·task success 관측</text>
+  <rect x="865" y="350" width="290" height="190" class="box" fill="#f1f5f9" stroke="#475569"/>
+  <text x="1010" y="390" text-anchor="middle" class="h">paired grounding 검증</text><text x="1010" y="430" text-anchor="middle" class="t">L1 ↔ contact geometry</text><text x="1010" y="463" text-anchor="middle" class="t">L2 ↔ true-gradient alignment</text><text x="1010" y="496" text-anchor="middle" class="t">L3 ↔ slip·damage 감소</text>
+  <path d="M1050 233 V300 H650 V345" class="a"/><path d="M525 445 H435" class="a"/><path d="M430 500 H520" class="a"/><path d="M775 445 H860" class="a"/><path d="M650 350 V300 H275 V345" class="dash"/>
+  <text x="50" y="605" class="t" font-weight="700">학습/적응:</text><text x="165" y="605" class="t">각 FF block은 local goodness로 학습하고, adapter는 forward-only 차분으로 갱신한다.</text>
+  <text x="50" y="641" class="t" font-weight="700">추론:</text><text x="125" y="641" class="t">VLA action을 실행하면서 SlipGuard가 촉각 비율을 감시해 slip 직전에 그립만 제한적으로 보정한다.</text>
+</svg>
