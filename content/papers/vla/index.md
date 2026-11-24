@@ -309,6 +309,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/reki-registering-knowledge-in-vlas/overview.svg)
 
+## [RMR-VLA: Recurrent Memory Reasoning for Vision-Language-Action Models](/papers/vla/rmr-vla-recurrent-memory-reasoning)
+
+![](/papers/assets/vla/rmr-vla-recurrent-memory-reasoning/architecture.svg)
+
 ## [Robo-MLT: Dual-System Robotic Manipulation for Long-Horizon Medical Laboratory Tasks](/papers/vla/robomlt-dual-system-medical-laboratory-manipulation)
 
 ![](/papers/assets/vla/robomlt-dual-system-medical-laboratory-manipulation/overview.svg)
@@ -332,6 +336,10 @@ paper_sync: true
 ## [Same Scene, Different Task: Skill Alignment for Compositional Generalization in VLAs](/papers/vla/craft-skill-alignment-for-compositional-generalization-in-vlas)
 
 ![](/papers/assets/vla/craft-skill-alignment-for-compositional-generalization-in-vlas/overview.svg)
+
+## [SANA-Robot: Efficient World Action Model with Hybrid Memory](/papers/vla/sana-robot-efficient-world-action-model-hybrid-memory)
+
+![](/papers/assets/vla/sana-robot-efficient-world-action-model-hybrid-memory/architecture.svg)
 
 ## [SAVLA: Symmetry-Aware Vision-Language-Action Models for Robotic Manipulation](/papers/vla/savla-symmetry-aware-vision-language-action-models-for-robotic-manipulation)
 

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">RMR-VLA recurrent memory reasoning 구조</title>
+  <desc id="desc">현재 관측과 이전 메모리가 write pass에서 evidence, event, state, subgoal을 만들고 subgoal이 act pass와 다음 update를 조건화하는 구조</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#ecfeff"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity=".13"/></filter>
+    <style>.h{font:700 28px 'Segoe UI',sans-serif;fill:#0f172a}.t{font:600 17px 'Segoe UI',sans-serif;fill:#0f172a}.s{font:14px 'Segoe UI',sans-serif;fill:#475569}.w{fill:#fff;stroke:#cbd5e1;stroke-width:2;rx:16;filter:url(#shadow)}.a{fill:none;stroke:#334155;stroke-width:2.5;marker-end:url(#arrow)}.p{fill:none;stroke:#7c3aed;stroke-width:2.5;stroke-dasharray:8 7;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <text x="58" y="58" class="h">RMR-VLA — 기억을 현재 subgoal로 바꾸는 재귀 interface</text>
+  <text x="58" y="88" class="s">논문 Figure 2와 §3을 바탕으로 재구성 · 보라색 점선: 다음 update로 이어지는 memory</text>
+
+  <rect x="55" y="142" width="210" height="194" class="w"/>
+  <text x="86" y="180" class="t">현재 입력</text>
+  <rect x="84" y="204" width="152" height="38" rx="9" fill="#dbeafe"/><text x="109" y="229" class="s">multi-view 관측</text>
+  <rect x="84" y="253" width="152" height="38" rx="9" fill="#fef3c7"/><text x="108" y="278" class="s">task instruction</text>
+  <path d="M265 239 H326" class="a"/>
+
+  <rect x="326" y="120" width="430" height="250" class="w"/>
+  <text x="360" y="158" class="t">Write pass — 같은 VLM이 trace 생성</text>
+  <rect x="360" y="190" width="85" height="70" rx="10" fill="#e0f2fe"/><text x="374" y="220" class="t">evidence</text><text x="376" y="244" class="s">새 관측</text>
+  <rect x="462" y="190" width="85" height="70" rx="10" fill="#cffafe"/><text x="481" y="220" class="t">event</text><text x="478" y="244" class="s">상태 변화</text>
+  <rect x="564" y="190" width="85" height="70" rx="10" fill="#ede9fe"/><text x="583" y="220" class="t">state</text><text x="578" y="244" class="s">누적 진행</text>
+  <rect x="666" y="190" width="60" height="70" rx="10" fill="#fae8ff"/><text x="675" y="220" class="t">goal</text><text x="675" y="244" class="s">ground</text>
+  <path d="M445 225 H462 M547 225 H564 M649 225 H666" class="a"/>
+  <text x="360" y="300" class="s">scene evidence가 있을 때 state 수정 → 현재 좌표의 subgoal 생성</text>
+  <text x="360" y="330" class="s">지도학습: trace CE + action flow loss를 공동 최적화</text>
+
+  <rect x="825" y="142" width="320" height="194" class="w"/>
+  <text x="860" y="180" class="t">Act pass</text>
+  <rect x="860" y="204" width="112" height="82" rx="11" fill="#dcfce7"/><text x="881" y="234" class="t">VLM encode</text><text x="878" y="260" class="s">관측 + subgoal</text>
+  <rect x="1000" y="204" width="112" height="82" rx="11" fill="#fee2e2"/><text x="1019" y="234" class="t">Action expert</text><text x="1022" y="260" class="s">action chunk</text>
+  <path d="M756 245 H825 M972 245 H1000" class="a"/>
+
+  <path d="M695 370 V430 H300 V336" class="p"/>
+  <rect x="310" y="416" width="445" height="100" rx="16" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="343" y="451" class="t">재귀 memory: state + grounded subgoal만 전달</text>
+  <text x="343" y="482" class="s">사라진 object identity, 반복 횟수, task progress가 다음 action target을 결정</text>
+
+  <rect x="825" y="402" width="320" height="167" class="w"/>
+  <text x="860" y="440" class="t">GRPO rollout 후학습</text>
+  <text x="860" y="474" class="s">reward = terminal success</text>
+  <text x="930" y="499" class="s">+ subgoal correctness</text>
+  <text x="860" y="531" class="s">업데이트: VLM LoRA (memory token)</text>
+  <text x="860" y="555" class="s">고정: base VLM + action expert</text>
+  <path d="M985 402 V346" class="a"/>
+
+  <rect x="55" y="555" width="700" height="72" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="83" y="588" class="t">핵심 연결</text>
+  <text x="205" y="588" class="s">과거 visual evidence → 갱신된 symbolic state → 현재 장면에 grounding된 subgoal → continuous control</text>
+  <text x="205" y="612" class="s">action distribution은 그대로 두고 memory decision의 likelihood만 rollout reward로 개선</text>
+</svg>

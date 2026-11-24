@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">SANA-Robot hybrid-memory world-action model 구조</title>
+  <desc id="desc">다중 카메라와 로봇 상태가 video VAE와 hybrid DiT를 거쳐 action과 미래 video를 만들고, GDN 전역 상태가 다음 chunk로 순환하는 구조</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#eef2ff"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#334155"/></marker>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity=".13"/></filter>
+    <style>.h{font:700 28px 'Segoe UI',sans-serif;fill:#0f172a}.t{font:600 17px 'Segoe UI',sans-serif;fill:#0f172a}.s{font:14px 'Segoe UI',sans-serif;fill:#475569}.w{fill:white;stroke:#cbd5e1;stroke-width:2;rx:16;filter:url(#shadow)}.a{fill:none;stroke:#334155;stroke-width:2.5;marker-end:url(#arrow)}.dash{fill:none;stroke:#7c3aed;stroke-width:2.5;stroke-dasharray:8 7;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <text x="60" y="58" class="h">SANA-Robot — 고정 비용 hybrid memory WAM</text>
+  <text x="60" y="88" class="s">논문 Figure 2와 §§2, 4–5를 바탕으로 재구성 · 실선: 추론 흐름 · 점선: recurrent memory</text>
+
+  <rect x="55" y="145" width="205" height="205" class="w"/>
+  <text x="82" y="182" class="t">입력</text>
+  <rect x="82" y="205" width="150" height="38" rx="9" fill="#dbeafe"/><text x="100" y="230" class="s">다중 camera view</text>
+  <rect x="82" y="253" width="150" height="38" rx="9" fill="#dcfce7"/><text x="104" y="278" class="s">proprioception</text>
+  <rect x="82" y="301" width="150" height="38" rx="9" fill="#fef3c7"/><text x="101" y="326" class="s">언어 instruction</text>
+
+  <rect x="315" y="166" width="175" height="164" class="w"/>
+  <text x="350" y="202" class="t">Tokenization</text>
+  <text x="345" y="237" class="s">camera별 Video VAE</text>
+  <text x="345" y="264" class="s">o / z latent</text>
+  <text x="345" y="291" class="s">2×2 mRoPE 배치</text>
+  <path d="M260 248 H315" class="a"/>
+
+  <rect x="545" y="125" width="365" height="305" class="w"/>
+  <text x="580" y="165" class="t">Hybrid DiT × 8 blocks</text>
+  <rect x="580" y="194" width="295" height="78" rx="12" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="608" y="224" class="t">GDN × 3</text><text x="608" y="250" class="s">전 episode → 고정 크기 전역 state</text>
+  <rect x="580" y="292" width="295" height="78" rx="12" fill="#cffafe" stroke="#0891b2" stroke-width="2"/>
+  <text x="608" y="322" class="t">Softmax × 1</text><text x="608" y="348" class="s">최근 chunk sliding window의 세부 관계</text>
+  <text x="580" y="405" class="s">video/action token별 noise level로 역할 전환</text>
+  <path d="M490 248 H545" class="a"/>
+
+  <rect x="970" y="132" width="175" height="112" class="w"/>
+  <text x="1004" y="168" class="t">Action head</text>
+  <text x="1005" y="198" class="s">continuous chunk</text>
+  <text x="1005" y="222" class="s">→ robot 30 Hz</text>
+  <path d="M910 190 H970" class="a"/>
+
+  <rect x="970" y="286" width="175" height="112" class="w"/>
+  <text x="997" y="322" class="t">Video head</text>
+  <text x="995" y="352" class="s">action-conditioned</text>
+  <text x="995" y="376" class="s">future rollout</text>
+  <path d="M910 342 H970" class="a"/>
+
+  <path d="M745 430 V500 H500 V330" class="dash"/>
+  <rect x="545" y="500" width="365" height="106" rx="16" fill="#faf5ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="580" y="535" class="t">다음 chunk의 memory phase</text>
+  <text x="580" y="565" class="s">GDN recurrent state를 재사용 · context 길이와 무관한 비용</text>
+  <text x="580" y="590" class="s">action 실행과 memory update를 비동기 overlap</text>
+
+  <rect x="55" y="455" width="390" height="151" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="82" y="493" class="t">학습 모드 선택</text>
+  <text x="82" y="526" class="s">Policy: 현재 관측 + 언어 → action denoising</text>
+  <text x="82" y="554" class="s">FDM: action 조건 → 미래 video latent</text>
+  <text x="82" y="582" class="s">IDM: 관측 transition → action 복원</text>
+</svg>
