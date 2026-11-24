@@ -583,6 +583,10 @@ paper_sync: true
 
 ![](/papers/assets/vlm/reinforcement-learning-with-visually-attributable-on-policy-self-distillation/vag-training-pipeline.svg)
 
+### [Replay Before You Reply: Second-Look Prompting for Unified Multimodal Encoding](/papers/vlm/replay-before-you-reply-second-look-prompting)
+
+![](/papers/assets/vlm/replay-before-you-reply-second-look-prompting/second-look-causal-attention.png)
+
 ### [Rethinking Projector Training in Multimodal LLMs](/papers/vlm/rethinking-projector-training-in-multimodal-llms)
 
 ![](/papers/assets/vlm/rethinking-projector-training-in-multimodal-llms/portal-architecture.svg)
