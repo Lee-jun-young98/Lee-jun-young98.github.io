@@ -13,6 +13,10 @@ paper_sync: true
 
 ## [Benchmarking the Explanatory Quality of Open-Weight Vision-Language Models in Face Recognition](/papers/vlm/benchmarking-the-explanatory-quality-of-open-weight-vision-language-models-in-face-recognition)
 
+## [BioLoom: Scaling Biomedical Vision-Language Models by Learning from the Structure of Scientific Articles](/papers/vlm/bioloom-structure-aware-biomedical-vision-language-pretraining)
+
+![](/papers/assets/vlm/bioloom-structure-aware-biomedical-vision-language-pretraining/bioloom-architecture.svg)
+
 ## [Beyond Modality Preference: Controlling Multimodal Arbitration under Modality Conflict in MLLMs](/papers/vlm/beyond-modality-preference-controlling-multimodal-arbitration)
 
 ![](/papers/assets/vlm/beyond-modality-preference-controlling-multimodal-arbitration/arbitration-head-steering.svg)

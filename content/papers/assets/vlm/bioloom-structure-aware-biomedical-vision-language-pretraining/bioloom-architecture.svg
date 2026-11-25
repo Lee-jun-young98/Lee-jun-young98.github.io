@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">BioLoom 구조 인식 biomedical vision-language pretraining 파이프라인</title>
+  <desc id="desc">논문의 전체 그림, 캡션, 본문 문단에서 panel과 설명을 만들고 네 종류의 image-text 관계를 masked loss와 relation loss로 학습해 image-text embedding을 얻는 흐름</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/><stop offset="1" stop-color="#eef3ff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#375a9e"/>
+    </marker>
+    <style>
+      .h{font:700 28px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#17233c}.t{font:600 21px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#24324d}.s{font:400 17px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#45536c}.tiny{font:400 15px 'Noto Sans KR','Malgun Gothic',sans-serif;fill:#536078}.box{fill:#fff;stroke:#a9b9d6;stroke-width:2}.arrow{stroke:#375a9e;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" rx="24" fill="url(#bg)"/>
+  <text x="70" y="68" class="h">1. 논문 구조에서 Loom52M pair 만들기</text>
+  <text x="620" y="68" class="h">2. 관계를 학습 신호로 변환</text>
+  <text x="1190" y="68" class="h">3. Dual encoder 학습·추론</text>
+
+  <rect x="60" y="105" width="420" height="270" rx="22" class="box"/>
+  <rect x="90" y="145" width="135" height="155" rx="10" fill="#f3f6fb" stroke="#7f94b7" stroke-width="2"/>
+  <rect x="108" y="166" width="45" height="44" fill="#b8d5e8"/><rect x="162" y="166" width="45" height="44" fill="#efc4c4"/>
+  <rect x="108" y="219" width="99" height="30" fill="#d9e3ba"/><path d="M112 282 L132 260 L151 274 L174 251 L202 280" fill="none" stroke="#7b67a8" stroke-width="4"/>
+  <text x="95" y="329" class="s">whole figure</text>
+  <rect x="255" y="140" width="190" height="60" rx="10" fill="#fff2d8" stroke="#d7ad57" stroke-width="2"/><text x="277" y="176" class="t">원 caption</text>
+  <rect x="255" y="220" width="190" height="92" rx="10" fill="#e9f5ee" stroke="#65a77e" stroke-width="2"/><text x="274" y="258" class="t">본문 문단</text><text x="274" y="285" class="s">figure mention ≤ 2</text>
+  <text x="82" y="354" class="tiny">입력: article–figure 연결을 유지</text>
+
+  <path d="M480 240 L560 240" class="arrow"/>
+  <rect x="555" y="105" width="340" height="270" rx="22" class="box"/>
+  <text x="592" y="145" class="t">Panel annotation</text>
+  <rect x="590" y="170" width="115" height="95" rx="10" fill="#edf3fa" stroke="#748fb4" stroke-width="2"/>
+  <path d="M605 244 L625 211 L645 229 L672 194 L690 244" fill="none" stroke="#4e7faa" stroke-width="5"/>
+  <text x="594" y="292" class="s">panel crop</text>
+  <rect x="730" y="166" width="135" height="62" rx="10" fill="#e7f5ff" stroke="#5aa5d1" stroke-width="2"/><text x="748" y="191" class="s">visual</text><text x="741" y="214" class="s">description</text>
+  <rect x="730" y="244" width="135" height="70" rx="10" fill="#f1eaff" stroke="#9274c4" stroke-width="2"/><text x="744" y="271" class="s">contextual</text><text x="749" y="295" class="s">caption</text>
+  <text x="585" y="344" class="tiny">39.3M panel + 13.1M whole figure</text>
+
+  <path d="M895 240 L955 240" class="arrow"/>
+  <rect x="945" y="105" width="560" height="270" rx="22" class="box"/>
+  <text x="980" y="145" class="t">anchor image에 대한 4가지 text 관계</text>
+  <rect x="980" y="170" width="230" height="72" rx="12" fill="#ffe8e8" stroke="#dc6868" stroke-width="2"/><text x="1000" y="199" class="t">Exact pair</text><text x="1000" y="225" class="s">같은 image → 강한 positive</text>
+  <rect x="1235" y="170" width="235" height="72" rx="12" fill="#fff0f4" stroke="#dc88a3" stroke-width="2"/><text x="1255" y="199" class="t">Semi-positive</text><text x="1255" y="225" class="s">같은 figure의 sibling</text>
+  <rect x="980" y="262" width="230" height="72" rx="12" fill="#f0f2f6" stroke="#9099aa" stroke-width="2"/><text x="1000" y="291" class="t">Masked pair</text><text x="1000" y="317" class="s">같은 article, 다른 figure</text>
+  <rect x="1235" y="262" width="235" height="72" rx="12" fill="#e7f0ff" stroke="#5382c5" stroke-width="2"/><text x="1255" y="291" class="t">Hard negative</text><text x="1255" y="317" class="s">다른 article, 같은 type</text>
+
+  <path d="M790 390 L790 465" class="arrow"/>
+  <rect x="360" y="460" width="880" height="170" rx="22" class="box"/>
+  <rect x="400" y="500" width="350" height="90" rx="16" fill="#fff7e8" stroke="#dda847" stroke-width="2"/>
+  <text x="435" y="535" class="t">Masked contrastive loss</text><text x="435" y="566" class="s">exact 정렬 · related pair는 denominator에서 제외</text>
+  <text x="775" y="550" class="h">+</text>
+  <rect x="850" y="500" width="350" height="90" rx="16" fill="#eef4ff" stroke="#5c84c5" stroke-width="2"/>
+  <text x="895" y="535" class="t">Relation loss (λ=0.05)</text><text x="885" y="566" class="s">semi-positive 정렬 · same-type negative ×1.1</text>
+
+  <path d="M800 630 L800 690" class="arrow"/>
+  <rect x="250" y="685" width="1100" height="160" rx="22" class="box"/>
+  <text x="282" y="715" class="tiny">image</text><rect x="300" y="730" width="280" height="70" rx="16" fill="#e8f3ff" stroke="#4f86ba" stroke-width="2"/><text x="367" y="762" class="t">ViT-L/14</text><text x="339" y="789" class="s">image encoder</text>
+  <text x="637" y="715" class="tiny">text</text><rect x="655" y="730" width="290" height="70" rx="16" fill="#f2eaff" stroke="#8c6bb8" stroke-width="2"/><text x="680" y="762" class="t">BioClinical ModernBERT</text><text x="736" y="789" class="s">text encoder</text>
+  <path d="M580 750 C760 660 930 690 1030 748" class="arrow"/>
+  <path d="M945 780 L1030 780" class="arrow"/>
+  <rect x="1035" y="718" width="260" height="94" rx="16" fill="#e9f7ee" stroke="#4f9a69" stroke-width="2"/><text x="1093" y="755" class="t">공통 embedding</text><text x="1067" y="785" class="s">zero-shot 분류 · 양방향 검색</text>
+  <text x="298" y="830" class="tiny">학습: 두 encoder를 jointly update</text><text x="1028" y="830" class="tiny">추론: 관계 label·annotation 불필요</text>
+</svg>
