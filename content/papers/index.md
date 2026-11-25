@@ -151,6 +151,10 @@ paper_sync: true
 
 ### [ForeTac-VLA: A Forecasting-Based Tactile-Vision-Language-Action Model for Contact-Rich Robotic Manipulation](/papers/vla/foretac-vla-forecasting-based-tactile-vision-language-action-model)
 
+### [FoveaWAM: Role-Aware 4D World-Action Modeling for Dynamic Manipulation](/papers/vla/foveawam-role-aware-4d-dynamic-manipulation)
+
+![](/papers/assets/vla/foveawam-role-aware-4d-dynamic-manipulation/architecture.png)
+
 ### [FORTH: Grounding Tactile VLA Execution via Forward-Only Proxy-Control Pairing](/papers/vla/forth-tactile-vla-forward-only-grounding)
 
 ![](/papers/assets/vla/forth-tactile-vla-forward-only-grounding/architecture.svg)
@@ -174,6 +178,10 @@ paper_sync: true
 ### [H-VLA: Hierarchical Vision-Language-Action Model with Key-Action Reasoning and Motion Planning in a Unified Action Space](/papers/vla/h-vla-hierarchical-vision-language-action-model-with-key-action-reasoning)
 
 ### [HIL-UMI: Bringing Human-in-the-Loop Post-Training of Vision-Language-Action Models to Universal Manipulation Interface](/papers/vla/hil-umi-human-in-the-loop-post-training-of-vision-language-action-models)
+
+### [Hi3R-VLA: Grounding Semantics and Actions in 3D](/papers/vla/hi3r-vla-grounding-semantics-actions-in-3d)
+
+![](/papers/assets/vla/hi3r-vla-grounding-semantics-actions-in-3d/architecture.svg)
 
 ### [HuRo: Robotizing Human Videos for Scalable VLA Pretraining](/papers/vla/huro-robotizing-human-videos-for-scalable-vla-pretraining)
 
