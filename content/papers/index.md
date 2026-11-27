@@ -17,6 +17,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
 
+### [Aegis-VLA: Reliability-Gated Action Refinement](/papers/vla/aegis-vla-reliability-gated-action-refinement)
+
+![](/papers/assets/vla/aegis-vla-reliability-gated-action-refinement/architecture.svg)
+
 ### [AE-VLA: Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models](/papers/vla/ae-vla-arm-wise-compositional-generalization)
 
 ![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
@@ -164,6 +168,10 @@ paper_sync: true
 ![](/papers/assets/vla/foveawam-role-aware-4d-dynamic-manipulation/architecture.png)
 
 ### [FRAM: Trajectory-Guided Visual Feature Selection for Compact Language-Conditioned Robot Manipulation](/papers/vla/fram-trajectory-guided-visual-feature-selection-for-compact-robot-manipulation)
+
+### [FreshVLA: Frequency-Regularized Hierarchical Latent Actions](/papers/vla/freshvla-frequency-regularized-hierarchical-latent-actions)
+
+![](/papers/assets/vla/freshvla-frequency-regularized-hierarchical-latent-actions/architecture.svg)
 
 ### [FRED: Self-Distilling Future Video Representations for World Action Models](/papers/vla/fred-self-distilling-future-video-representations)
 
