@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">VAPOR의 head-wise visual attention Persist와 Refresh 구조</title>
+  <desc id="desc">Prefill에서 visual attention consistency와 low-rank visual key를 준비한다. 디코딩 때 각 attention head는 proxy visual mass와 cache age를 보고 cached visual output을 재사용하거나 full visual KV에 exact attention을 수행한다. Text attention은 매 step 갱신된다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset="1" stop-color="#eef2ff"/></linearGradient>
+    <linearGradient id="prefill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f4ff"/><stop offset="1" stop-color="#d5e7ff"/></linearGradient>
+    <linearGradient id="persist" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9fff6"/><stop offset="1" stop-color="#c9f5df"/></linearGradient>
+    <linearGradient id="refresh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1e8"/><stop offset="1" stop-color="#ffd8bd"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1f2f46" flood-opacity="0.15"/></filter>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 Z" fill="#334155"/></marker>
+    <marker id="greenArrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 Z" fill="#0e8a63"/></marker>
+    <marker id="orangeArrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L11,5.5 L0,11 Z" fill="#c76a24"/></marker>
+    <style>
+      .h1{font:700 34px 'Segoe UI','Noto Sans KR',sans-serif;fill:#14213a}.h2{font:700 23px 'Segoe UI','Noto Sans KR',sans-serif;fill:#17233b}.body{font:18px 'Segoe UI','Noto Sans KR',sans-serif;fill:#26364d}.small{font:15px 'Segoe UI','Noto Sans KR',sans-serif;fill:#526174}.mono{font:600 17px Consolas,'Segoe UI',sans-serif;fill:#27364c}.pill{font:700 15px 'Segoe UI','Noto Sans KR',sans-serif;fill:#fff}.line{stroke:#334155;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" rx="28" fill="url(#bg)"/>
+  <text x="800" y="56" text-anchor="middle" class="h1">VAPOR: 시각 근거는 유지하고, 필요할 때만 다시 읽기</text>
+  <text x="800" y="88" text-anchor="middle" class="small">논문 Figure 2와 Eqs. 3-10을 바탕으로 재구성 · visual output만 시간축으로 reuse</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="145" width="390" height="625" rx="24" fill="url(#prefill)" stroke="#6c94ce" stroke-width="2"/>
+    <rect x="90" y="175" width="105" height="34" rx="17" fill="#315f9c"/><text x="143" y="198" text-anchor="middle" class="pill">PREFILL</text>
+    <text x="250" y="250" text-anchor="middle" class="h2">입력 준비: 한 번만 계산</text>
+    <g><rect x="95" y="290" width="310" height="115" rx="18" fill="#fff" stroke="#9fb8da" stroke-width="2"/>
+      <text x="250" y="328" text-anchor="middle" class="h2">Prompt visual consistency</text>
+      <text x="250" y="360" text-anchor="middle" class="body">prompt token들의 attention overlap</text>
+      <text x="250" y="390" text-anchor="middle" class="mono">C → base threshold θM</text></g>
+    <path d="M250 405 V450" class="line"/>
+    <g><rect x="95" y="450" width="310" height="135" rx="18" fill="#fff" stroke="#9fb8da" stroke-width="2"/>
+      <text x="250" y="492" text-anchor="middle" class="h2">Visual key low-rank 준비</text>
+      <text x="250" y="527" text-anchor="middle" class="mono">KV ≈ Ur Σr Vrᵀ</text>
+      <text x="250" y="560" text-anchor="middle" class="body">기본 rank r = 16</text></g>
+    <g><rect x="95" y="630" width="310" height="95" rx="18" fill="#17233b"/>
+      <text x="250" y="670" text-anchor="middle" class="pill">full visual KV는 보존</text>
+      <text x="250" y="703" text-anchor="middle" class="pill">token을 prune하지 않음</text></g>
+  </g>
+
+  <path d="M445 450 H515" class="line"/>
+  <g filter="url(#shadow)">
+    <rect x="515" y="190" width="350" height="530" rx="24" fill="#fff" stroke="#8794a8" stroke-width="2"/>
+    <rect x="550" y="220" width="112" height="34" rx="17" fill="#475569"/><text x="606" y="243" text-anchor="middle" class="pill">DECODING</text>
+    <text x="690" y="292" text-anchor="middle" class="h2">각 head가 독립적으로 판단</text>
+    <g><rect x="555" y="330" width="270" height="112" rx="18" fill="#f3f6fb" stroke="#a8b4c5" stroke-width="2"/>
+      <text x="690" y="368" text-anchor="middle" class="h2">현재 query qt</text>
+      <text x="690" y="402" text-anchor="middle" class="body">text logits는 exact 계산</text>
+      <text x="690" y="430" text-anchor="middle" class="small">ūₜ는 매 token 갱신</text></g>
+    <path d="M690 442 V478" class="line"/>
+    <g><rect x="555" y="478" width="270" height="105" rx="18" fill="#f1edff" stroke="#8b78c7" stroke-width="2"/>
+      <text x="690" y="518" text-anchor="middle" class="h2">Proxy visual mass</text>
+      <text x="690" y="553" text-anchor="middle" class="mono">MP,t (low-rank logits)</text></g>
+    <path d="M690 583 V618" class="line"/>
+    <g><path d="M690 618 L805 660 L690 702 L575 660 Z" fill="#fff" stroke="#6d5cb2" stroke-width="3"/>
+      <text x="690" y="654" text-anchor="middle" class="body">MP,t ≥ τh,t ?</text>
+      <text x="690" y="680" text-anchor="middle" class="small">또는 cache age = D</text></g>
+  </g>
+
+  <path d="M805 660 H930" fill="none" stroke="#c76a24" stroke-width="3" marker-end="url(#orangeArrow)"/><text x="865" y="645" text-anchor="middle" class="small" fill="#a94e10">예 / 강제 갱신</text>
+  <path d="M575 660 H505 V790 H930" fill="none" stroke="#0e8a63" stroke-width="3" marker-end="url(#greenArrow)"/><text x="545" y="645" text-anchor="middle" class="small" fill="#0e8a63">아니오</text>
+
+  <g filter="url(#shadow)">
+    <rect x="930" y="155" width="610" height="275" rx="24" fill="url(#refresh)" stroke="#da7a38" stroke-width="2"/>
+    <rect x="970" y="185" width="112" height="34" rx="17" fill="#bd5f1e"/><text x="1026" y="208" text-anchor="middle" class="pill">REFRESH</text>
+    <text x="1235" y="258" text-anchor="middle" class="h2">새 시각 근거가 필요할 때 exact attention</text>
+    <g><rect x="975" y="295" width="210" height="92" rx="16" fill="#fff" stroke="#e39b68" stroke-width="2"/>
+      <text x="1080" y="332" text-anchor="middle" class="body">full visual KV 전체</text><text x="1080" y="365" text-anchor="middle" class="mono">→ v̄ₜ, ME,t</text></g>
+    <path d="M1185 341 H1255" fill="none" stroke="#c76a24" stroke-width="3" marker-end="url(#orangeArrow)"/>
+    <g><rect x="1255" y="295" width="240" height="92" rx="16" fill="#fff" stroke="#e39b68" stroke-width="2"/>
+      <text x="1375" y="330" text-anchor="middle" class="body">cache와 anchor 갱신</text><text x="1375" y="364" text-anchor="middle" class="mono">v̄a ← v̄ₜ, age ← 0</text></g>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="930" y="505" width="610" height="275" rx="24" fill="url(#persist)" stroke="#35a77d" stroke-width="2"/>
+    <rect x="970" y="535" width="105" height="34" rx="17" fill="#0e8a63"/><text x="1023" y="558" text-anchor="middle" class="pill">PERSIST</text>
+    <text x="1235" y="610" text-anchor="middle" class="h2">마지막 visual output을 재사용</text>
+    <g><rect x="975" y="645" width="230" height="92" rx="16" fill="#fff" stroke="#65bc9b" stroke-width="2"/>
+      <text x="1090" y="680" text-anchor="middle" class="body">cached visual output</text><text x="1090" y="714" text-anchor="middle" class="mono">v̄a 고정 · age + 1</text></g>
+    <path d="M1205 691 H1265" fill="none" stroke="#0e8a63" stroke-width="3" marker-end="url(#greenArrow)"/>
+    <g><rect x="1265" y="645" width="230" height="92" rx="16" fill="#fff" stroke="#65bc9b" stroke-width="2"/>
+      <text x="1380" y="680" text-anchor="middle" class="body">현재 text와 결합</text><text x="1380" y="714" text-anchor="middle" class="mono">MP,t v̄a +(1-MP,t)ūₜ</text></g>
+  </g>
+
+  <path d="M1540 342 H1570 V810 H1230" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M1540 690 H1570" class="line"/>
+  <g filter="url(#shadow)"><rect x="960" y="790" width="540" height="62" rx="18" fill="#17233b"/>
+    <text x="1230" y="830" text-anchor="middle" class="pill">attention output → 다음 MLLM layer / 다음 token 생성</text></g>
+  <text x="800" y="882" text-anchor="middle" class="small">τh,t는 prefill threshold θM에서 시작해 cache age가 늘수록 낮아지며, 최대 age D에서는 Refresh가 강제된다.</text>
+</svg>
