@@ -17,13 +17,13 @@ paper_sync: true
 
 ![](/papers/assets/vla/activewam-evidence-aware-active-vision/overview.svg)
 
-### [Aegis-VLA: Reliability-Gated Action Refinement](/papers/vla/aegis-vla-reliability-gated-action-refinement)
-
-![](/papers/assets/vla/aegis-vla-reliability-gated-action-refinement/architecture.svg)
-
 ### [AE-VLA: Arm-wise Compositional Generalization in Dual-Arm Vision-Language-Action Models](/papers/vla/ae-vla-arm-wise-compositional-generalization)
 
 ![](/papers/assets/vla/ae-vla-arm-wise-compositional-generalization/overview.svg)
+
+### [Aegis-VLA: Reliability-Gated Action Refinement](/papers/vla/aegis-vla-reliability-gated-action-refinement)
+
+![](/papers/assets/vla/aegis-vla-reliability-gated-action-refinement/architecture.svg)
 
 ### [Agentic-Teacher: An Agentic Data Engine for Failure-Driven VLA Post-Training](/papers/vla/agentic-teacher-failure-driven-vla-post-training)
 
@@ -169,13 +169,13 @@ paper_sync: true
 
 ### [FRAM: Trajectory-Guided Visual Feature Selection for Compact Language-Conditioned Robot Manipulation](/papers/vla/fram-trajectory-guided-visual-feature-selection-for-compact-robot-manipulation)
 
-### [FreshVLA: Frequency-Regularized Hierarchical Latent Actions](/papers/vla/freshvla-frequency-regularized-hierarchical-latent-actions)
-
-![](/papers/assets/vla/freshvla-frequency-regularized-hierarchical-latent-actions/architecture.svg)
-
 ### [FRED: Self-Distilling Future Video Representations for World Action Models](/papers/vla/fred-self-distilling-future-video-representations)
 
 ![](/papers/assets/vla/fred-self-distilling-future-video-representations/overview.svg)
+
+### [FreshVLA: Frequency-Regularized Hierarchical Latent Actions](/papers/vla/freshvla-frequency-regularized-hierarchical-latent-actions)
+
+![](/papers/assets/vla/freshvla-frequency-regularized-hierarchical-latent-actions/architecture.svg)
 
 ### [GALA: Geometry-Aware Latent Action Modeling for Vision-Language-Action Model Pretraining across Embodiments](/papers/vla/gala-geometry-aware-latent-action-modeling-for-vla-pretraining-across-embodiments)
 
@@ -659,13 +659,13 @@ paper_sync: true
 
 ![](/papers/assets/vlm/triad-benchmarking-omni-modal-ambiguity-in-multimodal-large-language-models/triad-evaluation-pipeline.svg)
 
-### [VAPOR: Improving Multimodal Reasoning with Sparse Visual Updates](/papers/vlm/vapor-sparse-visual-attention-updates)
-
-![](/papers/assets/vlm/vapor-sparse-visual-attention-updates/vapor-architecture.svg)
-
 ### [V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations](/papers/vlm/v-jepa-lm-video-language-models-read-dynamics)
 
 ![](/papers/assets/vlm/v-jepa-lm-video-language-models-read-dynamics/v-jepa-lm-overview.png)
+
+### [VAPOR: Improving Multimodal Reasoning with Sparse Visual Updates](/papers/vlm/vapor-sparse-visual-attention-updates)
+
+![](/papers/assets/vlm/vapor-sparse-visual-attention-updates/vapor-architecture.svg)
 
 ### [VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding](/papers/vlm/videoevolve-co-evolving-memory-and-retrieval-for-long-video-understanding)
 
