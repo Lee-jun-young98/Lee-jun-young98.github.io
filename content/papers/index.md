@@ -397,6 +397,10 @@ paper_sync: true
 
 ![](/papers/assets/vla/sr-vla-predicted-input-lookahead-kv-repair/overview.svg)
 
+### [SplatWAM: Real-Time 3D World-Action Modeling with Gaussian Tokens](/papers/vla/splatwam-real-time-3d-world-action-model)
+
+![](/papers/assets/vla/splatwam-real-time-3d-world-action-model/architecture.png)
+
 ### [STAR: Steering Action Representations with Proprioception for VLA Inference](/papers/vla/star-steering-action-representations)
 
 ![](/papers/assets/vla/star-steering-action-representations/overview.svg)
@@ -480,6 +484,10 @@ paper_sync: true
 ### [WEVO: World Model-Enabled VLA Optimization for Whole-Body Loco-Manipulation](/papers/vla/wevo-world-model-vla-optimization)
 
 ![](/papers/assets/vla/wevo-world-model-vla-optimization/architecture.png)
+
+### [Wormhole: Escaping the Instruction Black Hole in VLA Policies](/papers/vla/wormhole-instruction-black-hole)
+
+![](/papers/assets/vla/wormhole-instruction-black-hole/architecture.png)
 
 ### [When Plans Change, Remember: Replanning-Guided Visual Memory for Vision-Language-Action Models](/papers/vla/replanmem-vla-replanning-guided-visual-memory)
 
